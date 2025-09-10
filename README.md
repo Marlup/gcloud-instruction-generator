@@ -28,11 +28,10 @@ Funciona como un **asistente interactivo** para construir comandos CLI de Google
 ├── params/
 │   ├── regions.json        # Lista de regiones GCP
 │   └── storage_classes.json# Lista de clases de almacenamiento
-├── generator/
+├── instraestructure/
 │   └── command_builder.py  # Función para interpolar parámetros en comandos
-├── loader.py               # Carga de ficheros JSON/YAML
-├── app8_ttkbootstrap.py    # Aplicación principal con UI
-├── features_roadmap.json   # Roadmap de features soportadas / pendientes
+│   └── loader.py               # Carga de ficheros JSON/YAML
+├── app.py    # Aplicación principal con UI
 └── README.md               # Este archivo
 ```
 
@@ -42,7 +41,7 @@ Funciona como un **asistente interactivo** para construir comandos CLI de Google
 
 1. Ejecuta la aplicación:
    ```bash
-   python app8_ttkbootstrap.py
+   python app.py
    ```
 
 2. Selecciona una acción en el árbol lateral (ejemplo: **Buckets → Creación → Crear bucket**).  
@@ -93,7 +92,7 @@ Ejemplo (extracto):
 - Python 3.9+
 - Dependencias:
   ```bash
-  pip install ttkbootstrap pyyaml
+  pip install ttkbootstrap
   ```
 
 ---
