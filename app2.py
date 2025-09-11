@@ -2,12 +2,13 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from ttkbootstrap.scrolled import ScrolledText
 import tkinter.font as tkfont
-import json
 
-from infrastructure.loader import load_list
-from infrastructure.command_builder import build_command
-from infrastructure.utils import subcategory_colors
+# 👉 ahora importamos del SDK, no de infraestructure local
+from sdk.services.storage_service import StorageService
+from sdk.utils import subcategory_colors
 
+# --- Inicializar servicio desde SDK ---
+storage_service = StorageService()
 
 # --- Functions ---
 def mostrar_parametros(action, params_def):
@@ -31,14 +32,15 @@ def mostrar_parametros(action, params_def):
             ttk.Label(row, text=f"{key}: ", width=15).pack(side="left")
 
             if key == "region":
-                entry = ttk.Combobox(row, values=regions, width=30, bootstyle=PRIMARY)
+                entry = ttk.Combobox(row, values=storage_service.regions, width=30, bootstyle=PRIMARY)
                 entry.set(f"<{key}>")
                 entry.pack(side="left", expand=True, fill="x")
                 param_entries[key] = entry
                 entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
             elif key == "storage_class":
-                entry = ttk.Combobox(row, values=storage_classes, state="readonly", width=30, bootstyle=INFO)
-                entry.set(storage_classes[0])
+                entry = ttk.Combobox(row, values=storage_service.storage_classes,
+                                     state="readonly", width=30, bootstyle=INFO)
+                entry.set(storage_service.storage_classes[0])
                 entry.pack(side="left", expand=True, fill="x")
                 param_entries[key] = entry
                 entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
@@ -57,7 +59,7 @@ def generate_command():
         return
 
     params = {k: e.get() for k, e in param_entries.items()}
-    comando = build_command(selected_cmd, params)
+    comando = storage_service.build_command(selected_cmd, params)
     salida.delete("1.0", "end")
     salida.insert("end", comando)
 
@@ -86,7 +88,7 @@ def on_tree_select(event):
     cat_id = tree.parent(parent_id)
     category = tree.item(cat_id, "text")
     if category:
-        params_def = storage_data[category][subcat][action]
+        params_def = storage_service.get_action_def(category, subcat, action)
         mostrar_parametros(action, params_def)
 
 def cambiar_tema(event=None):
@@ -97,33 +99,21 @@ def exit_focus(event=None):
     root.focus_set()   # mueve el foco al root
 
 def generate_command_in_action_label(event=None):
-    widget_id: str | int = root.focus_get().winfo_id()
-    
-    if isinstance(widget_id, str) \
-        and "tree-action-label" in root.focus_get().winfo_id():
-        generate_command()
+    generate_command()
 
-def execute_command(service: BaseGCloudService):
-    content = resultado.get("1.0", "end").strip()
+def execute_command():
+    content = salida.get("1.0", "end").strip()
     if not content:
         lbl_msg = ttk.Label(root, text="⚠️ No hay comando para ejecutar", bootstyle=WARNING)
         lbl_msg.place(relx=0.5, rely=0.95, anchor="center")
         root.after(2000, lbl_msg.destroy)
         return
     
-    output = service.execute(content)
+    output = storage_service.execute(content)
 
     resultado.delete("1.0", "end")
     resultado.insert("end", output)
 
-
-
-# --- Load data ---
-with open("actions/storage.json", "r", encoding="utf-8") as f:
-    storage_data: dict = json.load(f)
-
-regions = load_list("params/regions.json", "regions")
-storage_classes = load_list("params/storage_classes.json", "storage_classes")
 
 # --- State ---
 param_entries = {}
@@ -139,7 +129,6 @@ root.bind("<Control-g>", lambda e: generate_command())
 root.bind("<Return>", lambda e: generate_command_in_action_label())
 root.bind("<Escape>", exit_focus)
 
-
 root.title("Generador gcloud storage")
 root.geometry("1100x700")
 
@@ -153,7 +142,8 @@ root.style.configure("Treeview", font=("Consolas", 11))
 frame_top = ttk.Frame(root)
 frame_top.pack(side="top", anchor="ne", pady=5, padx=10)
 ttk.Label(frame_top, text="Tema:", bootstyle=INFO).pack(side="left", padx=5)
-combo_theme = ttk.Combobox(frame_top, values=root.style.theme_names(), state="readonly", width=15, bootstyle=PRIMARY)
+combo_theme = ttk.Combobox(frame_top, values=root.style.theme_names(),
+                           state="readonly", width=15, bootstyle=PRIMARY)
 combo_theme.set("flatly")
 combo_theme.pack(side="left")
 combo_theme.bind("<<ComboboxSelected>>", cambiar_tema)
@@ -166,14 +156,14 @@ main_pane.pack(fill="both", expand=True, padx=10, pady=10)
 frame_left = ttk.Frame(main_pane, padding=10)
 main_pane.add(frame_left, weight=1)
 
-# --- Título del árbol ---
-ttk.Label(frame_left, text="Acciones de Storage", bootstyle=INFO, font=("Segoe UI", 13, "bold")).pack(anchor="w", pady=(0,5))
+ttk.Label(frame_left, text="Acciones de Storage",
+          bootstyle=INFO, font=("Segoe UI", 13, "bold")).pack(anchor="w", pady=(0,5))
 
 tree = ttk.Treeview(frame_left, bootstyle=PRIMARY)
 tree.pack(fill="both", expand=True)
 
 c = 0
-for category, subcats in storage_data.items():
+for category, subcats in storage_service.actions.items():
     cat_id = tree.insert("", "end", text=category, open=True)
     for subcat, actions in subcats.items():
         subcat_name = subcat.split(" ", 1)[-1]
@@ -193,20 +183,19 @@ main_pane.add(frame_right, weight=3)
 frame_params = ttk.LabelFrame(frame_right, text="Parámetros")
 frame_params.pack(fill="x", pady=5)
 
-# Panel which shows the command generated
 salida = ScrolledText(frame_right, width=45, height=14, wrap="word", bootstyle=LIGHT)
 salida.pack(fill="both", expand=False, pady=5)
 
-# Panel which shows the command's execution results
 resultado = ScrolledText(frame_right, width=45, height=12, wrap="word", bootstyle=SECONDARY)
 resultado.pack(fill="both", expand=True, pady=5)
 
 btn_frame = ttk.Frame(frame_right)
 btn_frame.pack(pady=5)
-ttk.Button(btn_frame, 
-           text="✅ Generar comando\n             (ctrl + g)",
-            bootstyle=SUCCESS, command=generate_command).pack(side="left", padx=5)
-ttk.Button(btn_frame, text="📋 Copiar", bootstyle=INFO, command=copiar_comando).pack(side="left", padx=5)
-ttk.Button(btn_frame, text="▶ Ejecutar", bootstyle=PRIMARY, command=execute_command).pack(side="left", padx=5)
+ttk.Button(btn_frame, text="✅ Generar comando\n             (ctrl + g)",
+           bootstyle=SUCCESS, command=generate_command).pack(side="left", padx=5)
+ttk.Button(btn_frame, text="📋 Copiar", bootstyle=INFO,
+           command=copiar_comando).pack(side="left", padx=5)
+ttk.Button(btn_frame, text="▶ Ejecutar", bootstyle=PRIMARY,
+           command=execute_command).pack(side="left", padx=5)
 
 root.mainloop()
