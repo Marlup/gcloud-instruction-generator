@@ -1,6 +1,8 @@
 /old
 /docs
 /sandbox
+application_default_credentials*
+igen-bknd-001-dev-*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

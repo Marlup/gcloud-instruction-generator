@@ -1,68 +1,90 @@
+from typing import Dict
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from ttkbootstrap.scrolled import ScrolledText
 import tkinter.font as tkfont
-import json
 
-from infrastructure.loader import load_list
-from infrastructure.command_builder import build_command
-from infrastructure.utils import subcategory_colors
+# Backend
+from backend.constants import subcategory_colors
+from backend.infrastructure.utils import get_frame_parameters
+from backend.infrastructure.configuration_manager import ConfigurationManager
+from backend.infrastructure.di_container import DIContainer
+from backend.services.base_service import BaseGCloudService
 
+# --- Configuración e Inyector ---
+config = ConfigurationManager().load_configuration("config/.config")
+container = DIContainer(config)
+
+# --- Initial State ---
+current_service_name = "storage"
+current_service: BaseGCloudService = container.get(current_service_name)
+
+param_entries = {}
+selected_action = None
+action_cmd = None
+action_params = None
 
 # --- Functions ---
-def mostrar_parametros(action, params_def):
-    global selected_action, selected_cmd, selected_params
-    
+def mostrar_parametros(action: str, action_definition: Dict[str, str]):
+    global selected_action, action_cmd, action_params
+
     for widget in frame_params.winfo_children():
         widget.destroy()
     param_entries.clear()
 
     selected_action = action
-    selected_cmd = params_def["cmd"]
-    selected_params = params_def["params"]
+    action_cmd = action_definition["cmd"]
+    action_params = action_definition["params"]
 
-    if selected_params:
-        ttk.Label(frame_params, text=f"Parámetros para {action}:").pack(anchor="w", pady=5)
+    if not action_params:
+        return
+    
+    ttk.Label(frame_params, text=f"Parámetros para {action}:").pack(anchor="w", pady=5)
 
-        for key in selected_params:
-            row = ttk.Frame(frame_params)
-            row.pack(fill="x", pady=2)
+    net_parameters = get_frame_parameters(current_service.parameters, action_params)
+    print("\nShow parameters")
+    print("------------------")
+    for parameter_key, param_values in net_parameters.items():
+        print(f"parameter_key -> {parameter_key}")
+        row = ttk.Frame(frame_params)
+        row.pack(fill="x", pady=2)
 
-            ttk.Label(row, text=f"{key}: ", width=15).pack(side="left")
+        if isinstance(param_values, (list, tuple)):
+            ttk.Label(row, text=f"<{parameter_key}>: ", width=15).pack(side="left")
 
-            if key == "region":
-                entry = ttk.Combobox(row, values=regions, width=30, bootstyle=PRIMARY)
-                entry.set(f"<{key}>")
-                entry.pack(side="left", expand=True, fill="x")
-                param_entries[key] = entry
-                entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
-            elif key == "storage_class":
-                entry = ttk.Combobox(row, values=storage_classes, state="readonly", width=30, bootstyle=INFO)
-                entry.set(storage_classes[0])
-                entry.pack(side="left", expand=True, fill="x")
-                param_entries[key] = entry
-                entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
-            else:
-                entry = ttk.Entry(row, bootstyle=SECONDARY)
-                entry.insert(0, f"<{key}>")
-                entry.pack(side="left", expand=True, fill="x")
-                param_entries[key] = entry
-                entry.bind("<KeyRelease>", lambda e: generate_command())
+            entry = ttk.Combobox(row, values=param_values, width=30, bootstyle=PRIMARY)
+            entry.set(f"<{parameter_key}>")
+            entry.pack(side="left", expand=True, fill="x")
+            param_entries[parameter_key] = entry
+            entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
+        else:
+            entry = ttk.Entry(row, bootstyle=SECONDARY)
+            entry.insert(0, f"<{parameter_key}>")
+            entry.pack(side="left", expand=True, fill="x")
+            param_entries[parameter_key] = entry
+            entry.bind("<KeyRelease>", lambda e: generate_command())
 
 def generate_command():
-    global selected_action, selected_cmd, selected_params
-    if not selected_action or not selected_cmd:
-        salida.delete("1.0", "end")
-        salida.insert("end", "⚠️ Selecciona primero una acción en el árbol")
+    global selected_action, action_cmd, action_params
+    #query_output_panel.text.config(state="normal")
+    if not selected_action or not action_cmd:
+        query_output_panel.delete("1.0", "end")
+        query_output_panel.insert("end", "⚠️ Selecciona primero una acción en el árbol")
+        #query_output_panel.text.config(state="normal")
         return
 
     params = {k: e.get() for k, e in param_entries.items()}
-    comando = build_command(selected_cmd, params)
-    salida.delete("1.0", "end")
-    salida.insert("end", comando)
+    comando = current_service.build_command(action_cmd, params)
+    query_output_panel.delete("1.0", "end")
+    query_output_panel.insert("end", comando)
+    #query_output_panel.text.config(state="normal")
+
 
 def copiar_comando():
-    content = salida.get("1.0", "end").strip()
+    #query_output_panel.text.config(state="normal")
+    content = query_output_panel.get("1.0", "end").strip()
+    #query_output_panel.text.config(state="disabled")
+
     if content:
         root.clipboard_clear()
         root.clipboard_append(content)
@@ -75,6 +97,7 @@ def copiar_comando():
     lbl_msg.place(relx=0.5, rely=0.95, anchor="center")
     root.after(2000, lbl_msg.destroy)
 
+
 def on_tree_select(event):
     tree = event.widget
     item_id = tree.focus()
@@ -86,127 +109,156 @@ def on_tree_select(event):
     cat_id = tree.parent(parent_id)
     category = tree.item(cat_id, "text")
     if category:
-        params_def = storage_data[category][subcat][action]
-        mostrar_parametros(action, params_def)
+        action_definition = current_service.get_action_def(category, subcat, action)
+        mostrar_parametros(action, action_definition)
+    
+    generate_command()
+
 
 def cambiar_tema(event=None):
     nuevo_tema = combo_theme.get()
     root.style.theme_use(nuevo_tema)
 
+
 def exit_focus(event=None):
-    root.focus_set()   # mueve el foco al root
+    root.focus_set()
 
-def generate_command_in_action_label(event=None):
-    widget_id: str | int = root.focus_get().winfo_id()
-    
-    if isinstance(widget_id, str) \
-        and "tree-action-label" in root.focus_get().winfo_id():
-        generate_command()
 
-def execute_command(service: BaseGCloudService):
-    content = resultado.get("1.0", "end").strip()
+def execute_command():
+    #query_output_panel.text.config(state="normal")
+    content = query_output_panel.get("1.0", "end").strip()
+    #query_output_panel.text.config(state="disabled")
+
     if not content:
         lbl_msg = ttk.Label(root, text="⚠️ No hay comando para ejecutar", bootstyle=WARNING)
         lbl_msg.place(relx=0.5, rely=0.95, anchor="center")
         root.after(2000, lbl_msg.destroy)
         return
+
+    output = current_service.execute(content)
+
+    execution_output_panel.text.config(state="normal")
+    execution_output_panel.delete("1.0", "end")
+    execution_output_panel.insert("end", output)
+    execution_output_panel.text.config(state="disabled")
+
+
+def on_tab_change(event):
+    global current_service_name, current_service, tree
+
+    tab_id = notebook.select()
+    tab_text = notebook.tab(tab_id, "text")
+
+    current_service_name = tab_text
+    current_service = container.get(current_service_name)
+
+    lbl_acciones.config(text=f"Acciones de {tab_text.capitalize()}")
+
+    for item in tree.get_children():
+        tree.delete(item)
     
-    output = service.execute(content)
+    refresh_tree()
 
-    resultado.delete("1.0", "end")
-    resultado.insert("end", output)
+def refresh_tree():
+    c = 0
+    for category, subcats in current_service.actions.items():
+        cat_id = tree.insert("", "end", text=category, open=True)
+        for subcat, actions in subcats.items():
+            subcat_name = subcat.split(" ", 1)[-1]
+            sub_id = tree.insert(cat_id, "end", text=subcat, open=True, tags=(subcat_name,))
+            if subcat_name in subcategory_colors:
+                tree.tag_configure(subcat_name, **subcategory_colors[subcat_name])
+            for action in actions:
+                tree.insert(sub_id, "end", id=f"tree-action-label-{c}", text=action)
+                c += 1
 
 
-
-# --- Load data ---
-with open("actions/storage.json", "r", encoding="utf-8") as f:
-    storage_data: dict = json.load(f)
-
-regions = load_list("params/regions.json", "regions")
-storage_classes = load_list("params/storage_classes.json", "storage_classes")
-
-# --- State ---
-param_entries = {}
-selected_action = None
-selected_cmd = None
-selected_params = None
-
-# --- UI principal ---
+# -------------------------- UI --------------------------
 root = ttk.Window(themename="flatly")
-
-# Keyboard bindings
-root.bind("<Control-g>", lambda e: generate_command())
-root.bind("<Return>", lambda e: generate_command_in_action_label())
-root.bind("<Escape>", exit_focus)
-
-
-root.title("Generador gcloud storage")
+root.title("Generador gcloud")
 root.geometry("1100x700")
 
-# Fuente global
+root.bind("<Control-g>", lambda e: generate_command())
+root.bind("<Return>", lambda e: generate_command())
+root.bind("<Escape>", exit_focus)
+
 default_font = tkfont.nametofont("TkDefaultFont")
 default_font.configure(size=12)
 root.style.configure("TButton", font=("Segoe UI", 12, "bold"))
 root.style.configure("Treeview", font=("Consolas", 11))
 
-# Desplegable de temas
-frame_top = ttk.Frame(root)
-frame_top.pack(side="top", anchor="ne", pady=5, padx=10)
-ttk.Label(frame_top, text="Tema:", bootstyle=INFO).pack(side="left", padx=5)
-combo_theme = ttk.Combobox(frame_top, values=root.style.theme_names(), state="readonly", width=15, bootstyle=PRIMARY)
+# Frame superior con tema + notebook
+frame_header = ttk.Frame(root)
+frame_header.pack(side="top", fill="x", padx=10, pady=5)
+
+# --- selector de temas ---
+ttk.Label(frame_header, text="Tema:", bootstyle=INFO).pack(side="left", padx=5)
+combo_theme = ttk.Combobox(frame_header, values=root.style.theme_names(),
+                           state="readonly", width=15, bootstyle=PRIMARY)
 combo_theme.set("flatly")
 combo_theme.pack(side="left")
 combo_theme.bind("<<ComboboxSelected>>", cambiar_tema)
 
-# --- Paned principal (izq/der) ---
+# --- notebook tabs ---
+notebook = ttk.Notebook(frame_header, bootstyle=PRIMARY)
+notebook.pack(side="left", fill="x", expand=True, padx=20)
+
+for svc in container.list_services():
+    frame = ttk.Frame(notebook)
+    notebook.add(frame, text=svc)
+
+notebook.bind("<<NotebookTabChanged>>", on_tab_change)
+
+# Panel principal (izq/der)
 main_pane = ttk.Panedwindow(root, orient=HORIZONTAL)
 main_pane.pack(fill="both", expand=True, padx=10, pady=10)
 
-# Panel izquierdo (árbol categorías)
+# Panel izquierdo
 frame_left = ttk.Frame(main_pane, padding=10)
 main_pane.add(frame_left, weight=1)
 
-# --- Título del árbol ---
-ttk.Label(frame_left, text="Acciones de Storage", bootstyle=INFO, font=("Segoe UI", 13, "bold")).pack(anchor="w", pady=(0,5))
+lbl_acciones = ttk.Label(frame_left, text="Acciones de Storage",
+                         bootstyle=INFO, font=("Segoe UI", 13, "bold"))
+lbl_acciones.pack(anchor="w", pady=(0, 5))
 
 tree = ttk.Treeview(frame_left, bootstyle=PRIMARY)
 tree.pack(fill="both", expand=True)
-
-c = 0
-for category, subcats in storage_data.items():
-    cat_id = tree.insert("", "end", text=category, open=True)
-    for subcat, actions in subcats.items():
-        subcat_name = subcat.split(" ", 1)[-1]
-        sub_id = tree.insert(cat_id, "end", text=subcat, open=True, tags=(subcat_name,))
-        if subcat_name in subcategory_colors:
-            tree.tag_configure(subcat_name, **subcategory_colors[subcat_name])
-        for action in actions.keys():
-            tree.insert(sub_id, "end", id=f"tree-action-label-{c}", text=action)
-            c += 1
-
 tree.bind("<<TreeviewSelect>>", on_tree_select)
 
-# Panel derecho (parametros + salida + botones)
+refresh_tree()
+
+# Panel derecho
 frame_right = ttk.Frame(main_pane, padding=10)
 main_pane.add(frame_right, weight=3)
 
 frame_params = ttk.LabelFrame(frame_right, text="Parámetros")
 frame_params.pack(fill="x", pady=5)
 
-# Panel which shows the command generated
-salida = ScrolledText(frame_right, width=45, height=14, wrap="word", bootstyle=LIGHT)
-salida.pack(fill="both", expand=False, pady=5)
+# query_output_panel = comando generado (readonly)
+query_output_panel = ScrolledText(frame_right, width=45, height=14, wrap="word", bootstyle=LIGHT)
+query_output_panel.pack(fill="both", expand=False, pady=5)
+query_output_panel.text.config(state="normal")
 
-# Panel which shows the command's execution results
-resultado = ScrolledText(frame_right, width=45, height=12, wrap="word", bootstyle=SECONDARY)
-resultado.pack(fill="both", expand=True, pady=5)
+# execution_output_panel = ejecución comando (readonly)
+execution_output_panel = ScrolledText(frame_right, width=45, height=12, wrap="word", bootstyle=SECONDARY)
+execution_output_panel.pack(fill="both", expand=True, pady=5)
+execution_output_panel.text.config(state="disabled")
 
 btn_frame = ttk.Frame(frame_right)
 btn_frame.pack(pady=5)
-ttk.Button(btn_frame, 
-           text="✅ Generar comando\n             (ctrl + g)",
-            bootstyle=SUCCESS, command=generate_command).pack(side="left", padx=5)
-ttk.Button(btn_frame, text="📋 Copiar", bootstyle=INFO, command=copiar_comando).pack(side="left", padx=5)
-ttk.Button(btn_frame, text="▶ Ejecutar", bootstyle=PRIMARY, command=execute_command).pack(side="left", padx=5)
+#ttk.Button(btn_frame, text="✅ Generar comando\n             (ctrl + g)",
+#           bootstyle=SUCCESS, command=generate_command).pack(side="left", padx=5)
+ttk.Button(
+    btn_frame, 
+    text="📋 Copiar", 
+    bootstyle=INFO,
+    command=copiar_comando
+    ).pack(side="left", padx=5)
+ttk.Button(
+    btn_frame,
+    text="▶ Ejecutar", 
+    bootstyle=PRIMARY,
+    command=execute_command
+    ).pack(side="left", padx=5)
 
 root.mainloop()

@@ -1,0 +1,12 @@
+services:
+  gcloud-helper:
+    build: .
+    container_name: gcloud-backend
+    volumes:
+      - .:/app                # mount the code locally
+      - ./keys:/app/keys      # service key credentials
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/keys/service-account.json
+      - GOOGLE_CLOUD_PROJECT=igen-bknd-001-dev
+    stdin_open: true
+    tty: true

@@ -1,0 +1,237 @@
+{
+  "Datasets": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud data-catalog datasets create --dataset {dataset} --location {location}",
+        "params": [
+          "dataset",
+          "location"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud data-catalog datasets update --dataset {dataset} --description {description}",
+        "params": [
+          "dataset",
+          "description"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud data-catalog datasets update --dataset {dataset} --labels {labels}",
+        "params": [
+          "dataset",
+          "labels"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud data-catalog datasets delete --dataset {dataset}",
+        "params": [
+          "dataset"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud data-catalog datasets add-iam-policy-binding --dataset {dataset} --member {member} --role {role}",
+        "params": [
+          "dataset",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud data-catalog datasets remove-iam-policy-binding --dataset {dataset} --member {member} --role {role}",
+        "params": [
+          "dataset",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Tables": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud data-catalog tables create --table {tabla} --dataset {dataset} --location {location}",
+        "params": [
+          "tabla",
+          "dataset",
+          "location"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud data-catalog tables update --table {tabla} --dataset {dataset} --description {description}",
+        "params": [
+          "tabla",
+          "dataset",
+          "description"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud data-catalog tables update --table {tabla} --dataset {dataset} --labels {labels}",
+        "params": [
+          "tabla",
+          "dataset",
+          "labels"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud data-catalog tables delete --table {tabla} --dataset {dataset}",
+        "params": [
+          "tabla",
+          "dataset"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud data-catalog tables add-iam-policy-binding --table {tabla} --dataset {dataset} --member {member} --role {role}",
+        "params": [
+          "tabla",
+          "dataset",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud data-catalog tables remove-iam-policy-binding --table {tabla} --dataset {dataset} --member {member} --role {role}",
+        "params": [
+          "tabla",
+          "dataset",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Jobs": {
+    "⚡ Jobs/Procesamiento": [
+      {
+        "cmd": "gcloud data-catalog jobs create --job_id {job_id} --location {location} --query {query}",
+        "params": [
+          "job_id",
+          "location",
+          "query"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud data-catalog jobs update --job_id {job_id} --location {location} --query {query}",
+        "params": [
+          "job_id",
+          "location",
+          "query"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud data-catalog jobs delete --job_id {job_id} --location {location}",
+        "params": [
+          "job_id",
+          "location"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      }
+    ]
+  },
+  "Buckets": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud data-catalog buckets create --bucket {bucket} --location {location}",
+        "params": [
+          "bucket",
+          "location"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud data-catalog buckets update --bucket {bucket} --labels {labels}",
+        "params": [
+          "bucket",
+          "labels"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud data-catalog buckets delete --bucket {bucket}",
+        "params": [
+          "bucket"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud data-catalog buckets add-iam-policy-binding --bucket {bucket} --member {member} --role {role}",
+        "params": [
+          "bucket",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud data-catalog buckets remove-iam-policy-binding --bucket {bucket} --member {member} --role {role}",
+        "params": [
+          "bucket",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      }
+    ]
+  }
+}

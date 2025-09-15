@@ -1,5 +1,11 @@
 {
-  "regions": [
+  "storage_classes": [
+    "STANDARD",
+    "NEARLINE",
+    "COLDLINE",
+    "ARCHIVE"
+  ],
+    "regions": [
     "asia-east1",
     "asia-east2",
     "asia-northeast1",

@@ -1,0 +1,15 @@
+{
+  "biglake_engines": [
+    "HIVE",
+    "ICEBERG",
+    "DELTA",
+    "PARQUET",
+    "ORC",
+    "AVRO"
+  ],
+    "biglake_catalogs": [
+    "default",
+    "hive_metastore",
+    "iceberg_catalog"
+  ]
+}

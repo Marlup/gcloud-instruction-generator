@@ -1,0 +1,179 @@
+{
+  "Topics": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud pubsub topics create {topic}",
+        "params": [
+          "topic"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud pubsub topics update {topic} --message-retention-duration={duration}",
+        "params": [
+          "topic",
+          "duration"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub topics update {topic} --labels={labels}",
+        "params": [
+          "topic",
+          "labels"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud pubsub topics delete {topic}",
+        "params": [
+          "topic"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud pubsub topics add-iam-policy-binding {topic} --member={member} --role={role}",
+        "params": [
+          "topic",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub topics remove-iam-policy-binding {topic} --member={member} --role={role}",
+        "params": [
+          "topic",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub topics get-iam-policy {topic}",
+        "params": [
+          "topic"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "⚙️ Configuración": [
+      {
+        "cmd": "gcloud pubsub topics describe {topic}",
+        "params": [
+          "topic"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Subscriptions": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud pubsub subscriptions create {subscription} --topic={topic}",
+        "params": [
+          "subscription",
+          "topic"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud pubsub subscriptions update {subscription} --ack-deadline={deadline}",
+        "params": [
+          "subscription",
+          "deadline"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub subscriptions update {subscription} --labels={labels}",
+        "params": [
+          "subscription",
+          "labels"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud pubsub subscriptions delete {subscription}",
+        "params": [
+          "subscription"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud pubsub subscriptions add-iam-policy-binding {subscription} --member={member} --role={role}",
+        "params": [
+          "subscription",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub subscriptions remove-iam-policy-binding {subscription} --member={member} --role={role}",
+        "params": [
+          "subscription",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub subscriptions get-iam-policy {subscription}",
+        "params": [
+          "subscription"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "⚙️ Configuración": [
+      {
+        "cmd": "gcloud pubsub subscriptions describe {subscription}",
+        "params": [
+          "subscription"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Messages": {
+    "📡 Mensajería": [
+      {
+        "cmd": "gcloud pubsub topics publish {topic} --message={message}",
+        "params": [
+          "topic",
+          "message"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub subscriptions pull {subscription} --limit={limit} --auto-ack",
+        "params": [
+          "subscription",
+          "limit"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub subscriptions pull {subscription} --limit={limit}",
+        "params": [
+          "subscription",
+          "limit"
+        ],
+        "param_hints": {}
+      }
+    ]
+  }
+}

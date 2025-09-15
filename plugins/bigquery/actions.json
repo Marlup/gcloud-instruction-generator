@@ -1,0 +1,160 @@
+{
+  "Datasets": {
+    "🔎 Consulta": {
+      "Listar datasets": {
+        "cmd": "gcloud bigquery datasets list --location={region}",
+        "params": ["region"]
+      },
+      "Describir dataset": {
+        "cmd": "gcloud bigquery datasets describe {dataset} --location={region}",
+        "params": ["dataset", "region"]
+      }
+    },
+    "📤 Creación": {
+      "Crear dataset": {
+        "cmd": "gcloud bigquery datasets create {dataset} --location={region}",
+        "params": ["dataset", "region"]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar etiquetas dataset": {
+        "cmd": "gcloud bigquery datasets update {dataset} --set-labels={labels}",
+        "params": ["dataset", "labels"]
+      },
+      "Eliminar etiquetas dataset": {
+        "cmd": "gcloud bigquery datasets update {dataset} --remove-labels={labels}",
+        "params": ["dataset", "labels"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar dataset": {
+        "cmd": "gcloud bigquery datasets delete {dataset} --location={region}",
+        "params": ["dataset", "region"]
+      }
+    }
+  },
+
+  "Tablas": {
+    "🔎 Consulta": {
+      "Listar tablas": {
+        "cmd": "gcloud bigquery tables list --dataset={dataset}",
+        "params": ["dataset"]
+      },
+      "Describir tabla": {
+        "cmd": "gcloud bigquery tables describe {dataset}.{table}",
+        "params": ["dataset", "table"]
+      }
+    },
+    "📤 Creación": {
+      "Crear tabla vacía": {
+        "cmd": "gcloud bigquery tables create {dataset}.{table} --schema={schema_file} --description={description}",
+        "params": ["dataset", "table", "schema_file", "description"]
+      },
+      "Crear tabla desde consulta": {
+        "cmd": "gcloud bigquery query \"{sql}\" --destination_table={dataset}.{table} --use_legacy_sql=false",
+        "params": ["sql", "dataset", "table"]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar descripción tabla": {
+        "cmd": "gcloud bigquery tables update {dataset}.{table} --description={description}",
+        "params": ["dataset", "table", "description"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar tabla": {
+        "cmd": "gcloud bigquery tables delete {dataset}.{table}",
+        "params": ["dataset", "table"]
+      }
+    }
+  },
+
+  "Consultas / Jobs": {
+    "⚡ Ejecución": {
+      "Ejecutar consulta SQL": {
+        "cmd": "gcloud bigquery query \"{sql}\" --use_legacy_sql=false",
+        "params": ["sql"]
+      },
+      "Ejecutar consulta y guardar en tabla": {
+        "cmd": "gcloud bigquery query \"{sql}\" --destination_table={dataset}.{table} --use_legacy_sql=false",
+        "params": ["sql", "dataset", "table"]
+      }
+    },
+    "🔎 Consulta": {
+      "Listar jobs": {
+        "cmd": "gcloud bigquery jobs list",
+        "params": []
+      },
+      "Describir job": {
+        "cmd": "gcloud bigquery jobs describe {job_id}",
+        "params": ["job_id"]
+      }
+    },
+    "❌ Control": {
+      "Cancelar job": {
+        "cmd": "gcloud bigquery jobs cancel {job_id}",
+        "params": ["job_id"]
+      }
+    }
+  },
+
+  "External Tables": {
+    "📤 Creación": {
+      "Crear external table en GCS": {
+        "cmd": "gcloud bigquery tables create {dataset}.{table} --external_table_definition={definition_file}",
+        "params": ["dataset", "table", "definition_file"]
+      }
+    }
+  },
+
+  "Views": {
+    "📤 Creación": {
+      "Crear view": {
+        "cmd": "gcloud bigquery tables create {dataset}.{view} --view=\"{sql}\" --use_legacy_sql=false",
+        "params": ["dataset", "view", "sql"]
+      },
+      "Crear materialized view": {
+        "cmd": "gcloud bigquery tables create {dataset}.{mv} --materialized_view=\"{sql}\"",
+        "params": ["dataset", "mv", "sql"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar view": {
+        "cmd": "gcloud bigquery tables delete {dataset}.{view}",
+        "params": ["dataset", "view"]
+      }
+    }
+  },
+
+  "IAM / Seguridad": {
+    "🔎 Consulta": {
+      "Ver IAM dataset": {
+        "cmd": "gcloud bigquery datasets get-iam-policy {dataset}",
+        "params": ["dataset"]
+      }
+    },
+    "➕ Asignación": {
+      "Añadir IAM a dataset": {
+        "cmd": "gcloud bigquery datasets add-iam-policy-binding {dataset} --member={member} --role={role}",
+        "params": ["dataset", "member", "role"]
+      }
+    },
+    "➖ Revocación": {
+      "Quitar IAM de dataset": {
+        "cmd": "gcloud bigquery datasets remove-iam-policy-binding {dataset} --member={member} --role={role}",
+        "params": ["dataset", "member", "role"]
+      }
+    }
+  },
+
+  "⚙️ Configuración": {
+    "Cambiar proyecto activo": {
+      "cmd": "gcloud config set project {project}",
+      "params": ["project"]
+    },
+    "Listar configuración actual": {
+      "cmd": "gcloud config list",
+      "params": []
+    }
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "Datasets": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataplex datasets create --lake={lake} --dataset-id={dataset_id} --display-name={display_name} --description={description}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "display_name",
+          "description"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataplex datasets update --lake={lake} --dataset-id={dataset_id} --display-name={display_name} --description={description}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "display_name",
+          "description"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataplex datasets delete --lake={lake} --dataset-id={dataset_id}",
+        "params": [
+          "lake",
+          "dataset_id"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud dataplex datasets add-iam-policy-binding --lake={lake} --dataset-id={dataset_id} --member={member} --role={role}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataplex datasets remove-iam-policy-binding --lake={lake} --dataset-id={dataset_id} --member={member} --role={role}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataplex datasets set-iam-policy --lake={lake} --dataset-id={dataset_id} --policy-file={policy_file}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "policy_file"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Tables": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataplex tables create --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --schema={schema}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "table_id",
+          "schema"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataplex tables update --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --schema={schema}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "table_id",
+          "schema"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataplex tables delete --lake={lake} --dataset-id={dataset_id} --table-id={table_id}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "table_id"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud dataplex tables add-iam-policy-binding --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --member={member} --role={role}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "table_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataplex tables remove-iam-policy-binding --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --member={member} --role={role}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "table_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataplex tables set-iam-policy --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --policy-file={policy_file}",
+        "params": [
+          "lake",
+          "dataset_id",
+          "table_id",
+          "policy_file"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Jobs": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataplex jobs create --lake={lake} --job-id={job_id} --query={query} --location={location}",
+        "params": [
+          "lake",
+          "job_id",
+          "query",
+          "location"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      }
+    ],
+    "⚡ Jobs/Procesamiento": [
+      {
+        "cmd": "gcloud dataplex jobs run --lake={lake} --job-id={job_id}",
+        "params": [
+          "lake",
+          "job_id"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataplex jobs delete --lake={lake} --job-id={job_id}",
+        "params": [
+          "lake",
+          "job_id"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Lakes": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataplex lakes create --lake-id={lake_id} --location={location} --display-name={display_name} --description={description}",
+        "params": [
+          "lake_id",
+          "location",
+          "display_name",
+          "description"
+        ],
+        "param_hints": {
+          "location": {
+            "type": "combo",
+            "ref": "bigquery_locations"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataplex lakes update --lake-id={lake_id} --display-name={display_name} --description={description}",
+        "params": [
+          "lake_id",
+          "display_name",
+          "description"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataplex lakes delete --lake-id={lake_id}",
+        "params": [
+          "lake_id"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud dataplex lakes add-iam-policy-binding --lake-id={lake_id} --member={member} --role={role}",
+        "params": [
+          "lake_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataplex lakes remove-iam-policy-binding --lake-id={lake_id} --member={member} --role={role}",
+        "params": [
+          "lake_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataplex lakes set-iam-policy --lake-id={lake_id} --policy-file={policy_file}",
+        "params": [
+          "lake_id",
+          "policy_file"
+        ],
+        "param_hints": {}
+      }
+    ]
+  }
+}

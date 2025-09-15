@@ -1,0 +1,273 @@
+{
+  "Datasets": {
+    "📤 Creación": [
+      {
+        "cmd": "bq mk --dataset {dataset}",
+        "params": [
+          "dataset"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "bq update --dataset {dataset} --description {descripcion}",
+        "params": [
+          "dataset",
+          "descripcion"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "bq rm -r -f {dataset}",
+        "params": [
+          "dataset"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Tables": {
+    "📤 Creación": [
+      {
+        "cmd": "bq mk --table {dataset}.{tabla} {schema}",
+        "params": [
+          "dataset",
+          "tabla",
+          "schema"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "bq update --table {dataset}.{tabla} --description {descripcion}",
+        "params": [
+          "dataset",
+          "tabla",
+          "descripcion"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "bq rm -f {dataset}.{tabla}",
+        "params": [
+          "dataset",
+          "tabla"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Jobs": {
+    "⚡ Jobs/Procesamiento": [
+      {
+        "cmd": "bq query --use_legacy_sql=false '{consulta}'",
+        "params": [
+          "consulta"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "bq load --source_format={formato} {dataset}.{tabla} gs://{ruta_archivo}",
+        "params": [
+          "dataset",
+          "tabla",
+          "formato",
+          "ruta_archivo"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "bq update --job {job_id} --configuration {configuracion}",
+        "params": [
+          "job_id",
+          "configuracion"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Buckets": {
+    "📤 Creación": [
+      {
+        "cmd": "gsutil mb -p {proyecto} -c {clase} -l {region} gs://{nombre_bucket}",
+        "params": [
+          "proyecto",
+          "clase",
+          "region",
+          "nombre_bucket"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gsutil rm -r gs://{nombre_bucket}",
+        "params": [
+          "nombre_bucket"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gsutil iam ch {miembro}:{rol} gs://{nombre_bucket}",
+        "params": [
+          "miembro",
+          "rol",
+          "nombre_bucket"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Topics": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud pubsub topics create {nombre_topico}",
+        "params": [
+          "nombre_topico"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud pubsub topics delete {nombre_topico}",
+        "params": [
+          "nombre_topico"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud pubsub topics add-iam-policy-binding {nombre_topico} --member {miembro} --role {rol}",
+        "params": [
+          "nombre_topico",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud pubsub topics remove-iam-policy-binding {nombre_topico} --member {miembro} --role {rol}",
+        "params": [
+          "nombre_topico",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Environments": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud composer environments create {nombre_entorno} --location {region} --zone {zona} --image-version {version_imagen} --node-count {cantidad_nodos}",
+        "params": [
+          "nombre_entorno",
+          "region",
+          "zona",
+          "version_imagen",
+          "cantidad_nodos"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud composer environments update {nombre_entorno} --location {region} --update-pypi-package {paquete}",
+        "params": [
+          "nombre_entorno",
+          "region",
+          "paquete"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud composer environments update {nombre_entorno} --location {region} --update-labels {etiquetas}",
+        "params": [
+          "nombre_entorno",
+          "region",
+          "etiquetas"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud composer environments delete {nombre_entorno} --location {region}",
+        "params": [
+          "nombre_entorno",
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud composer environments add-iam-policy-binding {nombre_entorno} --location {region} --member {miembro} --role {rol}",
+        "params": [
+          "nombre_entorno",
+          "region",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud composer environments remove-iam-policy-binding {nombre_entorno} --location {region} --member {miembro} --role {rol}",
+        "params": [
+          "nombre_entorno",
+          "region",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ]
+  }
+}

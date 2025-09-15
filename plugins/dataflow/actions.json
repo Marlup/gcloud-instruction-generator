@@ -1,0 +1,249 @@
+{
+  "Datasets": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataflow datasets create --dataset_id {dataset_id} --location {region}",
+        "params": [
+          "dataset_id",
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataflow datasets update --dataset_id {dataset_id} --description {description}",
+        "params": [
+          "dataset_id",
+          "description"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataflow datasets delete --dataset_id {dataset_id} --quiet",
+        "params": [
+          "dataset_id"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Tables": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataflow tables create --table_id {table_id} --dataset_id {dataset_id} --schema {schema} --location {region}",
+        "params": [
+          "table_id",
+          "dataset_id",
+          "schema",
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataflow tables update --table_id {table_id} --dataset_id {dataset_id} --schema {schema}",
+        "params": [
+          "table_id",
+          "dataset_id",
+          "schema"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataflow tables delete --table_id {table_id} --dataset_id {dataset_id} --quiet",
+        "params": [
+          "table_id",
+          "dataset_id"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Jobs": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataflow jobs run {job_id} --gcs_location {gcs_location} --parameters {parameters} --region {region}",
+        "params": [
+          "job_id",
+          "gcs_location",
+          "parameters",
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "⚡ Jobs/Procesamiento": [
+      {
+        "cmd": "gcloud dataflow jobs execute {job_id} --parameters {parameters}",
+        "params": [
+          "job_id",
+          "parameters"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataflow jobs cancel {job_id} --quiet",
+        "params": [
+          "job_id"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataflow jobs describe {job_id}",
+        "params": [
+          "job_id"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataflow jobs list --region {region}",
+        "params": [
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataflow jobs update {job_id} --parameters {parameters}",
+        "params": [
+          "job_id",
+          "parameters"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataflow jobs delete {job_id} --quiet",
+        "params": [
+          "job_id"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Buckets": {
+    "📤 Creación": [
+      {
+        "cmd": "gsutil mb -p {project_id} -l {region} gs://{bucket_name}",
+        "params": [
+          "project_id",
+          "region",
+          "bucket_name"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gsutil rm -r gs://{bucket_name}",
+        "params": [
+          "bucket_name"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Topics": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud pubsub topics create {topic_name}",
+        "params": [
+          "topic_name"
+        ],
+        "param_hints": {}
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud pubsub topics delete {topic_name}",
+        "params": [
+          "topic_name"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Seguridad": {
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud projects add-iam-policy-binding {project_id} --member {member} --role {role}",
+        "params": [
+          "project_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud projects remove-iam-policy-binding {project_id} --member {member} --role {role}",
+        "params": [
+          "project_id",
+          "member",
+          "role"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Configuración": {
+    "⚙️ Configuración": [
+      {
+        "cmd": "gcloud dataflow jobs update {job_id} --max_num_workers {max_workers}",
+        "params": [
+          "job_id",
+          "max_workers"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataflow jobs update {job_id} --worker_harness_container_image {image}",
+        "params": [
+          "job_id",
+          "image"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud dataflow jobs update {job_id} --service_account_email {service_account}",
+        "params": [
+          "job_id",
+          "service_account"
+        ],
+        "param_hints": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "Catálogos": {
+    "🔎 Consulta": {
+      "Listar catálogos": {
+        "cmd": "gcloud biglake catalogs list --location={region}",
+        "params": ["region"]
+      },
+      "Describir catálogo": {
+        "cmd": "gcloud biglake catalogs describe {catalog} --location={region}",
+        "params": ["catalog", "region"]
+      }
+    },
+    "📤 Creación": {
+      "Crear catálogo": {
+        "cmd": "gcloud biglake catalogs create {catalog} --location={region} --description={description}",
+        "params": ["catalog", "region", "description"]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar catálogo": {
+        "cmd": "gcloud biglake catalogs update {catalog} --location={region} --description={description}",
+        "params": ["catalog", "region", "description"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar catálogo": {
+        "cmd": "gcloud biglake catalogs delete {catalog} --location={region}",
+        "params": ["catalog", "region"]
+      }
+    }
+  },
+
+  "Bases de datos": {
+    "🔎 Consulta": {
+      "Listar bases de datos": {
+        "cmd": "gcloud biglake databases list --catalog={catalog} --location={region}",
+        "params": ["catalog", "region"]
+      },
+      "Describir base de datos": {
+        "cmd": "gcloud biglake databases describe {database} --catalog={catalog} --location={region}",
+        "params": ["database", "catalog", "region"]
+      }
+    },
+    "📤 Creación": {
+      "Crear base de datos": {
+        "cmd": "gcloud biglake databases create {database} --catalog={catalog} --location={region} --description={description}",
+        "params": ["database", "catalog", "region", "description"]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar base de datos": {
+        "cmd": "gcloud biglake databases update {database} --catalog={catalog} --location={region} --description={description}",
+        "params": ["database", "catalog", "region", "description"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar base de datos": {
+        "cmd": "gcloud biglake databases delete {database} --catalog={catalog} --location={region}",
+        "params": ["database", "catalog", "region"]
+      }
+    }
+  },
+
+  "Tablas": {
+    "🔎 Consulta": {
+      "Listar tablas": {
+        "cmd": "gcloud biglake tables list --database={database} --catalog={catalog} --location={region}",
+        "params": ["database", "catalog", "region"]
+      },
+      "Describir tabla": {
+        "cmd": "gcloud biglake tables describe {table} --database={database} --catalog={catalog} --location={region}",
+        "params": ["table", "database", "catalog", "region"]
+      }
+    },
+    "📤 Creación": {
+      "Crear tabla externa": {
+        "cmd": "gcloud biglake tables create {table} --database={database} --catalog={catalog} --location={region} --type=EXTERNAL --schema={schema_file} --connection={connection} --input-file-format={engine}",
+        "params": ["table", "database", "catalog", "region", "schema_file", "connection", "engine"]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar tabla": {
+        "cmd": "gcloud biglake tables update {table} --database={database} --catalog={catalog} --location={region} --schema={schema_file}",
+        "params": ["table", "database", "catalog", "region", "schema_file"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar tabla": {
+        "cmd": "gcloud biglake tables delete {table} --database={database} --catalog={catalog} --location={region}",
+        "params": ["table", "database", "catalog", "region"]
+      }
+    }
+  },
+
+  "Conexiones": {
+    "🔎 Consulta": {
+      "Listar conexiones": {
+        "cmd": "gcloud biglake connections list --location={region}",
+        "params": ["region"]
+      }
+    },
+    "📤 Creación": {
+      "Crear conexión": {
+        "cmd": "gcloud biglake connections create {connection} --location={region} --project={project} --connection-type={type} --properties={properties}",
+        "params": ["connection", "region", "project", "type", "properties"]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar conexión": {
+        "cmd": "gcloud biglake connections delete {connection} --location={region}",
+        "params": ["connection", "region"]
+      }
+    }
+  }
+}

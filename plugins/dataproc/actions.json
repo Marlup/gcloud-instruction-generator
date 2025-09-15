@@ -1,0 +1,241 @@
+{
+  "Clusters": {
+    "📤 Creación": [
+      {
+        "cmd": "gcloud dataproc clusters create {nombre_cluster} --region={region} --zone={zona} --num-workers={num_workers}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "zona",
+          "num_workers"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud dataproc clusters create {nombre_cluster} --region={region} --image-version={version_imagen} --properties={propiedades}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "version_imagen",
+          "propiedades"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "📝 Modificación": [
+      {
+        "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --num-workers={num_workers}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "num_workers"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --update-labels={etiquetas}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "etiquetas"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --update-master-size={tamaño_master}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "tamaño_master"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataproc clusters delete {nombre_cluster} --region={region}",
+        "params": [
+          "nombre_cluster",
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud dataproc clusters add-iam-policy-binding {nombre_cluster} --region={region} --member={miembro} --role={rol}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud dataproc clusters remove-iam-policy-binding {nombre_cluster} --region={region} --member={miembro} --role={rol}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ]
+  },
+  "Jobs": {
+    "⚡ Jobs/Procesamiento": [
+      {
+        "cmd": "gcloud dataproc jobs submit pyspark --cluster={nombre_cluster} --region={region} --file={ruta_script} -- {args}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "ruta_script",
+          "args"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud dataproc jobs submit spark --cluster={nombre_cluster} --region={region} --class={clase_principal} --jars={ruta_jar} -- {args}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "clase_principal",
+          "ruta_jar",
+          "args"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      },
+      {
+        "cmd": "gcloud dataproc jobs submit hive --cluster={nombre_cluster} --region={region} --file={ruta_script_hive}",
+        "params": [
+          "nombre_cluster",
+          "region",
+          "ruta_script_hive"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gcloud dataproc jobs delete {job_id} --region={region}",
+        "params": [
+          "job_id",
+          "region"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ]
+  },
+  "Buckets": {
+    "📤 Creación": [
+      {
+        "cmd": "gsutil mb -p {proyecto} -c {clase} -l {region} gs://{nombre_bucket}",
+        "params": [
+          "proyecto",
+          "clase",
+          "region",
+          "nombre_bucket"
+        ],
+        "param_hints": {
+          "region": {
+            "type": "combo",
+            "ref": "regions"
+          }
+        }
+      }
+    ],
+    "❌ Eliminación": [
+      {
+        "cmd": "gsutil rm -r gs://{nombre_bucket}",
+        "params": [
+          "nombre_bucket"
+        ],
+        "param_hints": {}
+      }
+    ]
+  },
+  "Seguridad": {
+    "🔐 Seguridad": [
+      {
+        "cmd": "gcloud projects add-iam-policy-binding {proyecto} --member={miembro} --role={rol}",
+        "params": [
+          "proyecto",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {}
+      },
+      {
+        "cmd": "gcloud projects remove-iam-policy-binding {proyecto} --member={miembro} --role={rol}",
+        "params": [
+          "proyecto",
+          "miembro",
+          "rol"
+        ],
+        "param_hints": {}
+      }
+    ]
+  }
+}
