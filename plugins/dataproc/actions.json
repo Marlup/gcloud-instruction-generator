@@ -1,7 +1,7 @@
 {
   "Clusters": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "gcloud dataproc clusters create {nombre_cluster} --region={region} --zone={zona} --num-workers={num_workers}",
         "params": [
           "nombre_cluster",
@@ -16,7 +16,7 @@
           }
         }
       },
-      {
+      "Creates a new resource. (variant)": {
         "cmd": "gcloud dataproc clusters create {nombre_cluster} --region={region} --image-version={version_imagen} --properties={propiedades}",
         "params": [
           "nombre_cluster",
@@ -31,9 +31,9 @@
           }
         }
       }
-    ],
-    "📝 Modificación": [
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --num-workers={num_workers}",
         "params": [
           "nombre_cluster",
@@ -47,21 +47,7 @@
           }
         }
       },
-      {
-        "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --update-labels={etiquetas}",
-        "params": [
-          "nombre_cluster",
-          "region",
-          "etiquetas"
-        ],
-        "param_hints": {
-          "region": {
-            "type": "combo",
-            "ref": "regions"
-          }
-        }
-      },
-      {
+      "Updates an existing resource. (variant)": {
         "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --update-master-size={tamaño_master}",
         "params": [
           "nombre_cluster",
@@ -75,9 +61,9 @@
           }
         }
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gcloud dataproc clusters delete {nombre_cluster} --region={region}",
         "params": [
           "nombre_cluster",
@@ -90,9 +76,9 @@
           }
         }
       }
-    ],
-    "🔐 Seguridad": [
-      {
+    },
+    "🔐 Seguridad": {
+      "Adds IAM policy binding.": {
         "cmd": "gcloud dataproc clusters add-iam-policy-binding {nombre_cluster} --region={region} --member={miembro} --role={rol}",
         "params": [
           "nombre_cluster",
@@ -107,7 +93,7 @@
           }
         }
       },
-      {
+      "Removes IAM policy binding.": {
         "cmd": "gcloud dataproc clusters remove-iam-policy-binding {nombre_cluster} --region={region} --member={miembro} --role={rol}",
         "params": [
           "nombre_cluster",
@@ -122,11 +108,11 @@
           }
         }
       }
-    ]
+    }
   },
   "Jobs": {
-    "⚡ Jobs/Procesamiento": [
-      {
+    "⚡ Jobs/Procesamiento": {
+      "Submits a Dataproc job.": {
         "cmd": "gcloud dataproc jobs submit pyspark --cluster={nombre_cluster} --region={region} --file={ruta_script} -- {args}",
         "params": [
           "nombre_cluster",
@@ -141,23 +127,7 @@
           }
         }
       },
-      {
-        "cmd": "gcloud dataproc jobs submit spark --cluster={nombre_cluster} --region={region} --class={clase_principal} --jars={ruta_jar} -- {args}",
-        "params": [
-          "nombre_cluster",
-          "region",
-          "clase_principal",
-          "ruta_jar",
-          "args"
-        ],
-        "param_hints": {
-          "region": {
-            "type": "combo",
-            "ref": "regions"
-          }
-        }
-      },
-      {
+      "Submits a Dataproc job. (variant)": {
         "cmd": "gcloud dataproc jobs submit hive --cluster={nombre_cluster} --region={region} --file={ruta_script_hive}",
         "params": [
           "nombre_cluster",
@@ -171,9 +141,9 @@
           }
         }
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gcloud dataproc jobs delete {job_id} --region={region}",
         "params": [
           "job_id",
@@ -186,11 +156,11 @@
           }
         }
       }
-    ]
+    }
   },
   "Buckets": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Performs an operation on a resource.": {
         "cmd": "gsutil mb -p {proyecto} -c {clase} -l {region} gs://{nombre_bucket}",
         "params": [
           "proyecto",
@@ -205,20 +175,20 @@
           }
         }
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Performs an operation on a resource.": {
         "cmd": "gsutil rm -r gs://{nombre_bucket}",
         "params": [
           "nombre_bucket"
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Seguridad": {
-    "🔐 Seguridad": [
-      {
+    "🔐 Seguridad": {
+      "Adds IAM policy binding.": {
         "cmd": "gcloud projects add-iam-policy-binding {proyecto} --member={miembro} --role={rol}",
         "params": [
           "proyecto",
@@ -227,7 +197,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Removes IAM policy binding.": {
         "cmd": "gcloud projects remove-iam-policy-binding {proyecto} --member={miembro} --role={rol}",
         "params": [
           "proyecto",
@@ -236,6 +206,6 @@
         ],
         "param_hints": {}
       }
-    ]
+    }
   }
 }

@@ -42,10 +42,9 @@ def mostrar_parametros(action: str, action_definition: Dict[str, str]):
     ttk.Label(frame_params, text=f"Parámetros para {action}:").pack(anchor="w", pady=5)
 
     net_parameters = get_frame_parameters(current_service.parameters, action_params)
-    print("\nShow parameters")
-    print("------------------")
+    #print("\nShow parameters\n----------------")
     for parameter_key, param_values in net_parameters.items():
-        print(f"parameter_key -> {parameter_key}")
+        #print(f"parameter_key -> {parameter_key}")
         row = ttk.Frame(frame_params)
         row.pack(fill="x", pady=2)
 
@@ -239,26 +238,25 @@ query_output_panel = ScrolledText(frame_right, width=45, height=14, wrap="word",
 query_output_panel.pack(fill="both", expand=False, pady=5)
 query_output_panel.text.config(state="normal")
 
-# execution_output_panel = ejecución comando (readonly)
-execution_output_panel = ScrolledText(frame_right, width=45, height=12, wrap="word", bootstyle=SECONDARY)
-execution_output_panel.pack(fill="both", expand=True, pady=5)
-execution_output_panel.text.config(state="disabled")
-
-btn_frame = ttk.Frame(frame_right)
+btn_frame = ttk.Frame(frame_right, padding=20)
 btn_frame.pack(pady=5)
-#ttk.Button(btn_frame, text="✅ Generar comando\n             (ctrl + g)",
-#           bootstyle=SUCCESS, command=generate_command).pack(side="left", padx=5)
+
 ttk.Button(
-    btn_frame, 
+    frame_right, 
     text="📋 Copiar", 
     bootstyle=INFO,
     command=copiar_comando
     ).pack(side="left", padx=5)
 ttk.Button(
-    btn_frame,
+    frame_right,
     text="▶ Ejecutar", 
     bootstyle=PRIMARY,
     command=execute_command
     ).pack(side="left", padx=5)
+
+# execution_output_panel = ejecución comando (readonly)
+execution_output_panel = ScrolledText(frame_right, width=45, height=12, wrap="word", bootstyle=SECONDARY)
+execution_output_panel.pack(fill="both", expand=False, pady=5)
+execution_output_panel.text.config(state="disabled")
 
 root.mainloop()

@@ -1,16 +1,16 @@
 {
   "Topics": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "gcloud pubsub topics create {topic}",
         "params": [
           "topic"
         ],
         "param_hints": {}
       }
-    ],
-    "📝 Modificación": [
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "gcloud pubsub topics update {topic} --message-retention-duration={duration}",
         "params": [
           "topic",
@@ -18,7 +18,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Updates an existing resource. (variant)": {
         "cmd": "gcloud pubsub topics update {topic} --labels={labels}",
         "params": [
           "topic",
@@ -26,18 +26,18 @@
         ],
         "param_hints": {}
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gcloud pubsub topics delete {topic}",
         "params": [
           "topic"
         ],
         "param_hints": {}
       }
-    ],
-    "🔐 Seguridad": [
-      {
+    },
+    "🔐 Seguridad": {
+      "Adds IAM policy binding.": {
         "cmd": "gcloud pubsub topics add-iam-policy-binding {topic} --member={member} --role={role}",
         "params": [
           "topic",
@@ -46,7 +46,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Removes IAM policy binding.": {
         "cmd": "gcloud pubsub topics remove-iam-policy-binding {topic} --member={member} --role={role}",
         "params": [
           "topic",
@@ -55,27 +55,27 @@
         ],
         "param_hints": {}
       },
-      {
+      "Retrieves IAM policy.": {
         "cmd": "gcloud pubsub topics get-iam-policy {topic}",
         "params": [
           "topic"
         ],
         "param_hints": {}
       }
-    ],
-    "⚙️ Configuración": [
-      {
+    },
+    "⚙️ Configuración": {
+      "Describes the resource.": {
         "cmd": "gcloud pubsub topics describe {topic}",
         "params": [
           "topic"
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Subscriptions": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "gcloud pubsub subscriptions create {subscription} --topic={topic}",
         "params": [
           "subscription",
@@ -83,9 +83,9 @@
         ],
         "param_hints": {}
       }
-    ],
-    "📝 Modificación": [
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "gcloud pubsub subscriptions update {subscription} --ack-deadline={deadline}",
         "params": [
           "subscription",
@@ -93,7 +93,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Updates an existing resource. (variant)": {
         "cmd": "gcloud pubsub subscriptions update {subscription} --labels={labels}",
         "params": [
           "subscription",
@@ -101,18 +101,18 @@
         ],
         "param_hints": {}
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gcloud pubsub subscriptions delete {subscription}",
         "params": [
           "subscription"
         ],
         "param_hints": {}
       }
-    ],
-    "🔐 Seguridad": [
-      {
+    },
+    "🔐 Seguridad": {
+      "Adds IAM policy binding.": {
         "cmd": "gcloud pubsub subscriptions add-iam-policy-binding {subscription} --member={member} --role={role}",
         "params": [
           "subscription",
@@ -121,7 +121,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Removes IAM policy binding.": {
         "cmd": "gcloud pubsub subscriptions remove-iam-policy-binding {subscription} --member={member} --role={role}",
         "params": [
           "subscription",
@@ -130,27 +130,27 @@
         ],
         "param_hints": {}
       },
-      {
+      "Retrieves IAM policy.": {
         "cmd": "gcloud pubsub subscriptions get-iam-policy {subscription}",
         "params": [
           "subscription"
         ],
         "param_hints": {}
       }
-    ],
-    "⚙️ Configuración": [
-      {
+    },
+    "⚙️ Configuración": {
+      "Describes the resource.": {
         "cmd": "gcloud pubsub subscriptions describe {subscription}",
         "params": [
           "subscription"
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Messages": {
-    "📡 Mensajería": [
-      {
+    "📡 Mensajería": {
+      "Publishes a message to a topic.": {
         "cmd": "gcloud pubsub topics publish {topic} --message={message}",
         "params": [
           "topic",
@@ -158,7 +158,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Pulls messages from a subscription.": {
         "cmd": "gcloud pubsub subscriptions pull {subscription} --limit={limit} --auto-ack",
         "params": [
           "subscription",
@@ -166,7 +166,7 @@
         ],
         "param_hints": {}
       },
-      {
+      "Pulls messages from a subscription. (variant)": {
         "cmd": "gcloud pubsub subscriptions pull {subscription} --limit={limit}",
         "params": [
           "subscription",
@@ -174,6 +174,6 @@
         ],
         "param_hints": {}
       }
-    ]
+    }
   }
 }

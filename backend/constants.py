@@ -1,6 +1,6 @@
 ACTIONS_FILENAME = "actions.json"
 PARAMETERS_FILENAME = "params.json"
-GCP_CREDENTIALS_FILENAME = "igen-bknd-001-dev-f73009db89a8.json"
+GCP_CREDENTIALS_FILENAME = "igen-bknd-001-dev-4284ed24e7b6.json"
 
 emoji_map = {
     "🔎": ":magnifying_glass_tilted_left:",

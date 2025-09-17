@@ -1,16 +1,16 @@
 {
   "Datasets": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "bq mk --dataset {dataset}",
         "params": [
           "dataset"
         ],
         "param_hints": {}
       }
-    ],
-    "📝 Modificación": [
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "bq update --dataset {dataset} --description {descripcion}",
         "params": [
           "dataset",
@@ -18,20 +18,20 @@
         ],
         "param_hints": {}
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "bq rm -r -f {dataset}",
         "params": [
           "dataset"
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Tables": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "bq mk --table {dataset}.{tabla} {schema}",
         "params": [
           "dataset",
@@ -40,9 +40,9 @@
         ],
         "param_hints": {}
       }
-    ],
-    "📝 Modificación": [
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "bq update --table {dataset}.{tabla} --description {descripcion}",
         "params": [
           "dataset",
@@ -51,9 +51,9 @@
         ],
         "param_hints": {}
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "bq rm -f {dataset}.{tabla}",
         "params": [
           "dataset",
@@ -61,18 +61,18 @@
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Jobs": {
-    "⚡ Jobs/Procesamiento": [
-      {
+    "⚡ Jobs/Procesamiento": {
+      "Executes a SQL query.": {
         "cmd": "bq query --use_legacy_sql=false '{consulta}'",
         "params": [
           "consulta"
         ],
         "param_hints": {}
       },
-      {
+      "Deletes the specified resource.": {
         "cmd": "bq load --source_format={formato} {dataset}.{tabla} gs://{ruta_archivo}",
         "params": [
           "dataset",
@@ -82,9 +82,9 @@
         ],
         "param_hints": {}
       }
-    ],
-    "📝 Modificación": [
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "bq update --job {job_id} --configuration {configuracion}",
         "params": [
           "job_id",
@@ -92,11 +92,11 @@
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Buckets": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Performs an operation on a resource.": {
         "cmd": "gsutil mb -p {proyecto} -c {clase} -l {region} gs://{nombre_bucket}",
         "params": [
           "proyecto",
@@ -111,18 +111,18 @@
           }
         }
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gsutil rm -r gs://{nombre_bucket}",
         "params": [
           "nombre_bucket"
         ],
         "param_hints": {}
       }
-    ],
-    "🔐 Seguridad": [
-      {
+    },
+    "🔐 Seguridad": {
+      "Modifies IAM policy bindings.": {
         "cmd": "gsutil iam ch {miembro}:{rol} gs://{nombre_bucket}",
         "params": [
           "miembro",
@@ -131,38 +131,29 @@
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Topics": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "gcloud pubsub topics create {nombre_topico}",
         "params": [
           "nombre_topico"
         ],
         "param_hints": {}
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gcloud pubsub topics delete {nombre_topico}",
         "params": [
           "nombre_topico"
         ],
         "param_hints": {}
       }
-    ],
-    "🔐 Seguridad": [
-      {
-        "cmd": "gcloud pubsub topics add-iam-policy-binding {nombre_topico} --member {miembro} --role {rol}",
-        "params": [
-          "nombre_topico",
-          "miembro",
-          "rol"
-        ],
-        "param_hints": {}
-      },
-      {
+    },
+    "🔐 Seguridad": {
+      "Modifies IAM policy bindings.": {
         "cmd": "gcloud pubsub topics remove-iam-policy-binding {nombre_topico} --member {miembro} --role {rol}",
         "params": [
           "nombre_topico",
@@ -171,11 +162,11 @@
         ],
         "param_hints": {}
       }
-    ]
+    }
   },
   "Environments": {
-    "📤 Creación": [
-      {
+    "📤 Creación": {
+      "Creates a new resource.": {
         "cmd": "gcloud composer environments create {nombre_entorno} --location {region} --zone {zona} --image-version {version_imagen} --node-count {cantidad_nodos}",
         "params": [
           "nombre_entorno",
@@ -191,23 +182,9 @@
           }
         }
       }
-    ],
-    "📝 Modificación": [
-      {
-        "cmd": "gcloud composer environments update {nombre_entorno} --location {region} --update-pypi-package {paquete}",
-        "params": [
-          "nombre_entorno",
-          "region",
-          "paquete"
-        ],
-        "param_hints": {
-          "region": {
-            "type": "combo",
-            "ref": "regions"
-          }
-        }
-      },
-      {
+    },
+    "📝 Modificación": {
+      "Updates an existing resource.": {
         "cmd": "gcloud composer environments update {nombre_entorno} --location {region} --update-labels {etiquetas}",
         "params": [
           "nombre_entorno",
@@ -221,9 +198,9 @@
           }
         }
       }
-    ],
-    "❌ Eliminación": [
-      {
+    },
+    "❌ Eliminación": {
+      "Deletes the specified resource.": {
         "cmd": "gcloud composer environments delete {nombre_entorno} --location {region}",
         "params": [
           "nombre_entorno",
@@ -236,24 +213,9 @@
           }
         }
       }
-    ],
-    "🔐 Seguridad": [
-      {
-        "cmd": "gcloud composer environments add-iam-policy-binding {nombre_entorno} --location {region} --member {miembro} --role {rol}",
-        "params": [
-          "nombre_entorno",
-          "region",
-          "miembro",
-          "rol"
-        ],
-        "param_hints": {
-          "region": {
-            "type": "combo",
-            "ref": "regions"
-          }
-        }
-      },
-      {
+    },
+    "🔐 Seguridad": {
+      "Modifies IAM policy bindings.": {
         "cmd": "gcloud composer environments remove-iam-policy-binding {nombre_entorno} --location {region} --member {miembro} --role {rol}",
         "params": [
           "nombre_entorno",
@@ -268,6 +230,6 @@
           }
         }
       }
-    ]
+    }
   }
 }

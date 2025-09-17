@@ -1,6 +1,7 @@
 import os
 import json
 from typing import Dict
+import logging
 
 from backend.services.base_service import BaseGCloudService
 
@@ -70,6 +71,12 @@ class ConfigurationManager():
     
         # -------- Load credentials --------
     def load_credentials(self):
+        try:
+            return self._load_credentials()
+        except Exception as e:
+            logging.warning("ConfigurationManager - load_credentials", f"Exception: {e}")
+    
+    def _load_credentials(self):
         creds = Credentials.from_service_account_file(
             os.path.join("config", GCP_CREDENTIALS_FILENAME)
         )
