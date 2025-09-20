@@ -5,7 +5,7 @@ from ttkbootstrap.scrolled import ScrolledText
 import tkinter.font as tkfont
 
 # Backend
-from backend.constants import subcategory_colors
+from backend.constants import subresource_colors
 from backend.infrastructure.utils import get_frame_parameters
 from backend.infrastructure.configuration_manager import ConfigurationManager
 from backend.infrastructure.di_container import DIContainer
@@ -43,46 +43,45 @@ def mostrar_parametros(action: str, action_definition: Dict[str, str]):
 
     net_parameters = get_frame_parameters(current_service.parameters, action_params)
     #print("\nShow parameters\n----------------")
-    for parameter_key, param_values in net_parameters.items():
-        #print(f"parameter_key -> {parameter_key}")
+    for param_key, param_values in net_parameters.items():
+        #print(f"param_key -> {param_key}")
         row = ttk.Frame(frame_params)
         row.pack(fill="x", pady=2)
 
-        if isinstance(param_values, (list, tuple)):
-            ttk.Label(row, text=f"<{parameter_key}>: ", width=15).pack(side="left")
+        make_parameter_entry(row, param_key, param_values)
 
-            entry = ttk.Combobox(row, values=param_values, width=30, bootstyle=PRIMARY)
-            entry.set(f"<{parameter_key}>")
-            entry.pack(side="left", expand=True, fill="x")
-            param_entries[parameter_key] = entry
-            entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
-        else:
-            entry = ttk.Entry(row, bootstyle=SECONDARY)
-            entry.insert(0, f"<{parameter_key}>")
-            entry.pack(side="left", expand=True, fill="x")
-            param_entries[parameter_key] = entry
-            entry.bind("<KeyRelease>", lambda e: generate_command())
+def make_parameter_entry(parent_row, name, values):
+    print(f"<{name}>: ")
+    if isinstance(values, (list, tuple)):
+        ttk.Label(parent_row, text=f"<{name}>: ", width=15).pack(side="left")
+
+        entry = ttk.Combobox(parent_row, values=values, width=30, bootstyle=PRIMARY)
+        entry.set(f"<{name}>")
+        entry.pack(side="left", expand=True, fill="x")
+        param_entries[name] = entry
+        entry.bind("<<ComboboxSelected>>", lambda e: generate_command())
+    else:
+        entry = ttk.Entry(parent_row, bootstyle=SECONDARY)
+        entry.insert(0, f"<{name}>")
+        entry.pack(side="left", expand=True, fill="x")
+        param_entries[name] = entry
+        entry.bind("<KeyRelease>", lambda e: generate_command())
 
 def generate_command():
     global selected_action, action_cmd, action_params
-    #query_output_panel.text.config(state="normal")
     if not selected_action or not action_cmd:
         query_output_panel.delete("1.0", "end")
         query_output_panel.insert("end", "⚠️ Selecciona primero una acción en el árbol")
-        #query_output_panel.text.config(state="normal")
         return
 
     params = {k: e.get() for k, e in param_entries.items()}
+    #print(params)
     comando = current_service.build_command(action_cmd, params)
     query_output_panel.delete("1.0", "end")
     query_output_panel.insert("end", comando)
-    #query_output_panel.text.config(state="normal")
-
 
 def copiar_comando():
-    #query_output_panel.text.config(state="normal")
     content = query_output_panel.get("1.0", "end").strip()
-    #query_output_panel.text.config(state="disabled")
 
     if content:
         root.clipboard_clear()
@@ -104,11 +103,11 @@ def on_tree_select(event):
     parent_id = tree.parent(item_id)
     if not parent_id:
         return
-    subcat = tree.item(parent_id, "text")
+    category = tree.item(parent_id, "text")
     cat_id = tree.parent(parent_id)
-    category = tree.item(cat_id, "text")
-    if category:
-        action_definition = current_service.get_action_def(category, subcat, action)
+    resource = tree.item(cat_id, "text")
+    if resource:
+        action_definition = current_service.get_action_def(resource, category, action)
         mostrar_parametros(action, action_definition)
     
     generate_command()
@@ -160,13 +159,13 @@ def on_tab_change(event):
 
 def refresh_tree():
     c = 0
-    for category, subcats in current_service.actions.items():
-        cat_id = tree.insert("", "end", text=category, open=True)
-        for subcat, actions in subcats.items():
-            subcat_name = subcat.split(" ", 1)[-1]
-            sub_id = tree.insert(cat_id, "end", text=subcat, open=True, tags=(subcat_name,))
-            if subcat_name in subcategory_colors:
-                tree.tag_configure(subcat_name, **subcategory_colors[subcat_name])
+    for resource, categories in current_service.actions.items():
+        cat_id = tree.insert("", "end", text=resource, open=True)
+        for category, actions in categories.items():
+            category_name = category.split(" ", 1)[-1]
+            sub_id = tree.insert(cat_id, "end", text=category, open=True, tags=(category_name,))
+            if category_name in subresource_colors:
+                tree.tag_configure(category_name, **subresource_colors[category_name])
             for action in actions:
                 tree.insert(sub_id, "end", id=f"tree-action-label-{c}", text=action)
                 c += 1

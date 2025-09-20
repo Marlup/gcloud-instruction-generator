@@ -27,7 +27,7 @@ class BaseGCloudService():
     # Generación de comandos
     # -----------------------------
     @abstractmethod
-    def build_command(self, command: str, params: Dict[str, Any]) -> str:
+    def build_command(self, base_command: str, params: Dict[str, Any]) -> str:
         """
         Construye un comando a partir de una plantilla y parámetros.
         - template: str con placeholders {param}
@@ -37,7 +37,8 @@ class BaseGCloudService():
         if self.on_concat_project_id and "project" not in command_params:
             command_params["project"] = self.configuration.project
 
-        return command + "".format(**command_params)
+        command = base_command + "".format(**command_params)
+        return command.format(**command_params)
 
     # -----------------------------
     # Exportación IaC
