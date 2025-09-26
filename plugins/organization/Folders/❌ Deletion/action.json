@@ -1,0 +1,9 @@
+{
+  "Delete folder": {
+    "cmd": "gcloud resource-manager folders delete {folder_id}",
+    "params": [
+      "folder_id"
+    ],
+    "param_hints": {}
+  }
+}

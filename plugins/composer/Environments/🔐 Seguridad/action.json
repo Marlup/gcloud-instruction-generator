@@ -1,0 +1,17 @@
+{
+  "Modifies IAM policy bindings.": {
+    "cmd": "gcloud composer environments remove-iam-policy-binding {nombre_entorno} --location {region} --member {miembro} --role {rol}",
+    "params": [
+      "nombre_entorno",
+      "region",
+      "miembro",
+      "rol"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

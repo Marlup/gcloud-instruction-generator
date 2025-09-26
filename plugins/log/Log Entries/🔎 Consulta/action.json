@@ -1,0 +1,26 @@
+{
+  "Leer entradas de logs": {
+    "cmd": "gcloud logging read \"{filter}\" --limit={limit} --project={project}",
+    "params": [
+      "filter",
+      "limit",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Tail en tiempo real": {
+    "cmd": "gcloud logging tail \"{filter}\" --project={project}",
+    "params": [
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Listar logs": {
+    "cmd": "gcloud logging logs list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

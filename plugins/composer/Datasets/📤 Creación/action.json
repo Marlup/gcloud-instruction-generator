@@ -1,0 +1,9 @@
+{
+  "Creates a new resource.": {
+    "cmd": "bq mk --dataset {dataset}",
+    "params": [
+      "dataset"
+    ],
+    "param_hints": {}
+  }
+}

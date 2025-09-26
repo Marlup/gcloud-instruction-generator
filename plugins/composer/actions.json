@@ -64,7 +64,7 @@
     }
   },
   "Jobs": {
-    "⚡ Jobs/Procesamiento": {
+    "⚡ Jobs-Procesamiento": {
       "Executes a SQL query.": {
         "cmd": "bq query --use_legacy_sql=false '{consulta}'",
         "params": [

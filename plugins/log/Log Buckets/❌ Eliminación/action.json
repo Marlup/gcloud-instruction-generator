@@ -1,0 +1,11 @@
+{
+  "Borrar bucket": {
+    "cmd": "gcloud logging buckets delete {bucket_id} --location={location} --project={project}",
+    "params": [
+      "bucket_id",
+      "location",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

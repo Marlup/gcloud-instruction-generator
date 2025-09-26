@@ -1,0 +1,11 @@
+{
+  "Quitar binding de proyecto": {
+    "cmd": "gcloud projects remove-iam-policy-binding {project} --member={member} --role={role}",
+    "params": [
+      "project",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  }
+}

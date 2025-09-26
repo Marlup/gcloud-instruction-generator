@@ -1,0 +1,10 @@
+{
+  "Crear catálogo": {
+    "cmd": "gcloud biglake catalogs create {catalog} --location={region} --description={description}",
+    "params": [
+      "catalog",
+      "region",
+      "description"
+    ]
+  }
+}

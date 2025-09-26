@@ -92,7 +92,7 @@ resource "google_bigquery_dataset" "{config["dataset"]}" {{
     # -----------------------------
     # Listado de acciones soportadas
     # -----------------------------
-    def list_actions(self, on_categories: bool = True) -> List[str] | Dict[str, List[str]]:
+    def load_actions(self, on_categories: bool = True) -> List[str] | Dict[str, List[str]]:
         if on_categories:
             result = {}
         else:

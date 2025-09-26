@@ -1,0 +1,17 @@
+{
+  "Runs a Dataflow job.": {
+    "cmd": "gcloud dataflow jobs run {job_id} --gcs_location {gcs_location} --parameters {parameters} --region {region}",
+    "params": [
+      "job_id",
+      "gcs_location",
+      "parameters",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

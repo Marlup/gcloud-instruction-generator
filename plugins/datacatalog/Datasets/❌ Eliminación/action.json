@@ -1,0 +1,9 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud data-catalog datasets delete --dataset {dataset}",
+    "params": [
+      "dataset"
+    ],
+    "param_hints": {}
+  }
+}

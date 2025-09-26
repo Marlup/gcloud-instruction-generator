@@ -1,0 +1,14 @@
+{
+  "Crear tabla externa": {
+    "cmd": "gcloud biglake tables create {table} --database={database} --catalog={catalog} --location={region} --type=EXTERNAL --schema={schema_file} --connection={connection} --input-file-format={engine}",
+    "params": [
+      "table",
+      "database",
+      "catalog",
+      "region",
+      "schema_file",
+      "connection",
+      "engine"
+    ]
+  }
+}

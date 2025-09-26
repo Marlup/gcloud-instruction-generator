@@ -1,0 +1,23 @@
+{
+  "Añadir binding a proyecto": {
+    "cmd": "gcloud projects add-iam-policy-binding {project} --member={member} --role={role}",
+    "params": [
+      "project",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Añadir binding condicional a proyecto": {
+    "cmd": "gcloud projects add-iam-policy-binding {project} --member={member} --role={role} --condition=expression='{expr}',title='{title}',description='{desc}'",
+    "params": [
+      "project",
+      "member",
+      "role",
+      "expr",
+      "title",
+      "desc"
+    ],
+    "param_hints": {}
+  }
+}

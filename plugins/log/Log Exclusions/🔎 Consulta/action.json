@@ -1,0 +1,17 @@
+{
+  "Listar exclusiones": {
+    "cmd": "gcloud logging exclusions list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir exclusión": {
+    "cmd": "gcloud logging exclusions describe {exclusion_id} --project={project}",
+    "params": [
+      "exclusion_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "Create keyring": {
+    "cmd": "gcloud kms keyrings create {keyring} --location={region}",
+    "params": [
+      "keyring",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Create key": {
+    "cmd": "gcloud kms keys create {key} --keyring={keyring} --location={region} --purpose={purpose}",
+    "params": [
+      "key",
+      "keyring",
+      "region",
+      "purpose"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      },
+      "purpose": {
+        "type": "combo",
+        "ref": [
+          "encryption",
+          "asymmetric-signing",
+          "asymmetric-decrypt"
+        ]
+      }
+    }
+  },
+  "Create secret (automatic replication)": {
+    "cmd": "gcloud secrets create {secret} --replication-policy=automatic --project={project_id}",
+    "params": [
+      "secret",
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "Create secret (user-managed replication)": {
+    "cmd": "gcloud secrets create {secret} --replication-policy=user-managed --locations={regions} --project={project_id}",
+    "params": [
+      "secret",
+      "regions",
+      "project_id"
+    ],
+    "param_hints": {
+      "regions": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud data-catalog jobs create --job_id {job_id} --location {location} --query {query}",
+    "params": [
+      "job_id",
+      "location",
+      "query"
+    ],
+    "param_hints": {
+      "location": {
+        "type": "combo",
+        "ref": "bigquery_locations"
+      }
+    }
+  },
+  "Updates an existing resource.": {
+    "cmd": "gcloud data-catalog jobs update --job_id {job_id} --location {location} --query {query}",
+    "params": [
+      "job_id",
+      "location",
+      "query"
+    ],
+    "param_hints": {
+      "location": {
+        "type": "combo",
+        "ref": "bigquery_locations"
+      }
+    }
+  },
+  "Deletes the specified resource.": {
+    "cmd": "gcloud data-catalog jobs delete --job_id {job_id} --location {location}",
+    "params": [
+      "job_id",
+      "location"
+    ],
+    "param_hints": {
+      "location": {
+        "type": "combo",
+        "ref": "bigquery_locations"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "Adds IAM policy binding.": {
+    "cmd": "gcloud projects add-iam-policy-binding {proyecto} --member={miembro} --role={rol}",
+    "params": [
+      "proyecto",
+      "miembro",
+      "rol"
+    ],
+    "param_hints": {}
+  },
+  "Removes IAM policy binding.": {
+    "cmd": "gcloud projects remove-iam-policy-binding {proyecto} --member={miembro} --role={rol}",
+    "params": [
+      "proyecto",
+      "miembro",
+      "rol"
+    ],
+    "param_hints": {}
+  }
+}

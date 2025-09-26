@@ -1,0 +1,22 @@
+{
+  "Copiar recursivo": {
+    "cmd": "gcloud storage cp -r {src} {dest}",
+    "params": [
+      "src",
+      "dest"
+    ]
+  },
+  "Eliminar recursivo": {
+    "cmd": "gcloud storage rm -r {src}",
+    "params": [
+      "src"
+    ]
+  },
+  "Comparar buckets": {
+    "cmd": "gcloud storage diff gs://{bucket1} gs://{bucket2}",
+    "params": [
+      "bucket1",
+      "bucket2"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "Establecer IAM desde archivo": {
+    "cmd": "gcloud storage buckets set-iam-policy {bucket} {policy_file}",
+    "params": [
+      "bucket",
+      "policy_file"
+    ]
+  },
+  "Usar clave de encriptación (CMEK)": {
+    "cmd": "gcloud storage buckets update {bucket} --default-encryption-key={kms_key}",
+    "params": [
+      "bucket",
+      "kms_key"
+    ]
+  },
+  "Quitar clave de encriptación": {
+    "cmd": "gcloud storage buckets update {bucket} --clear-default-encryption-key",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Probar permisos IAM en bucket": {
+    "cmd": "gcloud storage buckets test-iam-permissions {bucket} {permissions}",
+    "params": [
+      "bucket",
+      "permissions"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "List projects": {
+    "cmd": "gcloud projects list",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describe project": {
+    "cmd": "gcloud projects describe {project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "Get IAM policy (project)": {
+    "cmd": "gcloud projects get-iam-policy {project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

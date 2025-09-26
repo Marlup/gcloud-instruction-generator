@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud data-catalog buckets update --bucket {bucket} --labels {labels}",
+    "params": [
+      "bucket",
+      "labels"
+    ],
+    "param_hints": {}
+  }
+}

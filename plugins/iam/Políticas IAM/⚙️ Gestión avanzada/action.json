@@ -1,0 +1,36 @@
+{
+  "Establecer política desde archivo": {
+    "cmd": "gcloud projects set-iam-policy {project} {policy_file}",
+    "params": [
+      "project",
+      "policy_file"
+    ],
+    "param_hints": {}
+  },
+  "Probar permisos IAM": {
+    "cmd": "gcloud projects test-iam-permissions {project} {permissions}",
+    "params": [
+      "project",
+      "permissions"
+    ],
+    "param_hints": {}
+  },
+  "Simular política IAM": {
+    "cmd": "gcloud iam simulate-policy --policy-file={policy_file} --resource={resource} --permissions={permissions}",
+    "params": [
+      "policy_file",
+      "resource",
+      "permissions"
+    ],
+    "param_hints": {}
+  },
+  "Troubleshoot IAM": {
+    "cmd": "gcloud policy-troubleshooter iam troubleshoot --principal-email={email} --resource={resource} --permission={permission}",
+    "params": [
+      "email",
+      "resource",
+      "permission"
+    ],
+    "param_hints": {}
+  }
+}

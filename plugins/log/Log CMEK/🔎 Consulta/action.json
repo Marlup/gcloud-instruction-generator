@@ -1,0 +1,9 @@
+{
+  "Ver CMEK del router": {
+    "cmd": "gcloud logging cmek-settings describe --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Listar métricas": {
+    "cmd": "gcloud logging metrics list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir métrica": {
+    "cmd": "gcloud logging metrics describe {metric_name} --project={project}",
+    "params": [
+      "metric_name",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Listar dashboards": {
+    "cmd": "gcloud monitoring dashboards list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir dashboard": {
+    "cmd": "gcloud monitoring dashboards describe {dashboard_id} --project={project}",
+    "params": [
+      "dashboard_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

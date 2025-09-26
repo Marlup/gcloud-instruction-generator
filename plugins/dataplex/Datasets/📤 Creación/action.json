@@ -1,0 +1,12 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud dataplex datasets create --lake={lake} --dataset-id={dataset_id} --display-name={display_name} --description={description}",
+    "params": [
+      "lake",
+      "dataset_id",
+      "display_name",
+      "description"
+    ],
+    "param_hints": {}
+  }
+}

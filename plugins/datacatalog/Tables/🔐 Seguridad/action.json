@@ -1,0 +1,22 @@
+{
+  "Adds IAM policy binding.": {
+    "cmd": "gcloud data-catalog tables add-iam-policy-binding --table {tabla} --dataset {dataset} --member {member} --role {role}",
+    "params": [
+      "tabla",
+      "dataset",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Removes IAM policy binding.": {
+    "cmd": "gcloud data-catalog tables remove-iam-policy-binding --table {tabla} --dataset {dataset} --member {member} --role {role}",
+    "params": [
+      "tabla",
+      "dataset",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  }
+}

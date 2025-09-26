@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "bq update --dataset {dataset} --description {descripcion}",
+    "params": [
+      "dataset",
+      "descripcion"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "Adds IAM policy binding.": {
+    "cmd": "gcloud data-catalog buckets add-iam-policy-binding --bucket {bucket} --member {member} --role {role}",
+    "params": [
+      "bucket",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Removes IAM policy binding.": {
+    "cmd": "gcloud data-catalog buckets remove-iam-policy-binding --bucket {bucket} --member {member} --role {role}",
+    "params": [
+      "bucket",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  }
+}

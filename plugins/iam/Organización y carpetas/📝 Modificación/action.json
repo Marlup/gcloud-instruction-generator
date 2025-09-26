@@ -1,0 +1,10 @@
+{
+  "Mover carpeta": {
+    "cmd": "gcloud resource-manager folders move {folder_id} --dest-organization={org_id}",
+    "params": [
+      "folder_id",
+      "org_id"
+    ],
+    "param_hints": {}
+  }
+}

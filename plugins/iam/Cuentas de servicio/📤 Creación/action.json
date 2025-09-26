@@ -1,0 +1,11 @@
+{
+  "Crear cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts create {account_id} --project={project} --display-name='{display_name}'",
+    "params": [
+      "account_id",
+      "project",
+      "display_name"
+    ],
+    "param_hints": {}
+  }
+}

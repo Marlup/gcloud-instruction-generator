@@ -1,0 +1,20 @@
+{
+  "Delete debug snapshot": {
+    "cmd": "gcloud debug snapshots delete {snapshot_id} --target={target_id} --project={project_id}",
+    "params": [
+      "snapshot_id",
+      "target_id",
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "Delete debug logpoint": {
+    "cmd": "gcloud debug logpoints delete {logpoint_id} --target={target_id} --project={project_id}",
+    "params": [
+      "logpoint_id",
+      "target_id",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Listar datasets": {
+    "cmd": "gcloud bigquery datasets list --location={region}",
+    "params": [
+      "region"
+    ]
+  },
+  "Describir dataset": {
+    "cmd": "gcloud bigquery datasets describe {dataset} --location={region}",
+    "params": [
+      "dataset",
+      "region"
+    ]
+  }
+}

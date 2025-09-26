@@ -1,0 +1,17 @@
+{
+  "Borrar proveedor": {
+    "cmd": "gcloud iam workload-identity-pools providers delete {provider_id} --workload-identity-pool={pool_id} --location=global",
+    "params": [
+      "provider_id",
+      "pool_id"
+    ],
+    "param_hints": {}
+  },
+  "Borrar pool": {
+    "cmd": "gcloud iam workload-identity-pools delete {pool_id} --location=global",
+    "params": [
+      "pool_id"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud dataflow jobs update {job_id} --parameters {parameters}",
+    "params": [
+      "job_id",
+      "parameters"
+    ],
+    "param_hints": {}
+  }
+}

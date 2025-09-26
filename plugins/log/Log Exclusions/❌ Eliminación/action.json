@@ -1,0 +1,10 @@
+{
+  "Borrar exclusión": {
+    "cmd": "gcloud logging exclusions delete {exclusion_id} --project={project}",
+    "params": [
+      "exclusion_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

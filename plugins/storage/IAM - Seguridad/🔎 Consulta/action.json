@@ -1,0 +1,14 @@
+{
+  "Ver IAM de bucket": {
+    "cmd": "gcloud storage buckets get-iam-policy {bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Ver IAM de objeto": {
+    "cmd": "gcloud storage objects get-iam-policy {object}",
+    "params": [
+      "object"
+    ]
+  }
+}

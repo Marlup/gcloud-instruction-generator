@@ -1,0 +1,30 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --num-workers={num_workers}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "num_workers"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Updates an existing resource. (variant)": {
+    "cmd": "gcloud dataproc clusters update {nombre_cluster} --region={region} --update-master-size={tamaño_master}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "tamaño_master"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

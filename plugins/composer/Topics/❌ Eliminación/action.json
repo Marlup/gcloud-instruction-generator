@@ -1,0 +1,9 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud pubsub topics delete {nombre_topico}",
+    "params": [
+      "nombre_topico"
+    ],
+    "param_hints": {}
+  }
+}

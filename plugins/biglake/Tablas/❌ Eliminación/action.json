@@ -1,0 +1,11 @@
+{
+  "Borrar tabla": {
+    "cmd": "gcloud biglake tables delete {table} --database={database} --catalog={catalog} --location={region}",
+    "params": [
+      "table",
+      "database",
+      "catalog",
+      "region"
+    ]
+  }
+}

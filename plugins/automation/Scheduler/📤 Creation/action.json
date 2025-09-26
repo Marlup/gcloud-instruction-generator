@@ -1,0 +1,33 @@
+{
+  "Create HTTP job": {
+    "cmd": "gcloud scheduler jobs create http {job_id} --schedule='{cron}' --uri={uri} --location={region}",
+    "params": [
+      "job_id",
+      "cron",
+      "uri",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Create Pub/Sub job": {
+    "cmd": "gcloud scheduler jobs create pubsub {job_id} --schedule='{cron}' --topic={topic} --message-body='{body}' --location={region}",
+    "params": [
+      "job_id",
+      "cron",
+      "topic",
+      "body",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

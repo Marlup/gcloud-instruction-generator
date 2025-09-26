@@ -1,0 +1,9 @@
+{
+  "Ver IAM de proyecto": {
+    "cmd": "gcloud projects get-iam-policy {project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

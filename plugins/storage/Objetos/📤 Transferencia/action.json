@@ -1,0 +1,31 @@
+{
+  "Subir objeto": {
+    "cmd": "gcloud storage cp {local} {dest}",
+    "params": [
+      "local",
+      "dest"
+    ]
+  },
+  "Descargar objeto": {
+    "cmd": "gcloud storage cp {src} {local}",
+    "params": [
+      "src",
+      "local"
+    ]
+  },
+  "Mover objeto": {
+    "cmd": "gcloud storage mv {src} {dest}",
+    "params": [
+      "src",
+      "dest"
+    ]
+  },
+  "Sincronizar carpetas": {
+    "cmd": "gcloud storage rsync -r {local_dir} gs://{bucket}/{prefix}",
+    "params": [
+      "local_dir",
+      "bucket",
+      "prefix"
+    ]
+  }
+}

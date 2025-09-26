@@ -1,0 +1,9 @@
+{
+  "Performs an operation on a resource.": {
+    "cmd": "gsutil rm -r gs://{bucket_name}",
+    "params": [
+      "bucket_name"
+    ],
+    "param_hints": {}
+  }
+}

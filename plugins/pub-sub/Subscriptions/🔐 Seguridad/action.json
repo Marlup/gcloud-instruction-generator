@@ -1,0 +1,27 @@
+{
+  "Adds IAM policy binding.": {
+    "cmd": "gcloud pubsub subscriptions add-iam-policy-binding {subscription} --member={member} --role={role}",
+    "params": [
+      "subscription",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Removes IAM policy binding.": {
+    "cmd": "gcloud pubsub subscriptions remove-iam-policy-binding {subscription} --member={member} --role={role}",
+    "params": [
+      "subscription",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Retrieves IAM policy.": {
+    "cmd": "gcloud pubsub subscriptions get-iam-policy {subscription}",
+    "params": [
+      "subscription"
+    ],
+    "param_hints": {}
+  }
+}

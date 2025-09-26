@@ -1,0 +1,60 @@
+{
+  "Configurar lifecycle": {
+    "cmd": "gcloud storage buckets update {bucket} --lifecycle-file={lifecycle_file}",
+    "params": [
+      "bucket",
+      "lifecycle_file"
+    ]
+  },
+  "Definir periodo de retención": {
+    "cmd": "gcloud storage buckets update {bucket} --retention-period={seconds}",
+    "params": [
+      "bucket",
+      "seconds"
+    ]
+  },
+  "Activar acceso uniforme": {
+    "cmd": "gcloud storage buckets update {bucket} --uniform-bucket-level-access",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Activar versionado objetos": {
+    "cmd": "gcloud storage buckets update {bucket} --versioning",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Desactivar versionado objetos": {
+    "cmd": "gcloud storage buckets update {bucket} --no-versioning",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Configurar CORS": {
+    "cmd": "gcloud storage buckets update {bucket} --cors-file={cors_file}",
+    "params": [
+      "bucket",
+      "cors_file"
+    ]
+  },
+  "Habilitar logs de acceso": {
+    "cmd": "gcloud storage buckets update {bucket} --enable-object-logging",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Deshabilitar logs de acceso": {
+    "cmd": "gcloud storage buckets update {bucket} --no-enable-object-logging",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Cambiar clase almacenamiento por defecto": {
+    "cmd": "gcloud storage buckets update {bucket} --default-storage-class={storage_class}",
+    "params": [
+      "bucket",
+      "storage_class"
+    ]
+  }
+}

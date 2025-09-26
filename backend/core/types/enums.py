@@ -1,17 +1,22 @@
 from enum import Enum
 
 class GCPService(str, Enum):
+    IAM = "iam"
+    ORGANIZATION = "organization"
     STORAGE = "storage"
+    BIGLAKE = "biglake"
     BIGQUERY = "bigquery"
-    COMPOSER = "composer"
+    PUB_SUB = "pub-sub"
     DATACATALOG = "datacatalog"
     DATAFLOW = "dataflow"
     DATAPLEX = "dataplex"
     DATAPROC = "dataproc"
-    IAM_ORG = "iam-org"
-    LOGGING_MONITOR = "logging-monitor"
-    BIGLAKE = "biglake"
-    PUB_SUB = "pub-sub"
+    COMPOSER = "composer"
+    LOG = "log"
+    MONITOR = "monitor"
+    SECURITY = "security"
+    AUTOMATION = "automation"
+    DEBUG_ERROR = "debug-error"
 
 class IAMPurpose(str, Enum):
     ADMIN = "admin"                # Roles, cuentas de servicio

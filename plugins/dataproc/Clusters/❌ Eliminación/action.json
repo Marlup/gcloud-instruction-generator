@@ -1,0 +1,15 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud dataproc clusters delete {nombre_cluster} --region={region}",
+    "params": [
+      "nombre_cluster",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

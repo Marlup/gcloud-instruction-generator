@@ -1,0 +1,29 @@
+{
+  "Listar roles": {
+    "cmd": "gcloud iam roles list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Listar roles predefinidos": {
+    "cmd": "gcloud iam roles list --filter='stage:GA'",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describir rol": {
+    "cmd": "gcloud iam roles describe {role} --project={project}",
+    "params": [
+      "role",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir rol predefinido": {
+    "cmd": "gcloud iam roles describe roles/{role_name}",
+    "params": [
+      "role_name"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Create custom role": {
+    "cmd": "gcloud iam roles create {role_id} --project={project_id} --title={title} --permissions={permissions} --stage=ALPHA",
+    "params": [
+      "role_id",
+      "project_id",
+      "title",
+      "permissions"
+    ],
+    "param_hints": {}
+  }
+}

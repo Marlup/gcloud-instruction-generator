@@ -1,0 +1,32 @@
+{
+  "Adds IAM policy binding.": {
+    "cmd": "gcloud dataproc clusters add-iam-policy-binding {nombre_cluster} --region={region} --member={miembro} --role={rol}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "miembro",
+      "rol"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Removes IAM policy binding.": {
+    "cmd": "gcloud dataproc clusters remove-iam-policy-binding {nombre_cluster} --region={region} --member={miembro} --role={rol}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "miembro",
+      "rol"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

@@ -6,8 +6,8 @@ from google.cloud import storage
 from backend.infrastructure.exporters import to_shell, to_terraform, to_yaml
 from backend.services.base_service import BaseGCloudService
 from backend.core.types.enums import ExportFileFormat, GCPResource, GCPService
-
 from backend.infrastructure.configuration_manager import ConfigurationManager
+from backend.infrastructure.action_loader import ActionLoader
 
 __all__ = ["StorageService"]
 
@@ -17,13 +17,19 @@ class StorageService(BaseGCloudService):
     Basada en BaseGCloudService.
     """
 
-    service_name = GCPService.STORAGE
+    service_name = "storage"
 
     def __init__(self, configuration: ConfigurationManager, on_concat_project_id: bool=False):
         self.configuration = configuration
         self.on_concat_project_id = on_concat_project_id
         self.reset_client()
         self.actions = configuration.load_actions(self.service_name)
+        self.parameters = configuration.load_parameters(self.service_name)
+
+        # ✅ ActionLoader
+        service_path = f"plugins/{self.service_name}"  # ej. actions/storage/
+        loader = ActionLoader(service_path)
+        self.actions = loader.actions
         self.parameters = configuration.load_parameters(self.service_name)
 
     #  Client reset 

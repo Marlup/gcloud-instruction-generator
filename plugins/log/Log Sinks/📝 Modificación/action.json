@@ -1,0 +1,11 @@
+{
+  "Actualizar sink": {
+    "cmd": "gcloud logging sinks update {sink_id} --log-filter='{filter}' --project={project}",
+    "params": [
+      "sink_id",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

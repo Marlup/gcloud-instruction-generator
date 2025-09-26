@@ -1,0 +1,44 @@
+{
+  "Execute workflow": {
+    "cmd": "gcloud workflows execute {workflow} --location={region}",
+    "params": [
+      "workflow",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "List executions": {
+    "cmd": "gcloud workflows executions list {workflow} --location={region}",
+    "params": [
+      "workflow",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Describe execution": {
+    "cmd": "gcloud workflows executions describe {execution} --workflow={workflow} --location={region}",
+    "params": [
+      "execution",
+      "workflow",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Set IAM policy (workflow)": {
+    "cmd": "gcloud workflows set-iam-policy {workflow} {policy_file} --location={region}",
+    "params": [
+      "workflow",
+      "policy_file",
+      "region"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

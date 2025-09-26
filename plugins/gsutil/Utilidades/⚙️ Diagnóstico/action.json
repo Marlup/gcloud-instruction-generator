@@ -1,0 +1,8 @@
+{
+  "Diagnóstico rendimiento": {
+    "cmd": "gsutil perfdiag gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Listar alertas": {
+    "cmd": "gcloud monitoring policies list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir alerta": {
+    "cmd": "gcloud monitoring policies describe {policy_id} --project={project}",
+    "params": [
+      "policy_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

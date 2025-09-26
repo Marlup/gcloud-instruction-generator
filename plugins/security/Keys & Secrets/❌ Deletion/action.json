@@ -1,0 +1,19 @@
+{
+  "Delete key": {
+    "cmd": "gcloud kms keys delete {key} --keyring={keyring} --location={region}",
+    "params": [
+      "key",
+      "keyring",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Delete secret": {
+    "cmd": "gcloud secrets delete {secret} --project={project_id}",
+    "params": [
+      "secret",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

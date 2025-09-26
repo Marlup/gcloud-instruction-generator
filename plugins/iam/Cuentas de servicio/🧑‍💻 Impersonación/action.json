@@ -1,0 +1,17 @@
+{
+  "Impersonar cuenta de servicio (token)": {
+    "cmd": "gcloud auth print-access-token --impersonate-service-account={account}",
+    "params": [
+      "account"
+    ],
+    "param_hints": {}
+  },
+  "Impersonar cuenta de servicio (activar)": {
+    "cmd": "gcloud auth activate-service-account {account} --key-file={key_file}",
+    "params": [
+      "account",
+      "key_file"
+    ],
+    "param_hints": {}
+  }
+}

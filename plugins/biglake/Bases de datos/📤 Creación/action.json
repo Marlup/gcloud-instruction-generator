@@ -1,0 +1,11 @@
+{
+  "Crear base de datos": {
+    "cmd": "gcloud biglake databases create {database} --catalog={catalog} --location={region} --description={description}",
+    "params": [
+      "database",
+      "catalog",
+      "region",
+      "description"
+    ]
+  }
+}

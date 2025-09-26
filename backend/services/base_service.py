@@ -1,5 +1,6 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import Any, Dict, List
+from backend.infrastructure.action_loader import ActionLoader
 
 class BaseGCloudService():
     """
@@ -67,26 +68,22 @@ class BaseGCloudService():
     # Listado de acciones soportadas
     # -----------------------------
     @abstractmethod
-    def list_actions(self, on_categories: bool = True) -> List[str] | Dict[str, List[str]]:
+    def load_actions(service_path: str, on_save: bool=False) -> Dict[str, Dict[str, Dict[str, dict]]]:
         """
-        Devuelve una lista de acciones soportadas por el servicio.
-        Ejemplo: ["Crear bucket", "Listar buckets", "Borrar bucket"]
+        Construye el diccionario de acciones desde:
+        service_path/resource/category/*.json
+
+        Devuelve:
+        {
+        "Recurso": {
+            "Categoría": {
+            "Acción": {"cmd": "...", "params": [...]}
+            }
+        }
+        }
         """
-        if on_categories:
-            result = {}
-        else:
-            result = []
-        for category, subcats in self.actions.items():
-            if on_categories:
-                actions_by_subcat = {}
-            for subcat, actions in subcats.items():
-                if on_categories:
-                    actions_by_subcat[subcat] = list(actions.keys())
-                else:
-                    result.extend(actions.keys())
-            if on_categories:
-                result[category] = actions_by_subcat
-        return result
+        loader = ActionLoader(service_path)
+        return loader.actions
 
     # -----------------------------
     # Comprobación de conectividad
@@ -122,15 +119,14 @@ class BaseGCloudService():
         pass
     
     @abstractmethod
-    def get_action_def(self, category: str, subcategory: str, action: str) -> Dict[str, Any]:
+    def get_action_def(self, resource: str, category: str, action: str) -> Dict[str, Any]:
         """
         Devuelve la definición de una acción concreta (cmd y params).
-        - category: nombre de la categoría (ej. 'Buckets')
-        - subcategory: nombre de la subcategoría (ej. '📤 Creación')
-        - action: nombre de la acción (ej. 'Crear bucket')
+        - resource: name of the resource (ej. 'Buckets')
+        - category: name of the category (ej. '📤 Creación')
+        - action: name of the action (ej. 'Crear bucket')
         """
-        #print(f"self.actions[category][subcategory] -> {self.actions}")
         try:
-            return self.actions[category][subcategory][action]
+            return self.actions[resource][category][action]
         except KeyError as e:
-            raise ValueError(f"Acción no encontrada: {category} > {subcategory} > {action}") from e
+            raise ValueError(f"Acción no encontrada: {resource} > {category} > {action}") from e

@@ -1,0 +1,12 @@
+{
+  "Crear métrica log-based": {
+    "cmd": "gcloud logging metrics create {metric_name} --description=\"{description}\" --log-filter=\"{filter}\" --project={project}",
+    "params": [
+      "metric_name",
+      "description",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

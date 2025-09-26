@@ -1,0 +1,41 @@
+{
+  "Crear pool de Workload Identity": {
+    "cmd": "gcloud iam workload-identity-pools create {pool_id} --location=global --display-name='{display_name}' --description='{description}'",
+    "params": [
+      "pool_id",
+      "display_name",
+      "description"
+    ],
+    "param_hints": {}
+  },
+  "Crear proveedor OIDC": {
+    "cmd": "gcloud iam workload-identity-pools providers create-oidc {provider_id} --workload-identity-pool={pool_id} --location=global --display-name='{display_name}' --issuer-uri={issuer_uri} --allowed-audiences={allowed_audiences} --attribute-mapping={attribute_mapping}",
+    "params": [
+      "provider_id",
+      "pool_id",
+      "display_name",
+      "issuer_uri",
+      "allowed_audiences",
+      "attribute_mapping"
+    ],
+    "param_hints": {}
+  },
+  "Crear proveedor SAML": {
+    "cmd": "gcloud iam workload-identity-pools providers create-saml {provider_id} --workload-identity-pool={pool_id} --location=global --display-name='{display_name}' --idp-metadata-document-file={saml_metadata_file} --attribute-mapping={attribute_mapping}",
+    "params": [
+      "provider_id",
+      "pool_id",
+      "display_name",
+      "saml_metadata_file",
+      "attribute_mapping"
+    ],
+    "param_hints": {
+      "saml_metadata_file": {
+        "type": "file",
+        "extensions": [
+          ".xml"
+        ]
+      }
+    }
+  }
+}

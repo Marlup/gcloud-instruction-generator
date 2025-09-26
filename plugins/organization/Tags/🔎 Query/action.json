@@ -1,0 +1,9 @@
+{
+  "List tags": {
+    "cmd": "gcloud tags list --parent={parent}",
+    "params": [
+      "parent"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Listar tablas": {
+    "cmd": "gcloud bigquery tables list --dataset={dataset}",
+    "params": [
+      "dataset"
+    ]
+  },
+  "Describir tabla": {
+    "cmd": "gcloud bigquery tables describe {dataset}.{table}",
+    "params": [
+      "dataset",
+      "table"
+    ]
+  }
+}

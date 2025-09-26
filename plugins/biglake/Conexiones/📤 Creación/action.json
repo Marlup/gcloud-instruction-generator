@@ -1,0 +1,12 @@
+{
+  "Crear conexión": {
+    "cmd": "gcloud biglake connections create {connection} --location={region} --project={project} --connection-type={type} --properties={properties}",
+    "params": [
+      "connection",
+      "region",
+      "project",
+      "type",
+      "properties"
+    ]
+  }
+}

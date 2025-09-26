@@ -1,0 +1,17 @@
+{
+  "List debug targets": {
+    "cmd": "gcloud debug targets list --project={project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "List active debug sessions": {
+    "cmd": "gcloud debug sessions list --target={target_id} --project={project_id}",
+    "params": [
+      "target_id",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "Create debug snapshot": {
+    "cmd": "gcloud debug snapshots create --location={location} --condition='{condition}' --target={target_id} --project={project_id}",
+    "params": [
+      "location",
+      "condition",
+      "target_id",
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "Create debug logpoint": {
+    "cmd": "gcloud debug logpoints create --log-level={level} --log-message='{message}' --target={target_id} --project={project_id}",
+    "params": [
+      "level",
+      "message",
+      "target_id",
+      "project_id"
+    ],
+    "param_hints": {
+      "level": {
+        "type": "combo",
+        "ref": [
+          "info",
+          "warning",
+          "error"
+        ]
+      }
+    }
+  }
+}

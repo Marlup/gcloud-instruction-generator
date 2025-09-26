@@ -1,0 +1,10 @@
+{
+  "Delete job": {
+    "cmd": "gcloud scheduler jobs delete {job_id} --location={region}",
+    "params": [
+      "job_id",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

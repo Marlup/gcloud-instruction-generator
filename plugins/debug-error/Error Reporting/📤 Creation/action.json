@@ -1,0 +1,11 @@
+{
+  "Report error event": {
+    "cmd": "gcloud error-reporting events report --service={service} --message='{message}' --project={project_id}",
+    "params": [
+      "service",
+      "message",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "List IAM policies": {
+    "cmd": "gcloud iam policies list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Add IAM policy binding": {
+    "cmd": "gcloud projects add-iam-policy-binding {project} --member={member} --role={role}",
+    "params": [
+      "project",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Remove IAM policy binding": {
+    "cmd": "gcloud projects remove-iam-policy-binding {project} --member={member} --role={role}",
+    "params": [
+      "project",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Test IAM permissions": {
+    "cmd": "gcloud projects test-iam-permissions {project} {permissions}",
+    "params": [
+      "project",
+      "permissions"
+    ],
+    "param_hints": {}
+  },
+  "Authenticate with service account": {
+    "cmd": "gcloud auth activate-service-account --key-file={key_file}",
+    "params": [
+      "key_file"
+    ],
+    "param_hints": {
+      "key_file": {
+        "type": "file",
+        "extensions": [
+          ".json"
+        ]
+      }
+    }
+  },
+  "List service accounts": {
+    "cmd": "gcloud iam service-accounts list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Create service account": {
+    "cmd": "gcloud iam service-accounts create {name} --display-name={display_name}",
+    "params": [
+      "name",
+      "display_name"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Crear bucket": {
+    "cmd": "gcloud logging buckets create {bucket_id} --location={location} --retention-days={days} --project={project}",
+    "params": [
+      "bucket_id",
+      "location",
+      "days",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

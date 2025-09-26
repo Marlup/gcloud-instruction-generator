@@ -1,0 +1,11 @@
+{
+  "Modifies IAM policy bindings.": {
+    "cmd": "gcloud pubsub topics remove-iam-policy-binding {nombre_topico} --member {miembro} --role {rol}",
+    "params": [
+      "nombre_topico",
+      "miembro",
+      "rol"
+    ],
+    "param_hints": {}
+  }
+}

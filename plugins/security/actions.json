@@ -1,0 +1,128 @@
+{
+  "Keys & Secrets": {
+    "🔎 Query": {
+      "List keyrings": {
+        "cmd": "gcloud kms keyrings list --location={region}",
+        "params": ["region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      },
+      "List keys in keyring": {
+        "cmd": "gcloud kms keys list --keyring={keyring} --location={region}",
+        "params": ["keyring", "region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      },
+      "Describe key": {
+        "cmd": "gcloud kms keys describe {key} --keyring={keyring} --location={region}",
+        "params": ["key", "keyring", "region"],
+        "param_hints": {}
+      },
+      "List secrets": {
+        "cmd": "gcloud secrets list --project={project_id}",
+        "params": ["project_id"],
+        "param_hints": {}
+      },
+      "Describe secret": {
+        "cmd": "gcloud secrets describe {secret} --project={project_id}",
+        "params": ["secret", "project_id"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Create keyring": {
+        "cmd": "gcloud kms keyrings create {keyring} --location={region}",
+        "params": ["keyring", "region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      },
+      "Create key": {
+        "cmd": "gcloud kms keys create {key} --keyring={keyring} --location={region} --purpose={purpose}",
+        "params": ["key", "keyring", "region", "purpose"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"},
+          "purpose": {"type": "combo", "ref": ["encryption", "asymmetric-signing", "asymmetric-decrypt"]}
+        }
+      },
+      "Create secret (automatic replication)": {
+        "cmd": "gcloud secrets create {secret} --replication-policy=automatic --project={project_id}",
+        "params": ["secret", "project_id"],
+        "param_hints": {}
+      },
+      "Create secret (user-managed replication)": {
+        "cmd": "gcloud secrets create {secret} --replication-policy=user-managed --locations={regions} --project={project_id}",
+        "params": ["secret", "regions", "project_id"],
+        "param_hints": {
+          "regions": {"type": "combo", "ref": "regions"}
+        }
+      }
+    },
+    "📝 Modification": {
+      "Rotate key": {
+        "cmd": "gcloud kms keys versions create --key={key} --keyring={keyring} --location={region}",
+        "params": ["key", "keyring", "region"],
+        "param_hints": {}
+      },
+      "Disable key version": {
+        "cmd": "gcloud kms keys versions disable {version} --key={key} --keyring={keyring} --location={region}",
+        "params": ["version", "key", "keyring", "region"],
+        "param_hints": {}
+      },
+      "Destroy key version": {
+        "cmd": "gcloud kms keys versions destroy {version} --key={key} --keyring={keyring} --location={region}",
+        "params": ["version", "key", "keyring", "region"],
+        "param_hints": {}
+      },
+      "Add secret version": {
+        "cmd": "gcloud secrets versions add {secret} --data-file={file} --project={project_id}",
+        "params": ["secret", "file", "project_id"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".txt", ".json", ".yaml"]}
+        }
+      },
+      "Update secret labels": {
+        "cmd": "gcloud secrets update {secret} --update-labels={labels} --project={project_id}",
+        "params": ["secret", "labels", "project_id"],
+        "param_hints": {}
+      }
+    },
+    "⚙️ Control": {
+      "Encrypt with key": {
+        "cmd": "gcloud kms encrypt --key={key} --keyring={keyring} --location={region} --plaintext-file={plaintext} --ciphertext-file={ciphertext}",
+        "params": ["key", "keyring", "region", "plaintext", "ciphertext"],
+        "param_hints": {
+          "plaintext": {"type": "file", "extensions": [".txt", ".bin"]},
+          "ciphertext": {"type": "file", "extensions": [".enc"]}
+        }
+      },
+      "Decrypt with key": {
+        "cmd": "gcloud kms decrypt --key={key} --keyring={keyring} --location={region} --ciphertext-file={ciphertext} --plaintext-file={plaintext}",
+        "params": ["key", "keyring", "region", "ciphertext", "plaintext"],
+        "param_hints": {
+          "ciphertext": {"type": "file", "extensions": [".enc"]},
+          "plaintext": {"type": "file", "extensions": [".txt", ".bin"]}
+        }
+      },
+      "Access secret version": {
+        "cmd": "gcloud secrets versions access {version} --secret={secret} --project={project_id}",
+        "params": ["version", "secret", "project_id"],
+        "param_hints": {}
+      }
+    },
+    "❌ Deletion": {
+      "Delete key": {
+        "cmd": "gcloud kms keys delete {key} --keyring={keyring} --location={region}",
+        "params": ["key", "keyring", "region"],
+        "param_hints": {}
+      },
+      "Delete secret": {
+        "cmd": "gcloud secrets delete {secret} --project={project_id}",
+        "params": ["secret", "project_id"],
+        "param_hints": {}
+      }
+    }
+  }
+}

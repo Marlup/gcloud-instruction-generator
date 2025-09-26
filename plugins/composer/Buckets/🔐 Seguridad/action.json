@@ -1,0 +1,11 @@
+{
+  "Modifies IAM policy bindings.": {
+    "cmd": "gsutil iam ch {miembro}:{rol} gs://{nombre_bucket}",
+    "params": [
+      "miembro",
+      "rol",
+      "nombre_bucket"
+    ],
+    "param_hints": {}
+  }
+}

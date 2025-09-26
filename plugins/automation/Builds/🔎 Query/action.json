@@ -1,0 +1,14 @@
+{
+  "List builds": {
+    "cmd": "gcloud builds list",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describe build": {
+    "cmd": "gcloud builds describe {build_id}",
+    "params": [
+      "build_id"
+    ],
+    "param_hints": {}
+  }
+}

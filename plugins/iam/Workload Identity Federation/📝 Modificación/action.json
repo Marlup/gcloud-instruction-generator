@@ -1,0 +1,41 @@
+{
+  "Actualizar pool": {
+    "cmd": "gcloud iam workload-identity-pools update {pool_id} --location=global --display-name='{display_name}' --description='{description}'",
+    "params": [
+      "pool_id",
+      "display_name",
+      "description"
+    ],
+    "param_hints": {}
+  },
+  "Actualizar proveedor OIDC": {
+    "cmd": "gcloud iam workload-identity-pools providers update-oidc {provider_id} --workload-identity-pool={pool_id} --location=global --attribute-mapping={attribute_mapping} --allowed-audiences={allowed_audiences}",
+    "params": [
+      "provider_id",
+      "pool_id",
+      "attribute_mapping",
+      "allowed_audiences"
+    ],
+    "param_hints": {}
+  },
+  "Actualizar proveedor SAML": {
+    "cmd": "gcloud iam workload-identity-pools providers update-saml {provider_id} --workload-identity-pool={pool_id} --location=global --attribute-mapping={attribute_mapping}",
+    "params": [
+      "provider_id",
+      "pool_id",
+      "attribute_mapping"
+    ],
+    "param_hints": {}
+  },
+  "Asignar identidades externas a SA": {
+    "cmd": "gcloud iam service-accounts add-iam-policy-binding {sa_email} --member='principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/attribute.{attribute}/{value}' --role='roles/iam.workloadIdentityUser'",
+    "params": [
+      "sa_email",
+      "project_number",
+      "pool_id",
+      "attribute",
+      "value"
+    ],
+    "param_hints": {}
+  }
+}

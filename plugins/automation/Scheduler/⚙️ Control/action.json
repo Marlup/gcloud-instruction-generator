@@ -1,0 +1,10 @@
+{
+  "Run job manually": {
+    "cmd": "gcloud scheduler jobs run {job_id} --location={region}",
+    "params": [
+      "job_id",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

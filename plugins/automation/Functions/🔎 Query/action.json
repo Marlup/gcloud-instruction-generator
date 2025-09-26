@@ -1,0 +1,22 @@
+{
+  "List functions": {
+    "cmd": "gcloud functions list --region={region}",
+    "params": [
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Describe function": {
+    "cmd": "gcloud functions describe {function} --region={region}",
+    "params": [
+      "function",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

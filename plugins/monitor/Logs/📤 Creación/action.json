@@ -1,0 +1,11 @@
+{
+  "Escribir entrada en log": {
+    "cmd": "gcloud logging write {log_id} \"{message}\" --project={project}",
+    "params": [
+      "log_id",
+      "message",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

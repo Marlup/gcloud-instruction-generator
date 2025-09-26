@@ -1,0 +1,18 @@
+{
+  "Create tag key": {
+    "cmd": "gcloud tags keys create {tag_key} --parent={parent}",
+    "params": [
+      "tag_key",
+      "parent"
+    ],
+    "param_hints": {}
+  },
+  "Create tag value": {
+    "cmd": "gcloud tags values create {tag_value} --parent={tag_key}",
+    "params": [
+      "tag_value",
+      "tag_key"
+    ],
+    "param_hints": {}
+  }
+}

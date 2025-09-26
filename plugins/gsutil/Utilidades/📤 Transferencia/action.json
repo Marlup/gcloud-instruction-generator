@@ -1,0 +1,49 @@
+{
+  "Copiar desde lista stdin": {
+    "cmd": "gsutil cp -I gs://{bucket}/",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Copiar sin sobrescribir": {
+    "cmd": "gsutil cp -n {src} gs://{bucket}/{dest}",
+    "params": [
+      "src",
+      "bucket",
+      "dest"
+    ]
+  },
+  "Copiar recursivo": {
+    "cmd": "gsutil cp -r {local_dir} gs://{bucket}/{prefix}",
+    "params": [
+      "local_dir",
+      "bucket",
+      "prefix"
+    ]
+  },
+  "Reescribir objeto con nueva clase o cifrado": {
+    "cmd": "gsutil rewrite -s {storage_class} gs://{bucket}/{object}",
+    "params": [
+      "storage_class",
+      "bucket",
+      "object"
+    ]
+  },
+  "Mover objeto": {
+    "cmd": "gsutil mv gs://{bucket}/{src} gs://{bucket}/{dest}",
+    "params": [
+      "bucket",
+      "src",
+      "dest"
+    ]
+  },
+  "Combinar objetos (compose)": {
+    "cmd": "gsutil compose {src1} {src2} gs://{bucket}/{dest}",
+    "params": [
+      "src1",
+      "src2",
+      "bucket",
+      "dest"
+    ]
+  }
+}

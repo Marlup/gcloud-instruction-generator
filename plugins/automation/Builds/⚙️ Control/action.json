@@ -1,0 +1,24 @@
+{
+  "Create build trigger": {
+    "cmd": "gcloud builds triggers create github --repo-name={repo} --branch-pattern={branch} --build-config={build_file}",
+    "params": [
+      "repo",
+      "branch",
+      "build_file"
+    ],
+    "param_hints": {
+      "build_file": {
+        "type": "file",
+        "extensions": [
+          ".yaml",
+          ".json"
+        ]
+      }
+    }
+  },
+  "List build triggers": {
+    "cmd": "gcloud builds triggers list",
+    "params": [],
+    "param_hints": {}
+  }
+}

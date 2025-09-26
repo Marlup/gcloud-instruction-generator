@@ -1,0 +1,10 @@
+{
+  "Crear carpeta": {
+    "cmd": "gcloud resource-manager folders create --display-name='{name}' --organization={org_id}",
+    "params": [
+      "name",
+      "org_id"
+    ],
+    "param_hints": {}
+  }
+}

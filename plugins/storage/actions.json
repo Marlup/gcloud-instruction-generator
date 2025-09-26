@@ -1,5 +1,105 @@
 {
   "Buckets": {
+    "⚙️ Configuración": {
+      "Configurar lifecycle": {
+        "cmd": "gcloud storage buckets update {bucket} --lifecycle-file={lifecycle_file}",
+        "params": [
+          "bucket",
+          "lifecycle_file"
+        ]
+      },
+      "Definir periodo de retención": {
+        "cmd": "gcloud storage buckets update {bucket} --retention-period={seconds}",
+        "params": [
+          "bucket",
+          "seconds"
+        ]
+      },
+      "Activar acceso uniforme": {
+        "cmd": "gcloud storage buckets update {bucket} --uniform-bucket-level-access",
+        "params": [
+          "bucket"
+        ]
+      },
+      "Activar versionado objetos": {
+        "cmd": "gcloud storage buckets update {bucket} --versioning",
+        "params": [
+          "bucket"
+        ]
+      },
+      "Desactivar versionado objetos": {
+        "cmd": "gcloud storage buckets update {bucket} --no-versioning",
+        "params": [
+          "bucket"
+        ]
+      },
+      "Configurar CORS": {
+        "cmd": "gcloud storage buckets update {bucket} --cors-file={cors_file}",
+        "params": [
+          "bucket",
+          "cors_file"
+        ]
+      },
+      "Habilitar logs de acceso": {
+        "cmd": "gcloud storage buckets update {bucket} --enable-object-logging",
+        "params": [
+          "bucket"
+        ]
+      },
+      "Deshabilitar logs de acceso": {
+        "cmd": "gcloud storage buckets update {bucket} --no-enable-object-logging",
+        "params": [
+          "bucket"
+        ]
+      },
+      "Cambiar clase almacenamiento por defecto": {
+        "cmd": "gcloud storage buckets update {bucket} --default-storage-class={storage_class}",
+        "params": [
+          "bucket",
+          "storage_class"
+        ]
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar bucket": {
+        "cmd": "gcloud storage buckets delete {bucket}",
+        "params": [
+          "bucket"
+        ]
+      },
+      "Borrar bucket forzado": {
+        "cmd": "gcloud storage buckets delete {bucket} --force",
+        "params": [
+          "bucket"
+        ]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar etiquetas bucket": {
+        "cmd": "gcloud storage buckets update {bucket} --update-labels={labels}",
+        "params": [
+          "bucket",
+          "labels"
+        ]
+      },
+      "Eliminar etiquetas bucket": {
+        "cmd": "gcloud storage buckets update {bucket} --remove-labels={labels}",
+        "params": [
+          "bucket",
+          "labels"
+        ]
+      }
+    },
+    "📤 Creación": {
+      "Crear bucket": {
+        "cmd": "gcloud storage buckets create {bucket} --location={region} --default-storage-class={storage_class}",
+        "params": [
+          "bucket",
+          "region",
+          "storage_class"
+        ]
+      }
+    },
     "🔎 Consulta": {
       "Listar buckets": {
         "cmd": "gcloud storage buckets list",
@@ -7,230 +107,304 @@
       },
       "Describir bucket": {
         "cmd": "gcloud storage buckets describe {bucket}",
-        "params": ["bucket"]
-      }
-    },
-    "📤 Creación": {
-      "Crear bucket": {
-        "cmd": "gcloud storage buckets create {bucket} --location={region} --default-storage-class={storage_class}",
-        "params": ["bucket", "region", "storage_class"]
-      }
-    },
-    "📝 Modificación": {
-      "Actualizar etiquetas bucket": {
-        "cmd": "gcloud storage buckets update {bucket} --update-labels={labels}",
-        "params": ["bucket", "labels"]
-      },
-      "Eliminar etiquetas bucket": {
-        "cmd": "gcloud storage buckets update {bucket} --remove-labels={labels}",
-        "params": ["bucket", "labels"]
-      }
-    },
-    "❌ Eliminación": {
-      "Borrar bucket": {
-        "cmd": "gcloud storage buckets delete {bucket}",
-        "params": ["bucket"]
-      },
-      "Borrar bucket forzado": {
-        "cmd": "gcloud storage buckets delete {bucket} --force",
-        "params": ["bucket"]
+        "params": [
+          "bucket"
+        ]
       }
     },
     "🔐 Seguridad": {
       "Bloquear retención": {
         "cmd": "gcloud storage buckets update {bucket} --lock-retention-policy",
-        "params": ["bucket"]
+        "params": [
+          "bucket"
+        ]
       },
       "Bloquear acceso público": {
         "cmd": "gcloud storage buckets update {bucket} --public-access-prevention=enforced",
-        "params": ["bucket"]
+        "params": [
+          "bucket"
+        ]
       },
       "Desbloquear acceso público": {
         "cmd": "gcloud storage buckets update {bucket} --public-access-prevention=unspecified",
-        "params": ["bucket"]
-      }
-    },
-    "⚙️ Configuración": {
-      "Configurar lifecycle": {
-        "cmd": "gcloud storage buckets update {bucket} --lifecycle-file={lifecycle_file}",
-        "params": ["bucket", "lifecycle_file"]
-      },
-      "Definir periodo de retención": {
-        "cmd": "gcloud storage buckets update {bucket} --retention-period={seconds}",
-        "params": ["bucket", "seconds"]
-      },
-      "Activar acceso uniforme": {
-        "cmd": "gcloud storage buckets update {bucket} --uniform-bucket-level-access",
-        "params": ["bucket"]
-      },
-      "Activar versionado objetos": {
-        "cmd": "gcloud storage buckets update {bucket} --versioning",
-        "params": ["bucket"]
-      },
-      "Desactivar versionado objetos": {
-        "cmd": "gcloud storage buckets update {bucket} --no-versioning",
-        "params": ["bucket"]
-      },
-      "Configurar CORS": {
-        "cmd": "gcloud storage buckets update {bucket} --cors-file={cors_file}",
-        "params": ["bucket", "cors_file"]
-      },
-      "Habilitar logs de acceso": {
-        "cmd": "gcloud storage buckets update {bucket} --enable-object-logging",
-        "params": ["bucket"]
-      },
-      "Deshabilitar logs de acceso": {
-        "cmd": "gcloud storage buckets update {bucket} --no-enable-object-logging",
-        "params": ["bucket"]
-      },
-      "Cambiar clase almacenamiento por defecto": {
-        "cmd": "gcloud storage buckets update {bucket} --default-storage-class={storage_class}",
-        "params": ["bucket", "storage_class"]
+        "params": [
+          "bucket"
+        ]
       }
     }
   },
-  
-  
-  "Objetos": {
-    
-    "🔎 Consulta": {
-      "Listar objetos": {
-        "cmd": "gcloud storage ls gs://{bucket}/{prefix}",
-        "params": ["bucket", "prefix"]
+  "IAM - Seguridad": {
+    "⚙️ Gestión avanzada": {
+      "Establecer IAM desde archivo": {
+        "cmd": "gcloud storage buckets set-iam-policy {bucket} {policy_file}",
+        "params": [
+          "bucket",
+          "policy_file"
+        ]
       },
-      "Describir objeto": {
-        "cmd": "gcloud storage objects describe {src}",
-        "params": ["src"]
+      "Usar clave de encriptación (CMEK)": {
+        "cmd": "gcloud storage buckets update {bucket} --default-encryption-key={kms_key}",
+        "params": [
+          "bucket",
+          "kms_key"
+        ]
       },
-      "Listar versiones objeto": {
-        "cmd": "gcloud storage objects versions list gs://{bucket}/{prefix}",
-        "params": ["bucket", "prefix"]
+      "Quitar clave de encriptación": {
+        "cmd": "gcloud storage buckets update {bucket} --clear-default-encryption-key",
+        "params": [
+          "bucket"
+        ]
       },
-      "Listar versiones con generación": {
-        "cmd": "gcloud storage ls gs://{bucket}/{object}#generation --all-versions",
-        "params": ["bucket", "object"]
-      }
-    },
-    "📤 Transferencia": {
-      "Subir objeto": {
-        "cmd": "gcloud storage cp {local} {dest}",
-        "params": ["local", "dest"]
-      },
-      "Descargar objeto": {
-        "cmd": "gcloud storage cp {src} {local}",
-        "params": ["src", "local"]
-      },
-      "Mover objeto": {
-        "cmd": "gcloud storage mv {src} {dest}",
-        "params": ["src", "dest"]
-      },
-      "Sincronizar carpetas": {
-        "cmd": "gcloud storage rsync -r {local_dir} gs://{bucket}/{prefix}",
-        "params": ["local_dir", "bucket", "prefix"]
-      }
-    },
-    "📝 Modificación": {
-      "Actualizar metadatos objeto": {
-        "cmd": "gcloud storage objects update {src} --content-type={mime} --metadata={metadata}",
-        "params": ["src", "mime", "metadata"]
-      },
-      "Actualizar metadatos (borrar)": {
-        "cmd": "gcloud storage objects update {src} --clear-metadata",
-        "params": ["src"]
-      },
-      "Actualizar ACL objeto": {
-        "cmd": "gcloud storage objects update {src} --add-acl-grant={grant}",
-        "params": ["src", "grant"]
-      },
-      "Reescribir objeto con nueva clase": {
-        "cmd": "gcloud storage rewrite {src} {dest} --storage-class={storage_class}",
-        "params": ["src", "dest", "storage_class"]
-      },
-      "Reescribir objeto con nueva encriptación": {
-        "cmd": "gcloud storage rewrite {src} {dest} --encryption-key={key}",
-        "params": ["src", "dest", "key"]
-      }
-    },
-    "📤 Recuperación": {
-      "Recuperar versión objeto": {
-        "cmd": "gcloud storage cp {src_version} {dest}",
-        "params": ["src_version", "dest"]
-      }
-    },
-    "❌ Eliminación": {
-      "Borrar objeto": {
-        "cmd": "gcloud storage rm {src}",
-        "params": ["src"]
-      }
-    },
-    "🔐 Seguridad": {
-      "Firmar URL temporal": {
-        "cmd": "gcloud storage sign-url {src} --duration={duration}",
-        "params": ["src", "duration"]
-      },
-      "Firmar URL temporal avanzada": {
-        "cmd": "gcloud storage sign-url {src} --duration={duration} --http-method={method} --credentials-file={creds}",
-        "params": ["src", "duration", "method", "creds"]
-      }
-    }
-  },
-
-  "IAM / Seguridad": {
-    "🔎 Consulta": {
-      "Ver IAM de bucket": {
-        "cmd": "gcloud storage buckets get-iam-policy {bucket}",
-        "params": ["bucket"]
-      },
-      "Ver IAM de objeto": {
-        "cmd": "gcloud storage objects get-iam-policy {object}",
-        "params": ["object"]
+      "Probar permisos IAM en bucket": {
+        "cmd": "gcloud storage buckets test-iam-permissions {bucket} {permissions}",
+        "params": [
+          "bucket",
+          "permissions"
+        ]
       }
     },
     "➕ Asignación": {
       "Añadir IAM a bucket": {
         "cmd": "gcloud storage buckets add-iam-policy-binding {bucket} --member={member} --role={role}",
-        "params": ["bucket", "member", "role"]
+        "params": [
+          "bucket",
+          "member",
+          "role"
+        ]
       },
       "Añadir IAM a objeto": {
         "cmd": "gcloud storage objects add-iam-policy-binding {object} --member={member} --role={role}",
-        "params": ["object", "member", "role"]
+        "params": [
+          "object",
+          "member",
+          "role"
+        ]
       },
       "Añadir IAM condicional a bucket": {
         "cmd": "gcloud storage buckets add-iam-policy-binding {bucket} --member={member} --role={role} --condition={condition}",
-        "params": ["bucket", "member", "role", "condition"]
+        "params": [
+          "bucket",
+          "member",
+          "role",
+          "condition"
+        ]
       }
     },
     "➖ Revocación": {
       "Quitar IAM de bucket": {
         "cmd": "gcloud storage buckets remove-iam-policy-binding {bucket} --member={member} --role={role}",
-        "params": ["bucket", "member", "role"]
+        "params": [
+          "bucket",
+          "member",
+          "role"
+        ]
       },
       "Quitar IAM de objeto": {
         "cmd": "gcloud storage objects remove-iam-policy-binding {object} --member={member} --role={role}",
-        "params": ["object", "member", "role"]
+        "params": [
+          "object",
+          "member",
+          "role"
+        ]
       }
     },
-    "⚙️ Gestión avanzada": {
-      "Establecer IAM desde archivo": {
-        "cmd": "gcloud storage buckets set-iam-policy {bucket} {policy_file}",
-        "params": ["bucket", "policy_file"]
+    "🔎 Consulta": {
+      "Ver IAM de bucket": {
+        "cmd": "gcloud storage buckets get-iam-policy {bucket}",
+        "params": [
+          "bucket"
+        ]
       },
-      "Usar clave de encriptación (CMEK)": {
-        "cmd": "gcloud storage buckets update {bucket} --default-encryption-key={kms_key}",
-        "params": ["bucket", "kms_key"]
-      },
-      "Quitar clave de encriptación": {
-        "cmd": "gcloud storage buckets update {bucket} --clear-default-encryption-key",
-        "params": ["bucket"]
-      },
-      "Probar permisos IAM en bucket": {
-        "cmd": "gcloud storage buckets test-iam-permissions {bucket} {permissions}",
-        "params": ["bucket", "permissions"]
+      "Ver IAM de objeto": {
+        "cmd": "gcloud storage objects get-iam-policy {object}",
+        "params": [
+          "object"
+        ]
       }
     }
   },
-
+  "Objetos": {
+    "❌ Eliminación": {
+      "Borrar objeto": {
+        "cmd": "gcloud storage rm {src}",
+        "params": [
+          "src"
+        ]
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar metadatos objeto": {
+        "cmd": "gcloud storage objects update {src} --content-type={mime} --metadata={metadata}",
+        "params": [
+          "src",
+          "mime",
+          "metadata"
+        ]
+      },
+      "Actualizar metadatos (borrar)": {
+        "cmd": "gcloud storage objects update {src} --clear-metadata",
+        "params": [
+          "src"
+        ]
+      },
+      "Actualizar ACL objeto": {
+        "cmd": "gcloud storage objects update {src} --add-acl-grant={grant}",
+        "params": [
+          "src",
+          "grant"
+        ]
+      },
+      "Reescribir objeto con nueva clase": {
+        "cmd": "gcloud storage rewrite {src} {dest} --storage-class={storage_class}",
+        "params": [
+          "src",
+          "dest",
+          "storage_class"
+        ]
+      },
+      "Reescribir objeto con nueva encriptación": {
+        "cmd": "gcloud storage rewrite {src} {dest} --encryption-key={key}",
+        "params": [
+          "src",
+          "dest",
+          "key"
+        ]
+      }
+    },
+    "📤 Recuperación": {
+      "Recuperar versión objeto": {
+        "cmd": "gcloud storage cp {src_version} {dest}",
+        "params": [
+          "src_version",
+          "dest"
+        ]
+      }
+    },
+    "📤 Transferencia": {
+      "Subir objeto": {
+        "cmd": "gcloud storage cp {local} {dest}",
+        "params": [
+          "local",
+          "dest"
+        ]
+      },
+      "Descargar objeto": {
+        "cmd": "gcloud storage cp {src} {local}",
+        "params": [
+          "src",
+          "local"
+        ]
+      },
+      "Mover objeto": {
+        "cmd": "gcloud storage mv {src} {dest}",
+        "params": [
+          "src",
+          "dest"
+        ]
+      },
+      "Sincronizar carpetas": {
+        "cmd": "gcloud storage rsync -r {local_dir} gs://{bucket}/{prefix}",
+        "params": [
+          "local_dir",
+          "bucket",
+          "prefix"
+        ]
+      }
+    },
+    "🔎 Consulta": {
+      "Listar objetos": {
+        "cmd": "gcloud storage ls gs://{bucket}/{prefix}",
+        "params": [
+          "bucket",
+          "prefix"
+        ]
+      },
+      "Describir objeto": {
+        "cmd": "gcloud storage objects describe {src}",
+        "params": [
+          "src"
+        ]
+      },
+      "Listar versiones objeto": {
+        "cmd": "gcloud storage objects versions list gs://{bucket}/{prefix}",
+        "params": [
+          "bucket",
+          "prefix"
+        ]
+      },
+      "Listar versiones con generación": {
+        "cmd": "gcloud storage ls gs://{bucket}/{object}#generation --all-versions",
+        "params": [
+          "bucket",
+          "object"
+        ]
+      }
+    },
+    "🔐 Seguridad": {
+      "Firmar URL temporal": {
+        "cmd": "gcloud storage sign-url {src} --duration={duration}",
+        "params": [
+          "src",
+          "duration"
+        ]
+      },
+      "Firmar URL temporal avanzada": {
+        "cmd": "gcloud storage sign-url {src} --duration={duration} --http-method={method} --credentials-file={creds}",
+        "params": [
+          "src",
+          "duration",
+          "method",
+          "creds"
+        ]
+      }
+    }
+  },
   "Operaciones globales": {
+    "⚙️ Configuración": {
+      "Cambiar proyecto activo": {
+        "cmd": "gcloud config set project {project}",
+        "params": [
+          "project"
+        ]
+      },
+      "Definir configuración por defecto (storage)": {
+        "cmd": "gcloud config set storage/{property} {value}",
+        "params": [
+          "property",
+          "value"
+        ]
+      }
+    },
+    "❌ Control": {
+      "Cancelar operación": {
+        "cmd": "gcloud storage operations cancel {operation_id}",
+        "params": [
+          "operation_id"
+        ]
+      }
+    },
+    "📤 Gestión": {
+      "Copiar recursivo": {
+        "cmd": "gcloud storage cp -r {src} {dest}",
+        "params": [
+          "src",
+          "dest"
+        ]
+      },
+      "Eliminar recursivo": {
+        "cmd": "gcloud storage rm -r {src}",
+        "params": [
+          "src"
+        ]
+      },
+      "Comparar buckets": {
+        "cmd": "gcloud storage diff gs://{bucket1} gs://{bucket2}",
+        "params": [
+          "bucket1",
+          "bucket2"
+        ]
+      }
+    },
     "🔎 Consulta": {
       "Listar configuración actual": {
         "cmd": "gcloud config list",
@@ -240,56 +414,32 @@
         "cmd": "gcloud storage operations list",
         "params": []
       }
-    },
-    "📤 Gestión": {
-      "Copiar recursivo": {
-        "cmd": "gcloud storage cp -r {src} {dest}",
-        "params": ["src", "dest"]
-      },
-      "Eliminar recursivo": {
-        "cmd": "gcloud storage rm -r {src}",
-        "params": ["src"]
-      },
-      "Comparar buckets": {
-        "cmd": "gcloud storage diff gs://{bucket1} gs://{bucket2}",
-        "params": ["bucket1", "bucket2"]
-      }
-    },
-    "❌ Control": {
-      "Cancelar operación": {
-        "cmd": "gcloud storage operations cancel {operation_id}",
-        "params": ["operation_id"]
-      }
-    },
-    "⚙️ Configuración": {
-      "Cambiar proyecto activo": {
-        "cmd": "gcloud config set project {project}",
-        "params": ["project"]
-      },
-      "Definir configuración por defecto (storage)": {
-        "cmd": "gcloud config set storage/{property} {value}",
-        "params": ["property", "value"]
-      }
     }
   },
-
   "Transferencias": {
-    "🔎 Consulta": {
-      "Listar transferencias": {
-        "cmd": "gcloud transfer jobs list",
-        "params": []
+    "📝 Modificación": {
+      "Actualizar transferencia": {
+        "cmd": "gcloud transfer jobs update {job_id} --status={status}",
+        "params": [
+          "job_id",
+          "status"
+        ]
       }
     },
     "📤 Creación": {
       "Crear transferencia entre buckets": {
         "cmd": "gcloud transfer jobs create gs://{src_bucket} gs://{dest_bucket} --description={description} --schedule-starts=NOW",
-        "params": ["src_bucket", "dest_bucket", "description"]
+        "params": [
+          "src_bucket",
+          "dest_bucket",
+          "description"
+        ]
       }
     },
-    "📝 Modificación": {
-      "Actualizar transferencia": {
-        "cmd": "gcloud transfer jobs update {job_id} --status={status}",
-        "params": ["job_id", "status"]
+    "🔎 Consulta": {
+      "Listar transferencias": {
+        "cmd": "gcloud transfer jobs list",
+        "params": []
       }
     }
   }

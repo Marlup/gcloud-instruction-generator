@@ -15,8 +15,8 @@ emoji_map = {
     "✅": ":check_mark_button:",
 }
 
-# --- Colores por subcategoría ---
-subcategory_colors = {
+# --- Colores por categoría ---
+category_colors = {
     "Consulta":      {"foreground": "#1E90FF"},  # azul
     "Creación":      {"foreground": "#2E8B57"},  # verde
     "Modificación":  {"foreground": "#FF8C00"},  # naranja

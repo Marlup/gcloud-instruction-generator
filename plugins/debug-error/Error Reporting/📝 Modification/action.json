@@ -1,0 +1,11 @@
+{
+  "Update error group": {
+    "cmd": "gcloud error-reporting groups update {group_id} --project={project_id} --tracking-issues={issues}",
+    "params": [
+      "group_id",
+      "project_id",
+      "issues"
+    ],
+    "param_hints": {}
+  }
+}

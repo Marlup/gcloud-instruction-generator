@@ -1,0 +1,34 @@
+{
+  "Adds IAM policy binding.": {
+    "cmd": "gcloud dataplex tables add-iam-policy-binding --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --member={member} --role={role}",
+    "params": [
+      "lake",
+      "dataset_id",
+      "table_id",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Removes IAM policy binding.": {
+    "cmd": "gcloud dataplex tables remove-iam-policy-binding --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --member={member} --role={role}",
+    "params": [
+      "lake",
+      "dataset_id",
+      "table_id",
+      "member",
+      "role"
+    ],
+    "param_hints": {}
+  },
+  "Sets IAM policy from file.": {
+    "cmd": "gcloud dataplex tables set-iam-policy --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --policy-file={policy_file}",
+    "params": [
+      "lake",
+      "dataset_id",
+      "table_id",
+      "policy_file"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "Listar log buckets": {
+    "cmd": "gcloud logging buckets list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Actualizar retención bucket logs": {
+    "cmd": "gcloud logging buckets update {bucket_id} --retention-days={days} --project={project}",
+    "params": [
+      "bucket_id",
+      "days",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Listar log views": {
+    "cmd": "gcloud logging views list --bucket={bucket_id} --project={project}",
+    "params": [
+      "bucket_id",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Crear log view": {
+    "cmd": "gcloud logging views create {view_id} --bucket={bucket_id} --log-filter={filter} --project={project}",
+    "params": [
+      "view_id",
+      "bucket_id",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

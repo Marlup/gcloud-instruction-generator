@@ -1,0 +1,22 @@
+{
+  "List workflows": {
+    "cmd": "gcloud workflows list --location={region}",
+    "params": [
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Describe workflow": {
+    "cmd": "gcloud workflows describe {workflow} --location={region}",
+    "params": [
+      "workflow",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

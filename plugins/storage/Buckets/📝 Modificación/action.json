@@ -1,0 +1,16 @@
+{
+  "Actualizar etiquetas bucket": {
+    "cmd": "gcloud storage buckets update {bucket} --update-labels={labels}",
+    "params": [
+      "bucket",
+      "labels"
+    ]
+  },
+  "Eliminar etiquetas bucket": {
+    "cmd": "gcloud storage buckets update {bucket} --remove-labels={labels}",
+    "params": [
+      "bucket",
+      "labels"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Listar organizaciones": {
+    "cmd": "gcloud organizations list",
+    "params": [],
+    "param_hints": {}
+  },
+  "Listar carpetas": {
+    "cmd": "gcloud resource-manager folders list",
+    "params": [],
+    "param_hints": {}
+  }
+}

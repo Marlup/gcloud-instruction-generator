@@ -1,0 +1,10 @@
+{
+  "Cancelar operación de copia": {
+    "cmd": "gcloud logging operations cancel {operation_id} --project={project}",
+    "params": [
+      "operation_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

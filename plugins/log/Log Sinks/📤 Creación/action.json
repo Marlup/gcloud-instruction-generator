@@ -1,0 +1,32 @@
+{
+  "Crear sink a PubSub": {
+    "cmd": "gcloud logging sinks create {sink_id} pubsub.googleapis.com/projects/{project}/topics/{topic} --log-filter='{filter}' --project={project}",
+    "params": [
+      "sink_id",
+      "topic",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Crear sink a BigQuery": {
+    "cmd": "gcloud logging sinks create {sink_id} bigquery.googleapis.com/projects/{project}/datasets/{dataset} --use-partitioned-tables --log-filter='{filter}' --project={project}",
+    "params": [
+      "sink_id",
+      "dataset",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Crear sink a GCS": {
+    "cmd": "gcloud logging sinks create {sink_id} storage.googleapis.com/{bucket} --log-filter='{filter}' --project={project}",
+    "params": [
+      "sink_id",
+      "bucket",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

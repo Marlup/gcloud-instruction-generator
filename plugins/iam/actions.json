@@ -1,0 +1,462 @@
+{
+  "IAM & Identity": {
+    "🪪 Identity": {
+      "List IAM policies": {
+        "cmd": "gcloud iam policies list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Add IAM policy binding": {
+        "cmd": "gcloud projects add-iam-policy-binding {project} --member={member} --role={role}",
+        "params": ["project", "member", "role"],
+        "param_hints": {}
+      },
+      "Remove IAM policy binding": {
+        "cmd": "gcloud projects remove-iam-policy-binding {project} --member={member} --role={role}",
+        "params": ["project", "member", "role"],
+        "param_hints": {}
+      },
+      "Test IAM permissions": {
+        "cmd": "gcloud projects test-iam-permissions {project} {permissions}",
+        "params": ["project", "permissions"],
+        "param_hints": {}
+      },
+      "Authenticate with service account": {
+        "cmd": "gcloud auth activate-service-account --key-file={key_file}",
+        "params": ["key_file"],
+        "param_hints": {
+          "key_file": {"type": "file", "extensions": [".json"]}
+        }
+      },
+      "List service accounts": {
+        "cmd": "gcloud iam service-accounts list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Create service account": {
+        "cmd": "gcloud iam service-accounts create {name} --display-name={display_name}",
+        "params": ["name", "display_name"],
+        "param_hints": {}
+      }
+    }
+  },
+  "Roles": {
+    "🔎 Consulta": {
+      "Listar roles": {
+        "cmd": "gcloud iam roles list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Listar roles predefinidos": {
+        "cmd": "gcloud iam roles list --filter='stage:GA'",
+        "params": [],
+        "param_hints": {}
+      },
+      "Describir rol": {
+        "cmd": "gcloud iam roles describe {role} --project={project}",
+        "params": ["role", "project"],
+        "param_hints": {}
+      },
+      "Describir rol predefinido": {
+        "cmd": "gcloud iam roles describe roles/{role_name}",
+        "params": ["role_name"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Create custom role": {
+        "cmd": "gcloud iam roles create {role_id} --project={project_id} --title={title} --permissions={permissions} --stage=ALPHA",
+        "params": ["role_id", "project_id", "title", "permissions"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modification": {
+      "Update custom role": {
+        "cmd": "gcloud iam roles update {role_id} --project={project_id} --add-permissions={permissions}",
+        "params": ["role_id", "project_id", "permissions"],
+        "param_hints": {}
+      }
+    },
+    "❌ Deletion": {
+      "Delete custom role": {
+        "cmd": "gcloud iam roles delete {role_id} --project={project_id}",
+        "params": ["role_id", "project_id"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Cuentas de servicio": {
+    "🔎 Consulta": {
+      "Listar cuentas de servicio": {
+        "cmd": "gcloud iam service-accounts list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts describe {account} --project={project}",
+        "params": ["account", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts create {account_id} --project={project} --display-name='{display_name}'",
+        "params": ["account_id", "project", "display_name"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts update {account} --project={project} --display-name='{display_name}'",
+        "params": ["account", "project", "display_name"],
+        "param_hints": {}
+      },
+      "Deshabilitar cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts disable {account} --project={project}",
+        "params": ["account", "project"],
+        "param_hints": {}
+      },
+      "Habilitar cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts enable {account} --project={project}",
+        "params": ["account", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts delete {account} --project={project}",
+        "params": ["account", "project"],
+        "param_hints": {}
+      }
+    },
+    "🔐 Credenciales": {
+      "Crear clave de cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts keys create {file} --iam-account={account}",
+        "params": ["file", "account"],
+        "param_hints": {}
+      },
+      "Listar claves de cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts keys list --iam-account={account}",
+        "params": ["account"],
+        "param_hints": {}
+      },
+      "Borrar clave de cuenta de servicio": {
+        "cmd": "gcloud iam service-accounts keys delete {key_id} --iam-account={account}",
+        "params": ["key_id", "account"],
+        "param_hints": {}
+      }
+    },
+    "🧑‍💻 Impersonación": {
+      "Impersonar cuenta de servicio (token)": {
+        "cmd": "gcloud auth print-access-token --impersonate-service-account={account}",
+        "params": ["account"],
+        "param_hints": {}
+      },
+      "Impersonar cuenta de servicio (activar)": {
+        "cmd": "gcloud auth activate-service-account {account} --key-file={key_file}",
+        "params": ["account", "key_file"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Políticas IAM": {
+    "🔎 Consulta": {
+      "Ver IAM de proyecto": {
+        "cmd": "gcloud projects get-iam-policy {project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    },
+    "➕ Asignación": {
+      "Añadir binding a proyecto": {
+        "cmd": "gcloud projects add-iam-policy-binding {project} --member={member} --role={role}",
+        "params": ["project", "member", "role"],
+        "param_hints": {}
+      },
+      "Añadir binding condicional a proyecto": {
+        "cmd": "gcloud projects add-iam-policy-binding {project} --member={member} --role={role} --condition=expression='{expr}',title='{title}',description='{desc}'",
+        "params": ["project", "member", "role", "expr", "title", "desc"],
+        "param_hints": {}
+      }
+    },
+    "➖ Revocación": {
+      "Quitar binding de proyecto": {
+        "cmd": "gcloud projects remove-iam-policy-binding {project} --member={member} --role={role}",
+        "params": ["project", "member", "role"],
+        "param_hints": {}
+      }
+    },
+    "⚙️ Gestión avanzada": {
+      "Establecer política desde archivo": {
+        "cmd": "gcloud projects set-iam-policy {project} {policy_file}",
+        "params": ["project", "policy_file"],
+        "param_hints": {}
+      },
+      "Probar permisos IAM": {
+        "cmd": "gcloud projects test-iam-permissions {project} {permissions}",
+        "params": ["project", "permissions"],
+        "param_hints": {}
+      },
+      "Simular política IAM": {
+        "cmd": "gcloud iam simulate-policy --policy-file={policy_file} --resource={resource} --permissions={permissions}",
+        "params": ["policy_file", "resource", "permissions"],
+        "param_hints": {}
+      },
+      "Troubleshoot IAM": {
+        "cmd": "gcloud policy-troubleshooter iam troubleshoot --principal-email={email} --resource={resource} --permission={permission}",
+        "params": ["email", "resource", "permission"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Recommender": {
+    "🔎 Consulta": {
+      "Listar recomendaciones IAM": {
+        "cmd": "gcloud recommender recommendations list --recommender=google.iam.policy.Recommender --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Organización y carpetas": {
+    "🔎 Consulta": {
+      "Listar organizaciones": {
+        "cmd": "gcloud organizations list",
+        "params": [],
+        "param_hints": {}
+      },
+      "Listar carpetas": {
+        "cmd": "gcloud resource-manager folders list",
+        "params": [],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear carpeta": {
+        "cmd": "gcloud resource-manager folders create --display-name='{name}' --organization={org_id}",
+        "params": ["name", "org_id"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Mover carpeta": {
+        "cmd": "gcloud resource-manager folders move {folder_id} --dest-organization={org_id}",
+        "params": ["folder_id", "org_id"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar carpeta": {
+        "cmd": "gcloud resource-manager folders delete {folder_id}",
+        "params": ["folder_id"],
+        "param_hints": {}
+      }
+    }
+  },
+  
+  "Org Policies (Constraints)": {
+    "🔎 Consulta": {
+      "Listar políticas de organización (proyecto)": {
+        "cmd": "gcloud org-policies list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Listar políticas de organización (carpeta)": {
+        "cmd": "gcloud org-policies list --folder={folder_id}",
+        "params": ["folder_id"],
+        "param_hints": {}
+      },
+      "Listar políticas de organización (org)": {
+        "cmd": "gcloud org-policies list --organization={org_id}",
+        "params": ["org_id"],
+        "param_hints": {}
+      },
+      "Describir constraint (proyecto)": {
+        "cmd": "gcloud org-policies describe {constraint} --project={project}",
+        "params": ["constraint", "project"],
+        "param_hints": {}
+      },
+      "Describir constraint (carpeta)": {
+        "cmd": "gcloud org-policies describe {constraint} --folder={folder_id}",
+        "params": ["constraint", "folder_id"],
+        "param_hints": {}
+      },
+      "Describir constraint (org)": {
+        "cmd": "gcloud org-policies describe {constraint} --organization={org_id}",
+        "params": ["constraint", "org_id"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Establecer policy desde archivo": {
+        "cmd": "gcloud org-policies set-policy {policy_file}",
+        "params": ["policy_file"],
+        "param_hints": {
+          "policy_file": {"type": "file", "extensions": [".yaml", ".yml", ".json"]}
+        }
+      },
+      "Actualizar constraint con reglas": {
+        "cmd": "gcloud org-policies set-policy {policy_file} --project={project}",
+        "params": ["policy_file", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar constraint de proyecto": {
+        "cmd": "gcloud org-policies delete {constraint} --project={project}",
+        "params": ["constraint", "project"],
+        "param_hints": {}
+      },
+      "Reset constraint a herencia": {
+        "cmd": "gcloud org-policies reset {constraint} --project={project}",
+        "params": ["constraint", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Workload Identity Federation": {
+    "📤 Creación": {
+      "Crear pool de Workload Identity": {
+        "cmd": "gcloud iam workload-identity-pools create {pool_id} --location=global --display-name='{display_name}' --description='{description}'",
+        "params": ["pool_id", "display_name", "description"],
+        "param_hints": {}
+      },
+      "Crear proveedor OIDC": {
+        "cmd": "gcloud iam workload-identity-pools providers create-oidc {provider_id} --workload-identity-pool={pool_id} --location=global --display-name='{display_name}' --issuer-uri={issuer_uri} --allowed-audiences={allowed_audiences} --attribute-mapping={attribute_mapping}",
+        "params": ["provider_id", "pool_id", "display_name", "issuer_uri", "allowed_audiences", "attribute_mapping"],
+        "param_hints": {}
+      },
+      "Crear proveedor SAML": {
+        "cmd": "gcloud iam workload-identity-pools providers create-saml {provider_id} --workload-identity-pool={pool_id} --location=global --display-name='{display_name}' --idp-metadata-document-file={saml_metadata_file} --attribute-mapping={attribute_mapping}",
+        "params": ["provider_id", "pool_id", "display_name", "saml_metadata_file", "attribute_mapping"],
+        "param_hints": {
+          "saml_metadata_file": {"type": "file", "extensions": [".xml"]}
+        }
+      }
+    },
+    "🔎 Consulta": {
+      "Listar pools": {
+        "cmd": "gcloud iam workload-identity-pools list --location=global",
+        "params": [],
+        "param_hints": {}
+      },
+      "Describir pool": {
+        "cmd": "gcloud iam workload-identity-pools describe {pool_id} --location=global",
+        "params": ["pool_id"],
+        "param_hints": {}
+      },
+      "Listar proveedores de pool": {
+        "cmd": "gcloud iam workload-identity-pools providers list --workload-identity-pool={pool_id} --location=global",
+        "params": ["pool_id"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar pool": {
+        "cmd": "gcloud iam workload-identity-pools update {pool_id} --location=global --display-name='{display_name}' --description='{description}'",
+        "params": ["pool_id", "display_name", "description"],
+        "param_hints": {}
+      },
+      "Actualizar proveedor OIDC": {
+        "cmd": "gcloud iam workload-identity-pools providers update-oidc {provider_id} --workload-identity-pool={pool_id} --location=global --attribute-mapping={attribute_mapping} --allowed-audiences={allowed_audiences}",
+        "params": ["provider_id", "pool_id", "attribute_mapping", "allowed_audiences"],
+        "param_hints": {}
+      },
+      "Actualizar proveedor SAML": {
+        "cmd": "gcloud iam workload-identity-pools providers update-saml {provider_id} --workload-identity-pool={pool_id} --location=global --attribute-mapping={attribute_mapping}",
+        "params": ["provider_id", "pool_id", "attribute_mapping"],
+        "param_hints": {}
+      },
+      "Asignar identidades externas a SA": {
+        "cmd": "gcloud iam service-accounts add-iam-policy-binding {sa_email} --member='principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/attribute.{attribute}/{value}' --role='roles/iam.workloadIdentityUser'",
+        "params": ["sa_email", "project_number", "pool_id", "attribute", "value"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar proveedor": {
+        "cmd": "gcloud iam workload-identity-pools providers delete {provider_id} --workload-identity-pool={pool_id} --location=global",
+        "params": ["provider_id", "pool_id"],
+        "param_hints": {}
+      },
+      "Borrar pool": {
+        "cmd": "gcloud iam workload-identity-pools delete {pool_id} --location=global",
+        "params": ["pool_id"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Workforce Identity Federation": {
+    "📤 Creación": {
+      "Crear Workforce pool": {
+        "cmd": "gcloud iam workforce-pools create {pool_id} --location=global --display-name='{display_name}' --description='{description}'",
+        "params": ["pool_id", "display_name", "description"],
+        "param_hints": {}
+      },
+      "Crear proveedor OIDC Workforce": {
+        "cmd": "gcloud iam workforce-pools providers create-oidc {provider_id} --workforce-pool={pool_id} --location=global --display-name='{display_name}' --issuer-uri={issuer_uri} --allowed-audiences={allowed_audiences} --attribute-mapping={attribute_mapping}",
+        "params": ["provider_id", "pool_id", "display_name", "issuer_uri", "allowed_audiences", "attribute_mapping"],
+        "param_hints": {}
+      },
+      "Crear proveedor SAML Workforce": {
+        "cmd": "gcloud iam workforce-pools providers create-saml {provider_id} --workforce-pool={pool_id} --location=global --display-name='{display_name}' --idp-metadata-document-file={saml_metadata_file} --attribute-mapping={attribute_mapping}",
+        "params": ["provider_id", "pool_id", "display_name", "saml_metadata_file", "attribute_mapping"],
+        "param_hints": {
+          "saml_metadata_file": {"type": "file", "extensions": [".xml"]}
+        }
+      }
+    },
+    "🔎 Consulta": {
+      "Listar pools Workforce": {
+        "cmd": "gcloud iam workforce-pools list --location=global",
+        "params": [],
+        "param_hints": {}
+      },
+      "Describir pool Workforce": {
+        "cmd": "gcloud iam workforce-pools describe {pool_id} --location=global",
+        "params": ["pool_id"],
+        "param_hints": {}
+      },
+      "Listar proveedores Workforce": {
+        "cmd": "gcloud iam workforce-pools providers list --workforce-pool={pool_id} --location=global",
+        "params": ["pool_id"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar Workforce pool": {
+        "cmd": "gcloud iam workforce-pools update {pool_id} --location=global --display-name='{display_name}' --description='{description}'",
+        "params": ["pool_id", "display_name", "description"],
+        "param_hints": {}
+      },
+      "Actualizar proveedor OIDC Workforce": {
+        "cmd": "gcloud iam workforce-pools providers update-oidc {provider_id} --workforce-pool={pool_id} --location=global --attribute-mapping={attribute_mapping} --allowed-audiences={allowed_audiences}",
+        "params": ["provider_id", "pool_id", "attribute_mapping", "allowed_audiences"],
+        "param_hints": {}
+      },
+      "Actualizar proveedor SAML Workforce": {
+        "cmd": "gcloud iam workforce-pools providers update-saml {provider_id} --workforce-pool={pool_id} --location=global --attribute-mapping={attribute_mapping}",
+        "params": ["provider_id", "pool_id", "attribute_mapping"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar proveedor Workforce": {
+        "cmd": "gcloud iam workforce-pools providers delete {provider_id} --workforce-pool={pool_id} --location=global",
+        "params": ["provider_id", "pool_id"],
+        "param_hints": {}
+      },
+      "Borrar pool Workforce": {
+        "cmd": "gcloud iam workforce-pools delete {pool_id} --location=global",
+        "params": ["pool_id"],
+        "param_hints": {}
+      }
+    }
+  }
+}

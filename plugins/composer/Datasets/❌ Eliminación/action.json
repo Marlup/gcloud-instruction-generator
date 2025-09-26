@@ -1,0 +1,9 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "bq rm -r -f {dataset}",
+    "params": [
+      "dataset"
+    ],
+    "param_hints": {}
+  }
+}

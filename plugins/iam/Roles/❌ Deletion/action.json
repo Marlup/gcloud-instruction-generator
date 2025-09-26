@@ -1,0 +1,10 @@
+{
+  "Delete custom role": {
+    "cmd": "gcloud iam roles delete {role_id} --project={project_id}",
+    "params": [
+      "role_id",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

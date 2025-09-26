@@ -1,0 +1,17 @@
+{
+  "Borrar proveedor Workforce": {
+    "cmd": "gcloud iam workforce-pools providers delete {provider_id} --workforce-pool={pool_id} --location=global",
+    "params": [
+      "provider_id",
+      "pool_id"
+    ],
+    "param_hints": {}
+  },
+  "Borrar pool Workforce": {
+    "cmd": "gcloud iam workforce-pools delete {pool_id} --location=global",
+    "params": [
+      "pool_id"
+    ],
+    "param_hints": {}
+  }
+}

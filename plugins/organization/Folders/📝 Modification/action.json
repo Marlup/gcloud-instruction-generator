@@ -1,0 +1,26 @@
+{
+  "Move folder": {
+    "cmd": "gcloud resource-manager folders move {folder_id} --destination-folder={dest_folder_id}",
+    "params": [
+      "folder_id",
+      "dest_folder_id"
+    ],
+    "param_hints": {}
+  },
+  "Set IAM policy (folder)": {
+    "cmd": "gcloud resource-manager folders set-iam-policy {folder_id} {policy_file}",
+    "params": [
+      "folder_id",
+      "policy_file"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Actualizar descripción tabla": {
+    "cmd": "gcloud bigquery tables update {dataset}.{table} --description={description}",
+    "params": [
+      "dataset",
+      "table",
+      "description"
+    ]
+  }
+}

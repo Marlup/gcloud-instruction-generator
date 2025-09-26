@@ -1,0 +1,19 @@
+{
+  "Listar buckets": {
+    "cmd": "gcloud logging buckets list --location={location} --project={project}",
+    "params": [
+      "location",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir bucket": {
+    "cmd": "gcloud logging buckets describe {bucket_id} --location={location} --project={project}",
+    "params": [
+      "bucket_id",
+      "location",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "Rotate key": {
+    "cmd": "gcloud kms keys versions create --key={key} --keyring={keyring} --location={region}",
+    "params": [
+      "key",
+      "keyring",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Disable key version": {
+    "cmd": "gcloud kms keys versions disable {version} --key={key} --keyring={keyring} --location={region}",
+    "params": [
+      "version",
+      "key",
+      "keyring",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Destroy key version": {
+    "cmd": "gcloud kms keys versions destroy {version} --key={key} --keyring={keyring} --location={region}",
+    "params": [
+      "version",
+      "key",
+      "keyring",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Add secret version": {
+    "cmd": "gcloud secrets versions add {secret} --data-file={file} --project={project_id}",
+    "params": [
+      "secret",
+      "file",
+      "project_id"
+    ],
+    "param_hints": {
+      "file": {
+        "type": "file",
+        "extensions": [
+          ".txt",
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  },
+  "Update secret labels": {
+    "cmd": "gcloud secrets update {secret} --update-labels={labels} --project={project_id}",
+    "params": [
+      "secret",
+      "labels",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

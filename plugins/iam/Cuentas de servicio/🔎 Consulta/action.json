@@ -1,0 +1,17 @@
+{
+  "Listar cuentas de servicio": {
+    "cmd": "gcloud iam service-accounts list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts describe {account} --project={project}",
+    "params": [
+      "account",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

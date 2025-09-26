@@ -1,0 +1,21 @@
+{
+  "Listar pools Workforce": {
+    "cmd": "gcloud iam workforce-pools list --location=global",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describir pool Workforce": {
+    "cmd": "gcloud iam workforce-pools describe {pool_id} --location=global",
+    "params": [
+      "pool_id"
+    ],
+    "param_hints": {}
+  },
+  "Listar proveedores Workforce": {
+    "cmd": "gcloud iam workforce-pools providers list --workforce-pool={pool_id} --location=global",
+    "params": [
+      "pool_id"
+    ],
+    "param_hints": {}
+  }
+}

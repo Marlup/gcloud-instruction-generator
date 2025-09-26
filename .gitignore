@@ -2,6 +2,7 @@
 /docs
 application_default_credentials*
 igen-bknd-001-dev-*
+temp-data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

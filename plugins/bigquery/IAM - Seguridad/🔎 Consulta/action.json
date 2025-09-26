@@ -1,0 +1,8 @@
+{
+  "Ver IAM dataset": {
+    "cmd": "gcloud bigquery datasets get-iam-policy {dataset}",
+    "params": [
+      "dataset"
+    ]
+  }
+}

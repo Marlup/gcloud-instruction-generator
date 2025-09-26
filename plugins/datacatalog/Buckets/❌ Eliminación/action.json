@@ -1,0 +1,9 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud data-catalog buckets delete --bucket {bucket}",
+    "params": [
+      "bucket"
+    ],
+    "param_hints": {}
+  }
+}

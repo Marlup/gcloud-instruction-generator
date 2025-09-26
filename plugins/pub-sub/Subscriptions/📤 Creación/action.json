@@ -1,0 +1,10 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud pubsub subscriptions create {subscription} --topic={topic}",
+    "params": [
+      "subscription",
+      "topic"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Actualizar sink": {
+    "cmd": "gcloud logging sinks update {sink_name} --log-filter=\"{filter}\" --project={project}",
+    "params": [
+      "sink_name",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Actualizar sink (children)": {
+    "cmd": "gcloud logging sinks update {sink_name} --include-children --project={project}",
+    "params": [
+      "sink_name",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Actualizar sink con identidad única": {
+    "cmd": "gcloud logging sinks update {sink_name} --unique-writer-identity --project={project}",
+    "params": [
+      "sink_name",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Runs a Dataplex job.": {
+    "cmd": "gcloud dataplex jobs run --lake={lake} --job-id={job_id}",
+    "params": [
+      "lake",
+      "job_id"
+    ],
+    "param_hints": {}
+  }
+}

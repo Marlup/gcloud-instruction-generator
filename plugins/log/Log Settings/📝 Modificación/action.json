@@ -1,0 +1,10 @@
+{
+  "Actualizar configuración": {
+    "cmd": "gcloud logging settings update --storage-location={location} --project={project}",
+    "params": [
+      "location",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Actualizar base de datos": {
+    "cmd": "gcloud biglake databases update {database} --catalog={catalog} --location={region} --description={description}",
+    "params": [
+      "database",
+      "catalog",
+      "region",
+      "description"
+    ]
+  }
+}

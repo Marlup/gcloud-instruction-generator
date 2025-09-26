@@ -1,0 +1,10 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud dataplex jobs delete --lake={lake} --job-id={job_id}",
+    "params": [
+      "lake",
+      "job_id"
+    ],
+    "param_hints": {}
+  }
+}

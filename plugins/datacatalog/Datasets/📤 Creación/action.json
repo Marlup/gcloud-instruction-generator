@@ -1,0 +1,15 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud data-catalog datasets create --dataset {dataset} --location {location}",
+    "params": [
+      "dataset",
+      "location"
+    ],
+    "param_hints": {
+      "location": {
+        "type": "combo",
+        "ref": "bigquery_locations"
+      }
+    }
+  }
+}

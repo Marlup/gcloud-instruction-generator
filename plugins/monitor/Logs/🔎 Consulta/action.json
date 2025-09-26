@@ -1,0 +1,41 @@
+{
+  "Listar logs": {
+    "cmd": "gcloud logging logs list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir log": {
+    "cmd": "gcloud logging logs describe {log_id} --project={project}",
+    "params": [
+      "log_id",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Leer logs filtrados": {
+    "cmd": "gcloud logging read \"{filter}\" --limit={limit} --project={project}",
+    "params": [
+      "filter",
+      "limit",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Tail logs en tiempo real": {
+    "cmd": "gcloud logging tail \"{filter}\" --project={project}",
+    "params": [
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Leer logs de severidad ERROR": {
+    "cmd": "gcloud logging read \"severity>=ERROR\" --format=json --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

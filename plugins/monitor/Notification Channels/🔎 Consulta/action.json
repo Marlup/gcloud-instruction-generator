@@ -1,0 +1,17 @@
+{
+  "Listar canales": {
+    "cmd": "gcloud monitoring channels list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir canal": {
+    "cmd": "gcloud monitoring channels describe {channel_id} --project={project}",
+    "params": [
+      "channel_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

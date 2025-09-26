@@ -1,0 +1,10 @@
+{
+  "Actualizar catálogo": {
+    "cmd": "gcloud biglake catalogs update {catalog} --location={region} --description={description}",
+    "params": [
+      "catalog",
+      "region",
+      "description"
+    ]
+  }
+}

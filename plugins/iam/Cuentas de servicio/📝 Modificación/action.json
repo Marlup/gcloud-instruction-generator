@@ -1,0 +1,27 @@
+{
+  "Actualizar cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts update {account} --project={project} --display-name='{display_name}'",
+    "params": [
+      "account",
+      "project",
+      "display_name"
+    ],
+    "param_hints": {}
+  },
+  "Deshabilitar cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts disable {account} --project={project}",
+    "params": [
+      "account",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Habilitar cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts enable {account} --project={project}",
+    "params": [
+      "account",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

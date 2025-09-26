@@ -1,0 +1,17 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud dataplex jobs create --lake={lake} --job-id={job_id} --query={query} --location={location}",
+    "params": [
+      "lake",
+      "job_id",
+      "query",
+      "location"
+    ],
+    "param_hints": {
+      "location": {
+        "type": "combo",
+        "ref": "bigquery_locations"
+      }
+    }
+  }
+}

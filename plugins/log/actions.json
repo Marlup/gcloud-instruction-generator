@@ -1,0 +1,317 @@
+{
+  "Log Entries": {
+    "🔎 Consulta": {
+      "Leer entradas de logs": {
+        "cmd": "gcloud logging read \"{filter}\" --limit={limit} --project={project}",
+        "params": ["filter", "limit", "project"],
+        "param_hints": {}
+      },
+      "Tail en tiempo real": {
+        "cmd": "gcloud logging tail \"{filter}\" --project={project}",
+        "params": ["filter", "project"],
+        "param_hints": {}
+      },
+      "Listar logs": {
+        "cmd": "gcloud logging logs list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Escribir entrada de log simple": {
+        "cmd": "gcloud logging write {log_id} \"{message}\" --severity={severity} --project={project}",
+        "params": ["log_id", "message", "severity", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar log": {
+        "cmd": "gcloud logging logs delete {log_id} --project={project}",
+        "params": ["log_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log Buckets": {
+    "🔎 Consulta": {
+      "Listar buckets": {
+        "cmd": "gcloud logging buckets list --location={location} --project={project}",
+        "params": ["location", "project"],
+        "param_hints": {}
+      },
+      "Describir bucket": {
+        "cmd": "gcloud logging buckets describe {bucket_id} --location={location} --project={project}",
+        "params": ["bucket_id", "location", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear bucket": {
+        "cmd": "gcloud logging buckets create {bucket_id} --location={location} --retention-days={days} --project={project}",
+        "params": ["bucket_id", "location", "days", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar bucket": {
+        "cmd": "gcloud logging buckets update {bucket_id} --location={location} --retention-days={days} --project={project}",
+        "params": ["bucket_id", "location", "days", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar bucket": {
+        "cmd": "gcloud logging buckets delete {bucket_id} --location={location} --project={project}",
+        "params": ["bucket_id", "location", "project"],
+        "param_hints": {}
+      }
+    },
+    "🔐 Seguridad": {
+      "Get IAM bucket": {
+        "cmd": "gcloud logging buckets get-iam-policy {bucket_id} --location={location} --project={project}",
+        "params": ["bucket_id", "location", "project"],
+        "param_hints": {}
+      },
+      "Set IAM bucket": {
+        "cmd": "gcloud logging buckets set-iam-policy {bucket_id} {policy_file} --location={location} --project={project}",
+        "params": ["bucket_id", "policy_file", "location", "project"],
+        "param_hints": {
+          "policy_file": {"type": "file", "extensions": [".json", ".yaml", ".yml"]}
+        }
+      }
+    }
+  },
+
+  "Log Views": {
+    "🔎 Consulta": {
+      "Listar vistas": {
+        "cmd": "gcloud logging views list --bucket={bucket_id} --location={location} --project={project}",
+        "params": ["bucket_id", "location", "project"],
+        "param_hints": {}
+      },
+      "Describir vista": {
+        "cmd": "gcloud logging views describe {view_id} --bucket={bucket_id} --location={location} --project={project}",
+        "params": ["view_id", "bucket_id", "location", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear vista": {
+        "cmd": "gcloud logging views create {view_id} --bucket={bucket_id} --location={location} --description='{description}' --log-filter='{filter}' --project={project}",
+        "params": ["view_id", "bucket_id", "location", "description", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar vista": {
+        "cmd": "gcloud logging views update {view_id} --bucket={bucket_id} --location={location} --description='{description}' --log-filter='{filter}' --project={project}",
+        "params": ["view_id", "bucket_id", "location", "description", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar vista": {
+        "cmd": "gcloud logging views delete {view_id} --bucket={bucket_id} --location={location} --project={project}",
+        "params": ["view_id", "bucket_id", "location", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log Sinks": {
+    "🔎 Consulta": {
+      "Listar sinks": {
+        "cmd": "gcloud logging sinks list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir sink": {
+        "cmd": "gcloud logging sinks describe {sink_id} --project={project}",
+        "params": ["sink_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear sink a PubSub": {
+        "cmd": "gcloud logging sinks create {sink_id} pubsub.googleapis.com/projects/{project}/topics/{topic} --log-filter='{filter}' --project={project}",
+        "params": ["sink_id", "topic", "filter", "project"],
+        "param_hints": {}
+      },
+      "Crear sink a BigQuery": {
+        "cmd": "gcloud logging sinks create {sink_id} bigquery.googleapis.com/projects/{project}/datasets/{dataset} --use-partitioned-tables --log-filter='{filter}' --project={project}",
+        "params": ["sink_id", "dataset", "filter", "project"],
+        "param_hints": {}
+      },
+      "Crear sink a GCS": {
+        "cmd": "gcloud logging sinks create {sink_id} storage.googleapis.com/{bucket} --log-filter='{filter}' --project={project}",
+        "params": ["sink_id", "bucket", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar sink": {
+        "cmd": "gcloud logging sinks update {sink_id} --log-filter='{filter}' --project={project}",
+        "params": ["sink_id", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar sink": {
+        "cmd": "gcloud logging sinks delete {sink_id} --project={project}",
+        "params": ["sink_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log Exclusions": {
+    "🔎 Consulta": {
+      "Listar exclusiones": {
+        "cmd": "gcloud logging exclusions list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir exclusión": {
+        "cmd": "gcloud logging exclusions describe {exclusion_id} --project={project}",
+        "params": ["exclusion_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear exclusión": {
+        "cmd": "gcloud logging exclusions create {exclusion_id} --log-filter='{filter}' --description='{description}' --project={project}",
+        "params": ["exclusion_id", "filter", "description", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar exclusión": {
+        "cmd": "gcloud logging exclusions update {exclusion_id} --log-filter='{filter}' --project={project}",
+        "params": ["exclusion_id", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar exclusión": {
+        "cmd": "gcloud logging exclusions delete {exclusion_id} --project={project}",
+        "params": ["exclusion_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log Metrics": {
+    "🔎 Consulta": {
+      "Listar métricas": {
+        "cmd": "gcloud logging metrics list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir métrica": {
+        "cmd": "gcloud logging metrics describe {metric_id} --project={project}",
+        "params": ["metric_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Crear métrica contador": {
+        "cmd": "gcloud logging metrics create {metric_id} --description='{description}' --log-filter='{filter}' --project={project}",
+        "params": ["metric_id", "description", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar métrica": {
+        "cmd": "gcloud logging metrics update {metric_id} --description='{description}' --log-filter='{filter}' --project={project}",
+        "params": ["metric_id", "description", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar métrica": {
+        "cmd": "gcloud logging metrics delete {metric_id} --project={project}",
+        "params": ["metric_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log Copy Operations": {
+    "🔎 Consulta": {
+      "Listar operaciones de copia": {
+        "cmd": "gcloud logging operations list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir operación": {
+        "cmd": "gcloud logging operations describe {operation_id} --project={project}",
+        "params": ["operation_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Transferencia": {
+      "Iniciar copia de logs": {
+        "cmd": "gcloud logging copy {source_bucket} {dest_bucket} --log-filter='{filter}' --project={project}",
+        "params": ["source_bucket", "dest_bucket", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Cancelar operación de copia": {
+        "cmd": "gcloud logging operations cancel {operation_id} --project={project}",
+        "params": ["operation_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log Settings": {
+    "🔎 Consulta": {
+      "Describir configuración": {
+        "cmd": "gcloud logging settings describe --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar configuración": {
+        "cmd": "gcloud logging settings update --storage-location={location} --project={project}",
+        "params": ["location", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Log CMEK": {
+    "🔎 Consulta": {
+      "Ver CMEK del router": {
+        "cmd": "gcloud logging cmek-settings describe --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar CMEK router": {
+        "cmd": "gcloud logging cmek-settings update --kms-key-name={kms_key} --project={project}",
+        "params": ["kms_key", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Resource Descriptors": {
+    "🔎 Consulta": {
+      "Listar resource descriptors": {
+        "cmd": "gcloud logging resource-descriptors list",
+        "params": [],
+        "param_hints": {}
+      },
+      "Describir resource descriptor": {
+        "cmd": "gcloud logging resource-descriptors describe {type}",
+        "params": ["type"],
+        "param_hints": {}
+      }
+    }
+  }
+}

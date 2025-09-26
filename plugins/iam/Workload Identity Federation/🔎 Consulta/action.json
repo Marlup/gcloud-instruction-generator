@@ -1,0 +1,21 @@
+{
+  "Listar pools": {
+    "cmd": "gcloud iam workload-identity-pools list --location=global",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describir pool": {
+    "cmd": "gcloud iam workload-identity-pools describe {pool_id} --location=global",
+    "params": [
+      "pool_id"
+    ],
+    "param_hints": {}
+  },
+  "Listar proveedores de pool": {
+    "cmd": "gcloud iam workload-identity-pools providers list --workload-identity-pool={pool_id} --location=global",
+    "params": [
+      "pool_id"
+    ],
+    "param_hints": {}
+  }
+}

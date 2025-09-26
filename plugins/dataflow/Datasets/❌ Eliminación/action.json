@@ -1,0 +1,9 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud dataflow datasets delete --dataset_id {dataset_id} --quiet",
+    "params": [
+      "dataset_id"
+    ],
+    "param_hints": {}
+  }
+}

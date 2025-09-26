@@ -1,0 +1,9 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud pubsub topics create {nombre_topico}",
+    "params": [
+      "nombre_topico"
+    ],
+    "param_hints": {}
+  }
+}

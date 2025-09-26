@@ -1,0 +1,9 @@
+{
+  "Cancel build": {
+    "cmd": "gcloud builds cancel {build_id}",
+    "params": [
+      "build_id"
+    ],
+    "param_hints": {}
+  }
+}

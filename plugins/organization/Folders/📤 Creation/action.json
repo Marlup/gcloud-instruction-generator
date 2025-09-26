@@ -1,0 +1,10 @@
+{
+  "Create folder": {
+    "cmd": "gcloud resource-manager folders create --display-name={name} --parent={parent}",
+    "params": [
+      "name",
+      "parent"
+    ],
+    "param_hints": {}
+  }
+}

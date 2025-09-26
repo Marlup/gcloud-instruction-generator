@@ -1,0 +1,16 @@
+{
+  "Actualizar etiquetas dataset": {
+    "cmd": "gcloud bigquery datasets update {dataset} --set-labels={labels}",
+    "params": [
+      "dataset",
+      "labels"
+    ]
+  },
+  "Eliminar etiquetas dataset": {
+    "cmd": "gcloud bigquery datasets update {dataset} --remove-labels={labels}",
+    "params": [
+      "dataset",
+      "labels"
+    ]
+  }
+}

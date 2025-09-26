@@ -1,0 +1,12 @@
+{
+  "Escribir entrada de log simple": {
+    "cmd": "gcloud logging write {log_id} \"{message}\" --severity={severity} --project={project}",
+    "params": [
+      "log_id",
+      "message",
+      "severity",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "Error Reporting": {
+    "🔎 Query": {
+      "List error groups": {
+        "cmd": "gcloud error-reporting groups list --project={project_id}",
+        "params": ["project_id"],
+        "param_hints": {}
+      },
+      "List error events": {
+        "cmd": "gcloud error-reporting events list --group={group_id} --project={project_id}",
+        "params": ["group_id", "project_id"],
+        "param_hints": {}
+      },
+      "Describe error group": {
+        "cmd": "gcloud error-reporting groups describe {group_id} --project={project_id}",
+        "params": ["group_id", "project_id"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Report error event": {
+        "cmd": "gcloud error-reporting events report --service={service} --message='{message}' --project={project_id}",
+        "params": ["service", "message", "project_id"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modification": {
+      "Update error group": {
+        "cmd": "gcloud error-reporting groups update {group_id} --project={project_id} --tracking-issues={issues}",
+        "params": ["group_id", "project_id", "issues"],
+        "param_hints": {}
+      }
+    }
+  },
+  "Debug": {
+    "🔎 Query": {
+      "List debug targets": {
+        "cmd": "gcloud debug targets list --project={project_id}",
+        "params": ["project_id"],
+        "param_hints": {}
+      },
+      "List active debug sessions": {
+        "cmd": "gcloud debug sessions list --target={target_id} --project={project_id}",
+        "params": ["target_id", "project_id"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Create debug snapshot": {
+        "cmd": "gcloud debug snapshots create --location={location} --condition='{condition}' --target={target_id} --project={project_id}",
+        "params": ["location", "condition", "target_id", "project_id"],
+        "param_hints": {}
+      },
+      "Create debug logpoint": {
+        "cmd": "gcloud debug logpoints create --log-level={level} --log-message='{message}' --target={target_id} --project={project_id}",
+        "params": ["level", "message", "target_id", "project_id"],
+        "param_hints": {
+          "level": {"type": "combo", "ref": ["info", "warning", "error"]}
+        }
+      }
+    },
+    "📝 Modification": {
+      "Delete debug snapshot": {
+        "cmd": "gcloud debug snapshots delete {snapshot_id} --target={target_id} --project={project_id}",
+        "params": ["snapshot_id", "target_id", "project_id"],
+        "param_hints": {}
+      },
+      "Delete debug logpoint": {
+        "cmd": "gcloud debug logpoints delete {logpoint_id} --target={target_id} --project={project_id}",
+        "params": ["logpoint_id", "target_id", "project_id"],
+        "param_hints": {}
+      }
+    }
+  }
+}

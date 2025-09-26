@@ -1,0 +1,10 @@
+{
+  "Borrar log": {
+    "cmd": "gcloud logging logs delete {log_id} --project={project}",
+    "params": [
+      "log_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

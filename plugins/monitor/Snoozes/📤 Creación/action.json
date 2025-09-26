@@ -1,0 +1,19 @@
+{
+  "Crear snooze (mantenimiento)": {
+    "cmd": "gcloud monitoring snoozes create --display-name={name} --criteria-from-file={file} --project={project}",
+    "params": [
+      "name",
+      "file",
+      "project"
+    ],
+    "param_hints": {
+      "file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

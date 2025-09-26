@@ -1,0 +1,47 @@
+{
+  "Listar objetos con versiones": {
+    "cmd": "gsutil ls -a gs://{bucket}/{prefix}",
+    "params": [
+      "bucket",
+      "prefix"
+    ]
+  },
+  "Mostrar contenido objeto": {
+    "cmd": "gsutil cat gs://{bucket}/{object}",
+    "params": [
+      "bucket",
+      "object"
+    ]
+  },
+  "Mostrar metadatos extendidos": {
+    "cmd": "gsutil ls -L gs://{bucket}/{object}",
+    "params": [
+      "bucket",
+      "object"
+    ]
+  },
+  "Ver estado versionado bucket": {
+    "cmd": "gsutil versioning get gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Obtener configuración CORS": {
+    "cmd": "gsutil cors get gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Obtener configuración ciclo de vida": {
+    "cmd": "gsutil lifecycle get gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Obtener IAM bucket": {
+    "cmd": "gsutil iam get gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  }
+}

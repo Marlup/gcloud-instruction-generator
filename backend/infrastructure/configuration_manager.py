@@ -1,34 +1,25 @@
 import os
 import json
-from typing import Dict
-import logging
+from typing import Dict, Any, Optional
 
-from backend.services.base_service import BaseGCloudService
-
-# Google Credential base class
+from google.cloud import storage as gcs
 from google.oauth2.service_account import Credentials
+from google.api_core.exceptions import GoogleAPIError
 
-from backend.constants import (
-    ACTIONS_FILENAME,
-    GCP_CREDENTIALS_FILENAME,
-    PARAMETERS_FILENAME
-)
+from backend.constants import GCP_CREDENTIALS_FILENAME
 
-class ConfigurationManager():
-    
-    def __init__(self, config: Dict = {}, plugins_path: str = "plugins", on_connect: bool = True):
-        self.config = config
+class ConfigurationManager:
+    def __init__(self, config: Optional[Dict[str, Any]] = None, plugins_path: str = "plugins", on_connect: bool = True):
+        self.config: Dict[str, Any] = config or {}
         self.plugins_path = plugins_path
-        self._credentials = None
+        self._client: Optional[gcs.Client] = None
+        self._credentials: Optional[Credentials] = None
 
-        
-        # Cloud connection
         if on_connect:
-            self.load_credentials()
-
-        # Services
-        self.services_names = []
-        self.get_services()
+            try:
+                self.connect()
+            except Exception as e:
+                print(f"⚠️ Advertencia: No se pudo conectar a GCP: {e}")
 
     # -------- Properties --------
     @property
@@ -36,56 +27,94 @@ class ConfigurationManager():
         return self.config.get("project_id", "")
 
     @property
-    def credentials(self) -> Credentials:
+    def credentials(self) -> Optional[Credentials]:
         return self._credentials
 
+    @property
+    def client(self) -> Optional[gcs.Client]:
+        return self._client
+
     # -------- Connection --------
+    def connect(self):
+        cred_path = os.path.join("config", GCP_CREDENTIALS_FILENAME)
+        if not os.path.exists(cred_path):
+            raise FileNotFoundError(f"❌ No se encontró el archivo de credenciales: {cred_path}")
+
+        self._credentials = Credentials.from_service_account_file(cred_path)
+        self._client = gcs.Client(project=self.project, credentials=self._credentials)
+        return self._client
+
     def ping(self) -> bool:
         try:
-            self._client.project  # fuerza acceso
+            if not self._client:
+                self.connect()
+            list(self._client.list_buckets(page_size=1))
             return True
-        except Exception:
+        except GoogleAPIError:
             return False
 
-    # -------- Loading methods --------
-    
-    # configuration
+    # -------- Configuración --------
     def load_configuration(self, path: str):
-        with open(path, "r") as f:
-            for param in f.readlines():
-                k, v = param.split("=")
-                self.config[k] = v
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"❌ No se encontró configuración: {path}")
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                if "=" in line:
+                    k, v = line.split("=", 1)
+                    self.config[k.strip()] = v.strip()
         return self
 
-    # actions
-    def load_actions(self, service_name: str):
-        actions_path = os.path.join(self.plugins_path, service_name, ACTIONS_FILENAME)
-        with open(actions_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+    # -------- Actions --------
+    def load_actions(self, service_name: str) -> Dict[str, Dict[str, Dict[str, Any]]]:
+        """
+        Carga TODAS las acciones de un servicio:
+        plugins/service/resource/category/*.json
+        """
+        service_path = os.path.join(self.plugins_path, service_name)
+        if not os.path.isdir(service_path):
+            raise FileNotFoundError(f"❌ No existe carpeta de servicio: {service_path}")
 
-    # parameters
-    def load_parameters(self, service_name: str):
-        parameters_path = os.path.join(self.plugins_path, service_name, PARAMETERS_FILENAME)
-        with open(parameters_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    
-        # -------- Load credentials --------
-    def load_credentials(self):
-        try:
-            return self._load_credentials()
-        except Exception as e:
-            logging.warning("ConfigurationManager - load_credentials", f"Exception: {e}")
-    
-    def _load_credentials(self):
-        creds = Credentials.from_service_account_file(
-            os.path.join("config", GCP_CREDENTIALS_FILENAME)
-        )
-        self._credentials = creds
-        return self
-    
-    def get_services(self):
-        paths = [os.path.join(self.plugins_path, d) for d in os.listdir(self.plugins_path)]
-        self.services_names = list(
-            filter(
-                lambda p: os.path.isdir(p) and "common" not in p, paths)
-                )
+        actions: Dict[str, Dict[str, Dict[str, Any]]] = {}
+
+        for resource in os.listdir(service_path):
+            resource_path = os.path.join(service_path, resource)
+            if not os.path.isdir(resource_path):
+                continue
+            actions[resource] = {}
+
+            for category in os.listdir(resource_path):
+                category_path = os.path.join(resource_path, category)
+                if not os.path.isdir(category_path):
+                    continue
+                actions[resource][category] = {}
+
+                for filename in os.listdir(category_path):
+                    if not filename.endswith(".json"):
+                        continue
+                    file_path = os.path.join(category_path, filename)
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        action_data = json.load(f)
+
+                    # We assume format: {"Action name": {"cmd": "...", "params": [...]}}
+                    actions[resource][category].update(action_data)
+
+        return actions
+
+    # -------- Parámetros --------
+    def load_parameters(self, service_name: str) -> dict:
+        params_dir = "params"
+        params = {}
+        if not os.path.isdir(params_dir):
+            return params
+
+        for filename in os.listdir(params_dir):
+            if not filename.endswith(".json"):
+                continue
+            path = os.path.join(params_dir, filename)
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            params.update(data)
+        return params

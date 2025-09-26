@@ -1,0 +1,10 @@
+{
+  "Borrar sink": {
+    "cmd": "gcloud logging sinks delete {sink_name} --project={project}",
+    "params": [
+      "sink_name",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

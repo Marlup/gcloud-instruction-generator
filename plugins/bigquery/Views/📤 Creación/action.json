@@ -1,0 +1,18 @@
+{
+  "Crear view": {
+    "cmd": "gcloud bigquery tables create {dataset}.{view} --view=\"{sql}\" --use_legacy_sql=false",
+    "params": [
+      "dataset",
+      "view",
+      "sql"
+    ]
+  },
+  "Crear materialized view": {
+    "cmd": "gcloud bigquery tables create {dataset}.{mv} --materialized_view=\"{sql}\"",
+    "params": [
+      "dataset",
+      "mv",
+      "sql"
+    ]
+  }
+}

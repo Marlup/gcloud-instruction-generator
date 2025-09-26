@@ -1,0 +1,139 @@
+{
+  "Utilidades": {
+    "🔎 Consulta": {
+      "Listar objetos con versiones": {
+        "cmd": "gsutil ls -a gs://{bucket}/{prefix}",
+        "params": ["bucket", "prefix"]
+      },
+      "Mostrar contenido objeto": {
+        "cmd": "gsutil cat gs://{bucket}/{object}",
+        "params": ["bucket", "object"]
+      },
+      "Mostrar metadatos extendidos": {
+        "cmd": "gsutil ls -L gs://{bucket}/{object}",
+        "params": ["bucket", "object"]
+      },
+      "Ver estado versionado bucket": {
+        "cmd": "gsutil versioning get gs://{bucket}",
+        "params": ["bucket"]
+      },
+      "Obtener configuración CORS": {
+        "cmd": "gsutil cors get gs://{bucket}",
+        "params": ["bucket"]
+      },
+      "Obtener configuración ciclo de vida": {
+        "cmd": "gsutil lifecycle get gs://{bucket}",
+        "params": ["bucket"]
+      },
+      "Obtener IAM bucket": {
+        "cmd": "gsutil iam get gs://{bucket}",
+        "params": ["bucket"]
+      }
+    },
+    "📝 Modificación": {
+      "Activar versionado bucket": {
+        "cmd": "gsutil versioning set on gs://{bucket}",
+        "params": ["bucket"]
+      },
+      "Desactivar versionado bucket": {
+        "cmd": "gsutil versioning set off gs://{bucket}",
+        "params": ["bucket"]
+      },
+      "Aplicar configuración CORS": {
+        "cmd": "gsutil cors set {file} gs://{bucket}",
+        "params": ["file", "bucket"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".json"]}
+        }
+      },
+      "Aplicar ciclo de vida": {
+        "cmd": "gsutil lifecycle set {file} gs://{bucket}",
+        "params": ["file", "bucket"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".json"]}
+        }
+      },
+      "Cambiar clase almacenamiento por defecto": {
+        "cmd": "gsutil defstorageclass set {storage_class} gs://{bucket}",
+        "params": ["storage_class", "bucket"]
+      },
+      "Definir clave de cifrado por defecto": {
+        "cmd": "gsutil encryption -k {kms_key}",
+        "params": ["kms_key"]
+      },
+      "Actualizar metadatos objeto": {
+        "cmd": "gsutil setmeta -h {metadata} gs://{bucket}/{object}",
+        "params": ["metadata", "bucket", "object"]
+      }
+    },
+    "📤 Transferencia": {
+      "Copiar desde lista stdin": {
+        "cmd": "gsutil cp -I gs://{bucket}/",
+        "params": ["bucket"]
+      },
+      "Copiar sin sobrescribir": {
+        "cmd": "gsutil cp -n {src} gs://{bucket}/{dest}",
+        "params": ["src", "bucket", "dest"]
+      },
+      "Copiar recursivo": {
+        "cmd": "gsutil cp -r {local_dir} gs://{bucket}/{prefix}",
+        "params": ["local_dir", "bucket", "prefix"]
+      },
+      "Reescribir objeto con nueva clase o cifrado": {
+        "cmd": "gsutil rewrite -s {storage_class} gs://{bucket}/{object}",
+        "params": ["storage_class", "bucket", "object"]
+      },
+      "Mover objeto": {
+        "cmd": "gsutil mv gs://{bucket}/{src} gs://{bucket}/{dest}",
+        "params": ["bucket", "src", "dest"]
+      },
+      "Combinar objetos (compose)": {
+        "cmd": "gsutil compose {src1} {src2} gs://{bucket}/{dest}",
+        "params": ["src1", "src2", "bucket", "dest"]
+      }
+    },
+    "🔐 Seguridad": {
+      "Generar URL firmada temporal": {
+        "cmd": "gsutil signurl -d {duration} {key_file} gs://{bucket}/{object}",
+        "params": ["duration", "key_file", "bucket", "object"],
+        "param_hints": {
+          "key_file": {"type": "file", "extensions": [".json"]}
+        }
+      }
+    },
+    "⚙️ Diagnóstico": {
+      "Diagnóstico rendimiento": {
+        "cmd": "gsutil perfdiag gs://{bucket}",
+        "params": ["bucket"]
+      }
+    },
+    "📡 Notificaciones": {
+      "Crear notificación Pub/Sub": {
+        "cmd": "gsutil notification create -t {topic} -f json gs://{bucket}",
+        "params": ["topic", "bucket"]
+      },
+      "Listar notificaciones": {
+        "cmd": "gsutil notification list gs://{bucket}",
+        "params": ["bucket"]
+      },
+      "Eliminar notificación": {
+        "cmd": "gsutil notification delete {notification_id} gs://{bucket}",
+        "params": ["notification_id", "bucket"]
+      }
+    },
+    "📋 Información": {
+      "Mostrar versión gsutil": {
+        "cmd": "gsutil version",
+        "params": []
+      },
+      "Mostrar credenciales activas": {
+        "cmd": "gcloud auth list",
+        "params": []
+      },
+      "Ayuda comando específico": {
+        "cmd": "gsutil help {command}",
+        "params": ["command"]
+      }
+    }
+  }
+}

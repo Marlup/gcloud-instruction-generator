@@ -1,0 +1,10 @@
+{
+  "Delete function": {
+    "cmd": "gcloud functions delete {function} --region={region}",
+    "params": [
+      "function",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

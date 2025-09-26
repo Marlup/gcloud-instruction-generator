@@ -1,0 +1,12 @@
+{
+  "Crear exclusión": {
+    "cmd": "gcloud logging exclusions create {exclusion_id} --log-filter='{filter}' --description='{description}' --project={project}",
+    "params": [
+      "exclusion_id",
+      "filter",
+      "description",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

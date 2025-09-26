@@ -1,0 +1,10 @@
+{
+  "Borrar dashboard": {
+    "cmd": "gcloud monitoring dashboards delete {dashboard_id} --project={project}",
+    "params": [
+      "dashboard_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

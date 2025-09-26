@@ -1,0 +1,10 @@
+{
+  "Crear external table en GCS": {
+    "cmd": "gcloud bigquery tables create {dataset}.{table} --external_table_definition={definition_file}",
+    "params": [
+      "dataset",
+      "table",
+      "definition_file"
+    ]
+  }
+}

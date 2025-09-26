@@ -1,0 +1,61 @@
+{
+  "Encrypt with key": {
+    "cmd": "gcloud kms encrypt --key={key} --keyring={keyring} --location={region} --plaintext-file={plaintext} --ciphertext-file={ciphertext}",
+    "params": [
+      "key",
+      "keyring",
+      "region",
+      "plaintext",
+      "ciphertext"
+    ],
+    "param_hints": {
+      "plaintext": {
+        "type": "file",
+        "extensions": [
+          ".txt",
+          ".bin"
+        ]
+      },
+      "ciphertext": {
+        "type": "file",
+        "extensions": [
+          ".enc"
+        ]
+      }
+    }
+  },
+  "Decrypt with key": {
+    "cmd": "gcloud kms decrypt --key={key} --keyring={keyring} --location={region} --ciphertext-file={ciphertext} --plaintext-file={plaintext}",
+    "params": [
+      "key",
+      "keyring",
+      "region",
+      "ciphertext",
+      "plaintext"
+    ],
+    "param_hints": {
+      "ciphertext": {
+        "type": "file",
+        "extensions": [
+          ".enc"
+        ]
+      },
+      "plaintext": {
+        "type": "file",
+        "extensions": [
+          ".txt",
+          ".bin"
+        ]
+      }
+    }
+  },
+  "Access secret version": {
+    "cmd": "gcloud secrets versions access {version} --secret={secret} --project={project_id}",
+    "params": [
+      "version",
+      "secret",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

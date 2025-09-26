@@ -1,0 +1,20 @@
+{
+  "List jobs": {
+    "cmd": "gcloud scheduler jobs list",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describe job": {
+    "cmd": "gcloud scheduler jobs describe {job_id} --location={region}",
+    "params": [
+      "job_id",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud dataflow datasets create --dataset_id {dataset_id} --location {region}",
+    "params": [
+      "dataset_id",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

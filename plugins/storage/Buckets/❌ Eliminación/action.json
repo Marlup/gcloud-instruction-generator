@@ -1,0 +1,14 @@
+{
+  "Borrar bucket": {
+    "cmd": "gcloud storage buckets delete {bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Borrar bucket forzado": {
+    "cmd": "gcloud storage buckets delete {bucket} --force",
+    "params": [
+      "bucket"
+    ]
+  }
+}

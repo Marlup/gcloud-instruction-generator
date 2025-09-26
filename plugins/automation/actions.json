@@ -1,0 +1,226 @@
+{
+  "Scheduler": {
+    "🔎 Query": {
+      "List jobs": {
+        "cmd": "gcloud scheduler jobs list",
+        "params": [],
+        "param_hints": {}
+      },
+      "Describe job": {
+        "cmd": "gcloud scheduler jobs describe {job_id} --location={region}",
+        "params": ["job_id", "region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      }
+    },
+    "📤 Creation": {
+      "Create HTTP job": {
+        "cmd": "gcloud scheduler jobs create http {job_id} --schedule='{cron}' --uri={uri} --location={region}",
+        "params": ["job_id", "cron", "uri", "region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      },
+      "Create Pub/Sub job": {
+        "cmd": "gcloud scheduler jobs create pubsub {job_id} --schedule='{cron}' --topic={topic} --message-body='{body}' --location={region}",
+        "params": ["job_id", "cron", "topic", "body", "region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      }
+    },
+    "📝 Modification": {
+      "Update job": {
+        "cmd": "gcloud scheduler jobs update http {job_id} --schedule='{cron}' --uri={uri} --location={region}",
+        "params": ["job_id", "cron", "uri", "region"],
+        "param_hints": {}
+      },
+      "Pause job": {
+        "cmd": "gcloud scheduler jobs pause {job_id} --location={region}",
+        "params": ["job_id", "region"],
+        "param_hints": {}
+      },
+      "Resume job": {
+        "cmd": "gcloud scheduler jobs resume {job_id} --location={region}",
+        "params": ["job_id", "region"],
+        "param_hints": {}
+      }
+    },
+    "❌ Deletion": {
+      "Delete job": {
+        "cmd": "gcloud scheduler jobs delete {job_id} --location={region}",
+        "params": ["job_id", "region"],
+        "param_hints": {}
+      }
+    },
+    "⚙️ Control": {
+      "Run job manually": {
+        "cmd": "gcloud scheduler jobs run {job_id} --location={region}",
+        "params": ["job_id", "region"],
+        "param_hints": {}
+      }
+    }
+  },
+  "Builds": {
+    "🔎 Query": {
+      "List builds": {
+        "cmd": "gcloud builds list",
+        "params": [],
+        "param_hints": {}
+      },
+      "Describe build": {
+        "cmd": "gcloud builds describe {build_id}",
+        "params": ["build_id"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Submit build from source": {
+        "cmd": "gcloud builds submit --tag={image} {source_dir}",
+        "params": ["image", "source_dir"],
+        "param_hints": {}
+      },
+      "Submit build from config file": {
+        "cmd": "gcloud builds submit --config={build_file} {source_dir}",
+        "params": ["build_file", "source_dir"],
+        "param_hints": {
+          "build_file": {"type": "file", "extensions": [".yaml", ".json"]}
+        }
+      }
+    },
+    "📝 Modification": {
+      "Cancel build": {
+        "cmd": "gcloud builds cancel {build_id}",
+        "params": ["build_id"],
+        "param_hints": {}
+      }
+    },
+    "⚙️ Control": {
+      "Create build trigger": {
+        "cmd": "gcloud builds triggers create github --repo-name={repo} --branch-pattern={branch} --build-config={build_file}",
+        "params": ["repo", "branch", "build_file"],
+        "param_hints": {
+          "build_file": {"type": "file", "extensions": [".yaml", ".json"]}
+        }
+      },
+      "List build triggers": {
+        "cmd": "gcloud builds triggers list",
+        "params": [],
+        "param_hints": {}
+      }
+    }
+  },
+  "Workflows": {
+    "🔎 Query": {
+      "List workflows": {
+        "cmd": "gcloud workflows list --location={region}",
+        "params": ["region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      },
+      "Describe workflow": {
+        "cmd": "gcloud workflows describe {workflow} --location={region}",
+        "params": ["workflow", "region"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Deploy workflow": {
+        "cmd": "gcloud workflows deploy {workflow} --source={file} --location={region}",
+        "params": ["workflow", "file", "region"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".yaml", ".json"]}
+        }
+      }
+    },
+    "⚙️ Control": {
+      "Execute workflow": {
+        "cmd": "gcloud workflows execute {workflow} --location={region}",
+        "params": ["workflow", "region"],
+        "param_hints": {}
+      },
+      "List executions": {
+        "cmd": "gcloud workflows executions list {workflow} --location={region}",
+        "params": ["workflow", "region"],
+        "param_hints": {}
+      },
+      "Describe execution": {
+        "cmd": "gcloud workflows executions describe {execution} --workflow={workflow} --location={region}",
+        "params": ["execution", "workflow", "region"],
+        "param_hints": {}
+      },
+      "Set IAM policy (workflow)": {
+        "cmd": "gcloud workflows set-iam-policy {workflow} {policy_file} --location={region}",
+        "params": ["workflow", "policy_file", "region"],
+        "param_hints": {
+          "policy_file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    }
+  },
+  "Functions": {
+    "🔎 Query": {
+      "List functions": {
+        "cmd": "gcloud functions list --region={region}",
+        "params": ["region"],
+        "param_hints": {
+          "region": {"type": "combo", "ref": "regions"}
+        }
+      },
+      "Describe function": {
+        "cmd": "gcloud functions describe {function} --region={region}",
+        "params": ["function", "region"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creation": {
+      "Deploy function": {
+        "cmd": "gcloud functions deploy {function} --runtime={runtime} --trigger-http --entry-point={entry} --region={region}",
+        "params": ["function", "runtime", "entry", "region"],
+        "param_hints": {
+          "runtime": {"type": "combo", "ref": ["python310", "nodejs18", "go120", "java17"]}
+        }
+      }
+    },
+    "📝 Modification": {
+      "Update function": {
+        "cmd": "gcloud functions deploy {function} --update-labels={labels} --region={region}",
+        "params": ["function", "labels", "region"],
+        "param_hints": {}
+      },
+      "Set concurrency": {
+        "cmd": "gcloud functions deploy {function} --concurrency={value} --region={region}",
+        "params": ["function", "value", "region"],
+        "param_hints": {}
+      },
+      "Set memory": {
+        "cmd": "gcloud functions deploy {function} --memory={size} --region={region}",
+        "params": ["function", "size", "region"],
+        "param_hints": {
+          "size": {"type": "combo", "ref": ["128MB", "256MB", "512MB", "1GB", "2GB"]}
+        }
+      }
+    },
+    "❌ Deletion": {
+      "Delete function": {
+        "cmd": "gcloud functions delete {function} --region={region}",
+        "params": ["function", "region"],
+        "param_hints": {}
+      }
+    },
+    "⚙️ Control": {
+      "Call function": {
+        "cmd": "gcloud functions call {function} --data='{data}' --region={region}",
+        "params": ["function", "data", "region"],
+        "param_hints": {}
+      },
+      "Test IAM permissions": {
+        "cmd": "gcloud functions test-iam-permissions {function} {permissions} --region={region}",
+        "params": ["function", "permissions", "region"],
+        "param_hints": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "Crear notificación Pub/Sub": {
+    "cmd": "gsutil notification create -t {topic} -f json gs://{bucket}",
+    "params": [
+      "topic",
+      "bucket"
+    ]
+  },
+  "Listar notificaciones": {
+    "cmd": "gsutil notification list gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Eliminar notificación": {
+    "cmd": "gsutil notification delete {notification_id} gs://{bucket}",
+    "params": [
+      "notification_id",
+      "bucket"
+    ]
+  }
+}

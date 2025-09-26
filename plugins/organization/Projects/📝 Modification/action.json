@@ -1,0 +1,42 @@
+{
+  "Move project to folder": {
+    "cmd": "gcloud projects move {project_id} --folder={folder_id}",
+    "params": [
+      "project_id",
+      "folder_id"
+    ],
+    "param_hints": {}
+  },
+  "Move project to organization": {
+    "cmd": "gcloud projects move {project_id} --organization={org_id}",
+    "params": [
+      "project_id",
+      "org_id"
+    ],
+    "param_hints": {}
+  },
+  "Update project metadata": {
+    "cmd": "gcloud projects update {project_id} --update-labels={labels}",
+    "params": [
+      "project_id",
+      "labels"
+    ],
+    "param_hints": {}
+  },
+  "Set IAM policy (project)": {
+    "cmd": "gcloud projects set-iam-policy {project_id} {policy_file}",
+    "params": [
+      "project_id",
+      "policy_file"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

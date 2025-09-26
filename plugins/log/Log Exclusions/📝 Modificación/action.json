@@ -1,0 +1,11 @@
+{
+  "Actualizar exclusión": {
+    "cmd": "gcloud logging exclusions update {exclusion_id} --log-filter='{filter}' --project={project}",
+    "params": [
+      "exclusion_id",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

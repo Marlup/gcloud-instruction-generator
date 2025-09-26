@@ -1,0 +1,20 @@
+{
+  "Bloquear retención": {
+    "cmd": "gcloud storage buckets update {bucket} --lock-retention-policy",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Bloquear acceso público": {
+    "cmd": "gcloud storage buckets update {bucket} --public-access-prevention=enforced",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Desbloquear acceso público": {
+    "cmd": "gcloud storage buckets update {bucket} --public-access-prevention=unspecified",
+    "params": [
+      "bucket"
+    ]
+  }
+}

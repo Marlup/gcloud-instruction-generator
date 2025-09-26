@@ -1,0 +1,12 @@
+{
+  "Borrar vista": {
+    "cmd": "gcloud logging views delete {view_id} --bucket={bucket_id} --location={location} --project={project}",
+    "params": [
+      "view_id",
+      "bucket_id",
+      "location",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

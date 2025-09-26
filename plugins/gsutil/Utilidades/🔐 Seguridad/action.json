@@ -1,0 +1,19 @@
+{
+  "Generar URL firmada temporal": {
+    "cmd": "gsutil signurl -d {duration} {key_file} gs://{bucket}/{object}",
+    "params": [
+      "duration",
+      "key_file",
+      "bucket",
+      "object"
+    ],
+    "param_hints": {
+      "key_file": {
+        "type": "file",
+        "extensions": [
+          ".json"
+        ]
+      }
+    }
+  }
+}

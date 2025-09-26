@@ -1,0 +1,12 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud dataplex tables update --lake={lake} --dataset-id={dataset_id} --table-id={table_id} --schema={schema}",
+    "params": [
+      "lake",
+      "dataset_id",
+      "table_id",
+      "schema"
+    ],
+    "param_hints": {}
+  }
+}

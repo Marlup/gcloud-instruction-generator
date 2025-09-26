@@ -1,0 +1,10 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud data-catalog tables delete --table {tabla} --dataset {dataset}",
+    "params": [
+      "tabla",
+      "dataset"
+    ],
+    "param_hints": {}
+  }
+}

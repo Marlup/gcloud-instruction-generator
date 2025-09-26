@@ -1,0 +1,19 @@
+{
+  "Listar tablas": {
+    "cmd": "gcloud biglake tables list --database={database} --catalog={catalog} --location={region}",
+    "params": [
+      "database",
+      "catalog",
+      "region"
+    ]
+  },
+  "Describir tabla": {
+    "cmd": "gcloud biglake tables describe {table} --database={database} --catalog={catalog} --location={region}",
+    "params": [
+      "table",
+      "database",
+      "catalog",
+      "region"
+    ]
+  }
+}

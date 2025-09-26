@@ -1,0 +1,16 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud composer environments update {nombre_entorno} --location {region} --update-labels {etiquetas}",
+    "params": [
+      "nombre_entorno",
+      "region",
+      "etiquetas"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

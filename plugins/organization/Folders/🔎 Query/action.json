@@ -1,0 +1,21 @@
+{
+  "List folders": {
+    "cmd": "gcloud resource-manager folders list",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describe folder": {
+    "cmd": "gcloud resource-manager folders describe {folder_id}",
+    "params": [
+      "folder_id"
+    ],
+    "param_hints": {}
+  },
+  "Get IAM policy (folder)": {
+    "cmd": "gcloud resource-manager folders get-iam-policy {folder_id}",
+    "params": [
+      "folder_id"
+    ],
+    "param_hints": {}
+  }
+}

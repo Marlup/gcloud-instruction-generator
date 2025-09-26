@@ -1,0 +1,22 @@
+{
+  "Deploy function": {
+    "cmd": "gcloud functions deploy {function} --runtime={runtime} --trigger-http --entry-point={entry} --region={region}",
+    "params": [
+      "function",
+      "runtime",
+      "entry",
+      "region"
+    ],
+    "param_hints": {
+      "runtime": {
+        "type": "combo",
+        "ref": [
+          "python310",
+          "nodejs18",
+          "go120",
+          "java17"
+        ]
+      }
+    }
+  }
+}

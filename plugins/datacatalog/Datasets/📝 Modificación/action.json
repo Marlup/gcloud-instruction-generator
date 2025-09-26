@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud data-catalog datasets update --dataset {dataset} --labels {labels}",
+    "params": [
+      "dataset",
+      "labels"
+    ],
+    "param_hints": {}
+  }
+}

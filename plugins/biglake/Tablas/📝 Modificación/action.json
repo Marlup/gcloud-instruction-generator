@@ -1,0 +1,12 @@
+{
+  "Actualizar tabla": {
+    "cmd": "gcloud biglake tables update {table} --database={database} --catalog={catalog} --location={region} --schema={schema_file}",
+    "params": [
+      "table",
+      "database",
+      "catalog",
+      "region",
+      "schema_file"
+    ]
+  }
+}

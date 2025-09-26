@@ -1,0 +1,18 @@
+{
+  "Actualizar canal desde archivo": {
+    "cmd": "gcloud monitoring channels update {channel_id} --channel-content-from-file={file}",
+    "params": [
+      "channel_id",
+      "file"
+    ],
+    "param_hints": {
+      "file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

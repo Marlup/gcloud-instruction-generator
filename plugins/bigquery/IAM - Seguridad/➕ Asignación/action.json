@@ -1,0 +1,10 @@
+{
+  "Añadir IAM a dataset": {
+    "cmd": "gcloud bigquery datasets add-iam-policy-binding {dataset} --member={member} --role={role}",
+    "params": [
+      "dataset",
+      "member",
+      "role"
+    ]
+  }
+}

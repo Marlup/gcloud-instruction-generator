@@ -1,0 +1,12 @@
+{
+  "Actualizar bucket": {
+    "cmd": "gcloud logging buckets update {bucket_id} --location={location} --retention-days={days} --project={project}",
+    "params": [
+      "bucket_id",
+      "location",
+      "days",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

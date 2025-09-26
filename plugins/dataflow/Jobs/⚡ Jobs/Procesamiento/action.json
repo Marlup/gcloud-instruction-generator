@@ -1,0 +1,36 @@
+{
+  "Executes a Dataflow job.": {
+    "cmd": "gcloud dataflow jobs execute {job_id} --parameters {parameters}",
+    "params": [
+      "job_id",
+      "parameters"
+    ],
+    "param_hints": {}
+  },
+  "Cancels a Dataflow job.": {
+    "cmd": "gcloud dataflow jobs cancel {job_id} --quiet",
+    "params": [
+      "job_id"
+    ],
+    "param_hints": {}
+  },
+  "Describes a Dataflow job.": {
+    "cmd": "gcloud dataflow jobs describe {job_id}",
+    "params": [
+      "job_id"
+    ],
+    "param_hints": {}
+  },
+  "Lists Dataflow jobs.": {
+    "cmd": "gcloud dataflow jobs list --region {region}",
+    "params": [
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

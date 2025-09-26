@@ -1,0 +1,18 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud composer environments create {nombre_entorno} --location {region} --zone {zona} --image-version {version_imagen} --node-count {cantidad_nodos}",
+    "params": [
+      "nombre_entorno",
+      "region",
+      "zona",
+      "version_imagen",
+      "cantidad_nodos"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

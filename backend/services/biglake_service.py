@@ -52,7 +52,7 @@ class BiglakeService(BaseGCloudService):
     def explain(self, action: str) -> str:
         return f"Explicación para {action} no disponible aún."
 
-    def list_actions(self):
+    def load_actions(self):
         return self.actions
 
     def ping(self) -> bool:

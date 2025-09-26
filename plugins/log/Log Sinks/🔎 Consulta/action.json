@@ -1,0 +1,17 @@
+{
+  "Listar sinks": {
+    "cmd": "gcloud logging sinks list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir sink": {
+    "cmd": "gcloud logging sinks describe {sink_id} --project={project}",
+    "params": [
+      "sink_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

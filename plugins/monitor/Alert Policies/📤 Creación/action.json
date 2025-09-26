@@ -1,0 +1,17 @@
+{
+  "Crear alerta": {
+    "cmd": "gcloud monitoring policies create --policy-from-file={policy_file}",
+    "params": [
+      "policy_file"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

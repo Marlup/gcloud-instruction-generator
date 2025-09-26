@@ -1,0 +1,39 @@
+{
+  "Actualizar metadatos objeto": {
+    "cmd": "gcloud storage objects update {src} --content-type={mime} --metadata={metadata}",
+    "params": [
+      "src",
+      "mime",
+      "metadata"
+    ]
+  },
+  "Actualizar metadatos (borrar)": {
+    "cmd": "gcloud storage objects update {src} --clear-metadata",
+    "params": [
+      "src"
+    ]
+  },
+  "Actualizar ACL objeto": {
+    "cmd": "gcloud storage objects update {src} --add-acl-grant={grant}",
+    "params": [
+      "src",
+      "grant"
+    ]
+  },
+  "Reescribir objeto con nueva clase": {
+    "cmd": "gcloud storage rewrite {src} {dest} --storage-class={storage_class}",
+    "params": [
+      "src",
+      "dest",
+      "storage_class"
+    ]
+  },
+  "Reescribir objeto con nueva encriptación": {
+    "cmd": "gcloud storage rewrite {src} {dest} --encryption-key={key}",
+    "params": [
+      "src",
+      "dest",
+      "key"
+    ]
+  }
+}

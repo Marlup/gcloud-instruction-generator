@@ -1,0 +1,11 @@
+{
+  "Create project": {
+    "cmd": "gcloud projects create {project_id} --name={name} --folder={folder_id}",
+    "params": [
+      "project_id",
+      "name",
+      "folder_id"
+    ],
+    "param_hints": {}
+  }
+}

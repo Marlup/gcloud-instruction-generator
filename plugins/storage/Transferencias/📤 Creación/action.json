@@ -1,0 +1,10 @@
+{
+  "Crear transferencia entre buckets": {
+    "cmd": "gcloud transfer jobs create gs://{src_bucket} gs://{dest_bucket} --description={description} --schedule-starts=NOW",
+    "params": [
+      "src_bucket",
+      "dest_bucket",
+      "description"
+    ]
+  }
+}

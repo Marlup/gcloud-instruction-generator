@@ -1,0 +1,9 @@
+{
+  "Borrar tabla": {
+    "cmd": "gcloud bigquery tables delete {dataset}.{table}",
+    "params": [
+      "dataset",
+      "table"
+    ]
+  }
+}

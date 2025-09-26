@@ -1,0 +1,26 @@
+{
+  "Submit build from source": {
+    "cmd": "gcloud builds submit --tag={image} {source_dir}",
+    "params": [
+      "image",
+      "source_dir"
+    ],
+    "param_hints": {}
+  },
+  "Submit build from config file": {
+    "cmd": "gcloud builds submit --config={build_file} {source_dir}",
+    "params": [
+      "build_file",
+      "source_dir"
+    ],
+    "param_hints": {
+      "build_file": {
+        "type": "file",
+        "extensions": [
+          ".yaml",
+          ".json"
+        ]
+      }
+    }
+  }
+}

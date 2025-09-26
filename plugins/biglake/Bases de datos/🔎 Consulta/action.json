@@ -1,0 +1,17 @@
+{
+  "Listar bases de datos": {
+    "cmd": "gcloud biglake databases list --catalog={catalog} --location={region}",
+    "params": [
+      "catalog",
+      "region"
+    ]
+  },
+  "Describir base de datos": {
+    "cmd": "gcloud biglake databases describe {database} --catalog={catalog} --location={region}",
+    "params": [
+      "database",
+      "catalog",
+      "region"
+    ]
+  }
+}

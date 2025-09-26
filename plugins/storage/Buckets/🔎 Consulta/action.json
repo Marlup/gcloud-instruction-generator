@@ -1,0 +1,12 @@
+{
+  "Listar buckets": {
+    "cmd": "gcloud storage buckets list",
+    "params": []
+  },
+  "Describir bucket": {
+    "cmd": "gcloud storage buckets describe {bucket}",
+    "params": [
+      "bucket"
+    ]
+  }
+}

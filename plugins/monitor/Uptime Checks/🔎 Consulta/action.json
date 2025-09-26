@@ -1,0 +1,9 @@
+{
+  "Listar uptime checks": {
+    "cmd": "gcloud monitoring uptime-checks list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

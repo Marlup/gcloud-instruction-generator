@@ -1,0 +1,9 @@
+{
+  "Crear dataset": {
+    "cmd": "gcloud bigquery datasets create {dataset} --location={region}",
+    "params": [
+      "dataset",
+      "region"
+    ]
+  }
+}

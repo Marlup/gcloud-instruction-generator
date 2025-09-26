@@ -1,0 +1,9 @@
+{
+  "Describir configuración": {
+    "cmd": "gcloud logging settings describe --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

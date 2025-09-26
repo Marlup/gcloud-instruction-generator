@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "bq update --job {job_id} --configuration {configuracion}",
+    "params": [
+      "job_id",
+      "configuracion"
+    ],
+    "param_hints": {}
+  }
+}

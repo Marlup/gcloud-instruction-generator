@@ -1,0 +1,11 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud dataplex tables delete --lake={lake} --dataset-id={dataset_id} --table-id={table_id}",
+    "params": [
+      "lake",
+      "dataset_id",
+      "table_id"
+    ],
+    "param_hints": {}
+  }
+}

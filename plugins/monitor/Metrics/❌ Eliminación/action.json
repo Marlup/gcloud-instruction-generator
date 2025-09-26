@@ -1,0 +1,10 @@
+{
+  "Borrar métrica": {
+    "cmd": "gcloud logging metrics delete {metric_name} --project={project}",
+    "params": [
+      "metric_name",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

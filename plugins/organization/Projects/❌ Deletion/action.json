@@ -1,0 +1,16 @@
+{
+  "Delete project": {
+    "cmd": "gcloud projects delete {project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "Undelete project": {
+    "cmd": "gcloud projects undelete {project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

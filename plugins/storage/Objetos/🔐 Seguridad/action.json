@@ -1,0 +1,18 @@
+{
+  "Firmar URL temporal": {
+    "cmd": "gcloud storage sign-url {src} --duration={duration}",
+    "params": [
+      "src",
+      "duration"
+    ]
+  },
+  "Firmar URL temporal avanzada": {
+    "cmd": "gcloud storage sign-url {src} --duration={duration} --http-method={method} --credentials-file={creds}",
+    "params": [
+      "src",
+      "duration",
+      "method",
+      "creds"
+    ]
+  }
+}

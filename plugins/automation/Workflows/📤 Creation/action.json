@@ -1,0 +1,19 @@
+{
+  "Deploy workflow": {
+    "cmd": "gcloud workflows deploy {workflow} --source={file} --location={region}",
+    "params": [
+      "workflow",
+      "file",
+      "region"
+    ],
+    "param_hints": {
+      "file": {
+        "type": "file",
+        "extensions": [
+          ".yaml",
+          ".json"
+        ]
+      }
+    }
+  }
+}

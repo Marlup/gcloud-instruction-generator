@@ -1,0 +1,10 @@
+{
+  "Listar configuración actual": {
+    "cmd": "gcloud config list",
+    "params": []
+  },
+  "Listar operaciones": {
+    "cmd": "gcloud storage operations list",
+    "params": []
+  }
+}

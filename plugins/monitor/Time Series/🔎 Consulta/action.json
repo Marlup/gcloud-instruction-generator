@@ -1,0 +1,18 @@
+{
+  "Listar series temporales": {
+    "cmd": "gcloud monitoring time-series list --filter=\"{filter}\" --project={project}",
+    "params": [
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir serie temporal": {
+    "cmd": "gcloud monitoring time-series describe {metric_type} --project={project}",
+    "params": [
+      "metric_type",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

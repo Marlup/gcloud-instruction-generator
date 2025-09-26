@@ -1,0 +1,28 @@
+{
+  "Update job": {
+    "cmd": "gcloud scheduler jobs update http {job_id} --schedule='{cron}' --uri={uri} --location={region}",
+    "params": [
+      "job_id",
+      "cron",
+      "uri",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Pause job": {
+    "cmd": "gcloud scheduler jobs pause {job_id} --location={region}",
+    "params": [
+      "job_id",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Resume job": {
+    "cmd": "gcloud scheduler jobs resume {job_id} --location={region}",
+    "params": [
+      "job_id",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

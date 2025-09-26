@@ -1,0 +1,31 @@
+{
+  "Submits a Dataproc job.": {
+    "cmd": "gcloud dataproc jobs submit pyspark --cluster={nombre_cluster} --region={region} --file={ruta_script} -- {args}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "ruta_script",
+      "args"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Submits a Dataproc job. (variant)": {
+    "cmd": "gcloud dataproc jobs submit hive --cluster={nombre_cluster} --region={region} --file={ruta_script_hive}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "ruta_script_hive"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

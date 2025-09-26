@@ -1,0 +1,12 @@
+{
+  "Actualizar métrica": {
+    "cmd": "gcloud logging metrics update {metric_id} --description='{description}' --log-filter='{filter}' --project={project}",
+    "params": [
+      "metric_id",
+      "description",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

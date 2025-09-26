@@ -1,0 +1,15 @@
+{
+  "Listar catálogos": {
+    "cmd": "gcloud biglake catalogs list --location={region}",
+    "params": [
+      "region"
+    ]
+  },
+  "Describir catálogo": {
+    "cmd": "gcloud biglake catalogs describe {catalog} --location={region}",
+    "params": [
+      "catalog",
+      "region"
+    ]
+  }
+}

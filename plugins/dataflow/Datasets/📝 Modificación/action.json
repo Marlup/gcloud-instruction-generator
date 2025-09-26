@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud dataflow datasets update --dataset_id {dataset_id} --description {description}",
+    "params": [
+      "dataset_id",
+      "description"
+    ],
+    "param_hints": {}
+  }
+}

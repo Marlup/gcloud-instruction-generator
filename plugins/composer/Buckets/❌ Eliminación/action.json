@@ -1,0 +1,9 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gsutil rm -r gs://{nombre_bucket}",
+    "params": [
+      "nombre_bucket"
+    ],
+    "param_hints": {}
+  }
+}

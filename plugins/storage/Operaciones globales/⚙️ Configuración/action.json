@@ -1,0 +1,15 @@
+{
+  "Cambiar proyecto activo": {
+    "cmd": "gcloud config set project {project}",
+    "params": [
+      "project"
+    ]
+  },
+  "Definir configuración por defecto (storage)": {
+    "cmd": "gcloud config set storage/{property} {value}",
+    "params": [
+      "property",
+      "value"
+    ]
+  }
+}

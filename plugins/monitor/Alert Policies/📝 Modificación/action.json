@@ -1,0 +1,49 @@
+{
+  "Actualizar alerta": {
+    "cmd": "gcloud monitoring policies update {policy_id} --policy-from-file={policy_file}",
+    "params": [
+      "policy_id",
+      "policy_file"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  },
+  "Habilitar alerta": {
+    "cmd": "gcloud monitoring policies enable {policy_id} --project={project}",
+    "params": [
+      "policy_id",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Deshabilitar alerta": {
+    "cmd": "gcloud monitoring policies disable {policy_id} --project={project}",
+    "params": [
+      "policy_id",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Validar alerta desde archivo": {
+    "cmd": "gcloud monitoring policies validate --policy-from-file={policy_file}",
+    "params": [
+      "policy_file"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

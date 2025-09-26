@@ -1,0 +1,26 @@
+{
+  "Actualizar dashboard": {
+    "cmd": "gcloud monitoring dashboards update {dashboard_id} --config-from-file={dashboard_file}",
+    "params": [
+      "dashboard_id",
+      "dashboard_file"
+    ],
+    "param_hints": {
+      "dashboard_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  },
+  "Copiar dashboard entre proyectos": {
+    "cmd": "gcloud monitoring dashboards copy {dashboard_id} --destination-project={dest_project}",
+    "params": [
+      "dashboard_id",
+      "dest_project"
+    ],
+    "param_hints": {}
+  }
+}

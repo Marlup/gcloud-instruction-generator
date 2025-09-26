@@ -1,0 +1,10 @@
+{
+  "Borrar base de datos": {
+    "cmd": "gcloud biglake databases delete {database} --catalog={catalog} --location={region}",
+    "params": [
+      "database",
+      "catalog",
+      "region"
+    ]
+  }
+}

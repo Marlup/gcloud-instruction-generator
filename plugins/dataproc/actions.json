@@ -111,7 +111,7 @@
     }
   },
   "Jobs": {
-    "⚡ Jobs/Procesamiento": {
+    "⚡ Jobs-Procesamiento": {
       "Submits a Dataproc job.": {
         "cmd": "gcloud dataproc jobs submit pyspark --cluster={nombre_cluster} --region={region} --file={ruta_script} -- {args}",
         "params": [

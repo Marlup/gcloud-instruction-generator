@@ -1,0 +1,30 @@
+{
+  "Get IAM bucket": {
+    "cmd": "gcloud logging buckets get-iam-policy {bucket_id} --location={location} --project={project}",
+    "params": [
+      "bucket_id",
+      "location",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Set IAM bucket": {
+    "cmd": "gcloud logging buckets set-iam-policy {bucket_id} {policy_file} --location={location} --project={project}",
+    "params": [
+      "bucket_id",
+      "policy_file",
+      "location",
+      "project"
+    ],
+    "param_hints": {
+      "policy_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml",
+          ".yml"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud dataproc clusters create {nombre_cluster} --region={region} --zone={zona} --num-workers={num_workers}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "zona",
+      "num_workers"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Creates a new resource. (variant)": {
+    "cmd": "gcloud dataproc clusters create {nombre_cluster} --region={region} --image-version={version_imagen} --properties={propiedades}",
+    "params": [
+      "nombre_cluster",
+      "region",
+      "version_imagen",
+      "propiedades"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

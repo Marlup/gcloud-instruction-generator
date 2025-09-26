@@ -1,0 +1,15 @@
+{
+  "Deletes the specified resource.": {
+    "cmd": "gcloud composer environments delete {nombre_entorno} --location {region}",
+    "params": [
+      "nombre_entorno",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

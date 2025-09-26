@@ -1,0 +1,17 @@
+{
+  "Crear dashboard": {
+    "cmd": "gcloud monitoring dashboards create --config-from-file={dashboard_file}",
+    "params": [
+      "dashboard_file"
+    ],
+    "param_hints": {
+      "dashboard_file": {
+        "type": "file",
+        "extensions": [
+          ".json",
+          ".yaml"
+        ]
+      }
+    }
+  }
+}

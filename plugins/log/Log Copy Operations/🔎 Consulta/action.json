@@ -1,0 +1,17 @@
+{
+  "Listar operaciones de copia": {
+    "cmd": "gcloud logging operations list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir operación": {
+    "cmd": "gcloud logging operations describe {operation_id} --project={project}",
+    "params": [
+      "operation_id",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

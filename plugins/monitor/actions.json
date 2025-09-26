@@ -1,0 +1,343 @@
+{
+  "Logs": {
+    "🔎 Consulta": {
+      "Listar logs": {
+        "cmd": "gcloud logging logs list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir log": {
+        "cmd": "gcloud logging logs describe {log_id} --project={project}",
+        "params": ["log_id", "project"],
+        "param_hints": {}
+      },
+      "Leer logs filtrados": {
+        "cmd": "gcloud logging read \"{filter}\" --limit={limit} --project={project}",
+        "params": ["filter", "limit", "project"],
+        "param_hints": {}
+      },
+      "Tail logs en tiempo real": {
+        "cmd": "gcloud logging tail \"{filter}\" --project={project}",
+        "params": ["filter", "project"],
+        "param_hints": {}
+      },
+      "Leer logs de severidad ERROR": {
+        "cmd": "gcloud logging read \"severity>=ERROR\" --format=json --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    },
+    "📤 Creación": {
+      "Escribir entrada en log": {
+        "cmd": "gcloud logging write {log_id} \"{message}\" --project={project}",
+        "params": ["log_id", "message", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar log": {
+        "cmd": "gcloud logging logs delete {log_id} --project={project}",
+        "params": ["log_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "⚙️ Configuración": {
+      "Listar log buckets": {
+        "cmd": "gcloud logging buckets list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Actualizar retención bucket logs": {
+        "cmd": "gcloud logging buckets update {bucket_id} --retention-days={days} --project={project}",
+        "params": ["bucket_id", "days", "project"],
+        "param_hints": {}
+      },
+      "Listar log views": {
+        "cmd": "gcloud logging views list --bucket={bucket_id} --project={project}",
+        "params": ["bucket_id", "project"],
+        "param_hints": {}
+      },
+      "Crear log view": {
+        "cmd": "gcloud logging views create {view_id} --bucket={bucket_id} --log-filter={filter} --project={project}",
+        "params": ["view_id", "bucket_id", "filter", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Sinks": {
+    "📤 Creación": {
+      "Crear sink (BigQuery)": {
+        "cmd": "gcloud logging sinks create {sink_name} bigquery.googleapis.com/projects/{project}/datasets/{dataset} --log-filter=\"{filter}\" --project={project}",
+        "params": ["sink_name", "project", "dataset", "filter"],
+        "param_hints": {}
+      },
+      "Crear sink (Storage)": {
+        "cmd": "gcloud logging sinks create {sink_name} storage.googleapis.com/{bucket} --log-filter=\"{filter}\" --project={project}",
+        "params": ["sink_name", "bucket", "project", "filter"],
+        "param_hints": {}
+      },
+      "Crear sink (Pub/Sub)": {
+        "cmd": "gcloud logging sinks create {sink_name} pubsub.googleapis.com/projects/{project}/topics/{topic} --log-filter=\"{filter}\" --project={project}",
+        "params": ["sink_name", "topic", "project", "filter"],
+        "param_hints": {}
+      }
+    },
+    "🔎 Consulta": {
+      "Listar sinks": {
+        "cmd": "gcloud logging sinks list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir sink": {
+        "cmd": "gcloud logging sinks describe {sink_name} --project={project}",
+        "params": ["sink_name", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar sink": {
+        "cmd": "gcloud logging sinks update {sink_name} --log-filter=\"{filter}\" --project={project}",
+        "params": ["sink_name", "filter", "project"],
+        "param_hints": {}
+      },
+      "Actualizar sink (children)": {
+        "cmd": "gcloud logging sinks update {sink_name} --include-children --project={project}",
+        "params": ["sink_name", "project"],
+        "param_hints": {}
+      },
+      "Actualizar sink con identidad única": {
+        "cmd": "gcloud logging sinks update {sink_name} --unique-writer-identity --project={project}",
+        "params": ["sink_name", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar sink": {
+        "cmd": "gcloud logging sinks delete {sink_name} --project={project}",
+        "params": ["sink_name", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Metrics": {
+    "📤 Creación": {
+      "Crear métrica log-based": {
+        "cmd": "gcloud logging metrics create {metric_name} --description=\"{description}\" --log-filter=\"{filter}\" --project={project}",
+        "params": ["metric_name", "description", "filter", "project"],
+        "param_hints": {}
+      }
+    },
+    "🔎 Consulta": {
+      "Listar métricas": {
+        "cmd": "gcloud logging metrics list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir métrica": {
+        "cmd": "gcloud logging metrics describe {metric_name} --project={project}",
+        "params": ["metric_name", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar métrica": {
+        "cmd": "gcloud logging metrics update {metric_name} --description=\"{description}\" --log-filter=\"{filter}\" --project={project}",
+        "params": ["metric_name", "description", "filter", "project"],
+        "param_hints": {}
+      },
+      "Actualizar métrica con labels": {
+        "cmd": "gcloud logging metrics update {metric_name} --label-extractors={labels} --project={project}",
+        "params": ["metric_name", "labels", "project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar métrica": {
+        "cmd": "gcloud logging metrics delete {metric_name} --project={project}",
+        "params": ["metric_name", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Alert Policies": {
+    "📤 Creación": {
+      "Crear alerta": {
+        "cmd": "gcloud monitoring policies create --policy-from-file={policy_file}",
+        "params": ["policy_file"],
+        "param_hints": {
+          "policy_file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    },
+    "🔎 Consulta": {
+      "Listar alertas": {
+        "cmd": "gcloud monitoring policies list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir alerta": {
+        "cmd": "gcloud monitoring policies describe {policy_id} --project={project}",
+        "params": ["policy_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar alerta": {
+        "cmd": "gcloud monitoring policies update {policy_id} --policy-from-file={policy_file}",
+        "params": ["policy_id", "policy_file"],
+        "param_hints": {
+          "policy_file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      },
+      "Habilitar alerta": {
+        "cmd": "gcloud monitoring policies enable {policy_id} --project={project}",
+        "params": ["policy_id", "project"],
+        "param_hints": {}
+      },
+      "Deshabilitar alerta": {
+        "cmd": "gcloud monitoring policies disable {policy_id} --project={project}",
+        "params": ["policy_id", "project"],
+        "param_hints": {}
+      },
+      "Validar alerta desde archivo": {
+        "cmd": "gcloud monitoring policies validate --policy-from-file={policy_file}",
+        "params": ["policy_file"],
+        "param_hints": {
+          "policy_file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar alerta": {
+        "cmd": "gcloud monitoring policies delete {policy_id} --project={project}",
+        "params": ["policy_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Dashboards": {
+    "📤 Creación": {
+      "Crear dashboard": {
+        "cmd": "gcloud monitoring dashboards create --config-from-file={dashboard_file}",
+        "params": ["dashboard_file"],
+        "param_hints": {
+          "dashboard_file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    },
+    "🔎 Consulta": {
+      "Listar dashboards": {
+        "cmd": "gcloud monitoring dashboards list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir dashboard": {
+        "cmd": "gcloud monitoring dashboards describe {dashboard_id} --project={project}",
+        "params": ["dashboard_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar dashboard": {
+        "cmd": "gcloud monitoring dashboards update {dashboard_id} --config-from-file={dashboard_file}",
+        "params": ["dashboard_id", "dashboard_file"],
+        "param_hints": {
+          "dashboard_file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      },
+      "Copiar dashboard entre proyectos": {
+        "cmd": "gcloud monitoring dashboards copy {dashboard_id} --destination-project={dest_project}",
+        "params": ["dashboard_id", "dest_project"],
+        "param_hints": {}
+      }
+    },
+    "❌ Eliminación": {
+      "Borrar dashboard": {
+        "cmd": "gcloud monitoring dashboards delete {dashboard_id} --project={project}",
+        "params": ["dashboard_id", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Notification Channels": {
+    "📤 Creación": {
+      "Crear canal desde archivo": {
+        "cmd": "gcloud monitoring channels create --channel-content-from-file={file}",
+        "params": ["file"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    },
+    "🔎 Consulta": {
+      "Listar canales": {
+        "cmd": "gcloud monitoring channels list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      },
+      "Describir canal": {
+        "cmd": "gcloud monitoring channels describe {channel_id} --project={project}",
+        "params": ["channel_id", "project"],
+        "param_hints": {}
+      }
+    },
+    "📝 Modificación": {
+      "Actualizar canal desde archivo": {
+        "cmd": "gcloud monitoring channels update {channel_id} --channel-content-from-file={file}",
+        "params": ["channel_id", "file"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    }
+  },
+
+  "Time Series": {
+    "🔎 Consulta": {
+      "Listar series temporales": {
+        "cmd": "gcloud monitoring time-series list --filter=\"{filter}\" --project={project}",
+        "params": ["filter", "project"],
+        "param_hints": {}
+      },
+      "Describir serie temporal": {
+        "cmd": "gcloud monitoring time-series describe {metric_type} --project={project}",
+        "params": ["metric_type", "project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Uptime Checks": {
+    "📤 Creación": {
+      "Crear uptime check": {
+        "cmd": "gcloud monitoring uptime-checks create {check_id} --host={host} --project={project}",
+        "params": ["check_id", "host", "project"],
+        "param_hints": {}
+      }
+    },
+    "🔎 Consulta": {
+      "Listar uptime checks": {
+        "cmd": "gcloud monitoring uptime-checks list --project={project}",
+        "params": ["project"],
+        "param_hints": {}
+      }
+    }
+  },
+
+  "Snoozes": {
+    "📤 Creación": {
+      "Crear snooze (mantenimiento)": {
+        "cmd": "gcloud monitoring snoozes create --display-name={name} --criteria-from-file={file} --project={project}",
+        "params": ["name", "file", "project"],
+        "param_hints": {
+          "file": {"type": "file", "extensions": [".json", ".yaml"]}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "Update function": {
+    "cmd": "gcloud functions deploy {function} --update-labels={labels} --region={region}",
+    "params": [
+      "function",
+      "labels",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Set concurrency": {
+    "cmd": "gcloud functions deploy {function} --concurrency={value} --region={region}",
+    "params": [
+      "function",
+      "value",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Set memory": {
+    "cmd": "gcloud functions deploy {function} --memory={size} --region={region}",
+    "params": [
+      "function",
+      "size",
+      "region"
+    ],
+    "param_hints": {
+      "size": {
+        "type": "combo",
+        "ref": [
+          "128MB",
+          "256MB",
+          "512MB",
+          "1GB",
+          "2GB"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Actualizar CMEK router": {
+    "cmd": "gcloud logging cmek-settings update --kms-key-name={kms_key} --project={project}",
+    "params": [
+      "kms_key",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

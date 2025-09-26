@@ -1,0 +1,20 @@
+{
+  "Call function": {
+    "cmd": "gcloud functions call {function} --data='{data}' --region={region}",
+    "params": [
+      "function",
+      "data",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "Test IAM permissions": {
+    "cmd": "gcloud functions test-iam-permissions {function} {permissions} --region={region}",
+    "params": [
+      "function",
+      "permissions",
+      "region"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "Performs an operation on a resource.": {
+    "cmd": "gsutil mb -p {project_id} -l {region} gs://{bucket_name}",
+    "params": [
+      "project_id",
+      "region",
+      "bucket_name"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

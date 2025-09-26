@@ -1,0 +1,18 @@
+{
+  "Quitar IAM de bucket": {
+    "cmd": "gcloud storage buckets remove-iam-policy-binding {bucket} --member={member} --role={role}",
+    "params": [
+      "bucket",
+      "member",
+      "role"
+    ]
+  },
+  "Quitar IAM de objeto": {
+    "cmd": "gcloud storage objects remove-iam-policy-binding {object} --member={member} --role={role}",
+    "params": [
+      "object",
+      "member",
+      "role"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Updates an existing resource.": {
+    "cmd": "gcloud dataflow jobs update {job_id} --service_account_email {service_account}",
+    "params": [
+      "job_id",
+      "service_account"
+    ],
+    "param_hints": {}
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "Listar políticas de organización (proyecto)": {
+    "cmd": "gcloud org-policies list --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Listar políticas de organización (carpeta)": {
+    "cmd": "gcloud org-policies list --folder={folder_id}",
+    "params": [
+      "folder_id"
+    ],
+    "param_hints": {}
+  },
+  "Listar políticas de organización (org)": {
+    "cmd": "gcloud org-policies list --organization={org_id}",
+    "params": [
+      "org_id"
+    ],
+    "param_hints": {}
+  },
+  "Describir constraint (proyecto)": {
+    "cmd": "gcloud org-policies describe {constraint} --project={project}",
+    "params": [
+      "constraint",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Describir constraint (carpeta)": {
+    "cmd": "gcloud org-policies describe {constraint} --folder={folder_id}",
+    "params": [
+      "constraint",
+      "folder_id"
+    ],
+    "param_hints": {}
+  },
+  "Describir constraint (org)": {
+    "cmd": "gcloud org-policies describe {constraint} --organization={org_id}",
+    "params": [
+      "constraint",
+      "org_id"
+    ],
+    "param_hints": {}
+  }
+}

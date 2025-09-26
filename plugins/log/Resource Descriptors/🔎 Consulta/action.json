@@ -1,0 +1,14 @@
+{
+  "Listar resource descriptors": {
+    "cmd": "gcloud logging resource-descriptors list",
+    "params": [],
+    "param_hints": {}
+  },
+  "Describir resource descriptor": {
+    "cmd": "gcloud logging resource-descriptors describe {type}",
+    "params": [
+      "type"
+    ],
+    "param_hints": {}
+  }
+}

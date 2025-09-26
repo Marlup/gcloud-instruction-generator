@@ -1,0 +1,12 @@
+{
+  "Iniciar copia de logs": {
+    "cmd": "gcloud logging copy {source_bucket} {dest_bucket} --log-filter='{filter}' --project={project}",
+    "params": [
+      "source_bucket",
+      "dest_bucket",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

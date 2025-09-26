@@ -1,0 +1,10 @@
+{
+  "Borrar cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts delete {account} --project={project}",
+    "params": [
+      "account",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

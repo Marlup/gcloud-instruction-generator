@@ -1,0 +1,16 @@
+{
+  "List enabled services": {
+    "cmd": "gcloud services list --enabled --project={project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "List disabled services": {
+    "cmd": "gcloud services list --available --project={project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

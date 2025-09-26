@@ -1,0 +1,12 @@
+{
+  "Cambiar proyecto activo": {
+    "cmd": "gcloud config set project {project}",
+    "params": [
+      "project"
+    ]
+  },
+  "Listar configuración actual": {
+    "cmd": "gcloud config list",
+    "params": []
+  }
+}

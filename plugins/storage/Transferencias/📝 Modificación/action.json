@@ -1,0 +1,9 @@
+{
+  "Actualizar transferencia": {
+    "cmd": "gcloud transfer jobs update {job_id} --status={status}",
+    "params": [
+      "job_id",
+      "status"
+    ]
+  }
+}

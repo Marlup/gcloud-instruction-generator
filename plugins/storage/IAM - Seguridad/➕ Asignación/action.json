@@ -1,0 +1,27 @@
+{
+  "Añadir IAM a bucket": {
+    "cmd": "gcloud storage buckets add-iam-policy-binding {bucket} --member={member} --role={role}",
+    "params": [
+      "bucket",
+      "member",
+      "role"
+    ]
+  },
+  "Añadir IAM a objeto": {
+    "cmd": "gcloud storage objects add-iam-policy-binding {object} --member={member} --role={role}",
+    "params": [
+      "object",
+      "member",
+      "role"
+    ]
+  },
+  "Añadir IAM condicional a bucket": {
+    "cmd": "gcloud storage buckets add-iam-policy-binding {bucket} --member={member} --role={role} --condition={condition}",
+    "params": [
+      "bucket",
+      "member",
+      "role",
+      "condition"
+    ]
+  }
+}

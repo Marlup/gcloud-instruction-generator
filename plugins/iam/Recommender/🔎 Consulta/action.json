@@ -1,0 +1,9 @@
+{
+  "Listar recomendaciones IAM": {
+    "cmd": "gcloud recommender recommendations list --recommender=google.iam.policy.Recommender --project={project}",
+    "params": [
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

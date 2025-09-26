@@ -1,0 +1,10 @@
+{
+  "Crear bucket": {
+    "cmd": "gcloud storage buckets create {bucket} --location={region} --default-storage-class={storage_class}",
+    "params": [
+      "bucket",
+      "region",
+      "storage_class"
+    ]
+  }
+}

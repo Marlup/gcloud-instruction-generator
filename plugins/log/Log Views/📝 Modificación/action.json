@@ -1,0 +1,14 @@
+{
+  "Actualizar vista": {
+    "cmd": "gcloud logging views update {view_id} --bucket={bucket_id} --location={location} --description='{description}' --log-filter='{filter}' --project={project}",
+    "params": [
+      "view_id",
+      "bucket_id",
+      "location",
+      "description",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

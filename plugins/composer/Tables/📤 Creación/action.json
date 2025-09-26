@@ -1,0 +1,11 @@
+{
+  "Creates a new resource.": {
+    "cmd": "bq mk --table {dataset}.{tabla} {schema}",
+    "params": [
+      "dataset",
+      "tabla",
+      "schema"
+    ],
+    "param_hints": {}
+  }
+}

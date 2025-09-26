@@ -1,0 +1,10 @@
+{
+  "Quitar IAM de dataset": {
+    "cmd": "gcloud bigquery datasets remove-iam-policy-binding {dataset} --member={member} --role={role}",
+    "params": [
+      "dataset",
+      "member",
+      "role"
+    ]
+  }
+}

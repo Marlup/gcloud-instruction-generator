@@ -1,0 +1,29 @@
+{
+  "Listar objetos": {
+    "cmd": "gcloud storage ls gs://{bucket}/{prefix}",
+    "params": [
+      "bucket",
+      "prefix"
+    ]
+  },
+  "Describir objeto": {
+    "cmd": "gcloud storage objects describe {src}",
+    "params": [
+      "src"
+    ]
+  },
+  "Listar versiones objeto": {
+    "cmd": "gcloud storage objects versions list gs://{bucket}/{prefix}",
+    "params": [
+      "bucket",
+      "prefix"
+    ]
+  },
+  "Listar versiones con generación": {
+    "cmd": "gcloud storage ls gs://{bucket}/{object}#generation --all-versions",
+    "params": [
+      "bucket",
+      "object"
+    ]
+  }
+}

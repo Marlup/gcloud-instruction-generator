@@ -1,0 +1,11 @@
+{
+  "Crear uptime check": {
+    "cmd": "gcloud monitoring uptime-checks create {check_id} --host={host} --project={project}",
+    "params": [
+      "check_id",
+      "host",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

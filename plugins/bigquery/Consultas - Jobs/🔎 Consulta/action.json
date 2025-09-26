@@ -1,0 +1,12 @@
+{
+  "Listar jobs": {
+    "cmd": "gcloud bigquery jobs list",
+    "params": []
+  },
+  "Describir job": {
+    "cmd": "gcloud bigquery jobs describe {job_id}",
+    "params": [
+      "job_id"
+    ]
+  }
+}

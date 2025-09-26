@@ -1,0 +1,25 @@
+{
+  "Crear clave de cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts keys create {file} --iam-account={account}",
+    "params": [
+      "file",
+      "account"
+    ],
+    "param_hints": {}
+  },
+  "Listar claves de cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts keys list --iam-account={account}",
+    "params": [
+      "account"
+    ],
+    "param_hints": {}
+  },
+  "Borrar clave de cuenta de servicio": {
+    "cmd": "gcloud iam service-accounts keys delete {key_id} --iam-account={account}",
+    "params": [
+      "key_id",
+      "account"
+    ],
+    "param_hints": {}
+  }
+}

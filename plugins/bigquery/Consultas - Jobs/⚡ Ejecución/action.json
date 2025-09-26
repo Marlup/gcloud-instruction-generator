@@ -1,0 +1,16 @@
+{
+  "Ejecutar consulta SQL": {
+    "cmd": "gcloud bigquery query \"{sql}\" --use_legacy_sql=false",
+    "params": [
+      "sql"
+    ]
+  },
+  "Ejecutar consulta y guardar en tabla": {
+    "cmd": "gcloud bigquery query \"{sql}\" --destination_table={dataset}.{table} --use_legacy_sql=false",
+    "params": [
+      "sql",
+      "dataset",
+      "table"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "Crear tabla vacía": {
+    "cmd": "gcloud bigquery tables create {dataset}.{table} --schema={schema_file} --description={description}",
+    "params": [
+      "dataset",
+      "table",
+      "schema_file",
+      "description"
+    ]
+  },
+  "Crear tabla desde consulta": {
+    "cmd": "gcloud bigquery query \"{sql}\" --destination_table={dataset}.{table} --use_legacy_sql=false",
+    "params": [
+      "sql",
+      "dataset",
+      "table"
+    ]
+  }
+}

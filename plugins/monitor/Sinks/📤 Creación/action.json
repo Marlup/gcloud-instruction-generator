@@ -1,0 +1,32 @@
+{
+  "Crear sink (BigQuery)": {
+    "cmd": "gcloud logging sinks create {sink_name} bigquery.googleapis.com/projects/{project}/datasets/{dataset} --log-filter=\"{filter}\" --project={project}",
+    "params": [
+      "sink_name",
+      "project",
+      "dataset",
+      "filter"
+    ],
+    "param_hints": {}
+  },
+  "Crear sink (Storage)": {
+    "cmd": "gcloud logging sinks create {sink_name} storage.googleapis.com/{bucket} --log-filter=\"{filter}\" --project={project}",
+    "params": [
+      "sink_name",
+      "bucket",
+      "project",
+      "filter"
+    ],
+    "param_hints": {}
+  },
+  "Crear sink (Pub/Sub)": {
+    "cmd": "gcloud logging sinks create {sink_name} pubsub.googleapis.com/projects/{project}/topics/{topic} --log-filter=\"{filter}\" --project={project}",
+    "params": [
+      "sink_name",
+      "topic",
+      "project",
+      "filter"
+    ],
+    "param_hints": {}
+  }
+}

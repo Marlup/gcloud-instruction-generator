@@ -117,7 +117,7 @@
     }
   },
   "Jobs": {
-    "⚡ Jobs/Procesamiento": {
+    "⚡ Jobs-Procesamiento": {
       "Creates a new resource.": {
         "cmd": "gcloud data-catalog jobs create --job_id {job_id} --location {location} --query {query}",
         "params": [

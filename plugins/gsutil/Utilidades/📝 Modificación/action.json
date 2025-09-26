@@ -1,0 +1,65 @@
+{
+  "Activar versionado bucket": {
+    "cmd": "gsutil versioning set on gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Desactivar versionado bucket": {
+    "cmd": "gsutil versioning set off gs://{bucket}",
+    "params": [
+      "bucket"
+    ]
+  },
+  "Aplicar configuración CORS": {
+    "cmd": "gsutil cors set {file} gs://{bucket}",
+    "params": [
+      "file",
+      "bucket"
+    ],
+    "param_hints": {
+      "file": {
+        "type": "file",
+        "extensions": [
+          ".json"
+        ]
+      }
+    }
+  },
+  "Aplicar ciclo de vida": {
+    "cmd": "gsutil lifecycle set {file} gs://{bucket}",
+    "params": [
+      "file",
+      "bucket"
+    ],
+    "param_hints": {
+      "file": {
+        "type": "file",
+        "extensions": [
+          ".json"
+        ]
+      }
+    }
+  },
+  "Cambiar clase almacenamiento por defecto": {
+    "cmd": "gsutil defstorageclass set {storage_class} gs://{bucket}",
+    "params": [
+      "storage_class",
+      "bucket"
+    ]
+  },
+  "Definir clave de cifrado por defecto": {
+    "cmd": "gsutil encryption -k {kms_key}",
+    "params": [
+      "kms_key"
+    ]
+  },
+  "Actualizar metadatos objeto": {
+    "cmd": "gsutil setmeta -h {metadata} gs://{bucket}/{object}",
+    "params": [
+      "metadata",
+      "bucket",
+      "object"
+    ]
+  }
+}

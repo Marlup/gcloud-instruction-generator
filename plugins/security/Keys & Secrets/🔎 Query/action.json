@@ -1,0 +1,51 @@
+{
+  "List keyrings": {
+    "cmd": "gcloud kms keyrings list --location={region}",
+    "params": [
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "List keys in keyring": {
+    "cmd": "gcloud kms keys list --keyring={keyring} --location={region}",
+    "params": [
+      "keyring",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  },
+  "Describe key": {
+    "cmd": "gcloud kms keys describe {key} --keyring={keyring} --location={region}",
+    "params": [
+      "key",
+      "keyring",
+      "region"
+    ],
+    "param_hints": {}
+  },
+  "List secrets": {
+    "cmd": "gcloud secrets list --project={project_id}",
+    "params": [
+      "project_id"
+    ],
+    "param_hints": {}
+  },
+  "Describe secret": {
+    "cmd": "gcloud secrets describe {secret} --project={project_id}",
+    "params": [
+      "secret",
+      "project_id"
+    ],
+    "param_hints": {}
+  }
+}

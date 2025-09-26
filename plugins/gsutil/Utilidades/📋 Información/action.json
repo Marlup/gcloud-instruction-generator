@@ -1,0 +1,16 @@
+{
+  "Mostrar versión gsutil": {
+    "cmd": "gsutil version",
+    "params": []
+  },
+  "Mostrar credenciales activas": {
+    "cmd": "gcloud auth list",
+    "params": []
+  },
+  "Ayuda comando específico": {
+    "cmd": "gsutil help {command}",
+    "params": [
+      "command"
+    ]
+  }
+}

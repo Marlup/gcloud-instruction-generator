@@ -1,0 +1,8 @@
+{
+  "Borrar objeto": {
+    "cmd": "gcloud storage rm {src}",
+    "params": [
+      "src"
+    ]
+  }
+}

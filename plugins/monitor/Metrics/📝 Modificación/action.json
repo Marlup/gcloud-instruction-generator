@@ -1,0 +1,21 @@
+{
+  "Actualizar métrica": {
+    "cmd": "gcloud logging metrics update {metric_name} --description=\"{description}\" --log-filter=\"{filter}\" --project={project}",
+    "params": [
+      "metric_name",
+      "description",
+      "filter",
+      "project"
+    ],
+    "param_hints": {}
+  },
+  "Actualizar métrica con labels": {
+    "cmd": "gcloud logging metrics update {metric_name} --label-extractors={labels} --project={project}",
+    "params": [
+      "metric_name",
+      "labels",
+      "project"
+    ],
+    "param_hints": {}
+  }
+}

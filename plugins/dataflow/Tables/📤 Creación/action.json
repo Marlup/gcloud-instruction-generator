@@ -1,0 +1,17 @@
+{
+  "Creates a new resource.": {
+    "cmd": "gcloud dataflow tables create --table_id {table_id} --dataset_id {dataset_id} --schema {schema} --location {region}",
+    "params": [
+      "table_id",
+      "dataset_id",
+      "schema",
+      "region"
+    ],
+    "param_hints": {
+      "region": {
+        "type": "combo",
+        "ref": "regions"
+      }
+    }
+  }
+}

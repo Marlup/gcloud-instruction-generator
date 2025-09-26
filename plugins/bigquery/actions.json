@@ -69,7 +69,7 @@
     }
   },
 
-  "Consultas / Jobs": {
+  "Consultas - Jobs": {
     "⚡ Ejecución": {
       "Ejecutar consulta SQL": {
         "cmd": "gcloud bigquery query \"{sql}\" --use_legacy_sql=false",
@@ -126,7 +126,7 @@
     }
   },
 
-  "IAM / Seguridad": {
+  "IAM - Seguridad": {
     "🔎 Consulta": {
       "Ver IAM dataset": {
         "cmd": "gcloud bigquery datasets get-iam-policy {dataset}",
@@ -148,13 +148,16 @@
   },
 
   "⚙️ Configuración": {
-    "Cambiar proyecto activo": {
-      "cmd": "gcloud config set project {project}",
-      "params": ["project"]
-    },
-    "Listar configuración actual": {
-      "cmd": "gcloud config list",
-      "params": []
-    }
+      "Configuración":
+      {
+        "Cambiar proyecto activo": {
+          "cmd": "gcloud config set project {project}",
+          "params": ["project"]
+        },
+        "Listar configuración actual": {
+          "cmd": "gcloud config list",
+          "params": []
+        }
+      }
   }
 }
