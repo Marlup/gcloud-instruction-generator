@@ -117,7 +117,7 @@ class MainWindow(ttk.Window):
         self.current_service = self.container.get(service_name)
 
         # Título acciones
-        self.actions_panel.lbl.config(text=f"Acciones de {service_name.capitalize()}")
+        self.actions_panel.header_label.config(text=f"Acciones de {service_name.capitalize()}")
 
         # Refrescar árbol
         self.actions_panel.refresh(self.current_service.actions)

@@ -1,3 +1,4 @@
+from itertools import count
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import tkinter.filedialog as fd
@@ -9,6 +10,11 @@ from datetime import datetime
 # ---------------------------------------------------
 # ------------------- Header & Actions panels -------
 # ---------------------------------------------------
+
+service_header_font_style = ("Segoe UI", 16, "bold")
+resource_label_font_style = ("Segoe UI", 14, "bold")
+category_label_font_style = ("Segoe UI", 12, "bold")
+action_label_font_style = ("Segoe UI", 10, "bold")
 
 class HeaderPanel(ttk.Frame):
     def __init__(self, parent, on_tab_change, on_theme_change, services: list[str]):
@@ -35,13 +41,31 @@ class ActionsPanel(ttk.Frame):
     def __init__(self, parent, on_action_select):
         super().__init__(parent, padding=10)
 
-        self.lbl = ttk.Label(
+        # --- search bar ---
+        search_row = ttk.Frame(self)
+        search_row.pack(fill="x", pady=(0,5))
+        ttk.Label(search_row, text="🔎 Search:").pack(side="left", padx=5)
+        self.entry_search = ttk.Entry(search_row, bootstyle=SECONDARY)
+        self.entry_search.pack(side="left", fill="x", expand=True)
+        self.entry_search.bind("<KeyRelease>", self._on_search)
+        self.entry_search
+        clear_search_btn = ttk.Button(
+            search_row, 
+            text="❌",
+            bootstyle="danger", 
+            command=self._on_clear_search,
+            width=3
+        )
+        clear_search_btn.pack(side="left", padx=5)
+        
+        # --- treeview ---
+        self.header_label = ttk.Label(
             self,
             text="Acciones",
             bootstyle=INFO,
-            font=("Segoe UI", 13, "bold")
+            font=service_header_font_style
         )
-        self.lbl.pack(anchor="w", pady=(0, 5))
+        self.header_label.pack(anchor="w", pady=(0, 5))
 
         self.tree = ttk.Treeview(self, bootstyle=PRIMARY)
         self.tree.pack(fill="both", expand=True)
@@ -49,26 +73,59 @@ class ActionsPanel(ttk.Frame):
 
         self.on_action_select = on_action_select
 
+
     def refresh(self, actions: dict):
-        """Recibe las acciones desde el servicio actual y refresca el árbol."""
-        self.tree.delete(*self.tree.get_children())
-        # Build the tree structure
-        c = 0
-        for resource, categories in actions.items():
-            # root node = resource
-            res_id = self.tree.insert("", "end", text=resource, open=False) # Collapsed by default
+        """Recibe las acciones y refresca árbol + cachea."""
+        self._all_actions = actions
+        self._populate(actions)
 
-            for category, acts in categories.items():
-                # Normalize name without emoji to apply color
-                category_name = category.split(" ", 1)[-1]
-                sub_id = self.tree.insert(res_id, "end", text=category, open=True, tags=(category_name,))
+    def _populate(self, actions: dict):
+            """Clear and repopulate the tree."""
+            self.tree.delete(*self.tree.get_children())
+            counter = count()  # sequential IDs
+            for resource, categories in actions.items():
+                res_id = self.tree.insert("", "end", text=resource, open=True)
+                self._populate_category(categories, res_id, counter)
 
-                if category_name in category_colors:
-                    self.tree.tag_configure(category_name, **category_colors[category_name])
+    def _populate_category(self, categories: dict[str, dict], res_id: str, counter):
+        for category, acts in categories.items():
+            category_name = category.split(" ", 1)[-1]
+            sub_id = self.tree.insert(
+                res_id, "end", text=category, open=True, tags=(category_name,)
+            )
+            self._populate_action(category_name, acts, sub_id, counter)
 
-                for action in acts:
-                    self.tree.insert(sub_id, "end", iid=f"tree-action-{c}", text=action)
-                    c += 1
+    def _populate_action(self, category_name: str, acts: list[str], sub_id: str, counter):
+        if category_name in category_colors:
+            self.tree.tag_configure(category_name, **category_colors[category_name])
+        for action in acts:
+            self.tree.insert(
+                sub_id, "end", iid=f"tree-action-{next(counter)}", text=action
+            )
+
+    def _on_search(self, event=None):
+        text = self.entry_search.get().lower().strip()
+        if not text:
+            self._populate(self._all_actions)
+            return
+        # filtrar por recurso, categoría o acción
+        filtered = {}
+        for res, cats in self._all_actions.items():
+            if text in res.lower():
+                filtered[res] = cats
+                continue
+            for cat, acts in cats.items():
+                if text in cat.lower():
+                    filtered.setdefault(res, {})[cat] = acts
+                    continue
+                for act in acts:
+                    if text in act.lower():
+                        filtered.setdefault(res, {}).setdefault(cat, {})[act] = acts[act]
+        self._populate(filtered)
+    
+    def _on_clear_search(self, event=None):
+        self.entry_search.delete(0, 'end')
+        self._on_search()
 
     def _on_select(self, event=None):
         item_id = self.tree.focus()
