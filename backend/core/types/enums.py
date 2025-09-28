@@ -49,4 +49,7 @@ class ExportFileFormat(str, Enum):
     SHELL = "shell"
     TERRAFORM = "Terraform"
 
-
+class UpdateMode(str, Enum):
+    FULL = "full"
+    PARTIAL = "partial"
+    SINGLE = "single"
