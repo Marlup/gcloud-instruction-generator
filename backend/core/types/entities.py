@@ -9,9 +9,11 @@ class ServiceCommand:
     service_url: str
     description: str
     command_synopsis: str
+    sha256_sign: str
+    positional_args: List[str]
+    required_flags: List[str]
     base_groups: List[str]
     base_commands: List[str]
-    sha256_sign: str
 
     def to_dict(self) -> Dict:
         return asdict(self)

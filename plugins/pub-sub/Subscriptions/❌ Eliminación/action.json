@@ -1,9 +1,0 @@
-{
-  "Deletes the specified resource.": {
-    "cmd": "gcloud pubsub subscriptions delete {subscription}",
-    "params": [
-      "subscription"
-    ],
-    "param_hints": {}
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "Describes the resource.": {
-    "cmd": "gcloud pubsub subscriptions describe {subscription}",
-    "params": [
-      "subscription"
-    ],
-    "param_hints": {}
-  }
-}

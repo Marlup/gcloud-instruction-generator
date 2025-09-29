@@ -4,7 +4,27 @@ from backend.core.types.enums import UpdateMode
 def main():
     updater = KnowledgeUpdater()
     #updater.run_update(mode=UpdateMode.SINGLE, target_update="storage")
-    updater.run_update(mode=UpdateMode.PARTIAL, target_update=["pubsub", "organizations"])
+    updater.run_update(
+        mode=UpdateMode.PARTIAL,
+          target_update=[
+              "pubsub", 
+              "organizations",
+              "iam", 
+              "monitoring", 
+              "logging",
+              "storage",
+              "dataflow",
+              "biglake",
+              "bq",
+              "dataplex",
+              "dataproc",
+              "kms",
+              "org-policies",
+              "sql",
+              "billing",
+              "auth",
+              ]
+              )
 
 if __name__ == "__main__":
     main()

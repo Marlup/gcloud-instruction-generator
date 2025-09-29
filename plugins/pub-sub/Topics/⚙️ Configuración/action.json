@@ -1,9 +1,0 @@
-{
-  "Describes the resource.": {
-    "cmd": "gcloud pubsub topics describe {topic}",
-    "params": [
-      "topic"
-    ],
-    "param_hints": {}
-  }
-}
