@@ -38,13 +38,13 @@ class KnowledgeUpdater():
     def uncommit_recursion(self):
         self.recursion_level -= 1
 
-        log.info(f"Going DOWN to level '{self.recursion_level}'")
+        log.info(f"Going DOWN to level '{self.recursion_level}\n'")
 
     def can_next_recursion(self):
         if self.recursion_level < self.recursion_level_limit:
             self.commit_recursion()
         else:
-            log.info(f"Blocked next recursion: level limit reached '{self.recursion_level_limit}'. Going down")
+            log.info(f"Blocked next recursion: level limit reached '{self.recursion_level_limit}'. Going down\n")
             self.reset_recursion()
         
         return self.continue_recursion
@@ -148,14 +148,10 @@ class KnowledgeUpdater():
         desc = self._get_key_text(article, "section[id='DESCRIPTION']")
         
         # Commands
-        cmd_section = article.select_one("section[id='COMMAND']")
-        #data_cmds = self._get_groups(cmd_section, service) if cmd_section else {}
-        data_cmds = self._get_recursive_groups(cmd_section, service) if cmd_section else {}
+        data_cmds = self._get_recursive_groups(article, "section[id='COMMAND']", service)
         
         # Groups
-        group_section = article.select_one("section[id='GROUP']")
-        #data_groups = self._get_groups(group_section,) if group_section else {}
-        data_groups = self._get_recursive_groups(group_section, service) if group_section else {}
+        data_groups = self._get_recursive_groups(article, "section[id='GROUP']", service)
 
         # Positional arguments
         positional_args = self._extract_flags(article, "section[id='POSITIONAL-ARGUMENTS'] dl")
@@ -189,7 +185,7 @@ class KnowledgeUpdater():
         
         parts = selector.get_text().split("\n")
         parts = [part for part in parts if part]
-        return parts[-1] # text at last element
+        return "\n".join(parts[1:]) # text located after the first element
 
     def _get_groups(self, section: Tag, service: str):
         tags = section.select("a[href]")
@@ -206,9 +202,16 @@ class KnowledgeUpdater():
             ]
         )
     
-    def _get_recursive_groups(self, section: Tag, service: str):
+    def _get_recursive_groups(self, tag: Tag, css_selector: str, service: str):
         groups_data = {}
         service_relative_url = urljoin(self.SDK_RELATIVE_URL, service)
+        if not tag:
+            return {}
+        
+        section = tag.select_one(css_selector)
+
+        if not section:
+            return {}
 
         for tag in section.select("a[href]"):
             group_name = tag.get_text(strip=True)
@@ -228,6 +231,9 @@ class KnowledgeUpdater():
     def _extract_flags(self, tag: Tag, css_selector: str) -> Dict:
         """Extract global flags section from root reference page."""
 
+        if not tag:
+            return {}
+
         section_dl = tag.select_one(css_selector)
         if not section_dl:
             return {}
@@ -235,12 +241,12 @@ class KnowledgeUpdater():
         flags_dict = {}
         for dt, dd in zip(section_dl.select("dt"), section_dl.select("dd")):
             flag_name = dt.get("id", "").replace("-", "")
-            flag_text = dd.get_text(strip=True)
-            desc_text = dd.get_text(strip=True)
+            flag_content = dt.get_text(strip=True)
+            flag_desc = dd.get_text(strip=True)
             
             flags_dict[flag_name] = {
-                "flag": flag_text, 
-                "description": desc_text
+                "content": flag_content, 
+                "description": flag_desc
                 }
             
         return flags_dict
