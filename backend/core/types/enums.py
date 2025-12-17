@@ -2,21 +2,25 @@ from enum import Enum
 
 class GCPService(str, Enum):
     IAM = "iam"
-    ORGANIZATION = "organization"
+    ORGANIZATIONS = "organizations"
+    ORG_POLICIES = "org-policies"
+    AUTH = "auth"
+    BILLING = "billing"
     STORAGE = "storage"
-    BIGLAKE = "biglake"
-    BIGQUERY = "bigquery"
-    PUB_SUB = "pub-sub"
-    DATACATALOG = "datacatalog"
+    #BIGLAKE = "biglake"
+    BIGQUERY = "bq"
+    PUB_SUB = "pubsub"
+    SQL = "sql"
     DATAFLOW = "dataflow"
     DATAPLEX = "dataplex"
     DATAPROC = "dataproc"
     COMPOSER = "composer"
-    LOG = "log"
-    MONITOR = "monitor"
-    SECURITY = "security"
+    LOGGING = "logging"
+    MONITORING = "monitoring"
+    KMS = "kms"
+    SECRETS = "secrets"
     AUTOMATION = "automation"
-    DEBUG_ERROR = "debug-error"
+    DEBUG = "debug"
 
 class IAMPurpose(str, Enum):
     ADMIN = "admin"                # Roles, cuentas de servicio
@@ -53,3 +57,4 @@ class UpdateMode(str, Enum):
     FULL = "full"
     PARTIAL = "partial"
     SINGLE = "single"
+    PATCH = "patch"  # Process only unscraped entities from unprocessed.json files

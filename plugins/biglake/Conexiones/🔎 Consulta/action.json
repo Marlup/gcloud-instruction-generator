@@ -1,8 +1,0 @@
-{
-  "Listar conexiones": {
-    "cmd": "gcloud biglake connections list --location={region}",
-    "params": [
-      "region"
-    ]
-  }
-}

@@ -9,7 +9,7 @@ from google.api_core.exceptions import GoogleAPIError
 from backend.constants import GCP_CREDENTIALS_FILENAME
 
 class ConfigurationManager:
-    def __init__(self, config: Optional[Dict[str, Any]] = None, plugins_path: str = "plugins", on_connect: bool = True):
+    def __init__(self, config: Optional[Dict[str, Any]] = None, plugins_path: str = "data/plugins", on_connect: bool = True):
         self.config: Dict[str, Any] = config or {}
         self.plugins_path = plugins_path
         self._client: Optional[gcs.Client] = None
@@ -71,7 +71,7 @@ class ConfigurationManager:
     def load_actions(self, service_name: str) -> Dict[str, Dict[str, Dict[str, Any]]]:
         """
         Carga TODAS las acciones de un servicio:
-        plugins/service/resource/category/*.json
+        plugins/service/resource/*.json
         """
         service_path = os.path.join(self.plugins_path, service_name)
         if not os.path.isdir(service_path):
@@ -87,20 +87,15 @@ class ConfigurationManager:
 
             for category in os.listdir(resource_path):
                 category_path = os.path.join(resource_path, category)
-                if not os.path.isdir(category_path):
+                if not category_path.endswith(".json"):
                     continue
-                actions[resource][category] = {}
+                with open(category_path, "r", encoding="utf-8") as f:
+                    action_data = json.load(f)
 
-                for filename in os.listdir(category_path):
-                    if not filename.endswith(".json"):
-                        continue
-                    file_path = os.path.join(category_path, filename)
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        action_data = json.load(f)
-
-                    # We assume format: {"Action name": {"cmd": "...", "params": [...]}}
-                    actions[resource][category].update(action_data)
-
+                # We assume format: {"Action name": {"cmd": "...", "params": [...]}}
+                category_name = category.split(".")[0]
+                actions[resource][category_name] = action_data
+                
         return actions
 
     # -------- Parámetros --------

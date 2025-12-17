@@ -1,0 +1,22 @@
+[
+  {
+    "service_name": "storage",
+    "group_name": "list",
+    "url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/dataset-configs/list"
+  },
+  {
+    "service_name": "storage",
+    "group_name": "notifications",
+    "url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/notifications"
+  },
+  {
+    "service_name": "storage",
+    "group_name": "remove-iam-policy-binding",
+    "url": "https://cloud.google.com/sdk/gcloud/reference/storage/managed-folders/remove-iam-policy-binding"
+  },
+  {
+    "service_name": "storage",
+    "group_name": "compose",
+    "url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/compose"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "gcloud_docs_dir": "data/web-gcloud",
+  "output_dir": "data/plugins",
+  "resource_maps": {
+    "storage": {
+      "resource_map": {
+        "buckets": "buckets",
+        "objects": "objects",
+        "managed-folders": "buckets",
+        "hmac": "iam_and_security"
+      }
+    }
+  }
+}

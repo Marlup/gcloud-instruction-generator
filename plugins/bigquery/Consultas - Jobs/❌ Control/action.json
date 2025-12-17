@@ -1,8 +1,0 @@
-{
-  "Cancelar job": {
-    "cmd": "gcloud bigquery jobs cancel {job_id}",
-    "params": [
-      "job_id"
-    ]
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "Borrar dataset": {
-    "cmd": "gcloud bigquery datasets delete {dataset} --location={region}",
-    "params": [
-      "dataset",
-      "region"
-    ]
-  }
-}

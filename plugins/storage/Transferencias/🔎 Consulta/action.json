@@ -1,6 +1,0 @@
-{
-  "Listar transferencias": {
-    "cmd": "gcloud transfer jobs list",
-    "params": []
-  }
-}

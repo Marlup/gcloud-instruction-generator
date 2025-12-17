@@ -12,8 +12,10 @@ class ServiceCommand:
     sha256_sign: str
     positional_args: List[str]
     required_flags: List[str]
+    optional_flags: List[str]
+    flags: List[str]
     base_groups: List[str]
     base_commands: List[str]
 
     def to_dict(self) -> Dict:
-        return asdict(self)
+        return {k: v for k, v in asdict(self).items() if k}

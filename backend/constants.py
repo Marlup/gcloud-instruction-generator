@@ -30,3 +30,12 @@ category_colors = {
     "Asignación":    {"foreground": "#800000"},  # burdeos
     "Gestión":       {"foreground": "#2F4F4F"}   # gris pizarra oscuro
 }
+
+# Category order
+CATEGORY_ORDER = [
+    "Consulta",
+    "Creación",
+    "Modificación",
+    "Eliminación",
+    "Seguridad"
+]

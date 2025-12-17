@@ -1,12 +1,12 @@
 # tests/test_actions_panel.py
-from ui.panels import ActionsPanel
+from ui.panels import ActionsTreePanel
 import pytest
 
 def test_populate_and_select(tk_root):
     selected = {}
     def on_action_select(action, res, cat): selected.update(action=action, res=res, cat=cat)
 
-    panel = ActionsPanel(tk_root, on_action_select)
+    panel = ActionsTreePanel(tk_root, on_action_select)
     actions = {
         "Buckets": {
             "📤 Creación": {"Crear bucket": {"cmd": "gcloud ...", "params": ["bucket"]}}

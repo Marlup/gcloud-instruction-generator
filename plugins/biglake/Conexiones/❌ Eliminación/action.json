@@ -1,9 +1,0 @@
-{
-  "Borrar conexión": {
-    "cmd": "gcloud biglake connections delete {connection} --location={region}",
-    "params": [
-      "connection",
-      "region"
-    ]
-  }
-}

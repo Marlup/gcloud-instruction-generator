@@ -4,22 +4,25 @@ from functools import wraps
 from typing import Dict, Type, Callable
 
 from backend.services.base_service import BaseGCloudService
-from backend.services.iam_service import IamService
-from backend.services.org_service import OrganizationService
-from backend.services.storage_service import StorageService
-from backend.services.biglake_service import BiglakeService
-from backend.services.bigquery_service import BigqueryService
-from backend.services.pubsub_service import PubSubService
-from backend.services.datacatalog_service import DataCatalogService
-from backend.services.dataflow_service import DataflowService
-from backend.services.dataplex_service import DataplexService
-from backend.services.dataproc_service import DataprocService
-from backend.services.composer_service import ComposerService
-from backend.services.log_service import LogService
-from backend.services.monitor_service import MonitorService
-from backend.services.security_service import SecurityService
-from backend.services.automation_service import AutomationService
-from backend.services.debug_service import DebugErrorService
+from backend.services.implementations.auth_service import AuthService
+from backend.services.implementations.kms_service import KmsService
+from backend.services.implementations.billing_service import BillingService
+from backend.services.implementations.iam_service import IamService
+from backend.services.implementations.org_service import OrganizationsService
+from backend.services.implementations.org_policies_service import OrgPoliciesService
+from backend.services.implementations.storage_service import StorageService
+from backend.services.implementations.sql_service import SqlService
+from backend.services.implementations.bigquery_service import BigqueryService
+from backend.services.implementations.pubsub_service import PubSubService
+from backend.services.implementations.dataflow_service import DataflowService
+from backend.services.implementations.dataplex_service import DataplexService
+from backend.services.implementations.dataproc_service import DataprocService
+from backend.services.implementations.composer_service import ComposerService
+from backend.services.implementations.log_service import LogService
+from backend.services.implementations.monitor_service import MonitoringService
+from backend.services.implementations.secrets_service import SecretsService
+from backend.services.implementations.automation_service import AutomationService
+from backend.services.implementations.debug_service import DebugService
 
 from backend.infrastructure.configuration_manager import ConfigurationManager
 
@@ -37,21 +40,25 @@ class DIContainer:
         # Mapa de servicios disponibles
         self._service_classes: Dict[str, Type] = {
             "iam": IamService,
-            "organization": OrganizationService,
+            "auth": AuthService,
+            "billing": BillingService,
+            "organizations": OrganizationsService,
+            "org-policies": OrgPoliciesService,
             "storage": StorageService,
-            "biglake": BiglakeService,
-            "bigquery": BigqueryService,
-            "pub-sub": PubSubService,
-            "datacatalog": DataCatalogService,
+            "sql": SqlService,
+            #"biglake": BiglakeService,
+            "bq": BigqueryService,
+            "pubsub": PubSubService,
             "dataflow": DataflowService,
             "dataplex": DataplexService,
             "dataproc": DataprocService,
             "composer": ComposerService,
-            "log": LogService,
-            "monitor": MonitorService,
-            "security": SecurityService,
+            "logging": LogService,
+            "monitoring": MonitoringService,
+            "kms": KmsService,
+            "secrets": SecretsService,
             "automation": AutomationService,
-            "debug-error": DebugErrorService,
+            "debug": DebugService,
         }
 
     def get(self, service_name: str) -> BaseGCloudService:

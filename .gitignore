@@ -4,7 +4,8 @@ application_default_credentials*
 igen-bknd-001-dev-*
 temp-data/
 *_command.json
-/plugins/*
+data/plugins/*
+ui/config/ui_settings.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

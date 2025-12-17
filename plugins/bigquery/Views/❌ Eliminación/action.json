@@ -1,9 +1,0 @@
-{
-  "Borrar view": {
-    "cmd": "gcloud bigquery tables delete {dataset}.{view}",
-    "params": [
-      "dataset",
-      "view"
-    ]
-  }
-}

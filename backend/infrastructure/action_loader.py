@@ -1,6 +1,9 @@
-from typing import List, Dict
 import os
 import json
+import logging
+from typing import List, Dict
+
+logging.getLogger(__name__)
 
 class ActionLoader:
 
@@ -8,13 +11,15 @@ class ActionLoader:
         self.service_path = service_path
         self.actions = self._load_actions()
 
-    def _load_actions(self) -> Dict[str, Dict[str, Dict[str, dict]]]:
+    def _load_actions(self) -> Dict[str, Dict[str, dict]]:
         """
         Carga todas las acciones desde la estructura:
-        service-dir/resource-dir/category-dir/*.json
+        service-dir/resource-dir/category-json-file
         """
-        actions: Dict[str, Dict[str, Dict[str, dict]]] = {}
+        actions: Dict[str, Dict[str, dict]] = {}
 
+
+        logging.info(f"Starting loading actions {self.service_path}")
         for resource in os.listdir(self.service_path):
             resource_path = os.path.join(self.service_path, resource)
             if not os.path.isdir(resource_path):
@@ -27,15 +32,28 @@ class ActionLoader:
     def _load_resource(self, resource_path: str) -> Dict[str, Dict[str, dict]]:
         """
         Carga todas las categorías dentro de un recurso.
+        Soporta:
+        1. Directorios de categoría (legacy): resource/category/action.json
+        2. Archivos de categoría (current): resource/category.json
         """
         categories: Dict[str, Dict[str, dict]] = {}
 
-        for category in os.listdir(resource_path):
-            category_path = os.path.join(resource_path, category)
-            if not os.path.isdir(category_path):
-                continue
-
-            categories[category] = self._load_category(category_path)
+        for entry in os.listdir(resource_path):
+            entry_path = os.path.join(resource_path, entry)
+            
+            # Case 1: Directory (folder for category)
+            if os.path.isdir(entry_path):
+                categories[entry] = self._load_category(entry_path)
+            
+            # Case 2: JSON file (category file)
+            elif entry.endswith(".json"):
+                # category name is filename without extension
+                category = os.path.splitext(entry)[0]
+                try:
+                    with open(entry_path, "r", encoding="utf-8") as f:
+                        categories[category] = json.load(f)
+                except Exception as e:
+                    logging.error(f"Error loading category file {entry_path}: {e}")
 
         return categories
 

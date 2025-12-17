@@ -3,8 +3,10 @@ from typing import Dict
 import json
 import logging
 
+logger = logging.getLogger(__name__)
+
 def main():
-    parent_path = "plugins"
+    parent_path = "data/plugins"
     service_paths = os.listdir(parent_path)
 
     # Make 

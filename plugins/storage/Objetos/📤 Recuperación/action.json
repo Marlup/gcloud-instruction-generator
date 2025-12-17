@@ -1,9 +1,0 @@
-{
-  "Recuperar versión objeto": {
-    "cmd": "gcloud storage cp {src_version} {dest}",
-    "params": [
-      "src_version",
-      "dest"
-    ]
-  }
-}

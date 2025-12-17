@@ -19,7 +19,6 @@ from backend.core.types.enums import GCPService
 from google.cloud import storage as gcs
 from google.cloud import bigquery
 from google.cloud.orchestration.airflow import v1 as composer_v1
-from google.cloud import datacatalog
 from googleapiclient.discovery import Resource
 from google.cloud import dataplex_v1
 from google.cloud import dataproc_v1
@@ -54,11 +53,6 @@ def test_bigquery_client(config_manager):
 def test_composer_client(config_manager):
     client = config_manager.get_client(GCPService.COMPOSER)
     assert isinstance(client, composer_v1.EnvironmentsClient)
-
-
-def test_datacatalog_client(config_manager):
-    client = config_manager.get_client(GCPService.DATACATALOG)
-    assert isinstance(client, datacatalog.DataCatalogClient)
 
 
 def test_dataflow_client(config_manager):

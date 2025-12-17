@@ -1,9 +1,0 @@
-{
-  "Borrar catálogo": {
-    "cmd": "gcloud biglake catalogs delete {catalog} --location={region}",
-    "params": [
-      "catalog",
-      "region"
-    ]
-  }
-}
