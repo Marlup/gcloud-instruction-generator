@@ -9,7 +9,7 @@ from google.api_core.exceptions import GoogleAPIError
 from backend.constants import GCP_CREDENTIALS_FILENAME
 
 class ConfigurationManager:
-    def __init__(self, config: Optional[Dict[str, Any]] = None, plugins_path: str = "data/plugins", on_connect: bool = True):
+    def __init__(self, config: Optional[Dict[str, Any]] = None, plugins_path: str = "data/plugins", on_connect: bool = False):
         self.config: Dict[str, Any] = config or {}
         self.plugins_path = plugins_path
         self._client: Optional[gcs.Client] = None

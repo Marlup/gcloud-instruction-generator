@@ -1,6 +1,9 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import INFO, DANGER
 
+EXTRA_TOOLTIP_WIDTH = 5
+EXTRA_TOOLTIP_HEIGHT = 5
+
 class InfoTooltip(ttk.Toplevel):
     """Floating tooltip panel that shows action/group descriptions."""
     
@@ -61,12 +64,12 @@ class InfoTooltip(ttk.Toplevel):
         tooltip_height = self.winfo_reqheight()
         
         # Adjust position to keep tooltip on screen
-        if x + tooltip_width + 10 > screen_width:
-            x = screen_width - tooltip_width - 10
-        if y + tooltip_height + 10 > screen_height:
-            y = screen_height - tooltip_height - 10
+        if x + tooltip_width + EXTRA_TOOLTIP_WIDTH > screen_width:
+            x = screen_width - tooltip_width - EXTRA_TOOLTIP_WIDTH
+        if y + tooltip_height + EXTRA_TOOLTIP_HEIGHT > screen_height:
+            y = screen_height - tooltip_height - EXTRA_TOOLTIP_HEIGHT
         
-        self.geometry(f"+{x+10}+{y+10}")
+        self.geometry(f"+{x+EXTRA_TOOLTIP_WIDTH}+{y+EXTRA_TOOLTIP_HEIGHT}")
         
         # Auto-hide on mouse leave if not pinned
         if not pinned:

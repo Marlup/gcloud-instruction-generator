@@ -1,0 +1,1 @@
+bq,storage,auth,monitoring,logging,spanner,sql,pubsub,iam,billing,biglake,builds,composer,compute,config,dataflow,dataplex,dataproc,functions,iam,kms,org-policies,organizations,project,run,scheduler,secrets
