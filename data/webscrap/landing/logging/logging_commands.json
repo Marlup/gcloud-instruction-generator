@@ -1,0 +1,2601 @@
+[
+  {
+    "id": "logging.buckets",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "buckets"
+    ],
+    "command_path": "gcloud logging buckets",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets",
+    "description": "Commands for managing Cloud Logging buckets. A bucket is a container of logs\nthat can be managed as a unit, for example by setting the retention period.",
+    "command_synopsis": "gcloud logging buckets COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c1dfc73af4b1419d178b6342dd402da9eaf26dc46d06defcb8bee3b750c3e8e0",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging"
+    ],
+    "command_path": "gcloud logging",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging",
+    "description": "Manage Cloud Logging.",
+    "command_synopsis": "gcloud logging GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "e34b20fcf39dae80e6246f2f9a6e4bd770b9759d652d73e9765793a7cc7050b6",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.buckets.create",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "buckets",
+      "create"
+    ],
+    "command_path": "gcloud logging buckets create",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets/create",
+    "description": "After creating a bucket, use a log sink to route logs into the bucket.",
+    "command_synopsis": "gcloud logging buckets create BUCKET_ID --location=LOCATION [--async] [--cmek-kms-key-name=CMEK_KMS_KEY_NAME] [--description=DESCRIPTION] [--enable-analytics] [--index=[KEY=VALUE, …,…]] [--restricted-fields=[RESTRICTED_FIELD,…]] [--retention-days=RETENTION_DAYS] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "BUCKET_ID": {
+        "content": "BUCKET_ID",
+        "description": "ID of the bucket to create."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location in which to create the bucket. Once the bucket is created, the location\ncannot be changed."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "cmek-kms-key-name": {
+        "content": "--cmek-kms-key-name=CMEK_KMS_KEY_NAME",
+        "description": "A validkms_key_namewill enable CMEK for the bucket."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A textual description for the bucket."
+      },
+      "enable-analytics": {
+        "content": "--enable-analytics",
+        "description": "Whether to opt the bucket into Log Analytics. Once opted in, the bucket cannot\nbe opted out of Log Analytics."
+      },
+      "index": {
+        "content": "--index=[KEY=VALUE, …,…]",
+        "description": "Specify an index to be added to the log bucket. This flag can be repeated. ThefieldPathandtypeattributes are required. For example:\n--index=fieldPath=jsonPayload.foo,type=INDEX_TYPE_STRING. The following keys are\naccepted:fieldPathThe LogEntry field path to index. For example: jsonPayload.request.status. Paths\nare limited to 800 characters and can include only letters, digits, underscores,\nhyphens, and periods.typeThe type of data in this index. For example: INDEX_TYPE_STRING Supported types\nare INDEX_TYPE_STRING and INDEX_TYPE_INTEGER."
+      },
+      "fieldPath": {
+        "content": "fieldPath",
+        "description": "The LogEntry field path to index. For example: jsonPayload.request.status. Paths\nare limited to 800 characters and can include only letters, digits, underscores,\nhyphens, and periods."
+      },
+      "type": {
+        "content": "type",
+        "description": "The type of data in this index. For example: INDEX_TYPE_STRING Supported types\nare INDEX_TYPE_STRING and INDEX_TYPE_INTEGER."
+      },
+      "restricted-fields": {
+        "content": "--restricted-fields=[RESTRICTED_FIELD,…]",
+        "description": "Comma-separated list of field paths that require permission checks in this\nbucket. The following fields and their children are eligible: textPayload,\njsonPayload, protoPayload, httpRequest, labels, sourceLocation."
+      },
+      "retention-days": {
+        "content": "--retention-days=RETENTION_DAYS",
+        "description": "The period logs will be retained, after which logs will automatically be\ndeleted. The default is 30 days."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.buckets.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "buckets",
+      "delete"
+    ],
+    "command_path": "gcloud logging buckets delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets/delete",
+    "description": "",
+    "command_synopsis": "gcloud logging buckets delete BUCKET_ID --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "BUCKET_ID": {
+        "content": "BUCKET_ID",
+        "description": "ID of the bucket to delete."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the bucket to delete."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the bucket to delete."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the bucket to delete."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the bucket to delete.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.buckets.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "buckets",
+      "list"
+    ],
+    "command_path": "gcloud logging buckets list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets/list",
+    "description": "List the buckets for a project.",
+    "command_synopsis": "gcloud logging buckets list [--location=LOCATION] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location from which to list buckets. By default, buckets in all locations will\nbe listed"
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the buckets to list."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the buckets to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the buckets to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the buckets to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.buckets.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "buckets",
+      "describe"
+    ],
+    "command_path": "gcloud logging buckets describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets/describe",
+    "description": "Display information about a bucket.",
+    "command_synopsis": "gcloud logging buckets describe BUCKET_ID --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "BUCKET_ID": {
+        "content": "BUCKET_ID",
+        "description": "The id of the bucket to describe."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the bucket to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the bucket to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the bucket to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the bucket to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.buckets.undelete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "buckets",
+      "undelete"
+    ],
+    "command_path": "gcloud logging buckets undelete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets/undelete",
+    "description": "",
+    "command_synopsis": "gcloud logging buckets undelete BUCKET_ID --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "BUCKET_ID": {
+        "content": "BUCKET_ID",
+        "description": "ID of the bucket to undelete."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the bucket to undelete."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the bucket to undelete."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the bucket to undelete."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the bucket to undelete.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.buckets.update",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "buckets",
+      "update"
+    ],
+    "command_path": "gcloud logging buckets update",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/buckets/update",
+    "description": "Update the properties of a bucket.",
+    "command_synopsis": "gcloud logging buckets update BUCKET_ID --location=LOCATION [--add-index=[KEY=VALUE, …,…]] [--async] [--clear-indexes] [--cmek-kms-key-name=CMEK_KMS_KEY_NAME] [--description=DESCRIPTION] [--enable-analytics] [--locked] [--remove-indexes=[FIELD PATH,…]] [--restricted-fields=[RESTRICTED_FIELD,…]] [--retention-days=RETENTION_DAYS] [--update-index=[KEY=VALUE, …,…]] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "BUCKET_ID": {
+        "content": "BUCKET_ID",
+        "description": "The id of the bucket to update."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "add-index": {
+        "content": "--add-index=[KEY=VALUE, …,…]",
+        "description": "Add an index to be added to the log bucket. This flag can be repeated. ThefieldPathandtypeattributes are required. For example:\n--index=fieldPath=jsonPayload.foo,type=INDEX_TYPE_STRING. The following keys are\naccepted:fieldPathThe LogEntry field path to index. For example: jsonPayload.request.status. Paths\nare limited to 800 characters and can include only letters, digits, underscores,\nhyphens, and periods.typeThe type of data in this index. For example: INDEX_TYPE_STRING Supported types\nare strings and integers."
+      },
+      "fieldPath": {
+        "content": "fieldPath",
+        "description": "The LogEntry field path to index. For example: jsonPayload.request.status. Paths\nare limited to 800 characters and can include only letters, digits, underscores,\nhyphens, and periods."
+      },
+      "type": {
+        "content": "type",
+        "description": "The type of data in this index. For example: INDEX_TYPE_STRING Supported types\nare strings and integers."
+      },
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "clear-indexes": {
+        "content": "--clear-indexes",
+        "description": "Remove all logging indexes from the bucket."
+      },
+      "cmek-kms-key-name": {
+        "content": "--cmek-kms-key-name=CMEK_KMS_KEY_NAME",
+        "description": "A validkms_key_namewill enable CMEK for the bucket."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A new description for the bucket."
+      },
+      "enable-analytics": {
+        "content": "--enable-analytics",
+        "description": "Whether to opt the bucket into Log Analytics. Once opted in, the bucket cannot\nbe opted out of Log Analytics."
+      },
+      "locked": {
+        "content": "--locked",
+        "description": "Lock the bucket and prevent it from being modified or deleted (unless it is\nempty)."
+      },
+      "remove-indexes": {
+        "content": "--remove-indexes=[FIELDPATH,…]",
+        "description": "Specify the field path of the logging index(es) to delete."
+      },
+      "restricted-fields": {
+        "content": "--restricted-fields=[RESTRICTED_FIELD,…]",
+        "description": "A new set of restricted fields for the bucket."
+      },
+      "retention-days": {
+        "content": "--retention-days=RETENTION_DAYS",
+        "description": "A new retention period for the bucket."
+      },
+      "update-index": {
+        "content": "--update-index=[KEY=VALUE, …,…]",
+        "description": "Update an index to be added to the log bucket. This will update the type of the\nindex, and also update its createTime to the new update time. This flag can be\nrepeated. ThefieldPathandtypeattributes are required. For example:\n--index=fieldPath=jsonPayload.foo,type=INDEX_TYPE_STRING. The following keys are\naccepted:fieldPathThe LogEntry field path to index. For example: jsonPayload.request.status. Paths\nare limited to 800 characters and can include only letters, digits, underscores,\nhyphens, and periods.typeThe type of data in this index. For example: INDEX_TYPE_STRING Supported types\nare strings and integers."
+      },
+      "fieldPath-1": {
+        "content": "fieldPath",
+        "description": "The LogEntry field path to index. For example: jsonPayload.request.status. Paths\nare limited to 800 characters and can include only letters, digits, underscores,\nhyphens, and periods."
+      },
+      "type-1": {
+        "content": "type",
+        "description": "The type of data in this index. For example: INDEX_TYPE_STRING Supported types\nare strings and integers."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the bucket to update."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the bucket to update."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the bucket to update."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the bucket to update.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.copy",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "copy"
+    ],
+    "command_path": "gcloud logging copy",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/copy",
+    "description": "gcloud logging copy starts the process to copy log entries from a log bucket to\na destination.",
+    "command_synopsis": "gcloud logging copy BUCKET_ID DESTINATION --location=LOCATION [--log-filter=LOG_FILTER] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "BUCKET_ID": {
+        "content": "BUCKET_ID",
+        "description": "Id of the log bucket to copy logs from. Example: my-bucket"
+      },
+      "DESTINATION": {
+        "content": "DESTINATION",
+        "description": "Destination to copy logs to. Example: Cloud Storage bucket:\nstorage.googleapis.com/my-cloud-storage-bucket"
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the log bucket."
+      }
+    },
+    "optional_flags": {
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "A filter specifying which log entries to copy. The filter must be no more than\n20k characters. An empty filter matches all log entries."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the log entries to copy."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log entries to copy."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log entries to copy."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log entries to copy.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.links",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "links"
+    ],
+    "command_path": "gcloud logging links",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/links",
+    "description": "Commands for managing linked datasets. A linked BigQuery dataset contains log\ndata for the linked dataset's parent log bucket.",
+    "command_synopsis": "gcloud logging links COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "3ae97624eb2137b40c780ee6525b008b497dbb45edb3263e1ec4505dcca22a21",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.links.create",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "links",
+      "create"
+    ],
+    "command_path": "gcloud logging links create",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/links/create",
+    "description": "Create a linked dataset for a log bucket.",
+    "command_synopsis": "gcloud logging links create LINK_ID --bucket=BUCKET --location=LOCATION [--async] [--description=DESCRIPTION] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LINK_ID": {
+        "content": "LINK_ID",
+        "description": "ID of the linked dataset to create."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that will hold the linked dataset"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that will hold the linked datasert."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A textual description for the linked dataset."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the linked dataset to create."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the linked dataset to create."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the linked dataset to create."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the linked dataset to create.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.links.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "links",
+      "delete"
+    ],
+    "command_path": "gcloud logging links delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/links/delete",
+    "description": "Delete a bucket's linked dataset.",
+    "command_synopsis": "gcloud logging links delete LINK_ID --bucket=BUCKET --location=LOCATION [--async] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LINK_ID": {
+        "content": "LINK_ID",
+        "description": "ID of the linked dataset to delete."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of bucket"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the linked dataset to delete."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the linked dataset to delete."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the linked dataset to delete."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the linked dataset to delete.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.links.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "links",
+      "list"
+    ],
+    "command_path": "gcloud logging links list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/links/list",
+    "description": "List the linked datasets created for a bucket.",
+    "command_synopsis": "gcloud logging links list --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of bucket"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the specified bucket"
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the linked datasets to list."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the linked datasets to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the linked datasets to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the linked datasets to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.links.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "links",
+      "describe"
+    ],
+    "command_path": "gcloud logging links describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/links/describe",
+    "description": "Display information about a linked dataset.",
+    "command_synopsis": "gcloud logging links describe LINK_ID --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LINK_ID": {
+        "content": "LINK_ID",
+        "description": "Id of the linked dataset to describe."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of bucket"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the linked dataset to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the linked dataset to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the linked dataset to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the linked dataset to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.locations",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "locations"
+    ],
+    "command_path": "gcloud logging locations",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/locations",
+    "description": "Commands for querying Cloud Logging locations. Cloud Logging log buckets may be\ncreated in these locations.",
+    "command_synopsis": "gcloud logging locations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4156f32781c9f80541413406fe86eedd6c5b4388cab8c40eef390b3b4a26532f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.locations.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "locations",
+      "describe"
+    ],
+    "command_path": "gcloud logging locations describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/locations/describe",
+    "description": "Displays information about a location.",
+    "command_synopsis": "gcloud logging locations describe LOCATION_ID [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOCATION_ID": {
+        "content": "LOCATION_ID",
+        "description": "Id of the location to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the location to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the location to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the location to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the location to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.logs.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "logs",
+      "delete"
+    ],
+    "command_path": "gcloud logging logs delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/logs/delete",
+    "description": "Delete all entries from a log in the global _Default log bucket.\nWith no entries, the log will not appear in the list of your project's logs.\nHowever, you can write new entries to the log.",
+    "command_synopsis": "gcloud logging logs delete LOG_NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_NAME": {
+        "content": "LOG_NAME",
+        "description": "Log name."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.locations.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "locations",
+      "list"
+    ],
+    "command_path": "gcloud logging locations list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/locations/list",
+    "description": "Lists the available locations for Cloud Logging.",
+    "command_synopsis": "gcloud logging locations list [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the locations to list."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the locations to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the locations to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the locations to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.logs",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "logs"
+    ],
+    "command_path": "gcloud logging logs",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/logs",
+    "description": "Manages your project's logs.",
+    "command_synopsis": "gcloud logging logs COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "e9b773b45068ace9daa6e6f5d5c3356106efba98b3f71cacbd2ede92735856a1",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.metrics",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "metrics"
+    ],
+    "command_path": "gcloud logging metrics",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/metrics",
+    "description": "Manages logs-based metrics.",
+    "command_synopsis": "gcloud logging metrics COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a70b955572cf7eb1f71d8b9b0190076f4a8f9e3b906f1a7f84f72e39db516d9",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.logs.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "logs",
+      "list"
+    ],
+    "command_path": "gcloud logging logs list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/logs/list",
+    "description": "Only logs that contain log entries are listed.",
+    "command_synopsis": "gcloud logging logs list [--bucket=BUCKET --location=LOCATION --view=VIEW] [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "Id of the log bucket.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the log bucket.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "view": {
+        "content": "--view=VIEW",
+        "description": "Id of the view.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      }
+    }
+  },
+  {
+    "id": "logging.metrics.create",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "metrics",
+      "create"
+    ],
+    "command_path": "gcloud logging metrics create",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/metrics/create",
+    "description": "Create a logs-based metric to count the number of log entries that match a\nfilter expression. Logs-based metrics can also be used to extract values from\nlogs and create a distribution of the values.",
+    "command_synopsis": "gcloud logging metrics create METRIC_NAME (--config-from-file=PATH_TO_FILE     | [--description=DESCRIPTION --log-filter=LOG_FILTER : --bucket-name=BUCKET_NAME]) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "METRIC_NAME": {
+        "content": "METRIC_NAME",
+        "description": "The name of the new metric."
+      }
+    },
+    "required_flags": {
+      "config-from-file": {
+        "content": "--config-from-file=PATH_TO_FILE",
+        "description": "A path to a YAML or JSON file specifying the logs-based metric to create. Use a\nfull or relative path to a local file containing the value of config."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "The metric's description.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "The metric's filter expression.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "bucket-name": {
+        "content": "--bucket-name=BUCKET_NAME",
+        "description": "The Log Bucket name which owns the log-based metric."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.metrics.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "metrics",
+      "delete"
+    ],
+    "command_path": "gcloud logging metrics delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/metrics/delete",
+    "description": "Delete a logs-based metric called high_severity_count.",
+    "command_synopsis": "gcloud logging metrics delete METRIC_NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "METRIC_NAME": {
+        "content": "METRIC_NAME",
+        "description": "The name of the metric to delete."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.metrics.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "metrics",
+      "describe"
+    ],
+    "command_path": "gcloud logging metrics describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/metrics/describe",
+    "description": "Show the definition of a logs-based metric.",
+    "command_synopsis": "gcloud logging metrics describe METRIC_NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "METRIC_NAME": {
+        "content": "METRIC_NAME",
+        "description": "The name of the metric."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.metrics.update",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "metrics",
+      "update"
+    ],
+    "command_path": "gcloud logging metrics update",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/metrics/update",
+    "description": "Update the description or the filter expression of an existing logs-based\nmetric.",
+    "command_synopsis": "gcloud logging metrics update METRIC_NAME (--config-from-file=PATH_TO_FILE     | --bucket-name=BUCKET_NAME --description=DESCRIPTION --log-filter=LOG_FILTER) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "METRIC_NAME": {
+        "content": "METRIC_NAME",
+        "description": "The name of the log-based metric to update."
+      }
+    },
+    "required_flags": {
+      "config-from-file": {
+        "content": "--config-from-file=PATH_TO_FILE",
+        "description": "A path to a YAML file specifying the updates to be made to the logs-based\nmetric. Use a full or relative path to a local file containing the value of\nconfig."
+      },
+      "bucket-name": {
+        "content": "--bucket-name=BUCKET_NAME",
+        "description": "The Log Bucket name which owns the log-based metric."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A new description for the metric. If omitted, the description is not changed."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "A new filter string for the metric. If omitted, the filter is not changed."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.metrics.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "metrics",
+      "list"
+    ],
+    "command_path": "gcloud logging metrics list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/metrics/list",
+    "description": "List all logs-based metrics.",
+    "command_synopsis": "gcloud logging metrics list [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "logging.operations",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "operations"
+    ],
+    "command_path": "gcloud logging operations",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/operations",
+    "description": "Manage long running operations.",
+    "command_synopsis": "gcloud logging operations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "44127ba1e46f8efb88094472458312284d64840f35eb8f40ff1050641c96e606",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.operations.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "operations",
+      "describe"
+    ],
+    "command_path": "gcloud logging operations describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/operations/describe",
+    "description": "Display the information about a long running operation which was scheduled\nbefore. For example, a copy_log_entries operation scheduled by command: \"gcloud\nalpha logging copy BUCKET_ID DESTINATION --location=LOCATION\" OPERATION_ID and\nLOCATION are required to locate such operation.",
+    "command_synopsis": "gcloud logging operations describe OPERATION_ID --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "OPERATION_ID": {
+        "content": "OPERATION_ID",
+        "description": "The Id of the operation."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the operation."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the operation to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the operation to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the operation to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the operation to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.operations.cancel",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "operations",
+      "cancel"
+    ],
+    "command_path": "gcloud logging operations cancel",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/operations/cancel",
+    "description": "Cancel a long running operation with given OPERATION_ID in given LOCATION. This\noperation can be a copy_log_entries operation which is scheduled before.",
+    "command_synopsis": "gcloud logging operations cancel OPERATION_ID --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "OPERATION_ID": {
+        "content": "OPERATION_ID",
+        "description": "The Id of the operation."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the operation."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the operation to cancel."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the operation to cancel."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the operation to cancel."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the operation to cancel.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.operations.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "operations",
+      "list"
+    ],
+    "command_path": "gcloud logging operations list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/operations/list",
+    "description": "Return a list of long running operations in the given LOCATION. The operations\nwere scheduled by other gcloud commands.\nFor example, a CopyLogEntries operation may be scheduled by the command:\ngcloud logging copy BUCKET_ID DESTINATION --location=LOCATION.\nThe --operation-filter flag is required and must specify the\nrequest_type. Supported request types include but are not limited\nto: CopyLogEntries, CreateBucket and\nUpdateBucket.\nAdditional supported filter expressions include:\noperation_start_time, operation_finish_time and\noperation_state. These can be combined with the case-sensitive\nkeyword AND between them.\nFor operation_start_time and operation_end_time, the\noperators >=, >, <=, and < are supported.\nTimestamps must be in either RFC3339 or ISO8601 formats. If the timestamp\ncontains a time value, then it must be quoted. For examples:\n\"YYYY-MM-DDTHH:MM:SSZ\", \"YYYY-MM-DDTHH:MM:SS.mmmZ\", \"YY-MM-DD\",\n\"YYYY-MM-DDTHH:MM:SS-0000\", \"YYYY-MM-DDTHH:MM+0000\", \"YYYY-MM-DD\", YYYY-MM-DD,\nYY-MM-DD, etc.\nThe operation_state filter expression can be used to filter for\noperations that are in a specific state. The value can be one of the following:\nSCHEDULED, WAITING_FOR_PRECONDITIONS,\nRUNNING, SUCCESS, FAILURE,\nCANCELLED, PENDING.\nFor operation_state, the operators = and != are supported.\nOther filter options are not supported.",
+    "command_synopsis": "gcloud logging operations list --location=LOCATION --operation-filter=OPERATION_FILTER [--page-token=PAGE_TOKEN] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the operations."
+      },
+      "operation-filter": {
+        "content": "--operation-filter=OPERATION_FILTER",
+        "description": "Filter expression that specifies the operations to return."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "page-token": {
+        "content": "--page-token=PAGE_TOKEN",
+        "description": "The next_page_token value returned from a previous List request, if any."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the operations to list."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the operations to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the operations to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the operations to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.read",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "read"
+    ],
+    "command_path": "gcloud logging read",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/read",
+    "description": "gcloud logging read reads log entries. Log entries matching\nlog-filter are returned in order of decreasing timestamps,\nmost-recent entries first. If the log entries come from multiple logs, then\nentries from different logs might be intermingled in the results.",
+    "command_synopsis": "gcloud logging read [LOG_FILTER] [--freshness=FRESHNESS; default=\"1d\"] [--order=ORDER; default=\"desc\"] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--resource-names=[RESOURCE,…]     | --bucket=BUCKET --location=LOCATION --view=VIEW] [--limit=LIMIT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_FILTER": {
+        "content": "[LOG_FILTER]",
+        "description": "Filter expression that specifies the log entries to return. Detailed information\nabout filters can be found at:https://cloud.google.com/logging/docs/view/logging-query-language"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "freshness": {
+        "content": "--freshness=FRESHNESS; default=\"1d\"",
+        "description": "Return entries that are not older than this value. Works only with DESC ordering\nand filters without a timestamp. See $gcloud topic datetimesfor\ninformation on duration formats."
+      },
+      "order": {
+        "content": "--order=ORDER; default=\"desc\"",
+        "description": "Ordering of returned log entries based on timestamp field.ORDERmust be one of:desc,asc."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the log entries to read."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log entries to read."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log entries to read."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log entries to read.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      },
+      "resource-names": {
+        "content": "--resource-names=[RESOURCE,…]",
+        "description": "Resource name(s) to read logs from. A resource can either be an top-level\nresource (e.g., \"projects/my-project\") or a full log view resource path (e.g.,\n\"projects/my-project/locations/my-location/buckets/my-bucket/views/my-view\").\nMultiple resources can be specified, separated by a comma."
+      },
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "Id of the log bucket. If this argument is provided then--locationand--viewmust also be specified.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the log bucket. If this argument is provided then--bucketand--viewmust also be specified.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "view": {
+        "content": "--view=VIEW",
+        "description": "Id of the view. If this argument is provided then--locationand--bucketmust also be specified.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      }
+    }
+  },
+  {
+    "id": "logging.resource-descriptors",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "resource-descriptors"
+    ],
+    "command_path": "gcloud logging resource-descriptors",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/resource-descriptors",
+    "description": "Get information about resource descriptors.",
+    "command_synopsis": "gcloud logging resource-descriptors COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "a454225dc111dec13d982c0cc64a6f26daef720b6d47424a8cd759cd6b8769be",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.resource-descriptors.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "resource-descriptors",
+      "list"
+    ],
+    "command_path": "gcloud logging resource-descriptors list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/resource-descriptors/list",
+    "description": "List all available resource descriptors that are used by Cloud Logging. Each log\nentry must be associated with a valid resource descriptor.",
+    "command_synopsis": "gcloud logging resource-descriptors list [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "logging.scopes.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "scopes",
+      "describe"
+    ],
+    "command_path": "gcloud logging scopes describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/scopes/describe",
+    "description": "Display information about a log scope.",
+    "command_synopsis": "gcloud logging scopes describe LOG_SCOPE_ID [--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_SCOPE_ID": {
+        "content": "LOG_SCOPE_ID",
+        "description": "The ID of the log scope to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log scope to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log scope to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log scope to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.scopes",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "scopes"
+    ],
+    "command_path": "gcloud logging scopes",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/scopes",
+    "description": "Commands for managing Cloud Logging log scopes. A scope is used to describe a\ngroup of resources to read log entries from.",
+    "command_synopsis": "gcloud logging scopes COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a70b955572cf7eb1f71d8b9b0190076f4a8f9e3b906f1a7f84f72e39db516d9",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.scopes.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "scopes",
+      "delete"
+    ],
+    "command_path": "gcloud logging scopes delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/scopes/delete",
+    "description": "",
+    "command_synopsis": "gcloud logging scopes delete LOG_SCOPE_ID [--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_SCOPE_ID": {
+        "content": "LOG_SCOPE_ID",
+        "description": "ID of the log scope to delete."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log scope to delete."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log scope to delete."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log scope to delete.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.scopes.create",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "scopes",
+      "create"
+    ],
+    "command_path": "gcloud logging scopes create",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/scopes/create",
+    "description": "After creating a log scope, you can use it to view logs in 1 or more resources.",
+    "command_synopsis": "gcloud logging scopes create LOG_SCOPE_ID --resource-names=[RESOURCE_NAMES,…] [--description=DESCRIPTION] [--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_SCOPE_ID": {
+        "content": "LOG_SCOPE_ID",
+        "description": "ID of the log scope to create."
+      }
+    },
+    "required_flags": {
+      "resource-names": {
+        "content": "--resource-names=[RESOURCE_NAMES,…]",
+        "description": "Comma-separated list of resource names in this log scope. It could be one or\nmore parent resources or one or more views. A log scope can include a maximum of\n50 projects and a maximum of 100 resources in total. For example,\nprojects/[PROJECT_ID],\nprojects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
+      }
+    },
+    "optional_flags": {
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A textual description for the log scope."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log scope to create."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log scope to create."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log scope to create.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.scopes.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "scopes",
+      "list"
+    ],
+    "command_path": "gcloud logging scopes list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/scopes/list",
+    "description": "List the log scopes for a project.",
+    "command_synopsis": "gcloud logging scopes list [--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log scopes to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log scopes to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log scopes to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.scopes.update",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "scopes",
+      "update"
+    ],
+    "command_path": "gcloud logging scopes update",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/scopes/update",
+    "description": "Update the properties of a log scope.",
+    "command_synopsis": "gcloud logging scopes update LOG_SCOPE_ID [--description=DESCRIPTION] [--resource-names=[RESOURCE_NAMES,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_SCOPE_ID": {
+        "content": "LOG_SCOPE_ID",
+        "description": "The ID of the log scope to update."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A new description for the log scope."
+      },
+      "resource-names": {
+        "content": "--resource-names=[RESOURCE_NAMES,…]",
+        "description": "A new set of resource names for the log scope."
+      }
+    }
+  },
+  {
+    "id": "logging.settings",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "settings"
+    ],
+    "command_path": "gcloud logging settings",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/settings",
+    "description": "Manages the org settings for the Cloud Logging Logs Router.",
+    "command_synopsis": "gcloud logging settings COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0270266f5176e83925ab7a8d3e154294afd6e407fd32546138a4d94c0bd25678",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.settings.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "settings",
+      "describe"
+    ],
+    "command_path": "gcloud logging settings describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/settings/describe",
+    "description": "If kmsKeyName is present in the output, then CMEK is enabled for\nyour project, folder, organization or billing-account. You can also find the\nLogs Router service account using this command.",
+    "command_synopsis": "gcloud logging settings describe [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the settings to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the settings to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the settings to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the settings to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.settings.update",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "settings",
+      "update"
+    ],
+    "command_path": "gcloud logging settings update",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/settings/update",
+    "description": "Use this command to update the --kms-key-name, --storage-location,\n--disable-default-sink and --analytics-mode associated with the Cloud\nLogging Logs Router.\nThe Cloud KMS key must already exist and Cloud Logging must have permission to\naccess it.\nThe storage location must be allowed by Org Policy.\nCustomer-managed encryption keys (CMEK) for the Logs Router can currently only\nbe configured at the organization-level and will apply to all projects in the\norganization.",
+    "command_synopsis": "gcloud logging settings update (--folder=FOLDER_ID     | --organization=ORGANIZATION_ID) [--disable-default-sink] [--storage-location=STORAGE_LOCATION] [--clear-kms-key     | [--kms-key-name=KMS_KEY_NAME : --kms-keyring=KMS_KEYRING --kms-location=KMS_LOCATION --kms-project=KMS_PROJECT]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder to update Logs Router settings for."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization to update Logs Router settings for."
+      }
+    },
+    "optional_flags": {
+      "disable-default-sink": {
+        "content": "--disable-default-sink",
+        "description": "Enable or disable_Defaultsink for the_Defaultbucket. Specify --no-disable-default-sink to enable a disabled_Defaultsink. Note: It only applies to the newly created projects\nand will not affect the projects created before."
+      },
+      "storage-location": {
+        "content": "--storage-location=STORAGE_LOCATION",
+        "description": "Update the storage location for_Defaultbucket and_Requiredbucket. Note: It only applies to the newly created\nprojects and will not affect the projects created before."
+      },
+      "clear-kms-key": {
+        "content": "--clear-kms-key",
+        "description": "Disable CMEK for the Logs Router by clearing out Cloud KMS cryptokey in the\norganization's CMEK settings."
+      },
+      "kms-key-name": {
+        "content": "--kms-key-name=KMS_KEY_NAME",
+        "description": "ID of the key or fully qualified identifier for the key.To set thekms-keyattribute:provide the argument--kms-key-nameon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kms-keyring": {
+        "content": "--kms-keyring=KMS_KEYRING",
+        "description": "The KMS keyring of the key.To set thekms-keyringattribute:provide the argument--kms-key-nameon the command line with a\nfully specified name;provide the argument--kms-keyringon the command line."
+      },
+      "kms-location": {
+        "content": "--kms-location=KMS_LOCATION",
+        "description": "The Google Cloud location for the key.To set thekms-locationattribute:provide the argument--kms-key-nameon the command line with a\nfully specified name;provide the argument--kms-locationon the command line."
+      },
+      "kms-project": {
+        "content": "--kms-project=KMS_PROJECT",
+        "description": "The Google Cloud project for the key.To set thekms-projectattribute:provide the argument--kms-key-nameon the command line with a\nfully specified name;provide the argument--kms-projecton the command line;set the propertycore/project."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.sinks",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "sinks"
+    ],
+    "command_path": "gcloud logging sinks",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/sinks",
+    "description": "Manages sinks used to route logs to storage or export destinations.",
+    "command_synopsis": "gcloud logging sinks COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a70b955572cf7eb1f71d8b9b0190076f4a8f9e3b906f1a7f84f72e39db516d9",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.sinks.create",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "sinks",
+      "create"
+    ],
+    "command_path": "gcloud logging sinks create",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/sinks/create",
+    "description": "Create a log sink used to route log entries to a destination. The sink routes\nall log entries that match its --log-filter flag.\nAn empty filter matches all logs.\nDetailed information about filters can be found at: https://cloud.google.com/logging/docs/view/logging-query-language\nThe sink's destination can be a Cloud Logging log bucket, a Cloud Storage\nbucket, a BigQuery dataset, a Cloud Pub/Sub topic, or a Google Cloud project.\nThe destination must already exist.\nIf creating a log sink to route logs to a destination outside of Cloud Logging\nor to a Cloud Logging log bucket in another project, the log sink's service\naccount must be granted permission to write to the destination.\nFor more information about destination permissions, see: https://cloud.google.com/logging/docs/export/configure_export_v2#dest-auth\nMatching log entries are routed to the destination after the sink is created.",
+    "command_synopsis": "gcloud logging sinks create SINK_NAME DESTINATION [--custom-writer-identity=SERVICE_ACCOUNT_EMAIL] [--description=DESCRIPTION] [--disabled] [--exclusion=[description=DESCRIPTION],[disabled=DISABLED],[filter=FILTER],[name=NAME]] [--include-children] [--intercept-children] [--log-filter=LOG_FILTER] [--use-partitioned-tables] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "SINK_NAME": {
+        "content": "SINK_NAME",
+        "description": "The name for the sink."
+      },
+      "DESTINATION": {
+        "content": "DESTINATION",
+        "description": "The destination for the sink."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "custom-writer-identity": {
+        "content": "--custom-writer-identity=SERVICE_ACCOUNT_EMAIL",
+        "description": "Writer identity for the sink. This flag can only be used if the destination is a\nlog bucket in a different project. The writer identity is automatically\ngenerated when it is not provided for a sink."
+      },
+      "description": {
+        "content": "description",
+        "description": "A description of this exclusion."
+      },
+      "disabled": {
+        "content": "disabled",
+        "description": "If this exclusion should be disabled and not exclude the log entries."
+      },
+      "exclusion": {
+        "content": "--exclusion=[description=DESCRIPTION],[disabled=DISABLED],[filter=FILTER],[name=NAME]",
+        "description": "Specify an exclusion filter for a log entry that is not to be exported. This\nflag can be repeated.Thenameandfilterattributes are required. The\nfollowing keys are accepted:nameAn identifier, such asload-balancer-exclusion. Identifiers are\nlimited to 100 characters and can include only letters, digits, underscores,\nhyphens, and periods.descriptionA description of this exclusion.filterAn advanced log filter that matches the log entries to be excluded.disabledIf this exclusion should be disabled and not exclude the log entries."
+      },
+      "name": {
+        "content": "name",
+        "description": "An identifier, such asload-balancer-exclusion. Identifiers are\nlimited to 100 characters and can include only letters, digits, underscores,\nhyphens, and periods."
+      },
+      "filter": {
+        "content": "filter",
+        "description": "An advanced log filter that matches the log entries to be excluded."
+      },
+      "include-children": {
+        "content": "--include-children",
+        "description": "Whether to export logs from all child projects and folders. Only applies to\nsinks for organizations and folders."
+      },
+      "intercept-children": {
+        "content": "--intercept-children",
+        "description": "Whether to intercept logs from all child projects and folders. Only applies to\nsinks for organizations and folders."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "A filter expression for the sink. If present, the filter specifies which log\nentries to export."
+      },
+      "use-partitioned-tables": {
+        "content": "--use-partitioned-tables",
+        "description": "If specified, use BigQuery's partitioned tables. By default, Logging creates\ndated tables based on the log entries' timestamps, e.g. 'syslog_20170523'.\nPartitioned tables remove the suffix and special query syntax\n(https://cloud.google.com/bigquery/docs/querying-partitioned-tables) must be\nused."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the sink to create."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the sink to create."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the sink to create."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the sink to create.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.sinks.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "sinks",
+      "delete"
+    ],
+    "command_path": "gcloud logging sinks delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/sinks/delete",
+    "description": "Delete a sink and halt the export of log entries associated with that sink.\nDeleting a sink does not affect log entries already exported through the deleted\nsink, and will not affect other sinks that are exporting the same log(s).",
+    "command_synopsis": "gcloud logging sinks delete SINK_NAME [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "SINK_NAME": {
+        "content": "SINK_NAME",
+        "description": "The name of the sink to delete."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the sink to delete."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the sink to delete."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the sink to delete."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the sink to delete.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.sinks.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "sinks",
+      "describe"
+    ],
+    "command_path": "gcloud logging sinks describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/sinks/describe",
+    "description": "Display information about a sink.",
+    "command_synopsis": "gcloud logging sinks describe SINK_NAME [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "SINK_NAME": {
+        "content": "SINK_NAME",
+        "description": "The name of the sink to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the sink to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the sink to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the sink to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the sink to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.sinks.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "sinks",
+      "list"
+    ],
+    "command_path": "gcloud logging sinks list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/sinks/list",
+    "description": "List the defined sinks.",
+    "command_synopsis": "gcloud logging sinks list [--sink-filter=SINK_FILTER] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "sink-filter": {
+        "content": "--sink-filter=SINK_FILTER",
+        "description": "A filter expression passed to the Logging API to constrain the sinks returned.\nFor information on accepted values, seehttps://cloud.google.com/logging/docs/reference/v2/rpc/google.logging.v2#listsinksrequest"
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the sinks to list."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the sinks to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the sinks to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the sinks to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.sinks.update",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "sinks",
+      "update"
+    ],
+    "command_path": "gcloud logging sinks update",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/sinks/update",
+    "description": "Change the [DESTINATION] or --log-filter associated\nwith a sink. The new destination must already exist and Cloud Logging must have\npermission to write to it.\nLog entries are exported to the new destination immediately.",
+    "command_synopsis": "gcloud logging sinks update SINK_NAME [DESTINATION] [--add-exclusion=[description=DESCRIPTION],[disabled=DISABLED],[filter=FILTER],[name=NAME]] [--clear-exclusions] [--custom-writer-identity=SERVICE_ACCOUNT_EMAIL] [--description=DESCRIPTION] [--disabled] [--include-children] [--intercept-children] [--log-filter=LOG_FILTER] [--remove-exclusions=[EXCLUSION ID,…]] [--update-exclusion=[description=DESCRIPTION],[disabled=DISABLED],[filter=FILTER],[name=NAME]] [--use-partitioned-tables] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "SINK_NAME": {
+        "content": "SINK_NAME",
+        "description": "The name of the sink to update."
+      },
+      "DESTINATION": {
+        "content": "[DESTINATION]",
+        "description": "A new destination for the sink. If omitted, the sink's existing destination is\nunchanged."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "add-exclusion": {
+        "content": "--add-exclusion=[description=DESCRIPTION],[disabled=DISABLED],[filter=FILTER],[name=NAME]",
+        "description": "Add an exclusion filter for log entries that are not to be routed to the sink'\ndestination. This flag can be repeated.Thenameandfilterattributes are required. The\nfollowing keys are accepted:nameRequired. An identifier, such asload-balancer-exclusion. Identifiers are\nlimited to 100 characters and can include only letters, digits, underscores,\nhyphens, and periods.descriptionOptional. A description of this exclusion.filterRequired. Entries that match this advanced log filter will be excluded. Filter\ncannot be empty.disabledOptional. By default, an exclusion is not disabled. To disable an exclusion,\ninclude this key and specify any value."
+      },
+      "name": {
+        "content": "name",
+        "description": "Required. An identifier, such asload-balancer-exclusion. Identifiers are\nlimited to 100 characters and can include only letters, digits, underscores,\nhyphens, and periods."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Description of the sink."
+      },
+      "filter": {
+        "content": "filter",
+        "description": "Required. Entries that match this advanced log filter will be excluded. Filter\ncannot be empty."
+      },
+      "disabled": {
+        "content": "--disabled",
+        "description": "Disable the sink. Disabled sinks do not route logs to the sink destination.\nSpecify --no-disabled to enable a disabled sink. If this flag is not specified,\nthe value will not be updated."
+      },
+      "clear-exclusions": {
+        "content": "--clear-exclusions",
+        "description": "Remove all logging exclusions from the sink."
+      },
+      "custom-writer-identity": {
+        "content": "--custom-writer-identity=SERVICE_ACCOUNT_EMAIL",
+        "description": "Writer identity for the sink. This flag can only be used if the destination is a\nlog bucket in a different project. The writer identity is automatically\ngenerated when it is not provided for a sink."
+      },
+      "include-children": {
+        "content": "--include-children",
+        "description": "Whether to export logs from all child projects and folders. Only applies to\nsinks for organizations and folders."
+      },
+      "intercept-children": {
+        "content": "--intercept-children",
+        "description": "Whether to intercept logs from all child projects and folders. Only applies to\nsinks for organizations and folders."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "A new filter expression for the sink. If omitted, the sink's existing filter (if\nany) is unchanged."
+      },
+      "remove-exclusions": {
+        "content": "--remove-exclusions=[EXCLUSIONID,…]",
+        "description": "Specify the name of the Logging exclusion(s) to delete."
+      },
+      "update-exclusion": {
+        "content": "--update-exclusion=[description=DESCRIPTION],[disabled=DISABLED],[filter=FILTER],[name=NAME]",
+        "description": "Update an exclusion filter for a log entry that is not to be exported. This flag\ncan be repeated.Thenameattribute is required. The\nfollowing keys are accepted:nameRequired. An identifier, such asload-balancer-exclusion. Identifiers are\nlimited to 100 characters and can include only letters, digits, underscores,\nhyphens, and periods.descriptionOptional. A description of this exclusion.filterOptional. Entries that match this advanced log filter will be excluded. Filter\ncannot be empty.disabledOptional. To disable an exclusion, include this key and specify any value. To\nenable a disabled exclusion, include this key, but do not specify any value. Do\nnot include this key unless you want to change its value."
+      },
+      "name-1": {
+        "content": "name",
+        "description": "Required. An identifier, such asload-balancer-exclusion. Identifiers are\nlimited to 100 characters and can include only letters, digits, underscores,\nhyphens, and periods."
+      },
+      "description-1": {
+        "content": "description",
+        "description": "Optional. A description of this exclusion."
+      },
+      "filter-1": {
+        "content": "filter",
+        "description": "Optional. Entries that match this advanced log filter will be excluded. Filter\ncannot be empty."
+      },
+      "disabled-1": {
+        "content": "disabled",
+        "description": "Optional. To disable an exclusion, include this key and specify any value. To\nenable a disabled exclusion, include this key, but do not specify any value. Do\nnot include this key unless you want to change its value."
+      },
+      "use-partitioned-tables": {
+        "content": "--use-partitioned-tables",
+        "description": "If specified, use BigQuery's partitioned tables. By default, Logging creates\ndated tables based on the log entries' timestamps, e.g. 'syslog_20170523'.\nPartitioned tables remove the suffix and special query syntax\n(https://cloud.google.com/bigquery/docs/querying-partitioned-tables) must be\nused."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the sink to update."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the sink to update."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the sink to update."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the sink to update.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.views",
+    "service": "logging",
+    "type": "group",
+    "path": [
+      "logging",
+      "views"
+    ],
+    "command_path": "gcloud logging views",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views",
+    "description": "Commands for managing views. A log view represents a subset of the log entries\nin a Cloud Logging log bucket.",
+    "command_synopsis": "gcloud logging views COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4a649868ff62eeb571a6435f941eaf4f7deae37dcb566f9149275db4f1bb850b",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "logging.views.add-iam-policy-binding",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud logging views add-iam-policy-binding",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/add-iam-policy-binding",
+    "description": "Add IAM policy binding to a log view.",
+    "command_synopsis": "gcloud logging views add-iam-policy-binding VIEW_ID --bucket=BUCKET --location=LOCATION --member=PRINCIPAL --role=ROLE [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--condition=[KEY=VALUE,…]     | --condition-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "ID of the view that contains the IAM policy."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that contains the view."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that contains the view."
+      },
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view that contains the IAM policy."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view that contains the IAM policy."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view that contains the IAM policy."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view that contains the IAM policy.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      },
+      "condition": {
+        "content": "--condition=[KEY=VALUE,…]",
+        "description": "A condition to include in the binding. When the condition is explicitly\nspecified asNone(--condition=None), a binding\nwithout a condition is added. When the condition is specified and is notNone,--rolecannot be a basic role. Basic roles areroles/editor,roles/owner, androles/viewer. For more on conditions, refer to the conditions\noverview guide:https://cloud.google.com/iam/docs/conditions-overviewWhen using the--conditionflag, include the following key-value\npairs:expression(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping.title(Required) A short string describing the purpose of the expression.description(Optional) Additional description for the expression."
+      },
+      "expression": {
+        "content": "expression",
+        "description": "(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping."
+      },
+      "title": {
+        "content": "title",
+        "description": "(Required) A short string describing the purpose of the expression."
+      },
+      "description": {
+        "content": "description",
+        "description": "(Optional) Additional description for the expression."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.views.create",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "create"
+    ],
+    "command_path": "gcloud logging views create",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/create",
+    "description": "",
+    "command_synopsis": "gcloud logging views create VIEW_ID --bucket=BUCKET --location=LOCATION [--description=DESCRIPTION] [--log-filter=LOG_FILTER] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "ID of the view to create."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that will hold the view"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that will hold the view."
+      }
+    },
+    "optional_flags": {
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "A textual description for the view."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "A filter for the view."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view to create."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view to create."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view to create."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view to create.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.views.delete",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "delete"
+    ],
+    "command_path": "gcloud logging views delete",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/delete",
+    "description": "Deletes a view on a bucket.",
+    "command_synopsis": "gcloud logging views delete VIEW_ID --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "ID of the view to delete."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of bucket"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view to delete."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view to delete."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view to delete."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view to delete.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.views.describe",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "describe"
+    ],
+    "command_path": "gcloud logging views describe",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/describe",
+    "description": "Displays information about a log view.",
+    "command_synopsis": "gcloud logging views describe VIEW_ID --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "Id of the view to describe."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of bucket"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view to describe."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view to describe."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view to describe."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view to describe.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.views.get-iam-policy",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud logging views get-iam-policy",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/get-iam-policy",
+    "description": "Get the IAM policy for a view.",
+    "command_synopsis": "gcloud logging views get-iam-policy VIEW_ID --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "ID of the view to fetch IAM policy"
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that holds the view."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that contains the view"
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view to fetch IAM policy."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view to fetch IAM policy."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view to fetch IAM policy."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view to fetch IAM policy.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.views.list",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "list"
+    ],
+    "command_path": "gcloud logging views list",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/list",
+    "description": "Lists the views defined on a bucket.",
+    "command_synopsis": "gcloud logging views list --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {},
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of bucket"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the specified bucket"
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the views to list."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the views to list."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the views to list."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the views to list.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.views.remove-iam-policy-binding",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud logging views remove-iam-policy-binding",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/remove-iam-policy-binding",
+    "description": "Remove IAM policy binding to a log view.",
+    "command_synopsis": "gcloud logging views remove-iam-policy-binding VIEW_ID --bucket=BUCKET --location=LOCATION --member=PRINCIPAL --role=ROLE [--all     | --condition=[KEY=VALUE,…]     | --condition-from-file=PATH_TO_FILE] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "ID of the view that contains the IAM policy."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that contains the view."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that contains the view."
+      },
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {
+      "all": {
+        "content": "--all",
+        "description": "Remove all bindings with this role and principal, irrespective of any\nconditions."
+      },
+      "condition": {
+        "content": "--condition=[KEY=VALUE,…]",
+        "description": "The condition of the binding that you want to remove. When the condition is\nexplicitly specified asNone(--condition=None), a\nbinding without a condition is removed. Otherwise, only a binding with a\ncondition that exactly matches the specified condition (including the optional\ndescription) is removed. For more on conditions, refer to the conditions\noverview guide:https://cloud.google.com/iam/docs/conditions-overviewWhen using the--conditionflag, include the following key-value\npairs:expression(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping.title(Required) A short string describing the purpose of the expression.description(Optional) Additional description for the expression."
+      },
+      "expression": {
+        "content": "expression",
+        "description": "(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping."
+      },
+      "title": {
+        "content": "title",
+        "description": "(Required) A short string describing the purpose of the expression."
+      },
+      "description": {
+        "content": "description",
+        "description": "(Optional) Additional description for the expression."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view that contains the IAM policy."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view that contains the IAM policy."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view that contains the IAM policy."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view that contains the IAM policy.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.views.set-iam-policy",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud logging views set-iam-policy",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/set-iam-policy",
+    "description": "Set an IAM policy for a view.",
+    "command_synopsis": "gcloud logging views set-iam-policy VIEW_ID POLICY_FILE --bucket=BUCKET --location=LOCATION [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "ID of the view to set IAM policy."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to a local JSON or YAML formatted file containing a valid policy.The output of theget-iam-policycommand is a valid file, as is any\nJSON or YAML file conforming to the structure of aPolicy."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that contains the view."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that contains the view."
+      }
+    },
+    "optional_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view to set IAM policy."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view to set IAM policy."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view to set IAM policy."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view to set IAM policy.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "logging.write",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "write"
+    ],
+    "command_path": "gcloud logging write",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/write",
+    "description": "Write a log entry. If the destination log does not exist, it will be created. By\ndefault, all log entries written with this command are written with the \"global\"\nresource type.\ngcloud logging write should be used for simple testing purposes. Check Cloud\nLogging agent for a proper way to send log entries: https://cloud.google.com/logging/docs/agent/",
+    "command_synopsis": "gcloud logging write LOG_NAME MESSAGE [--monitored-resource-labels=[KEY=VALUE, …,…]] [--monitored-resource-type=MONITORED_RESOURCE_TYPE; default=\"global\"] [--payload-type=PAYLOAD_TYPE; default=\"text\"] [--severity=SEVERITY; default=\"DEFAULT\"] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "LOG_NAME": {
+        "content": "LOG_NAME",
+        "description": "Name of the log where the log entry will be written."
+      },
+      "MESSAGE": {
+        "content": "MESSAGE",
+        "description": "Message to put in the log entry. It can be JSON if you include--payload-type=json."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "monitored-resource-labels": {
+        "content": "--monitored-resource-labels=[KEY=VALUE, …,…]",
+        "description": "Monitored Resource labels to add to the payload"
+      },
+      "monitored-resource-type": {
+        "content": "--monitored-resource-type=MONITORED_RESOURCE_TYPE; default=\"global\"",
+        "description": "Monitored Resource type to add to the payload"
+      },
+      "payload-type": {
+        "content": "--payload-type=PAYLOAD_TYPE; default=\"text\"",
+        "description": "Type of the log entry payload.PAYLOAD_TYPEmust be one\nof:text,json."
+      },
+      "severity": {
+        "content": "--severity=SEVERITY; default=\"DEFAULT\"",
+        "description": "Severity level of the log entry.SEVERITYmust be one\nof:DEFAULT,DEBUG,INFO,NOTICE,WARNING,ERROR,CRITICAL,ALERT,EMERGENCY."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the log entries to write."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the log entries to write."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the log entries to write."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the log entries to write.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    }
+  },
+  {
+    "id": "logging.views.update",
+    "service": "logging",
+    "type": "command",
+    "path": [
+      "logging",
+      "views",
+      "update"
+    ],
+    "command_path": "gcloud logging views update",
+    "service_name": "logging",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/logging/views/update",
+    "description": "Updates the properties of a view.",
+    "command_synopsis": "gcloud logging views update VIEW_ID --bucket=BUCKET --location=LOCATION [--description=DESCRIPTION] [--log-filter=LOG_FILTER] [--billing-account=BILLING_ACCOUNT_ID     | --folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4adec38013b11535d28e4431ff5dd1abdf54f884a3ab7b68f783552c2b47dea3",
+    "positional_args": {
+      "VIEW_ID": {
+        "content": "VIEW_ID",
+        "description": "Id of the view to update."
+      }
+    },
+    "required_flags": {
+      "bucket": {
+        "content": "--bucket=BUCKET",
+        "description": "ID of the bucket that holds the view"
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the bucket that contains the view."
+      }
+    },
+    "optional_flags": {
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "New description for the view."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "New filter for the view."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT_ID",
+        "description": "Billing account of the view to update."
+      },
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder of the view to update."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization of the view to update."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project of the view to update.The Google Cloud project ID to use for this invocation. If omitted, then the\ncurrent project is assumed; the current project can be listed usinggcloud\nconfig list --format='text(core.project)'and can be set usinggcloud config set project PROJECTID.--projectand its fallbackcore/projectproperty play\ntwo roles in the invocation. It specifies the project of the resource to operate\non. It also specifies the project for API enablement check, quota, and billing.\nTo specify a different project for quota and billing, use--billing-projectorbilling/quota_projectproperty."
+      }
+    },
+    "flags": {}
+  }
+]

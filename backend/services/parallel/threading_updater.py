@@ -544,6 +544,7 @@ class ThreadingGCPKnowledgeUpdater:
             positional_args = self._extract_flags(article, "section[id='POSITIONAL-ARGUMENTS'] dl[class]")
             required_flags = self._extract_flags(article, "section[id='REQUIRED-FLAGS'] dl[class]")
             optional_flags = self._extract_flags(article, "section[id='OPTIONAL-FLAGS'] dl[class]")
+            list_command_flags = self._extract_flags(article, "section[id='LIST-COMMAND-FLAGS'] dl[class]")
             
             flags = self._extract_flags(article, "section[id='FLAGS'] dl[class]")
             if not flags:
@@ -570,6 +571,7 @@ class ThreadingGCPKnowledgeUpdater:
                 'positional_args': positional_args,
                 'required_flags': required_flags,
                 'optional_flags': optional_flags,
+                'list_command_flags': list_command_flags,
                 'flags': flags,
                 'base_groups': base_groups,
                 'base_commands': base_commands

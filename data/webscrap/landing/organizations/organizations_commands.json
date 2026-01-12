@@ -1,0 +1,265 @@
+[
+  {
+    "id": "organizations.add-iam-policy-binding",
+    "service": "organizations",
+    "type": "command",
+    "path": [
+      "organizations",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud organizations add-iam-policy-binding",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations/add-iam-policy-binding",
+    "description": "Adds a policy binding to the IAM policy of an organization, given an\norganization ID and the binding. One binding consists of a member, a role, and\nan optional condition.",
+    "command_synopsis": "gcloud organizations add-iam-policy-binding ORGANIZATION --member=PRINCIPAL --role=ROLE [--condition=[KEY=VALUE,…]     | --condition-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6cd82804d3268c24412b10e03208c1d4308dfcacdc2c298118ed5e0e1f0ffff1",
+    "positional_args": {
+      "ORGANIZATION": {
+        "content": "ORGANIZATION",
+        "description": "ID of the organization or fully qualified identifier for the organization.To set theorganizationattribute:provide the argumentorganizationon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {
+      "condition": {
+        "content": "--condition=[KEY=VALUE,…]",
+        "description": "A condition to include in the binding. When the condition is explicitly\nspecified asNone(--condition=None), a binding\nwithout a condition is added. When the condition is specified and is notNone,--rolecannot be a basic role. Basic roles areroles/editor,roles/owner, androles/viewer. For more on conditions, refer to the conditions\noverview guide:https://cloud.google.com/iam/docs/conditions-overviewWhen using the--conditionflag, include the following key-value\npairs:expression(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping.title(Required) A short string describing the purpose of the expression.description(Optional) Additional description for the expression."
+      },
+      "expression": {
+        "content": "expression",
+        "description": "(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping."
+      },
+      "title": {
+        "content": "title",
+        "description": "(Required) A short string describing the purpose of the expression."
+      },
+      "description": {
+        "content": "description",
+        "description": "(Optional) Additional description for the expression."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "organizations",
+    "service": "organizations",
+    "type": "group",
+    "path": [
+      "organizations"
+    ],
+    "command_path": "gcloud organizations",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations",
+    "description": "The gcloud organizations group lets you create and manage Cloud Organizations.\nGoogle Cloud Platform resources form a hierarchy with Organizations at the root.\nOrganizations contain projects, and Projects contain the remaining Google Cloud\nPlatform resources.\nMore information on the Cloud Platform Resource Hierarchy and the Organization\nresource can be found here: https://cloud.google.com/resource-manager/docs/creating-managing-organization\nand detailed documentation on creating and managing organizations can be found\nhere: https://cloud.google.com/resource-manager/docs/creating-managing-organization",
+    "command_synopsis": "gcloud organizations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "182a319b4c53e474219f4f30b1b884028fd95ecd6031043eefea62aac4e46987",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "organizations.describe",
+    "service": "organizations",
+    "type": "command",
+    "path": [
+      "organizations",
+      "describe"
+    ],
+    "command_path": "gcloud organizations describe",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations/describe",
+    "description": "Shows metadata for an organization, given a valid organization ID. If an\norganization domain is supplied instead, this command will attempt to find the\norganization by domain name.\nThis command can fail for the following reasons:\nThe organization specified does not exist.\nThe active account does not have permission to access the given organization.\nThe domain name supplied does not correspond to a unique organization ID.",
+    "command_synopsis": "gcloud organizations describe ORGANIZATION_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6cd82804d3268c24412b10e03208c1d4308dfcacdc2c298118ed5e0e1f0ffff1",
+    "positional_args": {
+      "ORGANIZATION_ID": {
+        "content": "ORGANIZATION_ID",
+        "description": "ID or domain for the organization you want to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "organizations.get-iam-policy",
+    "service": "organizations",
+    "type": "command",
+    "path": [
+      "organizations",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud organizations get-iam-policy",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations/get-iam-policy",
+    "description": "Gets the IAM policy for an organization, given an organization ID.\nIf a domain is supplied instead of an organization ID, this command will attempt\nto look up the organization ID associated with that domain.",
+    "command_synopsis": "gcloud organizations get-iam-policy ORGANIZATION_ID [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6cd82804d3268c24412b10e03208c1d4308dfcacdc2c298118ed5e0e1f0ffff1",
+    "positional_args": {
+      "ORGANIZATION_ID": {
+        "content": "ORGANIZATION_ID",
+        "description": "ID or domain for the organization whose policy you want to get."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "organizations.remove-iam-policy-binding",
+    "service": "organizations",
+    "type": "command",
+    "path": [
+      "organizations",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud organizations remove-iam-policy-binding",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations/remove-iam-policy-binding",
+    "description": "Removes a policy binding from the IAM policy of an organization, given an\norganization ID and the binding. One binding consists of a member, a role, and\nan optional condition.",
+    "command_synopsis": "gcloud organizations remove-iam-policy-binding ORGANIZATION --member=PRINCIPAL --role=ROLE [--all     | --condition=[KEY=VALUE,…]     | --condition-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6cd82804d3268c24412b10e03208c1d4308dfcacdc2c298118ed5e0e1f0ffff1",
+    "positional_args": {
+      "ORGANIZATION": {
+        "content": "ORGANIZATION",
+        "description": "ID of the organization or fully qualified identifier for the organization.To set theorganizationattribute:provide the argumentorganizationon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {
+      "all": {
+        "content": "--all",
+        "description": "Remove all bindings with this role and principal, irrespective of any\nconditions."
+      },
+      "condition": {
+        "content": "--condition=[KEY=VALUE,…]",
+        "description": "The condition of the binding that you want to remove. When the condition is\nexplicitly specified asNone(--condition=None), a\nbinding without a condition is removed. Otherwise, only a binding with a\ncondition that exactly matches the specified condition (including the optional\ndescription) is removed. For more on conditions, refer to the conditions\noverview guide:https://cloud.google.com/iam/docs/conditions-overviewWhen using the--conditionflag, include the following key-value\npairs:expression(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping.title(Required) A short string describing the purpose of the expression.description(Optional) Additional description for the expression."
+      },
+      "expression": {
+        "content": "expression",
+        "description": "(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping."
+      },
+      "title": {
+        "content": "title",
+        "description": "(Required) A short string describing the purpose of the expression."
+      },
+      "description": {
+        "content": "description",
+        "description": "(Optional) Additional description for the expression."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "organizations.list",
+    "service": "organizations",
+    "type": "command",
+    "path": [
+      "organizations",
+      "list"
+    ],
+    "command_path": "gcloud organizations list",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations/list",
+    "description": "Lists all organizations to which the user has access. Organizations are listed\nin an unspecified order.",
+    "command_synopsis": "gcloud organizations list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6cd82804d3268c24412b10e03208c1d4308dfcacdc2c298118ed5e0e1f0ffff1",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "organizations.set-iam-policy",
+    "service": "organizations",
+    "type": "command",
+    "path": [
+      "organizations",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud organizations set-iam-policy",
+    "service_name": "organizations",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/organizations/set-iam-policy",
+    "description": "Given an organization ID and a file encoded in JSON or YAML that contains the\nIAM policy, this command will set the IAM policy for that organization.",
+    "command_synopsis": "gcloud organizations set-iam-policy ORGANIZATION_ID POLICY_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6cd82804d3268c24412b10e03208c1d4308dfcacdc2c298118ed5e0e1f0ffff1",
+    "positional_args": {
+      "ORGANIZATION_ID": {
+        "content": "ORGANIZATION_ID",
+        "description": "ID or domain for the organization whose IAM policy you want to set."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "JSON or YAML file containing the IAM policy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  }
+]

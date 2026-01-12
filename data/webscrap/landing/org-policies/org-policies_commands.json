@@ -1,0 +1,339 @@
+[
+  {
+    "id": "org-policies",
+    "service": "org-policies",
+    "type": "group",
+    "path": [
+      "org-policies"
+    ],
+    "command_path": "gcloud org-policies",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies",
+    "description": "The gcloud org-policies command group lets you create and manipulate\nOrganization Policies.\nThe Organization Policy Service gives you centralized and programmatic control\nover your organization's cloud resources. As the organization policy\nadministrator, you will be able to configure restrictions across your entire\nresource hierarchy.\nMore information on Organization Policies can be found here: https://cloud.google.com/resource-manager/docs/organization-policy/overview",
+    "command_synopsis": "gcloud org-policies COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "738a584dcdad75353935fbfb07a4b73184f8f57528434732c36b591108bbf0aa",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "org-policies.delete",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "delete"
+    ],
+    "command_path": "gcloud org-policies delete",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/delete",
+    "description": "Deletes an organization policy.",
+    "command_synopsis": "gcloud org-policies delete CONSTRAINT (--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID) [--etag=ETAG] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "CONSTRAINT": {
+        "content": "CONSTRAINT",
+        "description": "Name of the org policy constraint. The list of available constraints can be\nfound here:https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      }
+    },
+    "required_flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder ID."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project ID. Overrides the defaultcore/projectproperty value for\nthis command invocation."
+      }
+    },
+    "optional_flags": {
+      "etag": {
+        "content": "--etag=ETAG",
+        "description": "The current top-level etag of the Policy. If an etag is provided and does not\nmatch the current etag of the Policy, deletion will fail with a concurrent\nerror."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "org-policies.delete-custom-constraint",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "delete-custom-constraint"
+    ],
+    "command_path": "gcloud org-policies delete-custom-constraint",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/delete-custom-constraint",
+    "description": "Deletes a custom constraint.",
+    "command_synopsis": "gcloud org-policies delete-custom-constraint CUSTOM_CONSTRAINT --organization=ORGANIZATION_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "CUSTOM_CONSTRAINT": {
+        "content": "CUSTOM_CONSTRAINT",
+        "description": "Name of the custom constraint."
+      }
+    },
+    "required_flags": {
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "org-policies.describe",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "describe"
+    ],
+    "command_path": "gcloud org-policies describe",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/describe",
+    "description": "Describes an organization policy.",
+    "command_synopsis": "gcloud org-policies describe CONSTRAINT (--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID) [--effective] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "CONSTRAINT": {
+        "content": "CONSTRAINT",
+        "description": "Name of the org policy constraint. The list of available constraints can be\nfound here:https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      }
+    },
+    "required_flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder ID."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project ID. Overrides the defaultcore/projectproperty value for\nthis command invocation."
+      }
+    },
+    "optional_flags": {
+      "effective": {
+        "content": "--effective",
+        "description": "Describe the effective policy."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "org-policies.list",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "list"
+    ],
+    "command_path": "gcloud org-policies list",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/list",
+    "description": "Lists the policies set on a resource.",
+    "command_synopsis": "gcloud org-policies list (--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID) [--show-unset] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {},
+    "required_flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder ID."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project ID. Overrides the defaultcore/projectproperty value for\nthis command invocation."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "show-unset": {
+        "content": "--show-unset",
+        "description": "Show all available constraints for the resource."
+      }
+    }
+  },
+  {
+    "id": "org-policies.describe-custom-constraint",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "describe-custom-constraint"
+    ],
+    "command_path": "gcloud org-policies describe-custom-constraint",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/describe-custom-constraint",
+    "description": "Describes a custom constraint.",
+    "command_synopsis": "gcloud org-policies describe-custom-constraint CUSTOM_CONSTRAINT --organization=ORGANIZATION_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "CUSTOM_CONSTRAINT": {
+        "content": "CUSTOM_CONSTRAINT",
+        "description": "Name of the custom constraint."
+      }
+    },
+    "required_flags": {
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "org-policies.reset",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "reset"
+    ],
+    "command_path": "gcloud org-policies reset",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/reset",
+    "description": "Resets the policy to the default for the constraint.",
+    "command_synopsis": "gcloud org-policies reset CONSTRAINT (--folder=FOLDER_ID     | --organization=ORGANIZATION_ID     | --project=PROJECT_ID) [--update-mask=UPDATE_MASK] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "CONSTRAINT": {
+        "content": "CONSTRAINT",
+        "description": "Name of the org policy constraint. The list of available constraints can be\nfound here:https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      }
+    },
+    "required_flags": {
+      "folder": {
+        "content": "--folder=FOLDER_ID",
+        "description": "Folder ID."
+      },
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      },
+      "project": {
+        "content": "--project=PROJECT_ID",
+        "description": "Project ID. Overrides the defaultcore/projectproperty value for\nthis command invocation."
+      }
+    },
+    "optional_flags": {
+      "update-mask": {
+        "content": "--update-mask=UPDATE_MASK",
+        "description": "Field mask used to specify the fields to be overwritten in the policy by the\nset. The fields specified in the update_mask are relative to the policy, not the\nfull request. The update-mask flag can be empty, or have valuespolicy.spec,policy.dry_run_specor*. If\nthe policy does not contain the dry_run_spec and update-mask flag is not\nprovided, then it defaults topolicy.spec."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "org-policies.list-custom-constraints",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "list-custom-constraints"
+    ],
+    "command_path": "gcloud org-policies list-custom-constraints",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/list-custom-constraints",
+    "description": "Lists the custom constraints set on an organization.",
+    "command_synopsis": "gcloud org-policies list-custom-constraints --organization=ORGANIZATION_ID [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {},
+    "required_flags": {
+      "organization": {
+        "content": "--organization=ORGANIZATION_ID",
+        "description": "Organization ID."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "org-policies.set-custom-constraint",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "set-custom-constraint"
+    ],
+    "command_path": "gcloud org-policies set-custom-constraint",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/set-custom-constraint",
+    "description": "Sets a Custom Constraint from a JSON or YAML file. The custom constraint will be\ncreated if it does not exist, or updated if it already exists.",
+    "command_synopsis": "gcloud org-policies set-custom-constraint CUSTOM_CONSTRAINT_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "CUSTOM_CONSTRAINT_FILE": {
+        "content": "CUSTOM_CONSTRAINT_FILE",
+        "description": "Path to JSON or YAML file that contains the organization policy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "org-policies.set-policy",
+    "service": "org-policies",
+    "type": "command",
+    "path": [
+      "org-policies",
+      "set-policy"
+    ],
+    "command_path": "gcloud org-policies set-policy",
+    "service_name": "org-policies",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/org-policies/set-policy",
+    "description": "Sets an organization policy from a JSON or YAML file. The policy will be created\nif it does not exist, or updated if it already exists.",
+    "command_synopsis": "gcloud org-policies set-policy POLICY_FILE [--update-mask=UPDATE_MASK] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0b623653b341167ac91d3faa55d40b1abf6577ec2f02f2fddfde4465a03b86ad",
+    "positional_args": {
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to JSON or YAML file that contains the organization policy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "update-mask": {
+        "content": "--update-mask=UPDATE_MASK",
+        "description": "Field mask used to specify the fields to be overwritten in the policy by the\nset. The fields specified in the update_mask are relative to the policy, not the\nfull request. The update-mask flag can be empty, or have valuespolicy.spec,policy.dry_run_specor*. If\nthe policy does not contain the dry_run_spec and update-mask flag is not\nprovided, then it defaults topolicy.spec."
+      }
+    }
+  }
+]

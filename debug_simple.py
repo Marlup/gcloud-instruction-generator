@@ -14,7 +14,7 @@ def find_command(node, path_suffix):
     return None
 
 def main():
-    json_path = "data/web-gcloud/storage/storage_command.json"
+    json_path = "data/webscrap/landing/storage/storage_command.json"
     print(f"Reading {json_path}...")
     try:
         with open(json_path, "r", encoding="utf-8") as f:

@@ -43,7 +43,7 @@ def main():
     print("\nSummary:", summary)
     
     # Verify file
-    expected_file = "data/web-gcloud/config/config_commands.json"
+    expected_file = "data/webscrap/landing/config/config_commands.json"
     if os.path.exists(expected_file):
         print(f"SUCCESS: {expected_file} created.")
         size = os.path.getsize(expected_file)

@@ -1,0 +1,728 @@
+[
+  {
+    "id": "billing",
+    "service": "billing",
+    "type": "group",
+    "path": [
+      "billing"
+    ],
+    "command_path": "gcloud billing",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing",
+    "description": "Manage billing accounts and associate them with projects.",
+    "command_synopsis": "gcloud billing GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c8e12bac6fa732980935f336cda4bf76606d240c18ddf6e751b9d5c22b0fd6c6",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.accounts",
+    "service": "billing",
+    "type": "group",
+    "path": [
+      "billing",
+      "accounts"
+    ],
+    "command_path": "gcloud billing accounts",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts",
+    "description": "Manage billing accounts.",
+    "command_synopsis": "gcloud billing accounts COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4876b5275c8f2545c6b691aad605f083ee4b3e211ca47b220ae818a5ae32e458",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.accounts.add-iam-policy-binding",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "accounts",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud billing accounts add-iam-policy-binding",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts/add-iam-policy-binding",
+    "description": "Add an IAM policy binding to the IAM policy of a Cloud Billing account. A\nbinding consists of a member and a role.",
+    "command_synopsis": "gcloud billing accounts add-iam-policy-binding ACCOUNT --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "ACCOUNT",
+        "description": "ID of the account or fully qualified identifier for the account.To set theaccountattribute:provide the argumentaccounton the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.accounts.describe",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "accounts",
+      "describe"
+    ],
+    "command_path": "gcloud billing accounts describe",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts/describe",
+    "description": "This command shows info for a billing account, given its ID.\nThis call can fail for the following reasons:\nThe account specified does not exist.\nThe active user does not have permission to access the given account.",
+    "command_synopsis": "gcloud billing accounts describe ACCOUNT_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "ACCOUNT_ID": {
+        "content": "ACCOUNT_ID",
+        "description": "Specify a billing account ID. Billing account IDs are of the form0X0X0X-0X0X0X-0X0X0X. To see available IDs, run$gcloud billing accounts\nlist."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.accounts.get-iam-policy",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "accounts",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud billing accounts get-iam-policy",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts/get-iam-policy",
+    "description": "gcloud billing accounts get-iam-policy displays the IAM policy\nassociated with a Cloud Billing account. If formatted as JSON, the output can be\nedited and used as a policy file for set-iam-policy. The output\nincludes an \"etag\" field identifying the version emitted and allowing detection\nof concurrent policy updates; see $ {parent} set-iam-policy for additional\ndetails.",
+    "command_synopsis": "gcloud billing accounts get-iam-policy ACCOUNT [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "ACCOUNT",
+        "description": "ID of the account or fully qualified identifier for the account.To set theaccountattribute:provide the argumentaccounton the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "billing.accounts.remove-iam-policy-binding",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "accounts",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud billing accounts remove-iam-policy-binding",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts/remove-iam-policy-binding",
+    "description": "Remove an IAM policy binding to the IAM policy from a Cloud Billing account. A\nbinding consists of a member and a role.",
+    "command_synopsis": "gcloud billing accounts remove-iam-policy-binding ACCOUNT --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "ACCOUNT",
+        "description": "ID of the account or fully qualified identifier for the account.To set theaccountattribute:provide the argumentaccounton the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.accounts.list",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "accounts",
+      "list"
+    ],
+    "command_path": "gcloud billing accounts list",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts/list",
+    "description": "gcloud billing accounts list lists all billing accounts and\nsubaccounts owned by the currently authenticated user. Subaccounts have a\nnon-empty MASTER_ACCOUNT_ID value.",
+    "command_synopsis": "gcloud billing accounts list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "billing.accounts.set-iam-policy",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "accounts",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud billing accounts set-iam-policy",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/accounts/set-iam-policy",
+    "description": "gcloud billing accounts set-iam-policy sets the IAM policy for a\nCloud Billing account given an account ID and a JSON or YAML file that describes\nthe IAM policy.\nNote: Setting the IAM policy for a Cloud Billing account replaces existing IAM\nbindings for that account.",
+    "command_synopsis": "gcloud billing accounts set-iam-policy ACCOUNT POLICY_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "ACCOUNT",
+        "description": "ID of the account or fully qualified identifier for the account.To set theaccountattribute:provide the argumentaccounton the command line."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to a local JSON or YAML formatted file containing a valid policy.The output of theget-iam-policycommand is a valid file, as is any\nJSON or YAML file conforming to the structure of aPolicy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.budgets.create",
+    "service": "billing",
+    "type": "group",
+    "path": [
+      "billing",
+      "budgets",
+      "create"
+    ],
+    "command_path": "gcloud billing budgets create",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/budgets/create",
+    "description": "Create a budget.",
+    "command_synopsis": "gcloud billing budgets create --billing-account=BILLING_ACCOUNT --display-name=DISPLAY_NAME (--budget-amount=BUDGET_AMOUNT     | --last-period-amount) [--credit-types-treatment=CREDIT_TYPES_TREATMENT] [--disable-default-iam-recipients] [--filter-credit-types=[FILTER_CREDIT_TYPES,…]] [--filter-labels=[KEY=VALUE,…]] [--filter-projects=[FILTER_PROJECTS,…]] [--filter-resource-ancestors=[FILTER_RESOURCE_ANCESTORS,…]] [--filter-services=[FILTER_SERVICES,…]] [--filter-subaccounts=[FILTER_SUBACCOUNTS,…]] [--notifications-rule-monitoring-notification-channels=[NOTIFICATIONS_RULE_MONITORING_NOTIFICATION_CHANNELS,…]] [--notifications-rule-pubsub-topic=NOTIFICATIONS_RULE_PUBSUB_TOPIC] [--ownership-scope=OWNERSHIP_SCOPE] [--threshold-rule=[basis=BASIS],[percent=PERCENT]] [--calendar-period=CALENDAR_PERIOD     | [--start-date=START_DATE : --end-date=END_DATE]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {},
+    "required_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT",
+        "description": "ID of the billing-account or fully qualified identifier for the billing-account.To set thebilling-accountattribute:provide the argument--billing-accounton the command line."
+      },
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "User data for display name in UI. Must be less than or equal to 60 characters."
+      },
+      "budget-amount": {
+        "content": "--budget-amount=BUDGET_AMOUNT",
+        "description": "Specify the amount of the budget. If a currency type is included, it must be the\ncurrency associated with the billing account. If excluded, the currency used\nwill be the currency associated with the billing account."
+      },
+      "last-period-amount": {
+        "content": "--last-period-amount",
+        "description": "Use the amount of last period's budget."
+      }
+    },
+    "optional_flags": {
+      "credit-types-treatment": {
+        "content": "--credit-types-treatment=CREDIT_TYPES_TREATMENT",
+        "description": "Whether to include all credit types when calculating the actual spend against\nthe budget. If this is not specified, then all credit types are used in the\ncalculation. If this is set to include-specified-credits, then\n--filter-credit-types must be specified with a nonempty list of credits.CREDIT_TYPES_TREATMENTmust be one of:credit-types-treatment-unspecified,exclude-all-credits,include-all-credits,include-specified-credits."
+      },
+      "disable-default-iam-recipients": {
+        "content": "--disable-default-iam-recipients",
+        "description": "When set to true, disables default notifications sent when a threshold is\nexceeded. Default notifications are sent to those with Billing Account\nAdministrator and Billing Account User IAM roles for the target account."
+      },
+      "filter-credit-types": {
+        "content": "--filter-credit-types=[FILTER_CREDIT_TYPES,…]",
+        "description": "Set of credit types, specifying that usage from only this set of credits should\nbe included in the budget. If a nonempty list is specified, then\n--credit-types-treatment must be include-specified-credits."
+      },
+      "filter-labels": {
+        "content": "--filter-labels=[KEY=VALUE,…]",
+        "description": "Single label and value pair specifying that usage from only this set of labeled\nresources should be included in the budget. Currently, multiple entries or\nmultiple values per entry are not allowed. If omitted, the report will include\nall labeled and unlabeled usage."
+      },
+      "filter-projects": {
+        "content": "--filter-projects=[FILTER_PROJECTS,…]",
+        "description": "Set of projects in the formprojects/{project_id}, specifying that\nusage from only this set of projects should be included in the budget. If\nomitted, all projects will be included."
+      },
+      "filter-resource-ancestors": {
+        "content": "--filter-resource-ancestors=[FILTER_RESOURCE_ANCESTORS,…]",
+        "description": "A set of folder and organization names of the formfolders/{folderId}ororganizations/{organizationId},\nspecifying that usage from only this set of folders and organizations should be\nincluded in the budget. If omitted, the budget includes all usage that the\nbilling account pays for. If the folder or organization contains projects that\nare paid for by a different Cloud Billing account, the budget doesn't apply to\nthose projects."
+      },
+      "filter-services": {
+        "content": "--filter-services=[FILTER_SERVICES,…]",
+        "description": "Set of services of the formservices/{service_id}, specifying that\nusage from only this set of services should be included in the budget. If\nomitted, the report will include usage for all services. The service names are\navailable through the Catalog API:https://cloud.google.com/billing/v1/how-tos/catalog-api."
+      },
+      "filter-subaccounts": {
+        "content": "--filter-subaccounts=[FILTER_SUBACCOUNTS,…]",
+        "description": "Set of subaccounts of the formbillingAccounts/{account_id},\nspecifying that usage from only this set of subaccounts should be included in\nthe budget. If a subaccount is set to the name of the parent account, usage from\nthe parent account will be included. If omitted, the report will include usage\nfrom the parent account and all subaccounts, if they exist."
+      },
+      "notifications-rule-monitoring-notification-channels": {
+        "content": "--notifications-rule-monitoring-notification-channels=[NOTIFICATIONS_RULE_MONITORING_NOTIFICATION_CHANNELS,…]",
+        "description": "Targets to send notifications to when a threshold is exceeded. This is in\naddition to default recipients who have billing account IAM roles. The value is\nthe full REST resource name of a monitoring notification channel in the formprojects/{project_id}/notificationChannels/{channel_id}. A maximum\nof 5 channels is allowed. Seehttps://cloud.google.com/billing/docs/how-to/budgets-notification-recipientsfor more details."
+      },
+      "notifications-rule-pubsub-topic": {
+        "content": "--notifications-rule-pubsub-topic=NOTIFICATIONS_RULE_PUBSUB_TOPIC",
+        "description": "Name of the Cloud Pub/Sub topic where budget related messages will be published,\nin the formprojects/{project_id}/topics/{topic_id}."
+      },
+      "ownership-scope": {
+        "content": "--ownership-scope=OWNERSHIP_SCOPE",
+        "description": "Sets the ownership scope of the budget. The ownership scope and users' IAM\npermissions determine who has full access to the budget's data.Must be one of: 'ALL_USERS' or 'BILLING_ACCOUNT'. Use 'ALL_USERS' to allow\nbilling account- level users and project-level users to have full access to the\nbudget (if the users have the required IAM permissions). Use 'BILLING_ACCOUNT'\nto allow only billing account-level users to have full access to the budget.\nProject-level users will have read-only access, even if they have the required\nIAM permissions.OWNERSHIP_SCOPEmust be one of:all-users,billing-account,ownership-scope-unspecified."
+      },
+      "threshold-rule": {
+        "content": "--threshold-rule=[basis=BASIS],[percent=PERCENT]",
+        "description": "Rule that triggers alerts (notifications of thresholds being crossed) when spend\nexceeds the specified percentages of the budget. This flag can be repeated to\nprovide multiple thresholds above which an alert is sent.percentNumber between 0.0 and 1.0. This is a 1.0-based percentage; for example 0.5\nequals 50 percent. An alert is sent for anything above the value set.basisType of basis used to determine if spend has passed the threshold. Must be one\nof: 'current-spend' or 'forecasted-spend'. Behavior defaults to 'current-spend'\nif not set."
+      },
+      "percent": {
+        "content": "percent",
+        "description": "Number between 0.0 and 1.0. This is a 1.0-based percentage; for example 0.5\nequals 50 percent. An alert is sent for anything above the value set."
+      },
+      "basis": {
+        "content": "basis",
+        "description": "Type of basis used to determine if spend has passed the threshold. Must be one\nof: 'current-spend' or 'forecasted-spend'. Behavior defaults to 'current-spend'\nif not set."
+      },
+      "calendar-period": {
+        "content": "--calendar-period=CALENDAR_PERIOD",
+        "description": "Specified to track usage over recurring calendar period. If you're creating a\nbudget with a custom time period, omit this flag.CALENDAR_PERIODmust be one of:calendar-period-unspecified,month,quarter,year."
+      },
+      "start-date": {
+        "content": "--start-date=START_DATE",
+        "description": "Specified to track usage after any start date. This time period is static, it\ndoes not recur.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "end-date": {
+        "content": "--end-date=END_DATE",
+        "description": "Specified to track usage before any end date. This time period is static, it\ndoes not recur. If specified, --start-date must also be specified."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "billing.budgets",
+    "service": "billing",
+    "type": "group",
+    "path": [
+      "billing",
+      "budgets"
+    ],
+    "command_path": "gcloud billing budgets",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/budgets",
+    "description": "Manage the budgets of your billing accounts.",
+    "command_synopsis": "gcloud billing budgets COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "dc9b9357e267c42abb7bfefc41728fef7f2eecfd48c89b46f10f2ddc85255dbb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.budgets.delete",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "budgets",
+      "delete"
+    ],
+    "command_path": "gcloud billing budgets delete",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/budgets/delete",
+    "description": "Delete a budget.",
+    "command_synopsis": "gcloud billing budgets delete (BUDGET : --billing-account=BILLING_ACCOUNT) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "BUDGET": {
+        "content": "BUDGET",
+        "description": "ID of the budget or fully qualified identifier for the budget.To set thebudgetattribute:provide the argumentbudgeton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT",
+        "description": "The billing account.\nTo set thebilling-accountattribute:provide the argumentbudgeton the command line with a fully\nspecified name;provide the argument--billing-accounton the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.budgets.list",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "budgets",
+      "list"
+    ],
+    "command_path": "gcloud billing budgets list",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/budgets/list",
+    "description": "List budgets for the account.",
+    "command_synopsis": "gcloud billing budgets list --billing-account=BILLING_ACCOUNT [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {},
+    "required_flags": {
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT",
+        "description": "ID of the billing-account or fully qualified identifier for the billing-account.To set thebilling-accountattribute:provide the argument--billing-accounton the command line."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "billing.budgets.describe",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "budgets",
+      "describe"
+    ],
+    "command_path": "gcloud billing budgets describe",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/budgets/describe",
+    "description": "Describe a budget.",
+    "command_synopsis": "gcloud billing budgets describe (BUDGET : --billing-account=BILLING_ACCOUNT) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "BUDGET": {
+        "content": "BUDGET",
+        "description": "ID of the budget or fully qualified identifier for the budget.To set thebudgetattribute:provide the argumentbudgeton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT",
+        "description": "The billing account.\nTo set thebilling-accountattribute:provide the argumentbudgeton the command line with a fully\nspecified name;provide the argument--billing-accounton the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.budgets.update",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "budgets",
+      "update"
+    ],
+    "command_path": "gcloud billing budgets update",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/budgets/update",
+    "description": "Update a budget.",
+    "command_synopsis": "gcloud billing budgets update (BUDGET : --billing-account=BILLING_ACCOUNT) [--credit-types-treatment=CREDIT_TYPES_TREATMENT] [--disable-default-iam-recipients] [--display-name=DISPLAY_NAME] [--filter-credit-types=[FILTER_CREDIT_TYPES,…]] [--filter-labels=[KEY=VALUE,…]] [--filter-projects=[FILTER_PROJECTS,…]] [--filter-resource-ancestors=[FILTER_RESOURCE_ANCESTORS,…]] [--filter-services=[FILTER_SERVICES,…]] [--filter-subaccounts=[FILTER_SUBACCOUNTS,…]] [--notifications-rule-monitoring-notification-channels=[NOTIFICATIONS_RULE_MONITORING_NOTIFICATION_CHANNELS,…]] [--notifications-rule-pubsub-topic=NOTIFICATIONS_RULE_PUBSUB_TOPIC] [--ownership-scope=OWNERSHIP_SCOPE] [--budget-amount=BUDGET_AMOUNT     | --last-period-amount] [--calendar-period=CALENDAR_PERIOD     | [--start-date=START_DATE : --end-date=END_DATE]] [--threshold-rules-from-file=PATH_TO_FILE     | --add-threshold-rule=[basis=BASIS],[percent=PERCENT] --clear-threshold-rules] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "BUDGET": {
+        "content": "BUDGET",
+        "description": "ID of the budget or fully qualified identifier for the budget.To set thebudgetattribute:provide the argumentbudgeton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "billing-account": {
+        "content": "--billing-account=BILLING_ACCOUNT",
+        "description": "The billing account.\nTo set thebilling-accountattribute:provide the argumentbudgeton the command line with a fully\nspecified name;provide the argument--billing-accounton the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "credit-types-treatment": {
+        "content": "--credit-types-treatment=CREDIT_TYPES_TREATMENT",
+        "description": "Whether to include all credit types when calculating the actual spend against\nthe budget. If this is not specified, then all credit types are used in the\ncalculation. If this is set to include-specified-credits, then\n--filter-credit-types must be specified with a nonempty list of credits.CREDIT_TYPES_TREATMENTmust be one of:credit-types-treatment-unspecified,exclude-all-credits,include-all-credits,include-specified-credits."
+      },
+      "disable-default-iam-recipients": {
+        "content": "--disable-default-iam-recipients",
+        "description": "When set to true, disables default notifications sent when a threshold is\nexceeded. Default notifications are sent to those with Billing Account\nAdministrator and Billing Account User IAM roles for the target account."
+      },
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "User data for display name in UI. Must be less than or equal to 60 characters."
+      },
+      "filter-credit-types": {
+        "content": "--filter-credit-types=[FILTER_CREDIT_TYPES,…]",
+        "description": "Set of credit types, specifying that usage from only this set of credits should\nbe included in the budget. If a nonempty list is specified, then\n--credit-types-treatment must be include-specified-credits."
+      },
+      "filter-labels": {
+        "content": "--filter-labels=[KEY=VALUE,…]",
+        "description": "Single label and value pair specifying that usage from only this set of labeled\nresources should be included in the budget. Currently, multiple entries or\nmultiple values per entry are not allowed. If omitted, the report will include\nall labeled and unlabeled usage."
+      },
+      "filter-projects": {
+        "content": "--filter-projects=[FILTER_PROJECTS,…]",
+        "description": "Set of projects in the formprojects/{project_id}, specifying that\nusage from only this set of projects should be included in the budget. If\nomitted, all projects will be included."
+      },
+      "filter-resource-ancestors": {
+        "content": "--filter-resource-ancestors=[FILTER_RESOURCE_ANCESTORS,…]",
+        "description": "A set of folder and organization names of the formfolders/{folderId}ororganizations/{organizationId},\nspecifying that usage from only this set of folders and organizations should be\nincluded in the budget. If omitted, the budget includes all usage that the\nbilling account pays for. If the folder or organization contains projects that\nare paid for by a different Cloud Billing account, the budget doesn't apply to\nthose projects."
+      },
+      "filter-services": {
+        "content": "--filter-services=[FILTER_SERVICES,…]",
+        "description": "Set of services of the formservices/{service_id}, specifying that\nusage from only this set of services should be included in the budget. If\nomitted, the report will include usage for all services. The service names are\navailable through the Catalog API:https://cloud.google.com/billing/v1/how-tos/catalog-api."
+      },
+      "filter-subaccounts": {
+        "content": "--filter-subaccounts=[FILTER_SUBACCOUNTS,…]",
+        "description": "Set of subaccounts of the formbillingAccounts/{account_id},\nspecifying that usage from only this set of subaccounts should be included in\nthe budget. If a subaccount is set to the name of the parent account, usage from\nthe parent account will be included. If omitted, the report will include usage\nfrom the parent account and all subaccounts, if they exist."
+      },
+      "notifications-rule-monitoring-notification-channels": {
+        "content": "--notifications-rule-monitoring-notification-channels=[NOTIFICATIONS_RULE_MONITORING_NOTIFICATION_CHANNELS,…]",
+        "description": "Targets to send notifications to when a threshold is exceeded. This is in\naddition to default recipients who have billing account roles. The value is the\nfull REST resource name of a monitoring notification channel in the formprojects/{project_id}/notificationChannels/{channel_id}. A maximum\nof 5 channels is allowed. Seehttps://cloud.google.com/billing/docs/how-to/budgets-notification-recipientsfor more details."
+      },
+      "notifications-rule-pubsub-topic": {
+        "content": "--notifications-rule-pubsub-topic=NOTIFICATIONS_RULE_PUBSUB_TOPIC",
+        "description": "Name of the Cloud Pub/Sub topic where budget related messages will be published,\nin the formprojects/{project_id}/topics/{topic_id}."
+      },
+      "ownership-scope": {
+        "content": "--ownership-scope=OWNERSHIP_SCOPE",
+        "description": "Sets the ownership scope of the budget. The ownership scope and users' IAM\npermissions determine who has full access to the budget's data.Must be one of: 'ALL_USERS' or 'BILLING_ACCOUNT'. Use 'ALL_USERS' to allow\nbilling account- level users and project-level users to have full access to the\nbudget (if the users have the required IAM permissions). Use 'BILLING_ACCOUNT'\nto allow only billing account-level users to have full access to the budget.\nProject-level users will have read-only access, even if they have the required\nIAM permissions.OWNERSHIP_SCOPEmust be one of:all-users,billing-account,ownership-scope-unspecified."
+      },
+      "budget-amount": {
+        "content": "--budget-amount=BUDGET_AMOUNT",
+        "description": "Specify the amount of the budget. If a currency type is included, it must be the\nexisting currency associated with the budget."
+      },
+      "last-period-amount": {
+        "content": "--last-period-amount",
+        "description": "Use the amount of last period's budget."
+      },
+      "calendar-period": {
+        "content": "--calendar-period=CALENDAR_PERIOD",
+        "description": "Specified to track usage over recurring calendar period. If you're creating a\nbudget with a custom time period, omit this flag.CALENDAR_PERIODmust be one of:calendar-period-unspecified,month,quarter,year."
+      },
+      "start-date": {
+        "content": "--start-date=START_DATE",
+        "description": "Specified to track usage after any start date. This time period is static, it\ndoes not recur.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "end-date": {
+        "content": "--end-date=END_DATE",
+        "description": "Specified to track usage before any end date. This time period is static, it\ndoes not recur. If specified, --start-date must also be specified."
+      },
+      "threshold-rules-from-file": {
+        "content": "--threshold-rules-from-file=PATH_TO_FILE",
+        "description": "Import a file with the updated threshold rules. The threshold rules in the file\nwill replace the rules in the budget. This can be used to add or remove specific\nthreshold rules. Use a full or relative path to a local file containing the\nvalue of threshold_rules."
+      },
+      "add-threshold-rule": {
+        "content": "--add-threshold-rule=[basis=BASIS],[percent=PERCENT]",
+        "description": "Rule that triggers alerts (notifications of thresholds being crossed) when spend\nexceeds the specified percentages of the budget. This flag can be repeated to\nprovide multiple thresholds above which an alert is sent.percentInteger between 0 and 100 above which an alert is sent.basisType of basis used to determine if spend has passed the threshold. Must be one\nof: 'current-spend' or 'forecasted-spend'. Behavior defaults to 'current-spend'\nif not set."
+      },
+      "percent": {
+        "content": "percent",
+        "description": "Integer between 0 and 100 above which an alert is sent."
+      },
+      "basis": {
+        "content": "basis",
+        "description": "Type of basis used to determine if spend has passed the threshold. Must be one\nof: 'current-spend' or 'forecasted-spend'. Behavior defaults to 'current-spend'\nif not set."
+      },
+      "clear-threshold-rules": {
+        "content": "--clear-threshold-rules",
+        "description": "Removes all threshold rules from the budget."
+      }
+    }
+  },
+  {
+    "id": "billing.projects",
+    "service": "billing",
+    "type": "group",
+    "path": [
+      "billing",
+      "projects"
+    ],
+    "command_path": "gcloud billing projects",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/projects",
+    "description": "Manage the billing account configuration of your projects.",
+    "command_synopsis": "gcloud billing projects COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "bc17aec10236ee6ed79bd5f69e155ac00d4b0de7fe59924e152684e767d4159b",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.projects.link",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "projects",
+      "link"
+    ],
+    "command_path": "gcloud billing projects link",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/projects/link",
+    "description": "This command sets or updates the billing account associated with a project.\nBilling is enabled on a project when the project is linked to a valid, active\nCloud Billing account. The billing account accrues charges for the usage of\nresources in all of the linked projects. If the project is already linked to a\nbilling account, this command moves the project to the billing account you\nspecify, updating the billing account that is linked to the project.\nNote that associating a project with a closed billing account has the same\neffect as disabling billing on the project: any paid resources in use by the\nproject are shut down, and your application stops functioning. Unless you want\nto disable billing, you should always specify a valid, active Cloud Billing\naccount when you run this command. Learn how to confirm the status of a Cloud\nBilling account at https://cloud.google.com/billing/docs/how-to/verify-billing-enabled#billing_account_status",
+    "command_synopsis": "gcloud billing projects link PROJECT_ID --billing-account=ACCOUNT_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "PROJECT_ID": {
+        "content": "PROJECT_ID",
+        "description": "Specify a project id."
+      }
+    },
+    "required_flags": {
+      "billing-account": {
+        "content": "--billing-account=ACCOUNT_ID",
+        "description": "Specify a billing account ID. Billing account IDs are of the form0X0X0X-0X0X0X-0X0X0X. To see available IDs, run$gcloud billing accounts\nlist."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.projects.describe",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "projects",
+      "describe"
+    ],
+    "command_path": "gcloud billing projects describe",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/projects/describe",
+    "description": "This command shows billing info for a project, given its ID.\nThis call can fail for the following reasons:\nThe project specified does not exist.\nThe active user does not have permission to access the given project.",
+    "command_synopsis": "gcloud billing projects describe PROJECT_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "PROJECT_ID": {
+        "content": "PROJECT_ID",
+        "description": "Specify a project id."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.projects.unlink",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "projects",
+      "unlink"
+    ],
+    "command_path": "gcloud billing projects unlink",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/projects/unlink",
+    "description": "This command unlinks a project from its associated billing account. This action\ndisables billing on the project. Any billable resources and services in use in\nyour project are stopped, and your application stops functioning. Any costs\naccrued prior to disabling billing on the project are charged to the previously\nassociated billing account.\nNote: To link a project to a different billing account, use the billing\nprojects link command. You do not need to unlink the project first.",
+    "command_synopsis": "gcloud billing projects unlink PROJECT_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {
+      "PROJECT_ID": {
+        "content": "PROJECT_ID",
+        "description": "Specify a project id."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "billing.projects.list",
+    "service": "billing",
+    "type": "command",
+    "path": [
+      "billing",
+      "projects",
+      "list"
+    ],
+    "command_path": "gcloud billing projects list",
+    "service_name": "billing",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/billing/projects/list",
+    "description": "gcloud billing projects list ACCOUNT_ID -- lists all active\nprojects, for the specified billing account id.",
+    "command_synopsis": "gcloud billing projects list --billing-account=ACCOUNT_ID [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1a9f8be37fb0a984a35885ffa62a87bbab7da3ed9735ee2c7eab1ac5d1ec367d",
+    "positional_args": {},
+    "required_flags": {
+      "billing-account": {
+        "content": "--billing-account=ACCOUNT_ID",
+        "description": "Specify a billing account ID. Billing account IDs are of the form0X0X0X-0X0X0X-0X0X0X. To see available IDs, run$gcloud billing accounts\nlist."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  }
+]

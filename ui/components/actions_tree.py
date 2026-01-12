@@ -57,6 +57,7 @@ class ActionsTreePanel(ttk.Frame):
         self.tree.bind("<Leave>", self._on_mouse_leave)
 
         self.on_action_select = on_action_select
+        self._all_actions = {}
 
 
     def refresh(self, actions: dict):
@@ -74,10 +75,6 @@ class ActionsTreePanel(ttk.Frame):
                 values = self.tree.item(item_id, "values")
                 if values:
                     expanded_texts.add(values[0])
-                else:
-                    # Fallback for legacy items (shouldn't happen after refresh)
-                    item_text = self.tree.item(item_id, "text")
-                    expanded_texts.add(strip_icon(item_text))
             except:
                 pass
         
@@ -86,77 +83,127 @@ class ActionsTreePanel(ttk.Frame):
         self._expanded_items.clear()
         
         # Repopulate
-        counter = count()  # sequential IDs
-        for resource, categories in actions.items():
+        for resource, subtree in actions.items():
             # Add folder icon to resources
             resource_display = f"📁 {resource}"
             
             # Start collapsed (open=False), restore if was expanded
             should_open = resource in expanded_texts
-            # Store RAW resource name in values[0]
+            
+            # Insert Resource Node
             res_id = self.tree.insert("", "end", text=resource_display, open=should_open, values=(resource,))
+            
             if should_open:
                 self._expanded_items.add(res_id)
-            self._populate_category(categories, res_id, counter, expanded_texts)
-
-    def _populate_category(self, categories: dict[str, dict], res_id: str, counter, expanded_texts: set):
-        def category_sort_key(cat):
-            try:
-                key_cat = cat.split(" ")
-                return CATEGORY_ORDER.index(key_cat)
-            except ValueError:
-                return len(CATEGORY_ORDER)  # push unknown categories to the end
-
-        for category in sorted(categories.keys(), key=category_sort_key):
-            acts = categories[category]
-            category_name = category.split(" ", 1)[-1]
             
-            # Add icon to category display
-            icon = get_category_icon(category)
-            category_display = f"{icon} {category}"
+            # Recursive populate
+            self._populate_recursive(subtree, res_id, expanded_texts)
+
+    def _populate_recursive(self, current_level: dict, parent_id: str, expanded_texts: set):
+        """
+        Recursively populate the tree.
+        current_level: dict that may contain nested commands or key "__action"
+        """
+        if "action" in current_level:
+            # This logic might be slightly different: 
+            # If the current node HAS an action, it might ALSO have children (sub-verbs)?
+            # In our data structure:
+            # jobs -> create (key) -> { __action: ..., app-engine: { ... } }
+            # But the parent call created the node for 'create'.
+            # Wait, no. The parent loop iterates keys.
             
-            # Start collapsed, restore if was expanded
-            # Use original category text for state tracking (without icon)
-            should_open = category in expanded_texts
-            # Store RAW category name in values[0]
-            sub_id = self.tree.insert(
-                res_id, "end", text=category_display, open=should_open, tags=(category_name,), values=(category,)
-            )
+            # Actually, the recursion should handle keys.
+            pass
+
+        # Sort keys to look nice, keeping normal commands together
+        # We want to ignore __action during iteration, as it is property of current node (definitions)
+        # But wait, Treeview items represent the KEY.
+        # If 'create' has an __action, we want the TreeItem for 'create' to be selectable.
+        # But we already created 'create' in the PREVIOUS step?
+        # NO. We are INSIDE 'create' dict now.
+        
+        # This function receives the DICT content of a node, and the ID of that node.
+        # If this dict has keys other than __action, they are children.
+        
+        child_keys = [k for k in current_level.keys() if k != "action"]
+        child_keys.sort()
+        
+        for key in child_keys:
+            val = current_level[key]
+            
+            # Determine display
+            # If val has __action, it is a Command (Action).
+            # It might also have children (Group).
+            # So it can be both.
+            
+            is_action = "action" in val
+            has_children = any(k != "action" for k in val.keys())
+            
+            # Icon selection
+            if is_action:
+                icon = "▸" # Action
+            else:
+                icon = "📂" # Group
+                
+            display = f"{icon} {key}"
+            
+            # Check expansion (using key as identifier is weak if dups exist across branches? 
+            # The 'values' tuple stores uniqueness locally? 
+            # Actually expanded_texts stored raw values[0].
+            # Uniqueness is not guaranteed across branches but good enough for UI persistence context)
+            should_open = key in expanded_texts
+            
+            node_id = self.tree.insert(parent_id, "end", text=display, open=should_open, values=(key,))
+            
             if should_open:
-                self._expanded_items.add(sub_id)
-            self._populate_action(category_name, acts, sub_id, counter)
-
-
-    def _populate_action(self, category_name: str, acts: list[str], sub_id: str, counter):
-        if category_name in category_colors:
-            self.tree.tag_configure(category_name, **category_colors[category_name])
-        for action in acts:
-            # Add bullet point icon to actions
-            action_display = f"▸ {action}"
-            # Store RAW action name in values[0]
-            self.tree.insert(
-                sub_id, "end", iid=f"tree-action-{next(counter)}", text=action_display, values=(action,)
-            )
+                self._expanded_items.add(node_id)
+            
+            # Recurse
+            self._populate_recursive(val, node_id, expanded_texts)
 
     def _on_search(self, event=None):
         text = self.entry_search.get().lower().strip()
         if not text:
             self._populate(self._all_actions)
             return
-        # filtrar por recurso, categoría o acción
-        filtered = {}
-        for res, cats in self._all_actions.items():
-            if text in res.lower():
-                filtered[res] = cats
-                continue
-            for cat, acts in cats.items():
-                if text in cat.lower():
-                    filtered.setdefault(res, {})[cat] = acts
-                    continue
-                for act in acts:
-                    if text in act.lower():
-                        filtered.setdefault(res, {}).setdefault(cat, {})[act] = acts[act]
+            
+        # Recursive filter
+        filtered = self._filter_recursive(self._all_actions, text)
         self._populate(filtered)
+
+    def _filter_recursive(self, node: dict, term: str) -> dict:
+        """Return a new dict containing only branches matching term."""
+        result = {}
+        
+        # If this node has an action and it matches? 
+        # But we search by keys mostly or action names?
+        # The 'key' is the command name.
+        
+        for key, val in node.items():
+            if key == "action":
+                continue
+            
+            # Check if key matches
+            match = term in key.lower()
+            
+            # Recurse
+            filtered_subtree = self._filter_recursive(val, term)
+            
+            if match:
+                # Keep whole subtree if key matches? Or just this node?
+                # Usually if key matches, user wants to see it.
+                # We can keep original val? Or filtered?
+                # Let's keep original if key matches (showing all suboptions)
+                result[key] = val
+            elif filtered_subtree:
+                # If children matched, keep this node and the filtered children
+                # (preserve __action if present? Yes, usually)
+                new_val = filtered_subtree.copy()
+                if "action" in val:
+                    new_val["action"] = val["action"]
+                result[key] = new_val
+                
+        return result
     
     def _on_clear_search(self, event=None):
         self.entry_search.delete(0, 'end')
@@ -167,108 +214,112 @@ class ActionsTreePanel(ttk.Frame):
         if not item_id:
             return
 
-        # Use RAW keys from values (safer than stripping icons)
+        # 1. Reconstruct path from root to this item
+        # 2. Traverse _all_actions to find the node
+        # 3. If node has __action, trigger callback
+        
+        path_keys = []
+        curr = item_id
+        while curr:
+            values = self.tree.item(curr, "values")
+            if values:
+                path_keys.insert(0, values[0])
+            curr = self.tree.parent(curr)
+            
+        if not path_keys: 
+            return
+
+        # Navigate
+        # path_keys[0] is Resource (e.g. jobs)
+        # path_keys[1..] are keys in tree
+        
+        node = self._all_actions
         try:
-            values = self.tree.item(item_id, "values")
-            if not values: return
-            action = values[0]
+            for k in path_keys:
+                node = node[k]
+        except KeyError:
+            return
             
-            parent_id = self.tree.parent(item_id)
-            if not parent_id: return
-            category = self.tree.item(parent_id, "values")[0]
+        if "action" in node:
+            action_def = node["action"]
+            # Callback signature: (action_name, resource, category)
+            # Legacy signature is annoying. We should adapt.
+            # action_name -> label or just key? Legacy used 'Create app engine'.
+            # We have 'label' in action_def.
             
-            resource_id = self.tree.parent(parent_id)
-            if not resource_id: return
-            resource = self.tree.item(resource_id, "values")[0]
+            # Resource -> path_keys[0]
+            # Category -> path_keys[1] (maybe?)
             
-            self.on_action_select(action, resource, category)
-        except (IndexError, AttributeError):
-            pass
-    
-    def _on_tree_open(self, event=None):
-        """Track when user expands a tree item."""
-        item_id = self.tree.focus()
-        if item_id:
-            self._expanded_items.add(item_id)
-    
-    def _on_tree_close(self, event=None):
-        """Track when user collapses a tree item."""
-        item_id = self.tree.focus()
-        if item_id and item_id in self._expanded_items:
-            self._expanded_items.discard(item_id)
-    
+            # Let's pass the ActionDefinition dict as "action" and handle it? 
+            # Or construct a dummy string?
+            # The "Forms" generation depends on this.
+            # In panels.py, we might need to update how we receive data.
+            
+            # For now, let's pass the whole action_def as the first arg? 
+            # Or change the signature. 
+            # Let's assume on_action_select is smart enough or we check panels.py
+            
+            # Checking panels.py previously:
+            # def update_details(self, action_name, resource, category):
+            #     acts = self.actions[resource][category]
+            #     action_def = acts[action_name]
+            
+            # It expects to do a lookup again! That is fragile with recursive structure.
+            # We should pass the ACTION_DEF directly.
+            
+            self.on_action_select(action_def, path_keys[0], path_keys[-1])
+
     # ---------------------------------------------------
     # Info Tooltip Methods
     # ---------------------------------------------------
     
     def _get_item_description(self, item_id: str) -> str:
-        """Get description for a tree item (action/group)."""
-        if not item_id:
-            return ""
+        """Get description for a tree item."""
+        if not item_id: return ""
         
+        path_keys = []
+        curr = item_id
+        while curr:
+            values = self.tree.item(curr, "values")
+            if values:
+                path_keys.insert(0, values[0])
+            curr = self.tree.parent(curr)
+            
+        if not path_keys: return ""
+        
+        # Lookup
+        node = self._all_actions
         try:
-            # Use values if available (raw keys)
-            values = self.tree.item(item_id, "values")
-            item_text = values[0] if values else strip_icon(self.tree.item(item_id, "text"))
+            for k in path_keys:
+                node = node.get(k, {})
+        except:
+            return ""
+
+        if "action" in node:
+            return node["action"].get("explanation", "")
             
-            parent_id = self.tree.parent(item_id)
-            if not parent_id:
-                # Top-level resource
-                return f"Recurso: {item_text}"
-            
-            category_id = self.tree.parent(parent_id)
-            if not category_id:
-                # Category level
-                return f"Categoría: {item_text}"
-            
-            # Action level - get from _all_actions
-            # Get parent values safely
-            parent_values = self.tree.item(parent_id, "values")
-            category = parent_values[0] if parent_values else strip_icon(self.tree.item(parent_id, "text"))
-            
-            resource_values = self.tree.item(self.tree.parent(parent_id), "values")
-            resource = resource_values[0] if resource_values else strip_icon(self.tree.item(self.tree.parent(parent_id), "text"))
-            
-            action = item_text
-            
-            if hasattr(self, '_all_actions') and resource in self._all_actions:
-                if category in self._all_actions[resource]:
-                    if action in self._all_actions[resource][category]:
-                        action_data = self._all_actions[resource][category][action]
-                        return action_data.get("explanation", "Sin descripción disponible")
-            
-            return f"Acción: {action}"
-        except Exception as e:
-            return "Información no disponible"
-    
+        return f"Group: {' '.join(path_keys)}"
+
     def _on_mouse_motion(self, event):
         """Handle mouse motion over tree items."""
-        # Cancel any pending hover tooltip
         if self._hover_after_id:
             self.after_cancel(self._hover_after_id)
             self._hover_after_id = None
         
-        # Close existing hover tooltip
         if self._hover_tooltip:
             self._hover_tooltip.destroy()
             self._hover_tooltip = None
         
-        # Get item under cursor
         item_id = self.tree.identify_row(event.y)
-        if not item_id:
-            return
+        if not item_id: return
         
-        # Schedule tooltip to appear after delay (500ms)
         self._hover_after_id = self.after(
             500,
             lambda: self._show_hover_tooltip(item_id, event.x_root, event.y_root)
         )
     
     def _show_hover_tooltip(self, item_id: str, x: int, y: int):
-        """Show hover tooltip for an item."""
-        if self._pinned_tooltip:
-            # Don't show hover tooltip if there's a pinned one
-            return
+        if self._pinned_tooltip: return
         
         description = self._get_item_description(item_id)
         if description:
@@ -281,16 +332,12 @@ class ActionsTreePanel(ttk.Frame):
             )
     
     def _on_right_click(self, event):
-        """Handle right-click to pin tooltip."""
-        # Close existing pinned tooltip
         if self._pinned_tooltip:
             self._pinned_tooltip.destroy()
             self._pinned_tooltip = None
         
-        # Get item under cursor
         item_id = self.tree.identify_row(event.y)
-        if not item_id:
-            return
+        if not item_id: return
         
         description = self._get_item_description(item_id)
         if description:
@@ -303,13 +350,17 @@ class ActionsTreePanel(ttk.Frame):
             )
     
     def _on_mouse_leave(self, event):
-        """Clean up tooltips when mouse leaves tree."""
-        # Cancel pending hover
         if self._hover_after_id:
             self.after_cancel(self._hover_after_id)
             self._hover_after_id = None
-        
-        # Close hover tooltip
         if self._hover_tooltip:
             self._hover_tooltip.destroy()
             self._hover_tooltip = None
+    
+    def _on_tree_open(self, event=None):
+        item_id = self.tree.focus()
+        if item_id: self._expanded_items.add(item_id)
+    
+    def _on_tree_close(self, event=None):
+        item_id = self.tree.focus()
+        if item_id: self._expanded_items.discard(item_id)

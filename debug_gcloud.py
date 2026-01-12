@@ -30,7 +30,7 @@ def find_command(node, path_suffix):
     return None
 
 def main():
-    json_path = "data/web-gcloud/storage/storage_command.json"
+    json_path = "data/webscrap/landing/storage/storage_command.json"
     if not os.path.exists(json_path):
         print(f"File not found: {json_path}")
         return

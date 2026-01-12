@@ -18,7 +18,7 @@ class GCPKnowledgeUpdater():
     BASE_URL = "https://cloud.google.com/sdk/gcloud/reference"
     SDK_RELATIVE_URL = "/sdk/gcloud/reference/"
     PLUGINS_DIR = "data/plugins"
-    DATA_DIR = "data/web-gcloud"
+    DATA_DIR = "data/webscrap/landing"
 
     def __init__(self, recursion_level_limit: int=1):
         self.recursion_level_limit = recursion_level_limit

@@ -12,7 +12,7 @@ Both implementations produce **identical JSON structure** for the main service f
 
 ### File Location
 ```
-data/web-gcloud/{service_name}/{service_name}_command.json
+data/webscrap/landing/{service_name}/{service_name}_command.json
 ```
 
 ### Complete JSON Schema
@@ -396,7 +396,7 @@ for dt in section_dl.find_all("dt", id=True):  # Gets all matches
 | Field types | ✅ Identical | String/Dict types match |
 | JSON formatting | ✅ Identical | indent=2, UTF-8, no ASCII escape |
 | File naming | ✅ Identical | `{service}_command.json` |
-| Directory structure | ✅ Identical | `data/web-gcloud/{service}/` |
+| Directory structure | ✅ Identical | `data/webscrap/landing/{service}/` |
 | SHA256 algorithm | ✅ Identical | Same hash formula |
 | Flag structure | ✅ Identical | content+description dict |
 | Unprocessed format | ✅ Enhanced | Additional metadata fields |

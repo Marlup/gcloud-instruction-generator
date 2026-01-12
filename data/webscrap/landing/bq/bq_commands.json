@@ -1,0 +1,177 @@
+[
+  {
+    "id": "bq",
+    "service": "bq",
+    "type": "group",
+    "path": [
+      "bq"
+    ],
+    "command_path": "gcloud bq",
+    "service_name": "bq",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/bq",
+    "description": "Manage Bq resources.",
+    "command_synopsis": "gcloud bq GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "03af40fb81fe8675b12310eabdbc0fddb2b7a8d569dc54f84fbd6ad484922296",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "bq.migration-workflows",
+    "service": "bq",
+    "type": "group",
+    "path": [
+      "bq",
+      "migration-workflows"
+    ],
+    "command_path": "gcloud bq migration-workflows",
+    "service_name": "bq",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/bq/migration-workflows",
+    "description": "Manage Migration Workflow resources.",
+    "command_synopsis": "gcloud bq migration-workflows COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4acc394026d5beb55a3b76b4d2e500cb8049b3ac09171c6a92f0407ca7851e12",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "bq.migration-workflows.create",
+    "service": "bq",
+    "type": "group",
+    "path": [
+      "bq",
+      "migration-workflows",
+      "create"
+    ],
+    "command_path": "gcloud bq migration-workflows create",
+    "service_name": "bq",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/bq/migration-workflows/create",
+    "description": "Create a migration workflow",
+    "command_synopsis": "gcloud bq migration-workflows create --config-file=CONFIG_FILE --location=LOCATION [--async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8ad74ec8f7499c544b2211d385d7164edae555681ab71eb0d3afe20b4dbd604c",
+    "positional_args": {},
+    "required_flags": {
+      "config-file": {
+        "content": "--config-file=CONFIG_FILE",
+        "description": "Path to the migration workflows config file."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Location of the migration workflow."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "bq.migration-workflows.delete",
+    "service": "bq",
+    "type": "command",
+    "path": [
+      "bq",
+      "migration-workflows",
+      "delete"
+    ],
+    "command_path": "gcloud bq migration-workflows delete",
+    "service_name": "bq",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/bq/migration-workflows/delete",
+    "description": "Delete a migration workflow",
+    "command_synopsis": "gcloud bq migration-workflows delete (WORKFLOW : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8ad74ec8f7499c544b2211d385d7164edae555681ab71eb0d3afe20b4dbd604c",
+    "positional_args": {
+      "WORKFLOW": {
+        "content": "WORKFLOW",
+        "description": "ID of the workflow or fully qualified identifier for the workflow.To set theworkflowattribute:provide the argumentworkflowon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location id of the workflow resource.To set thelocationattribute:provide the argumentworkflowon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "bq.migration-workflows.describe",
+    "service": "bq",
+    "type": "command",
+    "path": [
+      "bq",
+      "migration-workflows",
+      "describe"
+    ],
+    "command_path": "gcloud bq migration-workflows describe",
+    "service_name": "bq",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/bq/migration-workflows/describe",
+    "description": "Describe a migration workflow",
+    "command_synopsis": "gcloud bq migration-workflows describe (WORKFLOW : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8ad74ec8f7499c544b2211d385d7164edae555681ab71eb0d3afe20b4dbd604c",
+    "positional_args": {
+      "WORKFLOW": {
+        "content": "WORKFLOW",
+        "description": "ID of the workflow or fully qualified identifier for the workflow.To set theworkflowattribute:provide the argumentworkflowon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location id of the workflow resource.To set thelocationattribute:provide the argumentworkflowon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "bq.migration-workflows.list",
+    "service": "bq",
+    "type": "command",
+    "path": [
+      "bq",
+      "migration-workflows",
+      "list"
+    ],
+    "command_path": "gcloud bq migration-workflows list",
+    "service_name": "bq",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/bq/migration-workflows/list",
+    "description": "List migration workflows",
+    "command_synopsis": "gcloud bq migration-workflows list --location=LOCATION [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8ad74ec8f7499c544b2211d385d7164edae555681ab71eb0d3afe20b4dbd604c",
+    "positional_args": {},
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  }
+]

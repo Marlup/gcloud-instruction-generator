@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "scheduler",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler"
+    ],
+    "command_path": "gcloud scheduler",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler",
+    "description": "Manage Cloud Scheduler jobs and schedules.",
+    "command_synopsis": "gcloud scheduler GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "36d927d364935fcffb1a04674a38f287b7353aef77ff8e5ff35e02a5b36a3ef1",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.cmek-config",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "cmek-config"
+    ],
+    "command_path": "gcloud scheduler cmek-config",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/cmek-config",
+    "description": "Manage CMEK configuration for Cloud Scheduler.",
+    "command_synopsis": "gcloud scheduler cmek-config COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "5fe747f02fe5da40b205c30f2f9f5ea3bafd6e24f4588aea745690f6901e028f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.cmek-config.describe",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "cmek-config",
+      "describe"
+    ],
+    "command_path": "gcloud scheduler cmek-config describe",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/cmek-config/describe",
+    "description": "Get CMEK configuration for Cloud Scheduler in the specified location.",
+    "command_synopsis": "gcloud scheduler cmek-config describe --location=LOCATION [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {},
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Google Cloud location for the KMS key."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.cmek-config.update",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "cmek-config",
+      "update"
+    ],
+    "command_path": "gcloud scheduler cmek-config update",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/cmek-config/update",
+    "description": "Update CMEK configuration for Cloud Scheduler in the specified location.",
+    "command_synopsis": "gcloud scheduler cmek-config update [--location=LOCATION] [--clear-kms-key     | [--kms-key-name=KMS_KEY_NAME : --kms-keyring=KMS_KEYRING --kms-project=KMS_PROJECT]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Google Cloud location for the KMS key."
+      },
+      "clear-kms-key": {
+        "content": "--clear-kms-key",
+        "description": "Disables CMEK for Cloud Scheduler in the specified location by clearing the\nCloud KMS cryptokey from the Cloud Scheduler project and CMEK configuration."
+      },
+      "kms-key-name": {
+        "content": "--kms-key-name=KMS_KEY_NAME",
+        "description": "Fully qualified identifier for the key or just the key ID. The latter requires\nthat the --kms-keyring and --kms-project flags be provided too.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kms-keyring": {
+        "content": "--kms-keyring=KMS_KEYRING",
+        "description": "KMS keyring of the KMS key."
+      },
+      "kms-project": {
+        "content": "--kms-project=KMS_PROJECT",
+        "description": "Google Cloud project for the KMS key."
+      }
+    }
+  },
+  {
+    "id": "scheduler.jobs.create",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "jobs",
+      "create"
+    ],
+    "command_path": "gcloud scheduler jobs create",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/create",
+    "description": "Create Cloud Scheduler jobs for various types of targets.",
+    "command_synopsis": "gcloud scheduler jobs create COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "48fc77faa1419d0afbf913a5f7d3138b6d48de15e63929ac3721e8e9508eda2f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "jobs"
+    ],
+    "command_path": "gcloud scheduler jobs",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs",
+    "description": "Manage Cloud Scheduler jobs.",
+    "command_synopsis": "gcloud scheduler jobs GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "44a6d70d59b248d525e88197197956b285225ab17a7a5186025186d4ed35efed",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.create.app-engine",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "create",
+      "app-engine"
+    ],
+    "command_path": "gcloud scheduler jobs create app-engine",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/create/app-engine",
+    "description": "Create a Cloud Scheduler job with an App Engine target.",
+    "command_synopsis": "gcloud scheduler jobs create app-engine (JOB : --location=LOCATION) --schedule=SCHEDULE [--attempt-deadline=ATTEMPT_DEADLINE] [--description=DESCRIPTION] [--headers=[KEY=VALUE,…]] [--http-method=HTTP_METHOD; default=\"post\"] [--max-backoff=MAX_BACKOFF; default=\"3600s\"] [--max-doublings=MAX_DOUBLINGS; default=5] [--max-retry-attempts=MAX_RETRY_ATTEMPTS] [--max-retry-duration=MAX_RETRY_DURATION] [--min-backoff=MIN_BACKOFF; default=\"5s\"] [--relative-url=RELATIVE_URL; default=\"/\"] [--service=SERVICE] [--time-zone=TIME_ZONE; default=\"Etc/UTC\"] [--version=VERSION] [--message-body=MESSAGE_BODY     | --message-body-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {
+      "schedule": {
+        "content": "--schedule=SCHEDULE",
+        "description": "Schedule on which the job will be executed.As a general rule, executionn + 1of a job will not begin until\nexecutionnhas finished. Cloud Scheduler will never allow two\nsimultaneously outstanding executions. For example, this implies that if then+1execution is scheduled to run at16:00but thenexecution takes until16:15, then+1execution will not start until16:15. A scheduled start time will\nbe delayed if the previous execution has not ended when its scheduled time\noccurs. Learn more about thecron\njob format.If--retry-count> 0 and a job attempt fails, the job will be\ntried a total of--retry-counttimes, with exponential backoff,\nuntil the job succeeds or the number of retries is exhausted. Note that the next\nscheduled execution time might be skipped if the retries continue through that\ntime. For more information, seeRetry\njobs."
+      }
+    },
+    "optional_flags": {
+      "attempt-deadline": {
+        "content": "--attempt-deadline=ATTEMPT_DEADLINE",
+        "description": "The deadline for job attempts. If the request handler doesn't respond by this\ndealine, the request is cancelled and the attempt is marked as failed. For\nexample, 20s."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Human-readable description of the job."
+      },
+      "headers": {
+        "content": "--headers=[KEY=VALUE,…]",
+        "description": "KEY=VALUE pairs of HTTP headers to include in the request.Cannot be\nrepeated. For example:--headers\nAccept-Language=en-us,Accept=text/plain"
+      },
+      "http-method": {
+        "content": "--http-method=HTTP_METHOD; default=\"post\"",
+        "description": "HTTP method to use for the request.HTTP_METHODmust be\none of:delete,get,head,post,put."
+      },
+      "max-backoff": {
+        "content": "--max-backoff=MAX_BACKOFF; default=\"3600s\"",
+        "description": "Maximum amount of time to wait before retrying a job after it fails. For\nexample,60s. Default is3600s(1 hour)."
+      },
+      "max-doublings": {
+        "content": "--max-doublings=MAX_DOUBLINGS; default=5",
+        "description": "Maximum number of times that the interval between failed job retries will be\ndoubled before the increase becomes constant."
+      },
+      "max-retry-attempts": {
+        "content": "--max-retry-attempts=MAX_RETRY_ATTEMPTS",
+        "description": "Number of times to retry the request if it fails or times out. Must be in range\n0-5 inclusive. Default is 0."
+      },
+      "max-retry-duration": {
+        "content": "--max-retry-duration=MAX_RETRY_DURATION",
+        "description": "Time limit for retrying a failed job, measured from when the job was first run.\nIf specified with--max-retry-attemptsgreater than 0, the job will\nbe retried until both limits are reached. Default is 0 seconds (which means\nunlimited); however, if--max-retry-attemptsis also 0, a job\nattempt won't be retried if it fails."
+      },
+      "min-backoff": {
+        "content": "--min-backoff=MIN_BACKOFF; default=\"5s\"",
+        "description": "Minimum amount of time to wait before retrying a job after it fails. For\nexample,10s. Default is5s."
+      },
+      "relative-url": {
+        "content": "--relative-url=RELATIVE_URL; default=\"/\"",
+        "description": "Relative URL to use for the request (beginning with \"/\")."
+      },
+      "service": {
+        "content": "--service=SERVICE",
+        "description": "ID of the App Engine service to send the request to."
+      },
+      "time-zone": {
+        "content": "--time-zone=TIME_ZONE; default=\"Etc/UTC\"",
+        "description": "Specifies the time zone to be used in interpreting --schedule. The value of this\nfield must be a time zone name from the tz database\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Note that some time zones include a provision for daylight savings time. The\nrules for daylight saving time are determined by the chosen time zone.For UTC use the string \"utc\". Default is \"utc\"."
+      },
+      "version": {
+        "content": "--version=VERSION",
+        "description": "Version of the App Engine service to send the request to."
+      },
+      "message-body": {
+        "content": "--message-body=MESSAGE_BODY",
+        "description": "Data payload to be included as the body of the HTTP request. May only be given\nwith compatible HTTP methods (PUT or POST)."
+      },
+      "message-body-from-file": {
+        "content": "--message-body-from-file=PATH_TO_FILE",
+        "description": "Path to file containing the data payload to be included as the body of the HTTP\nrequest. May only be given with compatible HTTP methods (PUT or POST). Use a\nfull or relative path to a local file containing the value of message_body."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.create.pubsub",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "create",
+      "pubsub"
+    ],
+    "command_path": "gcloud scheduler jobs create pubsub",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/create/pubsub",
+    "description": "Create a Cloud Scheduler job with a Pub/Sub target.",
+    "command_synopsis": "gcloud scheduler jobs create pubsub (JOB : --location=LOCATION) --schedule=SCHEDULE --topic=TOPIC (--attributes=ATTRIBUTES --message-body=MESSAGE_BODY     | --message-body-from-file=PATH_TO_FILE) [--description=DESCRIPTION] [--max-backoff=MAX_BACKOFF; default=\"3600s\"] [--max-doublings=MAX_DOUBLINGS; default=5] [--max-retry-attempts=MAX_RETRY_ATTEMPTS] [--max-retry-duration=MAX_RETRY_DURATION] [--min-backoff=MIN_BACKOFF; default=\"5s\"] [--time-zone=TIME_ZONE; default=\"Etc/UTC\"] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {
+      "schedule": {
+        "content": "--schedule=SCHEDULE",
+        "description": "Schedule on which the job will be executed.As a general rule, executionn + 1of a job will not begin until\nexecutionnhas finished. Cloud Scheduler will never allow two\nsimultaneously outstanding executions. For example, this implies that if then+1execution is scheduled to run at16:00but thenexecution takes until16:15, then+1execution will not start until16:15. A scheduled start time will\nbe delayed if the previous execution has not ended when its scheduled time\noccurs. Learn more about thecron\njob format.If--retry-count> 0 and a job attempt fails, the job will be\ntried a total of--retry-counttimes, with exponential backoff,\nuntil the job succeeds or the number of retries is exhausted. Note that the next\nscheduled execution time might be skipped if the retries continue through that\ntime. For more information, seeRetry\njobs."
+      },
+      "topic": {
+        "content": "--topic=TOPIC",
+        "description": "Name of the Google Cloud Pub/Sub topic to publish to when the job runs."
+      },
+      "attributes": {
+        "content": "--attributes=ATTRIBUTES",
+        "description": "Comma-separated list of attributes. Each attribute has the form \"NAME=VALUE\".\nYou can specify up to 100 attributes."
+      },
+      "message-body": {
+        "content": "--message-body=MESSAGE_BODY",
+        "description": "Body of the message."
+      },
+      "message-body-from-file": {
+        "content": "--message-body-from-file=PATH_TO_FILE",
+        "description": "Path to a file containing the body of the message. Use a full or relative path\nto a local file containing the value of message_body."
+      }
+    },
+    "optional_flags": {
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Human-readable description of the job."
+      },
+      "max-backoff": {
+        "content": "--max-backoff=MAX_BACKOFF; default=\"3600s\"",
+        "description": "Maximum amount of time to wait before retrying a job after it fails. For\nexample,60s. Default is3600s(1 hour)."
+      },
+      "max-doublings": {
+        "content": "--max-doublings=MAX_DOUBLINGS; default=5",
+        "description": "Maximum number of times that the interval between failed job retries will be\ndoubled before the increase becomes constant."
+      },
+      "max-retry-attempts": {
+        "content": "--max-retry-attempts=MAX_RETRY_ATTEMPTS",
+        "description": "Number of times to retry the request if it fails or times out. Must be in range\n0-5 inclusive. Default is 0."
+      },
+      "max-retry-duration": {
+        "content": "--max-retry-duration=MAX_RETRY_DURATION",
+        "description": "Time limit for retrying a failed job, measured from when the job was first run.\nIf specified with--max-retry-attemptsgreater than 0, the job will\nbe retried until both limits are reached. Default is 0 seconds (which means\nunlimited); however, if--max-retry-attemptsis also 0, a job\nattempt won't be retried if it fails."
+      },
+      "min-backoff": {
+        "content": "--min-backoff=MIN_BACKOFF; default=\"5s\"",
+        "description": "Minimum amount of time to wait before retrying a job after it fails. For\nexample,10s. Default is5s."
+      },
+      "time-zone": {
+        "content": "--time-zone=TIME_ZONE; default=\"Etc/UTC\"",
+        "description": "Specifies the time zone to be used in interpreting --schedule. The value of this\nfield must be a time zone name from the tz database\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Note that some time zones include a provision for daylight savings time. The\nrules for daylight saving time are determined by the chosen time zone.For UTC use the string \"utc\". Default is \"utc\"."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.create.http",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "create",
+      "http"
+    ],
+    "command_path": "gcloud scheduler jobs create http",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/create/http",
+    "description": "Create a Cloud Scheduler job that triggers an action via HTTP.",
+    "command_synopsis": "gcloud scheduler jobs create http (JOB : --location=LOCATION) --schedule=SCHEDULE --uri=URI [--attempt-deadline=ATTEMPT_DEADLINE] [--description=DESCRIPTION] [--headers=[KEY=VALUE,…]] [--http-method=HTTP_METHOD; default=\"post\"] [--max-backoff=MAX_BACKOFF; default=\"3600s\"] [--max-doublings=MAX_DOUBLINGS; default=5] [--max-retry-attempts=MAX_RETRY_ATTEMPTS] [--max-retry-duration=MAX_RETRY_DURATION] [--min-backoff=MIN_BACKOFF; default=\"5s\"] [--time-zone=TIME_ZONE; default=\"Etc/UTC\"] [--message-body=MESSAGE_BODY     | --message-body-from-file=PATH_TO_FILE] [[--oauth-service-account-email=OAUTH_SERVICE_ACCOUNT_EMAIL : --oauth-token-scope=OAUTH_TOKEN_SCOPE]     | [--oidc-service-account-email=OIDC_SERVICE_ACCOUNT_EMAIL : --oidc-token-audience=OIDC_TOKEN_AUDIENCE]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {
+      "schedule": {
+        "content": "--schedule=SCHEDULE",
+        "description": "Schedule on which the job will be executed.As a general rule, executionn + 1of a job will not begin until\nexecutionnhas finished. Cloud Scheduler will never allow two\nsimultaneously outstanding executions. For example, this implies that if then+1execution is scheduled to run at16:00but thenexecution takes until16:15, then+1execution will not start until16:15. A scheduled start time will\nbe delayed if the previous execution has not ended when its scheduled time\noccurs. Learn more about thecron\njob format.If--retry-count> 0 and a job attempt fails, the job will be\ntried a total of--retry-counttimes, with exponential backoff,\nuntil the job succeeds or the number of retries is exhausted. Note that the next\nscheduled execution time might be skipped if the retries continue through that\ntime. For more information, seeRetry\njobs."
+      },
+      "uri": {
+        "content": "--uri=URI",
+        "description": "The full URI path that the request will be sent to. This string must begin with\neither \"http://\" or \"https://\". For example,http://acme.comorhttps://acme.com/sales:8080. Cloud Scheduler will encode some\ncharacters for safety and compatibility. The maximum allowed URL length is 2083\ncharacters after encoding."
+      }
+    },
+    "optional_flags": {
+      "attempt-deadline": {
+        "content": "--attempt-deadline=ATTEMPT_DEADLINE",
+        "description": "The deadline for job attempts. If the request handler doesn't respond by this\ndealine, the request is cancelled and the attempt is marked as failed. For\nexample, 20s."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Human-readable description of the job."
+      },
+      "headers": {
+        "content": "--headers=[KEY=VALUE,…]",
+        "description": "KEY=VALUE pairs of HTTP headers to include in the request.Cannot be\nrepeated. For example:--headers\nAccept-Language=en-us,Accept=text/plain"
+      },
+      "http-method": {
+        "content": "--http-method=HTTP_METHOD; default=\"post\"",
+        "description": "HTTP method to use for the request.HTTP_METHODmust be\none of:delete,get,head,post,put."
+      },
+      "max-backoff": {
+        "content": "--max-backoff=MAX_BACKOFF; default=\"3600s\"",
+        "description": "Maximum amount of time to wait before retrying a job after it fails. For\nexample,60s. Default is3600s(1 hour)."
+      },
+      "max-doublings": {
+        "content": "--max-doublings=MAX_DOUBLINGS; default=5",
+        "description": "Maximum number of times that the interval between failed job retries will be\ndoubled before the increase becomes constant."
+      },
+      "max-retry-attempts": {
+        "content": "--max-retry-attempts=MAX_RETRY_ATTEMPTS",
+        "description": "Number of times to retry the request if it fails or times out. Must be in range\n0-5 inclusive. Default is 0."
+      },
+      "max-retry-duration": {
+        "content": "--max-retry-duration=MAX_RETRY_DURATION",
+        "description": "Time limit for retrying a failed job, measured from when the job was first run.\nIf specified with--max-retry-attemptsgreater than 0, the job will\nbe retried until both limits are reached. Default is 0 seconds (which means\nunlimited); however, if--max-retry-attemptsis also 0, a job\nattempt won't be retried if it fails."
+      },
+      "min-backoff": {
+        "content": "--min-backoff=MIN_BACKOFF; default=\"5s\"",
+        "description": "Minimum amount of time to wait before retrying a job after it fails. For\nexample,10s. Default is5s."
+      },
+      "time-zone": {
+        "content": "--time-zone=TIME_ZONE; default=\"Etc/UTC\"",
+        "description": "Specifies the time zone to be used in interpreting --schedule. The value of this\nfield must be a time zone name from the tz database\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Note that some time zones include a provision for daylight savings time. The\nrules for daylight saving time are determined by the chosen time zone.For UTC use the string \"utc\". Default is \"utc\"."
+      },
+      "message-body": {
+        "content": "--message-body=MESSAGE_BODY",
+        "description": "Data payload to be included as the body of the HTTP request. May only be given\nwith compatible HTTP methods (PUT or POST)."
+      },
+      "message-body-from-file": {
+        "content": "--message-body-from-file=PATH_TO_FILE",
+        "description": "Path to file containing the data payload to be included as the body of the HTTP\nrequest. May only be given with compatible HTTP methods (PUT or POST). Use a\nfull or relative path to a local file containing the value of message_body."
+      },
+      "oauth-service-account-email": {
+        "content": "--oauth-service-account-email=OAUTH_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to be used for generating an OAuth2 access token to be\nincluded in the request sent to the target when executing the job. The service\naccount must be within the same project as the job. The caller must have\niam.serviceAccounts.actAs permission for the service account. The token must be\nOAuth if the target is a Google APIs service with URL*.googleapis.com.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "oauth-token-scope": {
+        "content": "--oauth-token-scope=OAUTH_TOKEN_SCOPE",
+        "description": "The scope to be used when generating an OAuth2 access token to be included in\nthe request sent to the target when executing the job. If not specified,\n\"https://www.googleapis.com/auth/cloud-platform\" will be used."
+      },
+      "oidc-service-account-email": {
+        "content": "--oidc-service-account-email=OIDC_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to be used for generating an OpenId Connect token to\nbe included in the request sent to the target when executing the job. The\nservice account must be within the same project as the job. The caller must have\niam.serviceAccounts.actAs permission for the service account. The OIDC token is\ngenerally usedexceptfor Google APIs hosted on*.googleapis.com: these APIs expect an OAuth token.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "oidc-token-audience": {
+        "content": "--oidc-token-audience=OIDC_TOKEN_AUDIENCE",
+        "description": "The audience to be used when generating an OpenId Connect token to be included\nin the request sent to the target when executing the job. If not specified, the\nURI specified in target will be used."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.delete",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "delete"
+    ],
+    "command_path": "gcloud scheduler jobs delete",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/delete",
+    "description": "Delete a job.",
+    "command_synopsis": "gcloud scheduler jobs delete (JOB : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.describe",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "describe"
+    ],
+    "command_path": "gcloud scheduler jobs describe",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/describe",
+    "description": "Show details about a job.",
+    "command_synopsis": "gcloud scheduler jobs describe (JOB : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.list",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "list"
+    ],
+    "command_path": "gcloud scheduler jobs list",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/list",
+    "description": "List jobs.",
+    "command_synopsis": "gcloud scheduler jobs list [--location=LOCATION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    }
+  },
+  {
+    "id": "scheduler.jobs.pause",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "pause"
+    ],
+    "command_path": "gcloud scheduler jobs pause",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/pause",
+    "description": "Pause the execution of a job.",
+    "command_synopsis": "gcloud scheduler jobs pause (JOB : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.resume",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "resume"
+    ],
+    "command_path": "gcloud scheduler jobs resume",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/resume",
+    "description": "Resume execution of a paused job.",
+    "command_synopsis": "gcloud scheduler jobs resume (JOB : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.run",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "run"
+    ],
+    "command_path": "gcloud scheduler jobs run",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/run",
+    "description": "Trigger an on-demand execution of a job.",
+    "command_synopsis": "gcloud scheduler jobs run (JOB : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.update",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "jobs",
+      "update"
+    ],
+    "command_path": "gcloud scheduler jobs update",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/update",
+    "description": "Update Cloud Scheduler jobs for various types of targets.",
+    "command_synopsis": "gcloud scheduler jobs update COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "48fc77faa1419d0afbf913a5f7d3138b6d48de15e63929ac3721e8e9508eda2f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.jobs.update.app-engine",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "update",
+      "app-engine"
+    ],
+    "command_path": "gcloud scheduler jobs update app-engine",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/update/app-engine",
+    "description": "Update a Cloud Scheduler job with an App Engine target.",
+    "command_synopsis": "gcloud scheduler jobs update app-engine (JOB : --location=LOCATION) [--attempt-deadline=ATTEMPT_DEADLINE] [--description=DESCRIPTION] [--http-method=HTTP_METHOD; default=\"post\"] [--schedule=SCHEDULE] [--version=VERSION] [--clear-headers     | --remove-headers=[REMOVE_HEADERS,…] --update-headers=[KEY=VALUE,…]] [--clear-max-backoff     | --max-backoff=MAX_BACKOFF; default=\"3600s\"] [--clear-max-doublings     | --max-doublings=MAX_DOUBLINGS; default=5] [--clear-max-retry-attempts     | --max-retry-attempts=MAX_RETRY_ATTEMPTS] [--clear-max-retry-duration     | --max-retry-duration=MAX_RETRY_DURATION] [--clear-message-body     | --message-body=MESSAGE_BODY     | --message-body-from-file=PATH_TO_FILE] [--clear-min-backoff     | --min-backoff=MIN_BACKOFF; default=\"5s\"] [--clear-relative-url     | --relative-url=RELATIVE_URL; default=\"/\"] [--clear-service     | --service=SERVICE; default=\"default\"] [--clear-time-zone     | --time-zone=TIME_ZONE; default=\"Etc/UTC\"] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "attempt-deadline": {
+        "content": "--attempt-deadline=ATTEMPT_DEADLINE",
+        "description": "The deadline for job attempts. If the request handler doesn't respond by this\ndealine, the request is cancelled and the attempt is marked as failed. For\nexample, 20s."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Human-readable description of the job."
+      },
+      "http-method": {
+        "content": "--http-method=HTTP_METHOD; default=\"post\"",
+        "description": "HTTP method to use for the request.HTTP_METHODmust be\none of:delete,get,head,post,put."
+      },
+      "schedule": {
+        "content": "--schedule=SCHEDULE",
+        "description": "Schedule on which the job will be executed.As a general rule, executionn + 1of a job will not begin until\nexecutionnhas finished. Cloud Scheduler will never allow two\nsimultaneously outstanding executions. For example, this implies that if then+1execution is scheduled to run at16:00but thenexecution takes until16:15, then+1execution will not start until16:15. A scheduled start time will\nbe delayed if the previous execution has not ended when its scheduled time\noccurs. Learn more about thecron\njob format.If--retry-count> 0 and a job attempt fails, the job will be\ntried a total of--retry-counttimes, with exponential backoff,\nuntil the job succeeds or the number of retries is exhausted. Note that the next\nscheduled execution time might be skipped if the retries continue through that\ntime. For more information, seeRetry\njobs."
+      },
+      "version": {
+        "content": "--version=VERSION",
+        "description": "Version of the App Engine service to send the request to."
+      },
+      "clear-headers": {
+        "content": "--clear-headers",
+        "description": "Clear the list of HTTP headers."
+      },
+      "remove-headers": {
+        "content": "--remove-headers=[REMOVE_HEADERS,…]",
+        "description": "KEY1,KEY2 list of HTTP headers to remove from the request.--remove-headers Accept-Language,Accept"
+      },
+      "update-headers": {
+        "content": "--update-headers=[KEY=VALUE,…]",
+        "description": "KEY=VALUE pairs of HTTP headers to include in the request.Cannot be\nrepeated. For example:--update-headers\nAccept-Language=en-us,Accept=text/plain"
+      },
+      "clear-max-backoff": {
+        "content": "--clear-max-backoff",
+        "description": "Clear the field corresponding to--max-backoff."
+      },
+      "max-backoff": {
+        "content": "--max-backoff=MAX_BACKOFF; default=\"3600s\"",
+        "description": "Maximum amount of time to wait before retrying a job after it fails. For\nexample,60s. Default is3600s(1 hour)."
+      },
+      "clear-max-doublings": {
+        "content": "--clear-max-doublings",
+        "description": "Clear the field corresponding to--max-doublings."
+      },
+      "max-doublings": {
+        "content": "--max-doublings=MAX_DOUBLINGS; default=5",
+        "description": "Maximum number of times that the interval between failed job retries will be\ndoubled before the increase becomes constant."
+      },
+      "clear-max-retry-attempts": {
+        "content": "--clear-max-retry-attempts",
+        "description": "Clear the field corresponding to--max-retry-attempts."
+      },
+      "max-retry-attempts": {
+        "content": "--max-retry-attempts=MAX_RETRY_ATTEMPTS",
+        "description": "Number of times to retry the request if it fails or times out. Must be in range\n0-5 inclusive. Default is 0."
+      },
+      "clear-max-retry-duration": {
+        "content": "--clear-max-retry-duration",
+        "description": "Clear the field corresponding to--max-retry-duration."
+      },
+      "max-retry-duration": {
+        "content": "--max-retry-duration=MAX_RETRY_DURATION",
+        "description": "Time limit for retrying a failed job, measured from when the job was first run.\nIf specified with--max-retry-attemptsgreater than 0, the job will\nbe retried until both limits are reached. Default is 0 seconds (which means\nunlimited); however, if--max-retry-attemptsis also 0, a job\nattempt won't be retried if it fails."
+      },
+      "clear-message-body": {
+        "content": "--clear-message-body",
+        "description": "Clear the field corresponding to--message-bodyor--message-body-from-file."
+      },
+      "message-body": {
+        "content": "--message-body=MESSAGE_BODY",
+        "description": "Data payload to be included as the body of the HTTP request. May only be given\nwith compatible HTTP methods (PUT or POST)."
+      },
+      "message-body-from-file": {
+        "content": "--message-body-from-file=PATH_TO_FILE",
+        "description": "Path to file containing the data payload to be included as the body of the HTTP\nrequest. May only be given with compatible HTTP methods (PUT or POST). Use a\nfull or relative path to a local file containing the value of message_body."
+      },
+      "clear-min-backoff": {
+        "content": "--clear-min-backoff",
+        "description": "Clear the field corresponding to--min-backoff."
+      },
+      "min-backoff": {
+        "content": "--min-backoff=MIN_BACKOFF; default=\"5s\"",
+        "description": "Minimum amount of time to wait before retrying a job after it fails. For\nexample,10s. Default is5s."
+      },
+      "clear-relative-url": {
+        "content": "--clear-relative-url",
+        "description": "Clear the field corresponding to--relative-url."
+      },
+      "relative-url": {
+        "content": "--relative-url=RELATIVE_URL; default=\"/\"",
+        "description": "Relative URL to use for the request (beginning with \"/\")."
+      },
+      "clear-service": {
+        "content": "--clear-service",
+        "description": "Clear the field corresponding to--service."
+      },
+      "service": {
+        "content": "--service=SERVICE; default=\"default\"",
+        "description": "ID of the App Engine service to send the request to."
+      },
+      "clear-time-zone": {
+        "content": "--clear-time-zone",
+        "description": "Clear the field corresponding to--time-zone."
+      },
+      "time-zone": {
+        "content": "--time-zone=TIME_ZONE; default=\"Etc/UTC\"",
+        "description": "Specifies the time zone to be used in interpreting --schedule. The value of this\nfield must be a time zone name from the tz database\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Note that some time zones include a provision for daylight savings time. The\nrules for daylight saving time are determined by the chosen time zone.For UTC use the string \"utc\". Default is \"utc\"."
+      }
+    }
+  },
+  {
+    "id": "scheduler.jobs.update.http",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "update",
+      "http"
+    ],
+    "command_path": "gcloud scheduler jobs update http",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/update/http",
+    "description": "Update a Cloud Scheduler job that triggers an action via HTTP.",
+    "command_synopsis": "gcloud scheduler jobs update http (JOB : --location=LOCATION) [--attempt-deadline=ATTEMPT_DEADLINE] [--description=DESCRIPTION] [--http-method=HTTP_METHOD; default=\"post\"] [--schedule=SCHEDULE] [--uri=URI] [--clear-auth-token     | [--oauth-service-account-email=OAUTH_SERVICE_ACCOUNT_EMAIL : --oauth-token-scope=OAUTH_TOKEN_SCOPE]     | [--oidc-service-account-email=OIDC_SERVICE_ACCOUNT_EMAIL : --oidc-token-audience=OIDC_TOKEN_AUDIENCE]] [--clear-headers     | --remove-headers=[REMOVE_HEADERS,…] --update-headers=[KEY=VALUE,…]] [--clear-max-backoff     | --max-backoff=MAX_BACKOFF; default=\"3600s\"] [--clear-max-doublings     | --max-doublings=MAX_DOUBLINGS; default=5] [--clear-max-retry-attempts     | --max-retry-attempts=MAX_RETRY_ATTEMPTS] [--clear-max-retry-duration     | --max-retry-duration=MAX_RETRY_DURATION] [--clear-message-body     | --message-body=MESSAGE_BODY     | --message-body-from-file=PATH_TO_FILE] [--clear-min-backoff     | --min-backoff=MIN_BACKOFF; default=\"5s\"] [--clear-time-zone     | --time-zone=TIME_ZONE; default=\"Etc/UTC\"] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "attempt-deadline": {
+        "content": "--attempt-deadline=ATTEMPT_DEADLINE",
+        "description": "The deadline for job attempts. If the request handler doesn't respond by this\ndealine, the request is cancelled and the attempt is marked as failed. For\nexample, 20s."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Human-readable description of the job."
+      },
+      "http-method": {
+        "content": "--http-method=HTTP_METHOD; default=\"post\"",
+        "description": "HTTP method to use for the request.HTTP_METHODmust be\none of:delete,get,head,post,put."
+      },
+      "schedule": {
+        "content": "--schedule=SCHEDULE",
+        "description": "Schedule on which the job will be executed.As a general rule, executionn + 1of a job will not begin until\nexecutionnhas finished. Cloud Scheduler will never allow two\nsimultaneously outstanding executions. For example, this implies that if then+1execution is scheduled to run at16:00but thenexecution takes until16:15, then+1execution will not start until16:15. A scheduled start time will\nbe delayed if the previous execution has not ended when its scheduled time\noccurs. Learn more about thecron\njob format.If--retry-count> 0 and a job attempt fails, the job will be\ntried a total of--retry-counttimes, with exponential backoff,\nuntil the job succeeds or the number of retries is exhausted. Note that the next\nscheduled execution time might be skipped if the retries continue through that\ntime. For more information, seeRetry\njobs."
+      },
+      "uri": {
+        "content": "--uri=URI",
+        "description": "The full URI path that the request will be sent to. This string must begin with\neither \"http://\" or \"https://\". For example,http://acme.comorhttps://acme.com/sales:8080. Cloud Scheduler will encode some\ncharacters for safety and compatibility. The maximum allowed URL length is 2083\ncharacters after encoding."
+      },
+      "clear-auth-token": {
+        "content": "--clear-auth-token",
+        "description": "Clear the auth token fields:--oidc-service-account-email,--oidc-token-audience,--oauth-service-account-email,\nand--oauth-token-scope."
+      },
+      "oauth-service-account-email": {
+        "content": "--oauth-service-account-email=OAUTH_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to be used for generating an OAuth2 access token to be\nincluded in the request sent to the target when executing the job. The service\naccount must be within the same project as the job. The caller must have\niam.serviceAccounts.actAs permission for the service account. The token must be\nOAuth if the target is a Google APIs service with URL*.googleapis.com.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "oauth-token-scope": {
+        "content": "--oauth-token-scope=OAUTH_TOKEN_SCOPE",
+        "description": "The scope to be used when generating an OAuth2 access token to be included in\nthe request sent to the target when executing the job. If not specified,\n\"https://www.googleapis.com/auth/cloud-platform\" will be used."
+      },
+      "oidc-service-account-email": {
+        "content": "--oidc-service-account-email=OIDC_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to be used for generating an OpenId Connect token to\nbe included in the request sent to the target when executing the job. The\nservice account must be within the same project as the job. The caller must have\niam.serviceAccounts.actAs permission for the service account. The OIDC token is\ngenerally usedexceptfor Google APIs hosted on*.googleapis.com: these APIs expect an OAuth token.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "oidc-token-audience": {
+        "content": "--oidc-token-audience=OIDC_TOKEN_AUDIENCE",
+        "description": "The audience to be used when generating an OpenId Connect token to be included\nin the request sent to the target when executing the job. If not specified, the\nURI specified in target will be used."
+      },
+      "clear-headers": {
+        "content": "--clear-headers",
+        "description": "Clear the list of HTTP headers."
+      },
+      "remove-headers": {
+        "content": "--remove-headers=[REMOVE_HEADERS,…]",
+        "description": "KEY1,KEY2 list of HTTP headers to remove from the request.--remove-headers Accept-Language,Accept"
+      },
+      "update-headers": {
+        "content": "--update-headers=[KEY=VALUE,…]",
+        "description": "KEY=VALUE pairs of HTTP headers to include in the request.Cannot be\nrepeated. For example:--update-headers\nAccept-Language=en-us,Accept=text/plain"
+      },
+      "clear-max-backoff": {
+        "content": "--clear-max-backoff",
+        "description": "Clear the field corresponding to--max-backoff."
+      },
+      "max-backoff": {
+        "content": "--max-backoff=MAX_BACKOFF; default=\"3600s\"",
+        "description": "Maximum amount of time to wait before retrying a job after it fails. For\nexample,60s. Default is3600s(1 hour)."
+      },
+      "clear-max-doublings": {
+        "content": "--clear-max-doublings",
+        "description": "Clear the field corresponding to--max-doublings."
+      },
+      "max-doublings": {
+        "content": "--max-doublings=MAX_DOUBLINGS; default=5",
+        "description": "Maximum number of times that the interval between failed job retries will be\ndoubled before the increase becomes constant."
+      },
+      "clear-max-retry-attempts": {
+        "content": "--clear-max-retry-attempts",
+        "description": "Clear the field corresponding to--max-retry-attempts."
+      },
+      "max-retry-attempts": {
+        "content": "--max-retry-attempts=MAX_RETRY_ATTEMPTS",
+        "description": "Number of times to retry the request if it fails or times out. Must be in range\n0-5 inclusive. Default is 0."
+      },
+      "clear-max-retry-duration": {
+        "content": "--clear-max-retry-duration",
+        "description": "Clear the field corresponding to--max-retry-duration."
+      },
+      "max-retry-duration": {
+        "content": "--max-retry-duration=MAX_RETRY_DURATION",
+        "description": "Time limit for retrying a failed job, measured from when the job was first run.\nIf specified with--max-retry-attemptsgreater than 0, the job will\nbe retried until both limits are reached. Default is 0 seconds (which means\nunlimited); however, if--max-retry-attemptsis also 0, a job\nattempt won't be retried if it fails."
+      },
+      "clear-message-body": {
+        "content": "--clear-message-body",
+        "description": "Clear the field corresponding to--message-bodyor--message-body-from-file."
+      },
+      "message-body": {
+        "content": "--message-body=MESSAGE_BODY",
+        "description": "Data payload to be included as the body of the HTTP request. May only be given\nwith compatible HTTP methods (PUT or POST)."
+      },
+      "message-body-from-file": {
+        "content": "--message-body-from-file=PATH_TO_FILE",
+        "description": "Path to file containing the data payload to be included as the body of the HTTP\nrequest. May only be given with compatible HTTP methods (PUT or POST). Use a\nfull or relative path to a local file containing the value of message_body."
+      },
+      "clear-min-backoff": {
+        "content": "--clear-min-backoff",
+        "description": "Clear the field corresponding to--min-backoff."
+      },
+      "min-backoff": {
+        "content": "--min-backoff=MIN_BACKOFF; default=\"5s\"",
+        "description": "Minimum amount of time to wait before retrying a job after it fails. For\nexample,10s. Default is5s."
+      },
+      "clear-time-zone": {
+        "content": "--clear-time-zone",
+        "description": "Clear the field corresponding to--time-zone."
+      },
+      "time-zone": {
+        "content": "--time-zone=TIME_ZONE; default=\"Etc/UTC\"",
+        "description": "Specifies the time zone to be used in interpreting --schedule. The value of this\nfield must be a time zone name from the tz database\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Note that some time zones include a provision for daylight savings time. The\nrules for daylight saving time are determined by the chosen time zone.For UTC use the string \"utc\". Default is \"utc\"."
+      }
+    }
+  },
+  {
+    "id": "scheduler.jobs.update.pubsub",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "jobs",
+      "update",
+      "pubsub"
+    ],
+    "command_path": "gcloud scheduler jobs update pubsub",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/update/pubsub",
+    "description": "Update a Cloud Scheduler job with a Pub/Sub target.",
+    "command_synopsis": "gcloud scheduler jobs update pubsub (JOB : --location=LOCATION) [--description=DESCRIPTION] [--schedule=SCHEDULE] [--topic=TOPIC] [--clear-attributes     | --remove-attributes=[REMOVE_ATTRIBUTES,…] --update-attributes=[KEY=VALUE,…]] [--clear-max-backoff     | --max-backoff=MAX_BACKOFF; default=\"3600s\"] [--clear-max-doublings     | --max-doublings=MAX_DOUBLINGS; default=5] [--clear-max-retry-attempts     | --max-retry-attempts=MAX_RETRY_ATTEMPTS] [--clear-max-retry-duration     | --max-retry-duration=MAX_RETRY_DURATION] [--clear-min-backoff     | --min-backoff=MIN_BACKOFF; default=\"5s\"] [--clear-time-zone     | --time-zone=TIME_ZONE; default=\"Etc/UTC\"] [--message-body=MESSAGE_BODY     | --message-body-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The location of the job. By default, uses the location of the current project's\nApp Engine app if there is an associated app.\nTo set thelocationattribute:provide the argumentjobon the command line with a fully specified\nname;provide the argument--locationon the command line;defaults to App Engine's app location if not provided & an app exists."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Human-readable description of the job."
+      },
+      "schedule": {
+        "content": "--schedule=SCHEDULE",
+        "description": "Schedule on which the job will be executed.As a general rule, executionn + 1of a job will not begin until\nexecutionnhas finished. Cloud Scheduler will never allow two\nsimultaneously outstanding executions. For example, this implies that if then+1execution is scheduled to run at16:00but thenexecution takes until16:15, then+1execution will not start until16:15. A scheduled start time will\nbe delayed if the previous execution has not ended when its scheduled time\noccurs. Learn more about thecron\njob format.If--retry-count> 0 and a job attempt fails, the job will be\ntried a total of--retry-counttimes, with exponential backoff,\nuntil the job succeeds or the number of retries is exhausted. Note that the next\nscheduled execution time might be skipped if the retries continue through that\ntime. For more information, seeRetry\njobs."
+      },
+      "topic": {
+        "content": "--topic=TOPIC",
+        "description": "Name of the Google Cloud Pub/Sub topic to publish to when the job runs."
+      },
+      "clear-attributes": {
+        "content": "--clear-attributes",
+        "description": "Clear the field corresponding to--attributes."
+      },
+      "remove-attributes": {
+        "content": "--remove-attributes=[REMOVE_ATTRIBUTES,…]",
+        "description": "Comma-separated list of attribute keys to remove with the form \"KEY1,KEY2\"."
+      },
+      "update-attributes": {
+        "content": "--update-attributes=[KEY=VALUE,…]",
+        "description": "Comma-separated list of attributes. Each attribute has the form \"NAME=VALUE\".\nYou can specify up to 100 attributes."
+      },
+      "clear-max-backoff": {
+        "content": "--clear-max-backoff",
+        "description": "Clear the field corresponding to--max-backoff."
+      },
+      "max-backoff": {
+        "content": "--max-backoff=MAX_BACKOFF; default=\"3600s\"",
+        "description": "Maximum amount of time to wait before retrying a job after it fails. For\nexample,60s. Default is3600s(1 hour)."
+      },
+      "clear-max-doublings": {
+        "content": "--clear-max-doublings",
+        "description": "Clear the field corresponding to--max-doublings."
+      },
+      "max-doublings": {
+        "content": "--max-doublings=MAX_DOUBLINGS; default=5",
+        "description": "Maximum number of times that the interval between failed job retries will be\ndoubled before the increase becomes constant."
+      },
+      "clear-max-retry-attempts": {
+        "content": "--clear-max-retry-attempts",
+        "description": "Clear the field corresponding to--max-retry-attempts."
+      },
+      "max-retry-attempts": {
+        "content": "--max-retry-attempts=MAX_RETRY_ATTEMPTS",
+        "description": "Number of times to retry the request if it fails or times out. Must be in range\n0-5 inclusive. Default is 0."
+      },
+      "clear-max-retry-duration": {
+        "content": "--clear-max-retry-duration",
+        "description": "Clear the field corresponding to--max-retry-duration."
+      },
+      "max-retry-duration": {
+        "content": "--max-retry-duration=MAX_RETRY_DURATION",
+        "description": "Time limit for retrying a failed job, measured from when the job was first run.\nIf specified with--max-retry-attemptsgreater than 0, the job will\nbe retried until both limits are reached. Default is 0 seconds (which means\nunlimited); however, if--max-retry-attemptsis also 0, a job\nattempt won't be retried if it fails."
+      },
+      "clear-min-backoff": {
+        "content": "--clear-min-backoff",
+        "description": "Clear the field corresponding to--min-backoff."
+      },
+      "min-backoff": {
+        "content": "--min-backoff=MIN_BACKOFF; default=\"5s\"",
+        "description": "Minimum amount of time to wait before retrying a job after it fails. For\nexample,10s. Default is5s."
+      },
+      "clear-time-zone": {
+        "content": "--clear-time-zone",
+        "description": "Clear the field corresponding to--time-zone."
+      },
+      "time-zone": {
+        "content": "--time-zone=TIME_ZONE; default=\"Etc/UTC\"",
+        "description": "Specifies the time zone to be used in interpreting --schedule. The value of this\nfield must be a time zone name from the tz database\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Note that some time zones include a provision for daylight savings time. The\nrules for daylight saving time are determined by the chosen time zone.For UTC use the string \"utc\". Default is \"utc\"."
+      },
+      "message-body": {
+        "content": "--message-body=MESSAGE_BODY",
+        "description": "Body of the message."
+      },
+      "message-body-from-file": {
+        "content": "--message-body-from-file=PATH_TO_FILE",
+        "description": "Path to a file containing the body of the message. Use a full or relative path\nto a local file containing the value of message_body."
+      }
+    }
+  },
+  {
+    "id": "scheduler.locations",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "locations"
+    ],
+    "command_path": "gcloud scheduler locations",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/locations",
+    "description": "Get information about Cloud Scheduler locations.",
+    "command_synopsis": "gcloud scheduler locations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "275bdaed892311ef6d3386a3cc8f3c2da07bb80716dab2369bafca18d57fc1f5",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.locations.describe",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "locations",
+      "describe"
+    ],
+    "command_path": "gcloud scheduler locations describe",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/locations/describe",
+    "description": "Show details about a location.",
+    "command_synopsis": "gcloud scheduler locations describe LOCATION [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {
+      "LOCATION": {
+        "content": "LOCATION",
+        "description": "The Cloud location to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.locations.list",
+    "service": "scheduler",
+    "type": "command",
+    "path": [
+      "scheduler",
+      "locations",
+      "list"
+    ],
+    "command_path": "gcloud scheduler locations list",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/locations/list",
+    "description": "Lists the locations where Cloud Scheduler is available.",
+    "command_synopsis": "gcloud scheduler locations list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "scheduler.operations",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "operations"
+    ],
+    "command_path": "gcloud scheduler operations",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/operations",
+    "description": "Get information about Cloud Scheduler operations.",
+    "command_synopsis": "gcloud scheduler operations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "3db1c3b1450d095e90a2c113988222791f60dc38d9896c262aac58624c9c5cc4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "scheduler.operations.describe",
+    "service": "scheduler",
+    "type": "group",
+    "path": [
+      "scheduler",
+      "operations",
+      "describe"
+    ],
+    "command_path": "gcloud scheduler operations describe",
+    "service_name": "scheduler",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/scheduler/operations/describe",
+    "description": "Show the latest status of an operation.",
+    "command_synopsis": "gcloud scheduler operations describe --name=NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "080c579b826b580602061dd475d77064147b338752fa1b54b5f92b19c61bf76a",
+    "positional_args": {},
+    "required_flags": {
+      "name": {
+        "content": "--name=NAME",
+        "description": "The full name of the Cloud Scheduler operation to describe. Format:\nprojects/{project}/locations/{location}/operations/{operation}"
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  }
+]

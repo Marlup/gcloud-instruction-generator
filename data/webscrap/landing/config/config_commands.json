@@ -1,0 +1,327 @@
+[
+  {
+    "id": "config.configurations.activate",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "configurations",
+      "activate"
+    ],
+    "command_path": "gcloud config configurations activate",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations/activate",
+    "description": "Activates an existing named configuration.\nSee gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations activate CONFIGURATION_NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "CONFIGURATION_NAME": {
+        "content": "CONFIGURATION_NAME",
+        "description": "Name of the configuration to activate"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "config.configurations",
+    "service": "config",
+    "type": "group",
+    "path": [
+      "config",
+      "configurations"
+    ],
+    "command_path": "gcloud config configurations",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations",
+    "description": "Manage the set of gcloud named configurations.\nThe current configuration can be managed via the CLOUDSDK_ACTIVE_CONFIG_NAME\nenvironment variable or a configuration property. See gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "a189443bcd54e1e25bbcd08c9c89b4401f5e9550d6e579f1709bcccf610b078c",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "config",
+    "service": "config",
+    "type": "group",
+    "path": [
+      "config"
+    ],
+    "command_path": "gcloud config",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config",
+    "description": "The gcloud config command group lets you set, view and unset properties used by\nGoogle Cloud CLI.\nA configuration is a set of properties that govern the behavior of gcloud and other Google Cloud CLI tools.\nThe initial default configuration is set when gcloud init is run. You can create\nadditional named configurations using gcloud init or gcloud config\nconfigurations create.\nTo display the path of the active configuration along with information about the\ncurrent gcloud environment, run\n$ gcloud info.\nTo switch between configurations, use gcloud config\nconfigurations activate.\ngcloud supports several flags that have the same effect as properties in a\nconfiguration (for example, gcloud supports both the --project flag\nand project property). Properties differ from flags in that flags\naffect command behavior on a per-invocation basis. Properties allow you to\nmaintain the same settings across command executions.\nIn addition to setting properties in a configuration, and the use of flags, it\nis possible to override the value of a property with an environment variable.\nThe matching environment variable for a property is of the form\n'CLOUDSDK_CATEGORY_PROPERTY'. For example, to demonstrate overriding the\nproject property in the\ncore category to\nmy-project, use a command like:\nCLOUDSDK_CORE_PROJECT=my-project gcloud config get core/project\nFor more information on configurations, see gcloud topic\nconfigurations.",
+    "command_synopsis": "gcloud config GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "ad79267e6b3183391592a120dbcd600b2e1256d6632b38e72b94122d519bda0f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "config.configurations.delete",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "configurations",
+      "delete"
+    ],
+    "command_path": "gcloud config configurations delete",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations/delete",
+    "description": "Deletes a named configuration. You cannot delete a configuration that is active,\neven when overridden with the --configuration flag. To delete the current active\nconfiguration, first gcloud config\nconfigurations activate another one.\nSee gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations delete CONFIGURATION_NAMES [CONFIGURATION_NAMES …] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "CONFIGURATION_NAMES": {
+        "content": "CONFIGURATION_NAMES[CONFIGURATION_NAMES…]",
+        "description": "Name of the configuration to delete. Cannot be currently active configuration."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "config.configurations.create",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "configurations",
+      "create"
+    ],
+    "command_path": "gcloud config configurations create",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations/create",
+    "description": "Creates a new named configuration.\nExcept for special cases (NONE), configuration names start with a lower case\nletter and contain only lower case letters a-z, digits 0-9, and hyphens '-'.\nSee gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations create CONFIGURATION_NAME [--no-activate] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "CONFIGURATION_NAME": {
+        "content": "CONFIGURATION_NAME",
+        "description": "Name of the configuration to create"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "activate": {
+        "content": "--activate",
+        "description": "If true, activate this configuration upon create. Enabled by default, use--no-activateto disable."
+      }
+    }
+  },
+  {
+    "id": "config.configurations.describe",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "configurations",
+      "describe"
+    ],
+    "command_path": "gcloud config configurations describe",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations/describe",
+    "description": "Describes a named configuration by listing its properties.\nSee gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations describe CONFIGURATION_NAME [--all] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "CONFIGURATION_NAME": {
+        "content": "CONFIGURATION_NAME",
+        "description": "Name of the configuration to describe"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "all": {
+        "content": "--all",
+        "description": "Include unset properties in output."
+      }
+    }
+  },
+  {
+    "id": "config.configurations.rename",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "configurations",
+      "rename"
+    ],
+    "command_path": "gcloud config configurations rename",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations/rename",
+    "description": "Renames a named configuration.\nSee gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations rename CONFIGURATION_NAME --new-name=NEW_NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "CONFIGURATION_NAME": {
+        "content": "CONFIGURATION_NAME",
+        "description": "Name of the configuration to rename"
+      }
+    },
+    "required_flags": {
+      "new-name": {
+        "content": "--new-name=NEW_NAME",
+        "description": "Specifies the new name of the configuration."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "config.configurations.list",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "configurations",
+      "list"
+    ],
+    "command_path": "gcloud config configurations list",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/configurations/list",
+    "description": "Lists existing named configurations.\nRun $ gcloud topic\nconfigurations for an overview of named configurations.",
+    "command_synopsis": "gcloud config configurations list [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "config.get",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "get"
+    ],
+    "command_path": "gcloud config get",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/get",
+    "description": "gcloud config get prints the property value from your active client side\nconfiguration only.",
+    "command_synopsis": "gcloud config get SECTION/PROPERTY [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "SECTION": {
+        "content": "SECTION/PROPERTY",
+        "description": "The property to be fetched. Note thatSECTION/is optional while\nreferring to properties in the core section."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "config.list",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "list"
+    ],
+    "command_path": "gcloud config list",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/list",
+    "description": "gcloud config list lists the properties of the specified section using the\nactive configuration. These include the account used to authorize access to\nGoogle Cloud, the current Google Cloud project, and the default Compute Engine\nregion and zone, if set. See gcloud topic\nconfigurations for more about configurations.",
+    "command_synopsis": "gcloud config list [SECTION/PROPERTY] [--all] [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "SECTION": {
+        "content": "[SECTION/PROPERTY]",
+        "description": "Property to be listed. Note that SECTION/ is optional while referring to\nproperties in the core section."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "all": {
+        "content": "--all",
+        "description": "List all set and unset properties that match the arguments."
+      }
+    }
+  },
+  {
+    "id": "config.set",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "set"
+    ],
+    "command_path": "gcloud config set",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/set",
+    "description": "gcloud config set sets the specified property in your active configuration only.\nA property governs the behavior of a specific aspect of Google Cloud CLI such as\nthe service account to use or the verbosity level of logs. To set the property\nacross all configurations, use the --installation flag. For more\ninformation regarding creating and using configurations, see gcloud topic\nconfigurations.\nTo view a list of properties currently in use, run gcloud config list.\nTo unset properties, use gcloud config unset.\nGoogle Cloud CLI comes with a default configuration. To create\nmultiple configurations, use gcloud config\nconfigurations create, and gcloud config\nconfigurations activate to switch between them.\nNote: If you are using Cloud Shell, your gcloud command-line tool preferences\nare stored in a temporary tmp folder, set for your current tab\nonly, and do not persist across sessions. For details on how to make these\nconfigurations persist, refer to the Cloud Shell guide on setting gcloud\ncommand-line tool preferences: https://cloud.google.com/shell/docs/configuring-cloud-shell#gcloud_command-line_tool_preferences.",
+    "command_synopsis": "gcloud config set SECTION/PROPERTY VALUE [--installation] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "SECTION": {
+        "content": "SECTION/PROPERTY",
+        "description": "Property to be set. Note that SECTION/ is optional while referring to properties\nin the core section, i.e., using eithercore/projectorprojectis a valid way of setting a project. Using section names is\nrequired for setting other properties likecompute/region. Consult\nthe Available Properties section below for a comprehensive list of properties."
+      },
+      "VALUE": {
+        "content": "VALUE",
+        "description": "Value to be set."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "installation": {
+        "content": "--installation",
+        "description": "If set, the property is updated for the entire Google Cloud CLI installation.\nOtherwise, by default, the property is updated only in the currently active\nconfiguration."
+      }
+    }
+  },
+  {
+    "id": "config.unset",
+    "service": "config",
+    "type": "command",
+    "path": [
+      "config",
+      "unset"
+    ],
+    "command_path": "gcloud config unset",
+    "service_name": "config",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/config/unset",
+    "description": "By default, unsets the property in your active configuration only. Use the\n--installation flag to unset the property across all\nconfigurations. See gcloud topic\nconfigurations for more information.",
+    "command_synopsis": "gcloud config unset SECTION/PROPERTY [--installation] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d7db44302d49adbd70e6dfeed66e9331769d9be6865a923eb3b21b873605f479",
+    "positional_args": {
+      "SECTION": {
+        "content": "SECTION/PROPERTY",
+        "description": "The property to be unset. Note that SECTION/ is optional while referring to\nproperties in the core section."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "installation": {
+        "content": "--installation",
+        "description": "If set, the property is updated for the entire Google Cloud CLI installation.\nOtherwise, by default, the property is updated only in the currently active\nconfiguration."
+      }
+    }
+  }
+]

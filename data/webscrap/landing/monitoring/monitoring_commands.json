@@ -1,0 +1,1047 @@
+[
+  {
+    "id": "monitoring.dashboards",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring",
+      "dashboards"
+    ],
+    "command_path": "gcloud monitoring dashboards",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/dashboards",
+    "description": "The gcloud monitoring dashboards group lets you manage Monitoring dashboards.\nMore information on managing dashboards can be found here: https://cloud.google.com/monitoring/dashboards/api-dashboard",
+    "command_synopsis": "gcloud monitoring dashboards COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "5505dc60512a75c8c94af24dc5e811e16cf9b0ba2e09dd6f15103741fb1195b0",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.dashboards.create",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring",
+      "dashboards",
+      "create"
+    ],
+    "command_path": "gcloud monitoring dashboards create",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/dashboards/create",
+    "description": "Create a new Monitoring dashboard. A dashboard can be specified as a JSON/YAML\nvalue passed in as a string through the --config flag or as a file\nthrough the --config-from-file flag. Validate a dashboard config\nwithout saving by setting the --validate-only flag.\nFor information about the format of a dashboard: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards",
+    "command_synopsis": "gcloud monitoring dashboards create (--config=CONFIG     | --config-from-file=PATH_TO_FILE) [--validate-only] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {
+      "config": {
+        "content": "--config=CONFIG",
+        "description": "Dashboard configuration, in either JSON or YAML format, as a string."
+      },
+      "config-from-file": {
+        "content": "--config-from-file=PATH_TO_FILE",
+        "description": "Path to a JSON or YAML file containing the dashboard configuration. Use a full\nor relative path to a local file containing the value of config."
+      }
+    },
+    "optional_flags": {
+      "validate-only": {
+        "content": "--validate-only",
+        "description": "When set, validate the dashboard but do not save it."
+      }
+    },
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring"
+    ],
+    "command_path": "gcloud monitoring",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring",
+    "description": "Manage Monitoring dashboards.\nMore information can be found here:\nhttps://cloud.google.com/monitoring/dashboards/api-dashboard",
+    "command_synopsis": "gcloud monitoring GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "d8f57284a6903731370e50a5ade815770ec8f9878b66da67b0a00d2e2ff14ecf",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.dashboards.delete",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "dashboards",
+      "delete"
+    ],
+    "command_path": "gcloud monitoring dashboards delete",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/dashboards/delete",
+    "description": "Delete a Monitoring dashboard.",
+    "command_synopsis": "gcloud monitoring dashboards delete DASHBOARD [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "DASHBOARD": {
+        "content": "DASHBOARD",
+        "description": "ID of the dashboard or fully qualified identifier for the dashboard.To set thedashboardattribute:provide the argumentdashboardon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.dashboards.list",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "dashboards",
+      "list"
+    ],
+    "command_path": "gcloud monitoring dashboards list",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/dashboards/list",
+    "description": "List Monitoring dashboards.",
+    "command_synopsis": "gcloud monitoring dashboards list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "monitoring.dashboards.describe",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "dashboards",
+      "describe"
+    ],
+    "command_path": "gcloud monitoring dashboards describe",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/dashboards/describe",
+    "description": "Describe a Monitoring dashboard.",
+    "command_synopsis": "gcloud monitoring dashboards describe DASHBOARD [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "DASHBOARD": {
+        "content": "DASHBOARD",
+        "description": "ID of the dashboard or fully qualified identifier for the dashboard.To set thedashboardattribute:provide the argumentdashboardon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.dashboards.update",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "dashboards",
+      "update"
+    ],
+    "command_path": "gcloud monitoring dashboards update",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/dashboards/update",
+    "description": "Update a Monitoring dashboard. The updated dashboard can be specified as a\nJSON/YAML value passed in as a string through the --config flag or\nas a file through the --config-from-file flag.\nNote: Etags are used to prevent concurrent updates to the same dashboard. The\nlatest etag can be found in a describe or list\nresponse.\nFor information about the format of a dashboard: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards",
+    "command_synopsis": "gcloud monitoring dashboards update DASHBOARD (--config=CONFIG     | --config-from-file=PATH_TO_FILE) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "DASHBOARD": {
+        "content": "DASHBOARD",
+        "description": "ID of the dashboard or fully qualified identifier for the dashboard.To set thedashboardattribute:provide the argumentdashboardon the command line."
+      }
+    },
+    "required_flags": {
+      "config": {
+        "content": "--config=CONFIG",
+        "description": "Dashboard configuration, in either JSON or YAML format, as a string."
+      },
+      "config-from-file": {
+        "content": "--config-from-file=PATH_TO_FILE",
+        "description": "Path to a JSON or YAML file containing the dashboard configuration. Use a full\nor relative path to a local file containing the value of config."
+      }
+    },
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.conditions.delete",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "conditions",
+      "delete"
+    ],
+    "command_path": "gcloud monitoring policies conditions delete",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/conditions/delete",
+    "description": "Delete a condition in an alerting policy. If the specified condition does not\nexist, this command will fail with an error. This will not delete the policy if\nno conditions exist.",
+    "command_synopsis": "gcloud monitoring policies conditions delete (CONDITION : --policy=POLICY) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "CONDITION": {
+        "content": "CONDITION",
+        "description": "ID of the condition or fully qualified identifier for the condition.To set theconditionattribute:provide the argumentconditionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "policy": {
+        "content": "--policy=POLICY",
+        "description": "Name of the alerting policy.To set thepolicyattribute:provide the argumentconditionon the command line with a fully\nspecified name;provide the argument--policyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.conditions.create",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "conditions",
+      "create"
+    ],
+    "command_path": "gcloud monitoring policies conditions create",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/conditions/create",
+    "description": "Create a condition in an alerting policy.",
+    "command_synopsis": "gcloud monitoring policies conditions create ALERT_POLICY [--aggregation=AGGREGATION --condition-display-name=CONDITION_DISPLAY_NAME --condition-filter=CONDITION_FILTER --duration=DURATION --if=IF_VALUE --trigger-count=TRIGGER_COUNT     | --trigger-percent=TRIGGER_PERCENT] [--condition=CONDITION     | --condition-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "ALERT_POLICY": {
+        "content": "ALERT_POLICY",
+        "description": "ID of the Alert Policy or fully qualified identifier for the Alert Policy.To set thepolicyattribute:provide the argumentalert_policyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "aggregation": {
+        "content": "--aggregation=AGGREGATION",
+        "description": "Specifies an Aggregation message as a JSON/YAML value to be applied to the\ncondition. For more information about the format:https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies"
+      },
+      "condition-display-name": {
+        "content": "--condition-display-name=CONDITION_DISPLAY_NAME",
+        "description": "The display name for the condition."
+      },
+      "condition-filter": {
+        "content": "--condition-filter=CONDITION_FILTER",
+        "description": "Specifies the \"filter\" in a metric absence or metric threshold condition."
+      },
+      "duration": {
+        "content": "--duration=DURATION",
+        "description": "The duration (e.g. \"60s\", \"2min\", etc.) that the condition must hold in order to\ntrigger as true."
+      },
+      "if": {
+        "content": "--if=IF_VALUE",
+        "description": "One of \"absent\", \"< THRESHOLD\", \"> THRESHOLD\" where \"THRESHOLD\" is an\ninteger or float."
+      },
+      "trigger-count": {
+        "content": "--trigger-count=TRIGGER_COUNT",
+        "description": "The absolute number of time series that must fail the predicate for the\ncondition to be triggered."
+      },
+      "trigger-percent": {
+        "content": "--trigger-percent=TRIGGER_PERCENT",
+        "description": "The percentage of time series that must fail the predicate for the condition to\nbe triggered."
+      },
+      "condition": {
+        "content": "--condition=CONDITION",
+        "description": "The condition as a string. In either JSON or YAML format."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "The path to a JSON or YAML file containing the condition. Use a full or relative\npath to a local file containing the value of condition."
+      }
+    }
+  },
+  {
+    "id": "monitoring.policies",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring",
+      "policies"
+    ],
+    "command_path": "gcloud monitoring policies",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies",
+    "description": "Manage Monitoring alerting policies.\nMore information can be found here: https://cloud.google.com/monitoring/api/v3/",
+    "command_synopsis": "gcloud monitoring policies GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "760974235675361ce0b032e38a93f5772c5efaa379e6af5a3b9b2b0822cc34d4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.conditions",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring",
+      "policies",
+      "conditions"
+    ],
+    "command_path": "gcloud monitoring policies conditions",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/conditions",
+    "description": "Manage Monitoring alerting policies conditions.\nMore information can be found here: https://cloud.google.com/monitoring/api/v3/",
+    "command_synopsis": "gcloud monitoring policies conditions COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "3ebdd0723a56fd63d87497ea845ce44ea4515de5fe59ebfe63c6031114a43c2b",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.create",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "create"
+    ],
+    "command_path": "gcloud monitoring policies create",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/create",
+    "description": "Creates a new alerting policy. An alert policy can be specified as a JSON/YAML\nvalue passed in as a string through the --policy flag or as a file\nthrough the --policy-from-file flag. A basic policy can also be\nspecified through command line flags. If a policy is specified through\n--policy or --policy-from-file, and additional flags\nare supplied, the flags will override the policy's settings and a specified\ncondition will be appended to the list of conditions.\nFor information about the JSON/YAML format of an alerting policy: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies",
+    "command_synopsis": "gcloud monitoring policies create [--notification-channels=[NOTIFICATION_CHANNELS,…]] [--aggregation=AGGREGATION --condition-display-name=CONDITION_DISPLAY_NAME --condition-filter=CONDITION_FILTER --duration=DURATION --if=IF_VALUE --trigger-count=TRIGGER_COUNT     | --trigger-percent=TRIGGER_PERCENT] [--combiner=COMBINER --display-name=DISPLAY_NAME --no-enabled --user-labels=[KEY=VALUE,…] --documentation-format=DOCUMENTATION_FORMAT; default=\"text/markdown\" --documentation=DOCUMENTATION     | --documentation-from-file=PATH_TO_FILE] [--policy=POLICY     | --policy-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "notification-channels": {
+        "content": "--notification-channels=[NOTIFICATION_CHANNELS,…]",
+        "description": "IDs of the Notification Channels or fully qualified identifiers for the\nNotification Channels.To set thenotification_channelsattribute:provide the argument--notification-channelson the command line."
+      },
+      "aggregation": {
+        "content": "--aggregation=AGGREGATION",
+        "description": "Specifies an Aggregation message as a JSON/YAML value to be applied to the\ncondition. For more information about the format:https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies"
+      },
+      "condition-display-name": {
+        "content": "--condition-display-name=CONDITION_DISPLAY_NAME",
+        "description": "The display name for the condition."
+      },
+      "condition-filter": {
+        "content": "--condition-filter=CONDITION_FILTER",
+        "description": "Specifies the \"filter\" in a metric absence or metric threshold condition."
+      },
+      "duration": {
+        "content": "--duration=DURATION",
+        "description": "The duration (e.g. \"60s\", \"2min\", etc.) that the condition must hold in order to\ntrigger as true."
+      },
+      "if": {
+        "content": "--if=IF_VALUE",
+        "description": "One of \"absent\", \"< THRESHOLD\", \"> THRESHOLD\" where \"THRESHOLD\" is an\ninteger or float."
+      },
+      "trigger-count": {
+        "content": "--trigger-count=TRIGGER_COUNT",
+        "description": "The absolute number of time series that must fail the predicate for the\ncondition to be triggered."
+      },
+      "trigger-percent": {
+        "content": "--trigger-percent=TRIGGER_PERCENT",
+        "description": "The percentage of time series that must fail the predicate for the condition to\nbe triggered."
+      },
+      "combiner": {
+        "content": "--combiner=COMBINER",
+        "description": "The combiner for the Alert Policy.COMBINERmust be one\nof:ANDAn incident is created only if all conditions are met simultaneously. This\ncombiner is satisfied if all conditions are met, even if they are met on\ncompletely different resources.AND_WITH_MATCHING_RESOURCECombine conditions using logical AND operator, but unlike the regular AND\noption, an incident is created only if all conditions are met simultaneously on\nat least one resource.COMBINE_UNSPECIFIEDAn unspecified combinerORAn incident is created if any of the listed conditions is met."
+      },
+      "AND": {
+        "content": "AND",
+        "description": "An incident is created only if all conditions are met simultaneously. This\ncombiner is satisfied if all conditions are met, even if they are met on\ncompletely different resources."
+      },
+      "AND_WITH_MATCHING_RESOURCE": {
+        "content": "AND_WITH_MATCHING_RESOURCE",
+        "description": "Combine conditions using logical AND operator, but unlike the regular AND\noption, an incident is created only if all conditions are met simultaneously on\nat least one resource."
+      },
+      "COMBINE_UNSPECIFIED": {
+        "content": "COMBINE_UNSPECIFIED",
+        "description": "An unspecified combiner"
+      },
+      "OR": {
+        "content": "OR",
+        "description": "An incident is created if any of the listed conditions is met."
+      },
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "The display name for the Alert Policy."
+      },
+      "enabled": {
+        "content": "--enabled",
+        "description": "If the policy is enabled. Enabled by default, use--no-enabledto\ndisable."
+      },
+      "user-labels": {
+        "content": "--user-labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers.If the policy was given as a JSON/YAML object from a string or file, this flag\nwill replace the labels value in the given policy."
+      },
+      "documentation-format": {
+        "content": "--documentation-format=DOCUMENTATION_FORMAT; default=\"text/markdown\"",
+        "description": "The MIME type that should be used with--documentationor--documentation-from-file. Currently, only \"text/markdown\" is\nsupported."
+      },
+      "documentation": {
+        "content": "--documentation=DOCUMENTATION",
+        "description": "The documentation to be included with the policy."
+      },
+      "documentation-from-file": {
+        "content": "--documentation-from-file=PATH_TO_FILE",
+        "description": "The path to a file containing the documentation to be included with the policy.\nUse a full or relative path to a local file containing the value of\ndocumentation."
+      },
+      "policy": {
+        "content": "--policy=POLICY",
+        "description": "The policy as a string. In either JSON or YAML format."
+      },
+      "policy-from-file": {
+        "content": "--policy-from-file=PATH_TO_FILE",
+        "description": "The path to a JSON or YAML file containing the policy. Use a full or relative\npath to a local file containing the value of policy."
+      }
+    }
+  },
+  {
+    "id": "monitoring.policies.conditions.describe",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "conditions",
+      "describe"
+    ],
+    "command_path": "gcloud monitoring policies conditions describe",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/conditions/describe",
+    "description": "Describe a condition in a Cloud Monitoring alerting policy.",
+    "command_synopsis": "gcloud monitoring policies conditions describe (CONDITION : --policy=POLICY) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "CONDITION": {
+        "content": "CONDITION",
+        "description": "ID of the condition or fully qualified identifier for the condition.To set theconditionattribute:provide the argumentconditionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "policy": {
+        "content": "--policy=POLICY",
+        "description": "Name of the alerting policy.To set thepolicyattribute:provide the argumentconditionon the command line with a fully\nspecified name;provide the argument--policyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.conditions.update",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "conditions",
+      "update"
+    ],
+    "command_path": "gcloud monitoring policies conditions update",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/conditions/update",
+    "description": "Update a condition in an alerting policy.",
+    "command_synopsis": "gcloud monitoring policies conditions update (CONDITION : --policy=POLICY) [--display-name=DISPLAY_NAME] [--if=IF_VALUE] [--trigger-count=TRIGGER_COUNT     | --trigger-percent=TRIGGER_PERCENT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "CONDITION": {
+        "content": "CONDITION",
+        "description": "ID of the condition or fully qualified identifier for the condition.To set theconditionattribute:provide the argumentconditionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "policy": {
+        "content": "--policy=POLICY",
+        "description": "Name of the alerting policy.To set thepolicyattribute:provide the argumentconditionon the command line with a fully\nspecified name;provide the argument--policyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "The display name for the Condition."
+      },
+      "if": {
+        "content": "--if=IF_VALUE",
+        "description": "One of \"absent\", \"< THRESHOLD\", \"> THRESHOLD\" where \"THRESHOLD\" is an\ninteger or float."
+      },
+      "trigger-count": {
+        "content": "--trigger-count=TRIGGER_COUNT",
+        "description": "The absolute number of time series that must fail the predicate for the\ncondition to be triggered."
+      },
+      "trigger-percent": {
+        "content": "--trigger-percent=TRIGGER_PERCENT",
+        "description": "The percentage of time series that must fail the predicate for the condition to\nbe triggered."
+      }
+    }
+  },
+  {
+    "id": "monitoring.policies.migrate",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "migrate"
+    ],
+    "command_path": "gcloud monitoring policies migrate",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/migrate",
+    "description": "Creates new alerting policies and/or notification channels based on provided\nPrometheus files. The rules YAML file, which holds the alert rules, must be\nspecified as a file through the\n--policies-from-prometheus-alert-rules-yaml flag.",
+    "command_synopsis": "gcloud monitoring policies migrate [--channels-from-prometheus-alertmanager-yaml=PROMETHEUS_ALERT_MANAGER_FILE_PATH --policies-from-prometheus-alert-rules-yaml=[PROMETHEUS_ALERT_RULE_FILE_PATHS,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "channels-from-prometheus-alertmanager-yaml": {
+        "content": "--channels-from-prometheus-alertmanager-yaml=PROMETHEUS_ALERT_MANAGER_FILE_PATH",
+        "description": "Prometheus alert manager YAML file to be converted to Cloud Monitoring\nnotification channels. Specifying this flag with the\n--policies-from-prometheus-alert-rules-yaml flag puts the newly created\nnotification channels into the translated Alert Policies' definition. Use a full\nor relative path to a local file containing the value of\nchannels_from_prometheus_alertmanager_yaml."
+      },
+      "policies-from-prometheus-alert-rules-yaml": {
+        "content": "--policies-from-prometheus-alert-rules-yaml=[PROMETHEUS_ALERT_RULE_FILE_PATHS,…]",
+        "description": "One or more Prometheus alert rule YAML files (separated by commas if multiple)\nto be converted to Cloud Alerting Policies. Example:\n--policies-from-prometheus-alert-rules-yaml=rules_1.yaml,rules_2.yaml"
+      }
+    }
+  },
+  {
+    "id": "monitoring.policies.delete",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "delete"
+    ],
+    "command_path": "gcloud monitoring policies delete",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/delete",
+    "description": "Delete a Monitoring alerting policy.",
+    "command_synopsis": "gcloud monitoring policies delete POLICY [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "POLICY": {
+        "content": "POLICY",
+        "description": "ID of the policy or fully qualified identifier for the policy.To set thepolicyattribute:provide the argumentpolicyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.describe",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "describe"
+    ],
+    "command_path": "gcloud monitoring policies describe",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/describe",
+    "description": "Describe an alerting policy.",
+    "command_synopsis": "gcloud monitoring policies describe POLICY [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "POLICY": {
+        "content": "POLICY",
+        "description": "ID of the policy or fully qualified identifier for the policy.To set thepolicyattribute:provide the argumentpolicyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.policies.list",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "list"
+    ],
+    "command_path": "gcloud monitoring policies list",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/list",
+    "description": "List alerting policies.",
+    "command_synopsis": "gcloud monitoring policies list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "monitoring.policies.update",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "policies",
+      "update"
+    ],
+    "command_path": "gcloud monitoring policies update",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/update",
+    "description": "Updates an alerting policy.\nIf --policy or --policy-from-file are specified:\nIf --fields is specified, the only the specified fields will be\nupdated.\nElse, the policy will be replaced with the provided policy. The policy can be\nmodified further using the flags from the Policy Settings group below.\nOtherwise, the policy will be updated with the values specified in the flags\nfrom the Policy Settings group.\nFor information about the JSON/YAML format of an alerting policy: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies",
+    "command_synopsis": "gcloud monitoring policies update ALERT_POLICY [--fields=[field,…]     | --combiner=COMBINER --display-name=DISPLAY_NAME --[no-]enabled --add-notification-channels=[NOTIFICATION-CHANNELS,…]     | --clear-notification-channels     | --remove-notification-channels=[NOTIFICATION-CHANNELS,…]     | --set-notification-channels=[NOTIFICATION-CHANNELS,…] --documentation-format=DOCUMENTATION_FORMAT --documentation=DOCUMENTATION     | --documentation-from-file=PATH_TO_FILE --update-user-labels=[KEY=VALUE,…] --clear-user-labels     | --remove-user-labels=[KEY,…]] [--policy=POLICY     | --policy-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "ALERT_POLICY": {
+        "content": "ALERT_POLICY",
+        "description": "ID of the Alert Policy or fully qualified identifier for the Alert Policy.To set thepolicyattribute:provide the argumentalert_policyon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "fields": {
+        "content": "--fields=[field,…]",
+        "description": "The list of fields to update. Must specify--policyor--policy-from-fileif using this flag.fieldmust be one of:disabled,notificationChannels."
+      },
+      "combiner": {
+        "content": "--combiner=COMBINER",
+        "description": "The combiner for the Alert Policy.COMBINERmust be one\nof:ANDAn incident is created only if all conditions are met simultaneously. This\ncombiner is satisfied if all conditions are met, even if they are met on\ncompletely different resources.AND_WITH_MATCHING_RESOURCECombine conditions using logical AND operator, but unlike the regular AND\noption, an incident is created only if all conditions are met simultaneously on\nat least one resource.COMBINE_UNSPECIFIEDAn unspecified combinerORAn incident is created if any of the listed conditions is met."
+      },
+      "AND": {
+        "content": "AND",
+        "description": "An incident is created only if all conditions are met simultaneously. This\ncombiner is satisfied if all conditions are met, even if they are met on\ncompletely different resources."
+      },
+      "AND_WITH_MATCHING_RESOURCE": {
+        "content": "AND_WITH_MATCHING_RESOURCE",
+        "description": "Combine conditions using logical AND operator, but unlike the regular AND\noption, an incident is created only if all conditions are met simultaneously on\nat least one resource."
+      },
+      "COMBINE_UNSPECIFIED": {
+        "content": "COMBINE_UNSPECIFIED",
+        "description": "An unspecified combiner"
+      },
+      "OR": {
+        "content": "OR",
+        "description": "An incident is created if any of the listed conditions is met."
+      },
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "The display name for the Alert Policy."
+      },
+      "[no-]enabled": {
+        "content": "--[no-]enabled",
+        "description": "If the policy is enabled. Use--enabledto enable and--no-enabledto disable."
+      },
+      "add-notification-channels": {
+        "content": "--add-notification-channels=[NOTIFICATION-CHANNELS,…]",
+        "description": "Append the given values to the current Notification Channels."
+      },
+      "clear-notification-channels": {
+        "content": "--clear-notification-channels",
+        "description": "Empty the current Notification Channels."
+      },
+      "remove-notification-channels": {
+        "content": "--remove-notification-channels=[NOTIFICATION-CHANNELS,…]",
+        "description": "Remove the given values from the current Notification Channels."
+      },
+      "set-notification-channels": {
+        "content": "--set-notification-channels=[NOTIFICATION-CHANNELS,…]",
+        "description": "Completely replace the current Notification Channels with the given values."
+      },
+      "documentation-format": {
+        "content": "--documentation-format=DOCUMENTATION_FORMAT",
+        "description": "The MIME type that should be used with--documentationor--documentation-from-file. Currently, only \"text/markdown\" is\nsupported."
+      },
+      "documentation": {
+        "content": "--documentation=DOCUMENTATION",
+        "description": "The documentation to be included with the policy."
+      },
+      "documentation-from-file": {
+        "content": "--documentation-from-file=PATH_TO_FILE",
+        "description": "The path to a file containing the documentation to be included with the policy.\nUse a full or relative path to a local file containing the value of\ndocumentation."
+      },
+      "update-user-labels": {
+        "content": "--update-user-labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to update. If a label exists, its value is\nmodified. Otherwise, a new label is created.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "clear-user-labels": {
+        "content": "--clear-user-labels",
+        "description": "Remove all labels. If--update-user-labelsis also specified then--clear-user-labelsis applied first.For example, to remove all labels:gcloudmonitoringpoliciesupdate--clear-user-labelsTo remove all existing labels and create two new labels,fooandbaz:gcloudmonitoringpoliciesupdate--clear-user-labels--update-user-labelsfoo=bar,baz=qux"
+      },
+      "remove-user-labels": {
+        "content": "--remove-user-labels=[KEY,…]",
+        "description": "List of label keys to remove. If a label does not exist it is silently ignored.\nIf--update-user-labelsis also specified then--update-user-labelsis applied first."
+      },
+      "policy": {
+        "content": "--policy=POLICY",
+        "description": "The policy as a string. In either JSON or YAML format."
+      },
+      "policy-from-file": {
+        "content": "--policy-from-file=PATH_TO_FILE",
+        "description": "The path to a JSON or YAML file containing the policy. Use a full or relative\npath to a local file containing the value of policy."
+      }
+    }
+  },
+  {
+    "id": "monitoring.snoozes",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring",
+      "snoozes"
+    ],
+    "command_path": "gcloud monitoring snoozes",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/snoozes",
+    "description": "Manage Monitoring snoozes.\nMore information can be found here: https://cloud.google.com/monitoring/api/v3/",
+    "command_synopsis": "gcloud monitoring snoozes COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "7803147d4dcd5b59993d11d7937987cb5d22f79d2fe1a250fc5ee732c8230e77",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.snoozes.cancel",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "snoozes",
+      "cancel"
+    ],
+    "command_path": "gcloud monitoring snoozes cancel",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/snoozes/cancel",
+    "description": "Cancel a snooze.\nIf the start time is in the future, then this command is equivalent to:\nupdate --start-time=\"+PT1S\" --end-time=\"+PT1S\nOtherwise, if the start time is past and the ending time is in the future, then\nthis command is equivalent to:\nupdate --end-time=\"+PT1S\nFor information about the JSON/YAML format of a snooze: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.snoozes",
+    "command_synopsis": "gcloud monitoring snoozes cancel SNOOZE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "SNOOZE": {
+        "content": "SNOOZE",
+        "description": "ID of the Snooze or fully qualified identifier for the Snooze.To set thesnoozeattribute:provide the argumentsnoozeon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.snoozes.update",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "snoozes",
+      "update"
+    ],
+    "command_path": "gcloud monitoring snoozes update",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/snoozes/update",
+    "description": "Update a snooze.\nIf --snooze-from-file is specified, then the update rules depend on\nthe value of the (optional) --fields flag:\nIf --fields is specified, then only the specified fields of the\nsnooze are updated.\nElse, all fields of the snooze are replaced. The updated snooze can be modified\nfurther using the flags from the Snooze Settings group below.\nOtherwise, the snooze will be updated with the values specified in the flags\nfrom the Snooze Settings group.\nFor information about the JSON/YAML format of a snooze: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.snoozes",
+    "command_synopsis": "gcloud monitoring snoozes update SNOOZE [--snooze-from-file=PATH_TO_FILE] [--fields=[field,…]     | --display-name=DISPLAY_NAME --end-time=END_TIME --start-time=START_TIME] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "SNOOZE": {
+        "content": "SNOOZE",
+        "description": "ID of the Snooze or fully qualified identifier for the Snooze.To set thesnoozeattribute:provide the argumentsnoozeon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "snooze-from-file": {
+        "content": "--snooze-from-file=PATH_TO_FILE",
+        "description": "The path to a JSON or YAML file containing the snooze. Use a full or relative\npath to a local file containing the value of snooze."
+      },
+      "fields": {
+        "content": "--fields=[field,…]",
+        "description": "The list of fields to update. Must specify--snooze-from-fileif\nusing this flag."
+      },
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "The display name for the Snooze."
+      },
+      "end-time": {
+        "content": "--end-time=END_TIME",
+        "description": "The end time for the Snooze."
+      },
+      "start-time": {
+        "content": "--start-time=START_TIME",
+        "description": "The start time for the Snooze."
+      }
+    }
+  },
+  {
+    "id": "monitoring.snoozes.create",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "snoozes",
+      "create"
+    ],
+    "command_path": "gcloud monitoring snoozes create",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/snoozes/create",
+    "description": "Creates a new snooze. A snooze can be specified as a JSON/YAML value passed in\nas a file through the --snooze-from-file flag. A snooze can also be\nspecified through command line flags. If a snooze is specified through\n--snooze-from-file, and additional flags are supplied, the flags\nwill override the snooze's settings.\nFor information about the JSON/YAML format of a snooze: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.snoozes",
+    "command_synopsis": "gcloud monitoring snoozes create [--snooze-from-file=PATH_TO_FILE] [--criteria-filter=CRITERIA_FILTER --criteria-policies=CRITERIA_POLICIES,[…] --display-name=DISPLAY_NAME --end-time=END_TIME --start-time=START_TIME] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "snooze-from-file": {
+        "content": "--snooze-from-file=PATH_TO_FILE",
+        "description": "The path to a JSON or YAML file containing the snooze. Use a full or relative\npath to a local file containing the value of snooze."
+      },
+      "criteria-filter": {
+        "content": "--criteria-filter=CRITERIA_FILTER",
+        "description": "Optional. When you define a Snooze, you can also define a filter for that\nsnooze. The filter is a string containing one or more key-value pairs. The\nstring uses the standardhttps://google.aip.dev/160filter syntax.\nIf you define a filter for a snooze, then the snooze can only apply to one alert\npolicy. When the snooze is active, incidents won't be created when the incident\nwould have key-value pairs (labels) that match those specified by the filter in\nthe snooze. Snooze filters support resource, metric, and metadata labels. If\nmultiple labels are used, then they must be connected with an AND operator. For\nexample: resource.labels.instance_id=\"1234567890\" AND\nresource.labels.zone=\"us-central1-a\" AND\nmetric.labels.instance_name=\"test_group\" AND metadata.user_labels.foo=\"bar\" AND\nmetadata.system_labels.region=\"us-central1\""
+      },
+      "criteria-policies": {
+        "content": "--criteria-policies=CRITERIA_POLICIES,[…]",
+        "description": "The policies that the Snooze applies to. Exactly 1 alert policy is required ifcriteria-filteris specified at the same time."
+      },
+      "display-name": {
+        "content": "--display-name=DISPLAY_NAME",
+        "description": "The display name for the Snooze."
+      },
+      "end-time": {
+        "content": "--end-time=END_TIME",
+        "description": "The end time for the Snooze."
+      },
+      "start-time": {
+        "content": "--start-time=START_TIME",
+        "description": "The start time for the Snooze."
+      }
+    }
+  },
+  {
+    "id": "monitoring.snoozes.list",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "snoozes",
+      "list"
+    ],
+    "command_path": "gcloud monitoring snoozes list",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/snoozes/list",
+    "description": "List snoozes.",
+    "command_synopsis": "gcloud monitoring snoozes list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "monitoring.snoozes.describe",
+    "service": "monitoring",
+    "type": "command",
+    "path": [
+      "monitoring",
+      "snoozes",
+      "describe"
+    ],
+    "command_path": "gcloud monitoring snoozes describe",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/snoozes/describe",
+    "description": "Describe a snooze.",
+    "command_synopsis": "gcloud monitoring snoozes describe SNOOZE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c7ffea32617aab822dbf461ad8db1f7ba08796c4e37b715fa619064b64ad729e",
+    "positional_args": {
+      "SNOOZE": {
+        "content": "SNOOZE",
+        "description": "ID of the Snooze or fully qualified identifier for the Snooze.To set thesnoozeattribute:provide the argumentsnoozeon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "monitoring.uptime",
+    "service": "monitoring",
+    "type": "group",
+    "path": [
+      "monitoring",
+      "uptime"
+    ],
+    "command_path": "gcloud monitoring uptime",
+    "service_name": "monitoring",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/monitoring/uptime",
+    "description": "Manage Monitoring uptime checks and synthetic monitors.\nMore information can be found here: https://cloud.google.com/monitoring/api/v3/",
+    "command_synopsis": "gcloud monitoring uptime COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "dab383e8df0efeba77e94844a4bcce6e0ead9197b8416c9e6c284b8a19669e79",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  }
+]

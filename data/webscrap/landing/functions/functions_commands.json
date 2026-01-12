@@ -1,0 +1,877 @@
+[
+  {
+    "id": "functions",
+    "service": "functions",
+    "type": "group",
+    "path": [
+      "functions"
+    ],
+    "command_path": "gcloud functions",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions",
+    "description": "Manage Google Cloud Functions.",
+    "command_synopsis": "gcloud functions GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "32961e84b19428f2b518c79bcc8142249f5707644f5dcfb2963139b85ad88a8f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.add-iam-policy-binding",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud functions add-iam-policy-binding",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/add-iam-policy-binding",
+    "description": "Adds an IAM policy binding for a Google Cloud Function.",
+    "command_synopsis": "gcloud functions add-iam-policy-binding (NAME : --region=REGION) --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.add-invoker-policy-binding",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "add-invoker-policy-binding"
+    ],
+    "command_path": "gcloud functions add-invoker-policy-binding",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/add-invoker-policy-binding",
+    "description": "Adds an invoker role IAM policy binding that allows the specified member to\ninvoke the specified function.\nFor Cloud Functions (1st gen), this adds the Cloud Functions Invoker binding to\nthe IAM policy of the specified function.\nFor Cloud Functions (2nd gen), this adds the Cloud Run Invoker binding to the\nIAM policy of the specified function's underlying Cloud Run service.",
+    "command_synopsis": "gcloud functions add-invoker-policy-binding (NAME : --region=REGION) --member=PRINCIPAL [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add to the IAM policy. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.delete",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "delete"
+    ],
+    "command_path": "gcloud functions delete",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/delete",
+    "description": "Delete a Google Cloud Function.",
+    "command_synopsis": "gcloud functions delete (NAME : --region=REGION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.call",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "call"
+    ],
+    "command_path": "gcloud functions call",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/call",
+    "description": "Triggers execution of a Google Cloud Function.",
+    "command_synopsis": "gcloud functions call (NAME : --region=REGION) [--cloud-event=CLOUD_EVENT     | --data=DATA] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "cloud-event": {
+        "content": "--cloud-event=CLOUD_EVENT",
+        "description": "JSON encoded string with a CloudEvent in structured content mode.Mutually exclusive with --data flag.Use for Cloud Functions 2nd Gen CloudEvent functions. The CloudEvent object will\nbe sent to your function as a binary content mode message with the top-level\n'data' field set as the HTTP body and all other JSON fields sent as HTTP\nheaders."
+      },
+      "data": {
+        "content": "--data=DATA",
+        "description": "JSON string with data that will be passed to the function."
+      }
+    }
+  },
+  {
+    "id": "functions.deploy",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "deploy"
+    ],
+    "command_path": "gcloud functions deploy",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/deploy",
+    "description": "Create or update a Google Cloud Function.",
+    "command_synopsis": "gcloud functions deploy (NAME : --region=REGION) [--[no-]allow-unauthenticated] [--concurrency=CONCURRENCY] [--docker-registry=DOCKER_REGISTRY] [--egress-settings=EGRESS_SETTINGS] [--entry-point=ENTRY_POINT] [--gen2] [--ignore-file=IGNORE_FILE] [--ingress-settings=INGRESS_SETTINGS] [--retry] [--run-service-account=RUN_SERVICE_ACCOUNT] [--runtime=RUNTIME] [--runtime-update-policy=RUNTIME_UPDATE_POLICY] [--security-level=SECURITY_LEVEL; default=\"secure-always\"] [--serve-all-traffic-latest-revision] [--service-account=SERVICE_ACCOUNT] [--source=SOURCE] [--stage-bucket=STAGE_BUCKET] [--timeout=TIMEOUT] [--trigger-location=TRIGGER_LOCATION] [--trigger-service-account=TRIGGER_SERVICE_ACCOUNT] [--update-labels=[KEY=VALUE,…]] [--binary-authorization=BINARY_AUTHORIZATION     | --clear-binary-authorization] [--build-env-vars-file=FILE_PATH     | --clear-build-env-vars     | --set-build-env-vars=[KEY=VALUE,…]     | --remove-build-env-vars=[KEY,…] --update-build-env-vars=[KEY=VALUE,…]] [--build-service-account=BUILD_SERVICE_ACCOUNT     | --clear-build-service-account] [--build-worker-pool=BUILD_WORKER_POOL     | --clear-build-worker-pool] [--clear-docker-repository     | --docker-repository=DOCKER_REPOSITORY] [--clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…]] [--clear-kms-key     | --kms-key=KMS_KEY] [--clear-labels     | --remove-labels=[KEY,…]] [--clear-max-instances     | --max-instances=MAX_INSTANCES] [--clear-min-instances     | --min-instances=MIN_INSTANCES] [--clear-secrets     | --set-secrets=[SECRET_ENV_VAR=SECRET_VALUE_REF,/secret_path=SECRET_VALUE_REF,/mount_path:/secret_file_path=SECRET_VALUE_REF,…]     | --remove-secrets=[SECRET_ENV_VAR,/secret_path,/mount_path:/secret_file_path,…] --update-secrets=[SECRET_ENV_VAR=SECRET_VALUE_REF,/secret_path=SECRET_VALUE_REF,/mount_path:/secret_file_path=SECRET_VALUE_REF,…]] [--clear-vpc-connector     | --vpc-connector=VPC_CONNECTOR] [--memory=MEMORY : --cpu=CPU] [--trigger-bucket=TRIGGER_BUCKET     | --trigger-http     | --trigger-topic=TRIGGER_TOPIC     | --trigger-event=EVENT_TYPE --trigger-resource=RESOURCE     | --trigger-event-filters=[ATTRIBUTE=VALUE,…] --trigger-event-filters-path-pattern=[ATTRIBUTE=PATH_PATTERN,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]allow-unauthenticated": {
+        "content": "--[no-]allow-unauthenticated",
+        "description": "If set, makes this a public function. This will allow all callers, without\nchecking authentication. Use--allow-unauthenticatedto enable and--no-allow-unauthenticatedto disable."
+      },
+      "concurrency": {
+        "content": "--concurrency=CONCURRENCY",
+        "description": "Set the maximum number of concurrent requests allowed per container instance.\nLeave concurrency unspecified to receive the server default value."
+      },
+      "docker-registry": {
+        "content": "--docker-registry=DOCKER_REGISTRY",
+        "description": "(DEPRECATED) Docker Registry to use for storing the function's Docker images.\nThe optionartifact-registryis used by default.WiththegeneraltransitionfromContainerRegistryto\nArtifactRegistry,theoptiontospecifydockerregistryisdeprecated.\nAllcontainerimagestorageandmanagementwillautomatically\ntransitiontoArtifactRegistry.\nFormoreinformation,seehttps://cloud.google.com/artifact-registry/docs/transition/transition-from-gcrDOCKER_REGISTRYmust be one of:artifact-registry,container-registry."
+      },
+      "egress-settings": {
+        "content": "--egress-settings=EGRESS_SETTINGS",
+        "description": "Egress settings controls what traffic is diverted through the VPC Access\nConnector resource. By defaultprivate-ranges-onlywill be used.EGRESS_SETTINGSmust be one of:private-ranges-only,all."
+      },
+      "entry-point": {
+        "content": "--entry-point=ENTRY_POINT",
+        "description": "Name of a Google Cloud Function (as defined in source code) that will be\nexecuted. Defaults to the resource name suffix (ID of the function), if not\nspecified."
+      },
+      "gen2": {
+        "content": "--gen2",
+        "description": "If enabled, this command will use Cloud Functions (Second generation). If\ndisabled with--no-gen2, Cloud Functions (First generation) will be\nused. If not specified, the value of this flag will be taken from thefunctions/gen2configuration property. If thefunctions/gen2configuration property is not set, defaults to\nlooking up the given function and using its generation."
+      },
+      "ignore-file": {
+        "content": "--ignore-file=IGNORE_FILE",
+        "description": "Override the .gcloudignore file in the source directory and use the specified\nfile instead. By default, the source directory is your current directory. Note\nthat it could be changed by the --source flag, in which case your .gcloudignore\nfile will be searched in the overridden directory. For example,--ignore-file=.mygcloudignorecombined with--source=./mydirwould point to./mydir/.mygcloudignore"
+      },
+      "ingress-settings": {
+        "content": "--ingress-settings=INGRESS_SETTINGS",
+        "description": "Ingress settings controls what traffic can reach the function. By defaultallwill be used.INGRESS_SETTINGSmust be\none of:all,internal-only,internal-and-gclb."
+      },
+      "retry": {
+        "content": "--retry",
+        "description": "If specified, then the function will be retried in case of a failure."
+      },
+      "run-service-account": {
+        "content": "--run-service-account=RUN_SERVICE_ACCOUNT",
+        "description": "The email address of the IAM service account associated with the Cloud Run\nservice for the function. The service account represents the identity of the\nrunning function, and determines what permissions the function has.If not provided, the function will use the project's default service account for\nCompute Engine."
+      },
+      "runtime": {
+        "content": "--runtime=RUNTIME",
+        "description": "Runtime in which to run the function.Required when deploying a new function; optional when updating an existing\nfunction.For a list of available runtimes, rungcloud functions runtimes\nlist."
+      },
+      "runtime-update-policy": {
+        "content": "--runtime-update-policy=RUNTIME_UPDATE_POLICY",
+        "description": "Runtime update policy for the function being deployed. The optionautomaticis used by default.RUNTIME_UPDATE_POLICYmust be one of:automatic,on-deploy."
+      },
+      "security-level": {
+        "content": "--security-level=SECURITY_LEVEL; default=\"secure-always\"",
+        "description": "Security level controls whether a function's URL supports HTTPS only or both\nHTTP and HTTPS. By default,secure-alwayswill be used, meaning\nonly HTTPS is supported.SECURITY_LEVELmust be one of:secure-always,secure-optional."
+      },
+      "serve-all-traffic-latest-revision": {
+        "content": "--serve-all-traffic-latest-revision",
+        "description": "If specified, latest function revision will be served all traffic."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "The email address of the IAM service account associated with the function at\nruntime. The service account represents the identity of the running function,\nand determines what permissions the function has.If not provided, the function will use the project's default service account for\nCompute Engine."
+      },
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "Location of source code to deploy.Location of the source can be one of the following three options:Source code in Google Cloud Storage (must be a.ziparchive),Reference to source repository or,Local filesystem path (root directory of function source).Note that, depending on your runtime type, Cloud Functions will look for files\nwith specific names for deployable functions. For Node.js, these filenames areindex.jsorfunction.js. For Python, this ismain.py.If you do not specify the--sourceflag:The current directory will be used for new function deployments.If the function was previously deployed using a local filesystem path, then the\nfunction's source code will be updated using the current directory.If the function was previously deployed using a Google Cloud Storage location or\na source repository, then the function's source code will not be updated.The value of the flag will be interpreted as a Cloud Storage location, if it\nstarts withgs://.The value will be interpreted as a reference to a source repository, if it\nstarts withhttps://.Otherwise, it will be interpreted as the local filesystem path. When deploying\nsource from the local filesystem, this command skips files specified in the.gcloudignorefile (seegcloud topic\ngcloudignorefor more information). If the.gcloudignorefile doesn't exist, the command will try to create it.The minimal source repository URL is:https://source.developers.google.com/projects/${PROJECT}/repos/${REPO}By using the URL above, sources from the root directory of the repository on the\nrevision taggedmasterwill be used.If you want to deploy from a revision different frommaster, append\none of the following three sources to the URL:/revisions/${REVISION},/moveable-aliases/${MOVEABLE_ALIAS},/fixed-aliases/${FIXED_ALIAS}.If you'd like to deploy sources from a directory different from the root, you\nmust specify a revision, a moveable alias, or a fixed alias, as above, and\nappend/paths/${PATH_TO_SOURCES_DIRECTORY}to the URL.Overall, the URL should match the following regular expression:^https://source\\.developers\\.google\\.com/projects/(?<accountId>[^/]+)/repos/(?<repoName>[^/]+)(((/revisions/(?<commit>[^/]+))|(/moveable-aliases/(?<branch>[^/]+))|(/fixed-aliases/(?<tag>[^/]+)))(/paths/(?<path>.*))?)?$An example of a validly formatted source repository URL is:https://source.developers.google.com/projects/123456789/repos/testrepo/moveable-aliases/alternate-branch/paths/path-to=source"
+      },
+      "stage-bucket": {
+        "content": "--stage-bucket=STAGE_BUCKET",
+        "description": "When deploying a function from a local directory, this flag's value is the name\nof the Google Cloud Storage bucket in which source code will be stored. Note\nthat if you set the--stage-bucketflag when deploying a function,\nyou will need to specify--sourceor--stage-bucketin\nsubsequent deployments to update your source code. To use this flag\nsuccessfully, the account in use must have permissions to write to this bucket.\nFor help granting access, refer to this guide:https://cloud.google.com/storage/docs/access-control/"
+      },
+      "timeout": {
+        "content": "--timeout=TIMEOUT",
+        "description": "The function execution timeout, e.g. 30s for 30 seconds. Defaults to original\nvalue for existing function or 60 seconds for new functions.For GCF 1st gen functions, cannot be more than 540s.For GCF 2nd gen functions, cannot be more than 3600s.See $gcloud topic datetimesfor information on duration formats."
+      },
+      "trigger-location": {
+        "content": "--trigger-location=TRIGGER_LOCATION",
+        "description": "The location of the trigger, which must be a region or multi-region where the\nrelevant events originate."
+      },
+      "trigger-service-account": {
+        "content": "--trigger-service-account=TRIGGER_SERVICE_ACCOUNT",
+        "description": "The email address of the IAM service account associated with the Eventarc\ntrigger for the function. This is used for authenticated invocation.If not provided, the function will use the project's default service account for\nCompute Engine."
+      },
+      "update-labels": {
+        "content": "--update-labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to update. If a label exists, its value is\nmodified. Otherwise, a new label is created.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers.Label keys starting withdeploymentare reserved for use by\ndeployment tools and cannot be specified manually."
+      },
+      "binary-authorization": {
+        "content": "--binary-authorization=BINARY_AUTHORIZATION",
+        "description": "Name of the Binary Authorization policy that the function image should be\nchecked against when deploying to Cloud Run.Example: defaultThe flag is only applicable to 2nd gen functions."
+      },
+      "clear-binary-authorization": {
+        "content": "--clear-binary-authorization",
+        "description": "Clears the Binary Authorization policy field."
+      },
+      "build-env-vars-file": {
+        "content": "--build-env-vars-file=FILE_PATH",
+        "description": "Path to a local YAML file with definitions for all build environment variables.\nAll existing build environment variables will be removed before the new build\nenvironment variables are added."
+      },
+      "clear-build-env-vars": {
+        "content": "--clear-build-env-vars",
+        "description": "Remove all build environment variables."
+      },
+      "set-build-env-vars": {
+        "content": "--set-build-env-vars=[KEY=VALUE,…]",
+        "description": "List of key-value pairs to set as build environment variables. All existing\nbuild environment variables will be removed first."
+      },
+      "remove-build-env-vars": {
+        "content": "--remove-build-env-vars=[KEY,…]",
+        "description": "List of build environment variables to be removed."
+      },
+      "update-build-env-vars": {
+        "content": "--update-build-env-vars=[KEY=VALUE,…]",
+        "description": "List of key-value pairs to set as build environment variables."
+      },
+      "build-service-account": {
+        "content": "--build-service-account=BUILD_SERVICE_ACCOUNT",
+        "description": "IAM service account whose credentials will be used for the build step. Must be\nof the format projects/${PROJECT_ID}/serviceAccounts/${ACCOUNT_EMAIL_ADDRESS}.If not provided, the function will use the project's default service account for\nCloud Build."
+      },
+      "clear-build-service-account": {
+        "content": "--clear-build-service-account",
+        "description": "Clears the build service account field."
+      },
+      "build-worker-pool": {
+        "content": "--build-worker-pool=BUILD_WORKER_POOL",
+        "description": "Name of the Cloud Build Custom Worker Pool that should be used to build the\nfunction. The format of this field isprojects/${PROJECT}/locations/${LOCATION}/workerPools/${WORKERPOOL}where ${PROJECT} is the project id and ${LOCATION} is the location where the\nworker pool is defined and ${WORKERPOOL} is the short name of the worker pool."
+      },
+      "clear-build-worker-pool": {
+        "content": "--clear-build-worker-pool",
+        "description": "Clears the Cloud Build Custom Worker Pool field."
+      },
+      "clear-docker-repository": {
+        "content": "--clear-docker-repository",
+        "description": "Clears the Docker repository configuration of the function."
+      },
+      "docker-repository": {
+        "content": "--docker-repository=DOCKER_REPOSITORY",
+        "description": "Sets the Docker repository to be used for storing the Cloud Function's Docker\nimages while the function is being deployed.DOCKER_REPOSITORYmust\nbe an Artifact Registry Docker repository present in thesameproject and location as the Cloud Function.**Preview:** for 2nd gen functions, a Docker Artifact registry repository in a\ndifferent project and/or location may be used. Additional requirements apply,\nseehttps://cloud.google.com/functions/docs/building#image_registryThe repository name should match one of these patterns:projects/${PROJECT}/locations/${LOCATION}/repositories/${REPOSITORY},{LOCATION}-docker.pkg.dev/{PROJECT}/{REPOSITORY}.where${PROJECT}is the project,${LOCATION}is the\nlocation of the repository and${REPOSITORY}is a valid repository\nID."
+      },
+      "clear-env-vars": {
+        "content": "--clear-env-vars",
+        "description": "Remove all environment variables."
+      },
+      "env-vars-file": {
+        "content": "--env-vars-file=FILE_PATH",
+        "description": "Path to a local YAML file with definitions for all environment variables. All\nexisting environment variables will be removed before the new environment\nvariables are added."
+      },
+      "set-env-vars": {
+        "content": "--set-env-vars=[KEY=VALUE,…]",
+        "description": "List of key-value pairs to set as environment variables. All existing\nenvironment variables will be removed first."
+      },
+      "remove-env-vars": {
+        "content": "--remove-env-vars=[KEY,…]",
+        "description": "List of environment variables to be removed."
+      },
+      "update-env-vars": {
+        "content": "--update-env-vars=[KEY=VALUE,…]",
+        "description": "List of key-value pairs to set as environment variables."
+      },
+      "clear-kms-key": {
+        "content": "--clear-kms-key",
+        "description": "Clears the KMS crypto key used to encrypt the function."
+      },
+      "kms-key": {
+        "content": "--kms-key=KMS_KEY",
+        "description": "Sets the user managed KMS crypto key used to encrypt the Cloud Function and its\nresources.The KMS crypto key name should match the patternprojects/${PROJECT}/locations/${LOCATION}/keyRings/${KEYRING}/cryptoKeys/${CRYPTOKEY}where ${PROJECT} is the project, ${LOCATION} is the location of the key ring,\nand ${KEYRING} is the key ring that contains the ${CRYPTOKEY} crypto key.If this flag is set, then a Docker repository created in Artifact Registry must\nbe specified using the--docker-repositoryflag and the repository\nmust be encrypted using thesameKMS key."
+      },
+      "clear-labels": {
+        "content": "--clear-labels",
+        "description": "Remove all labels. If--update-labelsis also specified then--clear-labelsis applied first.For example, to remove all labels:gcloudfunctionsdeploy--clear-labelsTo remove all existing labels and create two new labels,fooandbaz:gcloudfunctionsdeploy--clear-labels--update-labelsfoo=bar,baz=qux"
+      },
+      "remove-labels": {
+        "content": "--remove-labels=[KEY,…]",
+        "description": "List of label keys to remove. If a label does not exist it is silently ignored.\nIf--update-labelsis also specified then--update-labelsis applied first.Label keys starting withdeploymentare reserved for use by deployment tools and cannot be\nspecified manually."
+      },
+      "clear-max-instances": {
+        "content": "--clear-max-instances",
+        "description": "Clears the maximum instances setting for the function.If it's any 2nd gen function or a 1st gen HTTP function, this flag sets maximum\ninstances to 0, which means there is no limit to maximum instances. If it's an\nevent-driven 1st gen function, this flag sets maximum instances to 3000, which\nis the default value for 1st gen functions."
+      },
+      "max-instances": {
+        "content": "--max-instances=MAX_INSTANCES",
+        "description": "Sets the maximum number of instances for the function. A function execution that\nwould exceed max-instances times out."
+      },
+      "clear-min-instances": {
+        "content": "--clear-min-instances",
+        "description": "Clears the minimum instances setting for the function."
+      },
+      "min-instances": {
+        "content": "--min-instances=MIN_INSTANCES",
+        "description": "Sets the minimum number of instances for the function. This is helpful for\nreducing cold start times. Defaults to zero."
+      },
+      "clear-secrets": {
+        "content": "--clear-secrets",
+        "description": "Remove all secret environment variables and volumes."
+      },
+      "set-secrets": {
+        "content": "--set-secrets=[SECRET_ENV_VAR=SECRET_VALUE_REF,/secret_path=SECRET_VALUE_REF,/mount_path:/secret_file_path=SECRET_VALUE_REF,…]",
+        "description": "List of secret environment variables and secret volumes to configure. Existing\nsecrets configuration will be overwritten.You can reference a secret value referred to asSECRET_VALUE_REFin\nthe help text in the following ways.Use${SECRET}:${VERSION}if you are referencing a secret in the\nsame project, where${SECRET}is the name of the secret in secret\nmanager (not the full resource name) and${VERSION}is the version\nof the secret which is either apositive integeror the labellatest. For example, useSECRET_FOO:1to reference\nversion1of the secretSECRET_FOOwhich exists in the\nsame project as the function.Useprojects/${PROJECT}/secrets/${SECRET}/versions/${VERSION}orprojects/${PROJECT}/secrets/${SECRET}:${VERSION}to reference a\nsecret version using the full resource name, where${PROJECT}is\neither the project number (preferred) or the project ID of the\nproject which contains the secret,${SECRET}is the name of the\nsecret in secret manager (not the full resource name) and${VERSION}is the version of the secret which is either apositive integeror the labellatest. For example, useprojects/1234567890/secrets/SECRET_FOO/versions/1orprojects/project_id/secrets/SECRET_FOO/versions/1to reference\nversion1of the secretSECRET_FOOthat exists in the\nproject1234567890orproject_idrespectively. This\nformat is useful when the secret exists in a different project.To configure the secret as an environment variable, useSECRET_ENV_VAR=SECRET_VALUE_REF. To use the value of the secret,\nread the environment variableSECRET_ENV_VARas you would normally\ndo in the function's programming language.We recommend using anumericversion for secret environment\nvariables as any updates to the secret value are not reflected until new clones\nstart.To mount the secret within a volume use/secret_path=SECRET_VALUE_REFor/mount_path:/secret_file_path=SECRET_VALUE_REF. To use the value of\nthe secret, read the file at/secret_pathas you would normally do\nin the function's programming language.For example,/etc/secrets/secret_foo=SECRET_FOO:latestor/etc/secrets:/secret_foo=SECRET_FOO:latestwill make the value of\nthelatestversion of the secretSECRET_FOOavailable\nin a filesecret_foounder the directory/etc/secrets./etc/secretswill be considered as themount pathand\nwillnotbe available for any other volume.We recommend referencing thelatestversion when using secret\nvolumes so that the secret's value changes are reflected immediately."
+      },
+      "remove-secrets": {
+        "content": "--remove-secrets=[SECRET_ENV_VAR,/secret_path,/mount_path:/secret_file_path,…]",
+        "description": "List of secret environment variable names and secret paths to remove.Existing secrets configuration of secret environment variable names and secret\npaths not specified in this list will be preserved.To remove a secret environment variable, use the name of the environment\nvariableSECRET_ENV_VAR.To remove a file within a secret volume or the volume itself, use the secret\npath as the key (either/secret_pathor/mount_path:/secret_file_path)."
+      },
+      "update-secrets": {
+        "content": "--update-secrets=[SECRET_ENV_VAR=SECRET_VALUE_REF,/secret_path=SECRET_VALUE_REF,/mount_path:/secret_file_path=SECRET_VALUE_REF,…]",
+        "description": "List of secret environment variables and secret volumes to update. Existing\nsecrets configuration not specified in this list will be preserved."
+      },
+      "clear-vpc-connector": {
+        "content": "--clear-vpc-connector",
+        "description": "Clears the VPC connector field."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "ID of the connector or fully qualified identifier for the connector.To set theconnectorattribute:provide the argument--vpc-connectoron the command line."
+      },
+      "memory": {
+        "content": "--memory=MEMORY",
+        "description": "Limit on the amount of memory the function can use.Allowed values for v1 are: 128MB, 256MB, 512MB, 1024MB, 2048MB, 4096MB, and\n8192MB.Allowed values for GCF 2nd gen are in the format: <number><unit>\nwith allowed units of \"k\", \"M\", \"G\", \"Ki\", \"Mi\", \"Gi\". Ending 'b' or 'B' is\nallowed, but both are interpreted as bytes as opposed to bits.Examples: 1000000K, 1000000Ki, 256Mb, 512M, 1024Mi, 2G, 4Gi.By default, a new function is limited to 256MB of memory. When deploying an\nupdate to an existing function, the function keeps its old memory limit unless\nyou specify this flag."
+      },
+      "cpu": {
+        "content": "--cpu=CPU",
+        "description": "The number of available CPUs to set. Only valid when--memory=MEMORYis specified.Examples: .5, 2, 2.0, 2000m.By default, a new function's available CPUs is determined based on its memory\nvalue.When deploying an update that includes memory changes to an existing function,\nthe function's available CPUs will be recalculated based on the new memory\nunless this flag is specified. When deploying an update that does not include\nmemory changes to an existing function, the function's \"available CPUs\" setting\nwill keep its old value unless you use this flag to change the setting."
+      },
+      "trigger-bucket": {
+        "content": "--trigger-bucket=TRIGGER_BUCKET",
+        "description": "Google Cloud Storage bucket name. Trigger the function when an object is created\nor overwritten in the specified Cloud Storage bucket."
+      },
+      "trigger-http": {
+        "content": "--trigger-http",
+        "description": "Function will be assigned an endpoint, which you can view by using thedescribecommand. Any HTTP request (of a supported type) to the\nendpoint will trigger function execution. Supported HTTP request types are:\nPOST, PUT, GET, DELETE, and OPTIONS."
+      },
+      "trigger-topic": {
+        "content": "--trigger-topic=TRIGGER_TOPIC",
+        "description": "Name of Pub/Sub topic. Every message published in this topic will trigger\nfunction execution with message contents passed as input data. Note that this\nflag does not accept the format of projects/PROJECT_ID/topics/TOPIC_ID. Use this\nflag to specify the final element TOPIC_ID. The PROJECT_ID will be read from the\nactive configuration."
+      },
+      "trigger-event": {
+        "content": "--trigger-event=EVENT_TYPE",
+        "description": "Specifies which action should trigger the function. For a list of acceptable\nvalues, callgcloud functions\nevent-types list."
+      },
+      "trigger-resource": {
+        "content": "--trigger-resource=RESOURCE",
+        "description": "Specifies which resource from--trigger-eventis being observed.\nE.g. if--trigger-eventisproviders/cloud.storage/eventTypes/object.change,--trigger-resourcemust be a bucket name. For a list of expected\nresources, callgcloud functions\nevent-types list."
+      },
+      "trigger-event-filters": {
+        "content": "--trigger-event-filters=[ATTRIBUTE=VALUE,…]",
+        "description": "The Eventarc matching criteria for the trigger. The criteria can be specified\neither as a single comma-separated argument or as multiple arguments. The\nfilters must include thetypeattribute, as\nwell as any other attributes that are expected for the chosen type."
+      },
+      "trigger-event-filters-path-pattern": {
+        "content": "--trigger-event-filters-path-pattern=[ATTRIBUTE=PATH_PATTERN,…]",
+        "description": "The Eventarc matching criteria for the trigger in path pattern format. The\ncriteria can be specified as a single comma-separated argument or as multiple\narguments.The provided attribute/value pair will be used with thematch-path-patternoperator to configure the trigger, seehttps://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers#eventfilterandhttps://cloud.google.com/eventarc/docs/path-patternsfor more details about on how to construct path patterns.For example, to filter on events for Compute Engine VMs in a given zone:--trigger-event-filters-path-pattern=resourceName='/projects/*/zones/us-central1-a/instances/*'"
+      }
+    }
+  },
+  {
+    "id": "functions.describe",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "describe"
+    ],
+    "command_path": "gcloud functions describe",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/describe",
+    "description": "Display details of a Google Cloud Function.",
+    "command_synopsis": "gcloud functions describe (NAME : --region=REGION) [--v2] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "v2": {
+        "content": "--v2",
+        "description": "If specified, this command will use Cloud Functions v2 APIs and return the\nresult in the v2 format (See\nhttps://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions#Function).\nIf not specified, 1st gen and 2nd gen functions will use v1 and v2 APIs\nrespectively and return the result in the corresponding format (For v1 format,\nsee\nhttps://cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions#resource:-cloudfunction).\nThis command conflicts with--no-gen2. If specified with this\ncombination, v2 APIs will be used."
+      }
+    }
+  },
+  {
+    "id": "functions.detach",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "detach"
+    ],
+    "command_path": "gcloud functions detach",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/detach",
+    "description": "Detach a Cloud Functions v2 function from its existing environment and make it a\nnative Cloud Run function.",
+    "command_synopsis": "gcloud functions detach (NAME : --region=REGION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.event-types",
+    "service": "functions",
+    "type": "group",
+    "path": [
+      "functions",
+      "event-types"
+    ],
+    "command_path": "gcloud functions event-types",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/event-types",
+    "description": "List types of events that can be a trigger for a Google Cloud Function.",
+    "command_synopsis": "gcloud functions event-types COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b5eaf5e42731c9bc11b043c4635bca0749187a6765bbb877843c9479c62f1d94",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.event-types.list",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "event-types",
+      "list"
+    ],
+    "command_path": "gcloud functions event-types list",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/event-types/list",
+    "description": "gcloud functions event-types list displays types of events that can\nbe a trigger for a Google Cloud Function.\nFor an event type, EVENT_TYPE_DEFAULT marks whether the given event\ntype is the default (in which case the --trigger-event flag may be\nomitted).\nFor a resource, RESOURCE_OPTIONAL marks whether the resource has a\ncorresponding default value (in which case the --trigger-resource\nflag may be omitted).",
+    "command_synopsis": "gcloud functions event-types list [--gen2] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "gen2": {
+        "content": "--gen2",
+        "description": "If enabled, this command will use Cloud Functions (Second generation). If\ndisabled with--no-gen2, Cloud Functions (First generation) will be\nused. If not specified, the value of this flag will be taken from thefunctions/gen2configuration property."
+      }
+    }
+  },
+  {
+    "id": "functions.get-iam-policy",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud functions get-iam-policy",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/get-iam-policy",
+    "description": "Get IAM policy for a Google Cloud Function.",
+    "command_synopsis": "gcloud functions get-iam-policy (NAME : --region=REGION) [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "functions.list",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "list"
+    ],
+    "command_path": "gcloud functions list",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/list",
+    "description": "List Google Cloud Functions.",
+    "command_synopsis": "gcloud functions list [--regions=REGION,[REGION,…]; default=\"-\"] [--v2] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "regions": {
+        "content": "--regions=REGION,[REGION,…]; default=\"-\"",
+        "description": "Regions containing functions to list. By default, functions from the region\nconfigured in [functions/region] property are listed."
+      },
+      "v2": {
+        "content": "--v2",
+        "description": "If specified, this command will use Cloud Functions v2 APIs and return the\nresult in the v2 format (See\nhttps://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions#Function).\nIf not specified, 1st gen and 2nd gen functions will use v1 and v2 APIs\nrespectively and return the result in the corresponding format (For v1 format,\nsee\nhttps://cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions#resource:-cloudfunction).\nThis command conflicts with--no-gen2. If specified with this\ncombination, v2 APIs will be used."
+      }
+    }
+  },
+  {
+    "id": "functions.logs.read",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "logs",
+      "read"
+    ],
+    "command_path": "gcloud functions logs read",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/logs/read",
+    "description": "Display log entries produced by Google Cloud Functions.",
+    "command_synopsis": "gcloud functions logs read [NAME] [--end-time=END_TIME] [--execution-id=EXECUTION_ID] [--gen2] [--limit=LIMIT; default=20] [--min-log-level=MIN_LOG_LEVEL] [--region=REGION] [--start-time=START_TIME] [--filter=EXPRESSION] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "[NAME]",
+        "description": "Name of the function which logs are to be displayed. If no name is specified,\nlogs from all functions are displayed."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "end-time": {
+        "content": "--end-time=END_TIME",
+        "description": "Return only log entries which timestamps are not later than the specified time.\nIf--end-timeis specified but--start-timeis not,\nthe command returns--limitlatest log entries which appeared\nbefore --end-time. See$gcloud topic datetimesfor information on time formats."
+      },
+      "execution-id": {
+        "content": "--execution-id=EXECUTION_ID",
+        "description": "Execution ID for which logs are to be displayed."
+      },
+      "gen2": {
+        "content": "--gen2",
+        "description": "If enabled, this command will use Cloud Functions (Second generation). If\ndisabled with--no-gen2, Cloud Functions (First generation) will be\nused. If not specified, the value of this flag will be taken from thefunctions/gen2configuration property. If thefunctions/gen2configuration property is not set, defaults to\nlooking up the given function and using its generation."
+      },
+      "limit": {
+        "content": "--limit=LIMIT; default=20",
+        "description": "Number of log entries to be fetched; must not be greater than 1000. Note that\nthe most recent entries in the specified time range are returned, rather than\nthe earliest."
+      },
+      "min-log-level": {
+        "content": "--min-log-level=MIN_LOG_LEVEL",
+        "description": "Minimum level of logs to be fetched.MIN_LOG_LEVELmust\nbe one of:debug,info,error."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Only show logs generated by functions in the region. Overrides the defaultfunctions/regionproperty value for this command invocation."
+      },
+      "start-time": {
+        "content": "--start-time=START_TIME",
+        "description": "Return only log entries in which timestamps are not earlier than the specified\ntime. If--start-timeis not specified, a default start time of 1\nweek ago is assumed. See $gcloud topic datetimesfor\ninformation on time formats."
+      }
+    }
+  },
+  {
+    "id": "functions.logs",
+    "service": "functions",
+    "type": "group",
+    "path": [
+      "functions",
+      "logs"
+    ],
+    "command_path": "gcloud functions logs",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/logs",
+    "description": "Display log entries produced by Google Cloud Functions.",
+    "command_synopsis": "gcloud functions logs COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2aacf9fb818a55262f0c717e6a28a0233698a64198330e97d19b9f6d151ae295",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.regions.list",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "regions",
+      "list"
+    ],
+    "command_path": "gcloud functions regions list",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/regions/list",
+    "description": "List regions available to Google Cloud Functions.",
+    "command_synopsis": "gcloud functions regions list [--gen2] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "gen2": {
+        "content": "--gen2",
+        "description": "If enabled, this command will use Cloud Functions (Second generation). If\ndisabled with--no-gen2, Cloud Functions (First generation) will be\nused. If not specified, the value of this flag will be taken from thefunctions/gen2configuration property."
+      }
+    }
+  },
+  {
+    "id": "functions.regions",
+    "service": "functions",
+    "type": "group",
+    "path": [
+      "functions",
+      "regions"
+    ],
+    "command_path": "gcloud functions regions",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/regions",
+    "description": "List regions available to Google Cloud Functions.",
+    "command_synopsis": "gcloud functions regions COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b5eaf5e42731c9bc11b043c4635bca0749187a6765bbb877843c9479c62f1d94",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.remove-invoker-policy-binding",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "remove-invoker-policy-binding"
+    ],
+    "command_path": "gcloud functions remove-invoker-policy-binding",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/remove-invoker-policy-binding",
+    "description": "Removes the invoker role IAM policy binding that allows the specified member to\ninvoke the specified function.\nFor Cloud Functions (1st gen), this removes the Cloud Functions Invoker binding\nfrom the IAM policy of the specified function.\nFor Cloud Functions (2nd gen), this removes the Cloud Run Invoker binding from\nthe IAM policy of the specified function's underlying Cloud Run service.",
+    "command_synopsis": "gcloud functions remove-invoker-policy-binding (NAME : --region=REGION) --member=PRINCIPAL [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove from the IAM policy. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.remove-iam-policy-binding",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud functions remove-iam-policy-binding",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/remove-iam-policy-binding",
+    "description": "Removes an IAM policy binding from a Google Cloud Function.",
+    "command_synopsis": "gcloud functions remove-iam-policy-binding (NAME : --region=REGION) --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.set-iam-policy",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud functions set-iam-policy",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/set-iam-policy",
+    "description": "Sets IAM policy for a Google Cloud Function.",
+    "command_synopsis": "gcloud functions set-iam-policy (NAME : --region=REGION) POLICY_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {
+      "NAME-1": {
+        "content": "NAME",
+        "description": "ID of the function or fully qualified identifier for the function.To set thefunctionattribute:provide the argumentNAMEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "The Cloud region for the function. Overrides the defaultfunctions/regionproperty value for this command invocation.To set theregionattribute:provide the argumentNAMEon the command line with a fully\nspecified name;provide the argument--regionon the command line;set the propertyfunctions/region."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to a local JSON or YAML formatted file containing a valid policy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "functions.runtimes.list",
+    "service": "functions",
+    "type": "command",
+    "path": [
+      "functions",
+      "runtimes",
+      "list"
+    ],
+    "command_path": "gcloud functions runtimes list",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/runtimes/list",
+    "description": "List runtimes available to Google Cloud Functions.",
+    "command_synopsis": "gcloud functions runtimes list [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "95a704f720857fbde8784edc72a3d1997b6795dd07dedfcd4c640a8d2d5f31d6",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Only show runtimes within the region. Overrides the defaultfunctions/regionproperty value for this command invocation."
+      }
+    }
+  },
+  {
+    "id": "functions.runtimes",
+    "service": "functions",
+    "type": "group",
+    "path": [
+      "functions",
+      "runtimes"
+    ],
+    "command_path": "gcloud functions runtimes",
+    "service_name": "functions",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/functions/runtimes",
+    "description": "List runtimes available to Google Cloud Functions.",
+    "command_synopsis": "gcloud functions runtimes COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b5eaf5e42731c9bc11b043c4635bca0749187a6765bbb877843c9479c62f1d94",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  }
+]

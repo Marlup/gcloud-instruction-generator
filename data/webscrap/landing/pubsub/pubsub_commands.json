@@ -1,0 +1,3135 @@
+[
+  {
+    "id": "pubsub",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub"
+    ],
+    "command_path": "gcloud pubsub",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub",
+    "description": "Manage Cloud Pub/Sub topics, subscriptions, and snapshots.",
+    "command_synopsis": "gcloud pubsub GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6e2800325efa2e3a515db23df0318b6aa4d07301bd82a0912493a644d67142a3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-operations",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "lite-operations"
+    ],
+    "command_path": "gcloud pubsub lite-operations",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-operations",
+    "description": "Manage Pub/Sub Lite operations.",
+    "command_synopsis": "gcloud pubsub lite-operations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1b8ad6686eefc34be3e6a193842d3d626e3ddee4583fc233acdce93138610836",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-operations.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-operations",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub lite-operations describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-operations/describe",
+    "description": "Describe a Pub/Sub Lite operation.",
+    "command_synopsis": "gcloud pubsub lite-operations describe (OPERATION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "OPERATION": {
+        "content": "OPERATION",
+        "description": "ID of the operation or fully qualified identifier for the operation.To set theoperationattribute:provide the argumentoperationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentoperationon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-reservations",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "lite-reservations"
+    ],
+    "command_path": "gcloud pubsub lite-reservations",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations",
+    "description": "Manage Pub/Sub Lite reservations.",
+    "command_synopsis": "gcloud pubsub lite-reservations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "f9a8c2e221a2217e0c4d79059a5dbf55cddbe719bd597f713f5b44b57098eb36",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-operations.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-operations",
+      "list"
+    ],
+    "command_path": "gcloud pubsub lite-operations list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-operations/list",
+    "description": "List Pub/Sub Lite operations.\nThe optional --subscription flag can be used to filter operations\nfor a Pub/Sub Lite subscription. The optional --done flag can be\nused to filter by operation completion status. These flags are ignored if\n--filter is set.\nTo describe a listed operation, run:\ngcloud pubsub lite-operations list operation-id --location=us-central1-a",
+    "command_synopsis": "gcloud pubsub lite-operations list --location=LOCATION [--done=DONE] [--subscription=SUBSCRIPTION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "done": {
+        "content": "--done=DONE",
+        "description": "Filter operations by completion status. This flag is ignored if--filteris set.DONEmust be one of:false,true."
+      },
+      "subscription": {
+        "content": "--subscription=SUBSCRIPTION",
+        "description": "Filter operations by target subscription. This flag is ignored if--filteris set."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-reservations.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-reservations",
+      "create"
+    ],
+    "command_path": "gcloud pubsub lite-reservations create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations/create",
+    "description": "Create a Pub/Sub Lite reservation.",
+    "command_synopsis": "gcloud pubsub lite-reservations create RESERVATION --location=LOCATION --throughput-capacity=THROUGHPUT_CAPACITY [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "RESERVATION": {
+        "content": "RESERVATION",
+        "description": "Reservation ID."
+      }
+    },
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line."
+      },
+      "throughput-capacity": {
+        "content": "--throughput-capacity=THROUGHPUT_CAPACITY",
+        "description": "Reservation throughput capacity. Every unit of throughput capacity is equivalent\nto 1 MiB/s of published messages or 2 MiB/s of subscribed messages."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-reservations.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-reservations",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub lite-reservations delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations/delete",
+    "description": "Delete a Pub/Sub Lite reservation.",
+    "command_synopsis": "gcloud pubsub lite-reservations delete (RESERVATION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "RESERVATION": {
+        "content": "RESERVATION",
+        "description": "ID of the reservation or fully qualified identifier for the reservation.To set thereservationattribute:provide the argumentreservationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentreservationon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-reservations.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-reservations",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub lite-reservations describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations/describe",
+    "description": "Describe a Pub/Sub Lite reservation.",
+    "command_synopsis": "gcloud pubsub lite-reservations describe (RESERVATION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "RESERVATION": {
+        "content": "RESERVATION",
+        "description": "ID of the reservation or fully qualified identifier for the reservation.To set thereservationattribute:provide the argumentreservationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentreservationon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-reservations.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-reservations",
+      "list"
+    ],
+    "command_path": "gcloud pubsub lite-reservations list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations/list",
+    "description": "List Pub/Sub Lite reservations.",
+    "command_synopsis": "gcloud pubsub lite-reservations list --location=LOCATION [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-reservations.list-topics",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-reservations",
+      "list-topics"
+    ],
+    "command_path": "gcloud pubsub lite-reservations list-topics",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations/list-topics",
+    "description": "List Pub/Sub Lite topics for a given Lite reservation.",
+    "command_synopsis": "gcloud pubsub lite-reservations list-topics (RESERVATION : --location=LOCATION) [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "RESERVATION": {
+        "content": "RESERVATION",
+        "description": "ID of the reservation or fully qualified identifier for the reservation.To set thereservationattribute:provide the argumentreservationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentreservationon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-subscriptions",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "lite-subscriptions"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions",
+    "description": "Manage Pub/Sub Lite subscriptions.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b1b6282c0d949f4a0d32fc9ca6bb720371a74bf6f6c6d801a37bd061026fbeb5",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-reservations.update",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-reservations",
+      "update"
+    ],
+    "command_path": "gcloud pubsub lite-reservations update",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-reservations/update",
+    "description": "Update a Pub/Sub Lite reservation.",
+    "command_synopsis": "gcloud pubsub lite-reservations update (RESERVATION : --location=LOCATION) --throughput-capacity=THROUGHPUT_CAPACITY [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "RESERVATION": {
+        "content": "RESERVATION",
+        "description": "ID of the reservation or fully qualified identifier for the reservation.To set thereservationattribute:provide the argumentreservationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentreservationon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {
+      "throughput-capacity": {
+        "content": "--throughput-capacity=THROUGHPUT_CAPACITY",
+        "description": "Reservation throughput capacity. Every unit of throughput capacity is equivalent\nto 1 MiB/s of published messages or 2 MiB/s of subscribed messages."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-subscriptions.ack-up-to",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "ack-up-to"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions ack-up-to",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/ack-up-to",
+    "description": "Acknowledge all messages on a Pub/Sub Lite subscription up to the provided\noffset. The message corresponding to the provided offset will be included in the\nlist of messages that are acknowledged.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions ack-up-to (SUBSCRIPTION : --location=LOCATION) --offset=OFFSET --partition=PARTITION [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentsubscriptionon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {
+      "offset": {
+        "content": "--offset=OFFSET",
+        "description": "The offset of a message within a topic partition. Must be greater than or equal\nto 0."
+      },
+      "partition": {
+        "content": "--partition=PARTITION",
+        "description": "The topic partition. Partitions are zero indexed, so the partition must be in\nthe range [0, topic.num_partitions). If you do not know your\ntopic.num_partitions, rungcloud pubsub lite-topic describe TOPIC\n--location=ZONE."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-subscriptions.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "create"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/create",
+    "description": "Create a Pub/Sub Lite subscription.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions create SUBSCRIPTION --topic=TOPIC [--delivery-requirement=DELIVERY_REQUIREMENT; default=\"deliver-immediately\"] [--location=LOCATION] [--event-time=EVENT_TIME     | --publish-time=PUBLISH_TIME     | --starting-offset=STARTING_OFFSET; default=\"end\"] [--export-pubsub-topic=EXPORT_PUBSUB_TOPIC : --export-dead-letter-topic=EXPORT_DEAD_LETTER_TOPIC --export-desired-state=EXPORT_DESIRED_STATE; default=\"active\"] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "Subscription ID."
+      }
+    },
+    "required_flags": {
+      "topic": {
+        "content": "--topic=TOPIC",
+        "description": "Topic ID associated with the subscription."
+      }
+    },
+    "optional_flags": {
+      "delivery-requirement": {
+        "content": "--delivery-requirement=DELIVERY_REQUIREMENT; default=\"deliver-immediately\"",
+        "description": "When this subscription should send messages to subscribers relative to messages\npersistence in storage. Seehttps://cloud.google.com/pubsub/lite/docs/subscriptions#creating_lite_subscriptionsfor more info.DELIVERY_REQUIREMENTmust be one of:deliver-after-stored,deliver-immediately."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      },
+      "event-time": {
+        "content": "--event-time=EVENT_TIME",
+        "description": "The event time to which you seek a subscription. The subscription seeks to the\nfirst message with event time greater than or equal to the specified event time.\nMessages missing an event time use publish time as a fallback. As event times\nare user supplied, subsequent messages may have event times less than the\nspecified event time and must be filtered by the client, if necessary. Run $gcloud topic datetimesfor\ninformation on time formats."
+      },
+      "publish-time": {
+        "content": "--publish-time=PUBLISH_TIME",
+        "description": "The publish time to which you seek a subscription. Messages with publish time\ngreater than or equal to the specified time are delivered after the seek\noperation. Run $gcloud topic\ndatetimesfor information on time formats."
+      },
+      "starting-offset": {
+        "content": "--starting-offset=STARTING_OFFSET; default=\"end\"",
+        "description": "The offset at which a newly created or seeked subscription starts receiving\nmessages. A subscription can be initialized at the offset of the oldest retained\nmessage (beginning), or at the current HEAD offset\n(end).STARTING_OFFSETmust be one of:beginning,end."
+      },
+      "export-pubsub-topic": {
+        "content": "--export-pubsub-topic=EXPORT_PUBSUB_TOPIC",
+        "description": "The name of the destination Pub/Sub topic to which messages are exported. Must\nbe the topic's fully specified path if it is not in the same project as the\nsubscription to be created."
+      },
+      "export-dead-letter-topic": {
+        "content": "--export-dead-letter-topic=EXPORT_DEAD_LETTER_TOPIC",
+        "description": "The name of the Pub/Sub Lite topic to write messages that cannot be exported.\nMust be in the same project and location as the subscription to be created. Note\nthat this is a Lite topic."
+      },
+      "export-desired-state": {
+        "content": "--export-desired-state=EXPORT_DESIRED_STATE; default=\"active\"",
+        "description": "The desired state of the export. Process messages by setting the value to ACTIVE\nor pause message processing by setting the value to PAUSED.EXPORT_DESIRED_STATEmust be one of:active,paused."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-subscriptions.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/delete",
+    "description": "Delete a Pub/Sub Lite subscription.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions delete (SUBSCRIPTION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentsubscriptionon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-subscriptions.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/describe",
+    "description": "Describe a Pub/Sub Lite subscription.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions describe (SUBSCRIPTION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentsubscriptionon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-subscriptions.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "list"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/list",
+    "description": "List Pub/Sub Lite subscriptions.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions list [--location=LOCATION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-subscriptions.seek",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "seek"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions seek",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/seek",
+    "description": "Initiate an out-of-band seek operation for a Pub/Sub Lite subscription to a\nspecified target, which may be timestamps or named locations within the message\nbacklog.\nThe seek operation will complete once subscriber clients react to the seek for\nall partitions of the topic. Note that the seek operation will not complete\nuntil subscribers are online. It may take some time (usually within 30 seconds)\nfor the seek to propagate if subscribers are online. Use the --async flag if\nit's not necessary to wait for completion.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions seek (SUBSCRIPTION : --location=LOCATION) (--event-time=EVENT_TIME     | --publish-time=PUBLISH_TIME     | --starting-offset=STARTING_OFFSET) [--async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentsubscriptionon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {
+      "event-time": {
+        "content": "--event-time=EVENT_TIME",
+        "description": "The event time to which you seek a subscription. The subscription seeks to the\nfirst message with event time greater than or equal to the specified event time.\nMessages missing an event time use publish time as a fallback. As event times\nare user supplied, subsequent messages may have event times less than the\nspecified event time and must be filtered by the client, if necessary. Run $gcloud topic datetimesfor\ninformation on time formats."
+      },
+      "publish-time": {
+        "content": "--publish-time=PUBLISH_TIME",
+        "description": "The publish time to which you seek a subscription. Messages with publish time\ngreater than or equal to the specified time are delivered after the seek\noperation. Run $gcloud topic\ndatetimesfor information on time formats."
+      },
+      "starting-offset": {
+        "content": "--starting-offset=STARTING_OFFSET",
+        "description": "The offset at which a newly created or seeked subscription starts receiving\nmessages. A subscription can be initialized at the offset of the oldest retained\nmessage (beginning), or at the current HEAD offset\n(end).STARTING_OFFSETmust be one of:beginning,end."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-subscriptions.subscribe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "subscribe"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions subscribe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/subscribe",
+    "description": "Streams messages from a Pub/Sub Lite subscription. This command requires Python\n3.6 or greater, and requires the grpcio Python package to be installed.\nFor MacOS, Linux, and Cloud Shell users, to install the gRPC client libraries,\nrun:\nsudo pip3 install grpcio\nexport CLOUDSDK_PYTHON_SITEPACKAGES=1",
+    "command_synopsis": "gcloud pubsub lite-subscriptions subscribe (SUBSCRIPTION : --location=LOCATION) [--auto-ack] [--num-messages=NUM_MESSAGES; default=1] [--partitions=[INT,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentsubscriptionon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "auto-ack": {
+        "content": "--auto-ack",
+        "description": "Automatically ACK every message received on this subscription."
+      },
+      "num-messages": {
+        "content": "--num-messages=NUM_MESSAGES; default=1",
+        "description": "The number of messages to stream before exiting. This value must be less than or\nequal to 1000."
+      },
+      "partitions": {
+        "content": "--partitions=[INT,…]",
+        "description": "The partitions this subscriber should connect to to receive messages. If empty,\npartitions will be automatically assigned."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-subscriptions.update",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-subscriptions",
+      "update"
+    ],
+    "command_path": "gcloud pubsub lite-subscriptions update",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-subscriptions/update",
+    "description": "Update a Pub/Sub Lite subscription.",
+    "command_synopsis": "gcloud pubsub lite-subscriptions update (SUBSCRIPTION : --location=LOCATION) (--delivery-requirement=DELIVERY_REQUIREMENT --export-dead-letter-topic=EXPORT_DEAD_LETTER_TOPIC --export-desired-state=EXPORT_DESIRED_STATE --export-pubsub-topic=EXPORT_PUBSUB_TOPIC) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumentsubscriptionon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {
+      "delivery-requirement": {
+        "content": "--delivery-requirement=DELIVERY_REQUIREMENT",
+        "description": "When this subscription should send messages to subscribers relative to messages\npersistence in storage. Seehttps://cloud.google.com/pubsub/lite/docs/subscriptions#creating_lite_subscriptionsfor more info.DELIVERY_REQUIREMENTmust be one of:deliver-after-stored,deliver-immediately."
+      },
+      "export-dead-letter-topic": {
+        "content": "--export-dead-letter-topic=EXPORT_DEAD_LETTER_TOPIC",
+        "description": "The name of the Pub/Sub Lite topic to write messages that cannot be exported.\nMust be in the same project and location as the subscription to be created. Note\nthat this is a Lite topic."
+      },
+      "export-desired-state": {
+        "content": "--export-desired-state=EXPORT_DESIRED_STATE",
+        "description": "The desired state of the export. Process messages by setting the value to ACTIVE\nor pause message processing by setting the value to PAUSED.EXPORT_DESIRED_STATEmust be one of:active,paused."
+      },
+      "export-pubsub-topic": {
+        "content": "--export-pubsub-topic=EXPORT_PUBSUB_TOPIC",
+        "description": "The name of the destination Pub/Sub topic to which messages are exported. Must\nbe the topic's fully specified path if it is not in the same project as the\nsubscription to be created."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-topics",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "lite-topics"
+    ],
+    "command_path": "gcloud pubsub lite-topics",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics",
+    "description": "Manage Pub/Sub Lite topics.",
+    "command_synopsis": "gcloud pubsub lite-topics COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "aebea850e31ef60ebc8c242ac47e55175c13d7cc5884e6d24b3a07e8125bb588",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-topics.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "create"
+    ],
+    "command_path": "gcloud pubsub lite-topics create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/create",
+    "description": "Create a Pub/Sub Lite topic.",
+    "command_synopsis": "gcloud pubsub lite-topics create TOPIC --partitions=PARTITIONS --per-partition-bytes=PER_PARTITION_BYTES [--location=LOCATION] [--message-retention-period=MESSAGE_RETENTION_PERIOD] [--per-partition-publish-mib=PER_PARTITION_PUBLISH_MIB] [--per-partition-subscribe-mib=PER_PARTITION_SUBSCRIBE_MIB] [--throughput-reservation=THROUGHPUT_RESERVATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "Topic ID."
+      }
+    },
+    "required_flags": {
+      "partitions": {
+        "content": "--partitions=PARTITIONS",
+        "description": "Number of partitions in the topic."
+      },
+      "per-partition-bytes": {
+        "content": "--per-partition-bytes=PER_PARTITION_BYTES",
+        "description": "Provisioned storage, in bytes, per partition. If the number of bytes stored in\nany of the topic's partitions exceeds this value, older messages will be dropped\nto make room for newer ones, regardless of the value ofmessage-retention-period. A valid example value of this flag would\nbeper-partition-bytes=30GiB."
+      }
+    },
+    "optional_flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      },
+      "message-retention-period": {
+        "content": "--message-retention-period=MESSAGE_RETENTION_PERIOD",
+        "description": "How long a published message is retained. If unset, messages will only be\ndropped to make space for new ones once theper-partition-byteslimit is reached. A valid example value of this flag would bemessage-retention-period=\"2w\"."
+      },
+      "per-partition-publish-mib": {
+        "content": "--per-partition-publish-mib=PER_PARTITION_PUBLISH_MIB",
+        "description": "Topic partition publish throughput capacity in MiB/s. Must be between 4 and 16."
+      },
+      "per-partition-subscribe-mib": {
+        "content": "--per-partition-subscribe-mib=PER_PARTITION_SUBSCRIBE_MIB",
+        "description": "Topic partition subscribe throughput capacity in MiB/s. Must be between 4 and\n32."
+      },
+      "throughput-reservation": {
+        "content": "--throughput-reservation=THROUGHPUT_RESERVATION",
+        "description": "Reservation ID to use for topic throughput."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-topics.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub lite-topics delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/delete",
+    "description": "Delete a Pub/Sub Lite topic.",
+    "command_synopsis": "gcloud pubsub lite-topics delete (TOPIC : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumenttopicon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-topics.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub lite-topics describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/describe",
+    "description": "Describe a Pub/Sub Lite topic.",
+    "command_synopsis": "gcloud pubsub lite-topics describe (TOPIC : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumenttopicon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.lite-topics.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "list"
+    ],
+    "command_path": "gcloud pubsub lite-topics list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/list",
+    "description": "List Pub/Sub Lite topics.",
+    "command_synopsis": "gcloud pubsub lite-topics list [--location=LOCATION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location or fully qualified identifier for the location.To set thelocationattribute:provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-topics.list-subscriptions",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "list-subscriptions"
+    ],
+    "command_path": "gcloud pubsub lite-topics list-subscriptions",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/list-subscriptions",
+    "description": "List Pub/Sub Lite subscriptions for a given Lite topic.",
+    "command_synopsis": "gcloud pubsub lite-topics list-subscriptions (TOPIC : --location=LOCATION) [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumenttopicon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-topics.publish",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "publish"
+    ],
+    "command_path": "gcloud pubsub lite-topics publish",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/publish",
+    "description": "Publishes a message to the specified Pub/Sub Lite topic. This command requires\nPython 3.6 or greater, and requires the grpcio Python package to be installed.\nFor MacOS, Linux, and Cloud Shell users, to install the gRPC client libraries,\nrun:\nsudo pip3 install grpcio\nexport CLOUDSDK_PYTHON_SITEPACKAGES=1",
+    "command_synopsis": "gcloud pubsub lite-topics publish (TOPIC : --location=LOCATION) [--attributes=[KEY=VALUE,…]] [--event-time=DATETIME] [--message=MESSAGE] [--ordering-key=ORDERING_KEY] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumenttopicon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "attributes": {
+        "content": "--attributes=[KEY=VALUE,…]",
+        "description": "Comma-separated list of attributes. Each ATTRIBUTE has the form name=\"value\".\nYou can specify up to 100 attributes."
+      },
+      "event-time": {
+        "content": "--event-time=DATETIME",
+        "description": "A user-specified event time. Rungcloud topic datetimesfor information on time formats."
+      },
+      "message": {
+        "content": "--message=MESSAGE",
+        "description": "The body of the message to publish to the given topic name."
+      },
+      "ordering-key": {
+        "content": "--ordering-key=ORDERING_KEY",
+        "description": "A string key, used for ordering delivery to subscribers. All messages with the\nsame ordering key will be assigned to the same partition for ordered delivery."
+      }
+    }
+  },
+  {
+    "id": "pubsub.lite-topics.update",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "lite-topics",
+      "update"
+    ],
+    "command_path": "gcloud pubsub lite-topics update",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/lite-topics/update",
+    "description": "Update a Pub/Sub Lite topic.",
+    "command_synopsis": "gcloud pubsub lite-topics update (TOPIC : --location=LOCATION) (--message-retention-period=MESSAGE_RETENTION_PERIOD --partitions=PARTITIONS --per-partition-bytes=PER_PARTITION_BYTES --per-partition-publish-mib=PER_PARTITION_PUBLISH_MIB --per-partition-subscribe-mib=PER_PARTITION_SUBSCRIBE_MIB --throughput-reservation=THROUGHPUT_RESERVATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "ID of the location of the Pub/Sub Lite resource.\nTo set thelocationattribute:provide the argumenttopicon the command line with a fully\nspecified name;provide the argument--locationon the command line;provide the argument--zoneon the command line."
+      }
+    },
+    "required_flags": {
+      "message-retention-period": {
+        "content": "--message-retention-period=MESSAGE_RETENTION_PERIOD",
+        "description": "How long a published message is retained. If unset, messages will only be\ndropped to make space for new ones once theper-partition-byteslimit is reached. A valid example value of this flag would bemessage-retention-period=\"2w\"."
+      },
+      "partitions": {
+        "content": "--partitions=PARTITIONS",
+        "description": "Number of partitions in the topic."
+      },
+      "per-partition-bytes": {
+        "content": "--per-partition-bytes=PER_PARTITION_BYTES",
+        "description": "Provisioned storage, in bytes, per partition. If the number of bytes stored in\nany of the topic's partitions exceeds this value, older messages will be dropped\nto make room for newer ones, regardless of the value ofmessage-retention-period. A valid example value of this flag would\nbeper-partition-bytes=30GiB."
+      },
+      "per-partition-publish-mib": {
+        "content": "--per-partition-publish-mib=PER_PARTITION_PUBLISH_MIB",
+        "description": "Topic partition publish throughput capacity in MiB/s. Must be between 4 and 16."
+      },
+      "per-partition-subscribe-mib": {
+        "content": "--per-partition-subscribe-mib=PER_PARTITION_SUBSCRIBE_MIB",
+        "description": "Topic partition subscribe throughput capacity in MiB/s. Must be between 4 and\n32."
+      },
+      "throughput-reservation": {
+        "content": "--throughput-reservation=THROUGHPUT_RESERVATION",
+        "description": "Reservation ID to use for topic throughput."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.message-transforms",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "message-transforms"
+    ],
+    "command_path": "gcloud pubsub message-transforms",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/message-transforms",
+    "description": "Manage Cloud Pub/Sub message transforms.",
+    "command_synopsis": "gcloud pubsub message-transforms COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "5aefa31cb200fe858139cfa4a371a598173e57acac4b869f1952de758c0cceba",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.message-transforms.test",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "message-transforms",
+      "test"
+    ],
+    "command_path": "gcloud pubsub message-transforms test",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/message-transforms/test",
+    "description": "Tests message transforms against a given message.",
+    "command_synopsis": "gcloud pubsub message-transforms test (--attribute=[ATTRIBUTE,…] --message=MESSAGE) (--message-transforms-file=MESSAGE_TRANSFORMS_FILE     | --subscription=SUBSCRIPTION     | [--topic=TOPIC : --topic-project=TOPIC_PROJECT]) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {
+      "attribute": {
+        "content": "--attribute=[ATTRIBUTE,…]",
+        "description": "Comma-separated list of attributes to attach to the message. Each ATTRIBUTE has\nthe form name=\"value\". You can specify up to 100 attributes."
+      },
+      "message": {
+        "content": "--message=MESSAGE",
+        "description": "Message body to test the message transforms against."
+      },
+      "message-transforms-file": {
+        "content": "--message-transforms-file=MESSAGE_TRANSFORMS_FILE",
+        "description": "Path to YAML or JSON file containing message transforms."
+      },
+      "subscription": {
+        "content": "--subscription=SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argument--subscriptionon the command line."
+      },
+      "topic": {
+        "content": "--topic=TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argument--topicon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "topic-project": {
+        "content": "--topic-project=TOPIC_PROJECT",
+        "description": "Project ID of the Google Cloud project for the topic.To set theprojectattribute:provide the argument--topicon the command line with a fully\nspecified name;provide the argument--topic-projecton the command line;provide the argument--projecton the command line;set the propertycore/project."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.message-transforms.validate",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "message-transforms",
+      "validate"
+    ],
+    "command_path": "gcloud pubsub message-transforms validate",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/message-transforms/validate",
+    "description": "Validates a message transform.",
+    "command_synopsis": "gcloud pubsub message-transforms validate --message-transform-file=MESSAGE_TRANSFORM_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {
+      "message-transform-file": {
+        "content": "--message-transform-file=MESSAGE_TRANSFORM_FILE",
+        "description": "Path to YAML or JSON file containing a message transform."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "schemas"
+    ],
+    "command_path": "gcloud pubsub schemas",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas",
+    "description": "The gcloud pubsub schemas group lets you create and manage Pub/Sub schemas.\nThese schemas can be attached to topics to enable validation of published\nmessages. Commands to validate schemas and messages against schemas are also\navailable.",
+    "command_synopsis": "gcloud pubsub schemas COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "a48650f31f95181d508a7719c911a4a45408c926dcb16c2866954dd15f0b952a",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.commit",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "commit"
+    ],
+    "command_path": "gcloud pubsub schemas commit",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/commit",
+    "description": "Commit a Pub/Sub schema revision.",
+    "command_synopsis": "gcloud pubsub schemas commit SCHEMA --type=TYPE (--definition=DEFINITION     | --definition-file=PATH_TO_FILE) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {
+      "type": {
+        "content": "--type=TYPE",
+        "description": "The type of the schema."
+      },
+      "definition": {
+        "content": "--definition=DEFINITION",
+        "description": "The new definition of the schema."
+      },
+      "definition-file": {
+        "content": "--definition-file=PATH_TO_FILE",
+        "description": "File containing the new schema definition. Use a full or relative path to a\nlocal file containing the value of definition_file."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "create"
+    ],
+    "command_path": "gcloud pubsub schemas create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/create",
+    "description": "Create a new Pub/Sub schema.",
+    "command_synopsis": "gcloud pubsub schemas create SCHEMA --type=TYPE (--definition=DEFINITION     | --definition-file=PATH_TO_FILE) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {
+      "type": {
+        "content": "--type=TYPE",
+        "description": "Type of the schema.TYPEmust be one of:avro,protocol-buffer."
+      },
+      "definition": {
+        "content": "--definition=DEFINITION",
+        "description": "Inline schema definition."
+      },
+      "definition-file": {
+        "content": "--definition-file=PATH_TO_FILE",
+        "description": "File containing schema definition. Use a full or relative path to a local file\ncontaining the value of definition_file."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub schemas delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/delete",
+    "description": "Delete a Pub/Sub schema.",
+    "command_synopsis": "gcloud pubsub schemas delete SCHEMA [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.delete-revision",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "delete-revision"
+    ],
+    "command_path": "gcloud pubsub schemas delete-revision",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/delete-revision",
+    "description": "Delete a Pub/Sub schema revision.",
+    "command_synopsis": "gcloud pubsub schemas delete-revision SCHEMA [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub schemas describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/describe",
+    "description": "Show details of a Pub/Sub schema.",
+    "command_synopsis": "gcloud pubsub schemas describe SCHEMA [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "list"
+    ],
+    "command_path": "gcloud pubsub schemas list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/list",
+    "description": "List Pub/Sub schemas.",
+    "command_synopsis": "gcloud pubsub schemas list [--view=VIEW; default=\"basic\"] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "view": {
+        "content": "--view=VIEW; default=\"basic\"",
+        "description": "There are two possible views, 'basic' and 'full', default is 'basic'.VIEWmust be one of:basicInclude the name and type of the schema, but not the definition.fullInclude all Schema object fields."
+      },
+      "basic": {
+        "content": "basic",
+        "description": "Include the name and type of the schema, but not the definition."
+      },
+      "full": {
+        "content": "full",
+        "description": "Include all Schema object fields."
+      }
+    }
+  },
+  {
+    "id": "pubsub.schemas.list-revisions",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "list-revisions"
+    ],
+    "command_path": "gcloud pubsub schemas list-revisions",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/list-revisions",
+    "description": "List revisions of a Pub/Sub schema.",
+    "command_synopsis": "gcloud pubsub schemas list-revisions SCHEMA [--view=VIEW; default=\"basic\"] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "view": {
+        "content": "--view=VIEW; default=\"basic\"",
+        "description": "There are two possible views, 'basic' and 'full', default is 'basic'.VIEWmust be one of:basicInclude the name and type of the schema, but not the definition.fullInclude all Schema object fields."
+      },
+      "basic": {
+        "content": "basic",
+        "description": "Include the name and type of the schema, but not the definition."
+      },
+      "full": {
+        "content": "full",
+        "description": "Include all Schema object fields."
+      }
+    }
+  },
+  {
+    "id": "pubsub.schemas.rollback",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "schemas",
+      "rollback"
+    ],
+    "command_path": "gcloud pubsub schemas rollback",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/rollback",
+    "description": "Roll back a Pub/Sub schema to a specified revision.",
+    "command_synopsis": "gcloud pubsub schemas rollback SCHEMA --revision-id=REVISION_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SCHEMA": {
+        "content": "SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argumentschemaon the command line."
+      }
+    },
+    "required_flags": {
+      "revision-id": {
+        "content": "--revision-id=REVISION_ID",
+        "description": "The revision to roll back to."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.validate-message",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "schemas",
+      "validate-message"
+    ],
+    "command_path": "gcloud pubsub schemas validate-message",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/validate-message",
+    "description": "Validate a message against a Pub/Sub schema.",
+    "command_synopsis": "gcloud pubsub schemas validate-message --message=MESSAGE --message-encoding=MESSAGE_ENCODING (--schema-name=SCHEMA_NAME     | --type=TYPE (--definition=DEFINITION | --definition-file=PATH_TO_FILE)) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {
+      "message": {
+        "content": "--message=MESSAGE",
+        "description": "The message to validate against the schema."
+      },
+      "message-encoding": {
+        "content": "--message-encoding=MESSAGE_ENCODING",
+        "description": "The encoding of the message.MESSAGE_ENCODINGmust be\none of:binary,json."
+      },
+      "schema-name": {
+        "content": "--schema-name=SCHEMA_NAME",
+        "description": "Name or full path of an existing schema."
+      },
+      "type": {
+        "content": "--type=TYPE",
+        "description": "Type of inline schema.TYPEmust be one of:avro,protocol-buffer.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "definition": {
+        "content": "--definition=DEFINITION",
+        "description": "Inline schema definition."
+      },
+      "definition-file": {
+        "content": "--definition-file=PATH_TO_FILE",
+        "description": "File containing schema definition. Use a full or relative path to a local file\ncontaining the value of definition_file."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.schemas.validate-schema",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "schemas",
+      "validate-schema"
+    ],
+    "command_path": "gcloud pubsub schemas validate-schema",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas/validate-schema",
+    "description": "Validate a new Pub/Sub schema.",
+    "command_synopsis": "gcloud pubsub schemas validate-schema --type=TYPE (--definition=DEFINITION     | --definition-file=PATH_TO_FILE) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {
+      "type": {
+        "content": "--type=TYPE",
+        "description": "Type of the schema.TYPEmust be one of:avro,protocol-buffer."
+      },
+      "definition": {
+        "content": "--definition=DEFINITION",
+        "description": "Inline schema definition."
+      },
+      "definition-file": {
+        "content": "--definition-file=PATH_TO_FILE",
+        "description": "File containing schema definition. Use a full or relative path to a local file\ncontaining the value of definition_file."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.snapshots",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "snapshots"
+    ],
+    "command_path": "gcloud pubsub snapshots",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/snapshots",
+    "description": "Manage Cloud Pub/Sub snapshots.",
+    "command_synopsis": "gcloud pubsub snapshots COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "c32ecb4e727e03075fc672a672440955d79ed7e09f507ab49515e69321f8910e",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.snapshots.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "snapshots",
+      "create"
+    ],
+    "command_path": "gcloud pubsub snapshots create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/snapshots/create",
+    "description": "Creates one or more Cloud Pub/Sub snapshots.",
+    "command_synopsis": "gcloud pubsub snapshots create SNAPSHOT [SNAPSHOT …] --subscription=SUBSCRIPTION [--labels=[KEY=VALUE,…]] [--subscription-project=SUBSCRIPTION_PROJECT] [--tags=[KEY=VALUE,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SNAPSHOT": {
+        "content": "SNAPSHOT[SNAPSHOT…]",
+        "description": "One or more snapshot names to create."
+      }
+    },
+    "required_flags": {
+      "subscription": {
+        "content": "--subscription=SUBSCRIPTION",
+        "description": "The subscription whose backlog the snapshot retains. Specifically, the created\nsnapshot is guaranteed to retain a) The existing backlog on the subscription,\ni.e., the set of messages in the subscription that are unacknowledged upon the\nsuccessful completion of the create snapshot request, b) Any messages published\nto the subscription's topic following the successful creation of the snapshot."
+      }
+    },
+    "optional_flags": {
+      "labels": {
+        "content": "--labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "subscription-project": {
+        "content": "--subscription-project=SUBSCRIPTION_PROJECT",
+        "description": "The name of the project the provided subscription belongs to. If not set, it\ndefaults to the currently selected cloud project."
+      },
+      "tags": {
+        "content": "--tags=[KEY=VALUE,…]",
+        "description": "List of tags KEY=VALUE pairs to bind. Each item must be expressed as<tag-key-namespaced-name>=<tag-value-short-name>.\nExample:123/environment=production,123/costCenter=marketing"
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.snapshots.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "snapshots",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub snapshots delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/snapshots/delete",
+    "description": "Deletes one or more Cloud Pub/Sub snapshots.",
+    "command_synopsis": "gcloud pubsub snapshots delete SNAPSHOT [SNAPSHOT …] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SNAPSHOT": {
+        "content": "SNAPSHOT[SNAPSHOT…]",
+        "description": "One or more snapshot names to delete."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.snapshots.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "snapshots",
+      "list"
+    ],
+    "command_path": "gcloud pubsub snapshots list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/snapshots/list",
+    "description": "Lists all the snapshots in a given project.",
+    "command_synopsis": "gcloud pubsub snapshots list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "pubsub.snapshots.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "snapshots",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub snapshots describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/snapshots/describe",
+    "description": "Describes a Cloud Pub/Sub snapshot.",
+    "command_synopsis": "gcloud pubsub snapshots describe SNAPSHOT [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SNAPSHOT": {
+        "content": "SNAPSHOT",
+        "description": "snapshot to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "subscriptions"
+    ],
+    "command_path": "gcloud pubsub subscriptions",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions",
+    "description": "Manage Cloud Pub/Sub subscriptions.",
+    "command_synopsis": "gcloud pubsub subscriptions COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b5ff75ef0c76f390a9f0f92a00528128234f3794cea231c1fc18e4faca3cd523",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.ack",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "ack"
+    ],
+    "command_path": "gcloud pubsub subscriptions ack",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/ack",
+    "description": "Acknowledges one or more messages as having been successfully received. If a\ndelivered message is not acknowledged within the Subscription's ack deadline,\nCloud Pub/Sub will attempt to deliver it again.\nTo automatically acknowledge messages when pulling from a Subscription, you can\nuse the --auto-ack flag on gcloud pubsub\nsubscriptions pull.",
+    "command_synopsis": "gcloud pubsub subscriptions ack SUBSCRIPTION --ack-ids=[ACK_ID,…] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "ack-ids": {
+        "content": "--ack-ids=[ACK_ID,…]",
+        "description": "One or more ACK_IDs to acknowledge. An ACK_ID is astring\nthat is returned to subscribers. along with the message. The ACK_ID is\ndifferent from themessage\nID."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.add-iam-policy-binding",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud pubsub subscriptions add-iam-policy-binding",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/add-iam-policy-binding",
+    "description": "Add an IAM policy binding to a Cloud Pub/Sub Subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions add-iam-policy-binding SUBSCRIPTION --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "create"
+    ],
+    "command_path": "gcloud pubsub subscriptions create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/create",
+    "description": "Creates one or more Cloud Pub/Sub subscriptions for a given topic. The new\nsubscription defaults to a PULL subscription unless a push endpoint is\nspecified.",
+    "command_synopsis": "gcloud pubsub subscriptions create SUBSCRIPTION [SUBSCRIPTION …] (--topic=TOPIC : --topic-project=TOPIC_PROJECT) [--ack-deadline=ACK_DEADLINE] [--enable-exactly-once-delivery] [--enable-message-ordering] [--expiration-period=EXPIRATION_PERIOD] [--labels=[KEY=VALUE,…]] [--message-filter=MESSAGE_FILTER] [--message-retention-duration=MESSAGE_RETENTION_DURATION] [--message-transforms-file=MESSAGE_TRANSFORMS_FILE] [--retain-acked-messages] [--tags=[KEY=VALUE,…]] [[--bigquery-table=BIGQUERY_TABLE : --bigquery-service-account-email=BIGQUERY_SERVICE_ACCOUNT_EMAIL --drop-unknown-fields --write-metadata --use-table-schema | --use-topic-schema]     | [--cloud-storage-bucket=CLOUD_STORAGE_BUCKET : --cloud-storage-file-datetime-format=CLOUD_STORAGE_FILE_DATETIME_FORMAT --cloud-storage-file-prefix=CLOUD_STORAGE_FILE_PREFIX --cloud-storage-file-suffix=CLOUD_STORAGE_FILE_SUFFIX --cloud-storage-max-bytes=CLOUD_STORAGE_MAX_BYTES --cloud-storage-max-duration=CLOUD_STORAGE_MAX_DURATION --cloud-storage-max-messages=CLOUD_STORAGE_MAX_MESSAGES --cloud-storage-output-format=OUTPUT_FORMAT; default=\"text\" --cloud-storage-service-account-email=CLOUD_STORAGE_SERVICE_ACCOUNT_EMAIL --cloud-storage-use-topic-schema --cloud-storage-write-metadata]] [--max-delivery-attempts=MAX_DELIVERY_ATTEMPTS [--dead-letter-topic=DEAD_LETTER_TOPIC : --dead-letter-topic-project=DEAD_LETTER_TOPIC_PROJECT]] [--max-retry-delay=MAX_RETRY_DELAY --min-retry-delay=MIN_RETRY_DELAY] [--push-auth-service-account=SERVICE_ACCOUNT_EMAIL --push-auth-token-audience=OPTIONAL_AUDIENCE_OVERRIDE --push-endpoint=PUSH_ENDPOINT [--push-no-wrapper : --push-no-wrapper-write-metadata]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION[SUBSCRIPTION…]",
+        "description": "IDs of the subscriptions or fully qualified identifiers for the subscriptions.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "topic": {
+        "content": "--topic=TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argument--topicon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "topic-project": {
+        "content": "--topic-project=TOPIC_PROJECT",
+        "description": "Project ID of the Google Cloud project for the topic.To set theprojectattribute:provide the argument--topicon the command line with a fully\nspecified name;provide the argument--topic-projecton the command line;provide the argument--projecton the command line;set the propertycore/project."
+      }
+    },
+    "optional_flags": {
+      "ack-deadline": {
+        "content": "--ack-deadline=ACK_DEADLINE",
+        "description": "The number of seconds the system will wait for a subscriber to acknowledge\nreceiving a message before re-attempting delivery."
+      },
+      "enable-exactly-once-delivery": {
+        "content": "--enable-exactly-once-delivery",
+        "description": "Whether or not to enable exactly-once delivery on the subscription. If true,\nPub/Sub provides the following guarantees for the delivery of a message with a\ngiven value ofmessage_idon this subscription: The message sent to\na subscriber is guaranteed not to be resent before the message's acknowledgment\ndeadline expires. An acknowledged message will not be resent to a subscriber.\nUse --no-enable-exactly-once-delivery to disable this flag."
+      },
+      "enable-message-ordering": {
+        "content": "--enable-message-ordering",
+        "description": "Whether to receive messages with the same ordering key in order. If set,\nmessages with the same ordering key are sent to subscribers in the order that\nPub/Sub receives them. Use --no-enable-message-ordering to disable this flag."
+      },
+      "expiration-period": {
+        "content": "--expiration-period=EXPIRATION_PERIOD",
+        "description": "The subscription will expire if it is inactive for the given period. Valid\nvalues are strings of the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\",\n\"h\", and \"d\" for seconds, minutes, hours, and days, respectively. If the unit is\nomitted, seconds is assumed. This flag additionally accepts the special value\n\"never\" to indicate that the subscription will never expire."
+      },
+      "labels": {
+        "content": "--labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "message-filter": {
+        "content": "--message-filter=MESSAGE_FILTER",
+        "description": "Expression to filter messages. If set, Pub/Sub only delivers the messages that\nmatch the filter. The expression must be a non-empty string in thePub/Sub filtering\nlanguage."
+      },
+      "message-retention-duration": {
+        "content": "--message-retention-duration=MESSAGE_RETENTION_DURATION",
+        "description": "How long to retain unacknowledged messages in the subscription's backlog, from\nthe moment a message is published. If --retain-acked-messages is true, this also\nconfigures the retention of acknowledged messages. The default value is 7 days,\nthe minimum is 10 minutes, and the maximum is 31 days. Valid values are strings\nof the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\" for\nseconds, minutes, hours, and days, respectively. If the unit is omitted, seconds\nis assumed."
+      },
+      "message-transforms-file": {
+        "content": "--message-transforms-file=MESSAGE_TRANSFORMS_FILE",
+        "description": "Path to YAML or JSON file containing message transforms."
+      },
+      "retain-acked-messages": {
+        "content": "--retain-acked-messages",
+        "description": "Whether or not to retain acknowledged messages. If true, messages are not\nexpunged from the subscription's backlog until they fall out of the\n--message-retention-duration window. Acknowledged messages are not retained by\ndefault. Use --no-retain-acked-messages to disable this flag."
+      },
+      "tags": {
+        "content": "--tags=[KEY=VALUE,…]",
+        "description": "List of tags KEY=VALUE pairs to bind. Each item must be expressed as<tag-key-namespaced-name>=<tag-value-short-name>.\nExample:123/environment=production,123/costCenter=marketing"
+      },
+      "bigquery-table": {
+        "content": "--bigquery-table=BIGQUERY_TABLE",
+        "description": "A BigQuery table of the form {project}:{dataset_name}.{table_name} to which to\nwrite messages for this subscription.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "bigquery-service-account-email": {
+        "content": "--bigquery-service-account-email=BIGQUERY_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to use when writing to BigQuery. If unspecified, uses\nthe Pub/Sub service agent\n(https://cloud.google.com/iam/docs/service-account-types#service-agents)."
+      },
+      "drop-unknown-fields": {
+        "content": "--drop-unknown-fields",
+        "description": "If either --use-topic-schema or --use-table-schema is set, whether or not to\nignore fields in the message that do not appear in the BigQuery table schema.\nUse --no-drop-unknown-fields to disable this flag."
+      },
+      "write-metadata": {
+        "content": "--write-metadata",
+        "description": "Whether or not to write message metadata including message ID, publish\ntimestamp, ordering key, and attributes to BigQuery. The subscription name,\nmessage_id, and publish_time fields are put in their own columns while all other\nmessage properties other than data (for example, an ordering_key, if present)\nare written to a JSON object in the attributes column. Use --no-write-metadata\nto disable this flag."
+      },
+      "use-table-schema": {
+        "content": "--use-table-schema",
+        "description": "Whether or not to use the BigQuery table schema when writing messages to\nBigQuery. Use --no-use-table-schema to disable this flag."
+      },
+      "use-topic-schema": {
+        "content": "--use-topic-schema",
+        "description": "Whether or not to use the schema for the subscription's topic (if it exists)\nwhen writing messages to BigQuery. If --drop-unknown-fields is not set, then the\nBigQuery schema must contain all fields that are present in the topic schema.\nUse --no-use-topic-schema to disable this flag."
+      },
+      "cloud-storage-bucket": {
+        "content": "--cloud-storage-bucket=CLOUD_STORAGE_BUCKET",
+        "description": "A Cloud Storage bucket to which to write messages for this subscription.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-file-datetime-format": {
+        "content": "--cloud-storage-file-datetime-format=CLOUD_STORAGE_FILE_DATETIME_FORMAT",
+        "description": "The custom datetime format string for Cloud Storage filename. See thedatetime\nformat guidance."
+      },
+      "cloud-storage-file-prefix": {
+        "content": "--cloud-storage-file-prefix=CLOUD_STORAGE_FILE_PREFIX",
+        "description": "The prefix for Cloud Storage filename."
+      },
+      "cloud-storage-file-suffix": {
+        "content": "--cloud-storage-file-suffix=CLOUD_STORAGE_FILE_SUFFIX",
+        "description": "The suffix for Cloud Storage filename."
+      },
+      "cloud-storage-max-bytes": {
+        "content": "--cloud-storage-max-bytes=CLOUD_STORAGE_MAX_BYTES",
+        "description": "The maximum bytes that can be written to a Cloud Storage file before a new file\nis created. The value must be between 1000B and 10GB. If the unit is omitted, KB\nis assumed."
+      },
+      "cloud-storage-max-duration": {
+        "content": "--cloud-storage-max-duration=CLOUD_STORAGE_MAX_DURATION",
+        "description": "The maximum duration that can elapse before a new Cloud Storage file is created.\nThe value must be between 1m and 10m. Valid values are strings of the form\nINTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\" for seconds, minutes,\nhours, and days, respectively. If the unit is omitted, seconds is assumed."
+      },
+      "cloud-storage-max-messages": {
+        "content": "--cloud-storage-max-messages=CLOUD_STORAGE_MAX_MESSAGES",
+        "description": "The maximum number of messages that can be written to a Cloud Storage file\nbefore a new file is created. The value must be greater than or equal to 1000."
+      },
+      "cloud-storage-output-format": {
+        "content": "--cloud-storage-output-format=OUTPUT_FORMAT; default=\"text\"",
+        "description": "The output format for data written to Cloud Storage. Values: text (messages will\nbe written as raw text, separated by a newline) or avro (messages will be\nwritten as an Avro binary).OUTPUT_FORMATmust be one\nof:text,avro."
+      },
+      "cloud-storage-service-account-email": {
+        "content": "--cloud-storage-service-account-email=CLOUD_STORAGE_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to use when writing to Cloud Storage. If unspecified,\nuses the Pub/Sub service agent\n(https://cloud.google.com/iam/docs/service-account-types#service-agents)."
+      },
+      "cloud-storage-use-topic-schema": {
+        "content": "--cloud-storage-use-topic-schema",
+        "description": "Whether or not to use the schema for the subscription's topic (if it exists)\nwhen writing messages to Cloud Storage. This has an effect only for\nsubscriptions with --cloud-storage-output-format=avro. Use\n--no-cloud-storage-use-topic-schema to disable this flag."
+      },
+      "cloud-storage-write-metadata": {
+        "content": "--cloud-storage-write-metadata",
+        "description": "Whether or not to write the subscription name, message_id, publish_time,\nattributes, and ordering_key as additional fields in the output. The\nsubscription name, message_id, and publish_time fields are put in their own\nfields while all other message properties other than data (for example, an\nordering_key, if present) are added as entries in the attributes map. This has\nan effect only for subscriptions with --cloud-storage-output-format=avro. Use\n--no-cloud-storage-write-metadata to disable this flag."
+      },
+      "max-delivery-attempts": {
+        "content": "--max-delivery-attempts=MAX_DELIVERY_ATTEMPTS",
+        "description": "Maximum number of delivery attempts for any message. The value must be between 5\nand 100. Defaults to 5.--dead-letter-topicmust also be specified."
+      },
+      "dead-letter-topic": {
+        "content": "--dead-letter-topic=DEAD_LETTER_TOPIC",
+        "description": "ID of the dead-letter-topic or fully qualified identifier for the\ndead-letter-topic.To set thetopicattribute:provide the argument--dead-letter-topicon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "dead-letter-topic-project": {
+        "content": "--dead-letter-topic-project=DEAD_LETTER_TOPIC_PROJECT",
+        "description": "Project ID of the Google Cloud project for the dead-letter-topic.To set theprojectattribute:provide the argument--dead-letter-topicon the command line with a\nfully specified name;provide the argument--dead-letter-topic-projecton the command\nline;provide the argument--projecton the command line;set the propertycore/project."
+      },
+      "max-retry-delay": {
+        "content": "--max-retry-delay=MAX_RETRY_DELAY",
+        "description": "The maximum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. Defaults to 600 seconds. Valid values are\nstrings of the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\"\nfor seconds, minutes, hours, and days, respectively. If the unit is omitted,\nseconds is assumed."
+      },
+      "min-retry-delay": {
+        "content": "--min-retry-delay=MIN_RETRY_DELAY",
+        "description": "The minimum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. Defaults to 10 seconds. Valid values are\nstrings of the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\"\nfor seconds, minutes, hours, and days, respectively. If the unit is omitted,\nseconds is assumed."
+      },
+      "push-auth-service-account": {
+        "content": "--push-auth-service-account=SERVICE_ACCOUNT_EMAIL",
+        "description": "Service account email used as the identity for the generated Open ID Connect\ntoken for authenticated push."
+      },
+      "push-auth-token-audience": {
+        "content": "--push-auth-token-audience=OPTIONAL_AUDIENCE_OVERRIDE",
+        "description": "Audience used in the generated Open ID Connect token for authenticated push. If\nnot specified, it will be set to the push-endpoint."
+      },
+      "push-endpoint": {
+        "content": "--push-endpoint=PUSH_ENDPOINT",
+        "description": "A URL to use as the endpoint for this subscription. This will also automatically\nset the subscription type to PUSH."
+      },
+      "push-no-wrapper": {
+        "content": "--push-no-wrapper",
+        "description": "When set, the message data is delivered directly as the HTTP body. Use\n--no-push-no-wrapper to disable this flag.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "push-no-wrapper-write-metadata": {
+        "content": "--push-no-wrapper-write-metadata",
+        "description": "When true, writes the Pub/Sub message metadata tox-goog-pubsub-<KEY>:<VAL>headers of the HTTP request.\nWrites the Pub/Sub message attributes to<KEY>:<VAL>headers of the HTTP request. Use --no-push-no-wrapper-write-metadata to disable\nthis flag."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub subscriptions delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/delete",
+    "description": "Deletes one or more Cloud Pub/Sub subscriptions.",
+    "command_synopsis": "gcloud pubsub subscriptions delete SUBSCRIPTION [SUBSCRIPTION …] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION[SUBSCRIPTION…]",
+        "description": "IDs of the subscriptions or fully qualified identifiers for the subscriptions.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub subscriptions describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/describe",
+    "description": "Describes a Cloud Pub/Sub subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions describe SUBSCRIPTION [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.get-iam-policy",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud pubsub subscriptions get-iam-policy",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/get-iam-policy",
+    "description": "Get the IAM policy for a Cloud Pub/Sub Subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions get-iam-policy SUBSCRIPTION [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "pubsub.subscriptions.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "list"
+    ],
+    "command_path": "gcloud pubsub subscriptions list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/list",
+    "description": "Lists all of the Cloud Pub/Sub subscriptions that exist in a given project.",
+    "command_synopsis": "gcloud pubsub subscriptions list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "pubsub.subscriptions.modify-message-ack-deadline",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "modify-message-ack-deadline"
+    ],
+    "command_path": "gcloud pubsub subscriptions modify-message-ack-deadline",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/modify-message-ack-deadline",
+    "description": "This method is useful to indicate that more time is needed to process a message\nby the subscriber, or to make the message available for redelivery if the\nprocessing was interrupted.",
+    "command_synopsis": "gcloud pubsub subscriptions modify-message-ack-deadline SUBSCRIPTION --ack-deadline=ACK_DEADLINE --ack-ids=[ACK_ID,…] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "ack-deadline": {
+        "content": "--ack-deadline=ACK_DEADLINE",
+        "description": "The number of seconds the system will wait for a subscriber to acknowledge\nreceiving a message before re-attempting delivery."
+      },
+      "ack-ids": {
+        "content": "--ack-ids=[ACK_ID,…]",
+        "description": "One or more ACK_IDs to modify the deadline for. An ACK_ID is astring\nthat is returned to subscribers. along with the message. The ACK_ID is\ndifferent from themessage\nID."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.modify-push-config",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "modify-push-config"
+    ],
+    "command_path": "gcloud pubsub subscriptions modify-push-config",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/modify-push-config",
+    "description": "Modifies the push configuration of a Cloud Pub/Sub subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions modify-push-config SUBSCRIPTION --push-endpoint=PUSH_ENDPOINT [--push-auth-service-account=SERVICE_ACCOUNT_EMAIL] [--push-auth-token-audience=OPTIONAL_AUDIENCE_OVERRIDE] [--push-no-wrapper : --push-no-wrapper-write-metadata] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "push-endpoint": {
+        "content": "--push-endpoint=PUSH_ENDPOINT",
+        "description": "A URL to use as the endpoint for this subscription. This will also automatically\nset the subscription type to PUSH."
+      }
+    },
+    "optional_flags": {
+      "push-auth-service-account": {
+        "content": "--push-auth-service-account=SERVICE_ACCOUNT_EMAIL",
+        "description": "Service account email used as the identity for the generated Open ID Connect\ntoken for authenticated push."
+      },
+      "push-auth-token-audience": {
+        "content": "--push-auth-token-audience=OPTIONAL_AUDIENCE_OVERRIDE",
+        "description": "Audience used in the generated Open ID Connect token for authenticated push. If\nnot specified, it will be set to the push-endpoint."
+      },
+      "push-no-wrapper": {
+        "content": "--push-no-wrapper",
+        "description": "When set, the message data is delivered directly as the HTTP body. Use\n--no-push-no-wrapper to disable this flag.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "push-no-wrapper-write-metadata": {
+        "content": "--push-no-wrapper-write-metadata",
+        "description": "When true, writes the Pub/Sub message metadata tox-goog-pubsub-<KEY>:<VAL>headers of the HTTP request.\nWrites the Pub/Sub message attributes to<KEY>:<VAL>headers of the HTTP request. Use --no-push-no-wrapper-write-metadata to disable\nthis flag."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.pull",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "pull"
+    ],
+    "command_path": "gcloud pubsub subscriptions pull",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/pull",
+    "description": "Returns one or more messages from the specified Cloud Pub/Sub subscription, if\nthere are any messages enqueued.\nBy default, this command returns only one message from the subscription. Use the\n--limit flag to specify the max messages to return.\nPlease note that this command is not guaranteed to return all the messages in\nyour backlog or the maximum specified in the --limit argument. Receiving fewer\nmessages than available occasionally is normal.",
+    "command_synopsis": "gcloud pubsub subscriptions pull SUBSCRIPTION [--auto-ack] [--filter=EXPRESSION] [--limit=LIMIT; default=1] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "auto-ack": {
+        "content": "--auto-ack",
+        "description": "Automatically ACK every message pulled from this subscription. Use --no-auto-ack\nto disable this flag."
+      }
+    }
+  },
+  {
+    "id": "pubsub.subscriptions.remove-iam-policy-binding",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud pubsub subscriptions remove-iam-policy-binding",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/remove-iam-policy-binding",
+    "description": "Remove an IAM policy binding of a Cloud Pub/Sub Subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions remove-iam-policy-binding SUBSCRIPTION --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.seek",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "seek"
+    ],
+    "command_path": "gcloud pubsub subscriptions seek",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/seek",
+    "description": "Resets a subscription's backlog to a point in time or to a given snapshot.",
+    "command_synopsis": "gcloud pubsub subscriptions seek SUBSCRIPTION (--snapshot=SNAPSHOT     | --time=TIME) [--snapshot-project=SNAPSHOT_PROJECT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {
+      "snapshot": {
+        "content": "--snapshot=SNAPSHOT",
+        "description": "The name of the snapshot. The snapshot's topic must be the same as that of the\nsubscription."
+      },
+      "time": {
+        "content": "--time=TIME",
+        "description": "The time to seek to. Messages in the subscription that were published before\nthis time are marked as acknowledged, and messages retained in the subscription\nthat were published after this time are marked as unacknowledged. See $gcloud topic datetimesfor\ninformation on time formats."
+      }
+    },
+    "optional_flags": {
+      "snapshot-project": {
+        "content": "--snapshot-project=SNAPSHOT_PROJECT",
+        "description": "The name of the project the snapshot belongs to (if seeking to a snapshot). If\nnot set, it defaults to the currently selected cloud project."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.set-iam-policy",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud pubsub subscriptions set-iam-policy",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/set-iam-policy",
+    "description": "Set the IAM policy for a Cloud Pub/Sub Subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions set-iam-policy SUBSCRIPTION POLICY_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "JSON or YAML file with the IAM policy"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.subscriptions.update",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "subscriptions",
+      "update"
+    ],
+    "command_path": "gcloud pubsub subscriptions update",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions/update",
+    "description": "Updates an existing Cloud Pub/Sub subscription.",
+    "command_synopsis": "gcloud pubsub subscriptions update SUBSCRIPTION [--ack-deadline=ACK_DEADLINE] [--enable-exactly-once-delivery] [--expiration-period=EXPIRATION_PERIOD] [--message-retention-duration=MESSAGE_RETENTION_DURATION] [--retain-acked-messages] [--update-labels=[KEY=VALUE,…]] [--clear-bigquery-config     | [--bigquery-table=BIGQUERY_TABLE : --bigquery-service-account-email=BIGQUERY_SERVICE_ACCOUNT_EMAIL --drop-unknown-fields --write-metadata --use-table-schema | --use-topic-schema]     | --clear-cloud-storage-config     | [--cloud-storage-bucket=CLOUD_STORAGE_BUCKET : --cloud-storage-file-datetime-format=CLOUD_STORAGE_FILE_DATETIME_FORMAT --cloud-storage-file-prefix=CLOUD_STORAGE_FILE_PREFIX --cloud-storage-file-suffix=CLOUD_STORAGE_FILE_SUFFIX --cloud-storage-max-bytes=CLOUD_STORAGE_MAX_BYTES --cloud-storage-max-duration=CLOUD_STORAGE_MAX_DURATION --cloud-storage-max-messages=CLOUD_STORAGE_MAX_MESSAGES --cloud-storage-output-format=OUTPUT_FORMAT; default=\"text\" --cloud-storage-service-account-email=CLOUD_STORAGE_SERVICE_ACCOUNT_EMAIL --cloud-storage-use-topic-schema --cloud-storage-write-metadata]] [--clear-dead-letter-policy     | --max-delivery-attempts=MAX_DELIVERY_ATTEMPTS [--dead-letter-topic=DEAD_LETTER_TOPIC : --dead-letter-topic-project=DEAD_LETTER_TOPIC_PROJECT]] [--clear-labels     | --remove-labels=[KEY,…]] [--clear-message-transforms     | --message-transforms-file=MESSAGE_TRANSFORMS_FILE] [--clear-retry-policy     | --max-retry-delay=MAX_RETRY_DELAY --min-retry-delay=MIN_RETRY_DELAY] [--push-auth-service-account=SERVICE_ACCOUNT_EMAIL --push-auth-token-audience=OPTIONAL_AUDIENCE_OVERRIDE --push-endpoint=PUSH_ENDPOINT --clear-push-no-wrapper-config     | [--push-no-wrapper : --push-no-wrapper-write-metadata]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION",
+        "description": "ID of the subscription or fully qualified identifier for the subscription.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "ack-deadline": {
+        "content": "--ack-deadline=ACK_DEADLINE",
+        "description": "The number of seconds the system will wait for a subscriber to acknowledge\nreceiving a message before re-attempting delivery."
+      },
+      "enable-exactly-once-delivery": {
+        "content": "--enable-exactly-once-delivery",
+        "description": "Whether or not to enable exactly-once delivery on the subscription. If true,\nPub/Sub provides the following guarantees for the delivery of a message with a\ngiven value ofmessage_idon this subscription: The message sent to\na subscriber is guaranteed not to be resent before the message's acknowledgment\ndeadline expires. An acknowledged message will not be resent to a subscriber.\nUse --no-enable-exactly-once-delivery to disable this flag."
+      },
+      "expiration-period": {
+        "content": "--expiration-period=EXPIRATION_PERIOD",
+        "description": "The subscription will expire if it is inactive for the given period. Valid\nvalues are strings of the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\",\n\"h\", and \"d\" for seconds, minutes, hours, and days, respectively. If the unit is\nomitted, seconds is assumed. This flag additionally accepts the special value\n\"never\" to indicate that the subscription will never expire."
+      },
+      "message-retention-duration": {
+        "content": "--message-retention-duration=MESSAGE_RETENTION_DURATION",
+        "description": "How long to retain unacknowledged messages in the subscription's backlog, from\nthe moment a message is published. If --retain-acked-messages is true, this also\nconfigures the retention of acknowledged messages. Specify \"default\" to use the\ndefault value of 7 days. The minimum is 10 minutes, and the maximum is 31 days.\nValid values are strings of the form INTEGER[UNIT], where UNIT is one of \"s\",\n\"m\", \"h\", and \"d\" for seconds, minutes, hours, and days, respectively. If the\nunit is omitted, seconds is assumed."
+      },
+      "retain-acked-messages": {
+        "content": "--retain-acked-messages",
+        "description": "Whether or not to retain acknowledged messages. If true, messages are not\nexpunged from the subscription's backlog until they fall out of the\n--message-retention-duration window. Acknowledged messages are not retained by\ndefault. Use --no-retain-acked-messages to disable this flag."
+      },
+      "update-labels": {
+        "content": "--update-labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to update. If a label exists, its value is\nmodified. Otherwise, a new label is created.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "clear-bigquery-config": {
+        "content": "--clear-bigquery-config",
+        "description": "If set, clear the BigQuery config from the subscription. Use\n--no-clear-bigquery-config to disable this flag."
+      },
+      "bigquery-table": {
+        "content": "--bigquery-table=BIGQUERY_TABLE",
+        "description": "A BigQuery table of the form {project}:{dataset_name}.{table_name} to which to\nwrite messages for this subscription.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "bigquery-service-account-email": {
+        "content": "--bigquery-service-account-email=BIGQUERY_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to use when writing to BigQuery. If unspecified, uses\nthe Pub/Sub service agent\n(https://cloud.google.com/iam/docs/service-account-types#service-agents)."
+      },
+      "drop-unknown-fields": {
+        "content": "--drop-unknown-fields",
+        "description": "If either --use-topic-schema or --use-table-schema is set, whether or not to\nignore fields in the message that do not appear in the BigQuery table schema.\nUse --no-drop-unknown-fields to disable this flag."
+      },
+      "write-metadata": {
+        "content": "--write-metadata",
+        "description": "Whether or not to write message metadata including message ID, publish\ntimestamp, ordering key, and attributes to BigQuery. The subscription name,\nmessage_id, and publish_time fields are put in their own columns while all other\nmessage properties other than data (for example, an ordering_key, if present)\nare written to a JSON object in the attributes column. Use --no-write-metadata\nto disable this flag."
+      },
+      "use-table-schema": {
+        "content": "--use-table-schema",
+        "description": "Whether or not to use the BigQuery table schema when writing messages to\nBigQuery. Use --no-use-table-schema to disable this flag."
+      },
+      "use-topic-schema": {
+        "content": "--use-topic-schema",
+        "description": "Whether or not to use the schema for the subscription's topic (if it exists)\nwhen writing messages to BigQuery. If --drop-unknown-fields is not set, then the\nBigQuery schema must contain all fields that are present in the topic schema.\nUse --no-use-topic-schema to disable this flag."
+      },
+      "clear-cloud-storage-config": {
+        "content": "--clear-cloud-storage-config",
+        "description": "If set, clear the Cloud Storage config from the subscription. Use\n--no-clear-cloud-storage-config to disable this flag."
+      },
+      "cloud-storage-bucket": {
+        "content": "--cloud-storage-bucket=CLOUD_STORAGE_BUCKET",
+        "description": "A Cloud Storage bucket to which to write messages for this subscription.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-file-datetime-format": {
+        "content": "--cloud-storage-file-datetime-format=CLOUD_STORAGE_FILE_DATETIME_FORMAT",
+        "description": "The custom datetime format string for Cloud Storage filename. See thedatetime\nformat guidance."
+      },
+      "cloud-storage-file-prefix": {
+        "content": "--cloud-storage-file-prefix=CLOUD_STORAGE_FILE_PREFIX",
+        "description": "The prefix for Cloud Storage filename."
+      },
+      "cloud-storage-file-suffix": {
+        "content": "--cloud-storage-file-suffix=CLOUD_STORAGE_FILE_SUFFIX",
+        "description": "The suffix for Cloud Storage filename."
+      },
+      "cloud-storage-max-bytes": {
+        "content": "--cloud-storage-max-bytes=CLOUD_STORAGE_MAX_BYTES",
+        "description": "The maximum bytes that can be written to a Cloud Storage file before a new file\nis created. The value must be between 1000B and 10GB. If the unit is omitted, KB\nis assumed."
+      },
+      "cloud-storage-max-duration": {
+        "content": "--cloud-storage-max-duration=CLOUD_STORAGE_MAX_DURATION",
+        "description": "The maximum duration that can elapse before a new Cloud Storage file is created.\nThe value must be between 1m and 10m. Valid values are strings of the form\nINTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\" for seconds, minutes,\nhours, and days, respectively. If the unit is omitted, seconds is assumed."
+      },
+      "cloud-storage-max-messages": {
+        "content": "--cloud-storage-max-messages=CLOUD_STORAGE_MAX_MESSAGES",
+        "description": "The maximum number of messages that can be written to a Cloud Storage file\nbefore a new file is created. The value must be greater than or equal to 1000."
+      },
+      "cloud-storage-output-format": {
+        "content": "--cloud-storage-output-format=OUTPUT_FORMAT; default=\"text\"",
+        "description": "The output format for data written to Cloud Storage. Values: text (messages will\nbe written as raw text, separated by a newline) or avro (messages will be\nwritten as an Avro binary).OUTPUT_FORMATmust be one\nof:text,avro."
+      },
+      "cloud-storage-service-account-email": {
+        "content": "--cloud-storage-service-account-email=CLOUD_STORAGE_SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account email to use when writing to Cloud Storage. If unspecified,\nuses the Pub/Sub service agent\n(https://cloud.google.com/iam/docs/service-account-types#service-agents)."
+      },
+      "cloud-storage-use-topic-schema": {
+        "content": "--cloud-storage-use-topic-schema",
+        "description": "Whether or not to use the schema for the subscription's topic (if it exists)\nwhen writing messages to Cloud Storage. This has an effect only for\nsubscriptions with --cloud-storage-output-format=avro. Use\n--no-cloud-storage-use-topic-schema to disable this flag."
+      },
+      "cloud-storage-write-metadata": {
+        "content": "--cloud-storage-write-metadata",
+        "description": "Whether or not to write the subscription name, message_id, publish_time,\nattributes, and ordering_key as additional fields in the output. The\nsubscription name, message_id, and publish_time fields are put in their own\nfields while all other message properties other than data (for example, an\nordering_key, if present) are added as entries in the attributes map. This has\nan effect only for subscriptions with --cloud-storage-output-format=avro. Use\n--no-cloud-storage-write-metadata to disable this flag."
+      },
+      "clear-dead-letter-policy": {
+        "content": "--clear-dead-letter-policy",
+        "description": "If set, clear the dead letter policy from the subscription. Use\n--no-clear-dead-letter-policy to disable this flag."
+      },
+      "max-delivery-attempts": {
+        "content": "--max-delivery-attempts=MAX_DELIVERY_ATTEMPTS",
+        "description": "Maximum number of delivery attempts for any message. The value must be between 5\nand 100. Defaults to 5.--dead-letter-topicmust also be specified."
+      },
+      "dead-letter-topic": {
+        "content": "--dead-letter-topic=DEAD_LETTER_TOPIC",
+        "description": "ID of the dead-letter-topic or fully qualified identifier for the\ndead-letter-topic.To set thetopicattribute:provide the argument--dead-letter-topicon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "dead-letter-topic-project": {
+        "content": "--dead-letter-topic-project=DEAD_LETTER_TOPIC_PROJECT",
+        "description": "Project ID of the Google Cloud project for the dead-letter-topic.To set theprojectattribute:provide the argument--dead-letter-topicon the command line with a\nfully specified name;provide the argument--dead-letter-topic-projecton the command\nline;provide the argument--projecton the command line;set the propertycore/project."
+      },
+      "clear-labels": {
+        "content": "--clear-labels",
+        "description": "Remove all labels. If--update-labelsis also specified then--clear-labelsis applied first.For example, to remove all labels:gcloudpubsubsubscriptionsupdate--clear-labelsTo remove all existing labels and create two new labels,fooandbaz:gcloudpubsubsubscriptionsupdate--clear-labels--update-labelsfoo=bar,baz=qux"
+      },
+      "remove-labels": {
+        "content": "--remove-labels=[KEY,…]",
+        "description": "List of label keys to remove. If a label does not exist it is silently ignored.\nIf--update-labelsis also specified then--update-labelsis applied first."
+      },
+      "clear-message-transforms": {
+        "content": "--clear-message-transforms",
+        "description": "If set, clears the message transforms field. Use --no-clear-message-transforms\nto disable this flag."
+      },
+      "message-transforms-file": {
+        "content": "--message-transforms-file=MESSAGE_TRANSFORMS_FILE",
+        "description": "Path to YAML or JSON file containing message transforms."
+      },
+      "clear-retry-policy": {
+        "content": "--clear-retry-policy",
+        "description": "If set, clear the retry policy from the subscription. Use\n--no-clear-retry-policy to disable this flag."
+      },
+      "max-retry-delay": {
+        "content": "--max-retry-delay=MAX_RETRY_DELAY",
+        "description": "The maximum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. Defaults to 600 seconds. Valid values are\nstrings of the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\"\nfor seconds, minutes, hours, and days, respectively. If the unit is omitted,\nseconds is assumed."
+      },
+      "min-retry-delay": {
+        "content": "--min-retry-delay=MIN_RETRY_DELAY",
+        "description": "The minimum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. Defaults to 10 seconds. Valid values are\nstrings of the form INTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\"\nfor seconds, minutes, hours, and days, respectively. If the unit is omitted,\nseconds is assumed."
+      },
+      "push-auth-service-account": {
+        "content": "--push-auth-service-account=SERVICE_ACCOUNT_EMAIL",
+        "description": "Service account email used as the identity for the generated Open ID Connect\ntoken for authenticated push."
+      },
+      "push-auth-token-audience": {
+        "content": "--push-auth-token-audience=OPTIONAL_AUDIENCE_OVERRIDE",
+        "description": "Audience used in the generated Open ID Connect token for authenticated push. If\nnot specified, it will be set to the push-endpoint."
+      },
+      "push-endpoint": {
+        "content": "--push-endpoint=PUSH_ENDPOINT",
+        "description": "A URL to use as the endpoint for this subscription. This will also automatically\nset the subscription type to PUSH."
+      },
+      "clear-push-no-wrapper-config": {
+        "content": "--clear-push-no-wrapper-config",
+        "description": "If set, clear the NoWrapper config from the subscription. Use\n--no-clear-push-no-wrapper-config to disable this flag."
+      },
+      "push-no-wrapper": {
+        "content": "--push-no-wrapper",
+        "description": "When set, the message data is delivered directly as the HTTP body. Use\n--no-push-no-wrapper to disable this flag.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "push-no-wrapper-write-metadata": {
+        "content": "--push-no-wrapper-write-metadata",
+        "description": "When true, writes the Pub/Sub message metadata tox-goog-pubsub-<KEY>:<VAL>headers of the HTTP request.\nWrites the Pub/Sub message attributes to<KEY>:<VAL>headers of the HTTP request. Use --no-push-no-wrapper-write-metadata to disable\nthis flag."
+      }
+    }
+  },
+  {
+    "id": "pubsub.topics",
+    "service": "pubsub",
+    "type": "group",
+    "path": [
+      "pubsub",
+      "topics"
+    ],
+    "command_path": "gcloud pubsub topics",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics",
+    "description": "Manage Cloud Pub/Sub topics.",
+    "command_synopsis": "gcloud pubsub topics COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "524235c259d7b58fce7e9e0ecd28f154a117ac52fac813a8ad97db162086d710",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.add-iam-policy-binding",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud pubsub topics add-iam-policy-binding",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/add-iam-policy-binding",
+    "description": "Add an IAM policy binding to a Cloud Pub/Sub Topic.",
+    "command_synopsis": "gcloud pubsub topics add-iam-policy-binding TOPIC --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.create",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "create"
+    ],
+    "command_path": "gcloud pubsub topics create",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/create",
+    "description": "Creates one or more Cloud Pub/Sub topics.",
+    "command_synopsis": "gcloud pubsub topics create TOPIC [TOPIC …] [--labels=[KEY=VALUE,…]] [--message-retention-duration=MESSAGE_RETENTION_DURATION] [--message-transforms-file=MESSAGE_TRANSFORMS_FILE] [--tags=[KEY=VALUE,…]] [--ingestion-log-severity=INGESTION_LOG_SEVERITY --aws-msk-ingestion-aws-role-arn=AWS_MSK_INGESTION_AWS_ROLE_ARN --aws-msk-ingestion-cluster-arn=AWS_MSK_INGESTION_CLUSTER_ARN --aws-msk-ingestion-service-account=AWS_MSK_INGESTION_SERVICE_ACCOUNT --aws-msk-ingestion-topic=AWS_MSK_INGESTION_TOPIC     | --azure-event-hubs-ingestion-client-id=AZURE_EVENT_HUBS_INGESTION_CLIENT_ID --azure-event-hubs-ingestion-event-hub=AZURE_EVENT_HUBS_INGESTION_EVENT_HUB --azure-event-hubs-ingestion-namespace=AZURE_EVENT_HUBS_INGESTION_NAMESPACE --azure-event-hubs-ingestion-resource-group=AZURE_EVENT_HUBS_INGESTION_RESOURCE_GROUP --azure-event-hubs-ingestion-service-account=AZURE_EVENT_HUBS_INGESTION_SERVICE_ACCOUNT --azure-event-hubs-ingestion-subscription-id=AZURE_EVENT_HUBS_INGESTION_SUBSCRIPTION_ID --azure-event-hubs-ingestion-tenant-id=AZURE_EVENT_HUBS_INGESTION_TENANT_ID     | [--cloud-storage-ingestion-bucket=CLOUD_STORAGE_INGESTION_BUCKET --cloud-storage-ingestion-input-format=INPUT_FORMAT : --cloud-storage-ingestion-text-delimiter=CLOUD_STORAGE_INGESTION_TEXT_DELIMITER --cloud-storage-ingestion-minimum-object-create-time=CLOUD_STORAGE_INGESTION_MINIMUM_OBJECT_CREATE_TIME --cloud-storage-ingestion-match-glob=CLOUD_STORAGE_INGESTION_MATCH_GLOB]     | --confluent-cloud-ingestion-bootstrap-server=CONFLUENT_CLOUD_INGESTION_BOOTSTRAP_SERVER --confluent-cloud-ingestion-cluster-id=CONFLUENT_CLOUD_INGESTION_CLUSTER_ID --confluent-cloud-ingestion-identity-pool-id=CONFLUENT_CLOUD_INGESTION_IDENTITY_POOL_ID --confluent-cloud-ingestion-service-account=CONFLUENT_CLOUD_INGESTION_SERVICE_ACCOUNT --confluent-cloud-ingestion-topic=CONFLUENT_CLOUD_INGESTION_TOPIC     | --kinesis-ingestion-consumer-arn=KINESIS_INGESTION_CONSUMER_ARN --kinesis-ingestion-role-arn=KINESIS_INGESTION_ROLE_ARN --kinesis-ingestion-service-account=KINESIS_INGESTION_SERVICE_ACCOUNT --kinesis-ingestion-stream-arn=KINESIS_INGESTION_STREAM_ARN] [--message-encoding=ENCODING (--schema=SCHEMA : --schema-project=SCHEMA_PROJECT) : --first-revision-id=FIRST_REVISION_ID --last-revision-id=LAST_REVISION_ID] [--message-storage-policy-allowed-regions=[REGION,…] : --message-storage-policy-enforce-in-transit] [--topic-encryption-key=TOPIC_ENCRYPTION_KEY : --topic-encryption-key-keyring=TOPIC_ENCRYPTION_KEY_KEYRING --topic-encryption-key-location=TOPIC_ENCRYPTION_KEY_LOCATION --topic-encryption-key-project=TOPIC_ENCRYPTION_KEY_PROJECT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC[TOPIC…]",
+        "description": "IDs of the topics or fully qualified identifiers for the topics.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "labels": {
+        "content": "--labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "message-retention-duration": {
+        "content": "--message-retention-duration=MESSAGE_RETENTION_DURATION",
+        "description": "Indicates the minimum duration to retain a message after it is published to the\ntopic. If this field is set, messages published to the topic in the last\nMESSAGE_RETENTION_DURATION are always available to subscribers. For instance, it\nallows any attached subscription to seek to a timestamp that is up to\nMESSAGE_RETENTION_DURATION in the past. If this field is not set, message\nretention is controlled by settings on individual subscriptions. The minimum is\n10 minutes and the maximum is 31 days. Valid values are strings of the form\nINTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\" for seconds, minutes,\nhours, and days, respectively. If the unit is omitted, seconds is assumed."
+      },
+      "message-transforms-file": {
+        "content": "--message-transforms-file=MESSAGE_TRANSFORMS_FILE",
+        "description": "Path to YAML or JSON file containing message transforms."
+      },
+      "tags": {
+        "content": "--tags=[KEY=VALUE,…]",
+        "description": "List of tags KEY=VALUE pairs to bind. Each item must be expressed as<tag-key-namespaced-name>=<tag-value-short-name>.\nExample:123/environment=production,123/costCenter=marketing"
+      },
+      "ingestion-log-severity": {
+        "content": "--ingestion-log-severity=INGESTION_LOG_SEVERITY",
+        "description": "Log severity to use for ingestion."
+      },
+      "aws-msk-ingestion-aws-role-arn": {
+        "content": "--aws-msk-ingestion-aws-role-arn=AWS_MSK_INGESTION_AWS_ROLE_ARN",
+        "description": "AWS role ARN to be used for Federated Identity authentication with MSK.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "aws-msk-ingestion-cluster-arn": {
+        "content": "--aws-msk-ingestion-cluster-arn=AWS_MSK_INGESTION_CLUSTER_ARN",
+        "description": "ARN that uniquely identifies the MSK cluster.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "aws-msk-ingestion-service-account": {
+        "content": "--aws-msk-ingestion-service-account=AWS_MSK_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith MSK.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "aws-msk-ingestion-topic": {
+        "content": "--aws-msk-ingestion-topic=AWS_MSK_INGESTION_TOPIC",
+        "description": "Name of the MSK topic that Pub/Sub will import from.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-client-id": {
+        "content": "--azure-event-hubs-ingestion-client-id=AZURE_EVENT_HUBS_INGESTION_CLIENT_ID",
+        "description": "Azure Event Hubs client ID to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-event-hub": {
+        "content": "--azure-event-hubs-ingestion-event-hub=AZURE_EVENT_HUBS_INGESTION_EVENT_HUB",
+        "description": "Azure event hub from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-namespace": {
+        "content": "--azure-event-hubs-ingestion-namespace=AZURE_EVENT_HUBS_INGESTION_NAMESPACE",
+        "description": "Azure Event Hubs namespace from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-resource-group": {
+        "content": "--azure-event-hubs-ingestion-resource-group=AZURE_EVENT_HUBS_INGESTION_RESOURCE_GROUP",
+        "description": "Azure Event Hubs resource group from within an Azure subscription.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-service-account": {
+        "content": "--azure-event-hubs-ingestion-service-account=AZURE_EVENT_HUBS_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith Azure Event Hubs.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-subscription-id": {
+        "content": "--azure-event-hubs-ingestion-subscription-id=AZURE_EVENT_HUBS_INGESTION_SUBSCRIPTION_ID",
+        "description": "Azure Event Hubs subscription ID to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-tenant-id": {
+        "content": "--azure-event-hubs-ingestion-tenant-id=AZURE_EVENT_HUBS_INGESTION_TENANT_ID",
+        "description": "Azure Event Hubs tenant ID to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-ingestion-bucket": {
+        "content": "--cloud-storage-ingestion-bucket=CLOUD_STORAGE_INGESTION_BUCKET",
+        "description": "Cloud Storage bucket from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-ingestion-input-format": {
+        "content": "--cloud-storage-ingestion-input-format=INPUT_FORMAT",
+        "description": "Format of the data in the Cloud Storage bucket.INPUT_FORMATmust be one of:text,avro,pubsub_avro.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-ingestion-text-delimiter": {
+        "content": "--cloud-storage-ingestion-text-delimiter=CLOUD_STORAGE_INGESTION_TEXT_DELIMITER",
+        "description": "Delimiter to use with text format when partitioning the object."
+      },
+      "cloud-storage-ingestion-minimum-object-create-time": {
+        "content": "--cloud-storage-ingestion-minimum-object-create-time=CLOUD_STORAGE_INGESTION_MINIMUM_OBJECT_CREATE_TIME",
+        "description": "Only Cloud Storage objects with a larger or equal creation timestamp will be\ningested."
+      },
+      "cloud-storage-ingestion-match-glob": {
+        "content": "--cloud-storage-ingestion-match-glob=CLOUD_STORAGE_INGESTION_MATCH_GLOB",
+        "description": "Glob pattern used to match Cloud Storage objects that will be ingested. If\nunset, all objects will be ingested."
+      },
+      "confluent-cloud-ingestion-bootstrap-server": {
+        "content": "--confluent-cloud-ingestion-bootstrap-server=CONFLUENT_CLOUD_INGESTION_BOOTSTRAP_SERVER",
+        "description": "Confluent Cloud bootstrap server. The format is url:port.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-cluster-id": {
+        "content": "--confluent-cloud-ingestion-cluster-id=CONFLUENT_CLOUD_INGESTION_CLUSTER_ID",
+        "description": "Confluent Cloud cluster ID.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-identity-pool-id": {
+        "content": "--confluent-cloud-ingestion-identity-pool-id=CONFLUENT_CLOUD_INGESTION_IDENTITY_POOL_ID",
+        "description": "Identity pool ID to be used for Federated Identity authentication with Confluent\nCloud.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-service-account": {
+        "content": "--confluent-cloud-ingestion-service-account=CONFLUENT_CLOUD_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith Confluent Cloud.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-topic": {
+        "content": "--confluent-cloud-ingestion-topic=CONFLUENT_CLOUD_INGESTION_TOPIC",
+        "description": "Name of the Confluent Cloud topic that Pub/Sub will import from.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-consumer-arn": {
+        "content": "--kinesis-ingestion-consumer-arn=KINESIS_INGESTION_CONSUMER_ARN",
+        "description": "Kinesis data streams consumer Amazon Resource Name (ARN) to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-role-arn": {
+        "content": "--kinesis-ingestion-role-arn=KINESIS_INGESTION_ROLE_ARN",
+        "description": "AWS role ARN to be used for Federated Identity authentication with Kinesis.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-service-account": {
+        "content": "--kinesis-ingestion-service-account=KINESIS_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith Kinesis.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-stream-arn": {
+        "content": "--kinesis-ingestion-stream-arn=KINESIS_INGESTION_STREAM_ARN",
+        "description": "Kinesis data stream ARN from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "message-encoding": {
+        "content": "--message-encoding=ENCODING",
+        "description": "The encoding of messages validated against the schema.ENCODINGmust be one of:json,binary.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "first-revision-id": {
+        "content": "--first-revision-id=FIRST_REVISION_ID",
+        "description": "The id of the oldest revision allowed for the specified schema."
+      },
+      "last-revision-id": {
+        "content": "--last-revision-id=LAST_REVISION_ID",
+        "description": "The id of the most recent revision allowed for the specified schema"
+      },
+      "schema": {
+        "content": "--schema=SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argument--schemaon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "schema-project": {
+        "content": "--schema-project=SCHEMA_PROJECT",
+        "description": "Project ID of the Google Cloud project for the schema.To set theprojectattribute:provide the argument--schemaon the command line with a fully\nspecified name;provide the argument--schema-projecton the command line;provide the argument--projecton the command line;set the propertycore/project."
+      },
+      "message-storage-policy-allowed-regions": {
+        "content": "--message-storage-policy-allowed-regions=[REGION,…]",
+        "description": "A list of one or more Cloud regions where messages are allowed to be stored at\nrest.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "message-storage-policy-enforce-in-transit": {
+        "content": "--message-storage-policy-enforce-in-transit",
+        "description": "Whether or not to enforce in-transit guarantees for this topic using the allowed\nregions. This ensures that publishing, pulling, and push delivery are only\nhandled in allowed Cloud regions."
+      },
+      "topic-encryption-key": {
+        "content": "--topic-encryption-key=TOPIC_ENCRYPTION_KEY",
+        "description": "ID of the key or fully qualified identifier for the key.To set thekms-keyattribute:provide the argument--topic-encryption-keyon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "topic-encryption-key-keyring": {
+        "content": "--topic-encryption-key-keyring=TOPIC_ENCRYPTION_KEY_KEYRING",
+        "description": "The KMS keyring of the key.To set thekms-keyringattribute:provide the argument--topic-encryption-keyon the command line\nwith a fully specified name;provide the argument--topic-encryption-key-keyringon the command\nline."
+      },
+      "topic-encryption-key-location": {
+        "content": "--topic-encryption-key-location=TOPIC_ENCRYPTION_KEY_LOCATION",
+        "description": "The Google Cloud location for the key.To set thekms-locationattribute:provide the argument--topic-encryption-keyon the command line\nwith a fully specified name;provide the argument--topic-encryption-key-locationon the command\nline."
+      },
+      "topic-encryption-key-project": {
+        "content": "--topic-encryption-key-project=TOPIC_ENCRYPTION_KEY_PROJECT",
+        "description": "The Google Cloud project for the key.To set thekms-projectattribute:provide the argument--topic-encryption-keyon the command line\nwith a fully specified name;provide the argument--topic-encryption-key-projecton the command\nline;set the propertycore/project."
+      }
+    }
+  },
+  {
+    "id": "pubsub.topics.delete",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "delete"
+    ],
+    "command_path": "gcloud pubsub topics delete",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/delete",
+    "description": "Deletes one or more Cloud Pub/Sub topics.",
+    "command_synopsis": "gcloud pubsub topics delete TOPIC [TOPIC …] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC[TOPIC…]",
+        "description": "IDs of the topics or fully qualified identifiers for the topics.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.describe",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "describe"
+    ],
+    "command_path": "gcloud pubsub topics describe",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/describe",
+    "description": "Describes a Cloud Pub/Sub topic.",
+    "command_synopsis": "gcloud pubsub topics describe TOPIC [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.detach-subscription",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "detach-subscription"
+    ],
+    "command_path": "gcloud pubsub topics detach-subscription",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/detach-subscription",
+    "description": "Detaches one or more Cloud Pub/Sub subscriptions.",
+    "command_synopsis": "gcloud pubsub topics detach-subscription SUBSCRIPTION [SUBSCRIPTION …] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "SUBSCRIPTION": {
+        "content": "SUBSCRIPTION[SUBSCRIPTION…]",
+        "description": "IDs of the subscriptions or fully qualified identifiers for the subscriptions.To set thesubscriptionattribute:provide the argumentsubscriptionon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.get-iam-policy",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud pubsub topics get-iam-policy",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/get-iam-policy",
+    "description": "Get the IAM policy for a Cloud Pub/Sub Topic.",
+    "command_synopsis": "gcloud pubsub topics get-iam-policy TOPIC [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "pubsub.topics.list",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "list"
+    ],
+    "command_path": "gcloud pubsub topics list",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/list",
+    "description": "Lists all of the Cloud Pub/Sub topics that exist in a given project that match\nthe given topic name filter.",
+    "command_synopsis": "gcloud pubsub topics list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "pubsub.topics.list-subscriptions",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "list-subscriptions"
+    ],
+    "command_path": "gcloud pubsub topics list-subscriptions",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/list-subscriptions",
+    "description": "Lists all of the Cloud Pub/Sub subscriptions attached to the given topic and\nthat match the given filter.",
+    "command_synopsis": "gcloud pubsub topics list-subscriptions TOPIC [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "pubsub.topics.publish",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "publish"
+    ],
+    "command_path": "gcloud pubsub topics publish",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/publish",
+    "description": "Publishes a message to the specified topic name for testing and troubleshooting.\nUse with caution: all associated subscribers must be able to consume and\nacknowledge any message you publish, otherwise the system will continuously\nre-attempt delivery of the bad message for 7 days.",
+    "command_synopsis": "gcloud pubsub topics publish TOPIC [--attribute=[ATTRIBUTE,…]] [--message=MESSAGE] [--ordering-key=ORDERING_KEY] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "attribute": {
+        "content": "--attribute=[ATTRIBUTE,…]",
+        "description": "Comma-separated list of attributes. Each ATTRIBUTE has the form name=\"value\".\nYou can specify up to 100 attributes."
+      },
+      "message": {
+        "content": "--message=MESSAGE",
+        "description": "The body of the message to publish to the given topic name. Information on\nmessage formatting and size limits can be found at:https://cloud.google.com/pubsub/docs/publisher#publish"
+      },
+      "ordering-key": {
+        "content": "--ordering-key=ORDERING_KEY",
+        "description": "The key for ordering delivery to subscribers. All messages with the same\nordering key are sent to subscribers in the order that Pub/Sub receives them."
+      }
+    }
+  },
+  {
+    "id": "pubsub.topics.remove-iam-policy-binding",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud pubsub topics remove-iam-policy-binding",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/remove-iam-policy-binding",
+    "description": "Remove an IAM policy binding of a Cloud Pub/Sub Topic.",
+    "command_synopsis": "gcloud pubsub topics remove-iam-policy-binding TOPIC --member=PRINCIPAL --role=ROLE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.set-iam-policy",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud pubsub topics set-iam-policy",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/set-iam-policy",
+    "description": "Set the IAM policy for a Cloud Pub/Sub Topic.",
+    "command_synopsis": "gcloud pubsub topics set-iam-policy TOPIC POLICY_FILE [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "JSON or YAML file with the IAM policy"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "pubsub.topics.update",
+    "service": "pubsub",
+    "type": "command",
+    "path": [
+      "pubsub",
+      "topics",
+      "update"
+    ],
+    "command_path": "gcloud pubsub topics update",
+    "service_name": "pubsub",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/update",
+    "description": "Updates an existing Cloud Pub/Sub topic.",
+    "command_synopsis": "gcloud pubsub topics update TOPIC [--update-labels=[KEY=VALUE,…]] [--clear-ingestion-data-source-settings     | --ingestion-log-severity=INGESTION_LOG_SEVERITY --aws-msk-ingestion-aws-role-arn=AWS_MSK_INGESTION_AWS_ROLE_ARN --aws-msk-ingestion-cluster-arn=AWS_MSK_INGESTION_CLUSTER_ARN --aws-msk-ingestion-service-account=AWS_MSK_INGESTION_SERVICE_ACCOUNT --aws-msk-ingestion-topic=AWS_MSK_INGESTION_TOPIC     | --azure-event-hubs-ingestion-client-id=AZURE_EVENT_HUBS_INGESTION_CLIENT_ID --azure-event-hubs-ingestion-event-hub=AZURE_EVENT_HUBS_INGESTION_EVENT_HUB --azure-event-hubs-ingestion-namespace=AZURE_EVENT_HUBS_INGESTION_NAMESPACE --azure-event-hubs-ingestion-resource-group=AZURE_EVENT_HUBS_INGESTION_RESOURCE_GROUP --azure-event-hubs-ingestion-service-account=AZURE_EVENT_HUBS_INGESTION_SERVICE_ACCOUNT --azure-event-hubs-ingestion-subscription-id=AZURE_EVENT_HUBS_INGESTION_SUBSCRIPTION_ID --azure-event-hubs-ingestion-tenant-id=AZURE_EVENT_HUBS_INGESTION_TENANT_ID     | [--cloud-storage-ingestion-bucket=CLOUD_STORAGE_INGESTION_BUCKET --cloud-storage-ingestion-input-format=INPUT_FORMAT : --cloud-storage-ingestion-text-delimiter=CLOUD_STORAGE_INGESTION_TEXT_DELIMITER --cloud-storage-ingestion-minimum-object-create-time=CLOUD_STORAGE_INGESTION_MINIMUM_OBJECT_CREATE_TIME --cloud-storage-ingestion-match-glob=CLOUD_STORAGE_INGESTION_MATCH_GLOB]     | --confluent-cloud-ingestion-bootstrap-server=CONFLUENT_CLOUD_INGESTION_BOOTSTRAP_SERVER --confluent-cloud-ingestion-cluster-id=CONFLUENT_CLOUD_INGESTION_CLUSTER_ID --confluent-cloud-ingestion-identity-pool-id=CONFLUENT_CLOUD_INGESTION_IDENTITY_POOL_ID --confluent-cloud-ingestion-service-account=CONFLUENT_CLOUD_INGESTION_SERVICE_ACCOUNT --confluent-cloud-ingestion-topic=CONFLUENT_CLOUD_INGESTION_TOPIC     | --kinesis-ingestion-consumer-arn=KINESIS_INGESTION_CONSUMER_ARN --kinesis-ingestion-role-arn=KINESIS_INGESTION_ROLE_ARN --kinesis-ingestion-service-account=KINESIS_INGESTION_SERVICE_ACCOUNT --kinesis-ingestion-stream-arn=KINESIS_INGESTION_STREAM_ARN] [--clear-labels     | --remove-labels=[KEY,…]] [--clear-message-retention-duration     | --message-retention-duration=MESSAGE_RETENTION_DURATION] [--clear-message-transforms     | --message-transforms-file=MESSAGE_TRANSFORMS_FILE] [--clear-schema-settings     | [--message-encoding=ENCODING (--schema=SCHEMA : --schema-project=SCHEMA_PROJECT) : --first-revision-id=FIRST_REVISION_ID --last-revision-id=LAST_REVISION_ID]] [--recompute-message-storage-policy     | [--message-storage-policy-allowed-regions=[REGION,…] : --message-storage-policy-enforce-in-transit]] [--topic-encryption-key=TOPIC_ENCRYPTION_KEY : --topic-encryption-key-keyring=TOPIC_ENCRYPTION_KEY_KEYRING --topic-encryption-key-location=TOPIC_ENCRYPTION_KEY_LOCATION --topic-encryption-key-project=TOPIC_ENCRYPTION_KEY_PROJECT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "2fae9776d24c8130f69c7358ed0c0e14c1d4e716039843070dbee10a410234f4",
+    "positional_args": {
+      "TOPIC": {
+        "content": "TOPIC",
+        "description": "ID of the topic or fully qualified identifier for the topic.To set thetopicattribute:provide the argumenttopicon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "update-labels": {
+        "content": "--update-labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to update. If a label exists, its value is\nmodified. Otherwise, a new label is created.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "clear-ingestion-data-source-settings": {
+        "content": "--clear-ingestion-data-source-settings",
+        "description": "If set, clear the Ingestion Data Source Settings from the topic. Use\n--no-clear-ingestion-data-source-settings to disable this flag."
+      },
+      "ingestion-log-severity": {
+        "content": "--ingestion-log-severity=INGESTION_LOG_SEVERITY",
+        "description": "Log severity to use for ingestion."
+      },
+      "aws-msk-ingestion-aws-role-arn": {
+        "content": "--aws-msk-ingestion-aws-role-arn=AWS_MSK_INGESTION_AWS_ROLE_ARN",
+        "description": "AWS role ARN to be used for Federated Identity authentication with MSK.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "aws-msk-ingestion-cluster-arn": {
+        "content": "--aws-msk-ingestion-cluster-arn=AWS_MSK_INGESTION_CLUSTER_ARN",
+        "description": "ARN that uniquely identifies the MSK cluster.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "aws-msk-ingestion-service-account": {
+        "content": "--aws-msk-ingestion-service-account=AWS_MSK_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith MSK.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "aws-msk-ingestion-topic": {
+        "content": "--aws-msk-ingestion-topic=AWS_MSK_INGESTION_TOPIC",
+        "description": "Name of the MSK topic that Pub/Sub will import from.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-client-id": {
+        "content": "--azure-event-hubs-ingestion-client-id=AZURE_EVENT_HUBS_INGESTION_CLIENT_ID",
+        "description": "Azure Event Hubs client ID to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-event-hub": {
+        "content": "--azure-event-hubs-ingestion-event-hub=AZURE_EVENT_HUBS_INGESTION_EVENT_HUB",
+        "description": "Azure event hub from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-namespace": {
+        "content": "--azure-event-hubs-ingestion-namespace=AZURE_EVENT_HUBS_INGESTION_NAMESPACE",
+        "description": "Azure Event Hubs namespace from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-resource-group": {
+        "content": "--azure-event-hubs-ingestion-resource-group=AZURE_EVENT_HUBS_INGESTION_RESOURCE_GROUP",
+        "description": "Azure Event Hubs resource group from within an Azure subscription.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-service-account": {
+        "content": "--azure-event-hubs-ingestion-service-account=AZURE_EVENT_HUBS_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith Azure Event Hubs.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-subscription-id": {
+        "content": "--azure-event-hubs-ingestion-subscription-id=AZURE_EVENT_HUBS_INGESTION_SUBSCRIPTION_ID",
+        "description": "Azure Event Hubs subscription ID to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "azure-event-hubs-ingestion-tenant-id": {
+        "content": "--azure-event-hubs-ingestion-tenant-id=AZURE_EVENT_HUBS_INGESTION_TENANT_ID",
+        "description": "Azure Event Hubs tenant ID to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-ingestion-bucket": {
+        "content": "--cloud-storage-ingestion-bucket=CLOUD_STORAGE_INGESTION_BUCKET",
+        "description": "Cloud Storage bucket from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-ingestion-input-format": {
+        "content": "--cloud-storage-ingestion-input-format=INPUT_FORMAT",
+        "description": "Format of the data in the Cloud Storage bucket.INPUT_FORMATmust be one of:text,avro,pubsub_avro.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "cloud-storage-ingestion-text-delimiter": {
+        "content": "--cloud-storage-ingestion-text-delimiter=CLOUD_STORAGE_INGESTION_TEXT_DELIMITER",
+        "description": "Delimiter to use with text format when partitioning the object."
+      },
+      "cloud-storage-ingestion-minimum-object-create-time": {
+        "content": "--cloud-storage-ingestion-minimum-object-create-time=CLOUD_STORAGE_INGESTION_MINIMUM_OBJECT_CREATE_TIME",
+        "description": "Only Cloud Storage objects with a larger or equal creation timestamp will be\ningested."
+      },
+      "cloud-storage-ingestion-match-glob": {
+        "content": "--cloud-storage-ingestion-match-glob=CLOUD_STORAGE_INGESTION_MATCH_GLOB",
+        "description": "Glob pattern used to match Cloud Storage objects that will be ingested. If\nunset, all objects will be ingested."
+      },
+      "confluent-cloud-ingestion-bootstrap-server": {
+        "content": "--confluent-cloud-ingestion-bootstrap-server=CONFLUENT_CLOUD_INGESTION_BOOTSTRAP_SERVER",
+        "description": "Confluent Cloud bootstrap server. The format is url:port.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-cluster-id": {
+        "content": "--confluent-cloud-ingestion-cluster-id=CONFLUENT_CLOUD_INGESTION_CLUSTER_ID",
+        "description": "Confluent Cloud cluster ID.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-identity-pool-id": {
+        "content": "--confluent-cloud-ingestion-identity-pool-id=CONFLUENT_CLOUD_INGESTION_IDENTITY_POOL_ID",
+        "description": "Identity pool ID to be used for Federated Identity authentication with Confluent\nCloud.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-service-account": {
+        "content": "--confluent-cloud-ingestion-service-account=CONFLUENT_CLOUD_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith Confluent Cloud.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "confluent-cloud-ingestion-topic": {
+        "content": "--confluent-cloud-ingestion-topic=CONFLUENT_CLOUD_INGESTION_TOPIC",
+        "description": "Name of the Confluent Cloud topic that Pub/Sub will import from.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-consumer-arn": {
+        "content": "--kinesis-ingestion-consumer-arn=KINESIS_INGESTION_CONSUMER_ARN",
+        "description": "Kinesis data streams consumer Amazon Resource Name (ARN) to use for ingestion.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-role-arn": {
+        "content": "--kinesis-ingestion-role-arn=KINESIS_INGESTION_ROLE_ARN",
+        "description": "AWS role ARN to be used for Federated Identity authentication with Kinesis.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-service-account": {
+        "content": "--kinesis-ingestion-service-account=KINESIS_INGESTION_SERVICE_ACCOUNT",
+        "description": "Google Cloud service account to be used for Federated Identity authentication\nwith Kinesis.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kinesis-ingestion-stream-arn": {
+        "content": "--kinesis-ingestion-stream-arn=KINESIS_INGESTION_STREAM_ARN",
+        "description": "Kinesis data stream ARN from which to ingest data.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "clear-labels": {
+        "content": "--clear-labels",
+        "description": "Remove all labels. If--update-labelsis also specified then--clear-labelsis applied first.For example, to remove all labels:gcloudpubsubtopicsupdate--clear-labelsTo remove all existing labels and create two new labels,fooandbaz:gcloudpubsubtopicsupdate--clear-labels--update-labelsfoo=bar,baz=qux"
+      },
+      "remove-labels": {
+        "content": "--remove-labels=[KEY,…]",
+        "description": "List of label keys to remove. If a label does not exist it is silently ignored.\nIf--update-labelsis also specified then--update-labelsis applied first."
+      },
+      "clear-message-retention-duration": {
+        "content": "--clear-message-retention-duration",
+        "description": "If set, clear the message retention duration from the topic. Use\n--no-clear-message-retention-duration to disable this flag."
+      },
+      "message-retention-duration": {
+        "content": "--message-retention-duration=MESSAGE_RETENTION_DURATION",
+        "description": "Indicates the minimum duration to retain a message after it is published to the\ntopic. If this field is set, messages published to the topic in the last\nMESSAGE_RETENTION_DURATION are always available to subscribers. For instance, it\nallows any attached subscription to seek to a timestamp that is up to\nMESSAGE_RETENTION_DURATION in the past. If this field is not set, message\nretention is controlled by settings on individual subscriptions. The minimum is\n10 minutes and the maximum is 31 days. Valid values are strings of the form\nINTEGER[UNIT], where UNIT is one of \"s\", \"m\", \"h\", and \"d\" for seconds, minutes,\nhours, and days, respectively. If the unit is omitted, seconds is assumed."
+      },
+      "clear-message-transforms": {
+        "content": "--clear-message-transforms",
+        "description": "If set, clears the message transforms field. Use --no-clear-message-transforms\nto disable this flag."
+      },
+      "message-transforms-file": {
+        "content": "--message-transforms-file=MESSAGE_TRANSFORMS_FILE",
+        "description": "Path to YAML or JSON file containing message transforms."
+      },
+      "clear-schema-settings": {
+        "content": "--clear-schema-settings",
+        "description": "If set, clear the Schema Settings from the topic. Use --no-clear-schema-settings\nto disable this flag."
+      },
+      "message-encoding": {
+        "content": "--message-encoding=ENCODING",
+        "description": "The encoding of messages validated against the schema.ENCODINGmust be one of:json,binary.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "first-revision-id": {
+        "content": "--first-revision-id=FIRST_REVISION_ID",
+        "description": "The id of the oldest revision allowed for the specified schema."
+      },
+      "last-revision-id": {
+        "content": "--last-revision-id=LAST_REVISION_ID",
+        "description": "The id of the most recent revision allowed for the specified schema"
+      },
+      "schema": {
+        "content": "--schema=SCHEMA",
+        "description": "ID of the schema or fully qualified identifier for the schema.To set theschemaattribute:provide the argument--schemaon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "schema-project": {
+        "content": "--schema-project=SCHEMA_PROJECT",
+        "description": "Project ID of the Google Cloud project for the schema.To set theprojectattribute:provide the argument--schemaon the command line with a fully\nspecified name;provide the argument--schema-projecton the command line;provide the argument--projecton the command line;set the propertycore/project."
+      },
+      "recompute-message-storage-policy": {
+        "content": "--recompute-message-storage-policy",
+        "description": "If given, Pub/Sub recomputes the regions where messages can be stored at rest,\nbased on your organization's \"Resource Location Restriction\" policy."
+      },
+      "message-storage-policy-allowed-regions": {
+        "content": "--message-storage-policy-allowed-regions=[REGION,…]",
+        "description": "A list of one or more Cloud regions where messages are allowed to be stored at\nrest.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "message-storage-policy-enforce-in-transit": {
+        "content": "--message-storage-policy-enforce-in-transit",
+        "description": "Whether or not to enforce in-transit guarantees for this topic using the allowed\nregions. This ensures that publishing, pulling, and push delivery are only\nhandled in allowed Cloud regions."
+      },
+      "topic-encryption-key": {
+        "content": "--topic-encryption-key=TOPIC_ENCRYPTION_KEY",
+        "description": "ID of the key or fully qualified identifier for the key.To set thekms-keyattribute:provide the argument--topic-encryption-keyon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "topic-encryption-key-keyring": {
+        "content": "--topic-encryption-key-keyring=TOPIC_ENCRYPTION_KEY_KEYRING",
+        "description": "The KMS keyring of the key.To set thekms-keyringattribute:provide the argument--topic-encryption-keyon the command line\nwith a fully specified name;provide the argument--topic-encryption-key-keyringon the command\nline."
+      },
+      "topic-encryption-key-location": {
+        "content": "--topic-encryption-key-location=TOPIC_ENCRYPTION_KEY_LOCATION",
+        "description": "The Google Cloud location for the key.To set thekms-locationattribute:provide the argument--topic-encryption-keyon the command line\nwith a fully specified name;provide the argument--topic-encryption-key-locationon the command\nline."
+      },
+      "topic-encryption-key-project": {
+        "content": "--topic-encryption-key-project=TOPIC_ENCRYPTION_KEY_PROJECT",
+        "description": "The Google Cloud project for the key.To set thekms-projectattribute:provide the argument--topic-encryption-keyon the command line\nwith a fully specified name;provide the argument--topic-encryption-key-projecton the command\nline;set the propertycore/project."
+      }
+    }
+  }
+]

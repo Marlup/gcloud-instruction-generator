@@ -1,0 +1,2738 @@
+[
+  {
+    "id": "run",
+    "service": "run",
+    "type": "group",
+    "path": [
+      "run"
+    ],
+    "command_path": "gcloud run",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run",
+    "description": "The gcloud run command group lets you deploy container images to Google Cloud\nRun.",
+    "command_synopsis": "gcloud run GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "38cb8bee5da010811dd546ba507f00c92ab8592fae311fa054ecf33e165e1cf4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "run.domain-mappings",
+    "service": "run",
+    "type": "group",
+    "path": [
+      "run",
+      "domain-mappings"
+    ],
+    "command_path": "gcloud run domain-mappings",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/domain-mappings",
+    "description": "This set of commands can be used to view and manage your service's domain\nmappings.\nTo view and manage fully managed Cloud Run domain mappings, use gcloud beta run\ndomain-mappings.",
+    "command_synopsis": "gcloud run domain-mappings COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6a33f2774dc0861d675e6b5ba9fd2cfca7a18c58bde7205367776edabeb0f015",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "run.deploy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "deploy"
+    ],
+    "command_path": "gcloud run deploy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/deploy",
+    "description": "Creates or updates a Cloud Run service.",
+    "command_synopsis": "gcloud run deploy [[SERVICE] --namespace=NAMESPACE] [--[no-]allow-unauthenticated] [--async] [--breakglass=JUSTIFICATION] [--clear-vpc-connector] [--concurrency=CONCURRENCY] [--container=CONTAINER] [--[no-]cpu-boost] [--[no-]cpu-throttling] [--[no-]default-url] [--[no-]deploy-health-check] [--description=DESCRIPTION] [--execution-environment=EXECUTION_ENVIRONMENT] [--gpu-type=GPU_TYPE] [--[no-]gpu-zonal-redundancy] [--ingress=INGRESS; default=\"all\"] [--[no-]invoker-iam-check] [--max=MAX] [--max-instances=MAX_INSTANCES] [--min=MIN] [--min-instances=MIN_INSTANCES] [--region=REGION] [--regions=REGIONS] [--remove-containers=[CONTAINER,…]] [--revision-suffix=REVISION_SUFFIX] [--scaling=SCALING] [--service-account=SERVICE_ACCOUNT] [--[no-]session-affinity] [--tag=TAG] [--timeout=TIMEOUT] [--no-traffic] [--vpc-connector=VPC_CONNECTOR] [--vpc-egress=VPC_EGRESS] [--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --clear-cloudsql-instances     | --remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]] [--add-custom-audiences=[CUSTOM-AUDIENCES,…]     | --clear-custom-audiences     | --remove-custom-audiences=[CUSTOM-AUDIENCES,…]     | --set-custom-audiences=[CUSTOM-AUDIENCES,…]] [--add-volume=[KEY=VALUE,…] --clear-volumes --remove-volume=[VOLUME,…]] [--add-volume-mount=[volume=NAME,mount-path=MOUNT_PATH,…] --args=[ARG,…] --[no-]automatic-updates --clear-volume-mounts --cpu=CPU --depends-on=[CONTAINER,…] --gpu=GPU --liveness-probe=[KEY=VALUE,…] --memory=MEMORY --port=PORT --remove-volume-mount=[MOUNT_PATH,…] --startup-probe=[KEY=VALUE,…] --[no-]use-http2 --base-image=BASE_IMAGE     | --clear-base-image --build-env-vars-file=FILE_PATH     | --clear-build-env-vars     | --set-build-env-vars=[KEY=VALUE,…]     | --remove-build-env-vars=[KEY,…] --update-build-env-vars=[KEY=VALUE,…] --build-service-account=BUILD_SERVICE_ACCOUNT     | --clear-build-service-account --build-worker-pool=BUILD_WORKER_POOL     | --clear-build-worker-pool --clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…] --clear-secrets     | --set-secrets=[KEY=VALUE,…]     | --remove-secrets=[KEY,…] --update-secrets=[KEY=VALUE,…] --command=[COMMAND,…]     | --function=FUNCTION --image=IMAGE --source=SOURCE] [--binary-authorization=POLICY     | --clear-binary-authorization] [--clear-encryption-key-shutdown-hours     | --encryption-key-shutdown-hours=ENCRYPTION_KEY_SHUTDOWN_HOURS] [--clear-key     | --key=KEY] [--clear-labels     | --remove-labels=[KEY,…] --labels=[KEY=VALUE,…]     | --update-labels=[KEY=VALUE,…]] [--clear-network     | --network=NETWORK --subnet=SUBNET --clear-network-tags     | --network-tags=[TAG,…]] [--clear-post-key-revocation-action-type     | --post-key-revocation-action-type=POST_KEY_REVOCATION_ACTION_TYPE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "[SERVICE]",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line;specify the service name from an interactive prompt."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;specify the service name from an interactive prompt with a fully specified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]allow-unauthenticated": {
+        "content": "--[no-]allow-unauthenticated",
+        "description": "Whether to enable allowing unauthenticated access to the service. This may take\na few moments to take effect. Use--allow-unauthenticatedto enable\nand--no-allow-unauthenticatedto disable."
+      },
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "breakglass": {
+        "content": "--breakglass=JUSTIFICATION",
+        "description": "Justification to bypass Binary Authorization policy constraints and allow the\noperation. Seehttps://cloud.google.com/binary-authorization/docs/using-breakglassfor more information. Next update or deploy command will automatically clear\nexisting breakglass justification."
+      },
+      "clear-vpc-connector": {
+        "content": "--clear-vpc-connector",
+        "description": "Remove the VPC connector for this resource."
+      },
+      "concurrency": {
+        "content": "--concurrency=CONCURRENCY",
+        "description": "Set the maximum number of concurrent requests allowed per container instance.\nLeave concurrency unspecified or provide the special value 'default' to receive\nthe server default value."
+      },
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "[no-]cpu-boost": {
+        "content": "--[no-]cpu-boost",
+        "description": "Whether to allocate extra CPU to containers on startup to reduce the perceived\nlatency of a cold start request. Enabled by default when unspecified on new\nservices. Use--cpu-boostto enable and--no-cpu-boostto disable."
+      },
+      "[no-]cpu-throttling": {
+        "content": "--[no-]cpu-throttling",
+        "description": "Whether to throttle the CPU when the container is not actively serving requests.\nUse--cpu-throttlingto enable and--no-cpu-throttlingto disable."
+      },
+      "[no-]default-url": {
+        "content": "--[no-]default-url",
+        "description": "Toggles the default url for a run service. This is enabled by default if not\nspecified. Use--default-urlto enable and--no-default-urlto disable."
+      },
+      "[no-]deploy-health-check": {
+        "content": "--[no-]deploy-health-check",
+        "description": "Schedules a single instance of the Revision and waits for it to pass its startup\nprobe for the deployment to succeed. If disabled, the startup probe runs only\nwhen the revision is first started via invocation or by setting min-instances.\nThis check is enabled by default when unspecified. Use--deploy-health-checkto enable and--no-deploy-health-checkto disable."
+      },
+      "description": {
+        "content": "--description=DESCRIPTION",
+        "description": "Provides an optional, human-readable description of the service."
+      },
+      "execution-environment": {
+        "content": "--execution-environment=EXECUTION_ENVIRONMENT",
+        "description": "Selects the execution environment where the application will run.EXECUTION_ENVIRONMENTmust be one of:gen1Run the application in a first generation execution environment.gen2Run the application in a second generation execution environment."
+      },
+      "gen1": {
+        "content": "gen1",
+        "description": "Run the application in a first generation execution environment."
+      },
+      "gen2": {
+        "content": "gen2",
+        "description": "Run the application in a second generation execution environment."
+      },
+      "gpu-type": {
+        "content": "--gpu-type=GPU_TYPE",
+        "description": "The GPU type to use."
+      },
+      "[no-]gpu-zonal-redundancy": {
+        "content": "--[no-]gpu-zonal-redundancy",
+        "description": "Set GPU zonal redundancy. Use--gpu-zonal-redundancyto enable and--no-gpu-zonal-redundancyto disable."
+      },
+      "ingress": {
+        "content": "--ingress=INGRESS; default=\"all\"",
+        "description": "Set the ingress traffic sources allowed to call the service. For Cloud Run the--[no-]allow-unauthenticatedflag separately controls the\nidentities allowed to call the service.INGRESSmust be\none of:allInbound requests from all sources are allowed.internalFor Cloud Run, only inbound requests from VPC networks in the same project or\nVPC Service Controls perimeter, as well as Pub/Sub subscriptions and Eventarc\nevents in the same project or VPC Service Controls perimeter are allowed. All\nother requests are rejected. Seehttps://cloud.google.com/run/docs/securing/ingressfor full details on the definition of internal traffic for Cloud Run.internal-and-cloud-load-balancingOnly inbound requests from Google Cloud Load Balancing or a traffic source\nallowed by the internal option are allowed."
+      },
+      "all": {
+        "content": "all",
+        "description": "Inbound requests from all sources are allowed."
+      },
+      "internal": {
+        "content": "internal",
+        "description": "For Cloud Run, only inbound requests from VPC networks in the same project or\nVPC Service Controls perimeter, as well as Pub/Sub subscriptions and Eventarc\nevents in the same project or VPC Service Controls perimeter are allowed. All\nother requests are rejected. Seehttps://cloud.google.com/run/docs/securing/ingressfor full details on the definition of internal traffic for Cloud Run."
+      },
+      "internal-and-cloud-load-balancing": {
+        "content": "internal-and-cloud-load-balancing",
+        "description": "Only inbound requests from Google Cloud Load Balancing or a traffic source\nallowed by the internal option are allowed."
+      },
+      "[no-]invoker-iam-check": {
+        "content": "--[no-]invoker-iam-check",
+        "description": "Optionally disable invoker IAM checks. This feature is available by invitation\nonly. More info athttps://cloud.google.com/run/docs/securing/managing-access#invoker_check.\nUse--invoker-iam-checkto enable and--no-invoker-iam-checkto disable."
+      },
+      "max": {
+        "content": "--max=MAX",
+        "description": "The maximum number of container instances to run for this Service. This instance\nlimit will be divided among all Revisions receiving a percentage of traffic and\ncan be modified without deploying a new Revision."
+      },
+      "max-instances": {
+        "content": "--max-instances=MAX_INSTANCES",
+        "description": "The maximum number of container instances for this Revision to run or 'default'\nto remove. This setting is immutably set on each new Revision and modifying its\nvalue will deploy another Revision."
+      },
+      "min": {
+        "content": "--min=MIN",
+        "description": "The minimum number of container instances to run for this Service or 'default'\nto remove. These instances will be divided among all Revisions receiving a\npercentage of traffic and can be modified without deploying a new Revision."
+      },
+      "min-instances": {
+        "content": "--min-instances=MIN_INSTANCES",
+        "description": "The minimum number of container instances to run for this Revision or 'default'\nto remove. This setting is immutably set on each new Revision and modifying its\nvalue will deploy a another Revision. Consider using --min to set the minimum\nnumber of instances across all revisions of the Service which may be modified\ndynamically."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "regions": {
+        "content": "--regions=REGIONS",
+        "description": "Comma-separated list of regions in which the multi-region Service can be found."
+      },
+      "remove-containers": {
+        "content": "--remove-containers=[CONTAINER,…]",
+        "description": "List of containers to remove."
+      },
+      "revision-suffix": {
+        "content": "--revision-suffix=REVISION_SUFFIX",
+        "description": "Specify the suffix of the revision name. Revision names always start with the\nservice name automatically. For example, specifying [--revision-suffix=v1] for a\nservice named 'helloworld', would lead to a revision named 'helloworld-v1'. Set\nempty string to clear the suffix and resume server-assigned naming."
+      },
+      "scaling": {
+        "content": "--scaling=SCALING",
+        "description": "The scaling mode to use for this resource. Flag value could be either \"auto\" for\nautomatic scaling, or a positive integer to configure manual scaling with the\ngiven integer as a fixed instance count."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "the email address of an IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has."
+      },
+      "[no-]session-affinity": {
+        "content": "--[no-]session-affinity",
+        "description": "Whether to enable session affinity for connections to the service. Use--session-affinityto enable and--no-session-affinityto disable."
+      },
+      "tag": {
+        "content": "--tag=TAG",
+        "description": "Traffic tag to assign to the newly created revision."
+      },
+      "timeout": {
+        "content": "--timeout=TIMEOUT",
+        "description": "Set the maximum request execution time (timeout). It is specified as a duration;\nfor example, \"10m5s\" is ten minutes, and five seconds. If you don't specify a\nunit, seconds is assumed. For example, \"10\" is 10 seconds."
+      },
+      "no-traffic": {
+        "content": "--no-traffic",
+        "description": "True to avoid sending traffic to the revision being deployed. Setting this flag\nassigns any traffic assigned to the LATEST revision to the specific revision\nbound to LATEST before the deployment. The effect is that the revision being\ndeployed will not receive traffic.After a deployment with this flag the LATEST revision will not receive traffic\non future deployments. To restore sending traffic to the LATEST revision by\ndefault, run thegcloud run services\nupdate-trafficcommand with--to-latest."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "Set a VPC connector for this resource."
+      },
+      "vpc-egress": {
+        "content": "--vpc-egress=VPC_EGRESS",
+        "description": "Specify which of the outbound traffic to send through Direct VPC egress or the\nVPC connector for this resource. This resource must have Direct VPC egress\nenabled or a VPC connector to set this flag.VPC_EGRESSmust be one of:all(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead.all-trafficSends all outbound traffic through Direct VPC egress or the VPC connector.private-ranges-onlyDefault option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "all-1": {
+        "content": "all",
+        "description": "(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead."
+      },
+      "all-traffic": {
+        "content": "all-traffic",
+        "description": "Sends all outbound traffic through Direct VPC egress or the VPC connector."
+      },
+      "private-ranges-only": {
+        "content": "private-ranges-only",
+        "description": "Default option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "add-cloudsql-instances": {
+        "content": "--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Append the given values to the current Cloud SQL instances."
+      },
+      "clear-cloudsql-instances": {
+        "content": "--clear-cloudsql-instances",
+        "description": "Empty the current Cloud SQL instances."
+      },
+      "remove-cloudsql-instances": {
+        "content": "--remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Remove the given values from the current Cloud SQL instances."
+      },
+      "set-cloudsql-instances": {
+        "content": "--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Completely replace the current Cloud SQL instances with the given values."
+      },
+      "add-custom-audiences": {
+        "content": "--add-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Append the given values to the current custom audiences."
+      },
+      "clear-custom-audiences": {
+        "content": "--clear-custom-audiences",
+        "description": "Empty the current custom audiences."
+      },
+      "remove-custom-audiences": {
+        "content": "--remove-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Remove the given values from the current custom audiences."
+      },
+      "set-custom-audiences": {
+        "content": "--set-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Completely replace the current custom audiences with the given values."
+      },
+      "add-volume": {
+        "content": "--add-volume=[KEY=VALUE,…]",
+        "description": "Adds a volume to the Cloud Run resource. To add more than one volume, specify\nthis flag multiple times. Volumes must have anameandtypekey. Only certain values are supported fortype.\nDepending on the provided type, other keys will be required. The following types\nare supported with the specified additional keys:cloud-storage: A volume representing a Cloud Storage bucket. This\nvolume type is mounted using Cloud Storage FUSE. Seehttps://cloud.google.com/storage/docs/gcs-fusefor the details and limitations of this filesystem. Additional keys:bucket: (required) the name of the bucket to use as the source of this volumereadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts.mount-options: (optional) A list of flags to pass to GCSFuse. Flags should be\nspecified without leading dashes and separated by semicolons.in-memory: An ephemeral volume that stores data in the instance's\nmemory. With this type of volume, data is not shared between instances and all\ndata will be lost when the instance it is on is terminated. Additional keys:size-limit: (optional) A quantity representing the maximum amount of memory\nallocated to this volume, such as \"512Mi\" or \"3G\". Data stored in an in-memory\nvolume consumes the memory allocation of the container that wrote the data. If\nsize-limit is not specified, the maximum size will be half the total memory\nlimit of all containers.nfs: Represents a volume backed by an NFS server. Additional keys:location: (required) The location of the NFS Server, in the form SERVER:/PATHreadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts."
+      },
+      "clear-volumes": {
+        "content": "--clear-volumes",
+        "description": "Remove all existing volumes from the Cloud Run resource, including volumes\nmounted as secrets"
+      },
+      "remove-volume": {
+        "content": "--remove-volume=[VOLUME,…]",
+        "description": "Removes volumes from the Cloud Run resource."
+      }
+    }
+  },
+  {
+    "id": "run.domain-mappings.delete",
+    "service": "run",
+    "type": "group",
+    "path": [
+      "run",
+      "domain-mappings",
+      "delete"
+    ],
+    "command_path": "gcloud run domain-mappings delete",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/domain-mappings/delete",
+    "description": "Delete domain mappings for Cloud Run for Anthos.\nFor domain mapping support with fully managed Cloud Run, use gcloud beta run\ndomain-mappings delete.",
+    "command_synopsis": "gcloud run domain-mappings delete (--domain=DOMAIN : --namespace=NAMESPACE) [--[no-]async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {
+      "domain": {
+        "content": "--domain=DOMAIN",
+        "description": "ID of the DomainMapping or fully qualified identifier for the DomainMapping.To set thedomainattribute:provide the argument--domainon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the DomainMapping.To set thenamespaceattribute:provide the argument--domainon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "optional_flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "run.domain-mappings.create",
+    "service": "run",
+    "type": "group",
+    "path": [
+      "run",
+      "domain-mappings",
+      "create"
+    ],
+    "command_path": "gcloud run domain-mappings create",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/domain-mappings/create",
+    "description": "Create domain mappings for Cloud Run for Anthos.\nFor domain mapping support with fully managed Cloud Run, use gcloud beta run\ndomain-mappings create.",
+    "command_synopsis": "gcloud run domain-mappings create --service=SERVICE (--domain=DOMAIN : --namespace=NAMESPACE) [--force-override] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {
+      "service": {
+        "content": "--service=SERVICE",
+        "description": "Create domain mapping for the given service."
+      },
+      "domain": {
+        "content": "--domain=DOMAIN",
+        "description": "ID of the DomainMapping or fully qualified identifier for the DomainMapping.To set thedomainattribute:provide the argument--domainon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the DomainMapping.To set thenamespaceattribute:provide the argument--domainon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "optional_flags": {
+      "force-override": {
+        "content": "--force-override",
+        "description": "Map this domain even if it is already mapped to another service."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "run.domain-mappings.describe",
+    "service": "run",
+    "type": "group",
+    "path": [
+      "run",
+      "domain-mappings",
+      "describe"
+    ],
+    "command_path": "gcloud run domain-mappings describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/domain-mappings/describe",
+    "description": "Describe domain mappings for Cloud Run for Anthos.\nFor domain mapping support with fully managed Cloud Run, use gcloud beta run\ndomain-mappings describe.",
+    "command_synopsis": "gcloud run domain-mappings describe (--domain=DOMAIN : --namespace=NAMESPACE) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {
+      "domain": {
+        "content": "--domain=DOMAIN",
+        "description": "ID of the DomainMapping or fully qualified identifier for the DomainMapping.To set thedomainattribute:provide the argument--domainon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the DomainMapping.To set thenamespaceattribute:provide the argument--domainon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "run.domain-mappings.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "domain-mappings",
+      "list"
+    ],
+    "command_path": "gcloud run domain-mappings list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/domain-mappings/list",
+    "description": "Lists domain mappings for Cloud Run for Anthos.\nFor domain mapping support with fully managed Cloud Run, use gcloud beta run\ndomain-mappings list.",
+    "command_synopsis": "gcloud run domain-mappings list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "run.jobs",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs"
+    ],
+    "command_path": "gcloud run jobs",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs",
+    "description": "This set of commands can be used to view and manage your Cloud Run jobs.",
+    "command_synopsis": "gcloud run jobs GROUP | COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b66c17124bea7657eaf9f6710ab125b7b5fb44175c8e978bbf2f729ff68f3c95",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.add-iam-policy-binding",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud run jobs add-iam-policy-binding",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/add-iam-policy-binding",
+    "description": "Add an IAM policy binding to the IAM policy of a Cloud Run job. One binding\nconsists of a member, and a role.",
+    "command_synopsis": "gcloud run jobs add-iam-policy-binding JOB --member=PRINCIPAL --role=ROLE [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "run.jobs.delete",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "delete"
+    ],
+    "command_path": "gcloud run jobs delete",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/delete",
+    "description": "Delete a job.",
+    "command_synopsis": "gcloud run jobs delete JOB [--[no-]async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the Job or fully qualified identifier for the Job.To set thejobsattribute:provide the argumentJOBon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.create",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "create"
+    ],
+    "command_path": "gcloud run jobs create",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/create",
+    "description": "Creates a new Cloud Run job.",
+    "command_synopsis": "gcloud run jobs create [JOB] [--binary-authorization=POLICY] [--breakglass=JUSTIFICATION] [--container=CONTAINER] [--gpu-type=GPU_TYPE] [--[no-]gpu-zonal-redundancy] [--key=KEY] [--labels=[KEY=VALUE,…]] [--max-retries=MAX_RETRIES] [--parallelism=PARALLELISM] [--region=REGION] [--service-account=SERVICE_ACCOUNT] [--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]] [--task-timeout=TASK_TIMEOUT] [--tasks=TASKS; default=1] [--vpc-connector=VPC_CONNECTOR] [--vpc-egress=VPC_EGRESS] [--add-volume=[KEY=VALUE,…] --clear-volumes --remove-volume=[VOLUME,…]] [--add-volume-mount=[volume=NAME,mount-path=MOUNT_PATH,…] --args=[ARG,…] --clear-volume-mounts --command=[COMMAND,…] --cpu=CPU --depends-on=[CONTAINER,…] --gpu=GPU --image=IMAGE --memory=MEMORY --remove-volume-mount=[MOUNT_PATH,…] --startup-probe=[KEY=VALUE,…] --clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…] --clear-secrets     | --set-secrets=[KEY=VALUE,…]     | --remove-secrets=[KEY,…] --update-secrets=[KEY=VALUE,…]] [--async     | --execute-now --wait] [--network=NETWORK --network-tags=[TAG,…] --subnet=SUBNET] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "[JOB]",
+        "description": "ID of the Job or fully qualified identifier for the Job.To set thejobsattribute:provide the argumentJOBon the command line;specify the job name from an interactive prompt."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "binary-authorization": {
+        "content": "--binary-authorization=POLICY",
+        "description": "Binary Authorization policy to check against. This must be set to \"default\"."
+      },
+      "breakglass": {
+        "content": "--breakglass=JUSTIFICATION",
+        "description": "Justification to bypass Binary Authorization policy constraints and allow the\noperation. Seehttps://cloud.google.com/binary-authorization/docs/using-breakglassfor more information. Next update or deploy command will automatically clear\nexisting breakglass justification."
+      },
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "gpu-type": {
+        "content": "--gpu-type=GPU_TYPE",
+        "description": "The GPU type to use."
+      },
+      "[no-]gpu-zonal-redundancy": {
+        "content": "--[no-]gpu-zonal-redundancy",
+        "description": "Set GPU zonal redundancy. Use--gpu-zonal-redundancyto enable and--no-gpu-zonal-redundancyto disable."
+      },
+      "key": {
+        "content": "--key=KEY",
+        "description": "CMEK key reference to encrypt the container with."
+      },
+      "labels": {
+        "content": "--labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add."
+      },
+      "max-retries": {
+        "content": "--max-retries=MAX_RETRIES",
+        "description": "Number of times a task is allowed to restart in case of failure before being\nfailed permanently. This applies per-task, not per-job. If set to 0, tasks will\nonly run once and never be retried on failure."
+      },
+      "parallelism": {
+        "content": "--parallelism=PARALLELISM",
+        "description": "Number of tasks that may run concurrently. Must be less than or equal to the\nnumber of tasks. Set to 0 to unset."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "the email address of an IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has."
+      },
+      "set-cloudsql-instances": {
+        "content": "--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "You can specify a name of a Cloud SQL instance if it's in the same project and\nregion as your Cloud Run resource; otherwise specify\n<project>:<region>:<instance> for the instance."
+      },
+      "task-timeout": {
+        "content": "--task-timeout=TASK_TIMEOUT",
+        "description": "Set the maximum time (deadline) a job task attempt can run for. In the case of\nretries, this deadline applies to each attempt of a task. If the task attempt\ndoes not complete within this time, it will be killed. It is specified as a\nduration; for example, \"10m5s\" is ten minutes, and five seconds. If you don't\nspecify a unit, seconds is assumed. For example, \"10\" is 10 seconds."
+      },
+      "tasks": {
+        "content": "--tasks=TASKS; default=1",
+        "description": "Number of tasks that must run to completion for the execution to be considered\ndone."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "Set a VPC connector for this resource."
+      },
+      "vpc-egress": {
+        "content": "--vpc-egress=VPC_EGRESS",
+        "description": "Specify which of the outbound traffic to send through Direct VPC egress or the\nVPC connector for this resource. This resource must have Direct VPC egress\nenabled or a VPC connector to set this flag.VPC_EGRESSmust be one of:all(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead.all-trafficSends all outbound traffic through Direct VPC egress or the VPC connector.private-ranges-onlyDefault option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "all": {
+        "content": "all",
+        "description": "(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead."
+      },
+      "all-traffic": {
+        "content": "all-traffic",
+        "description": "Sends all outbound traffic through Direct VPC egress or the VPC connector."
+      },
+      "private-ranges-only": {
+        "content": "private-ranges-only",
+        "description": "Default option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "add-volume": {
+        "content": "--add-volume=[KEY=VALUE,…]",
+        "description": "Adds a volume to the Cloud Run resource. To add more than one volume, specify\nthis flag multiple times. Volumes must have anameandtypekey. Only certain values are supported fortype.\nDepending on the provided type, other keys will be required. The following types\nare supported with the specified additional keys:cloud-storage: A volume representing a Cloud Storage bucket. This\nvolume type is mounted using Cloud Storage FUSE. Seehttps://cloud.google.com/storage/docs/gcs-fusefor the details and limitations of this filesystem. Additional keys:bucket: (required) the name of the bucket to use as the source of this volumereadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts.mount-options: (optional) A list of flags to pass to GCSFuse. Flags should be\nspecified without leading dashes and separated by semicolons.in-memory: An ephemeral volume that stores data in the instance's\nmemory. With this type of volume, data is not shared between instances and all\ndata will be lost when the instance it is on is terminated. Additional keys:size-limit: (optional) A quantity representing the maximum amount of memory\nallocated to this volume, such as \"512Mi\" or \"3G\". Data stored in an in-memory\nvolume consumes the memory allocation of the container that wrote the data. If\nsize-limit is not specified, the maximum size will be half the total memory\nlimit of all containers.nfs: Represents a volume backed by an NFS server. Additional keys:location: (required) The location of the NFS Server, in the form SERVER:/PATHreadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts."
+      },
+      "clear-volumes": {
+        "content": "--clear-volumes",
+        "description": "Remove all existing volumes from the Cloud Run resource, including volumes\nmounted as secrets"
+      },
+      "remove-volume": {
+        "content": "--remove-volume=[VOLUME,…]",
+        "description": "Removes volumes from the Cloud Run resource."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.describe",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "describe"
+    ],
+    "command_path": "gcloud run jobs describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/describe",
+    "description": "Obtain details about jobs.",
+    "command_synopsis": "gcloud run jobs describe JOB [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the Job or fully qualified identifier for the Job.To set thejobsattribute:provide the argumentJOBon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.deploy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "deploy"
+    ],
+    "command_path": "gcloud run jobs deploy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/deploy",
+    "description": "Creates or updates a Cloud Run job.",
+    "command_synopsis": "gcloud run jobs deploy [JOB] [--binary-authorization=POLICY] [--breakglass=JUSTIFICATION] [--container=CONTAINER] [--gpu-type=GPU_TYPE] [--[no-]gpu-zonal-redundancy] [--key=KEY] [--labels=[KEY=VALUE,…]] [--max-retries=MAX_RETRIES] [--parallelism=PARALLELISM] [--region=REGION] [--remove-containers=[CONTAINER,…]] [--service-account=SERVICE_ACCOUNT] [--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]] [--task-timeout=TASK_TIMEOUT] [--tasks=TASKS; default=1] [--vpc-connector=VPC_CONNECTOR] [--vpc-egress=VPC_EGRESS] [--add-volume=[KEY=VALUE,…] --clear-volumes --remove-volume=[VOLUME,…]] [--add-volume-mount=[volume=NAME,mount-path=MOUNT_PATH,…] --args=[ARG,…] --clear-volume-mounts --command=[COMMAND,…] --cpu=CPU --depends-on=[CONTAINER,…] --gpu=GPU --memory=MEMORY --remove-volume-mount=[MOUNT_PATH,…] --startup-probe=[KEY=VALUE,…] --clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…] --clear-secrets     | --set-secrets=[KEY=VALUE,…]     | --remove-secrets=[KEY,…] --update-secrets=[KEY=VALUE,…] --image=IMAGE     | --source=SOURCE] [--async     | --execute-now --wait] [--clear-network     | --network=NETWORK --subnet=SUBNET --clear-network-tags     | --network-tags=[TAG,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "[JOB]",
+        "description": "ID of the Job or fully qualified identifier for the Job.To set thejobsattribute:provide the argumentJOBon the command line;specify the job name from an interactive prompt."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "binary-authorization": {
+        "content": "--binary-authorization=POLICY",
+        "description": "Binary Authorization policy to check against. This must be set to \"default\"."
+      },
+      "breakglass": {
+        "content": "--breakglass=JUSTIFICATION",
+        "description": "Justification to bypass Binary Authorization policy constraints and allow the\noperation. Seehttps://cloud.google.com/binary-authorization/docs/using-breakglassfor more information. Next update or deploy command will automatically clear\nexisting breakglass justification."
+      },
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "gpu-type": {
+        "content": "--gpu-type=GPU_TYPE",
+        "description": "The GPU type to use."
+      },
+      "[no-]gpu-zonal-redundancy": {
+        "content": "--[no-]gpu-zonal-redundancy",
+        "description": "Set GPU zonal redundancy. Use--gpu-zonal-redundancyto enable and--no-gpu-zonal-redundancyto disable."
+      },
+      "key": {
+        "content": "--key=KEY",
+        "description": "CMEK key reference to encrypt the container with."
+      },
+      "labels": {
+        "content": "--labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add."
+      },
+      "max-retries": {
+        "content": "--max-retries=MAX_RETRIES",
+        "description": "Number of times a task is allowed to restart in case of failure before being\nfailed permanently. This applies per-task, not per-job. If set to 0, tasks will\nonly run once and never be retried on failure."
+      },
+      "parallelism": {
+        "content": "--parallelism=PARALLELISM",
+        "description": "Number of tasks that may run concurrently. Must be less than or equal to the\nnumber of tasks. Set to 0 to unset."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "remove-containers": {
+        "content": "--remove-containers=[CONTAINER,…]",
+        "description": "List of containers to remove."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "the email address of an IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has."
+      },
+      "set-cloudsql-instances": {
+        "content": "--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "You can specify a name of a Cloud SQL instance if it's in the same project and\nregion as your Cloud Run resource; otherwise specify\n<project>:<region>:<instance> for the instance."
+      },
+      "task-timeout": {
+        "content": "--task-timeout=TASK_TIMEOUT",
+        "description": "Set the maximum time (deadline) a job task attempt can run for. In the case of\nretries, this deadline applies to each attempt of a task. If the task attempt\ndoes not complete within this time, it will be killed. It is specified as a\nduration; for example, \"10m5s\" is ten minutes, and five seconds. If you don't\nspecify a unit, seconds is assumed. For example, \"10\" is 10 seconds."
+      },
+      "tasks": {
+        "content": "--tasks=TASKS; default=1",
+        "description": "Number of tasks that must run to completion for the execution to be considered\ndone."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "Set a VPC connector for this resource."
+      },
+      "vpc-egress": {
+        "content": "--vpc-egress=VPC_EGRESS",
+        "description": "Specify which of the outbound traffic to send through Direct VPC egress or the\nVPC connector for this resource. This resource must have Direct VPC egress\nenabled or a VPC connector to set this flag.VPC_EGRESSmust be one of:all(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead.all-trafficSends all outbound traffic through Direct VPC egress or the VPC connector.private-ranges-onlyDefault option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "all": {
+        "content": "all",
+        "description": "(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead."
+      },
+      "all-traffic": {
+        "content": "all-traffic",
+        "description": "Sends all outbound traffic through Direct VPC egress or the VPC connector."
+      },
+      "private-ranges-only": {
+        "content": "private-ranges-only",
+        "description": "Default option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "add-volume": {
+        "content": "--add-volume=[KEY=VALUE,…]",
+        "description": "Adds a volume to the Cloud Run resource. To add more than one volume, specify\nthis flag multiple times. Volumes must have anameandtypekey. Only certain values are supported fortype.\nDepending on the provided type, other keys will be required. The following types\nare supported with the specified additional keys:cloud-storage: A volume representing a Cloud Storage bucket. This\nvolume type is mounted using Cloud Storage FUSE. Seehttps://cloud.google.com/storage/docs/gcs-fusefor the details and limitations of this filesystem. Additional keys:bucket: (required) the name of the bucket to use as the source of this volumereadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts.mount-options: (optional) A list of flags to pass to GCSFuse. Flags should be\nspecified without leading dashes and separated by semicolons.in-memory: An ephemeral volume that stores data in the instance's\nmemory. With this type of volume, data is not shared between instances and all\ndata will be lost when the instance it is on is terminated. Additional keys:size-limit: (optional) A quantity representing the maximum amount of memory\nallocated to this volume, such as \"512Mi\" or \"3G\". Data stored in an in-memory\nvolume consumes the memory allocation of the container that wrote the data. If\nsize-limit is not specified, the maximum size will be half the total memory\nlimit of all containers.nfs: Represents a volume backed by an NFS server. Additional keys:location: (required) The location of the NFS Server, in the form SERVER:/PATHreadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts."
+      },
+      "clear-volumes": {
+        "content": "--clear-volumes",
+        "description": "Remove all existing volumes from the Cloud Run resource, including volumes\nmounted as secrets"
+      },
+      "remove-volume": {
+        "content": "--remove-volume=[VOLUME,…]",
+        "description": "Removes volumes from the Cloud Run resource."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.execute",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "execute"
+    ],
+    "command_path": "gcloud run jobs execute",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/execute",
+    "description": "Execute a job.",
+    "command_synopsis": "gcloud run jobs execute [JOB] [--container=CONTAINER] [--region=REGION] [--task-timeout=TASK_TIMEOUT] [--tasks=TASKS] [--args=[ARG,…] --update-env-vars=[KEY=VALUE,…]] [--async     | --wait] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "[JOB]",
+        "description": "ID of the Job or fully qualified identifier for the Job.To set thejobsattribute:provide the argumentJOBon the command line;specify the job name from an interactive prompt."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "task-timeout": {
+        "content": "--task-timeout=TASK_TIMEOUT",
+        "description": "The existing maximum time (deadline) a job task attempt can run for. If\nprovided, an execution will be created with this value. Otherwise existing\nmaximum time of the job is used. In the case of retries, this deadline applies\nto each attempt of a task. If the task attempt does not complete within this\ntime, it will be killed. It is specified as a duration; for example, \"10m5s\" is\nten minutes, and five seconds. If you don't specify a unit, seconds is assumed.\nFor example, \"10\" is 10 seconds."
+      },
+      "tasks": {
+        "content": "--tasks=TASKS",
+        "description": "Number of tasks that must run to completion for the execution to be considered\ndone. If provided, an execution will be created with this value. Otherwise the\nexisting task count of the job is used."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions"
+    ],
+    "command_path": "gcloud run jobs executions",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions",
+    "description": "This set of commands can be used to view and manage your Cloud Run jobs\nexecutions.",
+    "command_synopsis": "gcloud run jobs executions GROUP | COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "410fdc1366d7f2e867ae53a6ce852d40bcd994c5d5ce88d1c0006f168eba0b56",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.describe",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "describe"
+    ],
+    "command_path": "gcloud run jobs executions describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/describe",
+    "description": "Obtain details about executions.",
+    "command_synopsis": "gcloud run jobs executions describe EXECUTION [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "EXECUTION": {
+        "content": "EXECUTION",
+        "description": "ID of the Execution or fully qualified identifier for the Execution.To set theexecutionsattribute:provide the argumentEXECUTIONon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.delete",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "delete"
+    ],
+    "command_path": "gcloud run jobs executions delete",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/delete",
+    "description": "Delete an execution.",
+    "command_synopsis": "gcloud run jobs executions delete EXECUTION [--[no-]async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "EXECUTION": {
+        "content": "EXECUTION",
+        "description": "ID of the Execution or fully qualified identifier for the Execution.To set theexecutionsattribute:provide the argumentEXECUTIONon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.cancel",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "cancel"
+    ],
+    "command_path": "gcloud run jobs executions cancel",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/cancel",
+    "description": "Cancel an execution.",
+    "command_synopsis": "gcloud run jobs executions cancel EXECUTION [--[no-]async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "EXECUTION": {
+        "content": "EXECUTION",
+        "description": "ID of the Execution or fully qualified identifier for the Execution.To set theexecutionsattribute:provide the argumentEXECUTIONon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.tasks.describe",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "tasks",
+      "describe"
+    ],
+    "command_path": "gcloud run jobs executions tasks describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/tasks/describe",
+    "description": "Obtain details about tasks.",
+    "command_synopsis": "gcloud run jobs executions tasks describe TASK [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "TASK": {
+        "content": "TASK",
+        "description": "ID of the Task or fully qualified identifier for the Task.To set thetasksattribute:provide the argumentTASKon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "list"
+    ],
+    "command_path": "gcloud run jobs executions list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/list",
+    "description": "List executions.",
+    "command_synopsis": "gcloud run jobs executions list [--job=JOB] [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "job": {
+        "content": "--job=JOB",
+        "description": "Limit matched resources to the given job."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.tasks",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "tasks"
+    ],
+    "command_path": "gcloud run jobs executions tasks",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/tasks",
+    "description": "This set of commands can be used to view and manage your Cloud Run jobs tasks.",
+    "command_synopsis": "gcloud run jobs executions tasks COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "3a28cf25786fdb75fde44bc4512b973a00207c6fbb1aa7111a19107940523a9b",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.executions.tasks.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "executions",
+      "tasks",
+      "list"
+    ],
+    "command_path": "gcloud run jobs executions tasks list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/executions/tasks/list",
+    "description": "List tasks.",
+    "command_synopsis": "gcloud run jobs executions tasks list --execution=EXECUTION [--region=REGION] [--succeeded] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {
+      "execution": {
+        "content": "--execution=EXECUTION",
+        "description": "ID of the Execution or fully qualified identifier for the Execution.To set theexecutionsattribute:provide the argument--executionon the command line."
+      }
+    },
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "succeeded": {
+        "content": "--succeeded",
+        "description": "Include succeeded tasks."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.get-iam-policy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud run jobs get-iam-policy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/get-iam-policy",
+    "description": "This command gets the IAM policy for a job. If formatted as JSON, the output can\nbe edited and used as a policy file for set-iam-policy. The output\nincludes an \"etag\" field identifying the version emitted and allowing detection\nof concurrent policy updates; see $ gcloud alpha run registries\nset-iam-policy for additional details.",
+    "command_synopsis": "gcloud run jobs get-iam-policy JOB [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "list"
+    ],
+    "command_path": "gcloud run jobs list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/list",
+    "description": "List jobs.",
+    "command_synopsis": "gcloud run jobs list [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.logs",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "logs"
+    ],
+    "command_path": "gcloud run jobs logs",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/logs",
+    "description": "Read logs for Cloud Run jobs.",
+    "command_synopsis": "gcloud run jobs logs COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "f83794318e49ae9e7fe88b284618a02f636cb3ae6fc20d029a9d1fbd11e15449",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.logs.read",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "logs",
+      "read"
+    ],
+    "command_path": "gcloud run jobs logs read",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/logs/read",
+    "description": "gcloud run jobs logs read reads log entries. Log entries matching\n--log-filter are returned according to the specified --order. If\nthe log entries come from multiple logs, then entries from different logs might\nbe intermingled in the results.",
+    "command_synopsis": "gcloud run jobs logs read JOB [--freshness=FRESHNESS; default=\"1d\"] [--log-filter=LOG_FILTER] [--order=ORDER; default=\"desc\"] [--region=REGION] [--limit=LIMIT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "Name for a Cloud Run job."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "freshness": {
+        "content": "--freshness=FRESHNESS; default=\"1d\"",
+        "description": "Return entries that are not older than this value. Works only with DESC ordering\nand filters without a timestamp. See $gcloud topic datetimesfor\ninformation on duration formats."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "Filter expression that specifies the log entries to return. Detailed information\nabout filters can be found at:https://cloud.google.com/logging/docs/view/logging-query-language"
+      },
+      "order": {
+        "content": "--order=ORDER; default=\"desc\"",
+        "description": "Ordering of returned log entries based on timestamp field.ORDERmust be one of:desc,asc."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.remove-iam-policy-binding",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud run jobs remove-iam-policy-binding",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/remove-iam-policy-binding",
+    "description": "Remove an IAM policy binding from the IAM policy of a job. One binding consists\nof a member, and a role.",
+    "command_synopsis": "gcloud run jobs remove-iam-policy-binding JOB --member=PRINCIPAL --role=ROLE [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "run.jobs.set-iam-policy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud run jobs set-iam-policy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/set-iam-policy",
+    "description": "This command replaces the existing IAM policy for a job, given a job and a file\nencoded in JSON or YAML that contains the IAM policy. If the given policy file\nspecifies an \"etag\" value, then the replacement will succeed only if the policy\nalready in place matches that etag. (An etag obtain via\nget-iam-policy will prevent the replacement if the policy for the\njob has been subsequently updated.) A policy file that does not contain an etag\nvalue will replace any existing policy for the job.",
+    "command_synopsis": "gcloud run jobs set-iam-policy JOB POLICY_FILE [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "JOB",
+        "description": "ID of the job or fully qualified identifier for the job.To set thejobattribute:provide the argumentjobon the command line."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to a local JSON or YAML formatted file containing a valid policy.The output of theget-iam-policycommand is a valid file, as is any\nJSON or YAML file conforming to the structure of aPolicy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.replace",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "replace"
+    ],
+    "command_path": "gcloud run jobs replace",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/replace",
+    "description": "Creates or replaces a job from a YAML job specification.",
+    "command_synopsis": "gcloud run jobs replace FILE [--async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "FILE": {
+        "content": "FILE",
+        "description": "The absolute path to the YAML file with a Cloud Run job definition for the job\nto update or create."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.jobs.update",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "jobs",
+      "update"
+    ],
+    "command_path": "gcloud run jobs update",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/jobs/update",
+    "description": "Updates a Cloud Run job.",
+    "command_synopsis": "gcloud run jobs update [JOB] [--breakglass=JUSTIFICATION] [--clear-vpc-connector] [--container=CONTAINER] [--gpu-type=GPU_TYPE] [--[no-]gpu-zonal-redundancy] [--key=KEY] [--max-retries=MAX_RETRIES] [--parallelism=PARALLELISM] [--region=REGION] [--remove-containers=[CONTAINER,…]] [--service-account=SERVICE_ACCOUNT] [--task-timeout=TASK_TIMEOUT] [--tasks=TASKS; default=1] [--vpc-connector=VPC_CONNECTOR] [--vpc-egress=VPC_EGRESS] [--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --clear-cloudsql-instances     | --remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]] [--add-volume=[KEY=VALUE,…] --clear-volumes --remove-volume=[VOLUME,…]] [--add-volume-mount=[volume=NAME,mount-path=MOUNT_PATH,…] --args=[ARG,…] --clear-volume-mounts --command=[COMMAND,…] --cpu=CPU --depends-on=[CONTAINER,…] --gpu=GPU --image=IMAGE --memory=MEMORY --remove-volume-mount=[MOUNT_PATH,…] --startup-probe=[KEY=VALUE,…] --clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…] --clear-secrets     | --set-secrets=[KEY=VALUE,…]     | --remove-secrets=[KEY,…] --update-secrets=[KEY=VALUE,…]] [--async     | --execute-now --wait] [--binary-authorization=POLICY     | --clear-binary-authorization] [--clear-labels     | --remove-labels=[KEY,…] --labels=[KEY=VALUE,…]     | --update-labels=[KEY=VALUE,…]] [--clear-network     | --network=NETWORK --subnet=SUBNET --clear-network-tags     | --network-tags=[TAG,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "JOB": {
+        "content": "[JOB]",
+        "description": "ID of the Job or fully qualified identifier for the Job.To set thejobsattribute:provide the argumentJOBon the command line;specify the job name from an interactive prompt."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "breakglass": {
+        "content": "--breakglass=JUSTIFICATION",
+        "description": "Justification to bypass Binary Authorization policy constraints and allow the\noperation. Seehttps://cloud.google.com/binary-authorization/docs/using-breakglassfor more information. Next update or deploy command will automatically clear\nexisting breakglass justification."
+      },
+      "clear-vpc-connector": {
+        "content": "--clear-vpc-connector",
+        "description": "Remove the VPC connector for this resource."
+      },
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "gpu-type": {
+        "content": "--gpu-type=GPU_TYPE",
+        "description": "The GPU type to use."
+      },
+      "[no-]gpu-zonal-redundancy": {
+        "content": "--[no-]gpu-zonal-redundancy",
+        "description": "Set GPU zonal redundancy. Use--gpu-zonal-redundancyto enable and--no-gpu-zonal-redundancyto disable."
+      },
+      "key": {
+        "content": "--key=KEY",
+        "description": "CMEK key reference to encrypt the container with."
+      },
+      "max-retries": {
+        "content": "--max-retries=MAX_RETRIES",
+        "description": "Number of times a task is allowed to restart in case of failure before being\nfailed permanently. This applies per-task, not per-job. If set to 0, tasks will\nonly run once and never be retried on failure."
+      },
+      "parallelism": {
+        "content": "--parallelism=PARALLELISM",
+        "description": "Number of tasks that may run concurrently. Must be less than or equal to the\nnumber of tasks. Set to 0 to unset."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "remove-containers": {
+        "content": "--remove-containers=[CONTAINER,…]",
+        "description": "List of containers to remove."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "the email address of an IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has."
+      },
+      "task-timeout": {
+        "content": "--task-timeout=TASK_TIMEOUT",
+        "description": "Set the maximum time (deadline) a job task attempt can run for. In the case of\nretries, this deadline applies to each attempt of a task. If the task attempt\ndoes not complete within this time, it will be killed. It is specified as a\nduration; for example, \"10m5s\" is ten minutes, and five seconds. If you don't\nspecify a unit, seconds is assumed. For example, \"10\" is 10 seconds."
+      },
+      "tasks": {
+        "content": "--tasks=TASKS; default=1",
+        "description": "Number of tasks that must run to completion for the execution to be considered\ndone."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "Set a VPC connector for this resource."
+      },
+      "vpc-egress": {
+        "content": "--vpc-egress=VPC_EGRESS",
+        "description": "Specify which of the outbound traffic to send through Direct VPC egress or the\nVPC connector for this resource. This resource must have Direct VPC egress\nenabled or a VPC connector to set this flag.VPC_EGRESSmust be one of:all(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead.all-trafficSends all outbound traffic through Direct VPC egress or the VPC connector.private-ranges-onlyDefault option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "all": {
+        "content": "all",
+        "description": "(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead."
+      },
+      "all-traffic": {
+        "content": "all-traffic",
+        "description": "Sends all outbound traffic through Direct VPC egress or the VPC connector."
+      },
+      "private-ranges-only": {
+        "content": "private-ranges-only",
+        "description": "Default option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "add-cloudsql-instances": {
+        "content": "--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Append the given values to the current Cloud SQL instances."
+      },
+      "clear-cloudsql-instances": {
+        "content": "--clear-cloudsql-instances",
+        "description": "Empty the current Cloud SQL instances."
+      },
+      "remove-cloudsql-instances": {
+        "content": "--remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Remove the given values from the current Cloud SQL instances."
+      },
+      "set-cloudsql-instances": {
+        "content": "--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Completely replace the current Cloud SQL instances with the given values."
+      },
+      "add-volume": {
+        "content": "--add-volume=[KEY=VALUE,…]",
+        "description": "Adds a volume to the Cloud Run resource. To add more than one volume, specify\nthis flag multiple times. Volumes must have anameandtypekey. Only certain values are supported fortype.\nDepending on the provided type, other keys will be required. The following types\nare supported with the specified additional keys:cloud-storage: A volume representing a Cloud Storage bucket. This\nvolume type is mounted using Cloud Storage FUSE. Seehttps://cloud.google.com/storage/docs/gcs-fusefor the details and limitations of this filesystem. Additional keys:bucket: (required) the name of the bucket to use as the source of this volumereadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts.mount-options: (optional) A list of flags to pass to GCSFuse. Flags should be\nspecified without leading dashes and separated by semicolons.in-memory: An ephemeral volume that stores data in the instance's\nmemory. With this type of volume, data is not shared between instances and all\ndata will be lost when the instance it is on is terminated. Additional keys:size-limit: (optional) A quantity representing the maximum amount of memory\nallocated to this volume, such as \"512Mi\" or \"3G\". Data stored in an in-memory\nvolume consumes the memory allocation of the container that wrote the data. If\nsize-limit is not specified, the maximum size will be half the total memory\nlimit of all containers.nfs: Represents a volume backed by an NFS server. Additional keys:location: (required) The location of the NFS Server, in the form SERVER:/PATHreadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts."
+      },
+      "clear-volumes": {
+        "content": "--clear-volumes",
+        "description": "Remove all existing volumes from the Cloud Run resource, including volumes\nmounted as secrets"
+      },
+      "remove-volume": {
+        "content": "--remove-volume=[VOLUME,…]",
+        "description": "Removes volumes from the Cloud Run resource."
+      }
+    }
+  },
+  {
+    "id": "run.multi-region-services",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "multi-region-services"
+    ],
+    "command_path": "gcloud run multi-region-services",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/multi-region-services",
+    "description": "The gcloud run multi-region-services command group lets you deploy container\nimages to Google Cloud Run across multiple regions at once.",
+    "command_synopsis": "gcloud run multi-region-services COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "ddc960e6ffa21cdebb371ec8a2d46903012327022cea313bdf0606a2bb625ce7",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.multi-region-services.delete",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "multi-region-services",
+      "delete"
+    ],
+    "command_path": "gcloud run multi-region-services delete",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/multi-region-services/delete",
+    "description": "Deletes a multi-region service.",
+    "command_synopsis": "gcloud run multi-region-services delete (SERVICE : --namespace=NAMESPACE) [--[no-]async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.multi-region-services.describe",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "multi-region-services",
+      "describe"
+    ],
+    "command_path": "gcloud run multi-region-services describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/multi-region-services/describe",
+    "description": "Command to describe a multi-region service.",
+    "command_synopsis": "gcloud run multi-region-services describe (SERVICE : --namespace=NAMESPACE) [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.multi-region-services.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "multi-region-services",
+      "list"
+    ],
+    "command_path": "gcloud run multi-region-services list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/multi-region-services/list",
+    "description": "List available multi-region services.",
+    "command_synopsis": "gcloud run multi-region-services list [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.multi-region-services.update",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "multi-region-services",
+      "update"
+    ],
+    "command_path": "gcloud run multi-region-services update",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/multi-region-services/update",
+    "description": "Update environment variables, add/remove regions, and other configuration\nsettings in Multi-Region Services.",
+    "command_synopsis": "gcloud run multi-region-services update [[SERVICE] --namespace=NAMESPACE] [--async] [--breakglass=JUSTIFICATION] [--clear-vpc-connector] [--concurrency=CONCURRENCY] [--container=CONTAINER] [--[no-]cpu-boost] [--[no-]cpu-throttling] [--[no-]default-url] [--[no-]deploy-health-check] [--execution-environment=EXECUTION_ENVIRONMENT] [--gpu-type=GPU_TYPE] [--[no-]gpu-zonal-redundancy] [--ingress=INGRESS; default=\"all\"] [--[no-]invoker-iam-check] [--max=MAX] [--max-instances=MAX_INSTANCES] [--min=MIN] [--min-instances=MIN_INSTANCES] [--region=REGION] [--remove-containers=[CONTAINER,…]] [--revision-suffix=REVISION_SUFFIX] [--scaling=SCALING] [--service-account=SERVICE_ACCOUNT] [--[no-]session-affinity] [--tag=TAG] [--timeout=TIMEOUT] [--no-traffic] [--vpc-connector=VPC_CONNECTOR] [--vpc-egress=VPC_EGRESS] [--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --clear-cloudsql-instances     | --remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]] [--add-custom-audiences=[CUSTOM-AUDIENCES,…]     | --clear-custom-audiences     | --remove-custom-audiences=[CUSTOM-AUDIENCES,…]     | --set-custom-audiences=[CUSTOM-AUDIENCES,…]] [--add-volume=[KEY=VALUE,…] --clear-volumes --remove-volume=[VOLUME,…]] [--add-volume-mount=[volume=NAME,mount-path=MOUNT_PATH,…] --args=[ARG,…] --clear-volume-mounts --command=[COMMAND,…] --cpu=CPU --depends-on=[CONTAINER,…] --gpu=GPU --image=IMAGE --liveness-probe=[KEY=VALUE,…] --memory=MEMORY --port=PORT --remove-volume-mount=[MOUNT_PATH,…] --startup-probe=[KEY=VALUE,…] --[no-]use-http2 --clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…] --clear-secrets     | --set-secrets=[KEY=VALUE,…]     | --remove-secrets=[KEY,…] --update-secrets=[KEY=VALUE,…]] [--binary-authorization=POLICY     | --clear-binary-authorization] [--clear-encryption-key-shutdown-hours     | --encryption-key-shutdown-hours=ENCRYPTION_KEY_SHUTDOWN_HOURS] [--clear-key     | --key=KEY] [--clear-labels     | --remove-labels=[KEY,…] --labels=[KEY=VALUE,…]     | --update-labels=[KEY=VALUE,…]] [--clear-network     | --network=NETWORK --subnet=SUBNET --clear-network-tags     | --network-tags=[TAG,…]] [--clear-post-key-revocation-action-type     | --post-key-revocation-action-type=POST_KEY_REVOCATION_ACTION_TYPE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "[SERVICE]",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line;specify the service name from an interactive prompt."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;specify the service name from an interactive prompt with a fully specified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "breakglass": {
+        "content": "--breakglass=JUSTIFICATION",
+        "description": "Justification to bypass Binary Authorization policy constraints and allow the\noperation. Seehttps://cloud.google.com/binary-authorization/docs/using-breakglassfor more information. Next update or deploy command will automatically clear\nexisting breakglass justification."
+      },
+      "clear-vpc-connector": {
+        "content": "--clear-vpc-connector",
+        "description": "Remove the VPC connector for this resource."
+      },
+      "concurrency": {
+        "content": "--concurrency=CONCURRENCY",
+        "description": "Set the maximum number of concurrent requests allowed per container instance.\nLeave concurrency unspecified or provide the special value 'default' to receive\nthe server default value."
+      },
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "[no-]cpu-boost": {
+        "content": "--[no-]cpu-boost",
+        "description": "Whether to allocate extra CPU to containers on startup to reduce the perceived\nlatency of a cold start request. Enabled by default when unspecified on new\nservices. Use--cpu-boostto enable and--no-cpu-boostto disable."
+      },
+      "[no-]cpu-throttling": {
+        "content": "--[no-]cpu-throttling",
+        "description": "Whether to throttle the CPU when the container is not actively serving requests.\nUse--cpu-throttlingto enable and--no-cpu-throttlingto disable."
+      },
+      "[no-]default-url": {
+        "content": "--[no-]default-url",
+        "description": "Toggles the default url for a run service. This is enabled by default if not\nspecified. Use--default-urlto enable and--no-default-urlto disable."
+      },
+      "[no-]deploy-health-check": {
+        "content": "--[no-]deploy-health-check",
+        "description": "Schedules a single instance of the Revision and waits for it to pass its startup\nprobe for the deployment to succeed. If disabled, the startup probe runs only\nwhen the revision is first started via invocation or by setting min-instances.\nThis check is enabled by default when unspecified. Use--deploy-health-checkto enable and--no-deploy-health-checkto disable."
+      },
+      "execution-environment": {
+        "content": "--execution-environment=EXECUTION_ENVIRONMENT",
+        "description": "Selects the execution environment where the application will run.EXECUTION_ENVIRONMENTmust be one of:gen1Run the application in a first generation execution environment.gen2Run the application in a second generation execution environment."
+      },
+      "gen1": {
+        "content": "gen1",
+        "description": "Run the application in a first generation execution environment."
+      },
+      "gen2": {
+        "content": "gen2",
+        "description": "Run the application in a second generation execution environment."
+      },
+      "gpu-type": {
+        "content": "--gpu-type=GPU_TYPE",
+        "description": "The GPU type to use."
+      },
+      "[no-]gpu-zonal-redundancy": {
+        "content": "--[no-]gpu-zonal-redundancy",
+        "description": "Set GPU zonal redundancy. Use--gpu-zonal-redundancyto enable and--no-gpu-zonal-redundancyto disable."
+      },
+      "ingress": {
+        "content": "--ingress=INGRESS; default=\"all\"",
+        "description": "Set the ingress traffic sources allowed to call the service. For Cloud Run the--[no-]allow-unauthenticatedflag separately controls the\nidentities allowed to call the service.INGRESSmust be\none of:allInbound requests from all sources are allowed.internalFor Cloud Run, only inbound requests from VPC networks in the same project or\nVPC Service Controls perimeter, as well as Pub/Sub subscriptions and Eventarc\nevents in the same project or VPC Service Controls perimeter are allowed. All\nother requests are rejected. Seehttps://cloud.google.com/run/docs/securing/ingressfor full details on the definition of internal traffic for Cloud Run.internal-and-cloud-load-balancingOnly inbound requests from Google Cloud Load Balancing or a traffic source\nallowed by the internal option are allowed."
+      },
+      "all": {
+        "content": "all",
+        "description": "Inbound requests from all sources are allowed."
+      },
+      "internal": {
+        "content": "internal",
+        "description": "For Cloud Run, only inbound requests from VPC networks in the same project or\nVPC Service Controls perimeter, as well as Pub/Sub subscriptions and Eventarc\nevents in the same project or VPC Service Controls perimeter are allowed. All\nother requests are rejected. Seehttps://cloud.google.com/run/docs/securing/ingressfor full details on the definition of internal traffic for Cloud Run."
+      },
+      "internal-and-cloud-load-balancing": {
+        "content": "internal-and-cloud-load-balancing",
+        "description": "Only inbound requests from Google Cloud Load Balancing or a traffic source\nallowed by the internal option are allowed."
+      },
+      "[no-]invoker-iam-check": {
+        "content": "--[no-]invoker-iam-check",
+        "description": "Optionally disable invoker IAM checks. This feature is available by invitation\nonly. More info athttps://cloud.google.com/run/docs/securing/managing-access#invoker_check.\nUse--invoker-iam-checkto enable and--no-invoker-iam-checkto disable."
+      },
+      "max": {
+        "content": "--max=MAX",
+        "description": "The maximum number of container instances to run for this Service. This instance\nlimit will be divided among all Revisions receiving a percentage of traffic and\ncan be modified without deploying a new Revision."
+      },
+      "max-instances": {
+        "content": "--max-instances=MAX_INSTANCES",
+        "description": "The maximum number of container instances for this Revision to run or 'default'\nto remove. This setting is immutably set on each new Revision and modifying its\nvalue will deploy another Revision."
+      },
+      "min": {
+        "content": "--min=MIN",
+        "description": "The minimum number of container instances to run for this Service or 'default'\nto remove. These instances will be divided among all Revisions receiving a\npercentage of traffic and can be modified without deploying a new Revision."
+      },
+      "min-instances": {
+        "content": "--min-instances=MIN_INSTANCES",
+        "description": "The minimum number of container instances to run for this Revision or 'default'\nto remove. This setting is immutably set on each new Revision and modifying its\nvalue will deploy a another Revision. Consider using --min to set the minimum\nnumber of instances across all revisions of the Service which may be modified\ndynamically."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "remove-containers": {
+        "content": "--remove-containers=[CONTAINER,…]",
+        "description": "List of containers to remove."
+      },
+      "revision-suffix": {
+        "content": "--revision-suffix=REVISION_SUFFIX",
+        "description": "Specify the suffix of the revision name. Revision names always start with the\nservice name automatically. For example, specifying [--revision-suffix=v1] for a\nservice named 'helloworld', would lead to a revision named 'helloworld-v1'. Set\nempty string to clear the suffix and resume server-assigned naming."
+      },
+      "scaling": {
+        "content": "--scaling=SCALING",
+        "description": "The scaling mode to use for this resource. Flag value could be either \"auto\" for\nautomatic scaling, or a positive integer to configure manual scaling with the\ngiven integer as a fixed instance count."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "the email address of an IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has."
+      },
+      "[no-]session-affinity": {
+        "content": "--[no-]session-affinity",
+        "description": "Whether to enable session affinity for connections to the service. Use--session-affinityto enable and--no-session-affinityto disable."
+      },
+      "tag": {
+        "content": "--tag=TAG",
+        "description": "Traffic tag to assign to the newly created revision."
+      },
+      "timeout": {
+        "content": "--timeout=TIMEOUT",
+        "description": "Set the maximum request execution time (timeout). It is specified as a duration;\nfor example, \"10m5s\" is ten minutes, and five seconds. If you don't specify a\nunit, seconds is assumed. For example, \"10\" is 10 seconds."
+      },
+      "no-traffic": {
+        "content": "--no-traffic",
+        "description": "True to avoid sending traffic to the revision being deployed. Setting this flag\nassigns any traffic assigned to the LATEST revision to the specific revision\nbound to LATEST before the deployment. The effect is that the revision being\ndeployed will not receive traffic.After a deployment with this flag the LATEST revision will not receive traffic\non future deployments. To restore sending traffic to the LATEST revision by\ndefault, run thegcloud run services\nupdate-trafficcommand with--to-latest."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "Set a VPC connector for this resource."
+      },
+      "vpc-egress": {
+        "content": "--vpc-egress=VPC_EGRESS",
+        "description": "Specify which of the outbound traffic to send through Direct VPC egress or the\nVPC connector for this resource. This resource must have Direct VPC egress\nenabled or a VPC connector to set this flag.VPC_EGRESSmust be one of:all(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead.all-trafficSends all outbound traffic through Direct VPC egress or the VPC connector.private-ranges-onlyDefault option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "all-1": {
+        "content": "all",
+        "description": "(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead."
+      },
+      "all-traffic": {
+        "content": "all-traffic",
+        "description": "Sends all outbound traffic through Direct VPC egress or the VPC connector."
+      },
+      "private-ranges-only": {
+        "content": "private-ranges-only",
+        "description": "Default option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "add-cloudsql-instances": {
+        "content": "--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Append the given values to the current Cloud SQL instances."
+      },
+      "clear-cloudsql-instances": {
+        "content": "--clear-cloudsql-instances",
+        "description": "Empty the current Cloud SQL instances."
+      },
+      "remove-cloudsql-instances": {
+        "content": "--remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Remove the given values from the current Cloud SQL instances."
+      },
+      "set-cloudsql-instances": {
+        "content": "--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Completely replace the current Cloud SQL instances with the given values."
+      },
+      "add-custom-audiences": {
+        "content": "--add-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Append the given values to the current custom audiences."
+      },
+      "clear-custom-audiences": {
+        "content": "--clear-custom-audiences",
+        "description": "Empty the current custom audiences."
+      },
+      "remove-custom-audiences": {
+        "content": "--remove-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Remove the given values from the current custom audiences."
+      },
+      "set-custom-audiences": {
+        "content": "--set-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Completely replace the current custom audiences with the given values."
+      },
+      "add-volume": {
+        "content": "--add-volume=[KEY=VALUE,…]",
+        "description": "Adds a volume to the Cloud Run resource. To add more than one volume, specify\nthis flag multiple times. Volumes must have atypekey. Volumes\nmust have anamekey ifmount-pathis not specified. Anamekey is optional ifmount-pathis specified.Only\ncertain values are supported fortype. Depending on the provided\ntype, other keys will be required. The following types are supported with the\nspecified additional keys:"
+      },
+      "clear-volumes": {
+        "content": "--clear-volumes",
+        "description": "Remove all existing volumes from the Cloud Run resource, including volumes\nmounted as secrets"
+      },
+      "remove-volume": {
+        "content": "--remove-volume=[VOLUME,…]",
+        "description": "Removes volumes from the Cloud Run resource."
+      }
+    }
+  },
+  {
+    "id": "run.regions",
+    "service": "run",
+    "type": "group",
+    "path": [
+      "run",
+      "regions"
+    ],
+    "command_path": "gcloud run regions",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/regions",
+    "description": "View available Cloud Run (fully managed) regions.",
+    "command_synopsis": "gcloud run regions COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "5e6c47d45ef489bcdf423a0c9dcb850d93aaf6b593b6a84adcc84082c7f01995",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "run.multi-region-services.replace",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "multi-region-services",
+      "replace"
+    ],
+    "command_path": "gcloud run multi-region-services replace",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/multi-region-services/replace",
+    "description": "Creates or replaces a service from a YAML service specification.",
+    "command_synopsis": "gcloud run multi-region-services replace FILE [--async] [--dry-run] [--region=REGION] [--regions=REGIONS] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "FILE": {
+        "content": "FILE",
+        "description": "The absolute path to the YAML file with a Knative service definition for the\nservice to update or deploy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "dry-run": {
+        "content": "--dry-run",
+        "description": "If set to true, only validates the configuration. The configuration will not be\napplied."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "regions": {
+        "content": "--regions=REGIONS",
+        "description": "Comma-separated list of regions in which the multi-region Service can be found."
+      }
+    }
+  },
+  {
+    "id": "run.revisions.delete",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "revisions",
+      "delete"
+    ],
+    "command_path": "gcloud run revisions delete",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/revisions/delete",
+    "description": "Delete a revision.",
+    "command_synopsis": "gcloud run revisions delete (REVISION : --namespace=NAMESPACE) [--[no-]async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "REVISION": {
+        "content": "REVISION",
+        "description": "ID of the revision or fully qualified identifier for the revision.To set therevisionattribute:provide the argumentREVISIONon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the revision.To set thenamespaceattribute:provide the argumentREVISIONon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.revisions",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "revisions"
+    ],
+    "command_path": "gcloud run revisions",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/revisions",
+    "description": "This set of commands can be used to view and manage your existing Cloud Run\nrevisions.",
+    "command_synopsis": "gcloud run revisions COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "f399298ef31741bc00f9580850dcb67da91c4f39e90106b0cc26ebc40e514707",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.regions.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "regions",
+      "list"
+    ],
+    "command_path": "gcloud run regions list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/regions/list",
+    "description": "List available Cloud Run (fully managed) regions.",
+    "command_synopsis": "gcloud run regions list [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    }
+  },
+  {
+    "id": "run.revisions.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "revisions",
+      "list"
+    ],
+    "command_path": "gcloud run revisions list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/revisions/list",
+    "description": "List available revisions.",
+    "command_synopsis": "gcloud run revisions list [--region=REGION] [--service=SERVICE] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "service": {
+        "content": "--service=SERVICE",
+        "description": "Limit matched revisions to the given service."
+      }
+    }
+  },
+  {
+    "id": "run.services",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services"
+    ],
+    "command_path": "gcloud run services",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services",
+    "description": "This set of commands can be used to view and manage your existing Cloud Run\nservices.\nTo create new deployments, use gcloud run deploy.",
+    "command_synopsis": "gcloud run services GROUP | COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "a57485272a1c3ada085e621861ad79d5d6211f26abf2a8a3212e841488ee564f",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.revisions.describe",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "revisions",
+      "describe"
+    ],
+    "command_path": "gcloud run revisions describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/revisions/describe",
+    "description": "Obtain details about revisions.",
+    "command_synopsis": "gcloud run revisions describe (REVISION : --namespace=NAMESPACE) [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "REVISION": {
+        "content": "REVISION",
+        "description": "ID of the revision or fully qualified identifier for the revision.To set therevisionattribute:provide the argumentREVISIONon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the revision.To set thenamespaceattribute:provide the argumentREVISIONon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.add-iam-policy-binding",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "add-iam-policy-binding"
+    ],
+    "command_path": "gcloud run services add-iam-policy-binding",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/add-iam-policy-binding",
+    "description": "Add an IAM policy binding to the IAM policy of a Cloud Run service. One binding\nconsists of a member, and a role.",
+    "command_synopsis": "gcloud run services add-iam-policy-binding SERVICE --member=PRINCIPAL --role=ROLE [--region=REGION] [--condition=[KEY=VALUE,…]     | --condition-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentserviceon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to add the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "Role name to assign to the principal. The role name is the complete path of a\npredefined role, such asroles/logging.viewer, or the role ID for a\ncustom role, such asorganizations/{ORGANIZATION_ID}/roles/logging.viewer."
+      }
+    },
+    "optional_flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "condition": {
+        "content": "--condition=[KEY=VALUE,…]",
+        "description": "A condition to include in the binding. When the condition is explicitly\nspecified asNone(--condition=None), a binding\nwithout a condition is added. When the condition is specified and is notNone,--rolecannot be a basic role. Basic roles areroles/editor,roles/owner, androles/viewer. For more on conditions, refer to the conditions\noverview guide:https://cloud.google.com/iam/docs/conditions-overviewWhen using the--conditionflag, include the following key-value\npairs:expression(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping.title(Required) A short string describing the purpose of the expression.description(Optional) Additional description for the expression."
+      },
+      "expression": {
+        "content": "expression",
+        "description": "(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping."
+      },
+      "title": {
+        "content": "title",
+        "description": "(Required) A short string describing the purpose of the expression."
+      },
+      "description": {
+        "content": "description",
+        "description": "(Optional) Additional description for the expression."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "run.services.describe",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "describe"
+    ],
+    "command_path": "gcloud run services describe",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/describe",
+    "description": "Obtain details about a given service.",
+    "command_synopsis": "gcloud run services describe (SERVICE : --namespace=NAMESPACE) [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.delete",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "delete"
+    ],
+    "command_path": "gcloud run services delete",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/delete",
+    "description": "Delete a service.",
+    "command_synopsis": "gcloud run services delete (SERVICE : --namespace=NAMESPACE) [--[no-]async] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "[no-]async": {
+        "content": "--[no-]async",
+        "description": "Return immediately, without waiting for the operation in progress to complete.\nDefaults to --no-async. Use--asyncto enable and--no-asyncto disable."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.get-iam-policy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "get-iam-policy"
+    ],
+    "command_path": "gcloud run services get-iam-policy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/get-iam-policy",
+    "description": "This command gets the IAM policy for a service. If formatted as JSON, the output\ncan be edited and used as a policy file for set-iam-policy. The\noutput includes an \"etag\" field identifying the version emitted and allowing\ndetection of concurrent policy updates; see $ gcloud alpha run registries\nset-iam-policy for additional details.",
+    "command_synopsis": "gcloud run services get-iam-policy SERVICE [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentserviceon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.list",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "list"
+    ],
+    "command_path": "gcloud run services list",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/list",
+    "description": "List available services.",
+    "command_synopsis": "gcloud run services list [--region=REGION] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.logs",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "logs"
+    ],
+    "command_path": "gcloud run services logs",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/logs",
+    "description": "Read logs for Cloud Run services.",
+    "command_synopsis": "gcloud run services logs COMMAND [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "f83794318e49ae9e7fe88b284618a02f636cb3ae6fc20d029a9d1fbd11e15449",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.logs.read",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "logs",
+      "read"
+    ],
+    "command_path": "gcloud run services logs read",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/logs/read",
+    "description": "gcloud run services logs read reads log entries. Log entries matching\n--log-filter are returned according to the specified --order. If\nthe log entries come from multiple logs, then entries from different logs might\nbe intermingled in the results.",
+    "command_synopsis": "gcloud run services logs read SERVICE [--freshness=FRESHNESS; default=\"1d\"] [--log-filter=LOG_FILTER] [--order=ORDER; default=\"desc\"] [--region=REGION] [--limit=LIMIT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "Name for a Cloud Run service."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "freshness": {
+        "content": "--freshness=FRESHNESS; default=\"1d\"",
+        "description": "Return entries that are not older than this value. Works only with DESC ordering\nand filters without a timestamp. See $gcloud topic datetimesfor\ninformation on duration formats."
+      },
+      "log-filter": {
+        "content": "--log-filter=LOG_FILTER",
+        "description": "Filter expression that specifies the log entries to return. Detailed information\nabout filters can be found at:https://cloud.google.com/logging/docs/view/logging-query-language"
+      },
+      "order": {
+        "content": "--order=ORDER; default=\"desc\"",
+        "description": "Ordering of returned log entries based on timestamp field.ORDERmust be one of:desc,asc."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.proxy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "proxy"
+    ],
+    "command_path": "gcloud run services proxy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/proxy",
+    "description": "Runs a server on localhost that proxies requests to the specified Cloud Run\nService with credentials attached.\nYou can use this to test services protected with IAM authentication.\nThe Cloud Run service must be reachable from the machine running this command.\nFor example, if the Cloud Run Service is configured to only allow\ninternal ingress, this command will not work from outside the\nservice's VPC network.",
+    "command_synopsis": "gcloud run services proxy (SERVICE : --namespace=NAMESPACE) [--port=PORT] [--region=REGION] [--tag=TAG] [--token=TOKEN] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "port": {
+        "content": "--port=PORT",
+        "description": "Local port number to expose the proxied service. If not specified, it will be\nset to 8080."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "tag": {
+        "content": "--tag=TAG",
+        "description": "Traffic tag of the service to expose via the proxy. If not specified, the\ndefault service URL will be proxied which may serve different revisions based on\ntraffic-splits. Custom tags can be used to proxy specific revisions. Please seehttps://cloud.google.com/run/docs/rollouts-rollbacks-traffic-migration#tags."
+      },
+      "token": {
+        "content": "--token=TOKEN",
+        "description": "The specific identity token to add to all requests of the proxied service. If\nnot specified, the identity token of the currently active authenticated account\nwill be used (e.g. gcloud auth print-identity-token)."
+      }
+    }
+  },
+  {
+    "id": "run.services.remove-iam-policy-binding",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "remove-iam-policy-binding"
+    ],
+    "command_path": "gcloud run services remove-iam-policy-binding",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/remove-iam-policy-binding",
+    "description": "Remove an IAM policy binding from the IAM policy of a service. One binding\nconsists of a member, and a role.",
+    "command_synopsis": "gcloud run services remove-iam-policy-binding SERVICE --member=PRINCIPAL --role=ROLE [--region=REGION] [--all     | --condition=[KEY=VALUE,…]     | --condition-from-file=PATH_TO_FILE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentserviceon the command line."
+      }
+    },
+    "required_flags": {
+      "member": {
+        "content": "--member=PRINCIPAL",
+        "description": "The principal to remove the binding for. Should be of the formuser|group|serviceAccount:emailordomain:domain.Examples:user:test-user@gmail.com,group:admins@example.com,serviceAccount:test123@example.domain.com, ordomain:example.domain.com.Deleted principals have an additionaldeleted:prefix and a?uid=UIDsuffix, whereUIDis\na unique identifier for the principal. Example:deleted:user:test-user@gmail.com?uid=123456789012345678901.Some resources also accept the following special values:allUsers- Special identifier that represents anyone who is on the\ninternet, with or without a Google account.allAuthenticatedUsers- Special identifier that represents anyone\nwho is authenticated with a Google account or a service account."
+      },
+      "role": {
+        "content": "--role=ROLE",
+        "description": "The role to remove the principal from."
+      }
+    },
+    "optional_flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "all": {
+        "content": "--all",
+        "description": "Remove all bindings with this role and principal, irrespective of any\nconditions."
+      },
+      "condition": {
+        "content": "--condition=[KEY=VALUE,…]",
+        "description": "The condition of the binding that you want to remove. When the condition is\nexplicitly specified asNone(--condition=None), a\nbinding without a condition is removed. Otherwise, only a binding with a\ncondition that exactly matches the specified condition (including the optional\ndescription) is removed. For more on conditions, refer to the conditions\noverview guide:https://cloud.google.com/iam/docs/conditions-overviewWhen using the--conditionflag, include the following key-value\npairs:expression(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping.title(Required) A short string describing the purpose of the expression.description(Optional) Additional description for the expression."
+      },
+      "expression": {
+        "content": "expression",
+        "description": "(Required) Condition expression that evaluates to True or False. This uses a\nsubset of Common Expression Language syntax.If the condition expression includes a comma, use a different delimiter to\nseparate the key-value pairs. Specify the delimiter before listing the key-value\npairs. For example, to specify a colon (:) as the delimiter, do the\nfollowing:--condition=^:^title=TITLE:expression=EXPRESSION. For\nmore information, seehttps://cloud.google.com/sdk/gcloud/reference/topic/escaping."
+      },
+      "title": {
+        "content": "title",
+        "description": "(Required) A short string describing the purpose of the expression."
+      },
+      "description": {
+        "content": "description",
+        "description": "(Optional) Additional description for the expression."
+      },
+      "condition-from-file": {
+        "content": "--condition-from-file=PATH_TO_FILE",
+        "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "run.services.set-iam-policy",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud run services set-iam-policy",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/set-iam-policy",
+    "description": "This command replaces the existing IAM policy for a service, given a service and\na file encoded in JSON or YAML that contains the IAM policy. If the given policy\nfile specifies an \"etag\" value, then the replacement will succeed only if the\npolicy already in place matches that etag. (An etag obtain via\nget-iam-policy will prevent the replacement if the policy for the\nservice has been subsequently updated.) A policy file that does not contain an\netag value will replace any existing policy for the service.",
+    "command_synopsis": "gcloud run services set-iam-policy SERVICE POLICY_FILE [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "SERVICE",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentserviceon the command line."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to a local JSON or YAML formatted file containing a valid policy.The output of theget-iam-policycommand is a valid file, as is any\nJSON or YAML file conforming to the structure of aPolicy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.replace",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "replace"
+    ],
+    "command_path": "gcloud run services replace",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/replace",
+    "description": "Creates or replaces a service from a YAML service specification.",
+    "command_synopsis": "gcloud run services replace FILE [--async] [--dry-run] [--region=REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "FILE": {
+        "content": "FILE",
+        "description": "The absolute path to the YAML file with a Knative service definition for the\nservice to update or deploy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "dry-run": {
+        "content": "--dry-run",
+        "description": "If set to true, only validates the configuration. The configuration will not be\napplied."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      }
+    }
+  },
+  {
+    "id": "run.services.update",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "update"
+    ],
+    "command_path": "gcloud run services update",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/update",
+    "description": "Update Cloud Run environment variables and other configuration settings.",
+    "command_synopsis": "gcloud run services update [[SERVICE] --namespace=NAMESPACE] [--async] [--breakglass=JUSTIFICATION] [--clear-vpc-connector] [--concurrency=CONCURRENCY] [--container=CONTAINER] [--[no-]cpu-boost] [--[no-]cpu-throttling] [--[no-]default-url] [--[no-]deploy-health-check] [--execution-environment=EXECUTION_ENVIRONMENT] [--gpu-type=GPU_TYPE] [--[no-]gpu-zonal-redundancy] [--ingress=INGRESS; default=\"all\"] [--[no-]invoker-iam-check] [--max=MAX] [--max-instances=MAX_INSTANCES] [--min=MIN] [--min-instances=MIN_INSTANCES] [--region=REGION] [--remove-containers=[CONTAINER,…]] [--revision-suffix=REVISION_SUFFIX] [--scaling=SCALING] [--service-account=SERVICE_ACCOUNT] [--[no-]session-affinity] [--tag=TAG] [--timeout=TIMEOUT] [--no-traffic] [--vpc-connector=VPC_CONNECTOR] [--vpc-egress=VPC_EGRESS] [--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --clear-cloudsql-instances     | --remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]     | --set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]] [--add-custom-audiences=[CUSTOM-AUDIENCES,…]     | --clear-custom-audiences     | --remove-custom-audiences=[CUSTOM-AUDIENCES,…]     | --set-custom-audiences=[CUSTOM-AUDIENCES,…]] [--add-volume=[KEY=VALUE,…] --clear-volumes --remove-volume=[VOLUME,…]] [--add-volume-mount=[volume=NAME,mount-path=MOUNT_PATH,…] --args=[ARG,…] --clear-volume-mounts --command=[COMMAND,…] --cpu=CPU --depends-on=[CONTAINER,…] --gpu=GPU --image=IMAGE --liveness-probe=[KEY=VALUE,…] --memory=MEMORY --port=PORT --remove-volume-mount=[MOUNT_PATH,…] --startup-probe=[KEY=VALUE,…] --[no-]use-http2 --clear-env-vars     | --env-vars-file=FILE_PATH     | --set-env-vars=[KEY=VALUE,…]     | --remove-env-vars=[KEY,…] --update-env-vars=[KEY=VALUE,…] --clear-secrets     | --set-secrets=[KEY=VALUE,…]     | --remove-secrets=[KEY,…] --update-secrets=[KEY=VALUE,…]] [--binary-authorization=POLICY     | --clear-binary-authorization] [--clear-encryption-key-shutdown-hours     | --encryption-key-shutdown-hours=ENCRYPTION_KEY_SHUTDOWN_HOURS] [--clear-key     | --key=KEY] [--clear-labels     | --remove-labels=[KEY,…] --labels=[KEY=VALUE,…]     | --update-labels=[KEY=VALUE,…]] [--clear-network     | --network=NETWORK --subnet=SUBNET --clear-network-tags     | --network-tags=[TAG,…]] [--clear-post-key-revocation-action-type     | --post-key-revocation-action-type=POST_KEY_REVOCATION_ACTION_TYPE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "[SERVICE]",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line;specify the service name from an interactive prompt."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;specify the service name from an interactive prompt with a fully specified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "breakglass": {
+        "content": "--breakglass=JUSTIFICATION",
+        "description": "Justification to bypass Binary Authorization policy constraints and allow the\noperation. Seehttps://cloud.google.com/binary-authorization/docs/using-breakglassfor more information. Next update or deploy command will automatically clear\nexisting breakglass justification."
+      },
+      "clear-vpc-connector": {
+        "content": "--clear-vpc-connector",
+        "description": "Remove the VPC connector for this resource."
+      },
+      "concurrency": {
+        "content": "--concurrency=CONCURRENCY",
+        "description": "Set the maximum number of concurrent requests allowed per container instance.\nLeave concurrency unspecified or provide the special value 'default' to receive\nthe server default value."
+      },
+      "container": {
+        "content": "--container=CONTAINER",
+        "description": "Specifies a container by name. Flags following --container will apply to the\nspecified container.Flags that are not container-specific must be specified before --container."
+      },
+      "[no-]cpu-boost": {
+        "content": "--[no-]cpu-boost",
+        "description": "Whether to allocate extra CPU to containers on startup to reduce the perceived\nlatency of a cold start request. Enabled by default when unspecified on new\nservices. Use--cpu-boostto enable and--no-cpu-boostto disable."
+      },
+      "[no-]cpu-throttling": {
+        "content": "--[no-]cpu-throttling",
+        "description": "Whether to throttle the CPU when the container is not actively serving requests.\nUse--cpu-throttlingto enable and--no-cpu-throttlingto disable."
+      },
+      "[no-]default-url": {
+        "content": "--[no-]default-url",
+        "description": "Toggles the default url for a run service. This is enabled by default if not\nspecified. Use--default-urlto enable and--no-default-urlto disable."
+      },
+      "[no-]deploy-health-check": {
+        "content": "--[no-]deploy-health-check",
+        "description": "Schedules a single instance of the Revision and waits for it to pass its startup\nprobe for the deployment to succeed. If disabled, the startup probe runs only\nwhen the revision is first started via invocation or by setting min-instances.\nThis check is enabled by default when unspecified. Use--deploy-health-checkto enable and--no-deploy-health-checkto disable."
+      },
+      "execution-environment": {
+        "content": "--execution-environment=EXECUTION_ENVIRONMENT",
+        "description": "Selects the execution environment where the application will run.EXECUTION_ENVIRONMENTmust be one of:gen1Run the application in a first generation execution environment.gen2Run the application in a second generation execution environment."
+      },
+      "gen1": {
+        "content": "gen1",
+        "description": "Run the application in a first generation execution environment."
+      },
+      "gen2": {
+        "content": "gen2",
+        "description": "Run the application in a second generation execution environment."
+      },
+      "gpu-type": {
+        "content": "--gpu-type=GPU_TYPE",
+        "description": "The GPU type to use."
+      },
+      "[no-]gpu-zonal-redundancy": {
+        "content": "--[no-]gpu-zonal-redundancy",
+        "description": "Set GPU zonal redundancy. Use--gpu-zonal-redundancyto enable and--no-gpu-zonal-redundancyto disable."
+      },
+      "ingress": {
+        "content": "--ingress=INGRESS; default=\"all\"",
+        "description": "Set the ingress traffic sources allowed to call the service. For Cloud Run the--[no-]allow-unauthenticatedflag separately controls the\nidentities allowed to call the service.INGRESSmust be\none of:allInbound requests from all sources are allowed.internalFor Cloud Run, only inbound requests from VPC networks in the same project or\nVPC Service Controls perimeter, as well as Pub/Sub subscriptions and Eventarc\nevents in the same project or VPC Service Controls perimeter are allowed. All\nother requests are rejected. Seehttps://cloud.google.com/run/docs/securing/ingressfor full details on the definition of internal traffic for Cloud Run.internal-and-cloud-load-balancingOnly inbound requests from Google Cloud Load Balancing or a traffic source\nallowed by the internal option are allowed."
+      },
+      "all": {
+        "content": "all",
+        "description": "Inbound requests from all sources are allowed."
+      },
+      "internal": {
+        "content": "internal",
+        "description": "For Cloud Run, only inbound requests from VPC networks in the same project or\nVPC Service Controls perimeter, as well as Pub/Sub subscriptions and Eventarc\nevents in the same project or VPC Service Controls perimeter are allowed. All\nother requests are rejected. Seehttps://cloud.google.com/run/docs/securing/ingressfor full details on the definition of internal traffic for Cloud Run."
+      },
+      "internal-and-cloud-load-balancing": {
+        "content": "internal-and-cloud-load-balancing",
+        "description": "Only inbound requests from Google Cloud Load Balancing or a traffic source\nallowed by the internal option are allowed."
+      },
+      "[no-]invoker-iam-check": {
+        "content": "--[no-]invoker-iam-check",
+        "description": "Optionally disable invoker IAM checks. This feature is available by invitation\nonly. More info athttps://cloud.google.com/run/docs/securing/managing-access#invoker_check.\nUse--invoker-iam-checkto enable and--no-invoker-iam-checkto disable."
+      },
+      "max": {
+        "content": "--max=MAX",
+        "description": "The maximum number of container instances to run for this Service. This instance\nlimit will be divided among all Revisions receiving a percentage of traffic and\ncan be modified without deploying a new Revision."
+      },
+      "max-instances": {
+        "content": "--max-instances=MAX_INSTANCES",
+        "description": "The maximum number of container instances for this Revision to run or 'default'\nto remove. This setting is immutably set on each new Revision and modifying its\nvalue will deploy another Revision."
+      },
+      "min": {
+        "content": "--min=MIN",
+        "description": "The minimum number of container instances to run for this Service or 'default'\nto remove. These instances will be divided among all Revisions receiving a\npercentage of traffic and can be modified without deploying a new Revision."
+      },
+      "min-instances": {
+        "content": "--min-instances=MIN_INSTANCES",
+        "description": "The minimum number of container instances to run for this Revision or 'default'\nto remove. This setting is immutably set on each new Revision and modifying its\nvalue will deploy a another Revision. Consider using --min to set the minimum\nnumber of instances across all revisions of the Service which may be modified\ndynamically."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "remove-containers": {
+        "content": "--remove-containers=[CONTAINER,…]",
+        "description": "List of containers to remove."
+      },
+      "revision-suffix": {
+        "content": "--revision-suffix=REVISION_SUFFIX",
+        "description": "Specify the suffix of the revision name. Revision names always start with the\nservice name automatically. For example, specifying [--revision-suffix=v1] for a\nservice named 'helloworld', would lead to a revision named 'helloworld-v1'. Set\nempty string to clear the suffix and resume server-assigned naming."
+      },
+      "scaling": {
+        "content": "--scaling=SCALING",
+        "description": "The scaling mode to use for this resource. Flag value could be either \"auto\" for\nautomatic scaling, or a positive integer to configure manual scaling with the\ngiven integer as a fixed instance count."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "the email address of an IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has."
+      },
+      "[no-]session-affinity": {
+        "content": "--[no-]session-affinity",
+        "description": "Whether to enable session affinity for connections to the service. Use--session-affinityto enable and--no-session-affinityto disable."
+      },
+      "tag": {
+        "content": "--tag=TAG",
+        "description": "Traffic tag to assign to the newly created revision."
+      },
+      "timeout": {
+        "content": "--timeout=TIMEOUT",
+        "description": "Set the maximum request execution time (timeout). It is specified as a duration;\nfor example, \"10m5s\" is ten minutes, and five seconds. If you don't specify a\nunit, seconds is assumed. For example, \"10\" is 10 seconds."
+      },
+      "no-traffic": {
+        "content": "--no-traffic",
+        "description": "True to avoid sending traffic to the revision being deployed. Setting this flag\nassigns any traffic assigned to the LATEST revision to the specific revision\nbound to LATEST before the deployment. The effect is that the revision being\ndeployed will not receive traffic.After a deployment with this flag the LATEST revision will not receive traffic\non future deployments. To restore sending traffic to the LATEST revision by\ndefault, run thegcloud run services\nupdate-trafficcommand with--to-latest."
+      },
+      "vpc-connector": {
+        "content": "--vpc-connector=VPC_CONNECTOR",
+        "description": "Set a VPC connector for this resource."
+      },
+      "vpc-egress": {
+        "content": "--vpc-egress=VPC_EGRESS",
+        "description": "Specify which of the outbound traffic to send through Direct VPC egress or the\nVPC connector for this resource. This resource must have Direct VPC egress\nenabled or a VPC connector to set this flag.VPC_EGRESSmust be one of:all(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead.all-trafficSends all outbound traffic through Direct VPC egress or the VPC connector.private-ranges-onlyDefault option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "all-1": {
+        "content": "all",
+        "description": "(DEPRECATED) Sends all outbound traffic through Direct VPC egress or the VPC\nconnector. Provides the same functionality as 'all-traffic'. Prefer to use\n'all-traffic' instead."
+      },
+      "all-traffic": {
+        "content": "all-traffic",
+        "description": "Sends all outbound traffic through Direct VPC egress or the VPC connector."
+      },
+      "private-ranges-only": {
+        "content": "private-ranges-only",
+        "description": "Default option. Sends outbound traffic to private IP addresses (RFC 1918 and\nPrivate Google Access IPs) through Direct VPC egress or the VPC connector.Traffic to other Cloud Run services might require additional configuration. Seehttps://cloud.google.com/run/docs/securing/private-networking#send_requests_to_other_services_and_servicesfor more information."
+      },
+      "add-cloudsql-instances": {
+        "content": "--add-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Append the given values to the current Cloud SQL instances."
+      },
+      "clear-cloudsql-instances": {
+        "content": "--clear-cloudsql-instances",
+        "description": "Empty the current Cloud SQL instances."
+      },
+      "remove-cloudsql-instances": {
+        "content": "--remove-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Remove the given values from the current Cloud SQL instances."
+      },
+      "set-cloudsql-instances": {
+        "content": "--set-cloudsql-instances=[CLOUDSQL-INSTANCES,…]",
+        "description": "Completely replace the current Cloud SQL instances with the given values."
+      },
+      "add-custom-audiences": {
+        "content": "--add-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Append the given values to the current custom audiences."
+      },
+      "clear-custom-audiences": {
+        "content": "--clear-custom-audiences",
+        "description": "Empty the current custom audiences."
+      },
+      "remove-custom-audiences": {
+        "content": "--remove-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Remove the given values from the current custom audiences."
+      },
+      "set-custom-audiences": {
+        "content": "--set-custom-audiences=[CUSTOM-AUDIENCES,…]",
+        "description": "Completely replace the current custom audiences with the given values."
+      },
+      "add-volume": {
+        "content": "--add-volume=[KEY=VALUE,…]",
+        "description": "Adds a volume to the Cloud Run resource. To add more than one volume, specify\nthis flag multiple times. Volumes must have anameandtypekey. Only certain values are supported fortype.\nDepending on the provided type, other keys will be required. The following types\nare supported with the specified additional keys:cloud-storage: A volume representing a Cloud Storage bucket. This\nvolume type is mounted using Cloud Storage FUSE. Seehttps://cloud.google.com/storage/docs/gcs-fusefor the details and limitations of this filesystem. Additional keys:bucket: (required) the name of the bucket to use as the source of this volumereadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts.mount-options: (optional) A list of flags to pass to GCSFuse. Flags should be\nspecified without leading dashes and separated by semicolons.in-memory: An ephemeral volume that stores data in the instance's\nmemory. With this type of volume, data is not shared between instances and all\ndata will be lost when the instance it is on is terminated. Additional keys:size-limit: (optional) A quantity representing the maximum amount of memory\nallocated to this volume, such as \"512Mi\" or \"3G\". Data stored in an in-memory\nvolume consumes the memory allocation of the container that wrote the data. If\nsize-limit is not specified, the maximum size will be half the total memory\nlimit of all containers.nfs: Represents a volume backed by an NFS server. Additional keys:location: (required) The location of the NFS Server, in the form SERVER:/PATHreadonly: (optional) A boolean. If true, this volume will be read-only from all\nmounts."
+      },
+      "clear-volumes": {
+        "content": "--clear-volumes",
+        "description": "Remove all existing volumes from the Cloud Run resource, including volumes\nmounted as secrets"
+      },
+      "remove-volume": {
+        "content": "--remove-volume=[VOLUME,…]",
+        "description": "Removes volumes from the Cloud Run resource."
+      }
+    }
+  },
+  {
+    "id": "run.services.update-traffic",
+    "service": "run",
+    "type": "command",
+    "path": [
+      "run",
+      "services",
+      "update-traffic"
+    ],
+    "command_path": "gcloud run services update-traffic",
+    "service_name": "run",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/run/services/update-traffic",
+    "description": "Adjust the traffic assignments for a Cloud Run service.",
+    "command_synopsis": "gcloud run services update-traffic [[SERVICE] --namespace=NAMESPACE] [--async] [--region=REGION] [--clear-tags     | --set-tags=[TAG=REVISION,…]     | --remove-tags=[TAG,…] --update-tags=[TAG=REVISION,…]] [--to-latest     | --to-revisions=[REVISION-NAME=PERCENTAGE,…]     | --to-tags=[TAG=PERCENTAGE,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "40c0d670b2b2cf3b04ebcdb0e31cb3a266f59a8d83f3bf1012d7817cd4d980eb",
+    "positional_args": {
+      "SERVICE": {
+        "content": "[SERVICE]",
+        "description": "ID of the service or fully qualified identifier for the service.To set theserviceattribute:provide the argumentSERVICEon the command line;specify the service name from an interactive prompt."
+      },
+      "namespace": {
+        "content": "--namespace=NAMESPACE",
+        "description": "Specific to Cloud Run for Anthos: Kubernetes namespace for the service.To set thenamespaceattribute:provide the argumentSERVICEon the command line with a fully\nspecified name;specify the service name from an interactive prompt with a fully specified name;provide the argument--namespaceon the command line;set the propertyrun/namespace;For Cloud Run on Kubernetes Engine, defaults to \"default\". Otherwise, defaults\nto project ID.;provide the argumentprojecton the command line;set the propertycore/project."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Region in which the resource can be found. Alternatively, set the property\n[run/region]."
+      },
+      "clear-tags": {
+        "content": "--clear-tags",
+        "description": "Remove all tags."
+      },
+      "set-tags": {
+        "content": "--set-tags=[TAG=REVISION,…]",
+        "description": "List of key-value pairs to set as tags. All existing tags will be removed first."
+      },
+      "remove-tags": {
+        "content": "--remove-tags=[TAG,…]",
+        "description": "List of tags to be removed."
+      },
+      "update-tags": {
+        "content": "--update-tags=[TAG=REVISION,…]",
+        "description": "List of key-value pairs to set as tags."
+      },
+      "to-latest": {
+        "content": "--to-latest",
+        "description": "True to assign 100 percent of traffic to the 'latest' revision of this service.\nNote that when a new revision is created, it will become the 'latest' and\ntraffic will be directed to it. Defaults to False. Synonymous with\n'--to-revisions=LATEST=100'."
+      },
+      "to-revisions": {
+        "content": "--to-revisions=[REVISION-NAME=PERCENTAGE,…]",
+        "description": "Comma separated list of traffic assignments in the form\nREVISION-NAME=PERCENTAGE. REVISION-NAME must be the name for a revision for the\nservice as returned by 'gcloud beta run list revisions'. PERCENTAGE must be an\ninteger percentage between 0 and 100 inclusive. Ex\nservice-nw9hs=10,service-nw9hs=20 Up to 100 percent of traffic may be assigned.\nIf 100 percent of traffic is assigned, the Service traffic is updated as\nspecified. If under 100 percent of traffic is assigned, the Service traffic is\nupdated as specified for revisions with assignments and traffic is scaled up or\ndown down proportionally as needed for revision that are currently serving\ntraffic but that do not have new assignments. For example assume revision-1 is\nserving 40 percent of traffic and revision-2 is serving 60 percent. If\nrevision-1 is assigned 45 percent of traffic and no assignment is made for\nrevision-2, the service is updated with revsion-1 assigned 45 percent of traffic\nand revision-2 scaled down to 55 percent. You can use \"LATEST\" as a special\nrevision name to always put the given percentage of traffic on the latest ready\nrevision."
+      },
+      "to-tags": {
+        "content": "--to-tags=[TAG=PERCENTAGE,…]",
+        "description": "Comma separated list of traffic assignments in the form TAG=PERCENTAGE. TAG must\nmatch a traffic tag on a revision of the service. It may match a previously-set\ntag, or one assigned using the--set-tagsor--update-tagsflags on this command. PERCENTAGE must be an integer\npercentage between 0 and 100 inclusive. Up to 100 percent of traffic may be\nassigned. If 100 percent of traffic is assigned, the service traffic is updated\nas specified. If under 100 percent of traffic is assigned, the service traffic\nis updated as specified to the given tags, and other traffic is scaled up or\ndown proportionally. For example, assume the revision taggednextis serving 40 percent of traffic and the revision taggedcurrentis\nserving 60 percent. Ifnextis assigned 45 percent of traffic and\nno assignment is made forcurrent, the service is updated withnextassigned 45 percent of traffic andcurrentscaled\ndown to 55 percent."
+      }
+    }
+  }
+]

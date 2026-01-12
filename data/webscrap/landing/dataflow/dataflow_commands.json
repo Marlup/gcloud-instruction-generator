@@ -1,0 +1,925 @@
+[
+  {
+    "id": "dataflow",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow"
+    ],
+    "command_path": "gcloud dataflow",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow",
+    "description": "The gcloud dataflow command group lets you manage Google Cloud Dataflow\nresources.\nCloud Dataflow is a unified programming model and a managed service for\ndeveloping and executing a wide range of data processing patterns including ETL,\nbatch computation, and continuous computation.\nMore information on Cloud Dataflow can be found here: https://cloud.google.com/dataflow\nand detailed documentation can be found here: https://cloud.google.com/dataflow/docs/",
+    "command_synopsis": "gcloud dataflow GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "24777a7ab8c32c3e6728654f357955c2f1510809dcebcd879a596c2c14e1d440",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.flex-template",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow",
+      "flex-template"
+    ],
+    "command_path": "gcloud dataflow flex-template",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/flex-template",
+    "description": "A group of subcommands for working with Dataflow flex template.",
+    "command_synopsis": "gcloud dataflow flex-template COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "cc69ef0d8396bb407611dceb79a6587965df35fd5243bd6fd71a9bf394efbfe5",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.flex-template.run",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "flex-template",
+      "run"
+    ],
+    "command_path": "gcloud dataflow flex-template run",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/flex-template/run",
+    "description": "Runs a job from the specified flex template gcs path.",
+    "command_synopsis": "gcloud dataflow flex-template run JOB_NAME --template-file-gcs-location=TEMPLATE_FILE_GCS_LOCATION [--additional-experiments=[ADDITIONAL_EXPERIMENTS,…]] [--additional-pipeline-options=[ADDITIONAL_PIPELINE_OPTIONS,…]] [--additional-user-labels=[ADDITIONAL_USER_LABELS,…]] [--dataflow-kms-key=DATAFLOW_KMS_KEY] [--disable-public-ips] [--enable-streaming-engine] [--flexrs-goal=FLEXRS_GOAL] [--launcher-machine-type=LAUNCHER_MACHINE_TYPE] [--max-workers=MAX_WORKERS] [--network=NETWORK] [--num-workers=NUM_WORKERS] [--parameters=[PARAMETERS,…]] [--region=REGION_ID] [--service-account-email=SERVICE_ACCOUNT_EMAIL] [--staging-location=STAGING_LOCATION] [--subnetwork=SUBNETWORK] [--temp-location=TEMP_LOCATION] [--worker-machine-type=WORKER_MACHINE_TYPE] [[--[no-]update : --transform-name-mappings=[TRANSFORM_NAME_MAPPINGS,…]]] [--worker-region=WORKER_REGION     | --worker-zone=WORKER_ZONE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_NAME": {
+        "content": "JOB_NAME",
+        "description": "Unique name to assign to the job."
+      }
+    },
+    "required_flags": {
+      "template-file-gcs-location": {
+        "content": "--template-file-gcs-location=TEMPLATE_FILE_GCS_LOCATION",
+        "description": "Google Cloud Storage location of the flex template to run. (Must be a URL\nbeginning with 'gs://'.)"
+      }
+    },
+    "optional_flags": {
+      "additional-experiments": {
+        "content": "--additional-experiments=[ADDITIONAL_EXPERIMENTS,…]",
+        "description": "Additional experiments to pass to the job. Example:\n--additional-experiments=experiment1,experiment2=value2"
+      },
+      "additional-pipeline-options": {
+        "content": "--additional-pipeline-options=[ADDITIONAL_PIPELINE_OPTIONS,…]",
+        "description": "Additional pipeline options to pass to the job. Example:\n--additional-pipeline-options=option1=value1,option2=value2"
+      },
+      "additional-user-labels": {
+        "content": "--additional-user-labels=[ADDITIONAL_USER_LABELS,…]",
+        "description": "Additional user labels to pass to the job. Example:\n--additional-user-labels='key1=value1,key2=value2'"
+      },
+      "dataflow-kms-key": {
+        "content": "--dataflow-kms-key=DATAFLOW_KMS_KEY",
+        "description": "Cloud KMS key to protect the job resources."
+      },
+      "disable-public-ips": {
+        "content": "--disable-public-ips",
+        "description": "Cloud Dataflow workers must not use public IP addresses. Overrides the defaultdataflow/disable_public_ipsproperty value for this command\ninvocation."
+      },
+      "enable-streaming-engine": {
+        "content": "--enable-streaming-engine",
+        "description": "Enabling Streaming Engine for the streaming job. Overrides the defaultdataflow/enable_streaming_engineproperty value for this command\ninvocation."
+      },
+      "flexrs-goal": {
+        "content": "--flexrs-goal=FLEXRS_GOAL",
+        "description": "FlexRS goal for the flex template job.FLEXRS_GOALmust\nbe one of:COST_OPTIMIZED,SPEED_OPTIMIZED."
+      },
+      "launcher-machine-type": {
+        "content": "--launcher-machine-type=LAUNCHER_MACHINE_TYPE",
+        "description": "The machine type to use for launching the job. The default isn1-standard-1."
+      },
+      "max-workers": {
+        "content": "--max-workers=MAX_WORKERS",
+        "description": "Maximum number of workers to run."
+      },
+      "network": {
+        "content": "--network=NETWORK",
+        "description": "Compute Engine network for launching instances to run your pipeline."
+      },
+      "num-workers": {
+        "content": "--num-workers=NUM_WORKERS",
+        "description": "Initial number of workers to use."
+      },
+      "parameters": {
+        "content": "--parameters=[PARAMETERS,…]",
+        "description": "Parameters to pass to the job."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      },
+      "service-account-email": {
+        "content": "--service-account-email=SERVICE_ACCOUNT_EMAIL",
+        "description": "Service account to run the workers as."
+      },
+      "staging-location": {
+        "content": "--staging-location=STAGING_LOCATION",
+        "description": "Default Google Cloud Storage location to stage local files.(Must be a URL\nbeginning with 'gs://'.)"
+      },
+      "subnetwork": {
+        "content": "--subnetwork=SUBNETWORK",
+        "description": "Compute Engine subnetwork for launching instances to run your pipeline."
+      },
+      "temp-location": {
+        "content": "--temp-location=TEMP_LOCATION",
+        "description": "Default Google Cloud Storage location to stage temporary files. If not set,\ndefaults to the value for --staging-location.(Must be a URL beginning with\n'gs://'.)"
+      },
+      "worker-machine-type": {
+        "content": "--worker-machine-type=WORKER_MACHINE_TYPE",
+        "description": "Type of machine to use for workers. Defaults to server-specified."
+      },
+      "[no-]update": {
+        "content": "--[no-]update",
+        "description": "Set this to true for streaming update jobs. Use--updateto enable\nand--no-updateto disable."
+      },
+      "transform-name-mappings": {
+        "content": "--transform-name-mappings=[TRANSFORM_NAME_MAPPINGS,…]",
+        "description": "Transform name mappings for the streaming update job."
+      },
+      "worker-region": {
+        "content": "--worker-region=WORKER_REGION",
+        "description": "Region to run the workers in."
+      },
+      "worker-zone": {
+        "content": "--worker-zone=WORKER_ZONE",
+        "description": "Zone to run the workers in."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "dataflow.flex-template.build",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "flex-template",
+      "build"
+    ],
+    "command_path": "gcloud dataflow flex-template build",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/flex-template/build",
+    "description": "Builds a flex template file from the specified parameters.",
+    "command_synopsis": "gcloud dataflow flex-template build TEMPLATE_FILE_GCS_PATH --sdk-language=SDK_LANGUAGE (--image=IMAGE     | --env=[ENV,…] --flex-template-base-image=FLEX_TEMPLATE_BASE_IMAGE --image-gcr-path=IMAGE_GCR_PATH (--go-binary-path=GO_BINARY_PATH | --jar=[JAR,…] | --py-path=[PY_PATH,…])     | [--yaml-pipeline-path=YAML_PIPELINE_PATH : --yaml-image=YAML_IMAGE]) [--additional-experiments=[ADDITIONAL_EXPERIMENTS,…]] [--additional-user-labels=[ADDITIONAL_USER_LABELS,…]] [--cloud-build-service-account=CLOUD_BUILD_SERVICE_ACCOUNT] [--dataflow-kms-key=DATAFLOW_KMS_KEY] [--disable-public-ips] [--enable-streaming-engine] [--gcs-log-dir=GCS_LOG_DIR] [--image-repository-cert-path=IMAGE_REPOSITORY_CERT_PATH] [--image-repository-password-secret-id=IMAGE_REPOSITORY_PASSWORD_SECRET_ID] [--image-repository-username-secret-id=IMAGE_REPOSITORY_USERNAME_SECRET_ID] [--max-workers=MAX_WORKERS] [--metadata-file=PATH_TO_FILE] [--network=NETWORK] [--num-workers=NUM_WORKERS] [--print-only] [--service-account-email=SERVICE_ACCOUNT_EMAIL] [--staging-location=STAGING_LOCATION] [--subnetwork=SUBNETWORK] [--temp-location=TEMP_LOCATION] [--worker-machine-type=WORKER_MACHINE_TYPE] [--worker-region=WORKER_REGION     | --worker-zone=WORKER_ZONE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "TEMPLATE_FILE_GCS_PATH": {
+        "content": "TEMPLATE_FILE_GCS_PATH",
+        "description": "The Google Cloud Storage location of the flex template file.Overrides if file\nalready exists."
+      }
+    },
+    "required_flags": {
+      "sdk-language": {
+        "content": "--sdk-language=SDK_LANGUAGE",
+        "description": "SDK language of the flex template job.SDK_LANGUAGEmust\nbe one of:JAVA,PYTHON,GO,YAML."
+      },
+      "image": {
+        "content": "--image=IMAGE",
+        "description": "Path to the any image registry location of the prebuilt flex template image."
+      },
+      "env": {
+        "content": "--env=[ENV,…]",
+        "description": "Environment variables to create for the Dockerfile. You can pass them as a comma\nseparated list or repeat individually with --env flag. Ex: --env=\"A=B,C=D\" or\n--env A=B, --env C=D.When you reference files/dir in env variables, please\nspecify relative path to the paths passed via --py-path.Ex: if you pass.\n--py-path=\"path/pipleline/\" then set\nFLEX_TEMPLATE_PYTHON_PY_FILE=\"pipeline/pipeline.py\" You can find the list of\nsupported environment variables in this link.https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates#setting_required_dockerfile_environment_variables.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "flex-template-base-image": {
+        "content": "--flex-template-base-image=FLEX_TEMPLATE_BASE_IMAGE",
+        "description": "Flex template base image to be used while building the container image. Allowed\nchoices are allowed labels (JAVA11/17/21/25, PYTHON3, GO), supported distroless\nimages (JAVA11/17/21/25_DISTROLESS, GO_DISTROLESS), or full gcr.io path of the\nspecific version of the base image. For labels, we use the latest base image\nversion to build the container. You can also provide a specific version from\nthis linkhttps://gcr.io/dataflow-templates-base/This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "image-gcr-path": {
+        "content": "--image-gcr-path=IMAGE_GCR_PATH",
+        "description": "The Google Container Registry or Google Artifact Registry location to store the\nflex template image to be built.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "go-binary-path": {
+        "content": "--go-binary-path=GO_BINARY_PATH",
+        "description": "Local path to your compiled dataflow pipeline Go binary. The binary should be\ncompiled to run on the target worker architecture (usually linux-amd64). Seehttps://beam.apache.org/documentation/sdks/go-cross-compilation/for more information."
+      },
+      "jar": {
+        "content": "--jar=[JAR,…]",
+        "description": "Local path to your dataflow pipeline jar file and all their dependent jar files\nrequired for the flex template classpath. You can pass them as a comma separated\nlist or repeat individually with --jar flag. Ex: --jar=\"code.jar,dep.jar\" or\n--jar code.jar, --jar dep.jar."
+      },
+      "py-path": {
+        "content": "--py-path=[PY_PATH,…]",
+        "description": "Local path to your dataflow pipeline python files and all their dependent files\nrequired for the flex template classpath. You can pass them as a comma separated\nlist or repeat individually with --py-path flag. Ex:\n--py-path=\"path/pipleline/,path/dependency/\" or --py-path path/pipleline/,\n--py-path path/dependency/."
+      },
+      "yaml-pipeline-path": {
+        "content": "--yaml-pipeline-path=YAML_PIPELINE_PATH",
+        "description": "Local path to your YAML pipeline file. Use a full or relative path to a local\nfile containing the value of yaml_pipeline_path.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "yaml-image": {
+        "content": "--yaml-image=YAML_IMAGE",
+        "description": "Path to the any image registry location of the prebuilt yaml template image."
+      }
+    },
+    "optional_flags": {
+      "additional-experiments": {
+        "content": "--additional-experiments=[ADDITIONAL_EXPERIMENTS,…]",
+        "description": "Default experiments to pass to the job."
+      },
+      "additional-user-labels": {
+        "content": "--additional-user-labels=[ADDITIONAL_USER_LABELS,…]",
+        "description": "Default user labels to pass to the job. Example:\n--additional-user-labels='{\"key1\":\"value1\"}'"
+      },
+      "cloud-build-service-account": {
+        "content": "--cloud-build-service-account=CLOUD_BUILD_SERVICE_ACCOUNT",
+        "description": "Service account to run the Cloud Build in the format\nprojects/{project}/serviceAccounts/{service_account}. Ensure that the account\nyou are using to run 'gcloud dataflow flex-template build' has\n'ServiceAccountUser' role on the specified Cloud Build service account you\nprovide with the --cloud-build-service-account flag. The specified service\naccount must have required permissions to build the image. If the specified\nservice account is in a project that is different from the project where you are\nstarting builds, seehttps://cloud.google.com/build/docs/securing-builds/configure-user-specified-service-accounts#cross-project_set_upto grant the necessary access."
+      },
+      "dataflow-kms-key": {
+        "content": "--dataflow-kms-key=DATAFLOW_KMS_KEY",
+        "description": "Default Cloud KMS key to protect the job resources."
+      },
+      "disable-public-ips": {
+        "content": "--disable-public-ips",
+        "description": "Cloud Dataflow workers must not use public IP addresses. Overrides the defaultdataflow/disable_public_ipsproperty value for this command\ninvocation."
+      },
+      "enable-streaming-engine": {
+        "content": "--enable-streaming-engine",
+        "description": "Enable Streaming Engine for the streaming job by default. Overrides the defaultdataflow/enable_streaming_engineproperty value for this command\ninvocation."
+      },
+      "gcs-log-dir": {
+        "content": "--gcs-log-dir=GCS_LOG_DIR",
+        "description": "Google Cloud Storage directory to save build logs.(Must be a URL beginning with\n'gs://'.)"
+      },
+      "image-repository-cert-path": {
+        "content": "--image-repository-cert-path=IMAGE_REPOSITORY_CERT_PATH",
+        "description": "The full URL to self-signed certificate of private registry in Cloud Storage.\nFor example, gs://mybucket/mycerts/selfsigned.crt. The certificate provided in\nCloud Storage must be DER-encoded and may be supplied in binary or printable\n(Base64) encoding. If the certificate is provided in Base64 encoding, it must be\nbounded at the beginning by -----BEGIN CERTIFICATE-----, and must be bounded at\nthe end by -----END CERTIFICATE-----. If this parameter is provided, the docker\ndaemon in the template launcher will be instructed to trust that certificate."
+      },
+      "image-repository-password-secret-id": {
+        "content": "--image-repository-password-secret-id=IMAGE_REPOSITORY_PASSWORD_SECRET_ID",
+        "description": "Secret Manager secret id for the password to authenticate to private registry.\nShould be in the format\nprojects/{project}/secrets/{secret}/versions/{secret_version} or\nprojects/{project}/secrets/{secret}. If the version is not provided latest\nversion will be used."
+      },
+      "image-repository-username-secret-id": {
+        "content": "--image-repository-username-secret-id=IMAGE_REPOSITORY_USERNAME_SECRET_ID",
+        "description": "Secret Manager secret id for the username to authenticate to private registry.\nShould be in the format\nprojects/{project}/secrets/{secret}/versions/{secret_version} or\nprojects/{project}/secrets/{secret}. If the version is not provided latest\nversion will be used."
+      },
+      "max-workers": {
+        "content": "--max-workers=MAX_WORKERS",
+        "description": "Default maximum number of workers to run."
+      },
+      "metadata-file": {
+        "content": "--metadata-file=PATH_TO_FILE",
+        "description": "Local path to the metadata json file for the flex template. Use a full or\nrelative path to a local file containing the value of metadata_file."
+      },
+      "network": {
+        "content": "--network=NETWORK",
+        "description": "Default Compute Engine network for launching instances to run your pipeline."
+      },
+      "num-workers": {
+        "content": "--num-workers=NUM_WORKERS",
+        "description": "Initial number of workers to use by default."
+      },
+      "print-only": {
+        "content": "--print-only",
+        "description": "Prints the container spec to stdout. Does not save in Google Cloud Storage.\nOverrides the defaultdataflow/print_onlyproperty value for this\ncommand invocation."
+      },
+      "service-account-email": {
+        "content": "--service-account-email=SERVICE_ACCOUNT_EMAIL",
+        "description": "Default service account to run the workers as."
+      },
+      "staging-location": {
+        "content": "--staging-location=STAGING_LOCATION",
+        "description": "Default Google Cloud Storage location to stage local files.(Must be a URL\nbeginning with 'gs://'.)"
+      },
+      "subnetwork": {
+        "content": "--subnetwork=SUBNETWORK",
+        "description": "Default Compute Engine subnetwork for launching instances to run your pipeline."
+      },
+      "temp-location": {
+        "content": "--temp-location=TEMP_LOCATION",
+        "description": "Default Google Cloud Storage location to stage temporary files. If not set,\ndefaults to the value for --staging-location.(Must be a URL beginning with\n'gs://'.)"
+      },
+      "worker-machine-type": {
+        "content": "--worker-machine-type=WORKER_MACHINE_TYPE",
+        "description": "Default type of machine to use for workers. Defaults to server-specified."
+      },
+      "worker-region": {
+        "content": "--worker-region=WORKER_REGION",
+        "description": "Default region to run the workers in."
+      },
+      "worker-zone": {
+        "content": "--worker-zone=WORKER_ZONE",
+        "description": "Default zone to run the workers in."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "dataflow.jobs",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow",
+      "jobs"
+    ],
+    "command_path": "gcloud dataflow jobs",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs",
+    "description": "A group of subcommands for working with Dataflow jobs.",
+    "command_synopsis": "gcloud dataflow jobs COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "489552d9e75f6b771e2222712c091b161c46d410b82b24a255361eccad1050a3",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.jobs.cancel",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "cancel"
+    ],
+    "command_path": "gcloud dataflow jobs cancel",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/cancel",
+    "description": "Cancels all jobs that match the command line arguments.",
+    "command_synopsis": "gcloud dataflow jobs cancel JOB_ID [JOB_ID …] [--force] [--region=REGION_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_ID": {
+        "content": "JOB_ID[JOB_ID…]",
+        "description": "Job IDs to operate on."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "force": {
+        "content": "--force",
+        "description": "Forcibly cancels a Dataflow job. Regular cancel must have been attempted at\nleast 30 minutes prior for a job to be force cancelled."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the jobs' regional endpoint. Defaults to 'us-central1'."
+      }
+    }
+  },
+  {
+    "id": "dataflow.jobs.describe",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "describe"
+    ],
+    "command_path": "gcloud dataflow jobs describe",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/describe",
+    "description": "By default this will display the Summary view which includes:\nProject ID\nRegional Endpoint\nJob ID\nJob Name\nJob Type (Batch vs. Streaming)\nJob Create Time\nJob Status (Running, Done, Cancelled, Failed)\nJob Status Time\nNotable values that are only in the full view:\nEnvironment (staging Jars, information about workers, etc.)\nSteps from the workflow graph",
+    "command_synopsis": "gcloud dataflow jobs describe JOB_ID [--full] [--region=REGION_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_ID": {
+        "content": "JOB_ID",
+        "description": "Job ID to operate on."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "full": {
+        "content": "--full",
+        "description": "Retrieve the full Job rather than the summary view"
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      }
+    }
+  },
+  {
+    "id": "dataflow.jobs.archive",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "archive"
+    ],
+    "command_path": "gcloud dataflow jobs archive",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/archive",
+    "description": "Archives a single job. The job must be in a terminal state, otherwise the\nrequest will be rejected.\nThis command will require confirmation to run.",
+    "command_synopsis": "gcloud dataflow jobs archive JOB_ID [--region=REGION_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_ID": {
+        "content": "JOB_ID",
+        "description": "Job ID to operate on."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      }
+    }
+  },
+  {
+    "id": "dataflow.jobs.drain",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "drain"
+    ],
+    "command_path": "gcloud dataflow jobs drain",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/drain",
+    "description": "Once Drain is triggered, the pipeline will stop accepting new inputs. The input\nwatermark will be advanced to infinity. Elements already in the pipeline will\ncontinue to be processed. Drained jobs can safely be cancelled.",
+    "command_synopsis": "gcloud dataflow jobs drain JOB_ID [JOB_ID …] [--region=REGION_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_ID": {
+        "content": "JOB_ID[JOB_ID…]",
+        "description": "Job IDs to operate on."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the jobs' regional endpoint. Defaults to 'us-central1'."
+      }
+    }
+  },
+  {
+    "id": "dataflow.jobs.list",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "list"
+    ],
+    "command_path": "gcloud dataflow jobs list",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/list",
+    "description": "By default, 100 jobs in the current project are listed; this can be overridden\nwith the gcloud --project flag, and the --limit flag.\nUsing the --region flag will only list jobs from the given regional endpoint.",
+    "command_synopsis": "gcloud dataflow jobs list [--created-after=CREATED_AFTER] [--created-before=CREATED_BEFORE] [--region=REGION] [--status=STATUS] [--filter=EXPRESSION] [--limit=LIMIT; default=100] [--page-size=PAGE_SIZE; default=20] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "created-after": {
+        "content": "--created-after=CREATED_AFTER",
+        "description": "Filter the jobs to those created after the given time. See $gcloud topic datetimesfor\ninformation on time formats. For example,2018-01-01is the first\nday of the year, and-P2Wis 2 weeks ago."
+      },
+      "created-before": {
+        "content": "--created-before=CREATED_BEFORE",
+        "description": "Filter the jobs to those created before the given time. See $gcloud topic datetimesfor\ninformation on time formats."
+      },
+      "region": {
+        "content": "--region=REGION",
+        "description": "Only resources from the given region are queried. If not provided, an attempt\nwill be made to query from all available regions. In the event of an outage,\njobs from certain regions may not be available."
+      },
+      "status": {
+        "content": "--status=STATUS",
+        "description": "Filter the jobs to those with the selected status.STATUSmust be one of:activeFilters the jobs that are running ordered on the creation timestamp.allReturns running jobs first, ordered on creation timestamp, then, returns all\nterminated jobs ordered on the termination timestamp.terminatedFilters the jobs that have a terminated state, ordered on the termination\ntimestamp. Example terminated states: Done, Updated, Cancelled, etc."
+      },
+      "active": {
+        "content": "active",
+        "description": "Filters the jobs that are running ordered on the creation timestamp."
+      },
+      "all": {
+        "content": "all",
+        "description": "Returns running jobs first, ordered on creation timestamp, then, returns all\nterminated jobs ordered on the termination timestamp."
+      },
+      "terminated": {
+        "content": "terminated",
+        "description": "Filters the jobs that have a terminated state, ordered on the termination\ntimestamp. Example terminated states: Done, Updated, Cancelled, etc."
+      }
+    }
+  },
+  {
+    "id": "dataflow.jobs.run",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "run"
+    ],
+    "command_path": "gcloud dataflow jobs run",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/run",
+    "description": "Runs a job from the specified path.",
+    "command_synopsis": "gcloud dataflow jobs run JOB_NAME --gcs-location=GCS_LOCATION [--additional-experiments=[ADDITIONAL_EXPERIMENTS,…]] [--additional-user-labels=[ADDITIONAL_USER_LABELS,…]] [--dataflow-kms-key=DATAFLOW_KMS_KEY] [--disable-public-ips] [--enable-streaming-engine] [--max-workers=MAX_WORKERS] [--network=NETWORK] [--num-workers=NUM_WORKERS] [--parameters=[PARAMETERS,…]] [--region=REGION_ID] [--service-account-email=SERVICE_ACCOUNT_EMAIL] [--staging-location=STAGING_LOCATION] [--subnetwork=SUBNETWORK] [--worker-machine-type=WORKER_MACHINE_TYPE] [[--[no-]update : --transform-name-mappings=[TRANSFORM_NAME_MAPPINGS,…]]] [--worker-region=WORKER_REGION     | --worker-zone=WORKER_ZONE     | --zone=ZONE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_NAME": {
+        "content": "JOB_NAME",
+        "description": "The unique name to assign to the job."
+      }
+    },
+    "required_flags": {
+      "gcs-location": {
+        "content": "--gcs-location=GCS_LOCATION",
+        "description": "The Google Cloud Storage location of the job template to run. (Must be a URL\nbeginning with 'gs://'.)"
+      }
+    },
+    "optional_flags": {
+      "additional-experiments": {
+        "content": "--additional-experiments=[ADDITIONAL_EXPERIMENTS,…]",
+        "description": "Additional experiments to pass to the job. These experiments are appended to any\nexperiments already set by the template."
+      },
+      "additional-user-labels": {
+        "content": "--additional-user-labels=[ADDITIONAL_USER_LABELS,…]",
+        "description": "Additional user labels to pass to the job. Example:\n--additional-user-labels='key1=value1,key2=value2'"
+      },
+      "dataflow-kms-key": {
+        "content": "--dataflow-kms-key=DATAFLOW_KMS_KEY",
+        "description": "The Cloud KMS key to protect the job resources."
+      },
+      "disable-public-ips": {
+        "content": "--disable-public-ips",
+        "description": "The Cloud Dataflow workers must not use public IP addresses. Overrides the\ndefaultdataflow/disable_public_ipsproperty value for this command\ninvocation."
+      },
+      "enable-streaming-engine": {
+        "content": "--enable-streaming-engine",
+        "description": "Enabling Streaming Engine for the streaming job. Overrides the defaultdataflow/enable_streaming_engineproperty value for this command\ninvocation."
+      },
+      "max-workers": {
+        "content": "--max-workers=MAX_WORKERS",
+        "description": "The maximum number of workers to run."
+      },
+      "network": {
+        "content": "--network=NETWORK",
+        "description": "The Compute Engine network for launching instances to run your pipeline."
+      },
+      "num-workers": {
+        "content": "--num-workers=NUM_WORKERS",
+        "description": "The initial number of workers to use."
+      },
+      "parameters": {
+        "content": "--parameters=[PARAMETERS,…]",
+        "description": "The parameters to pass to the job."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      },
+      "service-account-email": {
+        "content": "--service-account-email=SERVICE_ACCOUNT_EMAIL",
+        "description": "The service account to run the workers as."
+      },
+      "staging-location": {
+        "content": "--staging-location=STAGING_LOCATION",
+        "description": "The Google Cloud Storage location to stage temporary files. (Must be a URL\nbeginning with 'gs://'.)"
+      },
+      "subnetwork": {
+        "content": "--subnetwork=SUBNETWORK",
+        "description": "The Compute Engine subnetwork for launching instances to run your pipeline."
+      },
+      "worker-machine-type": {
+        "content": "--worker-machine-type=WORKER_MACHINE_TYPE",
+        "description": "The type of machine to use for workers. Defaults to server-specified."
+      },
+      "[no-]update": {
+        "content": "--[no-]update",
+        "description": "Set this to true for streaming update jobs. Use--updateto enable\nand--no-updateto disable."
+      },
+      "transform-name-mappings": {
+        "content": "--transform-name-mappings=[TRANSFORM_NAME_MAPPINGS,…]",
+        "description": "Transform name mappings for the streaming update job."
+      },
+      "worker-region": {
+        "content": "--worker-region=WORKER_REGION",
+        "description": "The region to run the workers in."
+      },
+      "worker-zone": {
+        "content": "--worker-zone=WORKER_ZONE",
+        "description": "The zone to run the workers in."
+      },
+      "zone": {
+        "content": "--zone=ZONE",
+        "description": "(DEPRECATED) The zone to run the workers in.The --zone option is deprecated; use --worker-region or --worker-zone instead."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "dataflow.jobs.show",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "show"
+    ],
+    "command_path": "gcloud dataflow jobs show",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/show",
+    "description": "Shows a short description of the given job.",
+    "command_synopsis": "gcloud dataflow jobs show JOB_ID [--environment] [--region=REGION_ID] [--steps] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_ID": {
+        "content": "JOB_ID",
+        "description": "Job ID to operate on."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "environment": {
+        "content": "--environment",
+        "description": "If present, the environment will be listed."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      },
+      "steps": {
+        "content": "--steps",
+        "description": "If present, the steps will be listed."
+      }
+    }
+  },
+  {
+    "id": "dataflow.snapshots",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow",
+      "snapshots"
+    ],
+    "command_path": "gcloud dataflow snapshots",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/snapshots",
+    "description": "A group of subcommands for working with Cloud Dataflow snapshots.",
+    "command_synopsis": "gcloud dataflow snapshots COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "67a51cbfed671b6bccc32a711b1b38706579ce4a5778b049d5fe600fbf5e9278",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.snapshots.create",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow",
+      "snapshots",
+      "create"
+    ],
+    "command_path": "gcloud dataflow snapshots create",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/snapshots/create",
+    "description": "Creates a snapshot for a Cloud Dataflow job.",
+    "command_synopsis": "gcloud dataflow snapshots create --job-id=JOB_ID --region=REGION_ID [--snapshot-sources=SNAPSHOT_SOURCES] [--snapshot-ttl=DURATION; default=\"7d\"] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {},
+    "required_flags": {
+      "job-id": {
+        "content": "--job-id=JOB_ID",
+        "description": "The job ID to snapshot."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "The region ID of the snapshot and job's regional endpoint."
+      }
+    },
+    "optional_flags": {
+      "snapshot-sources": {
+        "content": "--snapshot-sources=SNAPSHOT_SOURCES",
+        "description": "If true, snapshots will also be created for the Cloud Pub/Sub sources of the\nCloud Dataflow job."
+      },
+      "snapshot-ttl": {
+        "content": "--snapshot-ttl=DURATION; default=\"7d\"",
+        "description": "Time to live for the snapshot."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "dataflow.jobs.update-options",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "jobs",
+      "update-options"
+    ],
+    "command_path": "gcloud dataflow jobs update-options",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/jobs/update-options",
+    "description": "This command can modify properties of running Dataflow jobs. Currently, only\nupdating autoscaling settings for Streaming Engine jobs is supported.\nAdjust the autoscaling settings for Streaming Engine Dataflow jobs by providing\nat-least one of --min-num-workers or --max-num-workers or\n--worker-utilization-hint (or all 3), or --unset-worker-utilization-hint (which\ncannot be run at the same time as --worker-utilization-hint but works with the\nothers). Allow a few minutes for the changes to take effect.\nNote that autoscaling settings can only be modified on-the-fly for Streaming\nEngine jobs. Attempts to modify batch job or Streaming Appliance jobs will fail.",
+    "command_synopsis": "gcloud dataflow jobs update-options JOB_ID [--max-num-workers=MAX_NUM_WORKERS] [--min-num-workers=MIN_NUM_WORKERS] [--region=REGION_ID] [--unset-worker-utilization-hint] [--worker-utilization-hint=WORKER_UTILIZATION_HINT] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_ID": {
+        "content": "JOB_ID",
+        "description": "Job ID to operate on."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "max-num-workers": {
+        "content": "--max-num-workers=MAX_NUM_WORKERS",
+        "description": "Upper-bound for autoscaling, between 1-1000. Only supported for streaming-engine\njobs."
+      },
+      "min-num-workers": {
+        "content": "--min-num-workers=MIN_NUM_WORKERS",
+        "description": "Lower-bound for autoscaling, between 1-1000. Only supported for streaming-engine\njobs."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      },
+      "unset-worker-utilization-hint": {
+        "content": "--unset-worker-utilization-hint",
+        "description": "Unset --worker-utilization-hint. This causes the job autoscaling to fall back to\ninternal tunings if they exist, or otherwise use the default hint value."
+      },
+      "worker-utilization-hint": {
+        "content": "--worker-utilization-hint=WORKER_UTILIZATION_HINT",
+        "description": "Target CPU utilization for autoscaling, ranging from 0.1 to 0.9. Only supported\nfor streaming-engine jobs with autoscaling enabled."
+      }
+    }
+  },
+  {
+    "id": "dataflow.snapshots.describe",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "snapshots",
+      "describe"
+    ],
+    "command_path": "gcloud dataflow snapshots describe",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/snapshots/describe",
+    "description": "Describe a Cloud Dataflow snapshot.",
+    "command_synopsis": "gcloud dataflow snapshots describe SNAPSHOT_ID --region=REGION_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "SNAPSHOT_ID": {
+        "content": "SNAPSHOT_ID",
+        "description": "ID of the Cloud Dataflow snapshot."
+      }
+    },
+    "required_flags": {
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the snapshot regional endpoint."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.snapshots.delete",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "snapshots",
+      "delete"
+    ],
+    "command_path": "gcloud dataflow snapshots delete",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/snapshots/delete",
+    "description": "Delete a Cloud Dataflow snapshot.",
+    "command_synopsis": "gcloud dataflow snapshots delete SNAPSHOT_ID --region=REGION_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "SNAPSHOT_ID": {
+        "content": "SNAPSHOT_ID",
+        "description": "ID of the Cloud Dataflow snapshot."
+      }
+    },
+    "required_flags": {
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the snapshot regional endpoint."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.yaml",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow",
+      "yaml"
+    ],
+    "command_path": "gcloud dataflow yaml",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/yaml",
+    "description": "A group of subcommands for launching Beam YAML jobs on Dataflow.",
+    "command_synopsis": "gcloud dataflow yaml COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "35ef80557b678fe31d382de64d003bee42a21fe2bf3eb54c0d2cc773b568d51b",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "dataflow.snapshots.list",
+    "service": "dataflow",
+    "type": "group",
+    "path": [
+      "dataflow",
+      "snapshots",
+      "list"
+    ],
+    "command_path": "gcloud dataflow snapshots list",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/snapshots/list",
+    "description": "List all Cloud Dataflow snapshots in a project in the specified region,\noptionally filtered by job ID.",
+    "command_synopsis": "gcloud dataflow snapshots list --region=REGION_ID [--job-id=JOB_ID] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {},
+    "required_flags": {
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "The region ID of the snapshot and job's regional endpoint."
+      }
+    },
+    "optional_flags": {
+      "job-id": {
+        "content": "--job-id=JOB_ID",
+        "description": "The job ID to use to filter the snapshots list."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "dataflow.yaml.run",
+    "service": "dataflow",
+    "type": "command",
+    "path": [
+      "dataflow",
+      "yaml",
+      "run"
+    ],
+    "command_path": "gcloud dataflow yaml run",
+    "service_name": "dataflow",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/dataflow/yaml/run",
+    "description": "Runs a job from the specified YAML description or Cloud Storage path.",
+    "command_synopsis": "gcloud dataflow yaml run JOB_NAME (--yaml-pipeline=YAML_PIPELINE     | --yaml-pipeline-file=YAML_PIPELINE_FILE) [--jinja-variables=JSON_OBJECT] [--network=NETWORK] [--pipeline-options=[OPTIONS=VALUE;OPTION=VALUE,…]] [--region=REGION_ID] [--subnetwork=SUBNETWORK] [--template-file-gcs-location=TEMPLATE_FILE_GCS_LOCATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "105946ce242b1ebe66c1c515ec018cd1589dea2c2e4277aa1a8dd322f1bf8a52",
+    "positional_args": {
+      "JOB_NAME": {
+        "content": "JOB_NAME",
+        "description": "Unique name to assign to the job."
+      }
+    },
+    "required_flags": {
+      "yaml-pipeline": {
+        "content": "--yaml-pipeline=YAML_PIPELINE",
+        "description": "Inline definition of the YAML pipeline to run."
+      },
+      "yaml-pipeline-file": {
+        "content": "--yaml-pipeline-file=YAML_PIPELINE_FILE",
+        "description": "Path of a file defining the YAML pipeline to run. (Must be a local file or a URL\nbeginning with 'gs://'.)"
+      }
+    },
+    "optional_flags": {
+      "jinja-variables": {
+        "content": "--jinja-variables=JSON_OBJECT",
+        "description": "Jinja2 variables to be used in reifying the yaml."
+      },
+      "network": {
+        "content": "--network=NETWORK",
+        "description": "Compute Engine network for launching worker instances to run the pipeline. If\nnot set, the default network is used."
+      },
+      "pipeline-options": {
+        "content": "--pipeline-options=[OPTIONS=VALUE;OPTION=VALUE,…]",
+        "description": "Pipeline options to pass to the job."
+      },
+      "region": {
+        "content": "--region=REGION_ID",
+        "description": "Region ID of the job's regional endpoint. Defaults to 'us-central1'."
+      },
+      "subnetwork": {
+        "content": "--subnetwork=SUBNETWORK",
+        "description": "Compute Engine subnetwork for launching worker instances to run the pipeline. If\nnot set, the default subnetwork is used."
+      },
+      "template-file-gcs-location": {
+        "content": "--template-file-gcs-location=TEMPLATE_FILE_GCS_LOCATION",
+        "description": "Google Cloud Storage location of the YAML template to run. (Must be a URL\nbeginning with 'gs://'.)"
+      }
+    },
+    "flags": {}
+  }
+]

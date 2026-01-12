@@ -1,0 +1,601 @@
+[
+  {
+    "id": "auth.application-default",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "application-default"
+    ],
+    "command_path": "gcloud auth application-default",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/application-default",
+    "description": "Application Default Credentials (ADC) provide a method to get credentials used\nin calling Google APIs. The gcloud auth application-default command group allows\nyou to manage active credentials on your machine that are used for local\napplication development.\nThese credentials are only used by Google client libraries in your own\napplication.\nFor more information about ADC and how it works, see Authenticating as\na service account.",
+    "command_synopsis": "gcloud auth application-default COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "1fab4b61f3fd88efae7eea82b7d781b34e3a1a9ae933877e379e853378b0f0ee",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth"
+    ],
+    "command_path": "gcloud auth",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth",
+    "description": "The gcloud auth command group lets you grant and revoke\nauthorization to Google Cloud CLI (gcloud CLI) to access Google Cloud.\nTypically, when scripting Google Cloud CLI tools for use on multiple machines,\nusing gcloud\nauth activate-service-account is recommended.\nFor information about authorization and credential types, see Authorizing the gcloud\nCLI. For information about authorizing a service account, see Authorizing\nwith a service account.\nAfter running gcloud auth commands, you can run other commands with\n--account=ACCOUNT to\nauthenticate the command with the credentials of the specified account. For\ninformation about --account and other gcloud CLI global flags, see the gcloud CLI overview.\nSee $ gcloud\ntopic client-certificate to learn how to use Mutual TLS when using\ngcloud. Mutual TLS can be used for certificate\nbased access with gcloud.",
+    "command_synopsis": "gcloud auth GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "5b3f3bafa52c38cf3794acbb3674dc6b668982fffe77843ecfa8017d0349a0f8",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth.activate-service-account",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "activate-service-account"
+    ],
+    "command_path": "gcloud auth activate-service-account",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account",
+    "description": "To allow gcloud (and other\ntools in Google Cloud CLI) to use service account credentials to make requests,\nuse this command to import these credentials from a file that contains a private\nauthorization key, and activate them for use in gcloud. gcloud auth\nactivate-service-account serves the same function as gcloud auth login but uses a\nservice account rather than Google user credentials.\nFor more information on authorization and credential types, see: https://cloud.google.com/sdk/docs/authorizing.\nKey File\nTo obtain the key file for this command, use either the Google Cloud Console or gcloud\niam service-accounts keys create. The key file can be .json (preferred)\nor .p12 (legacy) format. In the case of legacy .p12 files, a separate password\nmight be required and is displayed in the Console when you create the key.\nCredentials\nCredentials will also be activated (similar to running gcloud config set\naccount [ACCOUNT_NAME]).\nIf a project is specified using the --project flag, the project is\nset in active configuration, which is the same as running gcloud config\nset project [PROJECT_NAME]. Any previously active credentials, will be\nretained (though no longer default) and can be displayed by running gcloud auth list.\nIf you want to delete previous credentials, see gcloud auth revoke.\nNote: Service accounts use client quotas for tracking\nusage.",
+    "command_synopsis": "gcloud auth activate-service-account [ACCOUNT] --key-file=KEY_FILE [--password-file=PASSWORD_FILE     | --prompt-for-password] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "[ACCOUNT]",
+        "description": "E-mail address of the service account."
+      }
+    },
+    "required_flags": {
+      "key-file": {
+        "content": "--key-file=KEY_FILE",
+        "description": "Path to the private key file."
+      }
+    },
+    "optional_flags": {
+      "password-file": {
+        "content": "--password-file=PASSWORD_FILE",
+        "description": "Path to a file containing the password for the service account private key (only\nfor a .p12 file)."
+      },
+      "prompt-for-password": {
+        "content": "--prompt-for-password",
+        "description": "Prompt for the password for the service account private key (only for a .p12\nfile)."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "auth.application-default.login",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "application-default",
+      "login"
+    ],
+    "command_path": "gcloud auth application-default login",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login",
+    "description": "Obtains user access credentials via a web flow and puts them in the well-known\nlocation for Application Default Credentials (ADC).\nThis command is useful when you are developing code that would normally use a\nservice account but need to run the code in a local development environment\nwhere it's easier to provide user credentials. The credentials will apply to all\nAPI calls that make use of the Application Default Credentials client library.\nDo not set the GOOGLE_APPLICATION_CREDENTIALS environment variable\nif you want to use the credentials generated by this command in your local\ndevelopment. This command tries to find a quota project from gcloud's context\nand write it to ADC so that Google client libraries can use it for billing and\nquota. Alternatively, you can use the --client-id-file flag. In\nthis case, the project owning the client ID will be used for billing and quota.\nYou can create the client ID file at https://console.cloud.google.com/apis/credentials.\nThis command has no effect on the user account(s) set up by the gcloud auth login command.\nAny credentials previously generated by gcloud auth application-default\nlogin will be overwritten.",
+    "command_synopsis": "gcloud auth application-default login [ACCOUNT] [--no-browser] [--client-id-file=CLIENT_ID_FILE] [--disable-quota-project] [--no-launch-browser] [--login-config=LOGIN_CONFIG] [--scopes=SCOPE,[SCOPE,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "[ACCOUNT]",
+        "description": "User account used for authorization. When the account specified has valid\ncredentials in the local credential store these credentials will be re-used.\nOtherwise new ones will be fetched and replace any stored credential. This\ncaching behavior is only available for user credentials."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "browser": {
+        "content": "--browser",
+        "description": "If you want to authorize the client libraries on a machine that doesn't have a\nbrowser and you can install the gcloud CLI on another machine with a browser,\nuse the--no-browserflag.1. To initiate authorization, enter the following command:gcloudauthapplication-defaultlogin--no-browser2. Copy the long command that begins withgcloud auth application-default\nlogin --remote-bootstrap=\".3. Paste and run this command on the command line of a different, trusted\nmachine that has local installations of both a web browser and the gcloud CLI\ntool version 372.0 or later.4. Copy the long URL output from the machine with the web browser.5. Paste the long URL back to the first machine under the prompt, \"Enter the\noutput of the above command\", and press Enter to complete the authorization.Enabled by default, use--no-browserto disable."
+      },
+      "client-id-file": {
+        "content": "--client-id-file=CLIENT_ID_FILE",
+        "description": "A file containing your own client id to use to login. If --client-id-file is\nspecified, the quota project will not be written to ADC."
+      },
+      "disable-quota-project": {
+        "content": "--disable-quota-project",
+        "description": "By default, the project in billing/quota_project or core/project will be written\nto application default credentials (ADC) as the quota project. When both are\nset, billing/quota_project takes precedence. You can use --billing-project to\noverwrite the value in billing/quota_project. Similarly, you can use --project\nto overwrite the value in core/project. Client libraries will send it to\nservices and use it for quota and billing. To be able to use a project as the\nquota project, the account in ADC must have the serviceusage.services.use\npermission on the project. This permission is granted to the project editor and\nproject owner. You can create custom roles to include this permission.Note that some cloud services may ignore this quota project and still bill the\nproject owning the resources.In the following situations, you may use this flag to skip setting the quota\nproject:The account in ADC cannot be granted the project editor or owner role or any\nrole with the serviceusage.services.use permission.You always want to bill the project owning the resources."
+      },
+      "launch-browser": {
+        "content": "--launch-browser",
+        "description": "Launch a browser for authorization. If not enabled or if it is not possible to\nlaunch a browser, prints a URL to standard output to be copied.If you want to authorize the client libraries on a machine that doesn't have a\nbrowser and you cannot install the gcloud CLI on another machine with a browser,\nuse the--no-launch-browserflag. The--no-launch-browserflag prevents the command from automatically\nopening a web browser.1. To initiate authorization, enter the following command:gcloudauthapplication-defaultlogin--no-launch-browser2. Copy the long URL that begins withhttps://accounts.google.com/o/oauth2/auth...3. Paste this URL into the browser of a different, trusted machine that has a\nweb browser.4. Copy the authorization code from the machine with the web browser.5. Paste the authorization code back to the first machine at the prompt, \"Enter\nauthorization code\", and press Enter to complete the authorization.Enabled by default, use--no-launch-browserto disable."
+      },
+      "login-config": {
+        "content": "--login-config=LOGIN_CONFIG",
+        "description": "Path to the login configuration file (workforce pool, generated by the Cloud\nConsole orgcloud iam\nworkforce-pools create-login-config). Overrides the defaultauth/login_config_fileproperty value for this command invocation."
+      },
+      "scopes": {
+        "content": "--scopes=SCOPE,[SCOPE,…]",
+        "description": "The names of the scopes to authorize for. By default openid,\nhttps://www.googleapis.com/auth/userinfo.email,\nhttps://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/sqlservice.loginscopes are used. The list of possible scopes can be found at:https://developers.google.com/identity/protocols/googlescopes.\nTo add scopes for applications outside of Google Cloud Platform, such as Google\nDrive,create an OAuth\nClient IDand provide it by using the --client-id-file flag."
+      }
+    }
+  },
+  {
+    "id": "auth.application-default.print-access-token",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "application-default",
+      "print-access-token"
+    ],
+    "command_path": "gcloud auth application-default print-access-token",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/application-default/print-access-token",
+    "description": "gcloud auth application-default print-access-token generates and prints an\naccess token for the current Application Default Credential (ADC). The ADC can be specified either by using\ngcloud auth\napplication-default login, gcloud auth login\n--cred-file=/path/to/cred/file --update-adc, or by setting the\nGOOGLE_APPLICATION_CREDENTIALS environment variable.\nThe access token generated by gcloud auth application-default print-access-token\nis useful for manually testing APIs via curl or similar tools.\nIn order to print details of the access token, such as the associated account\nand the token's expiration time in seconds, run:\ncurl -H \"Content-Type: application/x-www-form-urlencoded\" -d \"access_token=$(gcloud auth application-default print-access-token)\" https://www.googleapis.com/oauth2/v1/tokeninfo\nNote that token itself may not be enough to access some services. If you use the\ntoken with curl or similar tools, you may see permission errors similar to \"Your\napplication has authenticated using end user credentials from the Google Cloud\nSDK or Google Cloud Shell\". If it happens, you may need to provide a quota\nproject in the \"X-Goog-User-Project\" header. For example,\ncurl -H \"X-Goog-User-Project: your-project\" -H \"Authorization: Bearer $(gcloud auth application-default print-access-token)\" foo.googleapis.com\nThe identity that granted the token must have the serviceusage.services.use\npermission on the provided project. See https://cloud.google.com/apis/docs/system-parameters\nfor more information.",
+    "command_synopsis": "gcloud auth application-default print-access-token [--lifetime=LIFETIME] [--scopes=SCOPE,[SCOPE,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "lifetime": {
+        "content": "--lifetime=LIFETIME",
+        "description": "Access token lifetime. The default access token lifetime is 3600 seconds, but\nyou can use this flag to reduce the lifetime or extend it up to 43200 seconds\n(12 hours). The org policy constraintconstraints/iam.allowServiceAccountCredentialLifetimeExtensionmust\nbe set if you want to extend the lifetime beyond 3600 seconds. Note that this\nflag is for service account impersonation only, so it only works when either--impersonate-service-accountflag orauth/impersonate_service_accountproperty is set."
+      },
+      "scopes": {
+        "content": "--scopes=SCOPE,[SCOPE,…]",
+        "description": "The scopes to authorize for. This flag is supported for user accounts and\nservice accounts only. The list of possible scopes can be found at:https://developers.google.com/identity/protocols/googlescopes.For end-user accounts, the provided scopes must be from [openid,https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/sqlservice.login], or the scopes\npreviously specified throughgcloud auth application-default login\n--scopes."
+      }
+    }
+  },
+  {
+    "id": "auth.application-default.revoke",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "application-default",
+      "revoke"
+    ],
+    "command_path": "gcloud auth application-default revoke",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/application-default/revoke",
+    "description": "Revokes Application Default Credentials that have been previously generated by\ngcloud auth\napplication-default login and deletes the local credential file.\nThis does not affect any credentials set up through other means, such as\ncredentials referenced by the Application Default Credentials environment\nvariable or service account credentials that are active on a Google Compute\nEngine virtual machine.",
+    "command_synopsis": "gcloud auth application-default revoke [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth.configure-docker",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "configure-docker"
+    ],
+    "command_path": "gcloud auth configure-docker",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/configure-docker",
+    "description": "gcloud auth configure-docker adds the Docker credHelper entry to\nDocker's configuration file, or creates the file if it doesn't exist. This will\nregister gcloud as the\ncredential helper for all Google-supported Docker registries. If the Docker\nconfiguration already contains a credHelper entry, it will be\noverwritten.\nNote: docker and gcloud need to be on the same system\nPATH to work correctly.\nNote: This command will not work for docker installed via Snap, as\nthe docker snap package does not currently provide an interface for\ncredential helpers.\nFor more details on Docker registries, see https://docs.docker.com/registry/.\nFor more details on how to authenticate to Google Container Registry using this\ncommand, see https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud-helper.\nFor more details on Google Container Registry's standalone credential helpers,\nsee https://github.com/GoogleCloudPlatform/docker-credential-gcr.\nFor more details on Docker credential helpers, see https://docs.docker.com/engine/reference/commandline/login/#credential-helpers.",
+    "command_synopsis": "gcloud auth configure-docker [REGISTRIES] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "REGISTRIES": {
+        "content": "[REGISTRIES]",
+        "description": "The comma-separated list of registries to configure the credential helper for.\nContainer Registry is a service for storing private container images. For\navailable registries, seehttps://cloud.google.com/container-registry/docs/pushing-and-pulling#add-registry."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth.application-default.set-quota-project",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "application-default",
+      "set-quota-project"
+    ],
+    "command_path": "gcloud auth application-default set-quota-project",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/application-default/set-quota-project",
+    "description": "A quota project is a Google Cloud Project that will be used for billing and\nquota limits.\nBefore running this command, an ADC must already be generated using $ gcloud auth\napplication-default login. The quota project defined in the ADC will be used\nby the Google client libraries. The existing application default credentials\nmust have the serviceusage.services.use permission on the given\nproject.",
+    "command_synopsis": "gcloud auth application-default set-quota-project QUOTA_PROJECT_ID [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "QUOTA_PROJECT_ID": {
+        "content": "QUOTA_PROJECT_ID",
+        "description": "Quota project ID to add to application default credentials. If a quota project\nalready exists, it will be updated."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth.enterprise-certificate-config",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "enterprise-certificate-config"
+    ],
+    "command_path": "gcloud auth enterprise-certificate-config",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/enterprise-certificate-config",
+    "description": "Currently only create is implemented.\nThe gcloud auth enterprise-certificate-config group lets you create enterprise\ncertificate configurations. This configuration will be used by gcloud to\ncommunicate with the enterprise-certificate-proxy.\nSee more details at gcloud topic\nclient-certificate.",
+    "command_synopsis": "gcloud auth enterprise-certificate-config GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "99a9c685e6bf5776a0925fbf6bee07f359802eb9a3ec83efce3e1f4fd54b4b7d",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth.enterprise-certificate-config.create.linux",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "enterprise-certificate-config",
+      "create",
+      "linux"
+    ],
+    "command_path": "gcloud auth enterprise-certificate-config create linux",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/enterprise-certificate-config/create/linux",
+    "description": "This command creates a configuration file used by gcloud to use the\nenterprise-certificate-proxy component for mTLS.",
+    "command_synopsis": "gcloud auth enterprise-certificate-config create linux --label=LABEL --module=MODULE --slot=SLOT [--ecp=ECP] [--ecp-client=ECP_CLIENT] [--output-file=OUTPUT_FILE] [--tls-offload=TLS_OFFLOAD] [--user-pin=USER_PIN] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {},
+    "required_flags": {
+      "label": {
+        "content": "--label=LABEL",
+        "description": "The PKCS #11 label for the target credentials. The certificate, public key, and\nprivate key MUST have the same label. enterprise-certificate-proxy will use all\nthree objects."
+      },
+      "module": {
+        "content": "--module=MODULE",
+        "description": "The full file path to the PKCS #11 module."
+      },
+      "slot": {
+        "content": "--slot=SLOT",
+        "description": "The PKCS #11 slot containing the target credentials."
+      }
+    },
+    "optional_flags": {
+      "ecp": {
+        "content": "--ecp=ECP",
+        "description": "Provide a custom path to the enterprise-certificate-proxy binary. This flag must\nbe the full path to the binary."
+      },
+      "ecp-client": {
+        "content": "--ecp-client=ECP_CLIENT",
+        "description": "Provide a custom path to the enterprise-certificate-proxy shared client library.\nThis flag must be the full path to the shared library."
+      },
+      "output-file": {
+        "content": "--output-file=OUTPUT_FILE",
+        "description": "Override the file path that the enterprise-certificate-proxy configuration is\nwritten to."
+      },
+      "tls-offload": {
+        "content": "--tls-offload=TLS_OFFLOAD",
+        "description": "Provide a custom path to the enterprise-certificate-proxy shared tls offload\nlibrary. This flag must be the full path to the shared library."
+      },
+      "user-pin": {
+        "content": "--user-pin=USER_PIN",
+        "description": "The user pin used to login to the PKCS #11 module. If there is no user pin leave\nthis field empty."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "auth.enterprise-certificate-config.create",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "enterprise-certificate-config",
+      "create"
+    ],
+    "command_path": "gcloud auth enterprise-certificate-config create",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/enterprise-certificate-config/create",
+    "description": "The gcloud auth enterprise-certificate-config create group lets you create\nenterprise certificate configurations. This configuration will be used by gcloud\nto communicate with the enterprise-certificate-proxy.\nSee more details at gcloud topic\nclient-certificate.",
+    "command_synopsis": "gcloud auth enterprise-certificate-config create COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "f31035c8c86a398ab480e69b1e98dcd2f72bfe22f0e45bedab38afdd1c287e5b",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "auth.enterprise-certificate-config.create.macos",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "enterprise-certificate-config",
+      "create",
+      "macos"
+    ],
+    "command_path": "gcloud auth enterprise-certificate-config create macos",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/enterprise-certificate-config/create/macos",
+    "description": "This command creates a configuration file used by gcloud to use the\nenterprise-certificate-proxy component for mTLS.",
+    "command_synopsis": "gcloud auth enterprise-certificate-config create macos --issuer=ISSUER [--ecp=ECP] [--ecp-client=ECP_CLIENT] [--keychain-type=KEYCHAIN_TYPE; default=\"all\"] [--output-file=OUTPUT_FILE] [--tls-offload=TLS_OFFLOAD] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {},
+    "required_flags": {
+      "issuer": {
+        "content": "--issuer=ISSUER",
+        "description": "The certificate issuer."
+      }
+    },
+    "optional_flags": {
+      "ecp": {
+        "content": "--ecp=ECP",
+        "description": "Provide a custom path to the enterprise-certificate-proxy binary. This flag must\nbe the full path to the binary."
+      },
+      "ecp-client": {
+        "content": "--ecp-client=ECP_CLIENT",
+        "description": "Provide a custom path to the enterprise-certificate-proxy shared client library.\nThis flag must be the full path to the shared library."
+      },
+      "keychain-type": {
+        "content": "--keychain-type=KEYCHAIN_TYPE; default=\"all\"",
+        "description": "Specify the target keychain(s) for certificate lookup.Accepted values are\n\"login\", \"system\", or \"all\". If omitted,defaults to \"all\". Use \"all\" to include\ncustom keychains."
+      },
+      "output-file": {
+        "content": "--output-file=OUTPUT_FILE",
+        "description": "Override the file path that the enterprise-certificate-proxy configuration is\nwritten to."
+      },
+      "tls-offload": {
+        "content": "--tls-offload=TLS_OFFLOAD",
+        "description": "Provide a custom path to the enterprise-certificate-proxy shared tls offload\nlibrary. This flag must be the full path to the shared library."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "auth.list",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "list"
+    ],
+    "command_path": "gcloud auth list",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/list",
+    "description": "Lists accounts whose credentials have been obtained using gcloud init, gcloud auth login and\ngcloud auth\nactivate-service-account, and shows which account is active. The\nactive account is used by gcloud and other Google Cloud CLI tools to access\nGoogle Cloud Platform. While there is no limit on the number of accounts with\nstored credentials, there is only one active account.",
+    "command_synopsis": "gcloud auth list [--filter-account=FILTER_ACCOUNT] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter-account": {
+        "content": "--filter-account=FILTER_ACCOUNT",
+        "description": "List only credentials for one account. Use\n--filter=\"account~PATTERN\" to select accounts that matchPATTERN."
+      }
+    }
+  },
+  {
+    "id": "auth.enterprise-certificate-config.create.windows",
+    "service": "auth",
+    "type": "group",
+    "path": [
+      "auth",
+      "enterprise-certificate-config",
+      "create",
+      "windows"
+    ],
+    "command_path": "gcloud auth enterprise-certificate-config create windows",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/enterprise-certificate-config/create/windows",
+    "description": "This command creates a configuration file used by gcloud to use the\nenterprise-certificate-proxy component for mTLS.",
+    "command_synopsis": "gcloud auth enterprise-certificate-config create windows --issuer=ISSUER --provider=PROVIDER --store=STORE [--ecp=ECP] [--ecp-client=ECP_CLIENT] [--output-file=OUTPUT_FILE] [--tls-offload=TLS_OFFLOAD] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {},
+    "required_flags": {
+      "issuer": {
+        "content": "--issuer=ISSUER",
+        "description": "The certificate issuer."
+      },
+      "provider": {
+        "content": "--provider=PROVIDER",
+        "description": "The Windows secure store provider."
+      },
+      "store": {
+        "content": "--store=STORE",
+        "description": "The Windows secure store."
+      }
+    },
+    "optional_flags": {
+      "ecp": {
+        "content": "--ecp=ECP",
+        "description": "Provide a custom path to the enterprise-certificate-proxy binary. This flag must\nbe the full path to the binary."
+      },
+      "ecp-client": {
+        "content": "--ecp-client=ECP_CLIENT",
+        "description": "Provide a custom path to the enterprise-certificate-proxy shared client library.\nThis flag must be the full path to the shared library."
+      },
+      "output-file": {
+        "content": "--output-file=OUTPUT_FILE",
+        "description": "Override the file path that the enterprise-certificate-proxy configuration is\nwritten to."
+      },
+      "tls-offload": {
+        "content": "--tls-offload=TLS_OFFLOAD",
+        "description": "Provide a custom path to the enterprise-certificate-proxy shared tls offload\nlibrary. This flag must be the full path to the shared library."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "auth.login",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "login"
+    ],
+    "command_path": "gcloud auth login",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/login",
+    "description": "Obtains access credentials for your user account via a web-based authorization\nflow. When this command completes successfully, it sets the active account in\nthe current configuration to the account specified. If no configuration exists,\nit creates a configuration named default.\nIf valid credentials for an account are already available from a prior\nauthorization, the account is set to active without rerunning the flow.\nUse gcloud auth list\nto view credentialed accounts.\nIf you'd rather authorize without a web browser but still interact with the\ncommand line, use the --no-browser flag. To authorize without a web\nbrowser and non-interactively, create a service account with the appropriate\nscopes using the Google Cloud\nConsole and use gcloud auth\nactivate-service-account with the corresponding JSON key file.\nIn addition to Google user credentials, authorization using workload identity\nfederation, workforce identity federation, or service account keys is also\nsupported.\nFor authorization with external accounts or service accounts, the\n--cred-file flag must be specified with the path to the workload\nidentity credential configuration file or service account key file (JSON).\nLogin with workload and workforce identity federation is also supported in both\ngsutil and bq. This command is the recommended way of using external accounts.\nFor more information on workload identity federation, see: https://cloud.google.com/iam/docs/workload-identity-federation.\nFor more information on workforce identity federation, see: https://cloud.google.com/iam/docs/workforce-identity-federation.\nFor more information on authorization and credential types, see: https://cloud.google.com/sdk/docs/authorizing.",
+    "command_synopsis": "gcloud auth login [ACCOUNT] [--no-activate] [--brief] [--no-browser] [--cred-file=CRED_FILE] [--enable-gdrive-access] [--force] [--no-launch-browser] [--login-config=LOGIN_CONFIG] [--update-adc] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "[ACCOUNT]",
+        "description": "User account used for authorization. When the account specified has valid\ncredentials in the local credential store these credentials will be re-used,\notherwise a new credential will be fetched. If you need to fetch a new\ncredential for an account with valid credentials stored, run the command with\nthe --force flag."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "activate": {
+        "content": "--activate",
+        "description": "Set the new account to active. Enabled by default, use--no-activateto disable."
+      },
+      "brief": {
+        "content": "--brief",
+        "description": "Minimal user output."
+      },
+      "browser": {
+        "content": "--browser",
+        "description": "If you want to authorize the gcloud CLI on a machine that doesn't have a browser\nand you can install the gcloud CLI on another machine with a browser, use the--no-browserflag.1. To initiate authorization, enter the following command:gcloudauthlogin--no-browser2. Copy the long command that begins withgcloud auth login\n--remote-bootstrap=\".3. Paste and run this command on the command line of a different, trusted\nmachine that has local installations of both a web browser and the gcloud CLI\ntool version 372.0 or later.4. Copy the long URL output from the machine with the web browser.5. Paste the long URL back to the first machine under the prompt, \"Enter the\noutput of the above command\", and press Enter to complete the authorization.Enabled by default, use--no-browserto disable."
+      },
+      "cred-file": {
+        "content": "--cred-file=CRED_FILE",
+        "description": "Path to the external account configuration file (workload identity pool,\ngenerated by the Cloud Console orgcloud\niam workload-identity-pools create-cred-config) or service account\ncredential key file (JSON)."
+      },
+      "enable-gdrive-access": {
+        "content": "--enable-gdrive-access",
+        "description": "Enable Google Drive access."
+      },
+      "force": {
+        "content": "--force",
+        "description": "Re-run the web authorization flow even if the given account has valid\ncredentials."
+      },
+      "launch-browser": {
+        "content": "--launch-browser",
+        "description": "Launch a browser for authorization. If not enabled or if it is not possible to\nlaunch a browser, prints a URL to standard output to be copied.If you want to authorize the gcloud CLI on a machine that doesn't have a browser\nand you cannot install the gcloud CLI on another machine with a browser, use the--no-launch-browserflag. The--no-launch-browserflag\nprevents the command from automatically opening a web browser.1. To initiate authorization, enter the following command:gcloudauthlogin--no-launch-browser2. Copy the long URL that begins withhttps://accounts.google.com/o/oauth2/auth...3. Paste this URL into the browser of a different, trusted machine that has a\nweb browser.4. Copy the authorization code from the machine with the web browser.5. Paste the authorization code back to the first machine at the prompt, \"Enter\nauthorization code\", and press Enter to complete the authorization.Enabled by default, use--no-launch-browserto disable."
+      },
+      "login-config": {
+        "content": "--login-config=LOGIN_CONFIG",
+        "description": "Path to the workforce identity federation login configuration file which can be\ngenerated using thegcloud iam\nworkforce-pools create-login-configcommand. Overrides the defaultauth/login_config_fileproperty value for this command invocation."
+      },
+      "update-adc": {
+        "content": "--update-adc",
+        "description": "Write the obtained credentials to the well-known location for Application\nDefault Credentials (ADC). Run $gcloud auth\napplication-default--help to learn more about ADC. Any credentials\npreviously generated bygcloud auth\napplication-default loginwill be overwritten."
+      }
+    }
+  },
+  {
+    "id": "auth.print-access-token",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "print-access-token"
+    ],
+    "command_path": "gcloud auth print-access-token",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/print-access-token",
+    "description": "Print an access token for the specified account. See RFC6749 for more information\nabout access tokens.\nNote that token itself may not be enough to access some services. If you use the\ntoken with curl or similar tools, you may see permission errors similar to \"API\nhas not been used in project 32555940559 before or it is disabled.\". If it\nhappens, you may need to provide a quota project in the \"X-Goog-User-Project\"\nheader. For example,\ncurl -H \"X-Goog-User-Project: your-project\" -H \"Authorization: Bearer $(gcloud auth print-access-token)\" foo.googleapis.com\nThe identity that granted the token must have the serviceusage.services.use\npermission on the provided project. See https://cloud.google.com/apis/docs/system-parameters\nfor more information.",
+    "command_synopsis": "gcloud auth print-access-token [ACCOUNT] [--lifetime=LIFETIME] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "[ACCOUNT]",
+        "description": "Account to get the access token for. If not specified, the current active\naccount will be used."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "lifetime": {
+        "content": "--lifetime=LIFETIME",
+        "description": "Access token lifetime. The default access token lifetime is 3600 seconds, but\nyou can use this flag to reduce the lifetime or extend it up to 43200 seconds\n(12 hours). The org policy constraintconstraints/iam.allowServiceAccountCredentialLifetimeExtensionmust\nbe set if you want to extend the lifetime beyond 3600 seconds. Note that this\nflag is for service account impersonation only, so it must be used together with\nthe--impersonate-service-accountflag."
+      }
+    }
+  },
+  {
+    "id": "auth.revoke",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "revoke"
+    ],
+    "command_path": "gcloud auth revoke",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/revoke",
+    "description": "Revokes credentials for the specified user accounts, service accounts or\nexternal accounts (workload identity pools).\nWhen given a user account, this command revokes the user account token on the\nserver. If the revocation is successful, or if the token has already been\nrevoked, this command removes the credential from the local machine.\nWhen given a service account, this command does not revoke the service account\ntoken on the server because service account tokens are not revocable. Instead,\nit will print a warning and remove the credential from the local machine. When\nused with a service account, this command has only a local effect and the key\nassociated with the service account is not deleted. This can be done by\nexecuting gcloud iam\nservice-accounts keys delete after revoke.\nWhen given an external account (workload identity pool), whether impersonated or\nnot, the command does not revoke the corresponding token on the server because\nthese tokens are not revocable. The underlying external credentials (OIDC, AWS,\netc.) used to generate these access tokens have to be revoked too, but gcloud\nhas no control over that. Instead, it will print a warning and remove the\ncredential from the local machine.\nIf no account is specified, this command revokes credentials for the currently\nactive account, effectively logging out of that account. If --all is given, the\nbehaviors described above apply individually to each account in the list.\nYou can revoke credentials when you want to prevent gcloud and other Google\nCloud CLI tools from using the specified account. You do not need to revoke\ncredentials to switch between accounts.",
+    "command_synopsis": "gcloud auth revoke [ACCOUNTS …] [--all] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "ACCOUNTS": {
+        "content": "[ACCOUNTS…]",
+        "description": "Accounts whose credentials are to be revoked."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "all": {
+        "content": "--all",
+        "description": "Revoke credentials for all accounts."
+      }
+    }
+  },
+  {
+    "id": "auth.print-identity-token",
+    "service": "auth",
+    "type": "command",
+    "path": [
+      "auth",
+      "print-identity-token"
+    ],
+    "command_path": "gcloud auth print-identity-token",
+    "service_name": "auth",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/auth/print-identity-token",
+    "description": "Print an identity token for the specified account.",
+    "command_synopsis": "gcloud auth print-identity-token [ACCOUNT] [--audiences=AUDIENCES] [--include-email] [--include-license --token-format=TOKEN_FORMAT; default=\"standard\"] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71098c5bc0e3b9c76a15336ad05064ab5a1a474ca36bc044e9ab2346c51d5ac1",
+    "positional_args": {
+      "ACCOUNT": {
+        "content": "[ACCOUNT]",
+        "description": "Account to print the identity token for. If not specified, the current active\naccount will be used."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "audiences": {
+        "content": "--audiences=AUDIENCES",
+        "description": "Intended recipient of the token. Currently, only one audience can be specified."
+      },
+      "include-email": {
+        "content": "--include-email",
+        "description": "Specify whether or not service account email is included in the identity token.\nIf specified, the token will contain 'email' and 'email_verified' claims. This\nflag should only be used for impersonate service account."
+      },
+      "include-license": {
+        "content": "--include-license",
+        "description": "Specify whether or not license codes for images associated with this instance\nare included in the identity token payload. Default is False. This flag does not\nhave effect unless--token-format=full."
+      },
+      "token-format": {
+        "content": "--token-format=TOKEN_FORMAT; default=\"standard\"",
+        "description": "Specify whether or not the project and instance details are included in the\nidentity token payload. This flag only applies to Google Compute Engine instance\nidentity tokens. Seehttps://cloud.google.com/compute/docs/instances/verifying-instance-identity#token_formatfor more details on token format.TOKEN_FORMATmust be\none of:standard,full."
+      }
+    }
+  }
+]

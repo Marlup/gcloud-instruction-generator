@@ -7,6 +7,7 @@ from google.oauth2.service_account import Credentials
 from google.api_core.exceptions import GoogleAPIError
 
 from backend.constants import GCP_CREDENTIALS_FILENAME
+from backend.infrastructure.action_loader import ActionLoader
 
 class ConfigurationManager:
     def __init__(self, config: Optional[Dict[str, Any]] = None, plugins_path: str = "data/plugins", on_connect: bool = False):
@@ -68,35 +69,18 @@ class ConfigurationManager:
         return self
 
     # -------- Actions --------
-    def load_actions(self, service_name: str) -> Dict[str, Dict[str, Dict[str, Any]]]:
+    def load_actions(self, service_name: str) -> Dict[str, Any]:
         """
-        Carga TODAS las acciones de un servicio:
-        plugins/service/resource/*.json
+        Carga TODAS las acciones de un servicio usando ActionLoader.
+        Soporta formato plano (actions.json) y legado.
         """
         service_path = os.path.join(self.plugins_path, service_name)
         if not os.path.isdir(service_path):
-            raise FileNotFoundError(f"❌ No existe carpeta de servicio: {service_path}")
+            print(f"❌ No existe carpeta de servicio: {service_path}")
+            return {}
 
-        actions: Dict[str, Dict[str, Dict[str, Any]]] = {}
-
-        for resource in os.listdir(service_path):
-            resource_path = os.path.join(service_path, resource)
-            if not os.path.isdir(resource_path):
-                continue
-            actions[resource] = {}
-
-            for category in os.listdir(resource_path):
-                category_path = os.path.join(resource_path, category)
-                if not category_path.endswith(".json"):
-                    continue
-                with open(category_path, "r", encoding="utf-8") as f:
-                    action_data = json.load(f)
-
-                # We assume format: {"Action name": {"cmd": "...", "params": [...]}}
-                category_name = category.split(".")[0]
-                actions[resource][category_name] = action_data
-                
-        return actions
+        loader = ActionLoader(service_path)
+        return loader.actions
 
     # -------- Parámetros --------
     def load_parameters(self, service_name: str) -> dict:

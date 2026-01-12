@@ -40,7 +40,7 @@ class ParallelConfig:
     progress_log_interval: int = 10  # seconds
     
     # Paths
-    data_dir: str = "data/web-gcloud"
+    data_dir: str = "data/webscrap/landing"
     
     # Feature flags
     enable_work_stealing: bool = True

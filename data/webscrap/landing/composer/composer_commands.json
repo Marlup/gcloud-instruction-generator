@@ -1,0 +1,2271 @@
+[
+  {
+    "id": "composer",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer"
+    ],
+    "command_path": "gcloud composer",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer",
+    "description": "Cloud Composer is a managed Apache Airflow service that helps you create,\nschedule, monitor and manage workflows. Cloud Composer automation helps you\ncreate Airflow environments quickly and use Airflow-native tools, such as the\npowerful Airflow web interface and command line tools, so you can focus on your\nworkflows and not your infrastructure.",
+    "command_synopsis": "gcloud composer GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "188d2a529b536f7d823450f8384d31578dd46d0a35439e7d9cecf9fb3d3f9eb9",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments"
+    ],
+    "command_path": "gcloud composer environments",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments",
+    "description": "The gcloud composer environments command group lets you create Cloud Composer\nenvironments containing an Apache Airflow setup. Additionally, the command group\nsupports environment updates including varying number of machines used to run\nAirflow, setting Airflow configs, or installing Python dependencies used in\nAirflow DAGs. The command group can also be used to delete Composer\nenvironments.",
+    "command_synopsis": "gcloud composer environments GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4a266febdfac2dd48ee3eaa8c04dcc7cce1c3e9d1143c8bc240ec3287cb43e05",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.check-upgrade",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "check-upgrade"
+    ],
+    "command_path": "gcloud composer environments check-upgrade",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/check-upgrade",
+    "description": "Check that upgrading a Cloud Composer environment does not result in PyPI module\nconflicts.",
+    "command_synopsis": "gcloud composer environments check-upgrade (ENVIRONMENT : --location=LOCATION) [--async] [--airflow-version=AIRFLOW_VERSION     | --image-version=IMAGE_VERSION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "airflow-version": {
+        "content": "--airflow-version=AIRFLOW_VERSION",
+        "description": "Upgrade the environment to a later Apache Airflow version in-place.Must be of the formX[.Y[.Z]], where[]denotes\noptional fragments. Examples:2,2.3,2.3.4.The Apache Airflow version is a semantic version or an alias in the form of\nmajor or major.minor version numbers, resolved to the latest matching Apache\nAirflow version supported in the current Cloud Composer version. The resolved\nversion is stored in the upgraded environment."
+      },
+      "image-version": {
+        "content": "--image-version=IMAGE_VERSION",
+        "description": "Upgrade the environment to a later version in-place.The image version encapsulates the versions of both Cloud Composer and Apache\nAirflow. Must be of the formcomposer-A[.B.C[-D.E]]-airflow-X[.Y[.Z]], where[]denotes optional fragments.Examples:composer-2-airflow-2,composer-2-airflow-2.2,composer-2.1.2-airflow-2.3.4.The Cloud Composer portion of the image version is a semantic version or an\nalias in the form of major version number orlatest, resolved to\nthe current Cloud Composer version. The Apache Airflow portion of the image\nversion is a semantic version or an alias in the form of major or major.minor\nversion numbers, resolved to the latest matching Apache Airflow version\nsupported in the given Cloud Composer version. The resolved versions are stored\nin the upgraded environment."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.create",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "create"
+    ],
+    "command_path": "gcloud composer environments create",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/create",
+    "description": "If run asynchronously with --async, exits after printing an\noperation that can be used to poll the status of the creation operation via:\ngcloud composer operations describe",
+    "command_synopsis": "gcloud composer environments create (ENVIRONMENT : --location=LOCATION) [--airflow-configs=[KEY=VALUE,…]] [--airflow-database-retention-days=AIRFLOW_DATABASE_RETENTION_DAYS] [--async] [--cloud-sql-machine-type=CLOUD_SQL_MACHINE_TYPE] [--cloud-sql-preferred-zone=CLOUD_SQL_PREFERRED_ZONE] [--composer-internal-ipv4-cidr-block=COMPOSER_INTERNAL_IPV4_CIDR_BLOCK] [--disable-logs-in-cloud-logging-only] [--disk-size=DISK_SIZE] [--enable-high-resilience] [--enable-logs-in-cloud-logging-only] [--env-variables=[NAME=VALUE,…]] [--environment-size=ENVIRONMENT_SIZE] [--labels=[KEY=VALUE,…]] [--machine-type=MACHINE_TYPE] [--network-attachment=NETWORK_ATTACHMENT] [--node-count=NODE_COUNT] [--oauth-scopes=[SCOPE,…]] [--python-version=PYTHON_VERSION] [--service-account=SERVICE_ACCOUNT] [--storage-bucket=STORAGE_BUCKET] [--support-web-server-plugins] [--tags=[TAG,…]] [--web-server-machine-type=WEB_SERVER_MACHINE_TYPE] [--zone=ZONE] [--airflow-version=AIRFLOW_VERSION     | --image-version=IMAGE_VERSION] [--cloud-sql-ipv4-cidr=CLOUD_SQL_IPV4_CIDR --composer-network-ipv4-cidr=COMPOSER_NETWORK_IPV4_CIDR --connection-subnetwork=CONNECTION_SUBNETWORK --connection-type=CONNECTION_TYPE --disable-private-environment --enable-private-endpoint --enable-private-environment --enable-privately-used-public-ips --master-ipv4-cidr=MASTER_IPV4_CIDR --web-server-ipv4-cidr=WEB_SERVER_IPV4_CIDR] [--cluster-ipv4-cidr=CLUSTER_IPV4_CIDR --cluster-secondary-range-name=CLUSTER_SECONDARY_RANGE_NAME --enable-ip-alias --enable-ip-masq-agent --services-ipv4-cidr=SERVICES_IPV4_CIDR --services-secondary-range-name=SERVICES_SECONDARY_RANGE_NAME] [--dag-processor-count=DAG_PROCESSOR_COUNT --dag-processor-cpu=DAG_PROCESSOR_CPU --dag-processor-memory=DAG_PROCESSOR_MEMORY --dag-processor-storage=DAG_PROCESSOR_STORAGE] [--disable-cloud-data-lineage-integration     | --enable-cloud-data-lineage-integration] [--disable-private-builds-only     | --enable-private-builds-only] [--enable-master-authorized-networks --master-authorized-networks=[NETWORK,…]] [--enable-scheduled-snapshot-creation --snapshot-creation-schedule=SNAPSHOT_CREATION_SCHEDULE --snapshot-location=SNAPSHOT_LOCATION --snapshot-schedule-timezone=SNAPSHOT_SCHEDULE_TIMEZONE] [--enable-triggerer --triggerer-count=TRIGGERER_COUNT --triggerer-cpu=TRIGGERER_CPU --triggerer-memory=TRIGGERER_MEMORY] [--kms-key=KMS_KEY : --kms-keyring=KMS_KEYRING --kms-location=KMS_LOCATION --kms-project=KMS_PROJECT] [--maintenance-window-end=MAINTENANCE_WINDOW_END --maintenance-window-recurrence=MAINTENANCE_WINDOW_RECURRENCE --maintenance-window-start=MAINTENANCE_WINDOW_START] [--max-workers=MAX_WORKERS --min-workers=MIN_WORKERS --scheduler-count=SCHEDULER_COUNT --scheduler-cpu=SCHEDULER_CPU --scheduler-memory=SCHEDULER_MEMORY --scheduler-storage=SCHEDULER_STORAGE --web-server-cpu=WEB_SERVER_CPU --web-server-memory=WEB_SERVER_MEMORY --web-server-storage=WEB_SERVER_STORAGE --worker-cpu=WORKER_CPU --worker-memory=WORKER_MEMORY --worker-storage=WORKER_STORAGE] [--network=NETWORK : --subnetwork=SUBNETWORK] [--web-server-allow-all     | --web-server-allow-ip=[description=DESCRIPTION],[ip_range=IP_RANGE]     | --web-server-deny-all] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "airflow-configs": {
+        "content": "--airflow-configs=[KEY=VALUE,…]",
+        "description": "A list of Airflow software configuration override KEY=VALUE pairs to set. For\ninformation on how to structure KEYs and VALUEs, run$gcloud helpcomposer environments\nupdate."
+      },
+      "airflow-database-retention-days": {
+        "content": "--airflow-database-retention-days=AIRFLOW_DATABASE_RETENTION_DAYS",
+        "description": "The number of days for the Airflow database retention period. If set to 0, the\nAirflow database retention mechanism will be disabled."
+      },
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "cloud-sql-machine-type": {
+        "content": "--cloud-sql-machine-type=CLOUD_SQL_MACHINE_TYPE",
+        "description": "Cloud SQL machine type used by the Airflow database. The list of available\nmachine types is available here:https://cloud.google.com/composer/pricing#db-machine-types."
+      },
+      "cloud-sql-preferred-zone": {
+        "content": "--cloud-sql-preferred-zone=CLOUD_SQL_PREFERRED_ZONE",
+        "description": "Select cloud sql preferred zone, supported for Composer 2 Environments."
+      },
+      "composer-internal-ipv4-cidr-block": {
+        "content": "--composer-internal-ipv4-cidr-block=COMPOSER_INTERNAL_IPV4_CIDR_BLOCK",
+        "description": "The IP range in CIDR notation to use internally by Cloud Composer. This should\nhave a netmask length of 20. Can be specified for Composer 3 or greater."
+      },
+      "disable-logs-in-cloud-logging-only": {
+        "content": "--disable-logs-in-cloud-logging-only",
+        "description": "Disable logs in cloud logging only, supported for Composer 2 Environments."
+      },
+      "disk-size": {
+        "content": "--disk-size=DISK_SIZE",
+        "description": "The disk size for each VM node in the environment. The minimum size is 20GB, and\nthe maximum is 64TB. Specified value must be an integer multiple of gigabytes.\nCannot be updated after the environment has been created. If units are not\nprovided, defaults to GB."
+      },
+      "enable-high-resilience": {
+        "content": "--enable-high-resilience",
+        "description": "Enable high resilience, supported for Composer 2 Environments."
+      },
+      "enable-logs-in-cloud-logging-only": {
+        "content": "--enable-logs-in-cloud-logging-only",
+        "description": "Enable logs in cloud logging only, supported for Composer 2 Environments."
+      },
+      "env-variables": {
+        "content": "--env-variables=[NAME=VALUE,…]",
+        "description": "A comma-delimited list of environment variableNAME=VALUEpairs to\nprovide to the Airflow scheduler, worker, and webserver processes. NAME may\ncontain upper and lowercase letters, digits, and underscores, but they may not\nbegin with a digit. To include commas as part of aVALUE, seegcloud topic\nescapingfor information about overriding the delimiter."
+      },
+      "environment-size": {
+        "content": "--environment-size=ENVIRONMENT_SIZE",
+        "description": "Size of the environment. Unspecified means that the default option will be\nchosen.ENVIRONMENT_SIZEmust be one of:extra-large,large,medium,small,unspecified."
+      },
+      "labels": {
+        "content": "--labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to add.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "machine-type": {
+        "content": "--machine-type=MACHINE_TYPE",
+        "description": "The Compute Enginemachine typeto\nuse for nodes. For example--machine-type=n1-standard-1."
+      },
+      "network-attachment": {
+        "content": "--network-attachment=NETWORK_ATTACHMENT",
+        "description": "Cloud Composer Network Attachment, which provides connectivity with a user's VPC\nnetwork, supported in Composer 3 environments or greater."
+      },
+      "node-count": {
+        "content": "--node-count=NODE_COUNT",
+        "description": "The number of nodes to create to run the environment."
+      },
+      "oauth-scopes": {
+        "content": "--oauth-scopes=[SCOPE,…]",
+        "description": "The set of Google API scopes to be made available on all of the node VMs.\nDefaults to ['https://www.googleapis.com/auth/cloud-platform']. Cannot be\nupdated."
+      },
+      "python-version": {
+        "content": "--python-version=PYTHON_VERSION",
+        "description": "The Python version to be used within the created environment. Supplied value\nshould represent the desired major Python version. Cannot be updated.PYTHON_VERSIONmust be one of:2Created environment will use Python 23Created environment will use Python 3"
+      },
+      "2": {
+        "content": "2",
+        "description": "Created environment will use Python 2"
+      },
+      "3": {
+        "content": "3",
+        "description": "Created environment will use Python 3"
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT",
+        "description": "The Google Cloud Platform service account to be used by the node VMs. You must\nexplicitly specify a service account. Cannot be updated."
+      },
+      "storage-bucket": {
+        "content": "--storage-bucket=STORAGE_BUCKET",
+        "description": "Name of an exisiting Cloud Storage bucket to be used by the environment.\nSupported only for Composer 2.4.X and above."
+      },
+      "support-web-server-plugins": {
+        "content": "--support-web-server-plugins",
+        "description": "Enable the support for web server plugins, supported in Composer 3 or greater."
+      },
+      "tags": {
+        "content": "--tags=[TAG,…]",
+        "description": "The set of instance tags applied to all node VMs. Tags are used to identify\nvalid sources or targets for network firewalls. Each tag within the list must\ncomply with RFC 1035. Cannot be updated."
+      },
+      "web-server-machine-type": {
+        "content": "--web-server-machine-type=WEB_SERVER_MACHINE_TYPE",
+        "description": "machine type used by the Airflow web server. The list of available machine types\nis available here:https://cloud.google.com/composer/pricing."
+      },
+      "zone": {
+        "content": "--zone=ZONE",
+        "description": "The Compute Engine zone in which the environment will be created. For example--zone=us-central1-a."
+      },
+      "airflow-version": {
+        "content": "--airflow-version=AIRFLOW_VERSION",
+        "description": "Version of Apache Airflow to run in the environment.Mustbeoftheform`X[.Y[.Z]]`,where`[]`denotesoptionalfragments.\nExamples:`2`,`2.3`,`2.3.4`.ThecurrentCloudComposerversionwillbeusedwithinthecreated\nenvironment.TheApacheAirflowversionisasemanticversionoranaliasintheformofmajorormajor.minorversionnumbers,resolvedtothe\nlatestmatchingApacheAirflowversionsupportedinthecurrentCloud\nComposerversion.Theresolvedversionisstoredinthecreated\nenvironment."
+      },
+      "image-version": {
+        "content": "--image-version=IMAGE_VERSION",
+        "description": "Version of the image to run in the environment.TheimageversionencapsulatestheversionsofbothCloudComposer\nandApacheAirflow.Mustbeoftheform`composer-A[.B.C[-D.E]]-airflow-X[.Y[.Z]]`,where`[]`denotesoptional\nfragments.Examples:`composer-2-airflow-2`,`composer-2-airflow-2.2`,`composer-2.1.2-airflow-2.3.4`.TheCloudComposerportionoftheimageversionisasemanticversionor\nanaliasintheformofmajorversionnumberor`latest`,resolvedtothe\ncurrentCloudComposerversion.TheApacheAirflowportionoftheimage\nversionisasemanticversionoranaliasintheformofmajoror\nmajor.minorversionnumbers,resolvedtothelatestmatchingApache\nAirflowversionsupportedinthegivenCloudComposerversion.The\nresolvedversionsarestoredinthecreatedenvironment."
+      },
+      "cloud-sql-ipv4-cidr": {
+        "content": "--cloud-sql-ipv4-cidr=CLOUD_SQL_IPV4_CIDR",
+        "description": "IPv4 CIDR range to use for the Cloud SQL network. This should have a size of the\nnetmask not greater than 24.Cannot be specified unless--enable-private-environmentis also\nspecified."
+      },
+      "composer-network-ipv4-cidr": {
+        "content": "--composer-network-ipv4-cidr=COMPOSER_NETWORK_IPV4_CIDR",
+        "description": "IPv4 CIDR range to use for the Composer network. This must have a size of the\nnetmask between 24 and 29.Can be specified for Composer 2.X or greater. Cannot be specified unless--enable-private-environmentis also specified."
+      },
+      "connection-subnetwork": {
+        "content": "--connection-subnetwork=CONNECTION_SUBNETWORK",
+        "description": "Subnetwork from which an IP address for internal communications will be\nreserved. Needs to belong to the Compute network to which the environment is\nconnected. Can be the same subnetwork as the one to which the environment is\nconnected.Can be specified for Composer 2.X or greater. Cannot be specified unless--enable-private-environmentis also specified."
+      },
+      "connection-type": {
+        "content": "--connection-type=CONNECTION_TYPE",
+        "description": "Mode of internal communication within the Composer environment. Must be one ofVPC_PEERINGorPRIVATE_SERVICE_CONNECT.Can be specified for Composer 2.X or greater. Cannot be specified unless--enable-private-environmentis also specified. Cannot be set toVPC_PEERINGif--connection-subnetworkis also\nspecified.CONNECTION_TYPEmust be one of:connection-type-unspecified,private-service-connect,vpc-peering."
+      },
+      "disable-private-environment": {
+        "content": "--disable-private-environment",
+        "description": "Enables internet connection for Composer components.When used with Composer 2, this means the environment cluster is created with\npublic IP addresses on the cluster nodes."
+      },
+      "enable-private-endpoint": {
+        "content": "--enable-private-endpoint",
+        "description": "Environment cluster is managed using the private IP address of the master API\nendpoint. Therefore access to the master endpoint must be from internal IP\naddresses.If not specified, the master API endpoint will be accessible by its public IP\naddress.Cannot be specified unless--enable-private-environmentis also\nspecified."
+      },
+      "enable-private-environment": {
+        "content": "--enable-private-environment",
+        "description": "Disables internet connection from any Composer component.When used with Composer 2, the environment cluster is created with no public IP\naddresses on the cluster nodes. If not specified, cluster nodes will be assigned\npublic IP addresses.When used with Composer 1.x, cannot be specified unless--enable-ip-aliasis also specified."
+      },
+      "enable-privately-used-public-ips": {
+        "content": "--enable-privately-used-public-ips",
+        "description": "When enabled GKE pods and services may use public(non-RFC1918) IP ranges\nprivately. The ranges are specified by '--cluster-ipv4-cidr' and--services-ipv4-cidrflags.Cannot be specified unless--enable-private-environmentis also\nspecified."
+      },
+      "master-ipv4-cidr": {
+        "content": "--master-ipv4-cidr=MASTER_IPV4_CIDR",
+        "description": "IPv4 CIDR range to use for the cluster master network. This should have a size\nof the netmask between 23 and 28.Cannot be specified unless--enable-private-environmentis also\nspecified."
+      },
+      "web-server-ipv4-cidr": {
+        "content": "--web-server-ipv4-cidr=WEB_SERVER_IPV4_CIDR",
+        "description": "IPv4 CIDR range to use for the Airflow web server network. This should have a\nsize of the netmask between 24 and 29.Cannot be specified unless--enable-private-environmentis also\nspecified."
+      },
+      "cluster-ipv4-cidr": {
+        "content": "--cluster-ipv4-cidr=CLUSTER_IPV4_CIDR",
+        "description": "IP address range for the pods in this cluster in CIDR notation (e.g.\n10.0.0.0/14).When used with Composer 1.x, cannot be specified unless--enable-ip-aliasis also specified."
+      },
+      "cluster-secondary-range-name": {
+        "content": "--cluster-secondary-range-name=CLUSTER_SECONDARY_RANGE_NAME",
+        "description": "Secondary range to be used as the source for pod IPs. Alias ranges will be\nallocated from this secondary range. NAME must be the name of an existing\nsecondary range in the cluster subnetwork.When used with Composer 1.x, cannot be specified unless--enable-ip-aliasis also specified."
+      },
+      "enable-ip-alias": {
+        "content": "--enable-ip-alias",
+        "description": "Enable use ofalias\nIPsfor Pod IPs. This will require at least two secondary ranges in the\nsubnetwork, one for the pod IPs and another to reserve space for the services\nrange."
+      },
+      "enable-ip-masq-agent": {
+        "content": "--enable-ip-masq-agent",
+        "description": "When enabled, theIP\nMasquerade Agentis deployed to your environment's cluster. It performs\nmany-to-one IP address translations to hide a pod's IP address behind the\ncluster node's IP address. This is done when sending traffic to destinations\noutside the cluster's pod CIDR range.When used with Composer 1.x, cannot be specified unless--enable-ip-aliasis also specified."
+      },
+      "services-ipv4-cidr": {
+        "content": "--services-ipv4-cidr=SERVICES_IPV4_CIDR",
+        "description": "IP range for the services IPs.Can be specified as a netmask size (e.g. '/20') or as in CIDR notion (e.g.\n'10.100.0.0/20'). If given as a netmask size, the IP range will be chosen\nautomatically from the available space in the network.If unspecified, the services CIDR range will be chosen with a default mask size.When used with Composer 1.x, cannot be specified unless--enable-ip-aliasis also specified."
+      },
+      "services-secondary-range-name": {
+        "content": "--services-secondary-range-name=SERVICES_SECONDARY_RANGE_NAME",
+        "description": "Secondary range to be used for services (e.g. ClusterIPs). NAME must be the name\nof an existing secondary range in the cluster subnetwork.When used with Composer 1.x, cannot be specified unless--enable-ip-aliasis also specified."
+      },
+      "dag-processor-count": {
+        "content": "--dag-processor-count=DAG_PROCESSOR_COUNT",
+        "description": "Number of dag processors, supported in Composer 3 environments or greater."
+      },
+      "dag-processor-cpu": {
+        "content": "--dag-processor-cpu=DAG_PROCESSOR_CPU",
+        "description": "CPU allocated to Airflow dag processor, supported in Composer 3 environments or\ngreater."
+      },
+      "dag-processor-memory": {
+        "content": "--dag-processor-memory=DAG_PROCESSOR_MEMORY",
+        "description": "Memory allocated to Airflow dag processor, ex. 1GB, 3GB, 2. If units are not\nprovided, defaults to GB, supported in Composer 3 environments or greater."
+      },
+      "dag-processor-storage": {
+        "content": "--dag-processor-storage=DAG_PROCESSOR_STORAGE",
+        "description": "Storage allocated to Airflow dag processor, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB, supported in Composer 3 environments or greater."
+      },
+      "disable-cloud-data-lineage-integration": {
+        "content": "--disable-cloud-data-lineage-integration",
+        "description": "Disable Cloud Data Lineage integration, supported for Composer 2 Environments."
+      },
+      "enable-cloud-data-lineage-integration": {
+        "content": "--enable-cloud-data-lineage-integration",
+        "description": "Enable Cloud Data Lineage integration, supported for Composer 2 Environments."
+      },
+      "disable-private-builds-only": {
+        "content": "--disable-private-builds-only",
+        "description": "Builds performed during operations that install Python packages have an access\nto the internet, supported in Composer 3 or greater."
+      },
+      "enable-private-builds-only": {
+        "content": "--enable-private-builds-only",
+        "description": "Builds performed during operations that install Python packages have only\nprivate connectivity to Google services, supported in Composer 3 or greater."
+      },
+      "enable-master-authorized-networks": {
+        "content": "--enable-master-authorized-networks",
+        "description": "EnableMaster\nAuthorized Networks featurein the Composer Environment's GKE cluster."
+      },
+      "master-authorized-networks": {
+        "content": "--master-authorized-networks=[NETWORK,…]",
+        "description": "Comma separated Master Authorized Networks specified in CIDR notation.Cannot be specified unless--enable-master-authorized-networksis\nalso specified."
+      },
+      "enable-scheduled-snapshot-creation": {
+        "content": "--enable-scheduled-snapshot-creation",
+        "description": "When specified, snapshots of the environment will be created according to a\nschedule. Can be specified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "snapshot-creation-schedule": {
+        "content": "--snapshot-creation-schedule=SNAPSHOT_CREATION_SCHEDULE",
+        "description": "Cron expression specifying when snapshots of the environment should be created.\nCan be specified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "snapshot-location": {
+        "content": "--snapshot-location=SNAPSHOT_LOCATION",
+        "description": "The Cloud Storage location for storing automatically created snapshots. Can be\nspecified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "snapshot-schedule-timezone": {
+        "content": "--snapshot-schedule-timezone=SNAPSHOT_SCHEDULE_TIMEZONE",
+        "description": "Timezone that sets the context to interpret snapshot_creation_schedule. Can be\nspecified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "enable-triggerer": {
+        "content": "--enable-triggerer",
+        "description": "(DEPRECATED) Enable use of a triggerer, supported in the Environments with\nComposer 2.0.31 and Airflow 2.2.5 and greater.This flag is deprecated. Use --triggerer-count instead."
+      },
+      "triggerer-count": {
+        "content": "--triggerer-count=TRIGGERER_COUNT",
+        "description": "Number of triggerers, supported in the Environments with Composer 2.0.31 and\nAirflow 2.2.5 and greater."
+      },
+      "triggerer-cpu": {
+        "content": "--triggerer-cpu=TRIGGERER_CPU",
+        "description": "CPU allocated to Airflow triggerer. Supported in the Environments with Composer\n2.0.31 and Airflow 2.2.5 and greater."
+      },
+      "triggerer-memory": {
+        "content": "--triggerer-memory=TRIGGERER_MEMORY",
+        "description": "Memory allocated to Airflow triggerer, ex. 512MB, 3GB, 2. If units are not\nprovided, defaults to GB. Supported in the Environments with Composer 2.0.31 and\nAirflow 2.2.5 and greater."
+      },
+      "kms-key": {
+        "content": "--kms-key=KMS_KEY",
+        "description": "ID of the key or fully qualified identifier for the key.To set thekms-keyattribute:provide the argument--kms-keyon the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "kms-keyring": {
+        "content": "--kms-keyring=KMS_KEYRING",
+        "description": "The KMS keyring of the key.To set thekms-keyringattribute:provide the argument--kms-keyon the command line with a fully\nspecified name;provide the argument--kms-keyringon the command line."
+      },
+      "kms-location": {
+        "content": "--kms-location=KMS_LOCATION",
+        "description": "The Google Cloud location for the key.To set thekms-locationattribute:provide the argument--kms-keyon the command line with a fully\nspecified name;provide the argument--kms-locationon the command line."
+      },
+      "kms-project": {
+        "content": "--kms-project=KMS_PROJECT",
+        "description": "The Google Cloud project for the key.To set thekms-projectattribute:provide the argument--kms-keyon the command line with a fully\nspecified name;provide the argument--kms-projecton the command line;set the propertycore/project."
+      },
+      "maintenance-window-end": {
+        "content": "--maintenance-window-end=MAINTENANCE_WINDOW_END",
+        "description": "End time of the mantenance window in the form of the full date. Only the time of\nthe day is used as a reference for an ending time of the window with a provided\nrecurrence. Specified date must take place after the one specified as a start\ndate, the difference between will be used as a length of a single maintenance\nwindow. See $gcloud topic\ndatetimesfor information on time formats.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "maintenance-window-recurrence": {
+        "content": "--maintenance-window-recurrence=MAINTENANCE_WINDOW_RECURRENCE",
+        "description": "An RFC 5545 RRULE, specifying how the maintenance window will recur. The minimum\nrequirement for the length of the maintenance window is 12 hours a week. Only\nFREQ=DAILY and FREQ=WEEKLY rules are supported.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "maintenance-window-start": {
+        "content": "--maintenance-window-start=MAINTENANCE_WINDOW_START",
+        "description": "Start time of the mantenance window in the form of the full date. Only the time\nof the day is used as a reference for a starting time of the window with a\nprovided recurrence. See $gcloud topic datetimesfor\ninformation on time formats.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "max-workers": {
+        "content": "--max-workers=MAX_WORKERS",
+        "description": "Maximum number of workers in the Environment."
+      },
+      "min-workers": {
+        "content": "--min-workers=MIN_WORKERS",
+        "description": "Minimum number of workers in the Environment."
+      },
+      "scheduler-count": {
+        "content": "--scheduler-count=SCHEDULER_COUNT",
+        "description": "Number of schedulers, supported in the Environments with Airflow 2.0.1 and\nlater."
+      },
+      "scheduler-cpu": {
+        "content": "--scheduler-cpu=SCHEDULER_CPU",
+        "description": "CPU allocated to Airflow scheduler."
+      },
+      "scheduler-memory": {
+        "content": "--scheduler-memory=SCHEDULER_MEMORY",
+        "description": "Memory allocated to Airflow scheduler, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "scheduler-storage": {
+        "content": "--scheduler-storage=SCHEDULER_STORAGE",
+        "description": "Storage allocated to Airflow scheduler, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "web-server-cpu": {
+        "content": "--web-server-cpu=WEB_SERVER_CPU",
+        "description": "CPU allocated to each Airflow web server"
+      },
+      "web-server-memory": {
+        "content": "--web-server-memory=WEB_SERVER_MEMORY",
+        "description": "Memory allocated to Airflow web server, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "web-server-storage": {
+        "content": "--web-server-storage=WEB_SERVER_STORAGE",
+        "description": "Storage allocated to Airflow web server, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "worker-cpu": {
+        "content": "--worker-cpu=WORKER_CPU",
+        "description": "CPU allocated to each Airflow worker"
+      },
+      "worker-memory": {
+        "content": "--worker-memory=WORKER_MEMORY",
+        "description": "Memory allocated to Airflow worker, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "worker-storage": {
+        "content": "--worker-storage=WORKER_STORAGE",
+        "description": "Storage allocated to Airflow worker, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "network": {
+        "content": "--network=NETWORK",
+        "description": "The Compute Engine Network to which the environment will be connected. If a\n'Custom Subnet Network' is provided,--subnetworkmust be specified\nas well.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "subnetwork": {
+        "content": "--subnetwork=SUBNETWORK",
+        "description": "TheCompute Engine\nSubnetworkto which the environment will be connected."
+      },
+      "web-server-allow-all": {
+        "content": "--web-server-allow-all",
+        "description": "Allows all IP addresses to access the Airflow web server."
+      },
+      "web-server-allow-ip": {
+        "content": "--web-server-allow-ip=[description=DESCRIPTION],[ip_range=IP_RANGE]",
+        "description": "Specifies a list of IPv4 or IPv6 ranges that will be allowed to access the\nAirflow web server. By default, all IPs are allowed to access the web server.This is a repeated argument that can be specified multiple times to specify\nmultiple IP ranges. (e.g.--web-server-allow-ip=ip_range=130.211.160.0/28,description=\"office\nnetwork\"--web-server-allow-ip=ip_range=130.211.114.0/28,description=\"legacy\nnetwork\")ip_rangeIPv4 or IPv6 range of addresses allowed to access the Airflow web server.descriptionAn optional description of the IP range."
+      },
+      "ip_range": {
+        "content": "ip_range",
+        "description": "IPv4 or IPv6 range of addresses allowed to access the Airflow web server."
+      },
+      "description": {
+        "content": "description",
+        "description": "An optional description of the IP range."
+      },
+      "web-server-deny-all": {
+        "content": "--web-server-deny-all",
+        "description": "Denies all incoming traffic to the Airflow web server."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.database-failover",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "database-failover"
+    ],
+    "command_path": "gcloud composer environments database-failover",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/database-failover",
+    "description": "Run a database failover operation.",
+    "command_synopsis": "gcloud composer environments database-failover (ENVIRONMENT : --location=LOCATION) [--async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "delete"
+    ],
+    "command_path": "gcloud composer environments delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/delete",
+    "description": "Environments cannot be deleted unless they are in one of the RUNNING or ERROR\nstates. If run asynchronously with --async, exits after printing\none or more operation names that can be used to poll the status of the\ndeletion(s) via:\ngcloud composer operations describe\nIf any of the environments are already in the process of being deleted, the\noriginal deletion operations are waited on (default) or printed\n(--async).",
+    "command_synopsis": "gcloud composer environments delete (ENVIRONMENTS [ENVIRONMENTS …] : --location=LOCATION) [--async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENTS": {
+        "content": "ENVIRONMENTS[ENVIRONMENTS…]",
+        "description": "IDs of the environments or fully qualified identifiers for the environments.To set theenvironmentattribute:provide the argumentenvironmentson the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmentson the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.describe",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "describe"
+    ],
+    "command_path": "gcloud composer environments describe",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/describe",
+    "description": "Get details about a Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments describe (ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.fetch-database-properties",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "fetch-database-properties"
+    ],
+    "command_path": "gcloud composer environments fetch-database-properties",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/fetch-database-properties",
+    "description": "Fetch database properties.",
+    "command_synopsis": "gcloud composer environments fetch-database-properties (ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.list",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "list"
+    ],
+    "command_path": "gcloud composer environments list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/list",
+    "description": "List environments that have not been successfully deleted. Prints a table with\nthe following columns:\nname\nlocation\nstatus\ncreation timestamp",
+    "command_synopsis": "gcloud composer environments list [--locations=[LOCATIONS,…]] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "locations": {
+        "content": "--locations=[LOCATIONS,…]",
+        "description": "IDs of the locations or fully qualified identifiers for the locations.To set thelocationattribute:provide the argument--locationson the command line."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.list-packages",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "list-packages"
+    ],
+    "command_path": "gcloud composer environments list-packages",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/list-packages",
+    "description": "List all PyPI modules installed in an Airflow worker.",
+    "command_synopsis": "gcloud composer environments list-packages (ENVIRONMENT : --location=LOCATION) [--tree] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "tree": {
+        "content": "--tree",
+        "description": "List PyPI packages, their versions and a dependency tree, as displayed by the\n\"python -m pipdeptree --warn\" command."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.list-workloads",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "list-workloads"
+    ],
+    "command_path": "gcloud composer environments list-workloads",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/list-workloads",
+    "description": "List Composer workloads, supported in Composer 3 environments or greater.",
+    "command_synopsis": "gcloud composer environments list-workloads (ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.list-upgrades",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "list-upgrades"
+    ],
+    "command_path": "gcloud composer environments list-upgrades",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/list-upgrades",
+    "description": "gcloud composer environments list-upgrades prints a table listing the suggested\nimage-version upgrades with the following columns:\nImage Version ID\nComposer 'default' flag\nList of supported python versions",
+    "command_synopsis": "gcloud composer environments list-upgrades (ENVIRONMENT : --location=LOCATION) [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.restart-web-server",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "restart-web-server"
+    ],
+    "command_path": "gcloud composer environments restart-web-server",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/restart-web-server",
+    "description": "Restart web server for a Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments restart-web-server (ENVIRONMENT : --location=LOCATION) [--async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.run",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "run"
+    ],
+    "command_path": "gcloud composer environments run",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/run",
+    "description": "Executes an Airflow CLI sub-command remotely in an environment. If the\nsub-command takes flags, separate the environment name from the sub-command and\nits flags with ``--´´. This command waits for the sub-command to\ncomplete; its exit code will match the sub-command's exit code.\nNote: Airflow CLI sub-command syntax differs between Airflow 1 and Airflow 2.\nRefer to the Airflow CLI reference documentation for more details.",
+    "command_synopsis": "gcloud composer environments run (ENVIRONMENT : --location=LOCATION) SUBCOMMAND [SUBCOMMAND_NESTED] [GCLOUD_WIDE_FLAG …] [-- CMD_ARGS …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      },
+      "SUBCOMMAND": {
+        "content": "SUBCOMMAND",
+        "description": "The Airflow CLI subcommand to run. Available subcommands include (listed with\nAirflow versions that support): backfill [**, 2.0.0), clear [**, 2.0.0),\nconnections [**, 3.2.0), dag_state [**, 2.0.0), dags [1.10.14, 3.2.0), db\n[2.3.0, 3.0.0), delete_dag [1.10.1, 2.0.0), kerberos [**, 3.2.0), kubernetes\n[2.1.4, 3.2.0), list-import-errors [**, 3.0.0), list_dag_runs [1.10.2, 2.0.0),\nlist_dags [**, 2.0.0), list_tasks [**, 2.0.0), next_execution [1.10.2, 2.0.0),\npause [**, 2.0.0), pool [**, 2.0.0), pools [1.10.14, 3.2.0), render [**, 2.0.0),\nroles [2.0.0, 3.2.0), run [**, 2.0.0), sync-perm [1.10.14, 3.2.0), sync_perm\n[1.10.2, 2.0.0), task_failed_deps [**, 2.0.0), task_state [**, 2.0.0), tasks\n[1.10.14, 3.2.0), test [**, 2.0.0), trigger_dag [**, 2.0.0), unpause [**,\n2.0.0), upgrade_check [1.10.15, 2.0.0), users [1.10.14, 3.2.0), variables [**,\n3.2.0), version [**, 3.2.0) (seehttps://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.htmlfor more info)."
+      },
+      "SUBCOMMAND_NESTED": {
+        "content": "[SUBCOMMAND_NESTED]",
+        "description": "Additional subcommand in case it is nested. The following is a list of allowed\nnested subcommands:db: check, trimall other subcommands: all nested subcommands are allowed"
+      },
+      "CMD_ARGS": {
+        "content": "[--CMD_ARGS…]",
+        "description": "Command line arguments to the subcommand.The '--' argument must be specified between gcloud specific args on the left and\nCMD_ARGS on the right. Example:gcloud composer environments run myenv trigger_dag -- some_dag --run_id=foo"
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.snapshots",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "snapshots"
+    ],
+    "command_path": "gcloud composer environments snapshots",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/snapshots",
+    "description": "The gcloud composer environments snapshots command group saves and loads\nsnapshots of Cloud Composer environments.",
+    "command_synopsis": "gcloud composer environments snapshots COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "fd86067b6e56a46687b39a7022edda43800ddff53d06542f7ef48dd528a65e28",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.snapshots.load",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "snapshots",
+      "load"
+    ],
+    "command_path": "gcloud composer environments snapshots load",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/snapshots/load",
+    "description": "Load a snapshot into the environment.",
+    "command_synopsis": "gcloud composer environments snapshots load (ENVIRONMENT : --location=LOCATION) --snapshot-path=SNAPSHOT_PATH [--async] [--skip-airflow-overrides-setting] [--skip-environment-variables-setting] [--skip-gcs-data-copying] [--skip-pypi-packages-installation] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {
+      "snapshot-path": {
+        "content": "--snapshot-path=SNAPSHOT_PATH",
+        "description": "The Cloud Storage path to load the snapshot from. It must start with prefix\ngs:// and one needs to specify a single snapshot that should be loaded."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "skip-airflow-overrides-setting": {
+        "content": "--skip-airflow-overrides-setting",
+        "description": "When specified, skips setting Airflow overrides from the snapshot."
+      },
+      "skip-environment-variables-setting": {
+        "content": "--skip-environment-variables-setting",
+        "description": "When specified, skips setting environment variables from the snapshot."
+      },
+      "skip-gcs-data-copying": {
+        "content": "--skip-gcs-data-copying",
+        "description": "When specified, skips copying dags, plugins and data folders from the snapshot."
+      },
+      "skip-pypi-packages-installation": {
+        "content": "--skip-pypi-packages-installation",
+        "description": "When specified, skips the installation of custom PyPI packages from the\nsnapshot."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.snapshots.save",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "snapshots",
+      "save"
+    ],
+    "command_path": "gcloud composer environments snapshots save",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/snapshots/save",
+    "description": "Save a snapshot of the environment.",
+    "command_synopsis": "gcloud composer environments snapshots save (ENVIRONMENT : --location=LOCATION) [--async] [--snapshot-location=SNAPSHOT_LOCATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      },
+      "snapshot-location": {
+        "content": "--snapshot-location=SNAPSHOT_LOCATION",
+        "description": "The Cloud Storage location where to save the snapshot. It must start with the\nprefix gs://. Default value is /snapshots directory in the Cloud Storage bucket\nof the environment."
+      }
+    }
+  },
+  {
+    "id": "composer.environments.storage",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage"
+    ],
+    "command_path": "gcloud composer environments storage",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage",
+    "description": "The gcloud composer environments storage command group lets you manage DAGs,\nAirflow plugins and data used inside your Cloud Composer Environments.",
+    "command_synopsis": "gcloud composer environments storage GROUP [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "bcb6bd12a3a6882e35f7b4ac5d099626d41f1b862a0ffeba78afe38d9955e31a",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.dags",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "dags"
+    ],
+    "command_path": "gcloud composer environments storage dags",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/dags",
+    "description": "The gcloud composer environments storage dags command group lets you import,\nexport, list, and delete DAGs for your Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments storage dags COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8492b653ca5f76dd8791603b98eb54e84b8115cd0e1c0f7ff9c088a3a74f06aa",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.dags.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "dags",
+      "delete"
+    ],
+    "command_path": "gcloud composer environments storage dags delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/dags/delete",
+    "description": "Delete DAG files from an Cloud Composer environment's Cloud Storage bucket.",
+    "command_synopsis": "gcloud composer environments storage dags delete [TARGET] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "TARGET": {
+        "content": "[TARGET]",
+        "description": "A relative path to a file or subdirectory to delete within the dags Cloud\nStorage subdirectory. If not specified, the entire contents of the dags\nsubdirectory will be deleted."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.dags.export",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "dags",
+      "export"
+    ],
+    "command_path": "gcloud composer environments storage dags export",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/dags/export",
+    "description": "If the SOURCE is a directory, it and its contents are are exported recursively.\nIf no SOURCE is provided, the entire contents of the environment's DAGs\ndirectory will be exported. Colliding files in the DESTINATION will be\noverwritten. If a file exists in the DESTINATION but there is no corresponding\nfile to overwrite it, it is untouched.",
+    "command_synopsis": "gcloud composer environments storage dags export --destination=DESTINATION (--environment=ENVIRONMENT : --location=LOCATION) [--source=SOURCE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "destination": {
+        "content": "--destination=DESTINATION",
+        "description": "The path to an existing local directory or a Cloud Storage bucket/directory into\nwhich to export files."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "An optional relative path to a file or directory to be exported from the dags/\nsubdirectory in the environment's Cloud Storage bucket."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.dags.import",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "dags",
+      "import"
+    ],
+    "command_path": "gcloud composer environments storage dags import",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/dags/import",
+    "description": "If the SOURCE is a directory, it and its contents are imported recursively.\nColliding files in the environment's Cloud Storage bucket will be overwritten.\nIf a file exists in the bucket but is not present in the SOURCE, it is not\nremoved.",
+    "command_synopsis": "gcloud composer environments storage dags import --source=SOURCE (--environment=ENVIRONMENT : --location=LOCATION) [--destination=DESTINATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "Path to a local directory/file or Cloud Storage bucket/object to be imported\ninto the dags/ subdirectory in the environment's Cloud Storage bucket. Cloud\nStorage paths must begin with 'gs://'."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {
+      "destination": {
+        "content": "--destination=DESTINATION",
+        "description": "An optional subdirectory under the dags/ directory in the environment's Cloud\nStorage bucket into which to import files. May contain forward slashes to\ndelimit multiple levels of subdirectory nesting, but should not contain leading\nor trailing slashes. If the DESTINATION does not exist, it will be created."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.data",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "data"
+    ],
+    "command_path": "gcloud composer environments storage data",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/data",
+    "description": "The gcloud composer environments storage data command group lets you import,\nexport, list, and delete data for your Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments storage data COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8492b653ca5f76dd8791603b98eb54e84b8115cd0e1c0f7ff9c088a3a74f06aa",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.dags.list",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "dags",
+      "list"
+    ],
+    "command_path": "gcloud composer environments storage dags list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/dags/list",
+    "description": "List the DAG files for a Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments storage dags list (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.data.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "data",
+      "delete"
+    ],
+    "command_path": "gcloud composer environments storage data delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/data/delete",
+    "description": "Delete data from an Cloud Composer environment's Cloud Storage bucket.",
+    "command_synopsis": "gcloud composer environments storage data delete [TARGET] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "TARGET": {
+        "content": "[TARGET]",
+        "description": "A relative path to a file or subdirectory to delete within the data Cloud\nStorage subdirectory. If not specified, the entire contents of the data\nsubdirectory will be deleted."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.data.export",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "data",
+      "export"
+    ],
+    "command_path": "gcloud composer environments storage data export",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/data/export",
+    "description": "If the SOURCE is a directory, it and its contents are are exported recursively.\nIf no SOURCE is provided, the entire contents of the environment's data\ndirectory will be exported. Colliding files in the DESTINATION will be\noverwritten. If a file exists in the DESTINATION but there is no corresponding\nfile to overwrite it, it is untouched.",
+    "command_synopsis": "gcloud composer environments storage data export --destination=DESTINATION (--environment=ENVIRONMENT : --location=LOCATION) [--source=SOURCE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "destination": {
+        "content": "--destination=DESTINATION",
+        "description": "The path to an existing local directory or a Cloud Storage bucket/directory into\nwhich to export files."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "An optional relative path to a file or directory to be exported from the data/\nsubdirectory in the environment's Cloud Storage bucket."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.data.list",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "data",
+      "list"
+    ],
+    "command_path": "gcloud composer environments storage data list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/data/list",
+    "description": "List the data for a Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments storage data list (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.data.import",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "data",
+      "import"
+    ],
+    "command_path": "gcloud composer environments storage data import",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/data/import",
+    "description": "If the SOURCE is a directory, it and its contents are imported recursively.\nColliding files in the environment's Cloud Storage bucket will be overwritten.\nIf a file exists in the bucket but is not present in the SOURCE, it is not\nremoved.",
+    "command_synopsis": "gcloud composer environments storage data import --source=SOURCE (--environment=ENVIRONMENT : --location=LOCATION) [--destination=DESTINATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "Path to a local directory/file or Cloud Storage bucket/object to be imported\ninto the data/ subdirectory in the environment's Cloud Storage bucket. Cloud\nStorage paths must begin with 'gs://'."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {
+      "destination": {
+        "content": "--destination=DESTINATION",
+        "description": "An optional subdirectory under the data/ directory in the environment's Cloud\nStorage bucket into which to import files. May contain forward slashes to\ndelimit multiple levels of subdirectory nesting, but should not contain leading\nor trailing slashes. If the DESTINATION does not exist, it will be created."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.plugins",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "plugins"
+    ],
+    "command_path": "gcloud composer environments storage plugins",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/plugins",
+    "description": "The gcloud composer environments storage plugins command group lets you import,\nexport, list, and delete plugins for your Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments storage plugins COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "8492b653ca5f76dd8791603b98eb54e84b8115cd0e1c0f7ff9c088a3a74f06aa",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.plugins.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "plugins",
+      "delete"
+    ],
+    "command_path": "gcloud composer environments storage plugins delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/plugins/delete",
+    "description": "Delete plugins from an Cloud Composer environment's Cloud Storage bucket.",
+    "command_synopsis": "gcloud composer environments storage plugins delete [TARGET] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "TARGET": {
+        "content": "[TARGET]",
+        "description": "A relative path to a file or subdirectory to delete within the plugins Cloud\nStorage subdirectory. If not specified, the entire contents of the plugins\nsubdirectory will be deleted."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.plugins.import",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "plugins",
+      "import"
+    ],
+    "command_path": "gcloud composer environments storage plugins import",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/plugins/import",
+    "description": "If the SOURCE is a directory, it and its contents are imported recursively.\nColliding files in the environment's Cloud Storage bucket will be overwritten.\nIf a file exists in the bucket but is not present in the SOURCE, it is not\nremoved.",
+    "command_synopsis": "gcloud composer environments storage plugins import --source=SOURCE (--environment=ENVIRONMENT : --location=LOCATION) [--destination=DESTINATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "Path to a local directory/file or Cloud Storage bucket/object to be imported\ninto the plugins/ subdirectory in the environment's Cloud Storage bucket. Cloud\nStorage paths must begin with 'gs://'."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {
+      "destination": {
+        "content": "--destination=DESTINATION",
+        "description": "An optional subdirectory under the plugins/ directory in the environment's Cloud\nStorage bucket into which to import files. May contain forward slashes to\ndelimit multiple levels of subdirectory nesting, but should not contain leading\nor trailing slashes. If the DESTINATION does not exist, it will be created."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.plugins.export",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "plugins",
+      "export"
+    ],
+    "command_path": "gcloud composer environments storage plugins export",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/plugins/export",
+    "description": "If the SOURCE is a directory, it and its contents are are exported recursively.\nIf no SOURCE is provided, the entire contents of the environment's plugins\ndirectory will be exported. Colliding files in the DESTINATION will be\noverwritten. If a file exists in the DESTINATION but there is no corresponding\nfile to overwrite it, it is untouched.",
+    "command_synopsis": "gcloud composer environments storage plugins export --destination=DESTINATION (--environment=ENVIRONMENT : --location=LOCATION) [--source=SOURCE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "destination": {
+        "content": "--destination=DESTINATION",
+        "description": "The path to an existing local directory or a Cloud Storage bucket/directory into\nwhich to export files."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {
+      "source": {
+        "content": "--source=SOURCE",
+        "description": "An optional relative path to a file or directory to be exported from the\nplugins/ subdirectory in the environment's Cloud Storage bucket."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.update",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "update"
+    ],
+    "command_path": "gcloud composer environments update",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/update",
+    "description": "Update properties of a Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments update (ENVIRONMENT : --location=LOCATION) (--airflow-database-retention-days=AIRFLOW_DATABASE_RETENTION_DAYS     | --cloud-sql-machine-type=CLOUD_SQL_MACHINE_TYPE     | --disable-high-resilience     | --disable-logs-in-cloud-logging-only     | --disable-private-environment     | --enable-high-resilience     | --enable-logs-in-cloud-logging-only     | --enable-private-environment     | --environment-size=ENVIRONMENT_SIZE     | --node-count=NODE_COUNT     | --support-web-server-plugins     | --web-server-machine-type=WEB_SERVER_MACHINE_TYPE     | --airflow-version=AIRFLOW_VERSION     | --image-version=IMAGE_VERSION     | --clear-maintenance-window     | --maintenance-window-end=MAINTENANCE_WINDOW_END --maintenance-window-recurrence=MAINTENANCE_WINDOW_RECURRENCE --maintenance-window-start=MAINTENANCE_WINDOW_START     | --disable-cloud-data-lineage-integration     | --enable-cloud-data-lineage-integration     | --disable-master-authorized-networks --enable-master-authorized-networks --master-authorized-networks=[NETWORK,…]     | --disable-private-builds-only     | --enable-private-builds-only     | --disable-scheduled-snapshot-creation     | --enable-scheduled-snapshot-creation --snapshot-creation-schedule=SNAPSHOT_CREATION_SCHEDULE --snapshot-location=SNAPSHOT_LOCATION --snapshot-schedule-timezone=SNAPSHOT_SCHEDULE_TIMEZONE     | --disable-vpc-connectivity     | --network-attachment=NETWORK_ATTACHMENT     | [--network=NETWORK : --subnetwork=SUBNETWORK]     | --max-workers=MAX_WORKERS --min-workers=MIN_WORKERS --scheduler-count=SCHEDULER_COUNT --scheduler-cpu=SCHEDULER_CPU --scheduler-memory=SCHEDULER_MEMORY --scheduler-storage=SCHEDULER_STORAGE --web-server-cpu=WEB_SERVER_CPU --web-server-memory=WEB_SERVER_MEMORY --web-server-storage=WEB_SERVER_STORAGE --worker-cpu=WORKER_CPU --worker-memory=WORKER_MEMORY --worker-storage=WORKER_STORAGE --dag-processor-count=DAG_PROCESSOR_COUNT --dag-processor-cpu=DAG_PROCESSOR_CPU --dag-processor-memory=DAG_PROCESSOR_MEMORY --dag-processor-storage=DAG_PROCESSOR_STORAGE --disable-triggerer     | --enable-triggerer --triggerer-count=TRIGGERER_COUNT --triggerer-cpu=TRIGGERER_CPU --triggerer-memory=TRIGGERER_MEMORY     | --update-airflow-configs=[KEY=VALUE,…] --clear-airflow-configs     | --remove-airflow-configs=[KEY,…]     | --update-env-variables=[NAME=VALUE,…] --clear-env-variables     | --remove-env-variables=[NAME,…]     | --update-labels=[KEY=VALUE,…] --clear-labels     | --remove-labels=[KEY,…]     | --update-pypi-packages-from-file=UPDATE_PYPI_PACKAGES_FROM_FILE     | --update-pypi-package=PACKAGE[EXTRAS_LIST]VERSION_SPECIFIER --clear-pypi-packages     | --remove-pypi-packages=[PACKAGE,…]     | --update-web-server-allow-ip=[description=DESCRIPTION],[ip_range=IP_RANGE]     | --web-server-allow-all     | --web-server-deny-all) [--async] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "ENVIRONMENT": {
+        "content": "ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argumentenvironmenton the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argumentenvironmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {
+      "airflow-database-retention-days": {
+        "content": "--airflow-database-retention-days=AIRFLOW_DATABASE_RETENTION_DAYS",
+        "description": "The number of days for the Airflow database retention period. If set to 0, the\nAirflow database retention mechanism will be disabled."
+      },
+      "cloud-sql-machine-type": {
+        "content": "--cloud-sql-machine-type=CLOUD_SQL_MACHINE_TYPE",
+        "description": "Cloud SQL machine type used by the Airflow database. The list of available\nmachine types is available here:https://cloud.google.com/composer/pricing#db-machine-types."
+      },
+      "disable-high-resilience": {
+        "content": "--disable-high-resilience",
+        "description": "Disable high resilience, supported for Composer 2 Environments."
+      },
+      "disable-logs-in-cloud-logging-only": {
+        "content": "--disable-logs-in-cloud-logging-only",
+        "description": "Disable logs in cloud logging only, supported for Composer 2 Environments."
+      },
+      "disable-private-environment": {
+        "content": "--disable-private-environment",
+        "description": "Enable internet connection from any Composer component, supported in Composer 3\nenvironments or greater."
+      },
+      "enable-high-resilience": {
+        "content": "--enable-high-resilience",
+        "description": "Enable high resilience, supported for Composer 2 Environments."
+      },
+      "enable-logs-in-cloud-logging-only": {
+        "content": "--enable-logs-in-cloud-logging-only",
+        "description": "Enable logs in cloud logging only, supported for Composer 2 Environments."
+      },
+      "enable-private-environment": {
+        "content": "--enable-private-environment",
+        "description": "Disable internet connection from any Composer component, supported in Composer 3\nenvironments or greater."
+      },
+      "environment-size": {
+        "content": "--environment-size=ENVIRONMENT_SIZE",
+        "description": "Size of the environment. Unspecified means that the default option will be\nchosen.ENVIRONMENT_SIZEmust be one of:extra-large,large,medium,small,unspecified."
+      },
+      "node-count": {
+        "content": "--node-count=NODE_COUNT",
+        "description": "The new number of nodes running the environment. Must be >= 3."
+      },
+      "support-web-server-plugins": {
+        "content": "--support-web-server-plugins",
+        "description": "Enable the support for web server plugins, supported in Composer 3 or greater."
+      },
+      "web-server-machine-type": {
+        "content": "--web-server-machine-type=WEB_SERVER_MACHINE_TYPE",
+        "description": "machine type used by the Airflow web server. The list of available machine types\nis available here:https://cloud.google.com/composer/pricing."
+      },
+      "airflow-version": {
+        "content": "--airflow-version=AIRFLOW_VERSION",
+        "description": "Upgrade the environment to a later Apache Airflow version in-place.Must be of the formX[.Y[.Z]], where[]denotes\noptional fragments. Examples:2,2.3,2.3.4.The Apache Airflow version is a semantic version or an alias in the form of\nmajor or major.minor version numbers, resolved to the latest matching Apache\nAirflow version supported in the current Cloud Composer version. The resolved\nversion is stored in the upgraded environment."
+      },
+      "image-version": {
+        "content": "--image-version=IMAGE_VERSION",
+        "description": "Upgrade the environment to a later version in-place.The image version encapsulates the versions of both Cloud Composer and Apache\nAirflow. Must be of the formcomposer-A[.B.C[-D.E]]-airflow-X[.Y[.Z]], where[]denotes optional fragments.Examples:composer-2-airflow-2,composer-2-airflow-2.2,composer-2.1.2-airflow-2.3.4.The Cloud Composer portion of the image version is a semantic version or an\nalias in the form of major version number orlatest, resolved to\nthe current Cloud Composer version. The Apache Airflow portion of the image\nversion is a semantic version or an alias in the form of major or major.minor\nversion numbers, resolved to the latest matching Apache Airflow version\nsupported in the given Cloud Composer version. The resolved versions are stored\nin the upgraded environment."
+      },
+      "clear-maintenance-window": {
+        "content": "--clear-maintenance-window",
+        "description": "Clears the maintenance window settings. Can be specified for Composer 3 or\ngreater."
+      },
+      "maintenance-window-end": {
+        "content": "--maintenance-window-end=MAINTENANCE_WINDOW_END",
+        "description": "End time of the mantenance window in the form of the full date. Only the time of\nthe day is used as a reference for an ending time of the window with a provided\nrecurrence. Specified date must take place after the one specified as a start\ndate, the difference between will be used as a length of a single maintenance\nwindow. See $gcloud topic\ndatetimesfor information on time formats.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "maintenance-window-recurrence": {
+        "content": "--maintenance-window-recurrence=MAINTENANCE_WINDOW_RECURRENCE",
+        "description": "An RFC 5545 RRULE, specifying how the maintenance window will recur. The minimum\nrequirement for the length of the maintenance window is 12 hours a week. Only\nFREQ=DAILY and FREQ=WEEKLY rules are supported.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "maintenance-window-start": {
+        "content": "--maintenance-window-start=MAINTENANCE_WINDOW_START",
+        "description": "Start time of the mantenance window in the form of the full date. Only the time\nof the day is used as a reference for a starting time of the window with a\nprovided recurrence. See $gcloud topic datetimesfor\ninformation on time formats.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "disable-cloud-data-lineage-integration": {
+        "content": "--disable-cloud-data-lineage-integration",
+        "description": "Disable Cloud Data Lineage integration, supported for Composer 2 Environments."
+      },
+      "enable-cloud-data-lineage-integration": {
+        "content": "--enable-cloud-data-lineage-integration",
+        "description": "Enable Cloud Data Lineage integration, supported for Composer 2 Environments."
+      },
+      "disable-master-authorized-networks": {
+        "content": "--disable-master-authorized-networks",
+        "description": "DisableMaster\nAuthorized Networks featurein the Composer Environment's GKE cluster."
+      },
+      "enable-master-authorized-networks": {
+        "content": "--enable-master-authorized-networks",
+        "description": "EnableMaster\nAuthorized Networks featurein the Composer Environment's GKE cluster."
+      },
+      "master-authorized-networks": {
+        "content": "--master-authorized-networks=[NETWORK,…]",
+        "description": "Comma separated Master Authorized Networks specified in CIDR notation.Cannot be specified unless--enable-master-authorized-networksis\nalso specified."
+      },
+      "disable-private-builds-only": {
+        "content": "--disable-private-builds-only",
+        "description": "Builds performed during operations that install Python packages have an access\nto the internet, supported in Composer 3 or greater."
+      },
+      "enable-private-builds-only": {
+        "content": "--enable-private-builds-only",
+        "description": "Builds performed during operations that install Python packages have only\nprivate connectivity to Google services, supported in Composer 3 or greater."
+      },
+      "disable-scheduled-snapshot-creation": {
+        "content": "--disable-scheduled-snapshot-creation",
+        "description": "Disables automated snapshots creation. Can be specified for Composer 2.0.32 or\ngreater."
+      },
+      "enable-scheduled-snapshot-creation": {
+        "content": "--enable-scheduled-snapshot-creation",
+        "description": "When specified, snapshots of the environment will be created according to a\nschedule. Can be specified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "snapshot-creation-schedule": {
+        "content": "--snapshot-creation-schedule=SNAPSHOT_CREATION_SCHEDULE",
+        "description": "Cron expression specifying when snapshots of the environment should be created.\nCan be specified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "snapshot-location": {
+        "content": "--snapshot-location=SNAPSHOT_LOCATION",
+        "description": "The Cloud Storage location for storing automatically created snapshots. Can be\nspecified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "snapshot-schedule-timezone": {
+        "content": "--snapshot-schedule-timezone=SNAPSHOT_SCHEDULE_TIMEZONE",
+        "description": "Timezone that sets the context to interpret snapshot_creation_schedule. Can be\nspecified for Composer 2.0.32 or greater.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "disable-vpc-connectivity": {
+        "content": "--disable-vpc-connectivity",
+        "description": "Disable connectivity with a user's VPC network, supported in Composer 3\nenvironments or greater."
+      },
+      "network-attachment": {
+        "content": "--network-attachment=NETWORK_ATTACHMENT",
+        "description": "Cloud Composer Network Attachment, which provides connectivity with a user's VPC\nnetwork, supported in Composer 3 environments or greater."
+      },
+      "network": {
+        "content": "--network=NETWORK",
+        "description": "The Compute Engine Network to which the environment will be connected. If a\n'Custom Subnet Network' is provided,--subnetworkmust be specified\nas well.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "subnetwork": {
+        "content": "--subnetwork=SUBNETWORK",
+        "description": "TheCompute Engine\nSubnetworkto which the environment will be connected."
+      },
+      "max-workers": {
+        "content": "--max-workers=MAX_WORKERS",
+        "description": "Maximum number of workers in the Environment."
+      },
+      "min-workers": {
+        "content": "--min-workers=MIN_WORKERS",
+        "description": "Minimum number of workers in the Environment."
+      },
+      "scheduler-count": {
+        "content": "--scheduler-count=SCHEDULER_COUNT",
+        "description": "Number of schedulers, supported in the Environments with Airflow 2.0.1 and\nlater."
+      },
+      "scheduler-cpu": {
+        "content": "--scheduler-cpu=SCHEDULER_CPU",
+        "description": "CPU allocated to Airflow scheduler."
+      },
+      "scheduler-memory": {
+        "content": "--scheduler-memory=SCHEDULER_MEMORY",
+        "description": "Memory allocated to Airflow scheduler, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "scheduler-storage": {
+        "content": "--scheduler-storage=SCHEDULER_STORAGE",
+        "description": "Storage allocated to Airflow scheduler, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "web-server-cpu": {
+        "content": "--web-server-cpu=WEB_SERVER_CPU",
+        "description": "CPU allocated to each Airflow web server"
+      },
+      "web-server-memory": {
+        "content": "--web-server-memory=WEB_SERVER_MEMORY",
+        "description": "Memory allocated to Airflow web server, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "web-server-storage": {
+        "content": "--web-server-storage=WEB_SERVER_STORAGE",
+        "description": "Storage allocated to Airflow web server, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "worker-cpu": {
+        "content": "--worker-cpu=WORKER_CPU",
+        "description": "CPU allocated to each Airflow worker"
+      },
+      "worker-memory": {
+        "content": "--worker-memory=WORKER_MEMORY",
+        "description": "Memory allocated to Airflow worker, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "worker-storage": {
+        "content": "--worker-storage=WORKER_STORAGE",
+        "description": "Storage allocated to Airflow worker, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB."
+      },
+      "dag-processor-count": {
+        "content": "--dag-processor-count=DAG_PROCESSOR_COUNT",
+        "description": "Number of dag processors, supported in Composer 3 environments or greater."
+      },
+      "dag-processor-cpu": {
+        "content": "--dag-processor-cpu=DAG_PROCESSOR_CPU",
+        "description": "CPU allocated to Airflow dag processor, supported in Composer 3 environments or\ngreater."
+      },
+      "dag-processor-memory": {
+        "content": "--dag-processor-memory=DAG_PROCESSOR_MEMORY",
+        "description": "Memory allocated to Airflow dag processor, ex. 1GB, 3GB, 2. If units are not\nprovided, defaults to GB, supported in Composer 3 environments or greater."
+      },
+      "dag-processor-storage": {
+        "content": "--dag-processor-storage=DAG_PROCESSOR_STORAGE",
+        "description": "Storage allocated to Airflow dag processor, ex. 600MB, 3GB, 2. If units are not\nprovided, defaults to GB, supported in Composer 3 environments or greater."
+      },
+      "disable-triggerer": {
+        "content": "--disable-triggerer",
+        "description": "(DEPRECATED) Disable a triggerer, supported in the Environments with Composer\n2.0.31 and Airflow 2.2.5 and greater.This flag is deprecated. Use --triggerer-count 0 instead."
+      },
+      "enable-triggerer": {
+        "content": "--enable-triggerer",
+        "description": "(DEPRECATED) Enable use of a triggerer, supported in the Environments with\nComposer 2.0.31 and Airflow 2.2.5 and greater.This flag is deprecated. Use --triggerer-count instead."
+      },
+      "triggerer-count": {
+        "content": "--triggerer-count=TRIGGERER_COUNT",
+        "description": "Number of triggerers, supported in the Environments with Composer 2.0.31 and\nAirflow 2.2.5 and greater."
+      },
+      "triggerer-cpu": {
+        "content": "--triggerer-cpu=TRIGGERER_CPU",
+        "description": "CPU allocated to Airflow triggerer. Supported in the Environments with Composer\n2.0.31 and Airflow 2.2.5 and greater."
+      },
+      "triggerer-memory": {
+        "content": "--triggerer-memory=TRIGGERER_MEMORY",
+        "description": "Memory allocated to Airflow triggerer, ex. 512MB, 3GB, 2. If units are not\nprovided, defaults to GB. Supported in the Environments with Composer 2.0.31 and\nAirflow 2.2.5 and greater."
+      },
+      "update-airflow-configs": {
+        "content": "--update-airflow-configs=[KEY=VALUE,…]",
+        "description": "A list of Airflow config override KEY=VALUE pairs to set. If a config override\nexists, its value is updated; otherwise, a new config override is created.KEYs should specify the configuration section and property name, separated by a\nhyphen, for examplecore-print_stats_interval. The section may not\ncontain a closing square brace or period. The property name must be non-empty\nand may not contain an equals sign, semicolon, or period. By convention,\nproperty names are spelled withsnake_case.VALUEs may contain any\ncharacter."
+      },
+      "clear-airflow-configs": {
+        "content": "--clear-airflow-configs",
+        "description": "Removes all Airflow config overrides from the environment."
+      },
+      "remove-airflow-configs": {
+        "content": "--remove-airflow-configs=[KEY,…]",
+        "description": "A list of Airflow config override keys to remove."
+      },
+      "update-env-variables": {
+        "content": "--update-env-variables=[NAME=VALUE,…]",
+        "description": "A list of environment variable NAME=VALUE pairs to set and provide to the\nAirflow scheduler, worker, and webserver processes. If an environment variable\nexists, its value is updated; otherwise, a new environment variable is created.NAMEs are the environment variable names and may contain upper and lowercase\nletters, digits, and underscores; they must not begin with a digit.User-specified environment variables should not be used to set Airflow\nconfiguration properties. Instead use the--update-airflow-configsflag."
+      },
+      "clear-env-variables": {
+        "content": "--clear-env-variables",
+        "description": "Removes all environment variables from the environment.Environment variables that have system-provided defaults cannot be unset with\nthe--remove-env-variablesor--clear-env-variablesflags; only the user-supplied overrides will be removed."
+      },
+      "remove-env-variables": {
+        "content": "--remove-env-variables=[NAME,…]",
+        "description": "A list of environment variables to remove.Environment variables that have system-provided defaults cannot be unset with\nthe--remove-env-variablesor--clear-env-variablesflags; only the user-supplied overrides will be removed."
+      },
+      "update-labels": {
+        "content": "--update-labels=[KEY=VALUE,…]",
+        "description": "List of label KEY=VALUE pairs to update. If a label exists, its value is\nmodified. Otherwise, a new label is created.Keys must start with a lowercase character and contain only hyphens\n(-), underscores (_), lowercase characters, and\nnumbers. Values must contain only hyphens (-), underscores\n(_), lowercase characters, and numbers."
+      },
+      "clear-labels": {
+        "content": "--clear-labels",
+        "description": "Remove all labels. If--update-labelsis also specified then--clear-labelsis applied first.For example, to remove all labels:gcloudcomposerenvironmentsupdate--clear-labelsTo remove all existing labels and create two new labels,fooandbaz:gcloudcomposerenvironmentsupdate--clear-labels--update-labelsfoo=bar,baz=qux"
+      },
+      "remove-labels": {
+        "content": "--remove-labels=[KEY,…]",
+        "description": "List of label keys to remove. If a label does not exist it is silently ignored.\nIf--update-labelsis also specified then--update-labelsis applied first."
+      },
+      "update-pypi-packages-from-file": {
+        "content": "--update-pypi-packages-from-file=UPDATE_PYPI_PACKAGES_FROM_FILE",
+        "description": "The path to a file containing a list of PyPI packages to install in the\nenvironment. Each line in the file should contain a package specification in the\nformat of the update-pypi-package argument defined above. The path can be a\nlocal file path or a Google Cloud Storage file path (Cloud Storage file path\nstarts with 'gs://')."
+      },
+      "update-pypi-package": {
+        "content": "--update-pypi-package=PACKAGE[EXTRAS_LIST]VERSION_SPECIFIER",
+        "description": "A PyPI package to add to the environment. If a package exists, its value is\nupdated; otherwise, a new package is installed.The value takes the form of:PACKAGE[EXTRAS_LIST]VERSION_SPECIFIER,\nas one would specify in a pip requirements file.PACKAGE is specified as a package name, such asnumpy.EXTRAS_LIST\nis a comma-delimited list of PEP 508 distribution extras that may be empty, in\nwhich case the enclosing square brackets may be omitted. VERSION_SPECIFIER is an\noptional PEP 440 version specifier. If both EXTRAS_LIST and VERSION_SPECIFIER\nare omitted, the=and everything to the right may be left empty.This is a repeated argument that can be specified multiple times to update\nmultiple packages. If PACKAGE appears more than once, the last value will be\nused."
+      },
+      "clear-pypi-packages": {
+        "content": "--clear-pypi-packages",
+        "description": "Removes all PyPI packages from the environment.PyPI packages that are required by the environment's core software cannot be\nuninstalled with the--remove-pypi-packagesor--clear-pypi-packagesflags."
+      },
+      "remove-pypi-packages": {
+        "content": "--remove-pypi-packages=[PACKAGE,…]",
+        "description": "A list of PyPI package names to remove.PyPI packages that are required by the environment's core software cannot be\nuninstalled with the--remove-pypi-packagesor--clear-pypi-packagesflags."
+      },
+      "update-web-server-allow-ip": {
+        "content": "--update-web-server-allow-ip=[description=DESCRIPTION],[ip_range=IP_RANGE]",
+        "description": "Specifies a list of IPv4 or IPv6 ranges that will be allowed to access the\nAirflow web server. By default, all IPs are allowed to access the web server.ip_rangeIPv4 or IPv6 range of addresses allowed to access the Airflow web server.descriptionAn optional description of the IP range."
+      },
+      "ip_range": {
+        "content": "ip_range",
+        "description": "IPv4 or IPv6 range of addresses allowed to access the Airflow web server."
+      },
+      "description": {
+        "content": "description",
+        "description": "An optional description of the IP range."
+      },
+      "web-server-allow-all": {
+        "content": "--web-server-allow-all",
+        "description": "Allows all IP addresses to access the Airflow web server."
+      },
+      "web-server-deny-all": {
+        "content": "--web-server-deny-all",
+        "description": "Denies all incoming traffic to the Airflow web server."
+      }
+    },
+    "optional_flags": {
+      "async": {
+        "content": "--async",
+        "description": "Return immediately, without waiting for the operation in progress to complete."
+      }
+    },
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-config-maps",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-config-maps"
+    ],
+    "command_path": "gcloud composer environments user-workloads-config-maps",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-config-maps",
+    "description": "The gcloud composer environments user-workloads-config-maps command group\nmanages user workloads ConfigMaps of Cloud Composer environments.",
+    "command_synopsis": "gcloud composer environments user-workloads-config-maps COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4b856e854b4dddb9e1eadcd6af971f52cca1f6862d7eacf461b9f698dc1c8d36",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.storage.plugins.list",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "storage",
+      "plugins",
+      "list"
+    ],
+    "command_path": "gcloud composer environments storage plugins list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/storage/plugins/list",
+    "description": "List the plugins for a Cloud Composer environment.",
+    "command_synopsis": "gcloud composer environments storage plugins list (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-config-maps.create",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-config-maps",
+      "create"
+    ],
+    "command_path": "gcloud composer environments user-workloads-config-maps create",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-config-maps/create",
+    "description": "Create a user workloads ConfigMap.",
+    "command_synopsis": "gcloud composer environments user-workloads-config-maps create --config-map-file-path=CONFIG_MAP_FILE_PATH (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "config-map-file-path": {
+        "content": "--config-map-file-path=CONFIG_MAP_FILE_PATH",
+        "description": "Path to a local file with a single Kubernetes ConfigMap in YAML format."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-config-maps.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-config-maps",
+      "delete"
+    ],
+    "command_path": "gcloud composer environments user-workloads-config-maps delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-config-maps/delete",
+    "description": "Delete a user workloads ConfigMap.",
+    "command_synopsis": "gcloud composer environments user-workloads-config-maps delete [CONFIG_MAP_NAME] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "CONFIG_MAP_NAME": {
+        "content": "[CONFIG_MAP_NAME]",
+        "description": "Name of the ConfigMap."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-config-maps.describe",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-config-maps",
+      "describe"
+    ],
+    "command_path": "gcloud composer environments user-workloads-config-maps describe",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-config-maps/describe",
+    "description": "Get details about a user workloads ConfigMap.",
+    "command_synopsis": "gcloud composer environments user-workloads-config-maps describe [CONFIG_MAP_NAME] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "CONFIG_MAP_NAME": {
+        "content": "[CONFIG_MAP_NAME]",
+        "description": "Name of the ConfigMap."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-config-maps.list",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-config-maps",
+      "list"
+    ],
+    "command_path": "gcloud composer environments user-workloads-config-maps list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-config-maps/list",
+    "description": "List user workloads ConfigMaps.",
+    "command_synopsis": "gcloud composer environments user-workloads-config-maps list (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-secrets",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-secrets"
+    ],
+    "command_path": "gcloud composer environments user-workloads-secrets",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-secrets",
+    "description": "The gcloud composer environments user-workloads-secrets command group manages\nuser workloads Secrets of Cloud Composer environments.",
+    "command_synopsis": "gcloud composer environments user-workloads-secrets COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "4b856e854b4dddb9e1eadcd6af971f52cca1f6862d7eacf461b9f698dc1c8d36",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-config-maps.update",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-config-maps",
+      "update"
+    ],
+    "command_path": "gcloud composer environments user-workloads-config-maps update",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-config-maps/update",
+    "description": "Update a user workloads ConfigMap.",
+    "command_synopsis": "gcloud composer environments user-workloads-config-maps update --config-map-file-path=CONFIG_MAP_FILE_PATH (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "config-map-file-path": {
+        "content": "--config-map-file-path=CONFIG_MAP_FILE_PATH",
+        "description": "Path to a local file with a single Kubernetes ConfigMap in YAML format."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-secrets.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-secrets",
+      "delete"
+    ],
+    "command_path": "gcloud composer environments user-workloads-secrets delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-secrets/delete",
+    "description": "Delete a user workloads Secret.",
+    "command_synopsis": "gcloud composer environments user-workloads-secrets delete [SECRET_NAME] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "SECRET_NAME": {
+        "content": "[SECRET_NAME]",
+        "description": "Name of the Secret."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-secrets.create",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-secrets",
+      "create"
+    ],
+    "command_path": "gcloud composer environments user-workloads-secrets create",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-secrets/create",
+    "description": "Create a user workloads Secret.",
+    "command_synopsis": "gcloud composer environments user-workloads-secrets create --secret-file-path=SECRET_FILE_PATH (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "secret-file-path": {
+        "content": "--secret-file-path=SECRET_FILE_PATH",
+        "description": "Path to a local file with a single Kubernetes Secret in YAML format."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-secrets.describe",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-secrets",
+      "describe"
+    ],
+    "command_path": "gcloud composer environments user-workloads-secrets describe",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-secrets/describe",
+    "description": "Get details about a user workloads Secret.",
+    "command_synopsis": "gcloud composer environments user-workloads-secrets describe [SECRET_NAME] (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "SECRET_NAME": {
+        "content": "[SECRET_NAME]",
+        "description": "Name of the Secret."
+      }
+    },
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-secrets.list",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-secrets",
+      "list"
+    ],
+    "command_path": "gcloud composer environments user-workloads-secrets list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-secrets/list",
+    "description": "List user workloads Secrets.",
+    "command_synopsis": "gcloud composer environments user-workloads-secrets list (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.environments.user-workloads-secrets.update",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "environments",
+      "user-workloads-secrets",
+      "update"
+    ],
+    "command_path": "gcloud composer environments user-workloads-secrets update",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/environments/user-workloads-secrets/update",
+    "description": "Update a user workloads Secret.",
+    "command_synopsis": "gcloud composer environments user-workloads-secrets update --secret-file-path=SECRET_FILE_PATH (--environment=ENVIRONMENT : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {
+      "secret-file-path": {
+        "content": "--secret-file-path=SECRET_FILE_PATH",
+        "description": "Path to a local file with a single Kubernetes Secret in YAML format."
+      },
+      "environment": {
+        "content": "--environment=ENVIRONMENT",
+        "description": "ID of the environment or fully qualified identifier for the environment.To set theenvironmentattribute:provide the argument--environmenton the command line.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Region where Composer environment runs or in which to create the environment.To set thelocationattribute:provide the argument--environmenton the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.operations",
+    "service": "composer",
+    "type": "group",
+    "path": [
+      "composer",
+      "operations"
+    ],
+    "command_path": "gcloud composer operations",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/operations",
+    "description": "Manage Cloud Composer operations.",
+    "command_synopsis": "gcloud composer operations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "29963ba2f3f2342ba7c92ddcd00e3f2e48f3c042aa60a89b5ce646aba3b6b50a",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.operations.delete",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "operations",
+      "delete"
+    ],
+    "command_path": "gcloud composer operations delete",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/operations/delete",
+    "description": "Delete operations that are done. If more than one operation is specified, all\ndeletes will be attempted. If any of the deletes fail, those operations and\ntheir failure messages will be listed on the standard error, and the command\nwill exit with a non-zero status.",
+    "command_synopsis": "gcloud composer operations delete (OPERATIONS [OPERATIONS …] : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "OPERATIONS": {
+        "content": "OPERATIONS[OPERATIONS…]",
+        "description": "IDs of the operations or fully qualified identifiers for the operations.To set theoperationattribute:provide the argumentoperationson the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Compute Engine region in which to create the operations.To set thelocationattribute:provide the argumentoperationson the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.operations.describe",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "operations",
+      "describe"
+    ],
+    "command_path": "gcloud composer operations describe",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/operations/describe",
+    "description": "Get details about an asynchronous operation.",
+    "command_synopsis": "gcloud composer operations describe (OPERATION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "OPERATION": {
+        "content": "OPERATION",
+        "description": "ID of the operation or fully qualified identifier for the operation.To set theoperationattribute:provide the argumentoperationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Compute Engine region in which to create the operation.To set thelocationattribute:provide the argumentoperationon the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.operations.wait",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "operations",
+      "wait"
+    ],
+    "command_path": "gcloud composer operations wait",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/operations/wait",
+    "description": "Wait for asynchronous operation to complete.",
+    "command_synopsis": "gcloud composer operations wait (OPERATION : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {
+      "OPERATION": {
+        "content": "OPERATION",
+        "description": "ID of the operation or fully qualified identifier for the operation.To set theoperationattribute:provide the argumentoperationon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Compute Engine region in which to create the operation.To set thelocationattribute:provide the argumentoperationon the command line with a fully\nspecified name;provide the argument--locationon the command line;set the propertycomposer/location."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "composer.operations.list",
+    "service": "composer",
+    "type": "command",
+    "path": [
+      "composer",
+      "operations",
+      "list"
+    ],
+    "command_path": "gcloud composer operations list",
+    "service_name": "composer",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/composer/operations/list",
+    "description": "Prints a table containing the following columns:\nuuid\ntype\nlocation\ntarget environment\nstatus\nlast updated timestamp",
+    "command_synopsis": "gcloud composer operations list [--locations=[LOCATIONS,…]] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "71abec867cd3099dac61d91cd3fe4193041dbab9113d879488948a669ef13a0d",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "flags": {
+      "locations": {
+        "content": "--locations=[LOCATIONS,…]",
+        "description": "IDs of the locations or fully qualified identifiers for the locations.To set thelocationattribute:provide the argument--locationson the command line."
+      }
+    }
+  }
+]
