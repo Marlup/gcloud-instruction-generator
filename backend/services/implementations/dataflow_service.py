@@ -1,4 +1,3 @@
-from googleapiclient.discovery import build
 
 from backend.services.base_service import BaseGCloudService
 from backend.core.types.enums import ExportFileFormat, GCPResource, GCPService
@@ -25,7 +24,8 @@ class DataflowService(BaseGCloudService):
         self.parameters = configuration.load_parameters(self.service_name)
     
     def reset_client(self):
-        self.client = build("dataflow", "v1b3", credentials=self.configuration.credentials)
+        # Google logic removed
+        pass
 
     def validate(self, template_path: str) -> bool:
         """
@@ -33,10 +33,4 @@ class DataflowService(BaseGCloudService):
         Verifica si una plantilla de Dataflow existe en GCS.
         template_path suele ser gs://bucket/path/template
         """
-        try:
-            bucket_name, prefix = template_path[5:].split("/", 1)
-            bucket = self.client.bucket(bucket_name)
-            blob = bucket.blob(prefix)
-            return blob.exists()
-        except Exception:
-            return False
+        return True

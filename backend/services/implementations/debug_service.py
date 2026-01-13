@@ -1,4 +1,3 @@
-from google.cloud import logging as gcp_logging
 
 from backend.services.base_service import BaseGCloudService
 from backend.core.types.enums import GCPService
@@ -24,5 +23,5 @@ class DebugService(BaseGCloudService):
         self.parameters = configuration.load_parameters(self.service_name)
     
     def reset_client(self):
-        self.client = gcp_logging.Client(project=self.configuration.project,
-                                         credentials=self.configuration.credentials)
+        # Google logic removed
+        pass

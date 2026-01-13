@@ -754,7 +754,7 @@ class ConfigDialog(ttk.Toplevel):
         ).pack(pady=(0, 20))
         
         # Theme Selection Group
-        theme_frame = ttk.LabelFrame(frame, text="Tema", padding=10)
+        theme_frame = ttk.LabelFrame(frame, text="Tema")
         theme_frame.pack(fill="x", pady=10)
         
         self.combo_theme = ttk.Combobox(
@@ -764,7 +764,7 @@ class ConfigDialog(ttk.Toplevel):
             bootstyle=PRIMARY
         )
         self.combo_theme.set(parent.style.theme_use())
-        self.combo_theme.pack(fill="x")
+        self.combo_theme.pack(fill="x", padx=10, pady=10)
         
         # Bind theme change
         def _on_theme_select(event):

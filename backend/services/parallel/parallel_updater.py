@@ -261,11 +261,10 @@ class ParallelGCPKnowledgeUpdater:
             stats = self.shared_pools.get_statistics()
             
             all_empty = (
-                queue_sizes['fetch_queue'] == 0 and
-                queue_sizes['scrape_queue'] == 0 and
                 queue_sizes['io_queue'] == 0 and
                 stats['fetch_pool_size'] == 0 and
-                stats['scrape_pool_size'] == 0
+                stats['scrape_pool_size'] == 0 and
+                all(count == 0 for count in stats['active_workers'].values())
             )
             
             if all_empty:
@@ -288,7 +287,8 @@ class ParallelGCPKnowledgeUpdater:
                     f"Errors: {counters['errors']} | "
                     f"Queues: F:{queue_sizes['fetch_queue']} "
                     f"S:{queue_sizes['scrape_queue']} "
-                    f"I:{queue_sizes['io_queue']}"
+                    f"I:{queue_sizes['io_queue']} | "
+                    f"Active: {stats['active_workers']}"
                 )
                 last_log_time = current_time
             

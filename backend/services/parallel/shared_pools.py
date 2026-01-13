@@ -45,7 +45,16 @@ class SharedPools:
         self.fetch_lock = manager.Lock()
         self.scrape_lock = manager.Lock()
         self.unprocessed_lock = manager.Lock()
+        self.unprocessed_lock = manager.Lock()
         self.counter_lock = manager.Lock()
+        self.active_worker_lock = manager.Lock()
+
+        # Active worker tracking
+        self.active_workers = manager.dict({
+            'fetchers': 0,
+            'scrapers': 0,
+            'io': 0
+        })
     
     # === Fetch Pool Operations ===
     
@@ -233,6 +242,28 @@ class SharedPools:
         with self.counter_lock:
             return dict(self.counters)
     
+    # === Active Worker Operations ===
+
+    def increment_active_worker(self, worker_type: str, amount: int = 1):
+        """
+        Increment/decrement active worker count.
+        
+        Args:
+            worker_type: 'fetchers', 'scrapers', or 'io'
+            amount: Amount to increment (can be negative)
+        """
+        with self.active_worker_lock:
+            # We must read, modify, write for manager dicts of primitives usually, 
+            # or just rely on manager dict semantics.
+            # But keys might not exist? Initialized in __init__.
+            current = self.active_workers.get(worker_type, 0)
+            self.active_workers[worker_type] = current + amount
+            
+    def get_active_workers(self) -> Dict[str, int]:
+        """Get counts of active workers."""
+        with self.active_worker_lock:
+            return dict(self.active_workers)
+    
     # === Shutdown Control ===
     
     def set_shutdown_flag(self):
@@ -269,5 +300,6 @@ class SharedPools:
                 'unprocessed_count': unprocessed_count,
                 'services_in_fetch': len(self.fetch_pool),
                 'services_in_scrape': len(self.scrape_pool),
-                'shutdown_requested': self.is_shutdown_requested()
+                'shutdown_requested': self.is_shutdown_requested(),
+                'active_workers': dict(self.active_workers)
             }

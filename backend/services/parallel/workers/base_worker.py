@@ -17,6 +17,12 @@ from backend.services.parallel.config import ParallelConfig
 class BaseWorker(ABC):
     """Abstract base class for all worker types."""
     
+    @property
+    @abstractmethod
+    def WORKER_TYPE(self) -> str:
+        """Type of worker ('fetchers', 'scrapers', 'io')."""
+        pass
+
     def __init__(self, worker_id: int, shared_pools: SharedPools, 
                  config: ParallelConfig):
         """
@@ -157,11 +163,14 @@ class BaseWorker(ABC):
                 
                 # Process task
                 self.reset_idle_count()
+                self.shared_pools.increment_active_worker(self.WORKER_TYPE, 1)
                 try:
                     self.process_task(task)
                 except Exception as e:
                     self.logger.error(f"Error processing task: {e}", exc_info=True)
                     self.shared_pools.increment_counter('errors')
+                finally:
+                    self.shared_pools.increment_active_worker(self.WORKER_TYPE, -1)
             else:
                 # No task in primary queue, try work stealing
                 if self.config.enable_work_stealing:

@@ -1,4 +1,3 @@
-from google.cloud import dataproc_v1
 
 from backend.infrastructure.exporters import to_shell, to_terraform, to_yaml
 from backend.services.base_service import BaseGCloudService
@@ -25,4 +24,5 @@ class DataprocService(BaseGCloudService):
         self.parameters = configuration.load_parameters(self.service_name)
     
     def reset_client(self):
-        self.client = dataproc_v1.ClusterControllerClient(credentials=self.configuration.credentials)
+        # Google logic removed
+        pass

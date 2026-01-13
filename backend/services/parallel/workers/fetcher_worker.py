@@ -22,6 +22,10 @@ logger = logging.getLogger(__name__)
 class FetcherWorker(BaseWorker):
     """Worker for fetching and parsing HTML."""
     
+    @property
+    def WORKER_TYPE(self) -> str:
+        return 'fetchers'
+    
     def __init__(self, worker_id: int, fetch_queue: Queue, scrape_queue: Queue,
                  shared_pools: SharedPools, config: ParallelConfig):
         """

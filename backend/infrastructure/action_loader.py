@@ -56,3 +56,22 @@ class ActionLoader:
                 traverse(subtree, [resource])
                 
         return flat_list
+
+    def get_action_by_path(self, keys: List[str]) -> Dict[str, Any]:
+        """
+        Retrieves an action definition by following a list of keys.
+        keys[0] should be the resource name.
+        """
+        if not keys:
+            return None
+        
+        node = self.actions
+        try:
+            for k in keys:
+                node = node[k]
+            
+            if "action" in node:
+                return node["action"]
+            return node
+        except KeyError:
+            return None

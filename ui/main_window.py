@@ -198,7 +198,13 @@ class MainWindow(ttk.Window):
         self.selected_resource = resource
         self.selected_category = category
 
-        action_def = self.current_service.get_action_def(resource, category, action)
+        if isinstance(action, dict):
+            # If action is already a dict (the definition), use it
+            action_def = action
+        else:
+            # Legacy lookup
+            action_def = self.current_service.get_action_def(resource, category, action)
+
         if not action_def:
             return
 

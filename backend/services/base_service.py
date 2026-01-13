@@ -118,15 +118,21 @@ class BaseGCloudService():
         """
         pass
     
-    @abstractmethod
-    def get_action_def(self, resource: str, category: str, action: str) -> Dict[str, Any]:
+    def get_action_def(self, resource: str, *args) -> Dict[str, Any]:
         """
-        Devuelve la definición de una acción concreta (cmd y params).
-        - resource: name of the resource (ej. 'Buckets')
-        - category: name of the category (ej. '📤 Creación')
-        - action: name of the action (ej. 'Crear bucket')
+        Devuelve la definición de una acción dado un path de claves.
         """
         try:
-            return self.actions[resource][category][action]
+            node = self.actions[resource]
+            for key in args:
+                node = node[key]
+            
+            # If the node itself has 'action' key, that's what we want?
+            # Or is 'node' the action def?
+            # In our structure: { "action": { ... } }
+            if "action" in node:
+                return node["action"]
+            return node
         except KeyError as e:
-            raise ValueError(f"Acción no encontrada: {resource} > {category} > {action}") from e
+            # Fallback for old calls or debug
+            raise ValueError(f"Acción no encontrada: {resource} > {args}") from e

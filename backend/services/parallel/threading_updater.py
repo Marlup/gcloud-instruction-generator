@@ -72,6 +72,14 @@ class ThreadingGCPKnowledgeUpdater:
         self.service_data = defaultdict(list)
         self.unprocessed_items = defaultdict(list)
         
+        # Active worker tracking
+        self.active_workers = {
+            'fetchers': 0,
+            'scrapers': 0,
+            'io': 0
+        }
+        self.active_worker_lock = threading.Lock()
+        
         # Shutdown flag
         self.shutdown_event = threading.Event()
         
@@ -247,7 +255,7 @@ class ThreadingGCPKnowledgeUpdater:
             
             # Scrape Queue: Bounded to control memory usage (backpressure)
             # 2000 items is a good balance between throughput and memory
-            self.scrape_queue = Queue(maxsize=2000)
+            self.scrape_queue = Queue(maxsize=2500)
             
             # IO Queue: Big enough to hold EVERYTHING so scrapers never block on IO
             self.io_queue = Queue(maxsize=total_items + 100)
@@ -345,7 +353,13 @@ class ThreadingGCPKnowledgeUpdater:
                 logger.debug(f"Fetcher-{worker_id} fetching: {url}")
                 
                 # Fetch and parse
-                html = self._fetch_url(url)
+                with self.active_worker_lock:
+                    self.active_workers['fetchers'] += 1
+                try:
+                    html = self._fetch_url(url)
+                finally:
+                    with self.active_worker_lock:
+                        self.active_workers['fetchers'] -= 1
                 
                 if html:
                     # Put to scrape queue with HTML string AND metadata
@@ -395,10 +409,16 @@ class ThreadingGCPKnowledgeUpdater:
                     url = task['url']
                     path_parts = task.get('path_parts', [])
                     
-                    logger.info(f"Scraper-{worker_id} picked up task: {service_name} ({len(html)} bytes)")
+                    logger.info(f"Scraper-{worker_id} picked up task: {service_name} -> {path_parts} ({len(html)} bytes)")
                     
                     # Extract data (can use BeautifulSoup directly - no pickle!)
-                    extracted_data = self._extract_data(html, service_name, url)
+                    with self.active_worker_lock:
+                        self.active_workers['scrapers'] += 1
+                    try:
+                        extracted_data = self._extract_data(html, service_name, url)
+                    finally:
+                        with self.active_worker_lock:
+                            self.active_workers['scrapers'] -= 1
                     
                     if extracted_data:
                         # Enrich with flat list metadata
@@ -484,9 +504,15 @@ class ThreadingGCPKnowledgeUpdater:
                 # We need to save eventually.
                 
                 # Store in thread-safe container
-                with self.state_lock:
-                    self.service_data[service_name].append(data)
-                    self.counters['saved'] += 1
+                with self.active_worker_lock:
+                    self.active_workers['io'] += 1
+                try:
+                    with self.state_lock:
+                        self.service_data[service_name].append(data)
+                        self.counters['saved'] += 1
+                finally:
+                    with self.active_worker_lock:
+                        self.active_workers['io'] -= 1
                 
                 # We do NOT save to file on every single item anymore to avoid partial overwrites of the list
                 # We will save at the end in _process_with_threads
@@ -691,9 +717,16 @@ class ThreadingGCPKnowledgeUpdater:
                 time.sleep(2)
                 if (self.fetch_queue.qsize() == 0 and 
                     self.scrape_queue.qsize() == 0 and 
-                    self.io_queue.qsize() == 0):
-                    logger.info("All queues empty, work complete")
-                    break
+                    self.io_queue.qsize() == 0 and
+                    all(c == 0 for c in self.active_workers.values())):
+                    
+                    # Double-check active workers again under lock to be sure
+                    with self.active_worker_lock:
+                        is_really_empty = all(c == 0 for c in self.active_workers.values())
+                    
+                    if is_really_empty:
+                        logger.info("All queues empty and no active workers, work complete")
+                        break
             
             # Log progress
             current_time = time.time()

@@ -1,4 +1,3 @@
-from google.cloud import datacatalog
 
 from backend.infrastructure.exporters import to_shell, to_terraform, to_yaml
 from backend.services.base_service import BaseGCloudService
@@ -25,6 +24,5 @@ class DataCatalogService(BaseGCloudService):
         self.parameters = configuration.load_parameters(self.service_name)
     
     def reset_client(self):
-        self.client = datacatalog.DataCatalogClient(
-            credentials=self.configuration.credentials
-            )
+        # Google logic removed
+        pass

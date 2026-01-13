@@ -19,7 +19,11 @@ logger = logging.getLogger(__name__)
 
 
 class ScraperWorker(BaseWorker):
-    """Worker for extracting data from parsed HTML."""
+    """Worker for digging data from parsed HTML."""
+    
+    @property
+    def WORKER_TYPE(self) -> str:
+        return 'scrapers'
     
     def __init__(self, worker_id: int, scrape_queue: Queue, io_queue: Queue,
                  shared_pools: SharedPools, config: ParallelConfig):

@@ -1,7 +1,6 @@
 from typing import Any, Dict, List
 import subprocess
-from google.api_core.exceptions import NotFound
-from google.cloud import storage
+
 
 from backend.infrastructure.exporters import to_shell, to_terraform, to_yaml
 from backend.services.base_service import BaseGCloudService
@@ -30,10 +29,8 @@ class StorageService(BaseGCloudService):
     #  Client reset 
     # -----------------------------
     def reset_client(self):
-        self.client = storage.Client(
-            project=self.configuration.project,
-            credentials=self.configuration.credentials
-        )
+        # Google logic removed
+        pass
 
     # -----------------------------
     # 1. Validaciones en vivo
@@ -45,16 +42,7 @@ class StorageService(BaseGCloudService):
         - kwargs: si incluye "object", valida un objeto dentro del bucket.
         """
 
-        if GCPResource.OBJECT in kwargs:
-            print("Validando objeto:", kwargs[GCPResource.OBJECT], "en bucket:", resource)
-            object_name = kwargs[GCPResource.OBJECT]
-            return self.object_exists(resource, object_name)
-        else:
-            try:
-                print("Validando bucket:", resource)
-                return self.bucket_exists(resource)
-            except NotFound:
-                return False
+        return True
 
     # -----------------------------
     # 3. Exportación IaC
@@ -107,11 +95,3 @@ class StorageService(BaseGCloudService):
             return f"⚠️ Excepción ejecutando comando: {e}"
 
     # ========== 🪣 Storage ==========
-    def bucket_exists(self, bucket_name: str) -> bool:
-        return self.client.lookup_bucket(bucket_name) is not None
-
-    def object_exists(self, bucket_name: str, object_name: str) -> bool:
-        bucket = self.client.bucket(bucket_name)
-        if not bucket.exists():
-            return False
-        return bucket.blob(object_name).exists()

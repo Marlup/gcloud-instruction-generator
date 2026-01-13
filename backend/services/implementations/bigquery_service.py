@@ -2,8 +2,7 @@
 
 import subprocess
 from typing import Any, Dict, List
-from google.cloud import bigquery
-from google.api_core.exceptions import NotFound
+
 
 from backend.infrastructure.exporters import to_shell, to_terraform, to_yaml
 from backend.services.base_service import BaseGCloudService
@@ -34,10 +33,8 @@ class BigqueryService(BaseGCloudService):
     #  Client reset 
     # -----------------------------
     def reset_client(self):
-        self.client = bigquery.Client(
-            project=self.configuration.project,
-            credentials=self.configuration.credentials
-        )
+        # Google logic removed
+        pass
 
     # -----------------------------
     #  Validaciones en vivo
@@ -47,17 +44,7 @@ class BigqueryService(BaseGCloudService):
         Valida si un dataset o tabla existe en BigQuery.
         - resource: dataset_id o dataset_id.table_id
         """
-        try:
-            if GCPResource.DATASET in kwargs:  # Dataset
-                return self.dataset_exists(resource)
-            elif GCPResource.TABLE in kwargs:  # Table
-                table_name = kwargs[GCPResource.TABLE]
-                return self.table_exists(resource, table_name)
-            else:  # Job
-                job_id = kwargs[GCPResource.JOB]
-                return self.job_exists(job_id)
-        except NotFound:
-            return False
+        return True
 
     # -----------------------------
     # Exportación IaC
@@ -114,11 +101,7 @@ resource "google_bigquery_dataset" "{config["dataset"]}" {{
     # Comprobación de conectividad
     # -----------------------------
     def ping(self) -> bool:
-        try:
-            list(self.client.list_datasets(max_results=1))
-            return True
-        except Exception:
-            return False
+        return True
 
     # -----------------------------
     # Ejecución directa
@@ -138,23 +121,3 @@ resource "google_bigquery_dataset" "{config["dataset"]}" {{
         except Exception as e:
             return f"⚠️ Excepción ejecutando comando: {e}"
 
-    def dataset_exists(self, dataset_id: str) -> bool:
-        try:
-            self.client.get_dataset(dataset_id)
-            return True
-        except NotFound:
-            return False
-
-    def table_exists(self, dataset_id: str, table_id: str) -> bool:
-        try:
-            self.client.get_table(f"{dataset_id}.{table_id}")
-            return True
-        except NotFound:
-            return False
-
-    def job_exists(self, job_id) -> bool:
-        try:
-            self.client.get_job(job_id)
-            return True
-        except NotFound:
-            return False

@@ -22,6 +22,10 @@ logger = logging.getLogger(__name__)
 class IOWorker(BaseWorker):
     """Worker for file I/O operations."""
     
+    @property
+    def WORKER_TYPE(self) -> str:
+        return 'io'
+    
     def __init__(self, worker_id: int, io_queue: Queue,
                  shared_pools: SharedPools, config: ParallelConfig):
         """

@@ -1,23 +1,5 @@
 [
   {
-    "id": "storage",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage"
-    ],
-    "command_path": "gcloud storage",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage",
-    "description": "The gcloud storage command group lets you create and manage Cloud Storage\nresources such as buckets and objects.\nMore information on Cloud Storage can be found here:\nhttps://cloud.google.com/storage, and detailed documentation can be found here:\nhttps://cloud.google.com/storage/docs/",
-    "command_synopsis": "gcloud storage GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "5562876a4a8140c866907ed4f19d685a9b575461fd217ba990167ad55dab68d4",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
     "id": "storage.batch-operations",
     "service": "storage",
     "type": "group",
@@ -34,26 +16,7 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
-    "flags": {}
-  },
-  {
-    "id": "storage.batch-operations.jobs",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage",
-      "batch-operations",
-      "jobs"
-    ],
-    "command_path": "gcloud storage batch-operations jobs",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/batch-operations/jobs",
-    "description": "Manage Cloud Storage batch operations jobs.",
-    "command_synopsis": "gcloud storage batch-operations jobs COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "48467ce03486ef4dc7b54e77173c4b9577d7dd28c1c9e557b14b60c3b5225b98",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -80,32 +43,47 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
-    "id": "storage.batch-operations.jobs.delete",
+    "id": "storage.batch-operations.jobs",
     "service": "storage",
-    "type": "command",
+    "type": "group",
     "path": [
       "storage",
       "batch-operations",
-      "jobs",
-      "delete"
+      "jobs"
     ],
-    "command_path": "gcloud storage batch-operations jobs delete",
+    "command_path": "gcloud storage batch-operations jobs",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/batch-operations/jobs/delete",
-    "description": "Delete the batch operation job.",
-    "command_synopsis": "gcloud storage batch-operations jobs delete BATCH_JOB [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "BATCH_JOB": {
-        "content": "BATCH_JOB",
-        "description": "ID of the batch-job or fully qualified identifier for the batch-job.To set thebatch-jobattribute:provide the argumentbatch_jobon the command line."
-      }
-    },
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/batch-operations/jobs",
+    "description": "Manage Cloud Storage batch operations jobs.",
+    "command_synopsis": "gcloud storage batch-operations jobs COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "48467ce03486ef4dc7b54e77173c4b9577d7dd28c1c9e557b14b60c3b5225b98",
+    "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage",
+    "service": "storage",
+    "type": "group",
+    "path": [
+      "storage"
+    ],
+    "command_path": "gcloud storage",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage",
+    "description": "The gcloud storage command group lets you create and manage Cloud Storage\nresources such as buckets and objects.\nMore information on Cloud Storage can be found here:\nhttps://cloud.google.com/storage, and detailed documentation can be found here:\nhttps://cloud.google.com/storage/docs/",
+    "command_synopsis": "gcloud storage GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "5562876a4a8140c866907ed4f19d685a9b575461fd217ba990167ad55dab68d4",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -169,12 +147,40 @@
       }
     },
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "description": {
         "content": "--description=DESCRIPTION",
         "description": "Description for the batch job."
       }
     }
+  },
+  {
+    "id": "storage.batch-operations.jobs.delete",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "batch-operations",
+      "jobs",
+      "delete"
+    ],
+    "command_path": "gcloud storage batch-operations jobs delete",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/batch-operations/jobs/delete",
+    "description": "Delete the batch operation job.",
+    "command_synopsis": "gcloud storage batch-operations jobs delete BATCH_JOB [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "BATCH_JOB": {
+        "content": "BATCH_JOB",
+        "description": "ID of the batch-job or fully qualified identifier for the batch-job.To set thebatch-jobattribute:provide the argumentbatch_jobon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
   },
   {
     "id": "storage.batch-operations.jobs.describe",
@@ -200,6 +206,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -221,6 +228,24 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    },
     "flags": {
       "filter": {
         "content": "--filter=EXPRESSION",
@@ -239,6 +264,26 @@
         "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
       }
     }
+  },
+  {
+    "id": "storage.buckets",
+    "service": "storage",
+    "type": "group",
+    "path": [
+      "storage",
+      "buckets"
+    ],
+    "command_path": "gcloud storage buckets",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets",
+    "description": "Manage Cloud Storage buckets.",
+    "command_synopsis": "gcloud storage buckets GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "6974f33350bb75adc2d3c9539ba4cdd32d40fa53c4834f63c551795e0e80a4ff",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
   },
   {
     "id": "storage.buckets.add-iam-policy-binding",
@@ -293,25 +338,28 @@
         "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
       }
     },
+    "list_command_flags": {},
     "flags": {}
   },
   {
-    "id": "storage.buckets",
+    "id": "storage.buckets.anywhere-caches",
     "service": "storage",
     "type": "group",
     "path": [
       "storage",
-      "buckets"
+      "buckets",
+      "anywhere-caches"
     ],
-    "command_path": "gcloud storage buckets",
+    "command_path": "gcloud storage buckets anywhere-caches",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets",
-    "description": "Manage Cloud Storage buckets.",
-    "command_synopsis": "gcloud storage buckets GROUP | COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "6974f33350bb75adc2d3c9539ba4cdd32d40fa53c4834f63c551795e0e80a4ff",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches",
+    "description": "Manage Cloud Storage Anywhere Caches.",
+    "command_synopsis": "gcloud storage buckets anywhere-caches COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "dfbb04d401ad90ef93c002451bf64efd94b71407277240a13c6820042044d860",
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -342,6 +390,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "admission-policy": {
         "content": "--admission-policy=ADMISSION_POLICY",
@@ -350,88 +399,6 @@
       "ttl": {
         "content": "--ttl=TTL",
         "description": "Cache entry time-to-live. Default to 24h if not provided."
-      }
-    }
-  },
-  {
-    "id": "storage.buckets.anywhere-caches",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage",
-      "buckets",
-      "anywhere-caches"
-    ],
-    "command_path": "gcloud storage buckets anywhere-caches",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches",
-    "description": "Manage Cloud Storage Anywhere Caches.",
-    "command_synopsis": "gcloud storage buckets anywhere-caches COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "dfbb04d401ad90ef93c002451bf64efd94b71407277240a13c6820042044d860",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
-    "id": "storage.buckets.anywhere-caches.describe",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "buckets",
-      "anywhere-caches",
-      "describe"
-    ],
-    "command_path": "gcloud storage buckets anywhere-caches describe",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/describe",
-    "description": "Desribes a single Anywhere Cache instance if it exists.",
-    "command_synopsis": "gcloud storage buckets anywhere-caches describe ID [--raw] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "ID": {
-        "content": "ID",
-        "description": "Identifier for a Anywhere Cache instance. It is a combination of\nbucket_name/anywhere_cache_id, For example : test-bucket/my-cache-id."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "raw": {
-        "content": "--raw",
-        "description": "Shows metadata in the format returned by the API instead of standardizing it."
-      }
-    }
-  },
-  {
-    "id": "storage.buckets.anywhere-caches.list",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "buckets",
-      "anywhere-caches",
-      "list"
-    ],
-    "command_path": "gcloud storage buckets anywhere-caches list",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/list",
-    "description": "List all cache instances of this bucket.",
-    "command_synopsis": "gcloud storage buckets anywhere-caches list URL [--raw] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "URL": {
-        "content": "URL",
-        "description": "Specifies the URL of the bucket for which anywhere cache instances should be\nlisted."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "raw": {
-        "content": "--raw",
-        "description": "Shows metadata in the format returned by the API instead of standardizing it."
       }
     }
   },
@@ -459,33 +426,40 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
-    "id": "storage.buckets.anywhere-caches.resume",
+    "id": "storage.buckets.anywhere-caches.describe",
     "service": "storage",
     "type": "command",
     "path": [
       "storage",
       "buckets",
       "anywhere-caches",
-      "resume"
+      "describe"
     ],
-    "command_path": "gcloud storage buckets anywhere-caches resume",
+    "command_path": "gcloud storage buckets anywhere-caches describe",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/resume",
-    "description": "Resume operation could be used to revert the Paused and Disabled state. Once a\npaused/disabled cache is resumed, the cache will be set to RUNNING/CREATING\nstate: 1. RUNNING if the cache is active. 2. CREATING if the cache is pending\ncreation.",
-    "command_synopsis": "gcloud storage buckets anywhere-caches resume ID [ID …] [GCLOUD_WIDE_FLAG …]",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/describe",
+    "description": "Desribes a single Anywhere Cache instance if it exists.",
+    "command_synopsis": "gcloud storage buckets anywhere-caches describe ID [--raw] [GCLOUD_WIDE_FLAG …]",
     "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
     "positional_args": {
       "ID": {
-        "content": "ID[ID…]",
-        "description": "Identifiers for a Anywhere Cache instance. They are combination of\nbucket_name/anywhere_cache_id. For example : test-bucket/my-cache-id."
+        "content": "ID",
+        "description": "Identifier for a Anywhere Cache instance. It is a combination of\nbucket_name/anywhere_cache_id, For example : test-bucket/my-cache-id."
       }
     },
     "required_flags": {},
     "optional_flags": {},
-    "flags": {}
+    "list_command_flags": {},
+    "flags": {
+      "raw": {
+        "content": "--raw",
+        "description": "Shows metadata in the format returned by the API instead of standardizing it."
+      }
+    }
   },
   {
     "id": "storage.buckets.anywhere-caches.pause",
@@ -511,7 +485,124 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
+  },
+  {
+    "id": "storage.buckets.anywhere-caches.list",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "buckets",
+      "anywhere-caches",
+      "list"
+    ],
+    "command_path": "gcloud storage buckets anywhere-caches list",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/list",
+    "description": "List all cache instances of this bucket.",
+    "command_synopsis": "gcloud storage buckets anywhere-caches list URL [--raw] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URL": {
+        "content": "URL",
+        "description": "Specifies the URL of the bucket for which anywhere cache instances should be\nlisted."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
+    "flags": {
+      "raw": {
+        "content": "--raw",
+        "description": "Shows metadata in the format returned by the API instead of standardizing it."
+      }
+    }
+  },
+  {
+    "id": "storage.buckets.anywhere-caches.resume",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "buckets",
+      "anywhere-caches",
+      "resume"
+    ],
+    "command_path": "gcloud storage buckets anywhere-caches resume",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/resume",
+    "description": "Resume operation could be used to revert the Paused and Disabled state. Once a\npaused/disabled cache is resumed, the cache will be set to RUNNING/CREATING\nstate: 1. RUNNING if the cache is active. 2. CREATING if the cache is pending\ncreation.",
+    "command_synopsis": "gcloud storage buckets anywhere-caches resume ID [ID …] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "ID": {
+        "content": "ID[ID…]",
+        "description": "Identifiers for a Anywhere Cache instance. They are combination of\nbucket_name/anywhere_cache_id. For example : test-bucket/my-cache-id."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage.buckets.anywhere-caches.update",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "buckets",
+      "anywhere-caches",
+      "update"
+    ],
+    "command_path": "gcloud storage buckets anywhere-caches update",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/update",
+    "description": "Update one or more Anywhere Cache instances. A cache instance can be updated if\nits state is created or pending creation.",
+    "command_synopsis": "gcloud storage buckets anywhere-caches update ID [ID …] [--admission-policy=ADMISSION_POLICY] [--ttl=TTL] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "ID": {
+        "content": "ID[ID…]",
+        "description": "Identifiers for a Anywhere Cache Instance.They are combination of\nbucket_name/anywhere_cache_id. For example : test-bucket/my-cache-id."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "admission-policy": {
+        "content": "--admission-policy=ADMISSION_POLICY",
+        "description": "The cache admission policy decides for each cache miss, whether to insert the\nmissed block or not.ADMISSION_POLICYmust be one of:ADMIT_ON_FIRST_MISS,ADMIT_ON_SECOND_MISS."
+      },
+      "ttl": {
+        "content": "--ttl=TTL",
+        "description": "Cache entry time-to-live. Default to 24h if not provided."
+      }
+    }
   },
   {
     "id": "storage.buckets.create",
@@ -536,6 +627,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -596,37 +688,37 @@
     }
   },
   {
-    "id": "storage.buckets.anywhere-caches.update",
+    "id": "storage.buckets.describe",
     "service": "storage",
     "type": "command",
     "path": [
       "storage",
       "buckets",
-      "anywhere-caches",
-      "update"
+      "describe"
     ],
-    "command_path": "gcloud storage buckets anywhere-caches update",
+    "command_path": "gcloud storage buckets describe",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/anywhere-caches/update",
-    "description": "Update one or more Anywhere Cache instances. A cache instance can be updated if\nits state is created or pending creation.",
-    "command_synopsis": "gcloud storage buckets anywhere-caches update ID [ID …] [--admission-policy=ADMISSION_POLICY] [--ttl=TTL] [GCLOUD_WIDE_FLAG …]",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/describe",
+    "description": "Describe a Cloud Storage bucket.",
+    "command_synopsis": "gcloud storage buckets describe URL [--additional-headers=HEADER=VALUE] [--raw] [GCLOUD_WIDE_FLAG …]",
     "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
     "positional_args": {
-      "ID": {
-        "content": "ID[ID…]",
-        "description": "Identifiers for a Anywhere Cache Instance.They are combination of\nbucket_name/anywhere_cache_id. For example : test-bucket/my-cache-id."
+      "URL": {
+        "content": "URL",
+        "description": "Specifies URL of bucket to describe."
       }
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
-      "admission-policy": {
-        "content": "--admission-policy=ADMISSION_POLICY",
-        "description": "The cache admission policy decides for each cache miss, whether to insert the\nmissed block or not.ADMISSION_POLICYmust be one of:ADMIT_ON_FIRST_MISS,ADMIT_ON_SECOND_MISS."
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
       },
-      "ttl": {
-        "content": "--ttl=TTL",
-        "description": "Cache entry time-to-live. Default to 24h if not provided."
+      "raw": {
+        "content": "--raw",
+        "description": "Shows metadata in the format returned by the API instead of standardizing it."
       }
     }
   },
@@ -653,6 +745,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -661,40 +754,6 @@
       "continue-on-error": {
         "content": "--continue-on-error,-c",
         "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
-      }
-    }
-  },
-  {
-    "id": "storage.buckets.describe",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "buckets",
-      "describe"
-    ],
-    "command_path": "gcloud storage buckets describe",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/describe",
-    "description": "Describe a Cloud Storage bucket.",
-    "command_synopsis": "gcloud storage buckets describe URL [--additional-headers=HEADER=VALUE] [--raw] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "URL": {
-        "content": "URL",
-        "description": "Specifies URL of bucket to describe."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "additional-headers": {
-        "content": "--additional-headers=HEADER=VALUE",
-        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
-      },
-      "raw": {
-        "content": "--raw",
-        "description": "Shows metadata in the format returned by the API instead of standardizing it."
       }
     }
   },
@@ -721,6 +780,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -746,6 +806,28 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -775,6 +857,7 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -801,6 +884,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "custom-attributes": {
         "content": "--custom-attributes=[KEY=VALUE,…],-m[KEY=VALUE,…]",
@@ -829,32 +913,6 @@
     }
   },
   {
-    "id": "storage.buckets.notifications.describe",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "buckets",
-      "notifications",
-      "describe"
-    ],
-    "command_path": "gcloud storage buckets notifications describe",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/notifications/describe",
-    "description": "gcloud storage buckets notifications describe prints populated\nmetadata for a notification configuration.",
-    "command_synopsis": "gcloud storage buckets notifications describe URL [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "URL": {
-        "content": "URL",
-        "description": "The url of the notification configuration"
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
     "id": "storage.buckets.notifications.delete",
     "service": "storage",
     "type": "command",
@@ -878,6 +936,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -904,6 +963,28 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "filter": {
         "content": "--filter=EXPRESSION",
@@ -928,52 +1009,30 @@
     }
   },
   {
-    "id": "storage.buckets.relocate",
+    "id": "storage.buckets.notifications.describe",
     "service": "storage",
     "type": "command",
     "path": [
       "storage",
       "buckets",
-      "relocate"
+      "notifications",
+      "describe"
     ],
-    "command_path": "gcloud storage buckets relocate",
+    "command_path": "gcloud storage buckets notifications describe",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/relocate",
-    "description": "Relocates a bucket between different locations.",
-    "command_synopsis": "gcloud storage buckets relocate ([URL --location=LOCATION : --placement=[REGION,…] --dry-run] [--operation=OPERATION --finalize : --ttl=TTL]) [GCLOUD_WIDE_FLAG …]",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/notifications/describe",
+    "description": "gcloud storage buckets notifications describe prints populated\nmetadata for a notification configuration.",
+    "command_synopsis": "gcloud storage buckets notifications describe URL [GCLOUD_WIDE_FLAG …]",
     "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
     "positional_args": {
       "URL": {
         "content": "URL",
-        "description": "The URL of the bucket to relocate.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
-      },
-      "location": {
-        "content": "--location=LOCATION",
-        "description": "The finallocationwhere the bucket will be relocated to. If no location is provided, Cloud Storage\nwill use the default location, which is us.This flag argument must be specified if any of the other arguments in this group\nare specified."
-      },
-      "placement": {
-        "content": "--placement=[REGION,…]",
-        "description": "A comma-separated list of regions that form the customdual-region.\nOnly regions within the same continent are or will ever be valid. Invalid\nlocation pairs (such as mixed-continent, or with unsupported regions) will\nreturn an error."
-      },
-      "dry-run": {
-        "content": "--dry-run",
-        "description": "Prints the operations that the relocate command would perform without actually\nperforming relocation. This is helpful to identify any issues that need to be\ndetected asynchronously."
-      },
-      "operation": {
-        "content": "--operation=OPERATION",
-        "description": "Specify the relocation operation name to advance the relocation operation.The\nrelocation operation name must include the Cloud Storage bucket and operation\nID.This flag argument must be specified if any of the other arguments in this group\nare specified."
-      },
-      "finalize": {
-        "content": "--finalize",
-        "description": "Schedules the write lock to occur. Once activated, no further writes will be\nallowed to the associated bucket. This helps minimize disruption to bucket\nusage. For certain types of moves(between Multi Region and Custom Dual Regions),\nfinalize is not required.This flag argument must be specified if any of the other arguments in this group\nare specified."
-      },
-      "ttl": {
-        "content": "--ttl=TTL",
-        "description": "Time to live for the relocation operation. Defaults to 12h if not provided."
+        "description": "The url of the notification configuration"
       }
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -1033,45 +1092,58 @@
         "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
       }
     },
+    "list_command_flags": {},
     "flags": {}
   },
   {
-    "id": "storage.buckets.set-iam-policy",
+    "id": "storage.buckets.relocate",
     "service": "storage",
     "type": "command",
     "path": [
       "storage",
       "buckets",
-      "set-iam-policy"
+      "relocate"
     ],
-    "command_path": "gcloud storage buckets set-iam-policy",
+    "command_path": "gcloud storage buckets relocate",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/set-iam-policy",
-    "description": "Set the IAM policy for a bucket. For more information, see Cloud Identity\nand Access Management.",
-    "command_synopsis": "gcloud storage buckets set-iam-policy URLS [URLS …] POLICY_FILE [--continue-on-error, -c] [--etag=ETAG, -e ETAG] [GCLOUD_WIDE_FLAG …]",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/relocate",
+    "description": "Relocates a bucket between different locations.",
+    "command_synopsis": "gcloud storage buckets relocate ([URL --location=LOCATION : --placement=[REGION,…] --dry-run] [--operation=OPERATION --finalize : --ttl=TTL]) [GCLOUD_WIDE_FLAG …]",
     "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
     "positional_args": {
-      "URLS": {
-        "content": "URLS[URLS…]",
-        "description": "URLs for buckets to apply the IAM policy to. Can include wildcards."
+      "URL": {
+        "content": "URL",
+        "description": "The URL of the bucket to relocate.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
       },
-      "POLICY_FILE": {
-        "content": "POLICY_FILE",
-        "description": "Path to a local JSON or YAML formatted file containing a valid policy.The output of theget-iam-policycommand is a valid file, as is any\nJSON or YAML file conforming to the structure of aPolicy."
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "The finallocationwhere the bucket will be relocated to. If no location is provided, Cloud Storage\nwill use the default location, which is us.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "placement": {
+        "content": "--placement=[REGION,…]",
+        "description": "A comma-separated list of regions that form the customdual-region.\nOnly regions within the same continent are or will ever be valid. Invalid\nlocation pairs (such as mixed-continent, or with unsupported regions) will\nreturn an error."
+      },
+      "dry-run": {
+        "content": "--dry-run",
+        "description": "Prints the operations that the relocate command would perform without actually\nperforming relocation. This is helpful to identify any issues that need to be\ndetected asynchronously."
+      },
+      "operation": {
+        "content": "--operation=OPERATION",
+        "description": "Specify the relocation operation name to advance the relocation operation.The\nrelocation operation name must include the Cloud Storage bucket and operation\nID.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "finalize": {
+        "content": "--finalize",
+        "description": "Schedules the write lock to occur. Once activated, no further writes will be\nallowed to the associated bucket. This helps minimize disruption to bucket\nusage. For certain types of moves(between Multi Region and Custom Dual Regions),\nfinalize is not required.This flag argument must be specified if any of the other arguments in this group\nare specified."
+      },
+      "ttl": {
+        "content": "--ttl=TTL",
+        "description": "Time to live for the relocation operation. Defaults to 12h if not provided."
       }
     },
     "required_flags": {},
     "optional_flags": {},
-    "flags": {
-      "continue-on-error": {
-        "content": "--continue-on-error,-c",
-        "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
-      },
-      "etag": {
-        "content": "--etag=ETAG,-eETAG",
-        "description": "Custom etag to set on IAM policy. API will reject etags that do not match this\nvalue, making it useful as a precondition during concurrent operations."
-      }
-    }
+    "list_command_flags": {},
+    "flags": {}
   },
   {
     "id": "storage.buckets.update",
@@ -1096,6 +1168,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1276,6 +1349,45 @@
     }
   },
   {
+    "id": "storage.buckets.set-iam-policy",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "buckets",
+      "set-iam-policy"
+    ],
+    "command_path": "gcloud storage buckets set-iam-policy",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/buckets/set-iam-policy",
+    "description": "Set the IAM policy for a bucket. For more information, see Cloud Identity\nand Access Management.",
+    "command_synopsis": "gcloud storage buckets set-iam-policy URLS [URLS …] POLICY_FILE [--continue-on-error, -c] [--etag=ETAG, -e ETAG] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URLS": {
+        "content": "URLS[URLS…]",
+        "description": "URLs for buckets to apply the IAM policy to. Can include wildcards."
+      },
+      "POLICY_FILE": {
+        "content": "POLICY_FILE",
+        "description": "Path to a local JSON or YAML formatted file containing a valid policy.The output of theget-iam-policycommand is a valid file, as is any\nJSON or YAML file conforming to the structure of aPolicy."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "continue-on-error": {
+        "content": "--continue-on-error,-c",
+        "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
+      },
+      "etag": {
+        "content": "--etag=ETAG,-eETAG",
+        "description": "Custom etag to set on IAM policy. API will reject etags that do not match this\nvalue, making it useful as a precondition during concurrent operations."
+      }
+    }
+  },
+  {
     "id": "storage.cat",
     "service": "storage",
     "type": "command",
@@ -1297,6 +1409,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1338,6 +1451,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1455,6 +1569,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "test-type": {
         "content": "--test-type=[TEST_TYPES,…]",
@@ -1524,6 +1639,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1576,6 +1692,7 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -1601,6 +1718,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1635,6 +1753,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1665,6 +1784,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1699,6 +1819,28 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1732,6 +1874,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -1768,6 +1911,7 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -1793,6 +1937,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -1818,6 +1963,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -1843,40 +1989,8 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
-  },
-  {
-    "id": "storage.hmac.list",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "hmac",
-      "list"
-    ],
-    "command_path": "gcloud storage hmac list",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/hmac/list",
-    "description": "gcloud storage hmac list lists the HMAC key metadata for keys in\nthe current project.",
-    "command_synopsis": "gcloud storage hmac list [--all, -a] [--long, -l] [--service-account=SERVICE_ACCOUNT, -u SERVICE_ACCOUNT] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "all": {
-        "content": "--all,-a",
-        "description": "Shows all keys, including recently deleted keys."
-      },
-      "long": {
-        "content": "--long,-l",
-        "description": "Use long listing format, showing the full metadata for each key excluding the\nsecret."
-      },
-      "service-account": {
-        "content": "--service-account=SERVICE_ACCOUNT,-uSERVICE_ACCOUNT",
-        "description": "Filter keys for the provided service account email."
-      }
-    }
   },
   {
     "id": "storage.hmac.update",
@@ -1915,7 +2029,63 @@
         "description": "If provided, the update will only be performed if the specified etag matches the\netag of the stored key."
       }
     },
+    "list_command_flags": {},
     "flags": {}
+  },
+  {
+    "id": "storage.hmac.list",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "hmac",
+      "list"
+    ],
+    "command_path": "gcloud storage hmac list",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/hmac/list",
+    "description": "gcloud storage hmac list lists the HMAC key metadata for keys in\nthe current project.",
+    "command_synopsis": "gcloud storage hmac list [--all, -a] [--long, -l] [--service-account=SERVICE_ACCOUNT, -u SERVICE_ACCOUNT] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
+    "flags": {
+      "all": {
+        "content": "--all,-a",
+        "description": "Shows all keys, including recently deleted keys."
+      },
+      "long": {
+        "content": "--long,-l",
+        "description": "Use long listing format, showing the full metadata for each key excluding the\nsecret."
+      },
+      "service-account": {
+        "content": "--service-account=SERVICE_ACCOUNT,-uSERVICE_ACCOUNT",
+        "description": "Filter keys for the provided service account email."
+      }
+    }
   },
   {
     "id": "storage.insights",
@@ -1934,6 +2104,7 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -1954,6 +2125,38 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage.insights.dataset-configs.create-link",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "insights",
+      "dataset-configs",
+      "create-link"
+    ],
+    "command_path": "gcloud storage insights dataset-configs create-link",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/dataset-configs/create-link",
+    "description": "Create link to the customer BigQuery instance for Insights dataset config.",
+    "command_synopsis": "gcloud storage insights dataset-configs create-link (DATASET_CONFIG : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "DATASET_CONFIG": {
+        "content": "DATASET_CONFIG",
+        "description": "ID of the dataset-config or fully qualified identifier for the dataset-config.To set thedataset-configattribute:provide the argumentdataset_configon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Insights supported Google Cloud location for the dataset-config.To set thelocationattribute:provide the argumentdataset_configon the command line with a\nfully specified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2054,66 +2257,7 @@
         "description": "List of locations for projects to be included."
       }
     },
-    "flags": {}
-  },
-  {
-    "id": "storage.insights.dataset-configs.create-link",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "insights",
-      "dataset-configs",
-      "create-link"
-    ],
-    "command_path": "gcloud storage insights dataset-configs create-link",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/dataset-configs/create-link",
-    "description": "Create link to the customer BigQuery instance for Insights dataset config.",
-    "command_synopsis": "gcloud storage insights dataset-configs create-link (DATASET_CONFIG : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "DATASET_CONFIG": {
-        "content": "DATASET_CONFIG",
-        "description": "ID of the dataset-config or fully qualified identifier for the dataset-config.To set thedataset-configattribute:provide the argumentdataset_configon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
-      },
-      "location": {
-        "content": "--location=LOCATION",
-        "description": "Insights supported Google Cloud location for the dataset-config.To set thelocationattribute:provide the argumentdataset_configon the command line with a\nfully specified name;provide the argument--locationon the command line."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
-    "id": "storage.insights.dataset-configs.delete-link",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "insights",
-      "dataset-configs",
-      "delete-link"
-    ],
-    "command_path": "gcloud storage insights dataset-configs delete-link",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/dataset-configs/delete-link",
-    "description": "Delete a link to a BigQuery instance.",
-    "command_synopsis": "gcloud storage insights dataset-configs delete-link (DATASET_CONFIG : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "DATASET_CONFIG": {
-        "content": "DATASET_CONFIG",
-        "description": "ID of the dataset-config or fully qualified identifier for the dataset-config.To set thedataset-configattribute:provide the argumentdataset_configon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
-      },
-      "location": {
-        "content": "--location=LOCATION",
-        "description": "Insights supported Google Cloud location for the dataset-config.To set thelocationattribute:provide the argumentdataset_configon the command line with a\nfully specified name;provide the argument--locationon the command line."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2144,6 +2288,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "auto-delete-link": {
         "content": "--auto-delete-link",
@@ -2154,6 +2299,37 @@
         "description": "Force delete the config by skipping the consent."
       }
     }
+  },
+  {
+    "id": "storage.insights.dataset-configs.delete-link",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "insights",
+      "dataset-configs",
+      "delete-link"
+    ],
+    "command_path": "gcloud storage insights dataset-configs delete-link",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/dataset-configs/delete-link",
+    "description": "Delete a link to a BigQuery instance.",
+    "command_synopsis": "gcloud storage insights dataset-configs delete-link (DATASET_CONFIG : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "DATASET_CONFIG": {
+        "content": "DATASET_CONFIG",
+        "description": "ID of the dataset-config or fully qualified identifier for the dataset-config.To set thedataset-configattribute:provide the argumentdataset_configon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Insights supported Google Cloud location for the dataset-config.To set thelocationattribute:provide the argumentdataset_configon the command line with a\nfully specified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
   },
   {
     "id": "storage.insights.dataset-configs.describe",
@@ -2183,6 +2359,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2204,6 +2381,28 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "location": {
         "content": "--location=LOCATION",
@@ -2239,6 +2438,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "activity-data-retention-period-days": {
         "content": "--activity-data-retention-period-days=ACTIVITY_DATA_RETENTION_DAYS",
@@ -2320,6 +2520,7 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2346,6 +2547,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "destination": {
         "content": "--destination=DESTINATION_URL",
@@ -2390,36 +2592,6 @@
     }
   },
   {
-    "id": "storage.insights.inventory-reports.describe",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "insights",
-      "inventory-reports",
-      "describe"
-    ],
-    "command_path": "gcloud storage insights inventory-reports describe",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/inventory-reports/describe",
-    "description": "Describe an inventory report config.",
-    "command_synopsis": "gcloud storage insights inventory-reports describe (REPORT_CONFIG : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "REPORT_CONFIG": {
-        "content": "REPORT_CONFIG",
-        "description": "ID of the report-config or fully qualified identifier for the report-config.To set thereport-configattribute:provide the argumentreport_configon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
-      },
-      "location": {
-        "content": "--location=LOCATION",
-        "description": "Google Cloud location for the report-config.To set thelocationattribute:provide the argumentreport_configon the command line with a fully\nspecified name;provide the argument--locationon the command line."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
     "id": "storage.insights.inventory-reports.delete",
     "service": "storage",
     "type": "command",
@@ -2447,6 +2619,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "force": {
         "content": "--force",
@@ -2473,6 +2646,38 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage.insights.inventory-reports.describe",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "insights",
+      "inventory-reports",
+      "describe"
+    ],
+    "command_path": "gcloud storage insights inventory-reports describe",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/insights/inventory-reports/describe",
+    "description": "Describe an inventory report config.",
+    "command_synopsis": "gcloud storage insights inventory-reports describe (REPORT_CONFIG : --location=LOCATION) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "REPORT_CONFIG": {
+        "content": "REPORT_CONFIG",
+        "description": "ID of the report-config or fully qualified identifier for the report-config.To set thereport-configattribute:provide the argumentreport_configon the command line.This positional argument must be specified if any of the other arguments in this\ngroup are specified."
+      },
+      "location": {
+        "content": "--location=LOCATION",
+        "description": "Google Cloud location for the report-config.To set thelocationattribute:provide the argumentreport_configon the command line with a fully\nspecified name;provide the argument--locationon the command line."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2508,6 +2713,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2539,6 +2745,28 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "filter": {
         "content": "--filter=EXPRESSION",
@@ -2581,6 +2809,28 @@
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "location": {
         "content": "--location=LOCATION",
@@ -2620,6 +2870,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "destination": {
         "content": "--destination=DESTINATION_URL",
@@ -2672,25 +2923,6 @@
     }
   },
   {
-    "id": "storage.intelligence-configs",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage",
-      "intelligence-configs"
-    ],
-    "command_path": "gcloud storage intelligence-configs",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/intelligence-configs",
-    "description": "Manage Cloud Storage Intelligence Configurations.",
-    "command_synopsis": "gcloud storage intelligence-configs COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "0baad64ac160a1f695cd62907b8a07b585e46b1ef743b71353e3e2193a883593",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
     "id": "storage.intelligence-configs.describe",
     "service": "storage",
     "type": "group",
@@ -2721,6 +2953,27 @@
       }
     },
     "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage.intelligence-configs",
+    "service": "storage",
+    "type": "group",
+    "path": [
+      "storage",
+      "intelligence-configs"
+    ],
+    "command_path": "gcloud storage intelligence-configs",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/intelligence-configs",
+    "description": "Manage Cloud Storage Intelligence Configurations.",
+    "command_synopsis": "gcloud storage intelligence-configs COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "0baad64ac160a1f695cd62907b8a07b585e46b1ef743b71353e3e2193a883593",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2754,6 +3007,7 @@
       }
     },
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2787,63 +3041,7 @@
       }
     },
     "optional_flags": {},
-    "flags": {}
-  },
-  {
-    "id": "storage.intelligence-configs.update",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage",
-      "intelligence-configs",
-      "update"
-    ],
-    "command_path": "gcloud storage intelligence-configs update",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/intelligence-configs/update",
-    "description": "Update storage intelligence configuration for the organization, sub-folder or\nproject. The command sets STANDARD edition by default if no other\nedition flags like ``--trial-edition`` or ``--inherit-from-parent`` are\nspecified.",
-    "command_synopsis": "gcloud storage intelligence-configs update (--organization=ORGANIZATION     | --project=PROJECT     | --sub-folder=SUB_FOLDER) (--inherit-from-parent     | --trial-edition --exclude-bucket-id-regexes=[EXCLUDE_BUCKET_ID_REGEXES,…]     | --include-bucket-id-regexes=[INCLUDE_BUCKET_ID_REGEXES,…] --exclude-locations=[EXCLUDE_LOCATIONS,…]     | --include-locations=[INCLUDE_LOCATIONS,…]) [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {},
-    "required_flags": {
-      "organization": {
-        "content": "--organization=ORGANIZATION",
-        "description": "Specifies organization id for the storage intelligence config."
-      },
-      "project": {
-        "content": "--project=PROJECT",
-        "description": "Specifies project for the storage intelligence config."
-      },
-      "sub-folder": {
-        "content": "--sub-folder=SUB_FOLDER",
-        "description": "Specifies sub-folder id for the storage intelligence config."
-      },
-      "inherit-from-parent": {
-        "content": "--inherit-from-parent",
-        "description": "Specifies storage intelligence config to be inherited from parent."
-      },
-      "trial-edition": {
-        "content": "--trial-edition",
-        "description": "Enables Storage Intelligence for TRIAL edition."
-      },
-      "exclude-bucket-id-regexes": {
-        "content": "--exclude-bucket-id-regexes=[EXCLUDE_BUCKET_ID_REGEXES,…]",
-        "description": "Sets filter for bucket id regexes to exclude. Accepts list of bucket id regexes\nin comma separated format. If the regex contains special characters that may\nhave a specific meaning in the shell, escape them using backslashes(\\). To clear\nbucket id regexes list, provide flag with an empty list. e.g--exclude-bucket-id-regexes=\"\"or--exclude-bucket-id-regexes=."
-      },
-      "include-bucket-id-regexes": {
-        "content": "--include-bucket-id-regexes=[INCLUDE_BUCKET_ID_REGEXES,…]",
-        "description": "Sets filter for bucket id regexes to include. Accepts list of bucket id regexes\nin comma separated format. If the regex contains special characters that may\nhave a specific meaning in the shell, escape them using backslashes(\\). To clear\nbucket id regexes list, provide flag with empty list. e.g--include-bucket-id-regexes=\"\"or--include-bucket-id-regexes=."
-      },
-      "exclude-locations": {
-        "content": "--exclude-locations=[EXCLUDE_LOCATIONS,…]",
-        "description": "Comma separated list oflocationsto exclude in storage intelligence filter. To clear excluded locations, provide\nflag with empty list. e.g--exclude-locations=\"\"or--exclude-locations=."
-      },
-      "include-locations": {
-        "content": "--include-locations=[INCLUDE_LOCATIONS,…]",
-        "description": "Comma separated list oflocationsto include in storage intelligence filter. To clear included locations, provide\nflag with empty list. e.g--include-locations=\"\"or--include-locations=."
-      }
-    },
-    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -2868,6 +3066,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -2932,6 +3131,84 @@
     }
   },
   {
+    "id": "storage.intelligence-configs.update",
+    "service": "storage",
+    "type": "group",
+    "path": [
+      "storage",
+      "intelligence-configs",
+      "update"
+    ],
+    "command_path": "gcloud storage intelligence-configs update",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/intelligence-configs/update",
+    "description": "Update storage intelligence configuration for the organization, sub-folder or\nproject. The command sets STANDARD edition by default if no other\nedition flags like ``--trial-edition`` or ``--inherit-from-parent`` are\nspecified.",
+    "command_synopsis": "gcloud storage intelligence-configs update (--organization=ORGANIZATION     | --project=PROJECT     | --sub-folder=SUB_FOLDER) (--inherit-from-parent     | --trial-edition --exclude-bucket-id-regexes=[EXCLUDE_BUCKET_ID_REGEXES,…]     | --include-bucket-id-regexes=[INCLUDE_BUCKET_ID_REGEXES,…] --exclude-locations=[EXCLUDE_LOCATIONS,…]     | --include-locations=[INCLUDE_LOCATIONS,…]) [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {},
+    "required_flags": {
+      "organization": {
+        "content": "--organization=ORGANIZATION",
+        "description": "Specifies organization id for the storage intelligence config."
+      },
+      "project": {
+        "content": "--project=PROJECT",
+        "description": "Specifies project for the storage intelligence config."
+      },
+      "sub-folder": {
+        "content": "--sub-folder=SUB_FOLDER",
+        "description": "Specifies sub-folder id for the storage intelligence config."
+      },
+      "inherit-from-parent": {
+        "content": "--inherit-from-parent",
+        "description": "Specifies storage intelligence config to be inherited from parent."
+      },
+      "trial-edition": {
+        "content": "--trial-edition",
+        "description": "Enables Storage Intelligence for TRIAL edition."
+      },
+      "exclude-bucket-id-regexes": {
+        "content": "--exclude-bucket-id-regexes=[EXCLUDE_BUCKET_ID_REGEXES,…]",
+        "description": "Sets filter for bucket id regexes to exclude. Accepts list of bucket id regexes\nin comma separated format. If the regex contains special characters that may\nhave a specific meaning in the shell, escape them using backslashes(\\). To clear\nbucket id regexes list, provide flag with an empty list. e.g--exclude-bucket-id-regexes=\"\"or--exclude-bucket-id-regexes=."
+      },
+      "include-bucket-id-regexes": {
+        "content": "--include-bucket-id-regexes=[INCLUDE_BUCKET_ID_REGEXES,…]",
+        "description": "Sets filter for bucket id regexes to include. Accepts list of bucket id regexes\nin comma separated format. If the regex contains special characters that may\nhave a specific meaning in the shell, escape them using backslashes(\\). To clear\nbucket id regexes list, provide flag with empty list. e.g--include-bucket-id-regexes=\"\"or--include-bucket-id-regexes=."
+      },
+      "exclude-locations": {
+        "content": "--exclude-locations=[EXCLUDE_LOCATIONS,…]",
+        "description": "Comma separated list oflocationsto exclude in storage intelligence filter. To clear excluded locations, provide\nflag with empty list. e.g--exclude-locations=\"\"or--exclude-locations=."
+      },
+      "include-locations": {
+        "content": "--include-locations=[INCLUDE_LOCATIONS,…]",
+        "description": "Comma separated list oflocationsto include in storage intelligence filter. To clear included locations, provide\nflag with empty list. e.g--include-locations=\"\"or--include-locations=."
+      }
+    },
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage.managed-folders",
+    "service": "storage",
+    "type": "group",
+    "path": [
+      "storage",
+      "managed-folders"
+    ],
+    "command_path": "gcloud storage managed-folders",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/managed-folders",
+    "description": "Manage Cloud Storage managed folders.",
+    "command_synopsis": "gcloud storage managed-folders COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "369a021ae8125ed52376761c06f51416948972636ac03f5e353d78559c1659dd",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
     "id": "storage.managed-folders.add-iam-policy-binding",
     "service": "storage",
     "type": "command",
@@ -2984,60 +3261,8 @@
         "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
       }
     },
+    "list_command_flags": {},
     "flags": {}
-  },
-  {
-    "id": "storage.managed-folders",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage",
-      "managed-folders"
-    ],
-    "command_path": "gcloud storage managed-folders",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/managed-folders",
-    "description": "Manage Cloud Storage managed folders.",
-    "command_synopsis": "gcloud storage managed-folders COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "369a021ae8125ed52376761c06f51416948972636ac03f5e353d78559c1659dd",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
-    "id": "storage.managed-folders.delete",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "managed-folders",
-      "delete"
-    ],
-    "command_path": "gcloud storage managed-folders delete",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/managed-folders/delete",
-    "description": "Delete managed folders.",
-    "command_synopsis": "gcloud storage managed-folders delete URL [URL …] [--additional-headers=HEADER=VALUE] [--continue-on-error, -c] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "URL": {
-        "content": "URL[URL…]",
-        "description": "The URLs of the managed folders to delete."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "additional-headers": {
-        "content": "--additional-headers=HEADER=VALUE",
-        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
-      },
-      "continue-on-error": {
-        "content": "--continue-on-error,-c",
-        "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
-      }
-    }
   },
   {
     "id": "storage.managed-folders.create",
@@ -3062,10 +3287,46 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
         "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      }
+    }
+  },
+  {
+    "id": "storage.managed-folders.delete",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "managed-folders",
+      "delete"
+    ],
+    "command_path": "gcloud storage managed-folders delete",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/managed-folders/delete",
+    "description": "Delete managed folders.",
+    "command_synopsis": "gcloud storage managed-folders delete URL [URL …] [--additional-headers=HEADER=VALUE] [--continue-on-error, -c] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URL": {
+        "content": "URL[URL…]",
+        "description": "The URLs of the managed folders to delete."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      },
+      "continue-on-error": {
+        "content": "--continue-on-error,-c",
+        "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
       }
     }
   },
@@ -3092,6 +3353,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -3126,6 +3388,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -3185,6 +3448,7 @@
         "description": "Path to a local JSON or YAML file that defines the condition. To see available\nfields, see the help for--condition. Use a full or relative path\nto a local file containing the value of condition."
       }
     },
+    "list_command_flags": {},
     "flags": {}
   },
   {
@@ -3210,6 +3474,28 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -3248,6 +3534,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "continue-on-error": {
         "content": "--continue-on-error,-c",
@@ -3256,101 +3543,6 @@
       "etag": {
         "content": "--etag=ETAG,-eETAG",
         "description": "Custom etag to set on IAM policy. API will reject etags that do not match this\nvalue, making it useful as a precondition during concurrent operations."
-      }
-    }
-  },
-  {
-    "id": "storage.objects",
-    "service": "storage",
-    "type": "group",
-    "path": [
-      "storage",
-      "objects"
-    ],
-    "command_path": "gcloud storage objects",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects",
-    "description": "Manage Cloud Storage objects.",
-    "command_synopsis": "gcloud storage objects COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "9290289f803b4716630efbf5fcf83d185045566a9e9098809466a9464388a6a1",
-    "positional_args": {},
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {}
-  },
-  {
-    "id": "storage.objects.describe",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "objects",
-      "describe"
-    ],
-    "command_path": "gcloud storage objects describe",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/describe",
-    "description": "Describe a Cloud Storage object.",
-    "command_synopsis": "gcloud storage objects describe URL [--additional-headers=HEADER=VALUE] [--fetch-encrypted-object-hashes] [--raw] [--soft-deleted] [--decryption-keys=[DECRYPTION_KEY,…]] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "URL": {
-        "content": "URL",
-        "description": "Specifies URL of object to describe."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "additional-headers": {
-        "content": "--additional-headers=HEADER=VALUE",
-        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
-      },
-      "fetch-encrypted-object-hashes": {
-        "content": "--fetch-encrypted-object-hashes",
-        "description": "If the initial GET request returns an object encrypted with a customer-supplied\nencryption key, the hash fields will be null. If the matching decryption key is\npresent on the system, this flag retries the GET request with the key."
-      },
-      "raw": {
-        "content": "--raw",
-        "description": "Shows metadata in the format returned by the API instead of standardizing it."
-      },
-      "soft-deleted": {
-        "content": "--soft-deleted",
-        "description": "Displays soft-deleted resources only. For objects, it will exclude live and\nnoncurrent ones."
-      }
-    }
-  },
-  {
-    "id": "storage.objects.compose",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "objects",
-      "compose"
-    ],
-    "command_path": "gcloud storage objects compose",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/compose",
-    "description": "gcloud storage objects compose creates a new object whose content is the\nconcatenation of a given sequence of source objects in the same bucket. For more\ninformation, please see: composite objects\ndocumentation.\nThere is a limit (currently 32) to the number of components that can be composed\nin a single operation.",
-    "command_synopsis": "gcloud storage objects compose SOURCE [SOURCE …] DESTINATION [--additional-headers=HEADER=VALUE] [--if-generation-match=GENERATION --if-metageneration-match=METAGENERATION] [--retain-until=DATETIME --retention-mode=RETENTION_MODE] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "SOURCE": {
-        "content": "SOURCE[SOURCE…]",
-        "description": "The list of source objects that will be concatenated into a single object."
-      },
-      "DESTINATION": {
-        "content": "DESTINATION",
-        "description": "The destination object."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "additional-headers": {
-        "content": "--additional-headers=HEADER=VALUE",
-        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
       }
     }
   },
@@ -3380,6 +3572,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -3472,23 +3665,178 @@
     }
   },
   {
-    "id": "storage.operations",
+    "id": "storage.objects.compose",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "objects",
+      "compose"
+    ],
+    "command_path": "gcloud storage objects compose",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/compose",
+    "description": "gcloud storage objects compose creates a new object whose content is the\nconcatenation of a given sequence of source objects in the same bucket. For more\ninformation, please see: composite objects\ndocumentation.\nThere is a limit (currently 32) to the number of components that can be composed\nin a single operation.",
+    "command_synopsis": "gcloud storage objects compose SOURCE [SOURCE …] DESTINATION [--additional-headers=HEADER=VALUE] [--if-generation-match=GENERATION --if-metageneration-match=METAGENERATION] [--retain-until=DATETIME --retention-mode=RETENTION_MODE] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "SOURCE": {
+        "content": "SOURCE[SOURCE…]",
+        "description": "The list of source objects that will be concatenated into a single object."
+      },
+      "DESTINATION": {
+        "content": "DESTINATION",
+        "description": "The destination object."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      }
+    }
+  },
+  {
+    "id": "storage.objects",
     "service": "storage",
     "type": "group",
     "path": [
       "storage",
-      "operations"
+      "objects"
     ],
-    "command_path": "gcloud storage operations",
+    "command_path": "gcloud storage objects",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/operations",
-    "description": "Manage storage operations.",
-    "command_synopsis": "gcloud storage operations COMMAND [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "68a13c9405d952669fbba073cb35ebe6824bd42b46bb9db25497645a25412399",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects",
+    "description": "Manage Cloud Storage objects.",
+    "command_synopsis": "gcloud storage objects COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "9290289f803b4716630efbf5fcf83d185045566a9e9098809466a9464388a6a1",
     "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
+  },
+  {
+    "id": "storage.objects.describe",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "objects",
+      "describe"
+    ],
+    "command_path": "gcloud storage objects describe",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/describe",
+    "description": "Describe a Cloud Storage object.",
+    "command_synopsis": "gcloud storage objects describe URL [--additional-headers=HEADER=VALUE] [--fetch-encrypted-object-hashes] [--raw] [--soft-deleted] [--decryption-keys=[DECRYPTION_KEY,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URL": {
+        "content": "URL",
+        "description": "Specifies URL of object to describe."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      },
+      "fetch-encrypted-object-hashes": {
+        "content": "--fetch-encrypted-object-hashes",
+        "description": "If the initial GET request returns an object encrypted with a customer-supplied\nencryption key, the hash fields will be null. If the matching decryption key is\npresent on the system, this flag retries the GET request with the key."
+      },
+      "raw": {
+        "content": "--raw",
+        "description": "Shows metadata in the format returned by the API instead of standardizing it."
+      },
+      "soft-deleted": {
+        "content": "--soft-deleted",
+        "description": "Displays soft-deleted resources only. For objects, it will exclude live and\nnoncurrent ones."
+      }
+    }
+  },
+  {
+    "id": "storage.objects.list",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "objects",
+      "list"
+    ],
+    "command_path": "gcloud storage objects list",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/list",
+    "description": "List Cloud Storage objects.\nBucket URLs like gs://bucket match all the objects inside a bucket,\nbut gs://b* fails because it matches a list of buckets.",
+    "command_synopsis": "gcloud storage objects list URLS [URLS …] [--additional-headers=HEADER=VALUE] [--exhaustive] [--fetch-encrypted-object-hashes] [--next-page-token=NEXT_PAGE_TOKEN] [--raw] [--soft-deleted] [--stat] [--decryption-keys=[DECRYPTION_KEY,…]] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URLS": {
+        "content": "URLS[URLS…]",
+        "description": "Specifies URL of objects to list."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "page-size": {
+        "content": "--page-size=PAGE_SIZE",
+        "description": "Some services group resource list output into pages. This flag specifies the\nmaximum number of resources per page. The default is determined by the service\nif it supports paging, otherwise it isunlimited(no paging).\nPaging may be applied before or after--filterand--limitdepending on the service."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "uri": {
+        "content": "--uri",
+        "description": "Print a list of resource URIs instead of the default output, and change the\ncommand output to a list of URIs. If this flag is used with--format, the formatting is applied on this URI list. To display\nURIs alongside other keys instead, use theuri()transform."
+      }
+    },
+    "flags": {
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      },
+      "exhaustive": {
+        "content": "--exhaustive",
+        "description": "For features like soft delete, the API may return an empty list. If present,\ncontinue querying. This may incur costs from repeated LIST calls and may not\nreturn any additional objects."
+      },
+      "fetch-encrypted-object-hashes": {
+        "content": "--fetch-encrypted-object-hashes",
+        "description": "API requests to the LIST endpoint do not fetch the hashes for encrypted objects\nby default. If this flag is set, a GET request is sent for each encrypted object\nin order to fetch hashes. This can significantly increase the cost of the\ncommand."
+      },
+      "next-page-token": {
+        "content": "--next-page-token=NEXT_PAGE_TOKEN",
+        "description": "Page token for resuming LIST calls."
+      },
+      "raw": {
+        "content": "--raw",
+        "description": "Shows metadata in the format returned by the API instead of standardizing it."
+      },
+      "soft-deleted": {
+        "content": "--soft-deleted",
+        "description": "Displays soft-deleted resources only. For objects, it will exclude live and\nnoncurrent ones."
+      },
+      "stat": {
+        "content": "--stat",
+        "description": "Emulates gsutil stat-style behavior. Does not show past object versions and\nchanges output format."
+      }
+    }
   },
   {
     "id": "storage.objects.update",
@@ -3513,6 +3861,7 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {
       "additional-headers": {
         "content": "--additional-headers=HEADER=VALUE",
@@ -3569,113 +3918,24 @@
     }
   },
   {
-    "id": "storage.objects.list",
+    "id": "storage.operations",
     "service": "storage",
-    "type": "command",
+    "type": "group",
     "path": [
       "storage",
-      "objects",
-      "list"
+      "operations"
     ],
-    "command_path": "gcloud storage objects list",
+    "command_path": "gcloud storage operations",
     "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/objects/list",
-    "description": "List Cloud Storage objects.\nBucket URLs like gs://bucket match all the objects inside a bucket,\nbut gs://b* fails because it matches a list of buckets.",
-    "command_synopsis": "gcloud storage objects list URLS [URLS …] [--additional-headers=HEADER=VALUE] [--exhaustive] [--fetch-encrypted-object-hashes] [--next-page-token=NEXT_PAGE_TOKEN] [--raw] [--soft-deleted] [--stat] [--decryption-keys=[DECRYPTION_KEY,…]] [--filter=EXPRESSION] [--limit=LIMIT] [--page-size=PAGE_SIZE] [--sort-by=[FIELD,…]] [--uri] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "URLS": {
-        "content": "URLS[URLS…]",
-        "description": "Specifies URL of objects to list."
-      }
-    },
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/operations",
+    "description": "Manage storage operations.",
+    "command_synopsis": "gcloud storage operations COMMAND [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "68a13c9405d952669fbba073cb35ebe6824bd42b46bb9db25497645a25412399",
+    "positional_args": {},
     "required_flags": {},
     "optional_flags": {},
-    "flags": {
-      "additional-headers": {
-        "content": "--additional-headers=HEADER=VALUE",
-        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
-      },
-      "exhaustive": {
-        "content": "--exhaustive",
-        "description": "For features like soft delete, the API may return an empty list. If present,\ncontinue querying. This may incur costs from repeated LIST calls and may not\nreturn any additional objects."
-      },
-      "fetch-encrypted-object-hashes": {
-        "content": "--fetch-encrypted-object-hashes",
-        "description": "API requests to the LIST endpoint do not fetch the hashes for encrypted objects\nby default. If this flag is set, a GET request is sent for each encrypted object\nin order to fetch hashes. This can significantly increase the cost of the\ncommand."
-      },
-      "next-page-token": {
-        "content": "--next-page-token=NEXT_PAGE_TOKEN",
-        "description": "Page token for resuming LIST calls."
-      },
-      "raw": {
-        "content": "--raw",
-        "description": "Shows metadata in the format returned by the API instead of standardizing it."
-      },
-      "soft-deleted": {
-        "content": "--soft-deleted",
-        "description": "Displays soft-deleted resources only. For objects, it will exclude live and\nnoncurrent ones."
-      },
-      "stat": {
-        "content": "--stat",
-        "description": "Emulates gsutil stat-style behavior. Does not show past object versions and\nchanges output format."
-      }
-    }
-  },
-  {
-    "id": "storage.operations.describe",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "operations",
-      "describe"
-    ],
-    "command_path": "gcloud storage operations describe",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/operations/describe",
-    "description": "Get details about a specific storage operation.",
-    "command_synopsis": "gcloud storage operations describe OPERATION_NAME [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "OPERATION_NAME": {
-        "content": "OPERATION_NAME",
-        "description": "The operation name including the Cloud Storage bucket and operation ID."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
-  },
-  {
-    "id": "storage.operations.list",
-    "service": "storage",
-    "type": "command",
-    "path": [
-      "storage",
-      "operations",
-      "list"
-    ],
-    "command_path": "gcloud storage operations list",
-    "service_name": "storage",
-    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/operations/list",
-    "description": "List storage operations.",
-    "command_synopsis": "gcloud storage operations list PARENT_RESOURCE_NAME [--server-filter=SERVER_FILTER] [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
-    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
-    "positional_args": {
-      "PARENT_RESOURCE_NAME": {
-        "content": "PARENT_RESOURCE_NAME",
-        "description": "The operation parent resource in the format\n\"projects/_/buckets/BUCKET\"."
-      }
-    },
-    "required_flags": {},
-    "optional_flags": {},
-    "flags": {
-      "server-filter": {
-        "content": "--server-filter=SERVER_FILTER",
-        "description": "Server-side filter string used to determine what operations to return. Example:\n'(done = true AND complete_time >= \"2023-01-01T00:00:00Z\") OR\nrequested_cancellation = true' Note that the entire filter string must be in\nquotes and date strings within the filter must be in embedded quotes."
-      }
-    }
   },
   {
     "id": "storage.operations.cancel",
@@ -3700,6 +3960,370 @@
     },
     "required_flags": {},
     "optional_flags": {},
+    "list_command_flags": {},
     "flags": {}
+  },
+  {
+    "id": "storage.operations.describe",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "operations",
+      "describe"
+    ],
+    "command_path": "gcloud storage operations describe",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/operations/describe",
+    "description": "Get details about a specific storage operation.",
+    "command_synopsis": "gcloud storage operations describe OPERATION_NAME [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "OPERATION_NAME": {
+        "content": "OPERATION_NAME",
+        "description": "The operation name including the Cloud Storage bucket and operation ID."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {}
+  },
+  {
+    "id": "storage.restore",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "restore"
+    ],
+    "command_path": "gcloud storage restore",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/restore",
+    "description": "The restore command restores soft-deleted resources:\ngcloud storage restore url…",
+    "command_synopsis": "gcloud storage restore [URLS …] [--all-versions, -a] [--async] [--[no-]preserve-acl, -p] [--read-paths-from-stdin, -I] [--allow-overwrite --created-after-time=CREATED_AFTER_TIME --created-before-time=CREATED_BEFORE_TIME --deleted-after-time=DELETED_AFTER_TIME --deleted-before-time=DELETED_BEFORE_TIME] [--if-generation-match=GENERATION --if-metageneration-match=METAGENERATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URLS": {
+        "content": "[URLS…]",
+        "description": "The url of objects to list."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "all-versions": {
+        "content": "--all-versions,-a",
+        "description": "Restores all versions of soft-deleted objects.This flag is only useful for buckets with [object versioning]\n(https://cloud.google.com/storage/docs/object-versioning) enabled. In this case,\nthe latest soft-deleted version will become live and the previous generations\nwill become noncurrent.If versioning is disabled, the latest soft-deleted version will become live and\nprevious generations will be soft-deleted again.This flag disables parallelism to preserve version order."
+      },
+      "async": {
+        "content": "--async",
+        "description": "Initiates an asynchronous bulk restore operation on the specified bucket."
+      },
+      "[no-]preserve-acl": {
+        "content": "--[no-]preserve-acl,-p",
+        "description": "Preserves ACLs when copying in the cloud. This option is Cloud Storage-only, and\nyou need OWNER access to all copied objects. If all objects in the destination\nbucket should have the same ACL, you can also set a default object ACL on that\nbucket instead of using this flag. Preserving ACLs is the default behavior for\nupdating existing objects. Use--preserve-aclto enable and--no-preserve-aclto disable."
+      },
+      "read-paths-from-stdin": {
+        "content": "--read-paths-from-stdin,-I",
+        "description": "Read the list of URLs from stdin."
+      },
+      "allow-overwrite": {
+        "content": "--allow-overwrite",
+        "description": "If included, live objects will be overwritten. If versioning is enabled, this\nwill result in a noncurrent object. If versioning is not enabled, this will\nresult in a soft-deleted object."
+      },
+      "created-after-time": {
+        "content": "--created-after-time=CREATED_AFTER_TIME",
+        "description": "Restores only the objects that were created after this time."
+      },
+      "created-before-time": {
+        "content": "--created-before-time=CREATED_BEFORE_TIME",
+        "description": "Restores only the objects that were created before this time."
+      },
+      "deleted-after-time": {
+        "content": "--deleted-after-time=DELETED_AFTER_TIME",
+        "description": "Restores only the objects that were soft-deleted after this time."
+      },
+      "deleted-before-time": {
+        "content": "--deleted-before-time=DELETED_BEFORE_TIME",
+        "description": "Restores only the objects that were soft-deleted before this time."
+      }
+    }
+  },
+  {
+    "id": "storage.operations.list",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "operations",
+      "list"
+    ],
+    "command_path": "gcloud storage operations list",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/operations/list",
+    "description": "List storage operations.",
+    "command_synopsis": "gcloud storage operations list PARENT_RESOURCE_NAME [--server-filter=SERVER_FILTER] [--filter=EXPRESSION] [--limit=LIMIT] [--sort-by=[FIELD,…]] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "PARENT_RESOURCE_NAME": {
+        "content": "PARENT_RESOURCE_NAME",
+        "description": "The operation parent resource in the format\n\"projects/_/buckets/BUCKET\"."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {
+      "filter": {
+        "content": "--filter=EXPRESSION",
+        "description": "Apply a Boolean filterEXPRESSIONto each resource item\nto be listed. If the expression evaluatesTrue, then that item is\nlisted. For more details and examples of filter expressions, run $gcloud topic filters. This flag\ninteracts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "limit": {
+        "content": "--limit=LIMIT",
+        "description": "Maximum number of resources to list. The default isunlimited. This\nflag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      },
+      "sort-by": {
+        "content": "--sort-by=[FIELD,…]",
+        "description": "Comma-separated list of resource field key names to sort by. The default order\nis ascending. Prefix a field with ``~´´ for descending order on that\nfield. This flag interacts with other flags that are applied in this order:--flatten,--sort-by,--filter,--limit."
+      }
+    },
+    "flags": {
+      "server-filter": {
+        "content": "--server-filter=SERVER_FILTER",
+        "description": "Server-side filter string used to determine what operations to return. Example:\n'(done = true AND complete_time >= \"2023-01-01T00:00:00Z\") OR\nrequested_cancellation = true' Note that the entire filter string must be in\nquotes and date strings within the filter must be in embedded quotes."
+      }
+    }
+  },
+  {
+    "id": "storage.rsync",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "rsync"
+    ],
+    "command_path": "gcloud storage rsync",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/rsync",
+    "description": "gcloud storage rsync copies to and updates objects at\nDESTINATION to match SOURCE. SOURCE must\nspecify a directory, bucket, or bucket subdirectory. gcloud storage\nrsync does not copy empty directory trees, since storage providers use a\nflat namespace.\nNote, shells (like bash, zsh) sometimes attempt to expand wildcards in ways that\ncan be surprising. Also, attempting to copy files whose names contain wildcard\ncharacters can result in problems.\nIf synchronizing a large amount of data between clouds you might consider\nsetting up a Google Compute Engine account and running gcloud storage\nrsync there. Since gcloud storage rsync cross-provider data\ntransfers flow through the machine where gcloud storage rsync is\nrunning, doing this can make your transfer run significantly faster than on your\nlocal workstation.",
+    "command_synopsis": "gcloud storage rsync SOURCE DESTINATION [--additional-headers=HEADER=VALUE] [--canned-acl=PREDEFINED_ACL, --predefined-acl=PREDEFINED_ACL, -a PREDEFINED_ACL] [--checksums-only] [--no-clobber, -n] [--content-md5=MD5_DIGEST] [--continue-on-error, -c] [--delete-unmatched-destination-objects] [--dry-run] [--exclude=[REGEX,…], -x [REGEX,…]] [--gzip-in-flight=[FILE_EXTENSIONS,…], -j [FILE_EXTENSIONS,…]] [--gzip-in-flight-all, -J] [--no-ignore-symlinks] [--include-managed-folders] [--preserve-posix, -P] [--recursive, -R, -r] [--skip-if-dest-has-newer-mtime, -u] [--skip-unsupported, -U] [--decryption-keys=[DECRYPTION_KEY,…] --encryption-key=ENCRYPTION_KEY] [--cache-control=CACHE_CONTROL --content-disposition=CONTENT_DISPOSITION --content-encoding=CONTENT_ENCODING --content-language=CONTENT_LANGUAGE --content-type=CONTENT_TYPE --custom-time=CUSTOM_TIME --clear-custom-metadata     | --custom-metadata=[CUSTOM_METADATA_KEYS_AND_VALUES,…]     | --remove-custom-metadata=[METADATA_KEYS,…] --update-custom-metadata=[CUSTOM_METADATA_KEYS_AND_VALUES,…]] [--if-generation-match=GENERATION --if-metageneration-match=METAGENERATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "SOURCE": {
+        "content": "SOURCE",
+        "description": "The source container path."
+      },
+      "DESTINATION": {
+        "content": "DESTINATION",
+        "description": "The destination container path."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      },
+      "canned-acl": {
+        "content": "--canned-acl=PREDEFINED_ACL,--predefined-acl=PREDEFINED_ACL,-aPREDEFINED_ACL",
+        "description": "Applies predefined, or \"canned,\" ACLs to a resource. See docs for a list of\npredefined ACL constants:https://cloud.google.com/storage/docs/access-control/lists#predefined-acl"
+      },
+      "checksums-only": {
+        "content": "--checksums-only",
+        "description": "When comparing objects with matching names at the source and destination, skip\nmodification time check and compare object hashes. Normally, hashes are only\ncompared if modification times are not available."
+      },
+      "no-clobber": {
+        "content": "--no-clobber,-n",
+        "description": "Do not overwrite existing files or objects at the destination. Skipped items\nwill be printed. This option may perform an additional GET request for cloud\nobjects before attempting an upload."
+      },
+      "content-md5": {
+        "content": "--content-md5=MD5_DIGEST",
+        "description": "Manually specified MD5 hash digest for the contents of an uploaded file. This\nflag cannot be used when uploading multiple files. The custom digest is used by\nthe cloud provider for validation."
+      },
+      "continue-on-error": {
+        "content": "--continue-on-error,-c",
+        "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
+      },
+      "delete-unmatched-destination-objects": {
+        "content": "--delete-unmatched-destination-objects",
+        "description": "Delete extra files under DESTINATION not found under SOURCE. By default extra\nfiles are not deleted. Managed folders are not affected by this flag.Note: this option can delete data quickly if you specify the wrong source and\ndestination combination."
+      },
+      "dry-run": {
+        "content": "--dry-run",
+        "description": "Print what operations rsync would perform without actually executing them."
+      },
+      "exclude": {
+        "content": "--exclude=[REGEX,…],-x[REGEX,…]",
+        "description": "Exclude objects matching regex pattern from rsync.Note that this is a Python regular expression, not a pure wildcard pattern. For\nexample, matching a string ending in \"abc\" is.*abc$rather than*abc. Also note that the exclude path is relative, as opposed to\nabsolute (similar to Linuxrsyncandtarexclude\noptions).For the Windows cmd.exe command line interpreter, use^as an\nescape character instead of\\and escape the|character. When using Windows PowerShell, use'instead of\"and surround the|character with\"."
+      },
+      "gzip-in-flight": {
+        "content": "--gzip-in-flight=[FILE_EXTENSIONS,…],-j[FILE_EXTENSIONS,…]",
+        "description": "Applies gzip transport encoding to any file upload whose extension matches the\ninput extension list. This is useful when uploading files with compressible\ncontent such as .js, .css, or .html files. This also saves network bandwidth\nwhile leaving the data uncompressed in Cloud Storage.When you specify the--gzip-in-flightoption, files being uploaded\nare compressed in-memory and on-the-wire only. Both the local files and Cloud\nStorage objects remain uncompressed. The uploaded objects retain theContent-Typeand name of the original files."
+      },
+      "gzip-in-flight-all": {
+        "content": "--gzip-in-flight-all,-J",
+        "description": "Applies gzip transport encoding to file uploads. This option works like the--gzip-in-flightoption described above, but it applies to all\nuploaded files, regardless of extension.CAUTION: If some of the source files don't compress well, such as binary data,\nusing this option may result in longer uploads."
+      },
+      "ignore-symlinks": {
+        "content": "--ignore-symlinks",
+        "description": "Ignore file symlinks instead of copying what they point to. Enabled by default,\nuse--no-ignore-symlinksto disable."
+      },
+      "include-managed-folders": {
+        "content": "--include-managed-folders",
+        "description": "Includes managed folders in command operations. For transfers, gcloud storage\nwill set up managed folders in the destination with the same IAM policy bindings\nas the source. Managed folders are only included with recursive cloud-to-cloud\ntransfers."
+      },
+      "preserve-posix": {
+        "content": "--preserve-posix,-P",
+        "description": "Causes POSIX attributes to be preserved when objects are copied. With this\nfeature enabled, gcloud storage will copy several fields provided by the stat\ncommand: access time, modification time, owner UID, owner group GID, and the\nmode (permissions) of the file.For uploads, these attributes are read off of local files and stored in the\ncloud as custom metadata. For downloads, custom cloud metadata is set as POSIX\nattributes on files after they are downloaded.On Windows, this flag will only set and restore access time and modification\ntime because Windows doesn't have a notion of POSIX UID, GID, and mode."
+      },
+      "recursive": {
+        "content": "--recursive,-R,-r",
+        "description": "Recursively copy the contents of any directories that match the source path\nexpression."
+      },
+      "skip-if-dest-has-newer-mtime": {
+        "content": "--skip-if-dest-has-newer-mtime,-u",
+        "description": "Skip operating on destination object if it has a newer modification time than\nthe source."
+      },
+      "skip-unsupported": {
+        "content": "--skip-unsupported,-U",
+        "description": "Skip objects with unsupported object types."
+      }
+    }
+  },
+  {
+    "id": "storage.rm",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "rm"
+    ],
+    "command_path": "gcloud storage rm",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/rm",
+    "description": "Delete objects and buckets.",
+    "command_synopsis": "gcloud storage rm [URLS …] [--additional-headers=HEADER=VALUE] [--all-versions, -a] [--continue-on-error, -c] [--exclude-managed-folders] [--read-paths-from-stdin, -I] [--recursive, -R, -r] [--if-generation-match=GENERATION --if-metageneration-match=METAGENERATION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URLS": {
+        "content": "[URLS…]",
+        "description": "The URLs of the resources to delete."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "additional-headers": {
+        "content": "--additional-headers=HEADER=VALUE",
+        "description": "Includes arbitrary headers in storage API calls. Accepts a comma separated list\nof key=value pairs, e.g.header1=value1,header2=value2. Overrides\nthe defaultstorage/additional_headersproperty value for this\ncommand invocation."
+      },
+      "all-versions": {
+        "content": "--all-versions,-a",
+        "description": "Delete allversionsof\nan object."
+      },
+      "continue-on-error": {
+        "content": "--continue-on-error,-c",
+        "description": "If any operations are unsuccessful, the command will exit with a non-zero exit\nstatus after completing the remaining operations. This flag takes effect only in\nsequential execution mode (i.e. processor and thread count are set to 1).\nParallelism is default."
+      },
+      "exclude-managed-folders": {
+        "content": "--exclude-managed-folders",
+        "description": "Excludes managed folders from command operations. By default gcloud storage\nincludes managed folders in recursive removals. Please note that this flag would\nnot be applicable for hierarchical namespace buckets as we always list managed\nfolders for these buckets."
+      },
+      "read-paths-from-stdin": {
+        "content": "--read-paths-from-stdin,-I",
+        "description": "Read the list of URLs from stdin."
+      },
+      "recursive": {
+        "content": "--recursive,-R,-r",
+        "description": "Recursively delete the contents of buckets or directories that match the path\nexpression. By default, this will delete managed folders as well. If the path is\nset to a bucket, likegs://bucket, the\nbucket is also deleted. This option implies the--all-versionsoption. If you want to delete only live object versions, use the\n``**´´ wildcard instead."
+      }
+    }
+  },
+  {
+    "id": "storage.service-agent",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "service-agent"
+    ],
+    "command_path": "gcloud storage service-agent",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/service-agent",
+    "description": "gcloud storage service-agent displays the Cloud Storage service\nagent, which is used to perform Cloud KMS operations against your a default or\nsupplied project. If the project does not yet have a service agent, gcloud\nstorage service-agent creates one.",
+    "command_synopsis": "gcloud storage service-agent [--authorize-cmek=AUTHORIZE_CMEK] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {},
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "authorize-cmek": {
+        "content": "--authorize-cmek=AUTHORIZE_CMEK",
+        "description": "Adds appropriate encrypt/decrypt permissions to the specified Cloud KMS key.\nThis allows the Cloud Storage service agent to write and read Cloud\nKMS-encrypted objects in buckets associated with the service agent's project."
+      }
+    }
+  },
+  {
+    "id": "storage.sign-url",
+    "service": "storage",
+    "type": "command",
+    "path": [
+      "storage",
+      "sign-url"
+    ],
+    "command_path": "gcloud storage sign-url",
+    "service_name": "storage",
+    "service_url": "https://cloud.google.com/sdk/gcloud/reference/storage/sign-url",
+    "description": "gcloud storage sign-url will generate a signed URL that embeds\nauthentication data so the URL can be used by someone who does not have a Google\naccount. Use the global\n--impersonate-service-account flag to\nspecify the service account that will be used to sign the specified URL or\nauthenticate with a service account directly. Otherwise, a service account key\nis required. Please see the Signed\nURLs documentation for background about signed URLs.\nNote, gcloud storage sign-url does not support operations on\nsub-directories. For example, unless you have an object named\nsome-directory/ stored inside the bucket some-bucket,\nthe following command returns an error: gcloud storage sign-url\ngs://some-bucket/some-directory/.",
+    "command_synopsis": "gcloud storage sign-url URL [URL …] [--duration=DURATION, -d DURATION; default=3600] [--headers=[KEY=VALUE,…]] [--http-verb=HTTP_VERB, -m HTTP_VERB; default=\"GET\"] [--path-style-url] [--private-key-file=PRIVATE_KEY_FILE] [--private-key-password=PRIVATE_KEY_PASSWORD, -p PRIVATE_KEY_PASSWORD] [--query-params=[KEY=VALUE,…]] [--region=REGION, -r REGION] [GCLOUD_WIDE_FLAG …]",
+    "sha256_sign": "b8804d3d1596663d4dded6d6f1f6348509b26d66e91d9f44998cff67824e6890",
+    "positional_args": {
+      "URL": {
+        "content": "URL[URL…]",
+        "description": "The URLs to be signed. May contain wildcards."
+      }
+    },
+    "required_flags": {},
+    "optional_flags": {},
+    "list_command_flags": {},
+    "flags": {
+      "duration": {
+        "content": "--duration=DURATION,-dDURATION; default=3600",
+        "description": "Specifies the duration that the signed url should be valid for, default duration\nis 1 hour. For example 10s for 10 seconds. See $gcloud topic datetimesfor\ninformation on duration formats.The max duration allowed is 12 hours. This limitation exists because the\nsystem-managed key used to sign the URL may not remain valid after 12 hours.Alternatively, the max duration allowed is 7 days when signing with either the--private-key-fileflag or an account that\nauthorized withgcloud auth\nactivate-service-account."
+      },
+      "headers": {
+        "content": "--headers=[KEY=VALUE,…]",
+        "description": "Specifies the headers to be used in the signed request. Possible headers are\nlisted in the XML API's documentation:https://cloud.google.com/storage/docs/xml-api/reference-headers#headers"
+      },
+      "http-verb": {
+        "content": "--http-verb=HTTP_VERB,-mHTTP_VERB; default=\"GET\"",
+        "description": "Specifies the HTTP verb to be authorized for use with the signed URL, default is\nGET. When using a signed URL to start a resumable upload session, you will need\nto specify thex-goog-resumable:startheader in the request or else signature validation will fail."
+      },
+      "path-style-url": {
+        "content": "--path-style-url",
+        "description": "Generate path-style signed URL.By default, virtual hosted-style signed URL is generated, except fordomain-named\nbuckets. Use this flag to force the generation of path-style signed URL.\nSigned URL generated for domain-named buckets is always path-style. Learn more\nabout the two URL styleshere."
+      },
+      "private-key-file": {
+        "content": "--private-key-file=PRIVATE_KEY_FILE",
+        "description": "The service account private key used to generate the cryptographic signature for\nthe generated URL. Must be in PKCS12 or JSON format. If encrypted, will prompt\nfor the passphrase used to protect the private key file (defaultnotasecret).Note: Service account keys are a security risk if not managed correctly. Reviewbest\npractices for managing service account keysbefore using this option."
+      },
+      "private-key-password": {
+        "content": "--private-key-password=PRIVATE_KEY_PASSWORD,-pPRIVATE_KEY_PASSWORD",
+        "description": "Specifies the PRIVATE_KEY_FILE password instead of prompting."
+      },
+      "query-params": {
+        "content": "--query-params=[KEY=VALUE,…]",
+        "description": "Specifies the query parameters to be used in the signed request. Possible query\nparameters are listed in the XML API's documentation:https://cloud.google.com/storage/docs/xml-api/reference-headers#query"
+      },
+      "region": {
+        "content": "--region=REGION,-rREGION",
+        "description": "Specifies the region in which the resources for which you are creating signed\nURLs are stored.Default value isautowhich will cause\ngcloud storage sign-url to fetch the region for the resource. When\nauto-detecting the region, the current user's credentials, not the credentials\nfrom PRIVATE_KEY_FILE, are used to fetch the bucket's metadata."
+      }
+    }
   }
 ]

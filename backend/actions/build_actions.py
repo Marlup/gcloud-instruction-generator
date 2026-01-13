@@ -205,7 +205,17 @@ def iter_commands(
     Iterate over the flat list of items and yield those that are commands.
     """
     for item in commands_list:
-        if item.get("type") != "command":
+        is_command = item.get("type") == "command"
+        
+        # Fallback: some commands in storage are marked as "group" but have concrete synopsis
+        # e.g. "gcloud storage intelligence-configs describe ..."
+        # Real groups usually have "... COMMAND ..." in synopsis.
+        if not is_command and item.get("type") == "group":
+            synopsis = item.get("command_synopsis", "")
+            if synopsis and " COMMAND " not in synopsis and not synopsis.endswith(" COMMAND"):
+                is_command = True
+
+        if not is_command:
             continue
 
         full_path = item.get("path", [])

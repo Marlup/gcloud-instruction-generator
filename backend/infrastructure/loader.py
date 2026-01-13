@@ -35,6 +35,22 @@ def load_actions(file_path: str) -> dict:
     return actions
 
 
+def load_actions_recursive(file_path: str) -> dict:
+    """Recursively loads actions from a JSON/YAML file, returning the raw structure."""
+    if not os.path.exists(file_path):
+        return {}
+    
+    _, ext = os.path.splitext(file_path)
+    with open(file_path, "r", encoding="utf-8") as f:
+        if ext == ".json":
+            return json.load(f)
+        elif ext in [".yml", ".yaml"]:
+            if not HAS_YAML:
+                return {} # or raise
+            return yaml.safe_load(f)
+    return {}
+
+
 def load_list(file_path: str, key: str) -> list:
     """Carga una lista (ej. regiones o storage_classes) desde JSON."""
     if not os.path.exists(file_path):
